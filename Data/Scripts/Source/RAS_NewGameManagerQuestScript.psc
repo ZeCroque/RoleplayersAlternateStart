@@ -3,6 +3,7 @@ Scriptname RAS_NewGameManagerQuestScript extends Quest
 Quest Property MQ101 Mandatory Const Auto
 Quest Property MQ102 Mandatory Const Auto
 Quest Property MQ104B Mandatory Const Auto
+Quest Property RAS_MQ104B Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Auto Const mandatory
 Quest Property SQ_Crew Auto Const mandatory
 Quest Property SQ_Followers Auto Const mandatory
@@ -20,6 +21,7 @@ Event OnQuestInit()
         VascoREF.Disable(False)
         Self.RegisterForMenuOpenCloseEvent("ChargenMenu") ; #DEBUG_LINE_NO:342
         Game.ShowRaceMenu(None, 0, None, None, None) 
+        Self.RegisterForRemoteEvent(MQ102, "OnStageSet")
     EndIf
 EndEvent
 
@@ -51,8 +53,14 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
 
     MQ104B.Start() ; #DEBUG_LINE_NO:657
     MQ104B.Stop()
-
+    RAS_MQ104B.SetStage(5)
     MQ102.SetStage(10)
 
     EndIf
+EndEvent
+
+Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
+  If(akSender == MQ102 && auiStageID == 1150)
+    RAS_MQ104B.SetStage(10)
+  EndIf
 EndEvent
