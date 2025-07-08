@@ -119,6 +119,27 @@ Alias_CommsComputer.GetRef().Enable()
 Alias_CommsComputer.GetRef().BlockActivation(True, True)
 
 Alias_Lin.GetActorRef().moveto(MQ104BLinTravelMarker)
+
+;stopping MQ104B in RAS_NewGameManagerQuestScript trigggers unwanted changes so we're undoing them
+;make sure Matsura and his bodyguards aren't hostile
+Actor MatsuraREF = Alias_Matsura.GetActorRef()
+MatsuraREF.RemoveFromFaction(PlayerEnemyFaction)
+Alias_MatsuraBodyguards.RemoveFromFaction(PlayerEnemyFaction)
+
+;undo crew quests changes
+Actor LinRef = Alias_Lin.GetActorRef()
+LinRef.RemoveFromFaction(PotentialCrewFaction)
+LinRef.RemovePerk(Crew_Demolitions)
+LinRef.RemovePerk(Crew_Outpost_Management)
+LinRef.RemovePerk(Crew_Outpost_Management)
+LinRef.RemovePerk(Crew_Outpost_Management)
+
+HellerRef.RemoveFromFaction(PotentialCrewFaction)
+HellerRef.RemovePerk(Crew_Geology)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -165,9 +186,7 @@ Function Fragment_Stage_0030_Item_00()
 SetObjectiveCompleted(20)
 SetObjectiveDisplayed(30)
 SetObjectiveDisplayedAtTop(30)
-if(TerminalPower.GetReference())
-  Debug.MessageBox("yfguhjkl")
-endif
+
 ;enable trigger volume to repair computer
 Alias_BrokenComputerTrigger.GetRef().Enable()
 ;END CODE
@@ -345,7 +364,17 @@ SetObjectiveCompleted(60)
 SetObjectiveDisplayed(65)
 SetObjectiveDisplayed(67)
 SetObjectiveDisplayedAtTop(65)
-LinEliteCrewQuest.SetStage(1)
+
+;changes from LinEliteCrewQuest
+Actor LinRef = Alias_Lin.GetActorRef()
+LinRef.SetFactionRank(PotentialCrewFaction, 1)
+LinRef.AddPerk(Crew_Demolitions)
+LinRef.AddPerk(Crew_Outpost_Management)
+LinRef.AddPerk(Crew_Outpost_Management)
+LinRef.AddPerk(Crew_Outpost_Management)
+
+Self.RegisterForRemoteEvent(LinEliteCrewQuest, "OnStageSet")
+
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -391,10 +420,17 @@ Actor HellerREF = Alias_Heller.GetActorRef()
 
 Game.GetPlayer().addaliaseditem(MQ104BPirateBarrettSlate, Alias_SecondBarrettSlateQuestObject)
 
-HellerEliteCrewQuest.SetStage(1)
+;changes from HellerEliteCrewQuest
+HellerRef.SetFactionRank(PotentialCrewFaction, 1)
+HellerRef.AddPerk(Crew_Geology)
+HellerRef.AddPerk(Crew_Outpost_Engineering)
+HellerRef.AddPerk(Crew_Outpost_Engineering)
+HellerRef.AddPerk(Crew_Outpost_Engineering)
 HellerREF.EvaluatePackage()
 HellerREF.SetGhost(False)
 HellerREF.RemoveFromFaction(CaptiveFaction)
+
+Self.RegisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
 
 ;make sure quest advances if we skipped ahead
 SetStage(100)
@@ -657,6 +693,16 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
+Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
+  If(akSender == LinEliteCrewQuest && auiStageID == 50)
+    RAS_MQ104B.SetStageNoWait(112)
+    Self.UnregisterForRemoteEvent(LinEliteCrewQuest, "OnStageSet")
+  ElseIf(akSender == HellerEliteCrewQuest && auiStageID == 50)
+    RAS_MQ104B.SetStage(125)
+    Self.UnregisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
+  EndIf
+EndEvent
+
 Scene Property FFLodge01_001_OutsideScene Auto Const Mandatory
 
 Scene Property FFLodge01_003_LodgeScene Auto Const Mandatory
@@ -806,3 +852,15 @@ ReferenceAlias Property Alias_ArtifactCollection Auto Const Mandatory
 Faction Property CaptiveFaction Auto Const Mandatory
 
 ReferenceAlias Property TerminalPower Auto Const Mandatory
+
+Faction Property PotentialCrewFaction Auto Const Mandatory
+
+Perk Property Crew_Demolitions Auto Const Mandatory
+
+Perk Property Crew_Outpost_Management Auto Const Mandatory
+
+Perk Property Crew_Geology Auto Const Mandatory
+
+Perk Property Crew_Outpost_Engineering Auto Const Mandatory
+
+Quest Property RAS_MQ104B Auto Const Mandatory

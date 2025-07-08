@@ -51,16 +51,20 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     MQ101.CompleteQuest()
     MQ101.Stop() ; #DEBUG_LINE_NO:642
 
+    Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
     MQ104B.Start() ; #DEBUG_LINE_NO:657
     MQ104B.Stop()
-    RAS_MQ104B.SetStage(5)
-    MQ102.SetStage(10)
 
+    MQ102.SetStage(10)
     EndIf
 EndEvent
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
-  If(akSender == MQ102 && auiStageID == 1150)
+  If(akSender == MQ104B && auiStageID == 2000)
+    RAS_MQ104B.SetStage(5)
+    Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
+  ElseIf(akSender == MQ102 && auiStageID == 1150)
     RAS_MQ104B.SetStage(10)
+    Self.UnregisterForRemoteEvent(MQ102, "OnStageSet")
   EndIf
 EndEvent
