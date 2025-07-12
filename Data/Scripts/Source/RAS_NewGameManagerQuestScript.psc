@@ -5,9 +5,6 @@ Quest Property MQ102 Mandatory Const Auto
 Quest Property MQ104B Mandatory Const Auto
 Quest Property RAS_MQ104B Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Auto Const mandatory
-Quest Property SQ_Crew Auto Const mandatory
-Quest Property SQ_Followers Auto Const mandatory
-Keyword Property SQ_ActorRoles_SuppressMessages Auto Const mandatory
 ObjectReference Property LodgeStartMarker Auto Const mandatory
 ObjectReference Property VascoREF Auto Const Mandatory
 Quest Property FFLodge01 Mandatory Const Auto
@@ -21,41 +18,60 @@ Key Property LodgeKey Auto Const Mandatory
 ActorValue Property PlayerXPBonusMult Auto Const Mandatory
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 ImageSpaceModifier Property StayBlack Mandatory Const Auto
+ImageSpaceModifier Property FadeFromBlack Mandatory Const Auto
 ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
+GlobalVariable Property MQProgress Mandatory Const Auto
+ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
+GlobalVariable Property ENV_AllowPlayerSuffocation Auto Const Mandatory
+Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
+ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
 
 InputEnableLayer Property InputLayer Auto
 
 Event OnQuestInit()
     If MQ101.GetStageDone(105) == True || Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
-      (Self as Quest).Stop() 
+      Stop() 
     Else
       StayBlack.Apply() 
       Game.HideHudMenus()
       Game.SetInChargen(True, True, False)
       InputLayer = InputEnableLayer.Create()
       InputLayer.DisablePlayerControls()
+      Game.FastTravel(RAS_GameStartCellMarkerREF) 
+    EndIf
+EndEvent
+
+Event OnStageSet(int auiStageID, int auiItemID)
+  If(auiStageID == 5)
+    If(RAS_ChooseStartTypeMessage.Show() == 0)
+      Game.FastTravel(VecteraMineStarMarker)
+      FadeFromBlack.Apply()
+      Utility.Wait(0.2)
+      StayBlack.Remove()
+      InputLayer.Delete()
+      MQ101.SetActive()
+      SetObjectiveCompleted(10)
+      CompleteQuest()
+      Stop()
+    Else
+      (MQ101 as mq101script).VSEnableLayer.Delete()
+      ENV_AllowPlayerSuffocation.SetValue(0)
       Game.PrecacheCharGen()
       Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
       Game.ShowRaceMenu(None, 0, None, None, None) 
     EndIf
+  EndIf
 EndEvent
 
 Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
 
+    SetStage(10)
+
     Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
 
-    ;Clear vasco that is set as temp follower by debug stage
-    Actor Vasco = VascoREF as Actor
-    Vasco.Disable()
-    (SQ_Crew as sq_crewscript).SetRoleInactive(Vasco, False, False, True)
-    (SQ_Followers as sq_followersscript).SetRoleInactive(Vasco, False, False, True)
-    Vasco.RemoveKeyword(SQ_ActorRoles_SuppressMessages)
-    Vasco.MoveTo(LodgeStartMarker, -3.0, 3.0, 0.0, True, False)
-    Vasco.Enable()
-
-    MQ101.SetObjectiveDisplayed(170, False, True) ;This will ensure we don't see the quest in the log
+    MQ101.SetObjectiveDisplayed(5, False, True) ;This will ensure we don't see the quest in the log
     ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
     ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
@@ -66,6 +82,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
 
     ;Add required triggers from stages we skipped
     City_NA_Aquilus01.Start()
+    MQProgress.SetValue(2)
 
     ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
     Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
