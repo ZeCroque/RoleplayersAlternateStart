@@ -35,19 +35,9 @@ Event OnActivate(ObjectReference akActionRef)
 	; RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
  	; RAS_NoneShipReference.RemoveAllItems()
 	; Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
-	; RASDisableFastTravel()
-	; RAS_ArtifactGenerationQuest.SetStage(10)
+	; RASDisableFastTravel()s
 
-	; RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
-	; ObjectReference ArtifactActivator01REF = (StarbornTempleQuest as StarbornTempleQuestScript).PlaceEmbeddedArtifact(0, questScript.Artifact.GetRef())
-	; questScript.Artifact.ForceRefTo(ArtifactActivator01REF)
-	; ArtifactActivator01REF.EnableNoWait()
-
-	; questScript.ArtifactOpenCaveMarker.GetRef().EnableNoWait()
-	; questScript.ArtifactClosedCaveMarker.GetRef().DisableNoWait()
-
-	; Game.GetPlayer().MoveTo(questScript.Artifact.GetReference())
-
-	MQ101.SetObjectiveCompleted(170)  
-	MQ101.SetObjectiveDisplayed(170, False, True)  
+	RAS_ArtifactGenerationQuest.Start()
+	RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
+	Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
 EndEvent

@@ -7,10 +7,8 @@ Quest Property RAS_MQ104B Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Auto Const mandatory
 Quest Property SQ_Crew Auto Const mandatory
 Quest Property SQ_Followers Auto Const mandatory
-GlobalVariable Property MQ101VascoQuestFollower Auto Const mandatory
 Keyword Property SQ_ActorRoles_SuppressMessages Auto Const mandatory
 ObjectReference Property LodgeStartMarker Auto Const mandatory
-Quest Property CREW_EliteCrew_Vasco Auto Const mandatory
 ObjectReference Property VascoREF Auto Const Mandatory
 Quest Property FFLodge01 Mandatory Const Auto
 Quest Property City_NA_Aquilus01 Mandatory Const Auto
@@ -22,33 +20,40 @@ Faction Property PotentialCrewFaction Mandatory Const Auto
 Key Property LodgeKey Auto Const Mandatory
 ActorValue Property PlayerXPBonusMult Auto Const Mandatory
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
+ImageSpaceModifier Property StayBlack Mandatory Const Auto
+ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
+
+InputEnableLayer Property InputLayer Auto
 
 Event OnQuestInit()
     If MQ101.GetStageDone(105) == True || Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
       (Self as Quest).Stop() 
     Else
-        Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
-        Game.GetPlayer().WaitFor3dLoad()
-        Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
-        Game.ShowRaceMenu(None, 0, None, None, None) 
+      StayBlack.Apply() 
+      Game.HideHudMenus()
+      Game.SetInChargen(True, True, False)
+      InputLayer = InputEnableLayer.Create()
+      InputLayer.DisablePlayerControls()
+      Game.PrecacheCharGen()
+      Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+      Game.ShowRaceMenu(None, 0, None, None, None) 
     EndIf
 EndEvent
 
 Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
-  If asMenuName == "ChargenMenu" && abOpening == False
+  If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
 
-    Game.SetInChargen(False, False, False)
-    Game.SetCharGenHUDMode(0)
-    Keyword pAnimArchetypePlayer = Game.GetFormFromFile(439560, "Starfield.esm") as Keyword
-    Game.GetPlayer().ChangeAnimArchetype(pAnimArchetypePlayer)
+    Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
 
     ;Clear vasco that is set as temp follower by debug stage
     Actor Vasco = VascoREF as Actor
+    Vasco.Disable()
     (SQ_Crew as sq_crewscript).SetRoleInactive(Vasco, False, False, True)
     (SQ_Followers as sq_followersscript).SetRoleInactive(Vasco, False, False, True)
     Vasco.RemoveKeyword(SQ_ActorRoles_SuppressMessages)
     Vasco.MoveTo(LodgeStartMarker, -3.0, 3.0, 0.0, True, False)
+    Vasco.Enable()
 
     MQ101.SetObjectiveDisplayed(170, False, True) ;This will ensure we don't see the quest in the log
     ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
@@ -70,7 +75,9 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;Locks the lodge until we start the custom quest
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
-    EndIf
+
+    Game.FastTravel(RAS_TmpCellMarkerREF)
+  EndIf
 EndEvent
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)

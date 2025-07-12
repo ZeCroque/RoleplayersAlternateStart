@@ -1,0 +1,3 @@
+Scriptname RAS_MQReplacerQuestScript extends Quest
+
+LocationAlias Property ArtifactLocation Mandatory Const Auto
