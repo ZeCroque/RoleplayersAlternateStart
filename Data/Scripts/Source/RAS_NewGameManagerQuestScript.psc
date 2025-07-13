@@ -25,8 +25,10 @@ ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
 GlobalVariable Property ENV_AllowPlayerSuffocation Auto Const Mandatory
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
+ObjectReference Property RAS_ChooseStartCellMarkerREF01 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
+ObjectReference Property FastTravelTarget Auto 
 
 Event OnQuestInit()
     If MQ101.GetStageDone(105) == True || Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
@@ -44,11 +46,10 @@ EndEvent
 Event OnStageSet(int auiStageID, int auiItemID)
   If(auiStageID == 5)
     If(RAS_ChooseStartTypeMessage.Show() == 0)
-      Game.FastTravel(VecteraMineStarMarker)
-      FadeFromBlack.Apply()
-      Utility.Wait(0.2)
-      StayBlack.Remove()
-      InputLayer.Delete()
+      FastTravelTarget = VecteraMineStarMarker
+      Game.FastTravel(RAS_TmpCellMarkerREF)
+      Game.ForceFirstPerson()
+      (MQ101 as mq101script).VSEnableLayer.EnableCamSwitch(false)
       MQ101.SetActive()
       SetObjectiveCompleted(10)
       CompleteQuest()
@@ -93,6 +94,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
 
+    FastTravelTarget = RAS_ChooseStartCellMarkerREF01
     Game.FastTravel(RAS_TmpCellMarkerREF)
   EndIf
 EndEvent
