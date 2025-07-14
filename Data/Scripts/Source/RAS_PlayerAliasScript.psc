@@ -4,7 +4,7 @@ Keyword Property PCM_ArtifactCave Mandatory Const Auto
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
-    if akNewLoc.HasKeyword(PCM_ArtifactCave)
+    if akNewLoc && akNewLoc.HasKeyword(PCM_ArtifactCave)
         RAS_MQReplacerQuest.Start()
         RAS_MQReplacerQuestScript MQReplacerQuestScript = RAS_MQReplacerQuest as RAS_MQReplacerQuestScript
         MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
