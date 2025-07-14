@@ -372,9 +372,6 @@ LinRef.AddPerk(Crew_Demolitions)
 LinRef.AddPerk(Crew_Outpost_Management)
 LinRef.AddPerk(Crew_Outpost_Management)
 LinRef.AddPerk(Crew_Outpost_Management)
-
-Self.RegisterForRemoteEvent(LinEliteCrewQuest, "OnStageSet")
-
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -429,8 +426,6 @@ HellerRef.AddPerk(Crew_Outpost_Engineering)
 HellerREF.EvaluatePackage()
 HellerREF.SetGhost(False)
 HellerREF.RemoveFromFaction(CaptiveFaction)
-
-Self.RegisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
 
 ;make sure quest advances if we skipped ahead
 SetStage(100)
@@ -693,15 +688,7 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
-  If(akSender == LinEliteCrewQuest && auiStageID == 50)
-    RAS_MQ104B.SetStageNoWait(112)
-    Self.UnregisterForRemoteEvent(LinEliteCrewQuest, "OnStageSet")
-  ElseIf(akSender == HellerEliteCrewQuest && auiStageID == 50)
-    RAS_MQ104B.SetStage(125)
-    Self.UnregisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
-  EndIf
-EndEvent
+
 
 Scene Property FFLodge01_001_OutsideScene Auto Const Mandatory
 
@@ -850,8 +837,6 @@ RefCollectionAlias Property DisembarkingCrew Auto Const
 ReferenceAlias Property Alias_ArtifactCollection Auto Const Mandatory
 
 Faction Property CaptiveFaction Auto Const Mandatory
-
-ReferenceAlias Property TerminalPower Auto Const Mandatory
 
 Faction Property PotentialCrewFaction Auto Const Mandatory
 

@@ -24,4 +24,6 @@ Event OnTriggerEnter(ObjectReference akActionRef)
     Vasco.AddPerk(Crew_Ship_Shields)
     Vasco.AddPerk(Crew_Ship_Shields)
     Vasco.AddPerk(Crew_Ship_Weapons_EM)
+
+    Clear()
 EndEvent
