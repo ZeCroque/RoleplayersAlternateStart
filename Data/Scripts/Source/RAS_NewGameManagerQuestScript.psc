@@ -25,7 +25,7 @@ ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
 GlobalVariable Property ENV_AllowPlayerSuffocation Auto Const Mandatory
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
-ObjectReference Property RAS_ChooseStartCellMarkerREF01 Mandatory Const Auto
+ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -94,7 +94,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
 
-    FastTravelTarget = RAS_ChooseStartCellMarkerREF01
+    FastTravelTarget = RAS_ChooseStartCellMarkerREF
     Game.FastTravel(RAS_TmpCellMarkerREF)
   EndIf
 EndEvent

@@ -3,16 +3,9 @@ Scriptname RAS_TestActivatorScript extends ObjectReference
 ObjectReference Property RAS_NoneShipReference Mandatory Const Auto
 ObjectReference Property Frontier_ModularREF Mandatory Const Auto
 Quest Property RAS_ArtifactGenerationQuest Mandatory Const Auto
-Quest Property StarbornTempleQuest Mandatory Const Auto
-Quest Property MQ101 Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
-Quest Property SQ_Crew Auto Const mandatory
-Quest Property SQ_Followers Auto Const mandatory
-GlobalVariable Property MQ101VascoQuestFollower Auto Const mandatory
-Keyword Property SQ_ActorRoles_SuppressMessages Auto Const mandatory
-ObjectReference Property LodgeStartMarker Auto Const mandatory
-Quest Property CREW_EliteCrew_Vasco Auto Const mandatory
-ObjectReference Property VascoREF Auto Const Mandatory
+Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 
 InputEnableLayer FastTravelInputLayer
 
@@ -30,14 +23,18 @@ Function RASEnableFastTravel()
 EndFunction
 
 Event OnActivate(ObjectReference akActionRef)
-	; Game.AddPlayerOwnedShip(RAS_NoneShipReference as SpaceshipReference)
-	; Game.TrySetPlayerHomeSpaceShip(RAS_NoneShipReference)
-	; RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
- 	; RAS_NoneShipReference.RemoveAllItems()
-	; Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
-	; RASDisableFastTravel()s
+	If(RAS_ChooseStartTypeMessage.Show() == 0)
+		Game.AddPlayerOwnedShip(Frontier_ModularREF as SpaceshipReference) 
+		Game.TrySetPlayerHomeSpaceShip(Frontier_ModularREF)
+		Frontier_ModularREF.Enable()
+	Else
+		Game.AddPlayerOwnedShip(RAS_NoneShipReference as SpaceshipReference)
+		Game.TrySetPlayerHomeSpaceShip(RAS_NoneShipReference)
+		RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
+		;RASDisableFastTravel()
+	EndIf
 
-	RAS_ArtifactGenerationQuest.Start()
-	RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
-	Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
+	; RAS_ArtifactGenerationQuest.Start()
+	; RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
+	; Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
 EndEvent

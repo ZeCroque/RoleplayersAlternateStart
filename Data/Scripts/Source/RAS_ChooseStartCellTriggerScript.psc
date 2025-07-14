@@ -4,7 +4,7 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 GlobalVariable Property ENV_AllowPlayerSuffocation Auto Const Mandatory
 Keyword Property AnimArchetypePlayer Mandatory Const Auto
 
-Event OnTriggerEnter(ObjectReference akActionRef)
+Event OnCellLoad()
     Game.SetCharGenHUDMode(0)
     Game.SetInChargen(False, False, False)
     ENV_AllowPlayerSuffocation.SetValue(1)
