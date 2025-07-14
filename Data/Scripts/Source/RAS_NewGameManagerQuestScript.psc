@@ -1,4 +1,4 @@
-Scriptname RAS_NewGameManagerQuestScript extends Quest
+Scriptname RAS_NewGameManagerQuestScript extends Quest Conditional
 
 Quest Property MQ101 Mandatory Const Auto
 Quest Property MQ102 Mandatory Const Auto
@@ -29,6 +29,8 @@ ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
+SpaceshipReference Property RAS_NoneShipReference Auto
+Bool Property PlayerShipless Auto Conditional
 
 Event OnQuestInit()
     If MQ101.GetStageDone(105) == True || Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
@@ -78,6 +80,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
     Self.RegisterForRemoteEvent(MQ102, "OnStageSet")
     Self.RegisterForRemoteEvent(FFLodge01, "OnStageSet")
+    MQ101.SetStage(1335) ;disable NA ship tech special greeting
     MQ101.SetStage(1800) 
     MQ101.Stop()
 
