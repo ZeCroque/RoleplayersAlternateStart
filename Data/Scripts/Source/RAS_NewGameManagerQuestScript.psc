@@ -22,7 +22,6 @@ ImageSpaceModifier Property FadeFromBlack Mandatory Const Auto
 ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
 GlobalVariable Property MQProgress Mandatory Const Auto
 ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
-GlobalVariable Property ENV_AllowPlayerSuffocation Auto Const Mandatory
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
 ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
@@ -53,12 +52,11 @@ Event OnStageSet(int auiStageID, int auiItemID)
       Game.ForceFirstPerson()
       (MQ101 as mq101script).VSEnableLayer.EnableCamSwitch(false)
       MQ101.SetActive()
+      MQ101.SetObjectiveDisplayed(5, False, True)
       SetObjectiveCompleted(10)
       CompleteQuest()
-      Stop()
     Else
       (MQ101 as mq101script).VSEnableLayer.Delete()
-      ENV_AllowPlayerSuffocation.SetValue(0)
       Game.PrecacheCharGen()
       Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
       Game.ShowRaceMenu(None, 0, None, None, None) 
@@ -96,15 +94,15 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;Locks the lodge until we start the custom quest
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
-
-    FastTravelTarget = RAS_ChooseStartCellMarkerREF
-    Game.FastTravel(RAS_TmpCellMarkerREF)
   EndIf
 EndEvent
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
   If(akSender == MQ101 && auiStageID == 9000)
+    FastTravelTarget = RAS_ChooseStartCellMarkerREF
+    Game.FastTravel(RAS_TmpCellMarkerREF)
+
     Actor PlayerREF = Game.GetPlayer()
     PlayerREF.RemoveFromFaction(ConstellationFaction)
     PlayerREF.SetValue(PlayerXPBonusMult, 1)

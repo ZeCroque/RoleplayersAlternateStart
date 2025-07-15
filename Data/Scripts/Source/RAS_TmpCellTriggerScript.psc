@@ -5,6 +5,7 @@ ImageSpaceModifier Property StayBlack Mandatory Const Auto
 ImageSpaceModifier Property FadeFromBlack Mandatory Const Auto
 
 Event OnTriggerEnter(ObjectReference akActionRef)
+    Message.ClearHelpMessages()
     Utility.Wait(2.0)
     Game.HideHudMenus()    
     Game.FastTravel((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).FastTravelTarget)
