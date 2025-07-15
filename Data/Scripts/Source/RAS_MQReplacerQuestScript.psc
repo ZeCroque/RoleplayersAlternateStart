@@ -5,16 +5,19 @@ Quest Property StarbornTempleQuest Mandatory Const Auto
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
 
 ObjectReference Property Artifact01REF Auto
+ObjectReference Property Artifact01REFCopy Auto
 
-Function HandleArtifact(ObjectReference akArtifactRef)
+Function HandleArtifact(ObjectReference akArtifactRef, ObjectReference akArtifactCopy)
   Artifact01REF = akArtifactRef
-  Self.RegisterForRemoteEvent(Artifact01REF, "OnSell")
+  Artifact01REFCopy = akArtifactCopy
+  Self.RegisterForRemoteEvent(akArtifactCopy, "OnSell")
 EndFunction
 
 Event ObjectReference.OnSell(ObjectReference akSender, Actor akSeller)
   Self.UnregisterForRemoteEvent(Artifact01REF, "OnSell")
-  (StarbornTempleQuest as StarbornTempleQuestScript).MQ00_ArtifactsHolder.AddRef(Artifact01REF) ;make it a quest item
   Artifact01REF = None ;We disposed of artifact the right way, we no longer handle it
+  Artifact01REFCopy.Delete()
+  Artifact01REFCopy = None
   SetStage(30)
   PlayerAlias.Clear()
 EndEvent

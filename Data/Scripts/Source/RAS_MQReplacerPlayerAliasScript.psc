@@ -10,6 +10,6 @@ Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemRefe
     RAS_MQReplacerQuestScript MQReplacerQuestScript = (GetOwningQuest() as RAS_MQReplacerQuestScript)
     If(MQReplacerQuestScript.Artifact01REF && aiTransferReason != 2) ;Checking just in case but normally we should never enter this if we sell the artifact
         RAS_KeepArtifactMessage.Show()
-        GetReference().AddItem(MQReplacerQuestScript.Artifact01REF, abSilent=True)
+        GetReference().AddItem(MQReplacerQuestScript.Artifact01REFCopy, abSilent=True)
     EndIf
 EndEvent

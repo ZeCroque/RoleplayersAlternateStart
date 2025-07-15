@@ -18,10 +18,11 @@ EndFunction
 Function Fragment_Stage_0020_Item_00()
 ;BEGIN CODE
 ;give player the appropriate artifact
-ObjectReference Artifact01REF = MQHoldingCellCenterMarker.PlaceAtMe((StarbornTempleQuest as StarbornTempleQuestScript).currentPlaythroughArtifacts[0].Artifacts, abInitiallyDisabled=False, abDeleteWhenAble=False)
-Game.GetPlayer().additem(Artifact01REF)
-(RAS_MQReplacerQuest as RAS_MQReplacerQuestScript).HandleArtifact(Artifact01REF)
-(PlayerAlias as RAS_MQReplacerPlayerAliasScript).HandleArtifact(Artifact01REF)
+ObjectReference Artifact01REF = (StarbornTempleQuest as StarbornTempleQuestScript).PlaceArtifact(0, MQHoldingCellCenterMarker)
+ObjectReference ArtifactCopy = MQHoldingCellCenterMarker.PlaceAtMe(RAS_Artifact_ETA)
+Game.GetPlayer().additem(ArtifactCopy)
+(RAS_MQReplacerQuest as RAS_MQReplacerQuestScript).HandleArtifact(Artifact01REF, ArtifactCopy)
+(PlayerAlias as RAS_MQReplacerPlayerAliasScript).HandleArtifact(ArtifactCopy)
 
 ;Set player as having acquired the Artifact
 (StarbornTempleQuest as StarbornTempleQuestScript).SetPlayerAcquiredArtifact(0)
@@ -57,3 +58,5 @@ ObjectReference Property MQHoldingCellCenterMarker Auto Const Mandatory
 Quest Property RAS_MQReplacerQuest Auto Const Mandatory
 
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
+
+MiscObject Property RAS_Artifact_ETA Auto Const Mandatory
