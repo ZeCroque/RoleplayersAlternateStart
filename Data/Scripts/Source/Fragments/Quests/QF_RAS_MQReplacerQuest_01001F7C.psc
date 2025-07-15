@@ -43,6 +43,14 @@ SetObjectiveCompleted(25)
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_0040_Item_00
+Function Fragment_Stage_0040_Item_00()
+;BEGIN CODE
+SetObjectiveCompleted(20)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 ReferenceAlias Property Artifact Mandatory Const Auto

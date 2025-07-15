@@ -3,6 +3,7 @@ Scriptname RAS_MQReplacerQuestScript extends Quest
 LocationAlias Property ArtifactLocation Mandatory Const Auto
 Quest Property StarbornTempleQuest Mandatory Const Auto
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
+ReferenceAlias Property MauriceLyonAlias Mandatory Const Auto
 
 ObjectReference Property Artifact01REF Auto
 ObjectReference Property Artifact01REFCopy Auto
