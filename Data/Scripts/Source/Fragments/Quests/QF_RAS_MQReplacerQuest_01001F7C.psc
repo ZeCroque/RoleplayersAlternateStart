@@ -39,6 +39,7 @@ EndFunction
 Function Fragment_Stage_0030_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(25)
+RAS_MQ101.SetStage(0)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -47,6 +48,7 @@ EndFunction
 Function Fragment_Stage_0040_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(20)
+RAS_MQ101.SetStage(15)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -68,3 +70,5 @@ Quest Property RAS_MQReplacerQuest Auto Const Mandatory
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
 
 MiscObject Property RAS_Artifact_ETA Auto Const Mandatory
+
+Quest Property RAS_MQ101 Auto Const Mandatory
