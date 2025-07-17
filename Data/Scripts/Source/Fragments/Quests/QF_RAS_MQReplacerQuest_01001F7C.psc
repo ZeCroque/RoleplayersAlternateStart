@@ -39,6 +39,7 @@ EndFunction
 Function Fragment_Stage_0030_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(25)
+(RAS_MQ101 as RAS_MQ101Script).Artifact01REF = (RAS_MQReplacerQuest as RAS_MQReplacerQuestScript).Artifact01REF
 RAS_MQ101.SetStage(0)
 ;END CODE
 EndFunction
@@ -47,6 +48,14 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Stage_0040_Item_00
 Function Fragment_Stage_0040_Item_00()
 ;BEGIN CODE
+RAS_MQReplacerQuestScript MQReplacerQuestScript = (RAS_MQReplacerQuest as RAS_MQReplacerQuestScript)
+ObjectReference PlayerREF = Game.GetPlayer()
+
+(RAS_MQ101 as RAS_MQ101Script).Artifact01REF = MQReplacerQuestScript.Artifact01REF
+MQReplacerQuestScript.PlayerAlias.Clear()
+PlayerREF.RemoveItem(MQReplacerQuestScript.Artifact01REFCopy, abSilent=True)
+PlayerREF.AddItem(MQReplacerQuestScript.Artifact01REF, abSilent=True)
+
 SetObjectiveCompleted(20)
 RAS_MQ101.SetStage(15)
 ;END CODE
