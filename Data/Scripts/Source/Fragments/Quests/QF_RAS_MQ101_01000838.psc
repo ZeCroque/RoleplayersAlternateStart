@@ -56,4 +56,152 @@ SetObjectiveDisplayed(20)
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_1510_Item_00
+Function Fragment_Stage_1510_Item_00()
+;BEGIN CODE
+RAS_MQ101_034b_InsideLodgeScene.Start()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1600_Item_00
+Function Fragment_Stage_1600_Item_00()
+;BEGIN CODE
+RAS_MQ101_034b_InsideLodgeScene.Stop()
+RAS_MQ101_034c_Stage1600Scene.Start()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1610_Item_00
+Function Fragment_Stage_1610_Item_00()
+;BEGIN CODE
+SetObjectiveCompleted(185)
+SetObjectiveDisplayed(187)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1620_Item_00
+Function Fragment_Stage_1620_Item_00()
+;BEGIN CODE
+ObjectReference TableREF = LodgeTableActivator.GetRef()
+SarahMorgan.GetActorRef().EvaluatePackage()
+
+;allow player to activate the table trigger
+TableREF.Enable()
+
+SetObjectiveCompleted(185)
+SetObjectiveCompleted(187)
+SetObjectiveDisplayed(190)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1630_Item_00
+Function Fragment_Stage_1630_Item_00()
+;BEGIN AUTOCAST TYPE RAS_MQ101Script
+Quest __temp = self as Quest
+RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+;END AUTOCAST
+;BEGIN CODE
+ObjectReference TableREF = LodgeTableActivator.GetRef()
+ObjectReference ArmillaryREF = Armillary.GetRef()
+
+TableREF.Disable() ;player cannot activate table again
+Game.GetPlayer().RemoveItem(kmyQuest.Artifact01REF)
+
+ArmillaryREF.PlayAnimation("Equip")
+
+RAS_MQ101_039c_ArtifactsTogether03.Start()
+
+SetObjectiveCompleted(190)
+SetObjectiveDisplayed(195)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1635_Item_00
+Function Fragment_Stage_1635_Item_00()
+;BEGIN CODE
+LodgeArtifact01.GetRef().DisableNoWait()
+NoelArtifact01.GetRef().DisableNoWait()
+NoelArtifact02.GetRef().DisableNoWait()
+
+ObjectReference ArmillaryREF = Armillary.GetRef()
+(ArmillaryREF as ArmillaryScript).MQ101ArmillaryComesTogether()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1660_Item_00
+Function Fragment_Stage_1660_Item_00()
+;BEGIN CODE
+SetStage(1635)
+
+SetObjectiveCompleted(195)
+SetObjectiveDisplayed(200)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1800_Item_00
+Function Fragment_Stage_1800_Item_00()
+;BEGIN CODE
+Game.StopDialogueCamera()
+CompleteAllObjectives()
+
+MQ102.SetObjectiveDisplayed(10, true, true)
+FFLodge01.SetObjectiveDisplayed(10, true, true)
+
+Actor PlayerREF = Game.GetPlayer()
+PlayerREF.AddToFaction(ConstellationFaction)
+PlayerREF.AddItem(LodgeKey)
+
+Actor VascoREF = Vasco.GetReference() as Actor
+VascoREF.SetFactionRank(PotentialCrewFaction, 1)
+VascoREF.AddPerk(Crew_AneutronicFusion)
+VascoREF.AddPerk(Crew_Ship_Shields)
+VascoREF.AddPerk(Crew_Ship_Shields)
+VascoREF.AddPerk(Crew_Ship_Weapons_EM)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
+
+Scene Property RAS_MQ101_034b_InsideLodgeScene Auto Const Mandatory
+
+Scene Property RAS_MQ101_034c_Stage1600Scene Auto Const Mandatory
+
+ReferenceAlias Property LodgeTableActivator Auto Const
+
+ReferenceAlias Property SarahMorgan Auto Const
+
+Scene Property RAS_MQ101_039c_ArtifactsTogether03 Auto Const Mandatory
+
+ReferenceAlias Property Armillary Auto Const
+
+ReferenceAlias Property LodgeArtifact01 Auto Const
+
+ReferenceAlias Property NoelArtifact01 Auto Const
+
+ReferenceAlias Property NoelArtifact02 Auto Const
+
+Quest Property MQ102 Auto Const Mandatory
+
+ReferenceAlias Property Vasco Auto Const
+
+Quest Property FFLodge01 Auto Const Mandatory
+
+Perk Property Crew_AneutronicFusion Auto Const Mandatory
+
+Perk Property CREW_Ship_Shields Auto Const Mandatory
+
+Perk Property CREW_Ship_Weapons_EM Auto Const Mandatory
+
+Faction Property ConstellationFaction Auto Const Mandatory
+
+Faction Property PotentialCrewFaction Auto Const Mandatory
+
+Key Property LodgeKey Auto Const Mandatory

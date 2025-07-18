@@ -1,0 +1,18 @@
+;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
+Scriptname Fragments:TopicInfos:TIF_RAS_MQ101_01000AE2 Extends TopicInfo Hidden Const
+
+;BEGIN FRAGMENT Fragment_End
+Function Fragment_End(ObjectReference akSpeakerRef)
+Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN AUTOCAST TYPE RAS_MQ101Script
+RAS_MQ101Script kmyQuest = GetOwningQuest() as RAS_MQ101Script
+;END AUTOCAST
+;BEGIN CODE
+If(kmyQuest.GetStageDone(5))
+    Game.GetPlayer().AddItem(kmyQuest.Artifact01REF)
+EndIf
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;END FRAGMENT CODE - Do not edit anything between this and the begin comment
