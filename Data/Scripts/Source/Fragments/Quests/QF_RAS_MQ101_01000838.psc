@@ -23,6 +23,7 @@ RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
 ;BEGIN CODE
 kmyQuest.ConstellationInvite.Clear()
 kmyQuest.PlayerAlias.Clear()
+kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
 
 SetObjectiveCompleted(5)
 SetObjectiveDisplayed(10)
@@ -32,8 +33,25 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_0015_Item_00
 Function Fragment_Stage_0015_Item_00()
+;BEGIN AUTOCAST TYPE RAS_MQ101Script
+Quest __temp = self as Quest
+RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+;END AUTOCAST
 ;BEGIN CODE
+kmyQuest.ConstellationInvite.Clear()
+kmyQuest.PlayerAlias.Clear()
+kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
+
 SetObjectiveDisplayed(10)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_0020_Item_00
+Function Fragment_Stage_0020_Item_00()
+;BEGIN CODE
+SetObjectiveCompleted(10)
+SetObjectiveDisplayed(20)
 ;END CODE
 EndFunction
 ;END FRAGMENT
