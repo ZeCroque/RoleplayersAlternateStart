@@ -1,6 +1,7 @@
 Scriptname RAS_NewGameManagerQuestScript extends Quest Conditional
 
 Quest Property MQ101 Mandatory Const Auto
+Quest Property MQ101PostQuest Mandatory Const Auto
 Quest Property MQ102 Mandatory Const Auto
 Quest Property MQ104B Mandatory Const Auto
 Quest Property RAS_MQ104B Mandatory Const Auto
@@ -81,6 +82,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     MQ101.SetStage(1335) ;disable NA ship tech special greeting
     MQ101.SetStage(1800) 
     MQ101.Stop()
+    MQ101PostQuest.Stop() ;removes unwanted dialogs
 
     ;Add required triggers from stages we skipped
     City_NA_Aquilus01.Start()

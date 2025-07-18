@@ -3,8 +3,8 @@ Scriptname Fragments:Scenes:SF__01000980 Extends Scene Hidden Const
 
 ;BEGIN FRAGMENT Fragment_End
 Function Fragment_End()
-;BEGIN AUTOCAST TYPE mq101script
-mq101script kmyQuest = GetOwningQuest() as mq101script
+;BEGIN AUTOCAST TYPE RAS_MQ101Script
+RAS_MQ101Script kmyQuest = GetOwningQuest() as RAS_MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyquest.MQ101EnablePlayerControls()

@@ -60,13 +60,21 @@ EndFunction
 Function Fragment_Stage_1510_Item_00()
 ;BEGIN CODE
 RAS_MQ101_034b_InsideLodgeScene.Start()
+
+SetObjectiveCompleted(20)
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;BEGIN FRAGMENT Fragment_Stage_1600_Item_00
 Function Fragment_Stage_1600_Item_00()
+;BEGIN AUTOCAST TYPE RAS_MQ101Script
+Quest __temp = self as Quest
+RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+;END AUTOCAST
 ;BEGIN CODE
+kmyquest.MQ101DisablePlayerControls()
+
 RAS_MQ101_034b_InsideLodgeScene.Stop()
 RAS_MQ101_034c_Stage1600Scene.Start()
 ;END CODE
@@ -164,6 +172,14 @@ VascoREF.AddPerk(Crew_AneutronicFusion)
 VascoREF.AddPerk(Crew_Ship_Shields)
 VascoREF.AddPerk(Crew_Ship_Shields)
 VascoREF.AddPerk(Crew_Ship_Weapons_EM)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_1810_Item_00
+Function Fragment_Stage_1810_Item_00()
+;BEGIN CODE
+Stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT

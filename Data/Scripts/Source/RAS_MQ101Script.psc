@@ -8,7 +8,18 @@ ObjectReference Property MQ204_NA_HunterMarker Mandatory Const Auto
 Scene Property RAS_MQ101_VascoOutsideLodge Auto Const Mandatory
 
 ObjectReference Property Artifact01REF Auto
+
 ObjectReference MQ101SetStage1500TriggerREF
+InputEnableLayer VSEnableLayer
+
+Function MQ101DisablePlayerControls()
+	VSEnableLayer = InputEnableLayer.Create()
+	VSEnableLayer.DisablePlayerControls()
+EndFunction
+
+Function MQ101EnablePlayerControls()
+	VSEnableLayer = None
+EndFunction
 
 Event OnQuestInit()
     Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")

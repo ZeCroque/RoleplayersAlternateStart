@@ -5,12 +5,13 @@ Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Quest Property DialogueShipServices Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
+Quest Property RAS_MQ101 Mandatory Const Auto
 Location Property VecteraMineLocation Mandatory Const Auto
 ReferenceAlias Property Heller Mandatory Const Auto
 Keyword Property AnimFlavorTechReader Mandatory Const Auto
 
 Function ClearIfNoLongerNeeded()
-    If((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference == None && RAS_MQReplacerQuest.GetStage() >= 10)
+    If((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference == None && RAS_MQ101.GetStage() == 1810)
         Clear()
     EndIf
 EndFunction
@@ -22,8 +23,12 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
         MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
         MQReplacerQuestScript.ArtifactLocation.RefillDependentAliases()
         MQReplacerQuestScript.SetStage(10)
+    ElseIf(RAS_MQ101.GetStage() == 1800)
+        ;Stopping MQ101 to reset lodge packages and so on
+        RAS_MQ101.SetStage(1810)
         ClearIfNoLongerNeeded()
     ElseIf(akNewLoc == VecteraMineLocation && RAS_NewGameManagerQuest.GetStage() == 5)
+        ;Vanilla start
         RAS_NewGameManagerQuest.Stop()
         MQ101.SetObjectiveDisplayed(5, True, True)
         Heller.GetReference().RemoveKeyword(AnimFlavorTechReader)
