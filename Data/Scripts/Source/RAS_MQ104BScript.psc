@@ -68,7 +68,7 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
 
             Self.UnregisterForRemoteEvent(LC127PersistentREF, "OnCellLoad")
         ElseIf(akSender == CrashedShipMapMarker.GetReference())
-            RAS_MQ104B.SetStage(120)
+            Self.RegisterForDistanceLessThanEvent(CrashedShipMapMarker.GetReference(), Game.GetPlayer(), 10)
 
             Self.UnregisterForRemoteEvent(CrashedShipMapMarker.GetReference(), "OnCellLoad")
         ElseIf(akSender == LodgePersistentREF)
@@ -136,4 +136,8 @@ Event ObjectReference.OnTriggerEnter(ObjectReference akTrigger, ObjectReference 
       Self.UnregisterForRemoteEvent(MQ104BSetStage400Trigger, "OnTriggerEnter")
     EndIf
   EndIf
+EndEvent
+
+Event OnDistanceLessThan(ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID)
+    RAS_MQ104B.SetStage(120)
 EndEvent
