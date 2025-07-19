@@ -28,6 +28,7 @@ ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
 ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
 ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
+ReferenceAlias Property MineWallBreakable Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -102,6 +103,9 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     VecteraWorldCompanionCommentTrigger.GetReference().Disable()
     VecteraMineCompanionCommentTrigger.GetReference().Disable()
 
+    ;Register to undo drill anim each time
+    Self.RegisterForRemoteEvent(MineWallBreakable.GetReference(), "OnCellLoad")
+
     ;Register to remove unwanted vasco trigger
     Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
   EndIf
@@ -144,7 +148,12 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
 EndEvent
 
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
+  If(akSender == NewAtlantisToLodgeDoorREF)
     (Game.GetFormFromFile(0x110644, "Starfield.esm") as ObjectReference).Disable() ;Disable warning creating MQ101 trigger
     
     Self.UnregisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
+  ElseIf(akSender == MineWallBreakable.GetReference())
+    Utility.Wait(1) ;Wait for drill anim to end
+    MineWallBreakable.GetReference().PlayAnimation("Stage1")
+  EndIf
 EndEvent
