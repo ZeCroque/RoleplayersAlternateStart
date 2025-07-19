@@ -26,6 +26,8 @@ ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 ObjectReference Property VecteraMineStarMarker Auto Const Mandatory
 ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
+ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
+ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -82,7 +84,6 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     MQ101.SetStage(1335) ;disable NA ship tech special greeting
     MQ101.SetStage(1800) 
     MQ101.Stop()
-    MQ101PostQuest.Stop() ;removes unwanted dialogs
 
     ;Add required triggers from stages we skipped
     City_NA_Aquilus01.Start()
@@ -96,6 +97,13 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;Locks the lodge until we start the custom quest
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
+
+    ;Prevent companion comments about the mining operation
+    VecteraWorldCompanionCommentTrigger.GetReference().Disable()
+    VecteraMineCompanionCommentTrigger.GetReference().Disable()
+
+    ;Register to remove unwanted vasco trigger
+    Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
   EndIf
 EndEvent
 
@@ -117,6 +125,8 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Weapons_EM)
+
+    MQ101PostQuest.Stop() ;removes unwanted dialogs
   ElseIf(akSender == FFLodge01 && auiStageID == 10)
     FFLodge01.SetObjectiveDisplayed(10, false, true)
     Self.UnregisterForRemoteEvent(FFLodge01, "OnStageSet")
@@ -131,4 +141,10 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     RAS_MQ104B.SetStage(5)
     Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
   EndIf
+EndEvent
+
+Event ObjectReference.OnCellLoad(ObjectReference akSender)
+    (Game.GetFormFromFile(0x110644, "Starfield.esm") as ObjectReference).Disable() ;Disable warning creating MQ101 trigger
+    
+    Self.UnregisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
 EndEvent

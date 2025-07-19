@@ -16,8 +16,7 @@ EndFunction
 
 Event ObjectReference.OnSell(ObjectReference akSender, Actor akSeller)
   Self.UnregisterForRemoteEvent(Artifact01REF, "OnSell")
-  Artifact01REF = None ;We disposed of artifact the right way, we no longer handle it
-  Artifact01REFCopy.Delete()
+  Artifact01REFCopy.Drop(True)
   Artifact01REFCopy = None
   SetStage(30)
   PlayerAlias.Clear()

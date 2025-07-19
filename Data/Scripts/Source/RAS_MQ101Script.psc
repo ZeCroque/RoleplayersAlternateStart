@@ -28,6 +28,8 @@ EndEvent
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
     MQ101SetStage1500TriggerREF = Game.GetFormFromFile(0x110654, "Starfield.esm") as ObjectReference
     Self.RegisterForRemoteEvent(MQ101SetStage1500TriggerREF, "OnTriggerEnter")
+
+    Self.UnregisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
 EndEvent
 
 Event ObjectReference.OnTriggerEnter(ObjectReference akSender, ObjectReference akActionRef)
