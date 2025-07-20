@@ -4,30 +4,25 @@ Scriptname Fragments:Quests:QF_RAS_0100083A Extends Quest Hidden Const
 ;BEGIN FRAGMENT Fragment_Stage_0000_Item_00
 Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
-MQ101Debug.SetValueInt(2)
-MQ101.SetStage(1800)
-MQ102.SetStage(1150)
-MQ101.SetStage(1810)
-Game.GetPlayer().moveto(MQ104BStart001)
-Game.GetPlayer().additem(Credits, 1000)
-Game.GetPlayer().AddPerk(OutpostEngineering)
-Game.GetPlayer().AddPerk(InformationSystems)
-Game.GetPlayer().AddPerk(TraitEmpath)
-Game.GetPlayer().AddPerk(Medicine)
-Game.GetPlayer().AddPerk(FactionCrimsonFleetPerk)
+LC001VecteraLiftDoor.SetLockLevel(254)
+LC001VecteraLiftDoor.Lock()
 
-;setup armillary
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(0)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(18)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(3)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(4)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(6)
+;undo crew quests changes
+Actor LinRef = Alias_Lin.GetActorRef()
+LinRef.RemoveFromFaction(PotentialCrewFaction)
+LinRef.RemovePerk(Crew_Demolitions)
+LinRef.RemovePerk(Crew_Outpost_Management)
+LinRef.RemovePerk(Crew_Outpost_Management)
+LinRef.RemovePerk(Crew_Outpost_Management)
 
-Alias_Lin.GetActorRef().moveto(MQ104BLinTravelMarker)
-Alias_DoorToSensorArray.GetRef().Disable()
-SetStage(10)
+Actor HellerREF = Alias_Heller.GetActorRef()
+HellerRef.RemoveFromFaction(PotentialCrewFaction)
+HellerRef.RemovePerk(Crew_Geology)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+HellerRef.RemovePerk(Crew_Outpost_Engineering)
+
+Alias_Barrett.GetActorRef().moveto(MQ104B_BarrettMovetoMarker)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -35,63 +30,9 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Stage_0001_Item_00
 Function Fragment_Stage_0001_Item_00()
 ;BEGIN CODE
-MQ101Debug.SetValueInt(2)
-MQ101.SetStage(1800)
-MQ101.SetStage(1810)
-MQ102.CompleteQuest()
-
-;setup armillary
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(0)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(18)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(3)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(4)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(6)
-
-Game.GetPlayer().moveto(Alias_HellerCrashStartMarker.GetRef())
-Game.GetPlayer().additem(Credits, 1000)
-SetStage(5)
-SetStage(110)
-SetStage(115)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_Stage_0002_Item_00
-Function Fragment_Stage_0002_Item_00()
-;BEGIN CODE
-MQ101Debug.SetValueInt(2)
-MQ101.SetStage(1800)
-MQ101.SetStage(1810)
-MQ102.CompleteQuest()
-
-;setup armillary
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(0)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(18)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(3)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(4)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(5)
-(Alias_ArtifactCollection.GetRef().GetLinkedRef() as ArmillaryScript).DebugSetArtifactAdded(6)
-
-Game.GetPlayer().moveto(MQ104B_BarrettDungeonStart)
-Game.GetPlayer().additem(Credits, 10000)
-Game.GetPlayer().AddPerk(Medicine)
-Game.GetPlayer().AddPerk(FactionCrimsonFleetPerk)
-
-;give player a ship
-Frontier_ModularREF.moveto(MQ104BBarrettDungeonLandingMarker)
-Frontier_ModularREF.setlinkedref(MQ104BBarrettDungeonLandingMarker, SpaceshipEnabledLandingLink)
+Frontier_ModularREF.MoveTo(VecteraShipLandingMarker)
+Frontier_ModularREF.SetLinkedRef(VecteraShipLandingMarker, CurrentInteractionLinkedRefKeyword)
 Frontier_ModularREF.Enable()
-(SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(Frontier_ModularREF as SpaceshipReference)
-
-
-SetStage(5)
-SetStage(130)
-SetStage(132)
-
-MQ104B_BarrettCell_EnableMaker.Disable()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -99,7 +40,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Stage_0005_Item_00
 Function Fragment_Stage_0005_Item_00()
 ;BEGIN CODE
-Actor HellerREF = Alias_Heller.GetActorRef()
+LC001VecteraLiftDoor.Unlock()
 
 ;allow landing at Vectera again
 Alias_VecteraMapMarker.GetRef().Enable()
@@ -107,10 +48,11 @@ Alias_VecteraMapMarker.GetRef().Enable()
 ;set up the state change on Vectera
 VecteraExteriorNPCEnableMarker001.Disable()
 VecteraInteriorNPCEnableMarker.Disable()
+
+Actor HellerREF = Alias_Heller.GetActorRef()
 HellerREF.moveto(Alias_HellerWoundedMArker.GetRef())
 HellerREF.SetGhost()
 HellerREF.AddtoFaction(CaptiveFaction)
-Alias_Barrett.GetActorRef().moveto(MQ104B_BarrettMovetoMarker)
 
 ;make sure door to Barret dungeon is open
 Alias_BarrettDungeonDoor.GetRef().Lock(False)
@@ -125,21 +67,6 @@ Alias_Lin.GetActorRef().moveto(MQ104BLinTravelMarker)
 Actor MatsuraREF = Alias_Matsura.GetActorRef()
 MatsuraREF.RemoveFromFaction(PlayerEnemyFaction)
 Alias_MatsuraBodyguards.RemoveFromFaction(PlayerEnemyFaction)
-
-;undo crew quests changes
-Actor LinRef = Alias_Lin.GetActorRef()
-LinRef.RemoveFromFaction(PotentialCrewFaction)
-LinRef.RemovePerk(Crew_Demolitions)
-LinRef.RemovePerk(Crew_Outpost_Management)
-LinRef.RemovePerk(Crew_Outpost_Management)
-LinRef.RemovePerk(Crew_Outpost_Management)
-
-HellerRef.RemoveFromFaction(PotentialCrewFaction)
-HellerRef.RemovePerk(Crew_Geology)
-HellerRef.RemovePerk(Crew_Outpost_Engineering)
-HellerRef.RemovePerk(Crew_Outpost_Engineering)
-HellerRef.RemovePerk(Crew_Outpost_Engineering)
-
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -849,3 +776,8 @@ Perk Property Crew_Geology Auto Const Mandatory
 Perk Property Crew_Outpost_Engineering Auto Const Mandatory
 
 Quest Property RAS_MQ104B Auto Const Mandatory
+ObjectReference Property VecteraShipLandingMarker Auto Const
+
+Keyword Property CurrentInteractionLinkedRefKeyword Auto Const Mandatory
+
+ObjectReference Property LC001VecteraLiftDoor Auto Const

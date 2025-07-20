@@ -80,6 +80,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
     ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
+    Self.RegisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
     Self.RegisterForRemoteEvent(MQ102, "OnStageSet")
     Self.RegisterForRemoteEvent(FFLodge01, "OnStageSet")
     MQ101.SetStage(1335) ;disable NA ship tech special greeting
@@ -93,6 +94,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
     Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
     MQ104B.Start()
+    MQ104B.SetStage(390) ;Prevents Sarah commentary
     MQ104B.Stop()
 
     ;Locks the lodge until we start the custom quest
@@ -129,8 +131,6 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Weapons_EM)
-
-    MQ101PostQuest.Stop() ;removes unwanted dialogs
   ElseIf(akSender == FFLodge01 && auiStageID == 10)
     FFLodge01.SetObjectiveDisplayed(10, false, true)
     Self.UnregisterForRemoteEvent(FFLodge01, "OnStageSet")
@@ -141,10 +141,19 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       RAS_MQ104B.SetStage(10)
       Self.UnregisterForRemoteEvent(MQ102, "OnStageSet")
     Endif
-  ElseIf(akSender == MQ104B && auiStageID == 2000)
-    RAS_MQ104B.SetStage(5)
-    Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
+  ElseIf(akSender == MQ104B)
+    If(auiStageID == 390)
+      MQ104B.SetObjectiveDisplayed(115, False, True)
+    ElseIf(auiStageID == 2000)
+      RAS_MQ104B.SetStage(0)
+      Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
+    EndIf
   EndIf
+EndEvent
+
+Event Quest.OnQuestStarted(Quest akSender)
+  MQ101PostQuest.Stop() ;removes unwanted dialogs
+  Self.UnregisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
 EndEvent
 
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
