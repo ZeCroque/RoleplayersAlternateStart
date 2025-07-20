@@ -563,8 +563,6 @@ Else
   (SQ_Companions as SQ_CompanionsScript).SetRoleActive(BarrettREF)
   BarrettREF.EvaluatePackage()
 EndIf
-
-SetStage(1000)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -574,8 +572,6 @@ Function Fragment_Stage_0420_Item_00()
 ;BEGIN CODE
 Actor BarrettREF = Alias_Barrett.GetActorRef()
 (SQ_Companions as SQ_CompanionsScript).SetRoleAvailable(BarrettREF)
-
-SetStage(1000)
 ;END CODE
 EndFunction
 ;END FRAGMENT

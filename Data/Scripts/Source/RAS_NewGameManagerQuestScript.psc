@@ -82,6 +82,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
     Self.RegisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
+    Self.RegisterForRemoteEvent(MQ_TutorialQuest_Misc04, "OnQuestStarted")
     Self.RegisterForRemoteEvent(MQ102, "OnStageSet")
     Self.RegisterForRemoteEvent(FFLodge01, "OnStageSet")
     MQ101.SetStage(1335) ;disable NA ship tech special greeting
