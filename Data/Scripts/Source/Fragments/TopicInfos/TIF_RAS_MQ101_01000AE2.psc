@@ -8,9 +8,7 @@ Actor akSpeaker = akSpeakerRef as Actor
 RAS_MQ101Script kmyQuest = GetOwningQuest() as RAS_MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
-If(kmyQuest.GetStageDone(5))
-    Game.GetPlayer().AddItem(kmyQuest.Artifact01REF)
-EndIf
+Game.GetPlayer().AddItem(kmyQuest.Artifact01REF)
 ;END CODE
 EndFunction
 ;END FRAGMENT
