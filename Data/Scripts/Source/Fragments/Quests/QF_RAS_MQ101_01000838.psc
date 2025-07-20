@@ -28,7 +28,7 @@ kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
 SetObjectiveCompleted(5)
 SetObjectiveDisplayed(10)
 
-PRAS_MQ104B.SetStage(1)
+RAS_MQ104B.SetStage(1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -46,7 +46,7 @@ kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
 
 SetObjectiveDisplayed(10)
 
-PRAS_MQ104B.SetStage(1)
+RAS_MQ104B.SetStage(1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -226,4 +226,4 @@ Faction Property PotentialCrewFaction Auto Const Mandatory
 
 Key Property LodgeKey Auto Const Mandatory
 
-Quest Property PRAS_MQ104B Auto Const Mandatory
+Quest Property RAS_MQ104B Auto Const Mandatory
