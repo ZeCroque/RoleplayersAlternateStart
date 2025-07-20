@@ -29,6 +29,7 @@ ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
 ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property MineWallBreakable Mandatory Const Auto
+Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -152,8 +153,13 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
 EndEvent
 
 Event Quest.OnQuestStarted(Quest akSender)
-  MQ101PostQuest.Stop() ;removes unwanted dialogs
-  Self.UnregisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
+  If(akSender == MQ101PostQuest)
+    MQ101PostQuest.Stop() ;removes unwanted dialogs
+    Self.UnregisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
+  ElseIf(akSender == MQ_TutorialQuest_Misc04)
+    MQ_TutorialQuest_Misc04.Stop()
+    Self.UnregisterForRemoteEvent(MQ_TutorialQuest_Misc04, "OnQuestStarted")
+  EndIf
 EndEvent
 
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
