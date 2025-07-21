@@ -6,6 +6,7 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Quest Property DialogueShipServices Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
+Quest Property TraitKidStuff Mandatory Const Auto
 Location Property VecteraMineLocation Mandatory Const Auto
 ReferenceAlias Property Heller Mandatory Const Auto
 Keyword Property AnimFlavorTechReader Mandatory Const Auto
@@ -27,6 +28,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
         ElseIf(RAS_MQ101.GetStage() == 1800)
             ;Stopping MQ101 to reset lodge packages and so on
             RAS_MQ101.SetStage(1810)
+            TraitKidStuff.SetStage(50)
             ClearIfNoLongerNeeded()
         ElseIf(akNewLoc == VecteraMineLocation && RAS_NewGameManagerQuest.GetStage() == 5)
             ;Vanilla start
