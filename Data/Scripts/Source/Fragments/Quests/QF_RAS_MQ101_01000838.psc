@@ -60,6 +60,14 @@ SetObjectiveDisplayed(20)
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_0025_Item_00
+Function Fragment_Stage_0025_Item_00()
+;BEGIN CODE
+SetObjectiveDisplayed(20)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_Stage_1510_Item_00
 Function Fragment_Stage_1510_Item_00()
 ;BEGIN CODE

@@ -30,15 +30,33 @@ ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property MineWallBreakable Mandatory Const Auto
 Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
+ActorValue Property RAS_AlternateStart Mandatory Const Auto
+FormList Property StarbornSaveActorValues Mandatory Const Auto
+GlobalVariable Property MQ101Debug Mandatory Const Auto
+GlobalVariable Property MQ401_VariantCurrent Mandatory Const Auto
+Message Property RAS_StarbornSaveActorValuesModifiedMessage Mandatory Const Auto
+Message Property RAS_MQ101DebugModifiedMessage Mandatory Const Auto
+Quest Property MQ401 Mandatory Const Auto
+Scene Property MQ401_002_AfterFaceGen Mandatory Const Auto
+Quest Property RAS_MQ101 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
 SpaceshipReference Property RAS_NoneShipReference Auto
 Bool Property PlayerShipless Auto Conditional
+Bool Property StarbornVanillaStart Auto Conditional
 
 Event OnQuestInit()
-    If MQ101.GetStageDone(105) == True || Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
-      Stop() 
+    If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
+      Stop()
+    ElseIf(StarbornSaveActorValues.HasForm(RAS_AlternateStart) == False)
+      RAS_StarbornSaveActorValuesModifiedMessage.Show()
+      Stop()
+    ElseIf(MQ101Debug.GetValue() != 5.0)
+      RAS_MQ101DebugModifiedMessage.Show()
+      Stop()
+    ElseIf(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
+      Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
     Else
       StayBlack.Apply() 
       Game.HideHudMenus()
@@ -61,6 +79,7 @@ Event OnStageSet(int auiStageID, int auiItemID)
       SetObjectiveCompleted(10)
       CompleteQuest()
     Else
+      Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
       (MQ101 as mq101script).VSEnableLayer.Delete()
       Game.PrecacheCharGen()
       Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
@@ -73,8 +92,16 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
 
-    SetStage(10)
+    SetStage(10) ;Show choose start objective and targets
+    ;Locks the lodge until we start the custom quest
+    NewAtlantisToLodgeDoorREF.SetLockLevel(254)
+    NewAtlantisToLodgeDoorREF.Lock()
 
+    HookMQ()
+  EndIf
+EndEvent
+
+Function HookMQ()
     Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
 
     MQ101.SetObjectiveDisplayed(5, False, True) ;This will ensure we don't see the quest in the log
@@ -98,11 +125,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     MQ104B.Start()
     MQ104B.SetStage(390) ;Prevents Sarah commentary
     MQ104B.Stop()
-
-    ;Locks the lodge until we start the custom quest
-    NewAtlantisToLodgeDoorREF.SetLockLevel(254)
-    NewAtlantisToLodgeDoorREF.Lock()
-
+    
     ;Prevent companion comments about the mining operation
     VecteraWorldCompanionCommentTrigger.GetReference().Disable()
     VecteraMineCompanionCommentTrigger.GetReference().Disable()
@@ -112,8 +135,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
 
     ;Register to remove unwanted vasco trigger
     Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
-  EndIf
-EndEvent
+EndFunction
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
@@ -149,6 +171,16 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     ElseIf(auiStageID == 2000)
       RAS_MQ104B.SetStage(0)
       Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
+    EndIf
+  ElseIf(akSender == MQ401 && auiStageID == 110)    
+    If(MQ401_VariantCurrent.GetValue() == 0)
+      MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
+      StarbornVanillaStart = True
+      MQ401_002_AfterFaceGen.Start()
+      HookMQ()
+      RAS_MQ101.SetStage(25)
+    Else
+      Stop()
     EndIf
   EndIf
 EndEvent
