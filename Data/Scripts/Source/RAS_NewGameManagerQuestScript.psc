@@ -42,6 +42,9 @@ GlobalVariable Property MQ401_SkipMQ Mandatory Const Auto
 Quest Property MQ402 Mandatory Const Auto
 Quest Property COM_Companion_SamCoe_CoraCoe_Handler Mandatory Const Auto
 Faction Property EyeBoardingFaction Mandatory Const Auto
+ObjectReference Property RAS_StarbornStuffTmpContainer Mandatory Const Auto
+ObjectReference Property Frontier_ModularREF Mandatory Const Auto
+FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -107,14 +110,19 @@ EndEvent
 Function HookMQ()
     Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
 
-    MQ101.SetObjectiveDisplayed(5, False, True) ;This will ensure we don't see the quest in the log
-    ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
-    ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
+    ;This will ensure we don't see the quest in the log
+    MQ101.SetObjectiveDisplayed(5, False, True) ;Vanilla
+    MQ101.SetObjectiveDisplayed(170, False, True) ;Starborn
+
+    ;Hooking quests to shutdown/silence
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
     Self.RegisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
     Self.RegisterForRemoteEvent(MQ_TutorialQuest_Misc04, "OnQuestStarted")
-    Self.RegisterForRemoteEvent(MQ102, "OnStageSet")
     Self.RegisterForRemoteEvent(FFLodge01, "OnStageSet")
+    Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Also used to trigger RAS_MQ104B
+
+    ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
+    ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
     MQ101.SetStage(1335) ;disable NA ship tech special greeting
     MQ101.SetStage(1800) 
     MQ101.Stop()
@@ -158,6 +166,11 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Shields)
     Vasco.RemovePerk(Crew_Ship_Weapons_EM)
+
+    If(StarbornVanillaStart)
+      RAS_StarbornStuffTmpContainer.RemoveAllItems(PlayerREF)
+      Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
+    EndIf
   ElseIf(akSender == FFLodge01 && auiStageID == 10)
     FFLodge01.SetObjectiveDisplayed(10, false, true)
     Self.UnregisterForRemoteEvent(FFLodge01, "OnStageSet")
@@ -180,8 +193,15 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       If(MQ401_VariantCurrent.GetValue() == 0)
         MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
         StarbornVanillaStart = True
+        Game.GetPlayer().RemoveAllItems(RAS_StarbornStuffTmpContainer)
         HookMQ()
         RAS_MQ101.SetStage(25)
+        Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
+        Int i = 0
+        While(i < ItemsToEquipBack.Length)
+          Game.GetPlayer().EquipItem(ItemsToEquipBack[i])
+          i = i + 1
+        EndWhile
         SetObjectiveDisplayed(10, False, True)
       Else
         Stop()
@@ -194,7 +214,11 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       MQ402.SetStage(10)
 
       COM_Companion_SamCoe_CoraCoe_Handler.Start()
-      FFLodge01.SetObjectiveDisplayed(10, true, true)
+      If(MQ401.GetStageDone(300))
+        FFLodge01.Stop()
+      Else
+        FFLodge01.SetObjectiveDisplayed(10, true, true)
+      EndIf
 
       Actor PlayerREF = Game.GetPlayer()
       PlayerREF.AddToFaction(ConstellationFaction)
@@ -207,6 +231,8 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       Vasco.AddPerk(Crew_Ship_Shields)
       Vasco.AddPerk(Crew_Ship_Shields)
       Vasco.AddPerk(Crew_Ship_Weapons_EM)
+
+      Game.AddPlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
     EndIf
   EndIf
 EndEvent

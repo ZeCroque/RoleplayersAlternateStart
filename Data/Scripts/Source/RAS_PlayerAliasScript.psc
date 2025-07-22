@@ -11,6 +11,7 @@ Location Property VecteraMineLocation Mandatory Const Auto
 ReferenceAlias Property Heller Mandatory Const Auto
 Keyword Property AnimFlavorTechReader Mandatory Const Auto
 Perk Property Trait_KidStuff Mandatory Const Auto
+FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto 
 
 Function ClearIfNoLongerNeeded()
     If((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference == None && RAS_MQ101.GetStage() == 1810)
@@ -57,5 +58,11 @@ Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
         DialogueShipServices.Start()
         akShip.SetExteriorLoadDoorInaccessible(False)
         ClearIfNoLongerNeeded()
+    EndIf
+EndEvent
+
+Event OnItemUnequipped(Form akBaseObject, ObjectReference akReference)
+    If((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
+        RAS_TmpItemsToEquipBack.AddForm(akBaseObject)
     EndIf
 EndEvent

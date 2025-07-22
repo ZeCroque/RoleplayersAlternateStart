@@ -64,6 +64,8 @@ EndFunction
 Function Fragment_Stage_0025_Item_00()
 ;BEGIN CODE
 SetObjectiveDisplayed(10)
+
+RAS_MQ104B.SetStage(1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
