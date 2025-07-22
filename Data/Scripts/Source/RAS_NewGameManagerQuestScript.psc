@@ -45,6 +45,7 @@ Faction Property EyeBoardingFaction Mandatory Const Auto
 ObjectReference Property RAS_StarbornStuffTmpContainer Mandatory Const Auto
 ObjectReference Property Frontier_ModularREF Mandatory Const Auto
 FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
+GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -62,6 +63,7 @@ Event OnQuestInit()
       RAS_MQ101DebugModifiedMessage.Show()
       Stop()
     ElseIf(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
+      Game.SetInChargen(True, False, False)
       Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
     Else
       StayBlack.Apply() 
@@ -149,6 +151,7 @@ Function HookMQ()
 EndFunction
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
+  MQ101SaveOff.SetValue(0) ;Prevent saving in NG+
   Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
   If(akSender == MQ101 && auiStageID == 9000)
     FastTravelTarget = RAS_ChooseStartCellMarkerREF
@@ -206,6 +209,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       Else
         Stop()
       EndIf
+      Game.SetInChargen(True, False, False)
     ElseIf(auiStageID == 300)
       RAS_MQ101.CompleteAllObjectives()
       RAS_MQ101.SetStage(2100)
