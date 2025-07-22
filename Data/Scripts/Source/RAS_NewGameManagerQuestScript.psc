@@ -46,6 +46,8 @@ ObjectReference Property RAS_StarbornStuffTmpContainer Mandatory Const Auto
 ObjectReference Property Frontier_ModularREF Mandatory Const Auto
 FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
+ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
+ReferenceAlias Property StarbornGuardianDoor Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -63,14 +65,19 @@ Event OnQuestInit()
       RAS_MQ101DebugModifiedMessage.Show()
       Stop()
     ElseIf(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
-      Game.SetInChargen(True, False, False)
+      StayBlack.Apply() 
+      Game.HideHudMenus()
+      Game.SetInChargen(True, True, False)
+      FastTravelTarget = StarbornGuardianDoor.GetReference()
       Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
+      Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
     Else
       StayBlack.Apply() 
       Game.HideHudMenus()
       Game.SetInChargen(True, True, False)
       InputLayer = InputEnableLayer.Create()
       InputLayer.DisablePlayerControls()
+      FastTravelTarget = RAS_ChooseStartCellMarkerREF
       Game.FastTravel(RAS_GameStartCellMarkerREF) 
     EndIf
 EndEvent
@@ -154,7 +161,6 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   MQ101SaveOff.SetValue(0) ;Prevent saving in NG+
   Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
   If(akSender == MQ101 && auiStageID == 9000)
-    FastTravelTarget = RAS_ChooseStartCellMarkerREF
     Game.FastTravel(RAS_TmpCellMarkerREF)
 
     Actor PlayerREF = Game.GetPlayer()
@@ -171,7 +177,21 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Vasco.RemovePerk(Crew_Ship_Weapons_EM)
 
     If(StarbornVanillaStart)
-      RAS_StarbornStuffTmpContainer.RemoveAllItems(PlayerREF)
+      ;Restore inventory silently
+      Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
+      Int i = 0
+      While(i < ItemsToEquipBack.Length)
+        Game.GetPlayer().EquipItem(ItemsToEquipBack[i], true)
+        RAS_StarbornStuffTmpContainer.RemoveItem(ItemsToEquipBack[i])
+        i = i + 1
+      EndWhile
+      i = 0
+      Int ItemCount = RAS_StarbornStuffTmpContainer.GetItemCount()
+      While(i < ItemCount)
+        Game.GetPlayer().AddItem(akItemToAdd = RAS_StarbornStuffTmpContainer.DropFirstObject(), abSilent = True)
+        i = i + 1
+      EndWhile
+    
       Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
     EndIf
   ElseIf(akSender == FFLodge01 && auiStageID == 10)
@@ -196,20 +216,21 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       If(MQ401_VariantCurrent.GetValue() == 0)
         MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
         StarbornVanillaStart = True
-        Game.GetPlayer().RemoveAllItems(RAS_StarbornStuffTmpContainer)
-        HookMQ()
-        RAS_MQ101.SetStage(25)
-        Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
-        Int i = 0
-        While(i < ItemsToEquipBack.Length)
-          Game.GetPlayer().EquipItem(ItemsToEquipBack[i])
-          i = i + 1
-        EndWhile
         SetObjectiveDisplayed(10, False, True)
+        Game.SetInChargen(True, False, False)
+
+        ;Put starborn items aside to prevent them from being erased with MQ101 quest rewards by hooks
+        Game.GetPlayer().RemoveAllItems(RAS_StarbornStuffTmpContainer)
+        
+        ;Register hooks
+        HookMQ()
+
+        ;Setting up mq replacer and make sure we stop listening to unequip events on alias
+        RAS_MQ101.SetStage(25)
+        RAS_MQ101.SetActive()
       Else
         Stop()
       EndIf
-      Game.SetInChargen(True, False, False)
     ElseIf(auiStageID == 300)
       RAS_MQ101.CompleteAllObjectives()
       RAS_MQ101.SetStage(2100)
@@ -261,3 +282,9 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
     MineWallBreakable.GetReference().PlayAnimation("Stage1")
   EndIf
 EndEvent
+
+Event Location.OnLocationLoaded(Location akSender)
+  Game.SetInChargen(False, False, False) 
+  Self.UnregisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
+EndEvent
+

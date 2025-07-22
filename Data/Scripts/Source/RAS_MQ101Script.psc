@@ -33,7 +33,7 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
 EndEvent
 
 Event ObjectReference.OnTriggerEnter(ObjectReference akSender, ObjectReference akActionRef)
-    if(GetStage() >= 10 && akActionRef == Game.GetPlayer())
+    if(akActionRef == Game.GetPlayer() && GetStage() >= 10 && GetStage() < 25)
         SetStage(20)
         RAS_MQ101_VascoOutsideLodge.Start()
         Self.UnregisterForRemoteEvent(MQ101SetStage1500TriggerREF, "OnTriggerEnter")
