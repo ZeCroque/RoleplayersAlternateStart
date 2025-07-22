@@ -37,8 +37,11 @@ GlobalVariable Property MQ401_VariantCurrent Mandatory Const Auto
 Message Property RAS_StarbornSaveActorValuesModifiedMessage Mandatory Const Auto
 Message Property RAS_MQ101DebugModifiedMessage Mandatory Const Auto
 Quest Property MQ401 Mandatory Const Auto
-Scene Property MQ401_002_AfterFaceGen Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
+GlobalVariable Property MQ401_SkipMQ Mandatory Const Auto
+Quest Property MQ402 Mandatory Const Auto
+Quest Property COM_Companion_SamCoe_CoraCoe_Handler Mandatory Const Auto
+Faction Property EyeBoardingFaction Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -172,15 +175,38 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       RAS_MQ104B.SetStage(0)
       Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
     EndIf
-  ElseIf(akSender == MQ401 && auiStageID == 110)    
-    If(MQ401_VariantCurrent.GetValue() == 0)
-      MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
-      StarbornVanillaStart = True
-      MQ401_002_AfterFaceGen.Start()
-      HookMQ()
-      RAS_MQ101.SetStage(25)
-    Else
-      Stop()
+  ElseIf(akSender == MQ401 )
+    If(auiStageID == 110)    
+      If(MQ401_VariantCurrent.GetValue() == 0)
+        MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
+        StarbornVanillaStart = True
+        HookMQ()
+        RAS_MQ101.SetStage(25)
+        SetObjectiveDisplayed(10, False, True)
+      Else
+        Stop()
+      EndIf
+    ElseIf(auiStageID == 300)
+      RAS_MQ101.CompleteAllObjectives()
+      RAS_MQ101.SetStage(2100)
+      MQ401_SkipMQ.SetValueInt(1)
+      MQ102.Stop()
+      MQ402.SetStage(10)
+
+      COM_Companion_SamCoe_CoraCoe_Handler.Start()
+      FFLodge01.SetObjectiveDisplayed(10, true, true)
+
+      Actor PlayerREF = Game.GetPlayer()
+      PlayerREF.AddToFaction(ConstellationFaction)
+      PlayerREF.AddItem(LodgeKey)
+      PlayerREF.addtoFaction(EyeBoardingFaction)
+
+      Actor Vasco = VascoREF as Actor
+      Vasco.SetFactionRank(PotentialCrewFaction, 1)
+      Vasco.AddPerk(Crew_Ship_AneutronicFusion)
+      Vasco.AddPerk(Crew_Ship_Shields)
+      Vasco.AddPerk(Crew_Ship_Shields)
+      Vasco.AddPerk(Crew_Ship_Weapons_EM)
     EndIf
   EndIf
 EndEvent

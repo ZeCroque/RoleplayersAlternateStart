@@ -10,6 +10,7 @@ Quest Property TraitKidStuff Mandatory Const Auto
 Location Property VecteraMineLocation Mandatory Const Auto
 ReferenceAlias Property Heller Mandatory Const Auto
 Keyword Property AnimFlavorTechReader Mandatory Const Auto
+Perk Property Trait_KidStuff Mandatory Const Auto
 
 Function ClearIfNoLongerNeeded()
     If((RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference == None && RAS_MQ101.GetStage() == 1810)
@@ -25,10 +26,12 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
             MQReplacerQuestScript.ArtifactLocation.RefillDependentAliases()
             MQReplacerQuestScript.SetStage(10)
-        ElseIf(RAS_MQ101.GetStage() == 1800)
+        ElseIf(RAS_MQ101.GetStage() == 1800 || RAS_MQ101.GetStage() == 2100)
             ;Stopping MQ101 to reset lodge packages and so on
             RAS_MQ101.SetStage(1810)
-            TraitKidStuff.SetStage(50)
+            If Game.GetPlayer().HasPerk(Trait_KidStuff)
+                TraitKidStuff.SetStage(50)
+            EndIf
             ClearIfNoLongerNeeded()
         ElseIf(akNewLoc == VecteraMineLocation && RAS_NewGameManagerQuest.GetStage() == 5)
             ;Vanilla start

@@ -63,7 +63,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Stage_0025_Item_00
 Function Fragment_Stage_0025_Item_00()
 ;BEGIN CODE
-SetObjectiveDisplayed(20)
+SetObjectiveDisplayed(10)
 ;END CODE
 EndFunction
 ;END FRAGMENT
