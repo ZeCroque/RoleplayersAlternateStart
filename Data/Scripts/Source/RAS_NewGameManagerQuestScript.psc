@@ -47,13 +47,13 @@ ObjectReference Property Frontier_ModularREF Mandatory Const Auto
 FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
-ReferenceAlias Property StarbornGuardianDoor Mandatory Const Auto
 ReferenceAlias Property StarbornGuardianSeat Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
 SpaceshipReference Property RAS_NoneShipReference Auto
 Bool Property PlayerShipless Auto Conditional
+Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
 Event OnQuestInit()
@@ -65,22 +65,23 @@ Event OnQuestInit()
     ElseIf(MQ101Debug.GetValue() != 5.0)
       RAS_MQ101DebugModifiedMessage.Show()
       Stop()
-    ElseIf(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
-      StayBlack.Apply() 
-      Game.HideHudMenus()
-      Game.SetInChargen(True, True, False)
-      FastTravelTarget = StarbornGuardianDoor.GetReference()
-      StarbornGuardianSeat.GetReference().Disable()
-      Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
-      Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
     Else
       StayBlack.Apply() 
       Game.HideHudMenus()
       Game.SetInChargen(True, True, False)
       InputLayer = InputEnableLayer.Create()
       InputLayer.DisablePlayerControls()
-      FastTravelTarget = RAS_ChooseStartCellMarkerREF
-      Game.FastTravel(RAS_GameStartCellMarkerREF) 
+      If(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
+        StarbornStart = True
+        StarbornGuardianSeat.GetReference().Disable()
+        FastTravelTarget = MQPlayerStarbornShipREF
+
+        Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
+        Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
+      Else
+        FastTravelTarget = RAS_ChooseStartCellMarkerREF
+        Game.FastTravel(RAS_GameStartCellMarkerREF) 
+      EndIf
     EndIf
 EndEvent
 
@@ -215,11 +216,10 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     EndIf
   ElseIf(akSender == MQ401 )
     If(auiStageID == 110)    
+      SetObjectiveDisplayed(10, False, True)
       If(MQ401_VariantCurrent.GetValue() == 0)
         MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
         StarbornVanillaStart = True
-        SetObjectiveDisplayed(10, False, True)
-        Game.SetInChargen(True, False, False)
 
         ;Put starborn items aside to prevent them from being erased with MQ101 quest rewards by hooks
         Game.GetPlayer().RemoveAllItems(RAS_StarbornStuffTmpContainer)
@@ -231,7 +231,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
         RAS_MQ101.SetStage(25)
         RAS_MQ101.SetActive()
       Else
-        Stop()
+        Game.FastTravel(RAS_TmpCellMarkerREF)
       EndIf
     ElseIf(auiStageID == 300)
       RAS_MQ101.CompleteAllObjectives()
@@ -288,11 +288,17 @@ EndEvent
 Event Location.OnLocationLoaded(Location akSender)
   Game.SetInChargen(False, False, False) 
   Game.RequestSave()
-  Game.GetPlayer().MoveTo(StarbornGuardianDoor.GetReference())
+
   StarbornGuardianSeat.GetReference().Enable()
+  
   FadeFromBlack.Apply()
   Utility.Wait(0.2)
   StayBlack.Remove()
+  InputLayer.Delete()
+
+  If(StarbornVanillaStart == False)
+    Stop()
+  EndIf
 
   Self.UnregisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
 EndEvent
