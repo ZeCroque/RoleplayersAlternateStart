@@ -48,6 +48,7 @@ FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
 ReferenceAlias Property StarbornGuardianDoor Mandatory Const Auto
+ReferenceAlias Property StarbornGuardianSeat Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -69,6 +70,7 @@ Event OnQuestInit()
       Game.HideHudMenus()
       Game.SetInChargen(True, True, False)
       FastTravelTarget = StarbornGuardianDoor.GetReference()
+      StarbornGuardianSeat.GetReference().Disable()
       Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
       Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
     Else
@@ -285,6 +287,13 @@ EndEvent
 
 Event Location.OnLocationLoaded(Location akSender)
   Game.SetInChargen(False, False, False) 
+  Game.RequestSave()
+  Game.GetPlayer().MoveTo(StarbornGuardianDoor.GetReference())
+  StarbornGuardianSeat.GetReference().Enable()
+  FadeFromBlack.Apply()
+  Utility.Wait(0.2)
+  StayBlack.Remove()
+
   Self.UnregisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
 EndEvent
 
