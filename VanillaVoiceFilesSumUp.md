@@ -9,10 +9,15 @@ walter 34b 2: 00F17729
 matteo 34c: 00EB7496
 
 sarah 35 1 00094E94
-sarah 35 3 (2) 00E619A1 (to edit) -> 00B2C914
+sarah 35 3 (2) 00E619A1 -> 00B2C914
 sarah 35 3 (3) 005F9DF1
 
-sarah 36:  00F6BEFC
+sarah 36 1:  00F6BEFC
+walter 36 1 -> dcd1a1 + ec6fc1 + 5ede34 -> 005469F4 
+walter 36 2 00dc3f9d -> 0078CB21
+matteo 36 1 (1) 00BFCC45 -> 006B338C / 00B09ACA
+matteo 36 1 (2) 00F4632B -> 008F3966 / 0014BF14
+matteo 36 1 (3) 00C28AAF -> 00418A9B / 000043E2
 sarah 36 2 : 00DC6EBC
 
 sarah 37 :007B0907
@@ -30,7 +35,7 @@ sarah 39b 0036D429
 noel 39b 00106437
 noel 39b 2 001F769D
 noel 39b 3 008C5A41
-sarah 39b 3 009D1671
+sarah 39b 3 009D1671 -> 00D1E3B5  / 009D1671
 
 walter 39c 00A25BB4
 matteo 39c 00AF6F09
