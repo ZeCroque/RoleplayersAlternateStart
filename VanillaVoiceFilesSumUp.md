@@ -70,12 +70,15 @@ vasco 004D54B0
 
 sarah 02 3 (1) 000353AC
 sarah 02 3 (2) 0019BBBD
+walter 02 1 (1) 00ec6fc1 + 00dcd1a1 + 00238ea0 -> 007C13D0
+walter 02 1 (2) 00672A1D -> 006E6549
 matteo 02 1 (1a) 00CC90FE
 matteo 02 1 (1b) 00506811
 matteo 02 1 (1c) 002D59D2
 matteo 02 2 (1a) 00C69EDA
 matteo 02 2 (1b) 00EC42FC
 matteo 02 2 (1c) 00965B27
+sarah 02 4 (1a) 00185419 -> 000450C4
 sarah 02 4 (1b) 004C9391
 sarah 02 4 (2) 00510D24
 sarah 02 5 (1) 003AF35F
