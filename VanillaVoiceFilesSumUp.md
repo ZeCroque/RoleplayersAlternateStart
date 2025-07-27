@@ -87,6 +87,7 @@ sarah 02 5 (3) 00F26965
 
 # MQ104B
 
+lin 01 2 0001FAC8 -> 002F063C
 Lin 01 4 (1a) 00170A3A
 Lin 01 4 (1b) 00345E55
 Lin 01 4 (2) 005CA99B
@@ -108,12 +109,17 @@ lin 01 8a 0089E415
 lin 01 8b 00A35F1C
 lin 01 9 (1a) 00F162DC
 lin 01 9 (1b) 00960150
+lin 01 9 (1c) 00B3D2CF -> 0022859B
+lin 01 9 (2a) 00CFB1CA -> 003E70FE
 lin 01 9 (2b) 00FADF3B
+lin 01 9 (2c) 00F60031 -> 00014E3C
 lin 01 9 (3a) 0003DC4C
 lin 01 9 (3b) 00B47B67
 
 lin 1a 1 (1) 003DB5BA
 lin 1a 1 (2) 00A41C5B
+
+lin 1b 1 00B7399F -> 0063B512
 
 lin 02 1 (1) 00691C9D
 lin 02 1 (2) 0054AE05
@@ -132,6 +138,7 @@ lin 02 3 (3c)  0071532D
 lin 02 4 00432BA3
 
 lin 03 009B3B19
+heller 03 1.5 002408DF -> 00D8A2C2
 heller 03 2 000536F6
 heller 03 3 (1) 001DFCBE
 heller 03 3 (2) 00274858
@@ -270,10 +277,12 @@ barett 15 2 (1) 000D9758
 barrett 15 2 (2) 003CC406
 
 lin stage30hellos 1 00F4FF43
+lin stage30hellos 2 000297E5 -> 00D4A8C5
 lin stage30hellos 3 00FA98F5
 
 lin stage110hellos 1 007A6E6C
 lin stage110hellos 2 002639C3
+lin stage110hellos 3 0019E256 -> 00A11968
 
 barrett stage150hello 1 00761133
 barrett stage150hello 3 0019FCD1
