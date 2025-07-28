@@ -31,10 +31,8 @@ ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property MineWallBreakable Mandatory Const Auto
 Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
 ActorValue Property RAS_AlternateStart Mandatory Const Auto
-FormList Property StarbornSaveActorValues Mandatory Const Auto
 GlobalVariable Property MQ101Debug Mandatory Const Auto
 GlobalVariable Property MQ401_VariantCurrent Mandatory Const Auto
-Message Property RAS_StarbornSaveActorValuesModifiedMessage Mandatory Const Auto
 Message Property RAS_MQ101DebugModifiedMessage Mandatory Const Auto
 Quest Property MQ401 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
@@ -58,9 +56,6 @@ Bool Property StarbornVanillaStart Auto Conditional
 
 Event OnQuestInit()
     If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
-      Stop()
-    ElseIf(StarbornSaveActorValues.HasForm(RAS_AlternateStart) == False)
-      RAS_StarbornSaveActorValuesModifiedMessage.Show()
       Stop()
     ElseIf(MQ101Debug.GetValue() != 5.0)
       RAS_MQ101DebugModifiedMessage.Show()
@@ -286,15 +281,15 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
 EndEvent
 
 Event Location.OnLocationLoaded(Location akSender)
-  Game.SetInChargen(False, False, False) 
-  Game.RequestSave()
-
   StarbornGuardianSeat.GetReference().Enable()
   
   FadeFromBlack.Apply()
   Utility.Wait(0.2)
   StayBlack.Remove()
   InputLayer.Delete()
+
+  Game.SetInChargen(False, False, False) 
+  Game.RequestSave()
 
   If(StarbornVanillaStart == False)
     Stop()
