@@ -4,7 +4,7 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Keyword Property AnimArchetypePlayer Mandatory Const Auto
 ActorValue Property Experience Mandatory Const Auto
 Quest Property DialogueShipServices Mandatory Const Auto
-ObjectReference Property RAS_NewGameShipMarkerREF Mandatory Const Auto
+ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
 
@@ -16,7 +16,7 @@ Event OnCellLoad()
     Game.GetPlayer().SetValue(Experience, 0)
 
     RAS_NewGameManagerQuestScript NewGameManagerQuestScript = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript)
-    SpaceshipReference NoneShip  = RAS_NewGameShipMarkerREF.PlaceShipAtMe(RAS_NoneShip)
+    SpaceshipReference NoneShip  = RAS_ShipVendorMarker.PlaceShipAtMe(RAS_NoneShip)
     NewGameManagerQuestScript.RAS_NoneShipReference = NoneShip
     Game.AddPlayerOwnedShip(NoneShip)
     Game.TrySetPlayerHomeSpaceShip(NoneShip)

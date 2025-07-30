@@ -46,6 +46,7 @@ FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
 ReferenceAlias Property StarbornGuardianSeat Mandatory Const Auto
+Quest Property DialogueShipServices Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -298,3 +299,11 @@ Event Location.OnLocationLoaded(Location akSender)
   Self.UnregisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
 EndEvent
 
+Function SetupPlayerShip(SpaceshipReference akShip)
+  RAS_NoneShipReference = None
+  PlayerShipless = False
+  InputLayer.Delete()
+  DialogueShipServices.Reset()
+  DialogueShipServices.Start()
+  akShip.SetExteriorLoadDoorInaccessible(False)
+EndFunction

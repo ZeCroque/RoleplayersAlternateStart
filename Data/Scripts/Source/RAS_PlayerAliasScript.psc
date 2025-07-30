@@ -3,7 +3,6 @@ Scriptname RAS_PlayerAliasScript extends ReferenceAlias
 Keyword Property PCM_ArtifactCave Mandatory Const Auto
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
-Quest Property DialogueShipServices Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 Quest Property TraitKidStuff Mandatory Const Auto
@@ -46,18 +45,13 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
 EndEvent
 
 Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
-    SpaceshipReference NoneShip = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference
-    If(NoneShip && akShip != NoneShip)
-        Game.RemovePlayerOwnedShip(NoneShip)
-        NoneShip.Disable()
-        RAS_NewGameManagerQuestScript NewGameManagerQuestScript = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript)
-        NewGameManagerQuestScript.RAS_NoneShipReference = None
-        NewGameManagerQuestScript.PlayerShipless = False
-        NewGameManagerQuestScript.InputLayer.Delete()
-        DialogueShipServices.Reset()
-        DialogueShipServices.Start()
-        akShip.SetExteriorLoadDoorInaccessible(False)
-        ClearIfNoLongerNeeded()
+    If(RAS_NewGameManagerQuest.GetStageDone(100))
+        SpaceshipReference NoneShip = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference
+        If(NoneShip)
+            Game.RemovePlayerOwnedShip(NoneShip)
+            (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).SetupPlayerShip(akShip)
+            ClearIfNoLongerNeeded()
+        EndIf
     EndIf
 EndEvent
 

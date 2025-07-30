@@ -11,9 +11,13 @@ ShipVendorListScript property ShipsToSellListAlwaysDataset auto
 
 Location Property ShipVendorLocation Mandatory Const Auto
 
-ObjectReference myLandingMarker
+Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
+ObjectReference Property RAS_TestActivator Mandatory Const Auto
+
+ObjectReference myLandingMarker 
 SpaceshipReference[] shipsForSale
+SpaceshipReference Property currentShip Auto
 
 Event OnLoad()
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
@@ -22,12 +26,16 @@ Event OnLoad()
 EndEvent
 
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
-    debug.trace(self + " OnShipBought " + akSenderRef)
+    Game.RemovePlayerOwnedShip(currentShip)
+    currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
+    currentShip.SetActorRefOwner(self)
+    shipsForSale.Add(currentShip)
+
     int shipsForSaleIndex = shipsForSale.Find(akSenderRef)
-    if shipsForSaleIndex > -1
-        shipsForSale.Remove(shipsForSaleIndex)
-    endif
-    ;todo add the previous home ship to the list
+    currentShip = shipsForSale[shipsForSaleIndex]
+    shipsForSale.Remove(shipsForSaleIndex)
+
+    Game.GetPlayer().MoveTo(RAS_TestActivator) ;Force closes the menu
 EndEvent
 
 function CreateShipsForSale(ShipVendorListScript:ShipToSell[] shipToSellList, int playerLevel, ObjectReference createMarker, SpaceshipReference[] shipList)
@@ -69,5 +77,9 @@ SpaceshipReference function GetShipForSale(int index = 0)
 endFunction
 
 function StartShipVending()
+    If(currentShip == None)
+        currentShip = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference
+        RegisterForRemoteEvent(currentShip, "OnShipBought")
+    EndIf
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 endFunction
