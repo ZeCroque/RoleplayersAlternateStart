@@ -10,20 +10,43 @@ Actor Property RAS_VendorREF Mandatory Const Auto
 Message Property RAS_ChooseBudgetMessage Mandatory Const Auto
 ObjectReference Property RAS_VendorContainerREF Mandatory Const Auto
 MiscObject Property Credits Mandatory Const Auto
+Perk Property Skill_Commerce Mandatory Const Auto
+ConditionForm Property RAS_HasCommerceRank2 Mandatory Const Auto
+ConditionForm Property RAS_HasCommerceRank3 Mandatory Const Auto
+ConditionForm Property RAS_HasCommerceRank4 Mandatory Const Auto
 
 GlobalVariable Property RAS_LowBudget Mandatory Const Auto
 GlobalVariable Property RAS_MediumBudget Mandatory Const Auto
 GlobalVariable Property RAS_HighBudget Mandatory Const Auto
 
+Int budget = 4
+Int perkRank = 0
+
 Event OnActivate(ObjectReference akActionRef)
 
 	If(RAS_ChooseStartTypeMessage.Show() == 0)
 		If(RAS_ChooseStartTypeMessage.Show() == 0)
-			Int budget = RAS_ChooseBudgetMessage.Show()
+			budget = RAS_ChooseBudgetMessage.Show()
 			If(Budget < 4)
-				Game.GetPlayer().RemoveAllItems(RAS_VendorContainerREF)
+				Actor PlayerRef = Game.GetPlayer()
+				PlayerRef.RemoveAllItems(RAS_VendorContainerREF)
 				If(budget < 3)
+					perkRank = 0
+					If(PlayerRef.HasPerk(Skill_Commerce))
+						If(RAS_HasCommerceRank2.IsTrue())
+							perkRank = 2
+						ElseIf(RAS_HasCommerceRank3.IsTrue())
+							perkRank = 3
+						ElseIf(RAS_HasCommerceRank4.IsTrue())
+							perkRank = 4
+						Else
+							perkRank = 1
+						EndIf
+					EndIf
+
+					PlayerRef.RemovePerk(Skill_Commerce)
 					Game.GetPlayer().AddPerk(RAS_FullPriceShoppingPerk)
+
 					If(budget == 0)
 						Game.GivePlayerCaps(RAS_LowBudget.GetValue() as Int)
 					ElseIf(budget == 1)
@@ -71,8 +94,16 @@ Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
 			Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
 			UnregisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
 		Else
-			Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
-			Game.GetPlayer().RemovePerk(RAS_FullPriceShoppingPerk)
+			If(budget > 3)
+				Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
+			Else
+				Game.GetPlayer().RemovePerk(RAS_FullPriceShoppingPerk)
+				Int i = 0
+				While(i < perkRank)
+					Game.GetPlayer().AddPerk(Skill_Commerce)
+					i = i + 1
+				EndWhile
+			EndIf
 			UnregisterForMenuOpenCloseEvent("BarterMenu")
 		EndIf
 	EndIf
