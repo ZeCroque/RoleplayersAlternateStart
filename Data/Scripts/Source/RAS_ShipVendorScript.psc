@@ -13,7 +13,7 @@ Location Property ShipVendorLocation Mandatory Const Auto
 
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
-ObjectReference Property RAS_TestActivator Mandatory Const Auto
+Perk Property RAS_FreeShoppingPerk Mandatory Const Auto
 
 ObjectReference myLandingMarker 
 SpaceshipReference[] shipsForSale
@@ -35,7 +35,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     currentShip = shipsForSale[shipsForSaleIndex]
     shipsForSale.Remove(shipsForSaleIndex)
 
-    Game.GetPlayer().MoveTo(RAS_TestActivator) ;Force closes the menu
+    myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 EndEvent
 
 function CreateShipsForSale(ShipVendorListScript:ShipToSell[] shipToSellList, int playerLevel, ObjectReference createMarker, SpaceshipReference[] shipList)
@@ -77,9 +77,19 @@ SpaceshipReference function GetShipForSale(int index = 0)
 endFunction
 
 function StartShipVending()
+    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
     If(currentShip == None)
         currentShip = (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference
         RegisterForRemoteEvent(currentShip, "OnShipBought")
     EndIf
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 endFunction
+
+Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
+	If(abOpening)
+        Game.GetPlayer().AddPerk(RAS_FreeShoppingPerk)
+    Else
+		Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
+	EndIf
+EndEvent
+

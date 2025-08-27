@@ -4,15 +4,9 @@ Quest Property RAS_ArtifactGenerationQuest Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
-Perk Property RAS_FreeShoppingPerk Mandatory Const Auto
 
 Event OnActivate(ObjectReference akActionRef)
-
 	If(RAS_ChooseStartTypeMessage.Show() == 0)
-		Game.GetPlayer().AddPerk(RAS_FreeShoppingPerk)
-		RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
-		(RAS_ShipServicesActorREF as RAS_ShipVendorScript).StartShipVending()
-	Else
 		;Character choice done
 		;=====================
 		RAS_NewGameManagerQuest.SetStage(100)
@@ -22,18 +16,12 @@ Event OnActivate(ObjectReference akActionRef)
 		If(currentShip != (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference) 
 			(RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).SetupPlayerShip(currentShip)
 		EndIf
-
+	Else
 		;Debug
 		;=====
-		; RAS_ArtifactGenerationQuest.Start()
-		; RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
-		; Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
+		RAS_ArtifactGenerationQuest.Start()
+		RAS_ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS_ArtifactGenerationQuestScript
+		Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
 	Endif
 EndEvent
 
-Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
-	If(!abOpening)
-		Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
-		UnregisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
-	EndIf
-EndEvent
