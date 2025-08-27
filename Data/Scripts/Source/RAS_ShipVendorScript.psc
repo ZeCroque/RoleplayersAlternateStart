@@ -15,9 +15,18 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
 Perk Property RAS_FreeShoppingPerk Mandatory Const Auto
 
+ConditionForm Property RAS_AreVehiclesUnlocked Mandatory Const Auto
+
+Message Property RAS_VehicleUnlockingMessage Mandatory Const Auto
+
+Bool CapsGivenToUnlockVehicles = False
+
 ObjectReference myLandingMarker 
 SpaceshipReference[] shipsForSale
+
 SpaceshipReference Property currentShip Auto
+Bool Property NoShipSelected Auto Conditional 
+Int currentShipBaseFormID
 
 Event OnLoad()
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
@@ -27,14 +36,27 @@ EndEvent
 
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     Game.RemovePlayerOwnedShip(currentShip)
-    currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
-    currentShip.SetActorRefOwner(self)
-    shipsForSale.Add(currentShip)
 
-    int shipsForSaleIndex = shipsForSale.Find(akSenderRef)
-    currentShip = shipsForSale[shipsForSaleIndex]
-    shipsForSale.Remove(shipsForSaleIndex)
+    If(currentShip != (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference)
+        Debug.Trace(Game.GetForm(currentShipBaseFormID))
+        CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker, shipsForSale)
+        currentShip.Disable()
+    Else
+        currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
+        currentShip.SetActorRefOwner(self)
+        shipsForSale.Add(currentShip)
+    EndIf
+    
+    currentShip = akSenderRef
 
+    shipsForSale.Remove(shipsForSale.Find(akSenderRef))
+
+    If(currentShip == (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference)
+        NoShipSelected = True
+    Else
+        NoShipSelected = False
+        currentShipBaseFormID = currentShip.GetLeveledSpaceshipBase().GetFormID()
+    EndIf
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 EndEvent
 
@@ -52,6 +74,17 @@ function CreateShipsForSale(ShipVendorListScript:ShipToSell[] shipToSellList, in
 EndFunction
 
 function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
+    SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true, akEncLoc = ShipVendorLocation)
+    if newShip
+        shipList.Add(newShip)
+        newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
+        newShip.SetActorRefOwner(self)
+        RegisterForRemoteEvent(newShip, "OnShipBought")
+        newShip.RemoveAllItems()
+    endif
+endFunction
+
+function CreateUnleveledShipForSale(SpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
     SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true, akEncLoc = ShipVendorLocation)
     if newShip
         shipList.Add(newShip)
@@ -85,11 +118,30 @@ function StartShipVending()
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 endFunction
 
+function StartShipEditing()
+    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
+    myLandingMarker.ShowHangarMenu(0, self)
+endFunction
+
+function StartVehicleVending()
+    If(!RAS_AreVehiclesUnlocked.IsTrue())
+        RAS_VehicleUnlockingMessage.Show()
+        Game.GivePlayerCaps(25000)
+        CapsGivenToUnlockVehicles = True
+    EndIf
+    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
+    myLandingMarker.ShowHangarMenu(1, self)
+endFunction
+
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
 	If(abOpening)
         Game.GetPlayer().AddPerk(RAS_FreeShoppingPerk)
     Else
 		Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
+
+        If(!RAS_AreVehiclesUnlocked.IsTrue() && CapsGivenToUnlockVehicles)
+            Game.GetPlayer().RemoveItem(Game.GetCaps(), 25000)
+        EndIf
+        CapsGivenToUnlockVehicles = False
 	EndIf
 EndEvent
-

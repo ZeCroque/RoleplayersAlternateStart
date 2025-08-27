@@ -25,7 +25,7 @@ Event OnCellLoad()
     NewGameManagerQuestScript.InputLayer.EnableFarTravel(False)
     NewGameManagerQuestScript.InputLayer.EnableGravJump(False)
     NewGameManagerQuestScript.InputLayer.EnableTakeoff(False)
-    NewGameManagerQuestScript.PlayerShipless = True
+    NewGameManagerQuestScript.PedestrianStart = True
     DialogueShipServices.Stop()
     
     Disable()

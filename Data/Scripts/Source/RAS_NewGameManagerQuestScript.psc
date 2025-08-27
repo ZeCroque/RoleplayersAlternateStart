@@ -51,7 +51,7 @@ Quest Property DialogueShipServices Mandatory Const Auto
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
 SpaceshipReference Property RAS_NoneShipReference Auto
-Bool Property PlayerShipless Auto Conditional
+Bool Property PedestrianStart Auto Conditional
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
@@ -301,7 +301,7 @@ EndEvent
 
 Function SetupPlayerShip(SpaceshipReference akShip)
   RAS_NoneShipReference = None
-  PlayerShipless = False
+  PedestrianStart = False
   InputLayer.Delete()
   DialogueShipServices.Reset()
   DialogueShipServices.Start()
