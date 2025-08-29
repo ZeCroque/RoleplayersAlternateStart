@@ -4,6 +4,7 @@ Quest Property RAS_ArtifactGenerationQuest Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
+ObjectReference Property RAS_HomeChoosingTerminal Mandatory Const Auto
 
 Event OnActivate(ObjectReference akActionRef)
 	If(RAS_ChooseStartTypeMessage.Show() == 0)
@@ -16,6 +17,9 @@ Event OnActivate(ObjectReference akActionRef)
 		If(currentShip != (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference) 
 			(RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).SetupPlayerShip(currentShip)
 		EndIf
+
+        ;If player picked a home, give it to them
+		(RAS_HomeChoosingTerminal as RAS_HomeChoosingTerminalScript).AcquireSelectedHome()
 	Else
 		;Debug
 		;=====
