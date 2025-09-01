@@ -17,6 +17,6 @@ Event RAS_DynamicEntriesTerminalScript.SubmenuTriggered(RAS_DynamicEntriesTermin
 EndEvent
 
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
-    ;Handle item selection here. e.g: set "(DynamicTerminal as RAS_DynamicEntriesTerminalScript).CurrentSelection" to smth)
+    ;Handle item selection here. e.g: call "(DynamicTerminal as RAS_DynamicEntriesTerminalScript).ChangeSelection")
     ;Note that you will need to remove 1 to auiMenuItemID (or more if you manually added entries)
 EndEvent

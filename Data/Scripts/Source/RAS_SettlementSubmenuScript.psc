@@ -28,10 +28,8 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
     If(akTerminalBase == TerminalSubmenu)
         Int index = auiMenuItemID - 1
         If(index < Settlements.Length)
-            (DynamicTerminal as RAS_DynamicEntriesTerminalScript).CurrentFragment = RAS_DynamicEntry_Start_Default
-            (DynamicTerminal as RAS_DynamicEntriesTerminalScript).CurrentTextReplacement = Settlements[auiMenuItemID - 1]
+            (DynamicTerminal as RAS_DynamicEntriesTerminalScript).ChangeSelection(RAS_DynamicEntry_Start_Default, Settlements[auiMenuItemID - 1])
             (RAS_DynamicEntry_Start_Default as RAS_DefaultStart).TargetLocation = Settlements[auiMenuItemID - 1] as Location
-            (DynamicTerminal as RAS_DynamicEntriesTerminalScript).UpdateTerminalBodies()
         EndIf
     EndIf
 EndEvent

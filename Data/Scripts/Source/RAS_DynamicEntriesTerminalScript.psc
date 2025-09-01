@@ -7,21 +7,27 @@ TerminalMenu Property TerminalSubmenu Mandatory Const Auto
 Int Property TerminalSubmenuIdOffset Mandatory Const Auto
 
 Keyword Property RAS_SubmenuEntryKeyword Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Base_None Mandatory Const Auto
 
 FormList Property Entries Mandatory Const Auto
+MiscObject Property DefaultEntry Mandatory Const Auto
+Form Property DefaultTextReplacement Mandatory Const Auto
 
-Form Property CurrentFragment Auto
-Form Property CurrentTextReplacement Auto
+Form CurrentFragment
+Form CurrentTextReplacement
+Bool Property HasValidSelection Auto Conditional
 
 CustomEvent SelectedFragmentTriggered
 CustomEvent SubmenuTriggered
 
 Event OnCellLoad()
     Self.RegisterForRemoteEvent(MainTerminalMenu, "OnTerminalMenuItemRun")
+
+    ChangeSelection(DefaultEntry, DefaultTextReplacement)
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
-     UpdateTerminalBodies()
+     UpdateTerminalBody(MainTerminalMenu)
      UpdateTerminalList(Entries.GetArray(), False)
 EndEvent
 
@@ -35,12 +41,10 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
                 eventParams[0] = entriesArray[index]
                 Self.SendCustomEvent("SubmenuTriggered", eventParams)
                 Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
+                UpdateTerminalBody(TerminalSubmenu)
             Else
-                CurrentFragment = entriesArray[index]
-                CurrentTextReplacement = entriesArray[index]
+                ChangeSelection(entriesArray[index], entriesArray[index])
             EndIf
-
-            UpdateTerminalBodies()
         EndIf
     EndIf
 EndEvent
@@ -75,8 +79,16 @@ Function UpdateTerminalBody(TerminalMenu akTerminalMenu)
     akTerminalMenu.AddDynamicBodyTextItem(Self, 0, 0, tagReplacements)
 EndFunction
 
+Function ChangeSelection(Form akFragment, Form akTextSelection)
+    CurrentFragment = akFragment
+    CurrentTextReplacement = akTextSelection
+    UpdateTerminalBodies()
+
+    HasValidSelection = CurrentFragment == RAS_DynamicEntry_Base_None
+EndFunction
+
 Function CallSelectedFragment()
-    If(CurrentFragment) ;todo check against generic none
+    If(HasValidSelection)
         var[] eventParams = new var[1]
         eventParams[0] = CurrentFragment
         Self.SendCustomEvent("SelectedFragmentTriggered", eventParams)

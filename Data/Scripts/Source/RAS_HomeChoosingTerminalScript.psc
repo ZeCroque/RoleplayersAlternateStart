@@ -3,7 +3,7 @@ Scriptname RAS_HomeChoosingTerminalScript extends ObjectReference
 FormList Property RAS_HomesList Mandatory Const Auto
 TerminalMenu Property RAS_HomeChoosingTerminalMenu Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
-MiscObject Property RAS_NoneHome Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Base_None Mandatory Const Auto
 
 CustomEvent HomeChosen
 
@@ -14,7 +14,7 @@ Form[] homes = None
 Event OnCellLoad()
     PlayAnimation("Deploy")
     Self.RegisterForRemoteEvent(RAS_HomeChoosingTerminalMenu, "OnTerminalMenuItemRun")
-    CurrentHome = RAS_NoneHome
+    CurrentHome = RAS_DynamicEntry_Base_None
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
@@ -35,7 +35,7 @@ EndEvent
 
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
     If(auiMenuItemID == 1)
-        CurrentHome = RAS_NoneHome
+        CurrentHome = RAS_DynamicEntry_Base_None
 
         UpdateTerminalBody()
     Else
@@ -56,7 +56,7 @@ Function UpdateTerminalBody()
 EndFunction
 
 Function AcquireSelectedHome()
-    If(CurrentHome != RAS_NoneHome)
+    If(CurrentHome != RAS_DynamicEntry_Base_None)
         var[] eventParams = new var[1]
         eventParams[0] = CurrentHome
         Self.SendCustomEvent("HomeChosen", eventParams)

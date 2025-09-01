@@ -21,12 +21,8 @@ ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
 Guard Initializing ProtectsFunctionLogic
 Bool YetInit = False
 
-Event OnCellLoad()
-    RAS_DynamicEntriesTerminalScript dynamicEntriesTerminalScript = (RAS_StartingLocationTerminalREF as RAS_DynamicEntriesTerminalScript)
-    
-    dynamicEntriesTerminalScript.CurrentFragment = RAS_DynamicEntry_Start_Default
+Event OnCellLoad()    
     (RAS_DynamicEntry_Start_Default as RAS_DefaultStart).TargetLocation = CityNewAtlantisLocation
-    dynamicEntriesTerminalScript.CurrentTextReplacement = CityNewAtlantisLocation
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
