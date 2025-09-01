@@ -84,7 +84,7 @@ Function ChangeSelection(Form akFragment, Form akTextSelection)
     CurrentTextReplacement = akTextSelection
     UpdateTerminalBodies()
 
-    HasValidSelection = CurrentFragment == RAS_DynamicEntry_Base_None
+    HasValidSelection = CurrentFragment != RAS_DynamicEntry_Base_None
 EndFunction
 
 Function CallSelectedFragment()
