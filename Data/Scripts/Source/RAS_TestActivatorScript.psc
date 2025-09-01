@@ -5,6 +5,7 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminal Mandatory Const Auto
+ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
 
 Event OnActivate(ObjectReference akActionRef)
 	If(RAS_ChooseStartTypeMessage.Show() == 0)
@@ -20,6 +21,8 @@ Event OnActivate(ObjectReference akActionRef)
 
         ;If player picked a home, give it to them
 		(RAS_HomeChoosingTerminal as RAS_HomeChoosingTerminalScript).AcquireSelectedHome()
+
+		(RAS_StartingLocationTerminalREF as RAS_DynamicEntriesTerminalScript).CallSelectedFragment()
 	Else
 		;Debug
 		;=====
