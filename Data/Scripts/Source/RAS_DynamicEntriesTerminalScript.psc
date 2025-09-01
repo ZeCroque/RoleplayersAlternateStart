@@ -15,7 +15,7 @@ Form Property DefaultTextReplacement Mandatory Const Auto
 
 Form CurrentFragment
 Form CurrentTextReplacement
-Bool Property HasValidSelection Auto Conditional
+Bool Property HasValidSelection Auto
 
 CustomEvent SelectedFragmentTriggered
 CustomEvent SubmenuTriggered

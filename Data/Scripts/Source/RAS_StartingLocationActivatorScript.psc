@@ -16,6 +16,13 @@ FormList Property RAS_StarstationsLocationList Mandatory Const Auto
 
 FormList Property RAS_StartsList Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_Default Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Start_AtHome Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Start_AtDreamHome Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Start_AtParents Mandatory Const Auto
+Perk Property Trait_KidStuff Mandatory Const Auto
+Perk Property TRAIT_StarterHome Mandatory Const Auto
+ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
+
 ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
 
 Guard Initializing ProtectsFunctionLogic
@@ -23,9 +30,22 @@ Bool YetInit = False
 
 Event OnCellLoad()    
     (RAS_DynamicEntry_Start_Default as RAS_DefaultStart).TargetLocation = CityNewAtlantisLocation
+
+    Actor PlayerRef = Game.GetPlayer()
+    If(PlayerRef.HasPerk(Trait_KidStuff))
+        RAS_StartsList.AddForm(RAS_DynamicEntry_Start_AtParents)
+    EndIf
+
+    If(PlayerRef.HasPerk(TRAIT_StarterHome))
+        RAS_StartsList.AddForm(RAS_DynamicEntry_Start_AtDreamHome)
+    EndIf
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
+    If((RAS_HomeChoosingTerminalREF as RAS_DynamicEntriesTerminalScript).HasValidSelection)
+        RAS_StartsList.AddForm(RAS_DynamicEntry_Start_AtHome)
+    EndIf
+
     RAS_StartingLocationTerminalREF.Activate(akActionRef)
 EndEvent
 
