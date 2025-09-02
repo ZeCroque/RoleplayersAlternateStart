@@ -1,4 +1,4 @@
-Scriptname RAS_DynamicEntriesTerminalScript extends ObjectReference
+Scriptname RAS_DynamicEntriesTerminalScript extends ObjectReference Conditional
 
 TerminalMenu Property MainTerminalMenu Mandatory Const Auto
 Int Property MainTerminalIdOffset Mandatory Const Auto
@@ -15,7 +15,7 @@ Form Property DefaultTextReplacement Mandatory Const Auto
 
 Form CurrentFragment
 Form CurrentTextReplacement
-Bool Property HasValidSelection Auto
+Bool Property HasValidSelection Auto Conditional
 
 CustomEvent SelectedFragmentTriggered
 CustomEvent SubmenuTriggered

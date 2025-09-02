@@ -6,6 +6,7 @@ Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
+ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Auto
 
 Event OnActivate(ObjectReference akActionRef)
 	If(RAS_ChooseStartTypeMessage.Show() == 0)
@@ -24,6 +25,8 @@ Event OnActivate(ObjectReference akActionRef)
 
 		;Move player to its destination
 		(RAS_StartingLocationTerminalREF as RAS_DynamicEntriesTerminalScript).CallSelectedFragment()
+
+		(RAS_NarrativeAdjustmentsActivatorREF as RAS_NarrativeAdjustmentActScript).TriggerAllValidFragment()
 	Else
 		;Debug
 		;=====
