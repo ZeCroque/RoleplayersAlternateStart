@@ -7,6 +7,7 @@ Quest Property DialogueShipServices Mandatory Const Auto
 ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
+Armor Property Clothes_GenWare_01 Mandatory Const Auto
 
 Event OnCellLoad()
     Game.SetCharGenHUDMode(0)
@@ -27,6 +28,9 @@ Event OnCellLoad()
     NewGameManagerQuestScript.InputLayer.EnableTakeoff(False)
     NewGameManagerQuestScript.PedestrianStart = True
     DialogueShipServices.Stop()
+
+    Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
+    Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
     
     Disable()
 EndEvent

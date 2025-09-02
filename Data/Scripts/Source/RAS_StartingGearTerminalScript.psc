@@ -14,6 +14,7 @@ ConditionForm Property RAS_HasCommerceRank4 Mandatory Const Auto
 GlobalVariable Property RAS_LowBudget Mandatory Const Auto
 GlobalVariable Property RAS_MediumBudget Mandatory Const Auto
 GlobalVariable Property RAS_HighBudget Mandatory Const Auto
+Armor Property Clothes_GenWare_01 Mandatory Const Auto
 
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
@@ -36,7 +37,16 @@ Event OnActivate(ObjectReference akActionRef)
             Int choice = RAS_ChooseGearAgainMessage.Show()
             If(choice < 2)
                 If(choice == 1)
+                    Bool HasUndersuit = False
+                    If(Game.GetPlayer().GetItemCount(Clothes_GenWare_01))
+                        Game.GetPlayer().RemoveItem(Clothes_GenWare_01, 1, True)
+                        HasUndersuit = True
+                    EndIf
                     Game.GetPlayer().RemoveAllItems(RAS_VendorContainerREF)
+                    If(HasUndersuit)
+                        Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
+                        Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
+                    EndIf
                     RAS_CurrentBudget.SetValue(RAS_LowBudget.GetValue() as Int)
                     RAS_NewGameManagerQuest.UpdateCurrentInstanceGlobal(RAS_CurrentBudget)
                     KeepGearMode = False
