@@ -1,0 +1,7 @@
+Scriptname RAS_NarrativeAdjustmentActScript extends ObjectReference Const
+
+ObjectReference Property RAS_NarrativeAdjustmentsTerminalREF Mandatory Const Auto
+
+Event OnActivate(ObjectReference akActionRef)
+    RAS_NarrativeAdjustmentsTerminalREF.Activate(akActionRef)
+EndEvent
