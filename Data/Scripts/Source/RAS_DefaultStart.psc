@@ -18,6 +18,9 @@ EndEvent
 Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
         RAS_NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript
+        SpaceshipReference CurrentShip = (RAS_ShipServicesActorREF as RAS_ShipVendorScript).currentShip
+
+        ;Fill aliases
         newGameManagerQuestScript.StartingLocationAlias.ForceLocationTo(TargetLocation)
         Location[] parentLocations = TargetLocation.GetParentLocations()
         If(parentLocations.Length)
@@ -27,34 +30,26 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
         newGameManagerQuestScript.StartingLocationShipMarkerAlias.RefillAlias()
         newGameManagerQuestScript.StartingLocationParentMapMarkerAlias.RefillAlias()
 
-        SpaceshipReference CurrentShip = (RAS_ShipServicesActorREF as RAS_ShipVendorScript).currentShip
-        ObjectReference startMarker = newGameManagerQuestScript.StartingLocationMapMarkerAlias.GetReference() 
-        Debug.Trace("mapmarker" + startMarker)
-
         ;Sets up spaceship markers if applicable
         newGameManagerQuestScript.StartingLocationDockingPortDoorAlias.RefillAlias()
         ObjectReference shipDockingDoor = newGameManagerQuestScript.StartingLocationDockingPortDoorAlias.GetReference()
         ObjectReference spaceMarker = newGameManagerQuestScript.StartingLocationParentMapMarkerAlias.GetReference()
-        ObjectReference[] dockingPorts = None
+        
+        ;Find spaceship docking port
         ObjectReference validDockingPort = None
-        Debug.Trace("dockingdoor" + shipDockingDoor)
-        Debug.Trace("spaceMarker" + spaceMarker)
         If(shipDockingDoor && spaceMarker)
             Cell shipExteriorCell = shipDockingDoor.GetParentCell().GetParentRef().GetLinkedCell(SpaceshipLinkedExterior)
-            Debug.Trace("cell" + shipExteriorCell)
 
-            dockingPorts = shipDockingDoor.GetRefsLinkedToMe(SpaceshipDockDoor)
+            ObjectReference[] dockingPorts = shipDockingDoor.GetRefsLinkedToMe(SpaceshipDockDoor)
             Int i = 0
             While(i < dockingPorts.Length)
                 If(dockingPorts[i].GetParentCell() == shipExteriorCell)
                     validDockingPort = dockingPorts[i]
                     i = dockingPorts.Length ; break
                 EndIf
-                Debug.Trace(dockingPorts[i])
                 i += 1
             EndWhile
         EndIf
-        Debug.Trace(validDockingPort)
 
         If(validDockingPort)
             ;in spaceship
@@ -64,16 +59,15 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
             Game.GetPlayer().MoveTo(CurrentShip)
         Else
             ;on planet (or spaceship setup unexpected)
-            If(startMarker)
+            ObjectReference mapMarker = newGameManagerQuestScript.StartingLocationMapMarkerAlias.GetReference() 
+            If(mapMarker)
                 ;search for ship tech
                 newGameManagerQuestScript.StartingLocationShipTechAlias.RefillAlias()
                 ObjectReference shipTech = newGameManagerQuestScript.StartingLocationShipTechAlias.GetReference()
-                Debug.Trace("tecch" + shipTech)
 
                 If(shipTech)
                     ;has ship tech (settlement), find ship marker with it and move player to ship
                     ObjectReference shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
-                    Debug.Trace("shipMarker" + shipMarker)
                     CurrentShip.MoveTo(shipMarker)
                     CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
                     CurrentShip.Enable()
@@ -82,13 +76,13 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
                     ObjectReference shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
                     If(shipMarker)
                         ;No ship tech but ship marker (POI) move to ship marker (hoping it's the right one)
-                        Debug.Trace("marker" + shipMarker)
                         CurrentShip.MoveTo(shipMarker)
                         CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
                         CurrentShip.Enable()
                         Game.GetPlayer().MoveTo(CurrentShip)
                     Else
-                        Game.GetPlayer().MoveTo(startMarker)
+                        ;Fallback to the only known ref we have
+                        Game.GetPlayer().MoveTo(mapMarker)
                     EndIf
                 EndIf
             Else
