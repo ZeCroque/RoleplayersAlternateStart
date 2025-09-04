@@ -47,6 +47,17 @@ GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
 ReferenceAlias Property StarbornGuardianSeat Mandatory Const Auto
 Quest Property DialogueShipServices Mandatory Const Auto
+ReferenceAlias Property StartingLocationActivatorAlias Mandatory Const Auto
+ReferenceAlias Property StartingGearTerminalAlias Mandatory Const Auto
+ReferenceAlias Property HomeChoosingActivatorAlias Mandatory Const Auto
+ReferenceAlias Property LevelManagerActivatorAlias Mandatory Const Auto
+ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
+ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
+ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
+LocationAlias Property StartingLocationAlias Mandatory Const Auto
+ReferenceAlias Property StartingLocationMapMarkerAlias Mandatory Const Auto
+ReferenceAlias Property StartingLocationShipMarkerAlias Mandatory Const Auto
+ReferenceAlias Property StartingLocationShipTechAlias Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
@@ -56,29 +67,38 @@ Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
 Event OnQuestInit()
-    If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
-      Stop()
-    ElseIf(MQ101Debug.GetValue() != 5.0)
-      RAS_MQ101DebugModifiedMessage.Show()
-      Stop()
-    Else
-      StayBlack.Apply() 
-      Game.HideHudMenus()
-      Game.SetInChargen(True, True, False)
-      InputLayer = InputEnableLayer.Create()
-      InputLayer.DisablePlayerControls()
-      If(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
-        StarbornStart = True
-        StarbornGuardianSeat.GetReference().Disable()
-        FastTravelTarget = MQPlayerStarbornShipREF
+  If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
+    Stop()
+  ElseIf(MQ101Debug.GetValue() != 5.0)
+    RAS_MQ101DebugModifiedMessage.Show()
+    Stop()
+  Else
+    StayBlack.Apply() 
+    Game.HideHudMenus()
+    Game.SetInChargen(True, True, False)
+    InputLayer = InputEnableLayer.Create()
+    InputLayer.DisablePlayerControls()
+    If(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
+      StarbornStart = True
+      StarbornGuardianSeat.GetReference().Disable()
+      FastTravelTarget = MQPlayerStarbornShipREF
 
-        Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
-        Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
-      Else
-        FastTravelTarget = RAS_ChooseStartCellMarkerREF
-        Game.FastTravel(RAS_GameStartCellMarkerREF) 
-      EndIf
+      Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
+      Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
+    Else
+      FastTravelTarget = RAS_ChooseStartCellMarkerREF
+      Game.FastTravel(RAS_GameStartCellMarkerREF) 
     EndIf
+  EndIf
+
+  ;Register for activators
+  Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
 EndEvent
 
 Event OnStageSet(int auiStageID, int auiItemID)
@@ -307,3 +327,22 @@ Function SetupPlayerShip(SpaceshipReference akShip)
   DialogueShipServices.Start()
   akShip.SetExteriorLoadDoorInaccessible(False)
 EndFunction
+
+Event ReferenceAlias.OnActivate(ReferenceAlias akSender, ObjectReference akActionRef)
+    If(akSender == StartingLocationActivatorAlias)
+      SetStage(11)
+      SetObjectiveCompleted(10)
+    ElseIf(akSender == StartingGearTerminalAlias)
+      SetObjectiveCompleted(13)
+    ElseIf(akSender == HomeChoosingActivatorAlias)
+      SetObjectiveCompleted(11)
+    ElseIf(akSender ==  LevelManagerActivatorAlias)
+      SetObjectiveCompleted(14)
+    ElseIf(akSender == CharGenActivatorAlias)
+      SetObjectiveCompleted(16)
+    ElseIf(akSender == UnityShipServiceTechAlias)
+      SetObjectiveCompleted(12)
+    ElseIf(akSender == NarrativeAdjustmentsActivatorAlias)
+      SetObjectiveCompleted(15)
+ EndIf
+EndEvent
