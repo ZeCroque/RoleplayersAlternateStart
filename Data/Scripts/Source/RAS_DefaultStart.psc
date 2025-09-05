@@ -10,6 +10,11 @@ Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 Keyword Property LinkShipLandingMarker01 Mandatory Const Auto
 Keyword Property SpaceshipDockDoor Mandatory Const Auto
 Keyword Property SpaceshipLinkedExterior Mandatory Const Auto
+Keyword Property DynamicallyLinkedDoorTeleportMarkerKeyword Mandatory Const Auto
+Terminal Property RAS_StartingMapMarkerTerminal Mandatory Const Auto
+TerminalMenu Property RAS_StartingMapMarkerTerminalMenu Mandatory Const Auto
+
+ObjectReference startingMapMarkerTerminal 
 
 Event OnInit()
     RegisterForCustomEvent(DynamicTerminal as RAS_DynamicEntriesTerminalScript, "SelectedFragmentTriggered")
@@ -18,7 +23,8 @@ EndEvent
 Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
         RAS_NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript
-        SpaceshipReference CurrentShip = (RAS_ShipServicesActorREF as RAS_ShipVendorScript).currentShip
+        RAS_ShipVendorScript myShipVendorScript = RAS_ShipServicesActorREF as RAS_ShipVendorScript
+        SpaceshipReference CurrentShip = myShipVendorScript.currentShip
 
         ;Fill aliases
         newGameManagerQuestScript.StartingLocationAlias.ForceLocationTo(TargetLocation)
@@ -26,7 +32,7 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
         If(parentLocations.Length)
             newGameManagerQuestScript.StartingLocationParentAlias.ForceLocationTo(parentLocations[0])
         EndIf
-        newGameManagerQuestScript.StartingLocationMapMarkerAlias.RefillAlias()
+        newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.RefillAlias()
         newGameManagerQuestScript.StartingLocationShipMarkerAlias.RefillAlias()
         newGameManagerQuestScript.StartingLocationParentMapMarkerAlias.RefillAlias()
 
@@ -53,36 +59,61 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
 
         If(validDockingPort)
             ;in spaceship
-            CurrentShip.MoveTo(spaceMarker)
-            CurrentShip.InstantDock(validDockingPort)
-            CurrentShip.Enable()
-            Game.GetPlayer().MoveTo(CurrentShip)
+            If(myShipVendorScript.NoShipSelected)
+                Game.GetPlayer().MoveTo(shipDockingDoor.GetLinkedRef(DynamicallyLinkedDoorTeleportMarkerKeyword))
+            Else
+                CurrentShip.MoveTo(spaceMarker)
+                CurrentShip.InstantDock(validDockingPort)
+                CurrentShip.Enable()
+                Game.GetPlayer().MoveTo(CurrentShip)
+            EndIf
         Else
             ;on planet (or spaceship setup unexpected)
-            ObjectReference mapMarker = newGameManagerQuestScript.StartingLocationMapMarkerAlias.GetReference() 
-            If(mapMarker)
-                ;search for ship tech
+            If(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
+                ;search for ship 
                 newGameManagerQuestScript.StartingLocationShipTechAlias.RefillAlias()
                 ObjectReference shipTech = newGameManagerQuestScript.StartingLocationShipTechAlias.GetReference()
 
                 If(shipTech)
-                    ;has ship tech (settlement), find ship marker with it and move player to ship
+                    ;has ship tech (settlement), find ship marker linked to it
                     ObjectReference shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
-                    CurrentShip.MoveTo(shipMarker)
-                    CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
-                    CurrentShip.Enable()
-                    Game.GetPlayer().MoveTo(CurrentShip)
-                Else
-                    ObjectReference shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
-                    If(shipMarker)
-                        ;No ship tech but ship marker (POI) move to ship marker (hoping it's the right one)
+                    If(myShipVendorScript.NoShipSelected)
+                        ;Sets up and activate map marker choosing terminal
+                        If(!startingMapMarkerTerminal)
+                            startingMapMarkerTerminal = Game.GetPlayer().PlaceAtMe(RAS_StartingMapMarkerTerminal)
+                        EndIf
+
+                        Int i = 0
+                        While(i < newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
+                            Form[] tagReplacements = new Form[1]
+                            tagReplacements[0] = newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(i)
+                            RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, i + 1, tagReplacements)
+                            i += 1
+                        EndWhile
+                        
+                        Self.RegisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
+                        startingMapMarkerTerminal.Activate(Game.GetPlayer())
+                    Else
                         CurrentShip.MoveTo(shipMarker)
                         CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
                         CurrentShip.Enable()
                         Game.GetPlayer().MoveTo(CurrentShip)
+                    EndIf
+                Else
+                    ObjectReference shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
+                    If(shipMarker)
+                        ;No ship tech but ship marker (POI)(undefined behavior if more than one ship landing marker)
+                        If(myShipVendorScript.NoShipSelected)
+                            Game.GetPlayer().MoveTo(shipMarker)
+                        Else
+                            CurrentShip.MoveTo(shipMarker)
+                            CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
+                            CurrentShip.Enable()
+                            Game.GetPlayer().MoveTo(CurrentShip)
+                        EndIf
                     Else
                         ;Fallback to the only known ref we have
-                        Game.GetPlayer().MoveTo(mapMarker)
+                        Game.GetPlayer().MoveTo(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(0))
                     EndIf
                 EndIf
             Else
@@ -92,3 +123,14 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
         EndIf
     Endif
 EndEvent
+
+Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
+    RAS_NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript
+    
+    Int index = auiMenuItemID - 1 
+    If(index < newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
+        Game.GetPlayer().MoveTo(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(index))
+        Self.UnregisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
+    EndIf
+EndEvent
+

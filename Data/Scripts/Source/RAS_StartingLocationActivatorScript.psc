@@ -8,6 +8,7 @@ Location Property SettleCodysHillLocation Mandatory Const Auto
 Location Property SettleWaggonerFarmLocation Mandatory Const Auto
 Location Property StationTheClinicSecureWingLocation Mandatory Const Auto
 Location Property StationTheKeyInteriorLocation Mandatory Const Auto
+Location Property SettleCrucibleLocation Mandatory Const Auto
 Location Property CityNewAtlantisLocation Mandatory Const Auto
 FormList Property RAS_ExcludedSettlementsLocationList Mandatory Const Auto
 FormList Property RAS_SettlementsLocationList Mandatory Const Auto
@@ -58,7 +59,7 @@ Function InitStarts()
             RAS_ExcludedSettlementsLocationList.AddForm(SettleCodysHillLocation) ;cut content
             RAS_ExcludedSettlementsLocationList.AddForm(SettleWaggonerFarmLocation) ;does not make sense to start here
             RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x38CE7, "ShatteredSpace.esm"))  ;Dazra, quest location
-            RAS_ExcludedSettlementsLocationList.AddForm(None) 
+            RAS_ExcludedSettlementsLocationList.AddForm(SettleCrucibleLocation) ;quest location
 
             RAS_ExcludedStarstationsLocationList.AddForm(StationTheClinicSecureWingLocation) ;quest location
             RAS_ExcludedStarstationsLocationList.AddForm(StationTheKeyInteriorLocation) ;quest location
