@@ -13,6 +13,8 @@ Keyword Property SpaceshipLinkedExterior Mandatory Const Auto
 Keyword Property DynamicallyLinkedDoorTeleportMarkerKeyword Mandatory Const Auto
 Terminal Property RAS_StartingMapMarkerTerminal Mandatory Const Auto
 TerminalMenu Property RAS_StartingMapMarkerTerminalMenu Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_MapMarker_Ship Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_MapMarker_Viewport Mandatory Const Auto
 
 ObjectReference startingMapMarkerTerminal 
 
@@ -77,28 +79,26 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
                 If(shipTech)
                     ;has ship tech (settlement), find ship marker linked to it
                     ObjectReference shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
-                    If(myShipVendorScript.NoShipSelected)
-                        ;Sets up and activate map marker choosing terminal
-                        If(!startingMapMarkerTerminal)
-                            startingMapMarkerTerminal = Game.GetPlayer().PlaceAtMe(RAS_StartingMapMarkerTerminal)
-                        EndIf
-
-                        Int i = 0
-                        While(i < newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
-                            Form[] tagReplacements = new Form[1]
-                            tagReplacements[0] = newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(i)
-                            RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, i + 1, tagReplacements)
-                            i += 1
-                        EndWhile
-                        
-                        Self.RegisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
-                        startingMapMarkerTerminal.Activate(Game.GetPlayer())
-                    Else
+                    If(!myShipVendorScript.NoShipSelected)
                         CurrentShip.MoveTo(shipMarker)
                         CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
                         CurrentShip.Enable()
-                        Game.GetPlayer().MoveTo(CurrentShip)
+                        If(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount() == 1)
+                            Game.GetPlayer().MoveTo(CurrentShip)
+                            Return
+                        EndIf
+                    ElseIf(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount() == 1)
+                        Game.GetPlayer().MoveTo(shipMarker)
+
+                        ;Sometimes the ship tech could lead to a secondary ship marker that can be occupied (eg: RedMile)
+                        ObjectReference[] linkedShips = shipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
+                        If(linkedShips.Length)
+                            linkedShips[0].Disable()
+                        EndIf
+                        Return
                     EndIf
+
+                    SelectMapMarker()
                 Else
                     ObjectReference shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
                     If(shipMarker)
@@ -124,10 +124,55 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
     Endif
 EndEvent
 
+Function SelectMapMarker()
+    RAS_NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript
+    RAS_ShipVendorScript myShipVendorScript = RAS_ShipServicesActorREF as RAS_ShipVendorScript
+
+    ;Sets up and activate map marker choosing terminal
+    If(!startingMapMarkerTerminal)
+        startingMapMarkerTerminal = Game.GetPlayer().PlaceAtMe(RAS_StartingMapMarkerTerminal)
+    Else
+        RAS_StartingMapMarkerTerminalMenu.ClearDynamicMenuItems(startingMapMarkerTerminal)
+    EndIf
+
+    If(!myShipVendorScript.NoShipSelected)
+        Form[] tagReplacements = new Form[1]
+        tagReplacements[0] = RAS_DynamicEntry_MapMarker_Ship
+        RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, 1, tagReplacements)
+    EndIf
+
+    Int i = 0
+    While(i < newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
+        Form[] tagReplacements = new Form[1]
+        Form mapMarker = newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(i)
+        Form viewportMapMarker = Game.GetFormFromFile(0xFE000003,"SFBGS008.esm")
+        If(mapMarker == viewportMapMarker)
+            mapMarker = RAS_DynamicEntry_MapMarker_Viewport
+        EndIf
+        tagReplacements[0] = mapMarker
+        Bool hasShip = !myShipVendorScript.NoShipSelected
+        RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, i + 1 + hasShip as Int, tagReplacements)
+        i += 1
+    EndWhile
+    
+    Self.RegisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
+    startingMapMarkerTerminal.Activate(Game.GetPlayer())
+EndFunction
+
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
     RAS_NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript
-    
+    RAS_ShipVendorScript myShipVendorScript = RAS_ShipServicesActorREF as RAS_ShipVendorScript
+
     Int index = auiMenuItemID - 1 
+    If(!myShipVendorScript.NoShipSelected)
+        If(index == 0)
+            Game.GetPlayer().MoveTo(myShipVendorScript.currentShip)
+            Self.UnregisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
+            Return
+        Else
+            index -= 1
+        EndIf
+    EndIf
     If(index < newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount())
         Game.GetPlayer().MoveTo(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetAt(index))
         Self.UnregisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
