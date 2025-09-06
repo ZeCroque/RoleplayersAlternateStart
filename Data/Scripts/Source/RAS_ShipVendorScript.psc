@@ -38,7 +38,6 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     Game.RemovePlayerOwnedShip(currentShip)
 
     If(currentShip != (RAS_NewGameManagerQuest as RAS_NewGameManagerQuestScript).RAS_NoneShipReference)
-        Debug.Trace(Game.GetForm(currentShipBaseFormID))
         CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker, shipsForSale)
         currentShip.Disable()
     Else
