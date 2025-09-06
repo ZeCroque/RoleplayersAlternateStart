@@ -142,5 +142,7 @@ Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
             Game.GetPlayer().RemoveItem(Game.GetCaps(), 25000)
         EndIf
         CapsGivenToUnlockVehicles = False
+
+        UnregisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
 	EndIf
 EndEvent

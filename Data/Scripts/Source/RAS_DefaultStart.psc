@@ -17,6 +17,7 @@ MiscObject Property RAS_DynamicEntry_MapMarker_Ship Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_MapMarker_Viewport Mandatory Const Auto
 
 ObjectReference startingMapMarkerTerminal 
+ObjectReference shipMarker
 
 Event OnInit()
     RegisterForCustomEvent(DynamicTerminal as RAS_DynamicEntriesTerminalScript, "SelectedFragmentTriggered")
@@ -78,12 +79,13 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
 
                 If(shipTech)
                     ;has ship tech (settlement), find ship marker linked to it
-                    ObjectReference shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
+                    shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
                     If(!myShipVendorScript.NoShipSelected)
                         CurrentShip.MoveTo(shipMarker)
                         CurrentShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
                         CurrentShip.Enable()
                         If(newGameManagerQuestScript.StartingLocationMapMarkersCollectionAlias.GetCount() == 1)
+                            Game.GetPlayer().MoveTo(shipMarker)
                             Game.GetPlayer().MoveTo(CurrentShip)
                             Return
                         EndIf
@@ -100,7 +102,7 @@ Event RAS_DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS_DynamicEntr
 
                     SelectMapMarker()
                 Else
-                    ObjectReference shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
+                    shipMarker = newGameManagerQuestScript.StartingLocationShipMarkerAlias.GetReference()
                     If(shipMarker)
                         ;No ship tech but ship marker (POI)(undefined behavior if more than one ship landing marker)
                         If(myShipVendorScript.NoShipSelected)
@@ -166,6 +168,7 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
     Int index = auiMenuItemID - 1 
     If(!myShipVendorScript.NoShipSelected)
         If(index == 0)
+            Game.GetPlayer().MoveTo(shipMarker)
             Game.GetPlayer().MoveTo(myShipVendorScript.currentShip)
             Self.UnregisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
             Return
