@@ -306,6 +306,7 @@ EndEvent
 
 Event Location.OnLocationLoaded(Location akSender)
   StarbornGuardianSeat.GetReference().Enable()
+  Game.GetPlayer().SnapIntoInteraction(StarbornGuardianSeat.GetReference())
   
   FadeFromBlack.Apply()
   Utility.Wait(0.2)

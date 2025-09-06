@@ -4,7 +4,7 @@ Scriptname Fragments:Quests:QF_RAS_NewGameManagerQuest_01000821 Extends Quest Hi
 ;BEGIN FRAGMENT Fragment_Stage_0000_Item_00
 Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
-If(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) == 0)
+If(MQ101.GetStageDone(105) == False && Game.GetPlayer().GetValue(PlayerUnityTimesEntered) == 0)
     SetObjectiveDisplayed(10)
 EndIf
 ;END CODE
@@ -41,3 +41,5 @@ ActorValue Property PlayerUnityTimesEntered Auto Const Mandatory
 ObjectReference Property RAS_StartNotReadyTriggerREF Auto Const Mandatory
 
 ObjectReference Property RAS_StartNotReadyCollisionVolume Auto Const Mandatory
+
+Quest Property MQ101 Auto Const Mandatory
