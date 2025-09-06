@@ -8,6 +8,7 @@ ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
 Armor Property Clothes_GenWare_01 Mandatory Const Auto
+Message Property RAS_CustomStartTutorialMessage Mandatory Const Auto
 
 Event OnCellLoad()
     Game.SetCharGenHUDMode(0)
@@ -32,5 +33,7 @@ Event OnCellLoad()
     Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
     Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
     
+    RAS_CustomStartTutorialMessage.Show()
+
     Disable()
 EndEvent
