@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:Terminals:TERM_StartingGear_MainMenu Extends TerminalMe
 ;BEGIN FRAGMENT Fragment_TerminalMenu_01
 Function Fragment_TerminalMenu_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-(RAS_StartingGearTerminal as RAS_StartingGearTerminalScript).StartRegularShopping()
+(RAS_StartingGearTerminal as RAS:NewGameConfiguration:StartingGearTerminalScript).StartRegularShopping()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -12,7 +12,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_02
 Function Fragment_TerminalMenu_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
-(RAS_StartingGearTerminal as RAS_StartingGearTerminalScript).StartFreeShopping()
+(RAS_StartingGearTerminal as RAS:NewGameConfiguration:StartingGearTerminalScript).StartFreeShopping()
 ;END CODE
 EndFunction
 ;END FRAGMENT

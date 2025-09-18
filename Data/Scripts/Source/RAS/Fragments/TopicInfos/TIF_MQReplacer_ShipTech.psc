@@ -5,7 +5,7 @@ Scriptname RAS:Fragments:TopicInfos:TIF_MQReplacer_ShipTech Extends TopicInfo Hi
 Function Fragment_End(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN AUTOCAST TYPE RAS_MQReplacerQuestScript
-RAS_MQReplacerQuestScript kmyQuest = GetOwningQuest() as RAS_MQReplacerQuestScript
+RAS:MQReplacer:MQReplacerScript kmyQuest = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.MauriceLyonAlias.ForceRefTo(UC_NH_MauriceLyon)

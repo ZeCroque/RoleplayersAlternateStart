@@ -5,7 +5,7 @@ Scriptname RAS:Fragments:TopicInfos:TIF_MQ104B_BarrettFrontier Extends TopicInfo
 Function Fragment_End(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN AUTOCAST TYPE RAS_MQ104BScript
-RAS_MQ104BScript kmyQuest = GetOwningQuest() as RAS_MQ104BScript
+RAS:MQ104B:MQ104BScript kmyQuest = GetOwningQuest() as RAS:MQ104B:MQ104BScript
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.SetStage(1000)

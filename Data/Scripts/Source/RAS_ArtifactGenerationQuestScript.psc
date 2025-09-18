@@ -1,4 +1,0 @@
-Scriptname RAS_ArtifactGenerationQuestScript extends Quest
-
-LocationAlias Property ArtifactLocation Mandatory Const Auto
-ReferenceAlias Property ArtifactLocationMarker Mandatory Const Auto

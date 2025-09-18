@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:Scenes:SF_NewGameManager_ShipVending Extends Scene Hidd
 ;BEGIN FRAGMENT Fragment_Action_05
 Function Fragment_Action_05(ReferenceAlias akAlias)
 ;BEGIN CODE
-(RAS_ShipServicesActorREF as RAS_ShipVendorScript).StartShipVending()
+(RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).StartShipVending()
 ;END CODE
 EndFunction
 ;END FRAGMENT

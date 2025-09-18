@@ -1,0 +1,15 @@
+Scriptname RAS:MQReplacer:PlayerAliasScript extends ReferenceAlias
+
+Message Property RAS_KeepArtifactMessage Mandatory Const Auto
+
+Function HandleArtifact(ObjectReference akArtifactRef)
+  Self.AddInventoryEventFilter(akArtifactRef.GetBaseObject())
+EndFunction
+
+Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
+    RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = (GetOwningQuest() as RAS:MQReplacer:MQReplacerScript)
+    If(MQReplacerQuestScript.Artifact01REF && aiTransferReason != 2) ;Checking just in case but normally we should never enter this if we sell the artifact
+        RAS_KeepArtifactMessage.Show()
+        GetReference().AddItem(MQReplacerQuestScript.Artifact01REFCopy, abSilent=True)
+    EndIf
+EndEvent

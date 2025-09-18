@@ -21,8 +21,8 @@ Function Fragment_Stage_0020_Item_00()
 ObjectReference Artifact01REF = (StarbornTempleQuest as StarbornTempleQuestScript).PlaceArtifact(0, MQHoldingCellCenterMarker)
 ObjectReference ArtifactCopy = MQHoldingCellCenterMarker.PlaceAtMe(RAS_Artifact_ETA)
 Game.GetPlayer().additem(ArtifactCopy)
-(RAS_MQReplacerQuest as RAS_MQReplacerQuestScript).HandleArtifact(Artifact01REF, ArtifactCopy)
-(PlayerAlias as RAS_MQReplacerPlayerAliasScript).HandleArtifact(ArtifactCopy)
+(RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).HandleArtifact(Artifact01REF, ArtifactCopy)
+(PlayerAlias as RAS:MQReplacer:PlayerAliasScript).HandleArtifact(ArtifactCopy)
 
 ;Set player as having acquired the Artifact
 (StarbornTempleQuest as StarbornTempleQuestScript).SetPlayerAcquiredArtifact(0)
@@ -39,7 +39,7 @@ EndFunction
 Function Fragment_Stage_0030_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(25)
-(RAS_MQ101 as RAS_MQ101Script).Artifact01REF = (RAS_MQReplacerQuest as RAS_MQReplacerQuestScript).Artifact01REF
+(RAS_MQ101 as RAS:MQ101:MQ101Script).Artifact01REF = (RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).Artifact01REF
 RAS_MQ101.SetStage(0)
 ;END CODE
 EndFunction
@@ -48,10 +48,10 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Stage_0040_Item_00
 Function Fragment_Stage_0040_Item_00()
 ;BEGIN CODE
-RAS_MQReplacerQuestScript MQReplacerQuestScript = (RAS_MQReplacerQuest as RAS_MQReplacerQuestScript)
+RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = (RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript)
 ObjectReference PlayerREF = Game.GetPlayer()
 
-(RAS_MQ101 as RAS_MQ101Script).Artifact01REF = MQReplacerQuestScript.Artifact01REF
+(RAS_MQ101 as RAS:MQ101:MQ101Script).Artifact01REF = MQReplacerQuestScript.Artifact01REF
 MQReplacerQuestScript.PlayerAlias.Clear()
 PlayerREF.RemoveItem(MQReplacerQuestScript.Artifact01REFCopy, abSilent=True)
 PlayerREF.AddItem(MQReplacerQuestScript.Artifact01REF, abSilent=True)

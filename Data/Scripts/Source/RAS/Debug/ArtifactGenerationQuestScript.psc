@@ -1,0 +1,4 @@
+Scriptname RAS:Debug:ArtifactGenerationQuestScript extends Quest
+
+LocationAlias Property ArtifactLocation Mandatory Const Auto
+ReferenceAlias Property ArtifactLocationMarker Mandatory Const Auto

@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:Scenes:SF_NewGameManager_VehicleVending Extends Scene H
 ;BEGIN FRAGMENT Fragment_Action_05
 Function Fragment_Action_05(ReferenceAlias akAlias)
 ;BEGIN CODE
-(RAS_ShipServicesActorREF as RAS_ShipVendorScript).StartVehicleVending()
+(RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).StartVehicleVending()
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -5,7 +5,7 @@ Scriptname RAS:Fragments:Quests:QF_MQ101 Extends Quest Hidden Const
 Function Fragment_Stage_0005_Item_00()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 Quest __temp = self as Quest
-RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 Game.GetPlayer().AddItem(kmyQuest.ConstellationInvite.GetReference())
@@ -18,7 +18,7 @@ EndFunction
 Function Fragment_Stage_0010_Item_00()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 Quest __temp = self as Quest
-RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.ConstellationInvite.Clear()
@@ -37,7 +37,7 @@ EndFunction
 Function Fragment_Stage_0015_Item_00()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 Quest __temp = self as Quest
-RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.ConstellationInvite.Clear()
@@ -84,7 +84,7 @@ EndFunction
 Function Fragment_Stage_1600_Item_00()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 Quest __temp = self as Quest
-RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyquest.MQ101DisablePlayerControls()
@@ -124,7 +124,7 @@ EndFunction
 Function Fragment_Stage_1630_Item_00()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 Quest __temp = self as Quest
-RAS_MQ101Script kmyQuest = __temp as RAS_MQ101Script
+RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 ObjectReference TableREF = LodgeTableActivator.GetRef()
