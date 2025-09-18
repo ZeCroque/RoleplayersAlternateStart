@@ -1,5 +1,5 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname Fragments:TopicInfos:TIF_RAS_MQReplacerQuest_0100082F Extends TopicInfo Hidden Const
+Scriptname RAS:Fragments:TopicInfos:TIF_MQReplacer_ShipTech Extends TopicInfo Hidden Const
 
 ;BEGIN FRAGMENT Fragment_End
 Function Fragment_End(ObjectReference akSpeakerRef)

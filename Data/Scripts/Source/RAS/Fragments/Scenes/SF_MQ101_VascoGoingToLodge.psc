@@ -1,14 +1,13 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname Fragments:TopicInfos:TIF_RAS_MQ101_01000AE2 Extends TopicInfo Hidden Const
+Scriptname RAS:Fragments:Scenes:SF_MQ101_VascoGoingToLodge Extends Scene Hidden Const
 
-;BEGIN FRAGMENT Fragment_End
-Function Fragment_End(ObjectReference akSpeakerRef)
-Actor akSpeaker = akSpeakerRef as Actor
+;BEGIN FRAGMENT Fragment_Phase_01_End
+Function Fragment_Phase_01_End()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 RAS_MQ101Script kmyQuest = GetOwningQuest() as RAS_MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
-Game.GetPlayer().AddItem(kmyQuest.Artifact01REF)
+kmyQuest.NewAtlantisToLodgeDoorREF.Unlock()
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -1,5 +1,5 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname Fragments:Quests:QF_RAS_MQ101_01000838 Extends Quest Hidden Const
+Scriptname RAS:Fragments:Quests:QF_MQ101 Extends Quest Hidden Const
 
 ;BEGIN FRAGMENT Fragment_Stage_0005_Item_00
 Function Fragment_Stage_0005_Item_00()

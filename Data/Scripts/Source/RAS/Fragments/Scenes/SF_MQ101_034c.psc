@@ -1,13 +1,13 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname Fragments:Scenes:SF_RAS_MQ101_VascoGoingToLod_010008AF Extends Scene Hidden Const
+Scriptname RAS:Fragments:Scenes:SF_MQ101_034c Extends Scene Hidden Const
 
-;BEGIN FRAGMENT Fragment_Phase_01_End
-Function Fragment_Phase_01_End()
+;BEGIN FRAGMENT Fragment_End
+Function Fragment_End()
 ;BEGIN AUTOCAST TYPE RAS_MQ101Script
 RAS_MQ101Script kmyQuest = GetOwningQuest() as RAS_MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
-kmyQuest.NewAtlantisToLodgeDoorREF.Unlock()
+kmyquest.MQ101EnablePlayerControls()
 ;END CODE
 EndFunction
 ;END FRAGMENT
