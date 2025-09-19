@@ -1,10 +1,20 @@
 Scriptname RAS:MQReplacer:PlayerAliasScript extends ReferenceAlias
 
 Message Property RAS_KeepArtifactMessage Mandatory Const Auto
+Keyword Property PCM_ArtifactCave Mandatory Const Auto
 
 Function HandleArtifact(ObjectReference akArtifactRef)
   Self.AddInventoryEventFilter(akArtifactRef.GetBaseObject())
 EndFunction
+
+Event OnLocationChange(Location akOldLoc, Location akNewLoc)
+  If(GetOwningQuest().GetStage() < 10 && akNewLoc && akNewLoc.HasKeyword(PCM_ArtifactCave))
+    RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
+    MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
+    MQReplacerQuestScript.ArtifactLocation.RefillDependentAliases()
+    MQReplacerQuestScript.SetStage(10)  
+  EndIf
+EndEvent
 
 Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
     RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = (GetOwningQuest() as RAS:MQReplacer:MQReplacerScript)

@@ -22,7 +22,6 @@ RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.ConstellationInvite.Clear()
-kmyQuest.PlayerAlias.Clear()
 kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
 
 SetObjectiveCompleted(5)
@@ -41,7 +40,6 @@ RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
 kmyQuest.ConstellationInvite.Clear()
-kmyQuest.PlayerAlias.Clear()
 kmyQuest.Vasco.GetReference().MoveTo(kmyQuest.MQ204_NA_HunterMarker)
 
 SetObjectiveDisplayed(10)

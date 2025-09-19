@@ -246,7 +246,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
         ;Register hooks
         HookMQ()
 
-        ;Setting up mq replacer and make sure we stop listening to unequip events on alias
+        ;Setting up mq101 clone and make sure we stop listening to unequip events on alias
         RAS_MQ101.SetStage(25)
         RAS_MQ101.SetActive()
       Else

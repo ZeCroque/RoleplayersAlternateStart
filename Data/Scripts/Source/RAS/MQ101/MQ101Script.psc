@@ -1,7 +1,6 @@
 Scriptname RAS:MQ101:MQ101Script extends Quest
 
 ReferenceAlias Property ConstellationInvite Mandatory Const Auto
-ReferenceAlias Property PlayerAlias Mandatory Const Auto
 ReferenceAlias Property Vasco Mandatory Const Auto
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 ObjectReference Property MQ204_NA_HunterMarker Mandatory Const Auto

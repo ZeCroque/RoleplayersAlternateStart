@@ -4,6 +4,8 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 ImageSpaceModifier Property StayBlack Mandatory Const Auto
 ImageSpaceModifier Property FadeFromBlack Mandatory Const Auto
 
+;We use this temporary cell to prevent the vanilla quests objectives update (due to hooks) from appearing on HUD
+
 Event OnCellLoad()
     Message.ClearHelpMessages()
     Utility.Wait(2.0)

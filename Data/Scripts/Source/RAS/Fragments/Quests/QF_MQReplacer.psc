@@ -40,6 +40,8 @@ Function Fragment_Stage_0030_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(25)
 (RAS_MQ101 as RAS:MQ101:MQ101Script).Artifact01REF = (RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).Artifact01REF
+(RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).PlayerAlias.Clear()
+
 RAS_MQ101.SetStage(0)
 ;END CODE
 EndFunction
