@@ -1,4 +1,4 @@
-Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingTerminalScript extends ObjectReference
+Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript extends ObjectReference
 
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 
