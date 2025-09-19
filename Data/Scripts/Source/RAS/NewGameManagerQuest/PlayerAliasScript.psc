@@ -28,10 +28,11 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             RAS_NewGameManagerQuest.SetStage(100)
             RAS_MQReplacerQuest.SetStage(0)
 
-            ;If player has picked a ship, deletes the none ship (will prevent player alias events from firing)
-            SpaceshipReference currentShip = (RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).currentShip
-            If(currentShip != (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference) 
-                (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).SetupPlayerShip(currentShip)
+            ;If player has picked a ship, clear unity ship vendor event listeners and deletes the none ship ref
+            RAS:NewGameConfiguration:ShipVendorScript vendorScript = RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript
+            vendorScript.UnregisterFromEvents()
+            If(vendorScript.currentShip != (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference) 
+                (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).SetupPlayerShip(vendorScript.currentShip) ;TODO start new ship quest instead
             EndIf
 
             ;If player picked a home, give it to them

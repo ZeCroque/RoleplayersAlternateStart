@@ -32,6 +32,9 @@ Event OnLoad()
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
     CreateShipsForSale(ShipsToSellListAlwaysDataset.ShipList, Game.GetPlayer().GetLevel(), myLandingMarker, shipsForSale)
+
+    RegisterForMenuOpenCloseEvent("DialogueMenu")
+    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
 EndEvent
 
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
@@ -109,7 +112,6 @@ SpaceshipReference function GetShipForSale(int index = 0)
 endFunction
 
 function StartShipVending()
-    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
     If(currentShip == None)
         currentShip = (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference
         RegisterForRemoteEvent(currentShip, "OnShipBought")
@@ -118,7 +120,6 @@ function StartShipVending()
 endFunction
 
 function StartShipEditing()
-    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
     myLandingMarker.ShowHangarMenu(0, self)
 endFunction
 
@@ -128,21 +129,26 @@ function StartVehicleVending()
         Game.GivePlayerCaps(25000)
         CapsGivenToUnlockVehicles = True
     EndIf
-    RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
+
     myLandingMarker.ShowHangarMenu(1, self)
 endFunction
 
+Function UnregisterFromEvents()
+    UnregisterForMenuOpenCloseEvent("DialogueMenu")
+    UnregisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
+EndFunction
+
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
-	If(abOpening)
-        Game.GetPlayer().AddPerk(RAS_FreeShoppingPerk)
-    Else
-		Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
-
-        If(!RAS_AreVehiclesUnlocked.IsTrue() && CapsGivenToUnlockVehicles)
+    If(asMenuName == "SpaceshipEditorMenu")
+        If(!abOpening && !RAS_AreVehiclesUnlocked.IsTrue() && CapsGivenToUnlockVehicles)
             Game.GetPlayer().RemoveItem(Game.GetCaps(), 25000)
+            CapsGivenToUnlockVehicles = False
         EndIf
-        CapsGivenToUnlockVehicles = False
-
-        UnregisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
-	EndIf
+    ElseIf(asMenuName == "DialogueMenu")
+        If(abOpening)
+            Game.GetPlayer().AddPerk(RAS_FreeShoppingPerk)
+        Else
+            Game.GetPlayer().RemovePerk(RAS_FreeShoppingPerk)
+        EndIf
+    EndIf
 EndEvent
