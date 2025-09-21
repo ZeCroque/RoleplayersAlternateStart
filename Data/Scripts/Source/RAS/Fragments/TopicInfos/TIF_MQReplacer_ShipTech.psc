@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:TopicInfos:TIF_MQReplacer_ShipTech Extends TopicInfo Hi
 ;BEGIN FRAGMENT Fragment_End
 Function Fragment_End(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN AUTOCAST TYPE RAS_MQReplacerQuestScript
+;BEGIN AUTOCAST TYPE RAS:MQReplacer:MQReplacerScript
 RAS:MQReplacer:MQReplacerScript kmyQuest = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
 ;END AUTOCAST
 ;BEGIN CODE

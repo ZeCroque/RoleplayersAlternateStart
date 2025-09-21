@@ -3,7 +3,7 @@ Scriptname RAS:Fragments:Quests:QF_MQ101 Extends Quest Hidden Const
 
 ;BEGIN FRAGMENT Fragment_Stage_0005_Item_00
 Function Fragment_Stage_0005_Item_00()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 Quest __temp = self as Quest
 RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
@@ -16,7 +16,7 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_0010_Item_00
 Function Fragment_Stage_0010_Item_00()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 Quest __temp = self as Quest
 RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
@@ -34,7 +34,7 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_0015_Item_00
 Function Fragment_Stage_0015_Item_00()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 Quest __temp = self as Quest
 RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
@@ -80,7 +80,7 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_1600_Item_00
 Function Fragment_Stage_1600_Item_00()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 Quest __temp = self as Quest
 RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST
@@ -120,7 +120,7 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_1630_Item_00
 Function Fragment_Stage_1630_Item_00()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 Quest __temp = self as Quest
 RAS:MQ101:MQ101Script kmyQuest = __temp as RAS:MQ101:MQ101Script
 ;END AUTOCAST

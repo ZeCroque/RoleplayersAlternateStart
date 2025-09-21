@@ -3,7 +3,7 @@ Scriptname RAS:Fragments:Scenes:SF_MQ101_VascoGoingToLodge Extends Scene Hidden 
 
 ;BEGIN FRAGMENT Fragment_Phase_01_End
 Function Fragment_Phase_01_End()
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 RAS:MQ101:MQ101Script kmyQuest = GetOwningQuest() as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE

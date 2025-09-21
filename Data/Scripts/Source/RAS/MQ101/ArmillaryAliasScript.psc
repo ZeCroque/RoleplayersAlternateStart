@@ -1,5 +1,10 @@
 Scriptname RAS:MQ101:ArmillaryAliasScript extends ReferenceAlias
 
+Bool DoOnce = False
+
 Event OnLoad()
-    (GetReference() as ArmillaryScript).PlayAnimation("AlphaStart")
+    If(!DoOnce)
+        (GetReference() as ArmillaryScript).PlayAnimation("AlphaStart")
+        DoOnce = true
+    EndIf
 EndEvent

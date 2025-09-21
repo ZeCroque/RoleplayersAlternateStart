@@ -18,15 +18,15 @@ Event OnActivate(ObjectReference akActionRef)
     
     Int Choice = RAS_RepairFrontierMessage.Show()
     If(Choice == 1)
-        If(PlayerREF.GetComponentCount(InorgCommonIron) > 9)
-            Game.GetPlayer().RemoveItemByComponent(InorgCommonIron, 10)
+        If(PlayerREF.GetItemCount(ShipRepairKit) > 0)
+            PlayerREF.RemoveItem(ShipRepairKit)
             RepairShip()
         Else
             RAS_RepairFailedMessage.Show()
         EndIf
     ElseIf(Choice == 2)
-        If(PlayerREF.GetItemCount(ShipRepairKit) > 0)
-            PlayerREF.RemoveItem(ShipRepairKit)
+        If(PlayerREF.GetComponentCount(InorgCommonIron) > 9)
+            Game.GetPlayer().RemoveItemByComponent(InorgCommonIron, 10)
             RepairShip()
         Else
             RAS_RepairFailedMessage.Show()

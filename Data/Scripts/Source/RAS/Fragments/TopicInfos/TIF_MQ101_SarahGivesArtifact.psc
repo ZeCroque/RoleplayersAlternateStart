@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:TopicInfos:TIF_MQ101_SarahGivesArtifact Extends TopicIn
 ;BEGIN FRAGMENT Fragment_End
 Function Fragment_End(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
-;BEGIN AUTOCAST TYPE RAS_MQ101Script
+;BEGIN AUTOCAST TYPE RAS:MQ101:MQ101Script
 RAS:MQ101:MQ101Script kmyQuest = GetOwningQuest() as RAS:MQ101:MQ101Script
 ;END AUTOCAST
 ;BEGIN CODE
