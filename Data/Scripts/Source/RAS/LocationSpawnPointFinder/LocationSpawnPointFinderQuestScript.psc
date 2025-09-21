@@ -69,14 +69,11 @@ Function FindSpawnPointForLocation(Location akLocation)
             Game.GetPlayer().MoveTo(CurrentShip)
         EndIf
     Else
-        Debug.Trace("loc" + StartingLocationAlias.GetLocation())
         ;on planet (or spaceship setup unexpected)
         If(StartingLocationMapMarkersCollectionAlias.GetCount())
-            Debug.Trace("count" + StartingLocationMapMarkersCollectionAlias.GetCount())
             ;search for ship 
             StartingLocationShipTechAlias.RefillAlias()
             ObjectReference shipTech = StartingLocationShipTechAlias.GetReference()
-            Debug.Trace("shipTech" + shipTech)
             If(shipTech)
                 ;has ship tech (settlement), find ship marker linked to it
                 shipMarker = shipTech.GetLinkedRef(LinkShipLandingMarker01)
