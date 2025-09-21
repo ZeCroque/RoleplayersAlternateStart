@@ -6,7 +6,6 @@ Quest Property MQ102 Mandatory Const Auto
 Quest Property MQ104B Mandatory Const Auto
 Quest Property RAS_MQ104B Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Auto Const mandatory
-ObjectReference Property LodgeStartMarker Auto Const mandatory
 ObjectReference Property VascoREF Auto Const Mandatory
 Quest Property FFLodge01 Mandatory Const Auto
 Quest Property City_NA_Aquilus01 Mandatory Const Auto
@@ -53,8 +52,8 @@ ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
 
-InputEnableLayer Property InputLayer Auto
-ObjectReference Property FastTravelTarget Auto 
+InputEnableLayer Property InputLayer Auto Hidden
+ObjectReference Property FastTravelTarget Auto Hidden
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 

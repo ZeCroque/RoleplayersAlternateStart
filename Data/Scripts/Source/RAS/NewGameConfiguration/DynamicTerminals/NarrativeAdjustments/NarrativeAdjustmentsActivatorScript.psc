@@ -10,19 +10,19 @@ TerminalMenu Property RAS_NarrativeAdjustmentsTerminal_Submenu Mandatory Const A
 CustomEvent FragmentTriggered
 
 Struct NarrativeMod
-    Form SubmenuEntry
+    MiscObject SubmenuEntry
     Form TextBody
-    Form Fragment
+    MiscObject Fragment
     ConditionForm Condition
 EndStruct
 NarrativeMod[] Property NarrativeMods Mandatory Const Auto
-Form[] SelectedFragments
+MiscObject[] SelectedFragments
 Int CurrentIndex = 0
 
 Int[] MenuIdToNarrativeModIndex
 
 Event OnInit()
-    SelectedFragments = new Form[NarrativeMods.Length]
+    SelectedFragments = new MiscObject[NarrativeMods.Length]
     Int i = 0
     While(i < NarrativeMods.Length)
         SelectedFragments[i] = RAS_DynamicEntry_NA_Disable

@@ -5,8 +5,8 @@ ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
 
-SpaceshipReference Property CurrentShip Auto
-SpaceshipReference Property RAS_NoneShipReference Auto
+SpaceshipReference Property CurrentShip Auto Hidden
+SpaceshipReference Property RAS_NoneShipReference Auto Hidden
 Bool Property PedestrianStart Auto Conditional
 InputEnableLayer InputLayer
 

@@ -611,21 +611,9 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-
-
-Scene Property FFLodge01_001_OutsideScene Auto Const Mandatory
-
-Scene Property FFLodge01_003_LodgeScene Auto Const Mandatory
-
-ObjectReference Property MQ104BStart001 Mandatory Const Auto
-
 ReferenceAlias Property Alias_Barrett Auto Const Mandatory
 
 ReferenceAlias Property Alias_Heller Auto Const Mandatory
-
-Scene Property FFLodge01_002_BarrettScene Auto Const Mandatory
-
-Message Property FFLodge01LodgeMSG Auto Const Mandatory
 
 Quest Property MQ103 Auto Const Mandatory
 
@@ -638,8 +626,6 @@ ObjectReference Property VecteraExteriorNPCEnableMarker Auto Const Mandatory
 ObjectReference Property VecteraInteriorNPCEnableMarker Auto Const Mandatory
 
 ReferenceAlias Property Alias_Lin Auto Const Mandatory
-
-ReferenceAlias Property Alias_DoorToSensorArray Auto Const Mandatory
 
 ObjectReference Property MQ104B_BarrettMovetoMarker Auto Const Mandatory
 
@@ -661,8 +647,6 @@ Scene Property RAS_MQ104B_005_OutsideScene Auto Const Mandatory
 
 ReferenceAlias Property Alias_Matsura Auto Const Mandatory
 
-ActorValue Property Aggression Auto Const Mandatory
-
 Faction Property PlayerEnemyFaction Auto Const Mandatory
 
 Quest Property MQ104A Auto Const Mandatory
@@ -675,25 +659,13 @@ RefCollectionAlias Property Alias_MatsuraBodyguards Auto Const Mandatory
 
 ReferenceAlias Property Alias_HellerWoundedMarker Auto Const Mandatory
 
-ObjectReference Property MQ104B_BarrettDungeonStart Auto Const Mandatory
-
-ReferenceAlias Property Alias_HellerCrashStartMarker Auto Const Mandatory
-
 ReferenceAlias Property Alias_BarrettDungeonDoor Auto Const Mandatory
 
 ObjectReference Property MQ104B_EnableExteriorPiratesMarker Auto Const Mandatory
 
-Perk Property OutpostEngineering Auto Const Mandatory
-
-Perk Property InformationSystems Auto Const Mandatory
-
-Perk Property TraitEmpath Auto Const Mandatory
-
 ReferenceAlias Property Alias_BrokenComputerTrigger Auto Const Mandatory
 
 ReferenceAlias Property Alias_FirstBarrettSlateQuestObject Auto Const Mandatory
-
-MiscObject Property Mfg_Power_Circuit Auto Const Mandatory
 
 Scene Property RAS_MQ104B_001_LinScene Auto Const Mandatory
 
@@ -710,20 +682,6 @@ ObjectReference Property MQ104BLinTravelMarker Auto Const Mandatory
 ObjectReference Property VecteraExteriorNPCEnableMarker001 Auto Const Mandatory
 
 Scene Property RAS_MQ104B_006_BarrettScene Auto Const Mandatory
-
-Quest Property SQ_Followers Auto Const Mandatory
-
-Perk Property FactionCrimsonFleetPerk Auto Const Mandatory
-
-Perk Property Medicine Auto Const Mandatory
-
-GlobalVariable Property MQ101Debug Auto Const Mandatory
-
-Quest Property MQ101 Auto Const Mandatory
-
-Quest Property MQ102 Auto Const Mandatory
-
-Scene Property RAS_MQ104B_006d_MatsuraDeadScene Auto Const Mandatory
 
 ReferenceAlias Property Alias_VecteraMapMarker Auto Const Mandatory
 
@@ -743,11 +701,7 @@ ObjectReference Property MQ104B_BarrettCell_EnableMaker Auto Const Mandatory
 
 MiscObject Property Power_Cell Auto Const Mandatory
 
-ObjectReference Property MQ104BBarrettDungeonLandingMarker Auto Const Mandatory
-
 ObjectReference Property Frontier_ModularREF Auto Const Mandatory
-
-Keyword Property SpaceshipEnabledLandingLink Auto Const Mandatory
 
 ReferenceAlias Property Alias_PlayerShipPassengerMarker Auto Const Mandatory
 
@@ -756,8 +710,6 @@ GlobalVariable Property COM_PQ_LockedInCompanion Auto Const Mandatory
 RefCollectionAlias Property Passengers Auto Const
 
 RefCollectionAlias Property DisembarkingCrew Auto Const
-
-ReferenceAlias Property Alias_ArtifactCollection Auto Const Mandatory
 
 Faction Property CaptiveFaction Auto Const Mandatory
 
@@ -772,6 +724,7 @@ Perk Property Crew_Geology Auto Const Mandatory
 Perk Property Crew_Outpost_Engineering Auto Const Mandatory
 
 Quest Property RAS_MQ104B Auto Const Mandatory
+
 ObjectReference Property VecteraShipLandingMarker Auto Const
 
 Keyword Property CurrentInteractionLinkedRefKeyword Auto Const Mandatory

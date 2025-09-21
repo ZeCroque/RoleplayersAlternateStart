@@ -1,7 +1,6 @@
 Scriptname RAS:NewGameManagerQuest:PlayerAliasScript extends ReferenceAlias
 
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
-Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
@@ -9,18 +8,17 @@ Location Property VecteraMineLocation Mandatory Const Auto
 ReferenceAlias Property Heller Mandatory Const Auto
 Keyword Property AnimFlavorTechReader Mandatory Const Auto
 FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
-Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Auto
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     If(akNewLoc)
-        If(RAS_NewGameManagerQuest.GetStage() == 11)
+        If(GetOwningQuest().GetStage() == 11)
             ;Setting up new game after player left Unity
 
             ;Advancing quests
-            RAS_NewGameManagerQuest.SetStage(100)
+            GetOwningQuest().SetStage(100)
             RAS_MQReplacerQuest.SetStage(0)
 
             ;If player has picked a ship, clear unity ship vendor event listeners and setup the bought ship
@@ -37,9 +35,9 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             ;Triggers narrative adjustments
             (RAS_NarrativeAdjustmentsActivatorREF as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript).TriggerAllValidFragment()
             Clear()
-        ElseIf(akNewLoc == VecteraMineLocation && RAS_NewGameManagerQuest.GetStage() == 5)
+        ElseIf(akNewLoc == VecteraMineLocation && GetOwningQuest().GetStage() == 5)
             ;Vanilla start
-            RAS_NewGameManagerQuest.Stop()
+            GetOwningQuest().Stop()
             MQ101.SetObjectiveDisplayed(5, True, True)
             Heller.GetReference().RemoveKeyword(AnimFlavorTechReader)
             Heller.GetReference().Reset(Game.GetPlayer())
@@ -49,7 +47,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
 EndEvent
 
 Event OnItemUnequipped(Form akBaseObject, ObjectReference akReference)
-    If((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
+    If((GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
         RAS_TmpItemsToEquipBack.AddForm(akBaseObject)
     EndIf
 EndEvent

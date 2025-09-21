@@ -12,10 +12,7 @@ ConditionForm Property RAS_HasCommerceRank2 Mandatory Const Auto
 ConditionForm Property RAS_HasCommerceRank3 Mandatory Const Auto
 ConditionForm Property RAS_HasCommerceRank4 Mandatory Const Auto
 GlobalVariable Property RAS_LowBudget Mandatory Const Auto
-GlobalVariable Property RAS_MediumBudget Mandatory Const Auto
-GlobalVariable Property RAS_HighBudget Mandatory Const Auto
 Armor Property Clothes_GenWare_01 Mandatory Const Auto
-
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
 Bool Property KeepGearMode Auto Conditional

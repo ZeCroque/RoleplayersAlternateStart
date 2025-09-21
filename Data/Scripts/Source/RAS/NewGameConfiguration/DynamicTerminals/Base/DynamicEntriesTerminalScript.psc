@@ -13,7 +13,7 @@ FormList Property Entries Mandatory Const Auto
 MiscObject Property DefaultEntry Mandatory Const Auto
 Form Property DefaultTextReplacement Mandatory Const Auto
 
-Form CurrentFragment
+MiscObject CurrentFragment
 Form CurrentTextReplacement
 Bool Property HasValidSelection Auto Conditional
 
@@ -43,7 +43,7 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
                 Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
                 UpdateTerminalBody(TerminalSubmenu)
             Else
-                ChangeSelection(entriesArray[index], entriesArray[index])
+                ChangeSelection(entriesArray[index] as MiscObject, entriesArray[index])
             EndIf
         EndIf
     EndIf
@@ -79,7 +79,7 @@ Function UpdateTerminalBody(TerminalMenu akTerminalMenu)
     akTerminalMenu.AddDynamicBodyTextItem(Self, 0, 0, tagReplacements)
 EndFunction
 
-Function ChangeSelection(Form akFragment, Form akTextSelection)
+Function ChangeSelection(MiscObject akFragment, Form akTextSelection)
     CurrentFragment = akFragment
     CurrentTextReplacement = akTextSelection
     UpdateTerminalBodies()
