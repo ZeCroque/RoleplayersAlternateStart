@@ -11,11 +11,9 @@ Event OnCellLoad()
     Utility.Wait(2.0)
     Game.HideHudMenus() 
     Game.FastTravel((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).FastTravelTarget)
-
-    If((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornStart == False)   
-        FadeFromBlack.Apply()
-        Utility.Wait(0.2)
-        StayBlack.Remove()
-        (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).InputLayer.Delete()
-    EndIf
+ 
+    FadeFromBlack.Apply()
+    Utility.Wait(0.2)
+    StayBlack.Remove()
+    (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).InputLayer.Delete()
 EndEvent

@@ -19,7 +19,6 @@ Key Property LodgeKey Auto Const Mandatory
 ActorValue Property PlayerXPBonusMult Auto Const Mandatory
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 ImageSpaceModifier Property StayBlack Mandatory Const Auto
-ImageSpaceModifier Property FadeFromBlack Mandatory Const Auto
 ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
 GlobalVariable Property MQProgress Mandatory Const Auto
 ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
@@ -297,11 +296,6 @@ EndEvent
 Event Location.OnLocationLoaded(Location akSender)
   StarbornGuardianSeat.GetReference().Enable()
   Game.GetPlayer().SnapIntoInteraction(StarbornGuardianSeat.GetReference())
-  
-  FadeFromBlack.Apply()
-  Utility.Wait(0.2)
-  StayBlack.Remove()
-  InputLayer.Delete()
 
   Game.SetInChargen(False, False, False) 
   Game.RequestSave()
