@@ -33,7 +33,6 @@ Event OnLoad()
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
     CreateShipsForSale(ShipsToSellListAlwaysDataset.ShipList, Game.GetPlayer().GetLevel(), myLandingMarker, shipsForSale)
-    RegisterForRemoteEvent((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).currentShip, "OnShipBought")
 
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
@@ -57,7 +56,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
 
     shipsForSale.Remove(shipsForSale.Find(akSenderRef))
 
-    If(shipManagerScript.currentShip == (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
+    If(shipManagerScript.currentShip == shipManagerScript.RAS_NoneShipReference)
         NoShipSelected = True
     Else
         NoShipSelected = False
@@ -116,6 +115,7 @@ SpaceshipReference function GetShipForSale(int index = 0)
 endFunction
 
 function StartShipVending()
+    RegisterForRemoteEvent((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).currentShip, "OnShipBought")
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 endFunction
 
