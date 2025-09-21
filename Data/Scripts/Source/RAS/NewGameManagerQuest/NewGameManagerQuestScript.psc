@@ -53,13 +53,6 @@ ReferenceAlias Property LevelManagerActivatorAlias Mandatory Const Auto
 ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
-LocationAlias Property StartingLocationAlias Mandatory Const Auto
-LocationAlias Property StartingLocationParentAlias Mandatory Const Auto
-ReferenceAlias Property StartingLocationShipMarkerAlias Mandatory Const Auto
-ReferenceAlias Property StartingLocationShipTechAlias Mandatory Const Auto
-ReferenceAlias Property StartingLocationDockingPortDoorAlias Mandatory Const Auto
-ReferenceAlias Property StartingLocationParentMapMarkerAlias Mandatory Const Auto
-RefCollectionAlias Property StartingLocationMapMarkersCollectionAlias Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
