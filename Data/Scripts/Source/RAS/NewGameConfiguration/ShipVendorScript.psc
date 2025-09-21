@@ -11,7 +11,7 @@ ShipVendorListScript property ShipsToSellListAlwaysDataset auto
 
 Location Property ShipVendorLocation Mandatory Const Auto
 
-Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 
 Perk Property RAS_FreeShoppingPerk Mandatory Const Auto
 
@@ -19,45 +19,49 @@ ConditionForm Property RAS_AreVehiclesUnlocked Mandatory Const Auto
 
 Message Property RAS_VehicleUnlockingMessage Mandatory Const Auto
 
+Bool Property NoShipSelected Auto Conditional 
+{ If the currently owned ship is the none ship, this boolean is true (Not a dupe of pedestrian as it's updated right away and not upo entering black hole) }
+
 Bool CapsGivenToUnlockVehicles = False
 
 ObjectReference myLandingMarker 
 SpaceshipReference[] shipsForSale
 
-SpaceshipReference Property currentShip Auto
-Bool Property NoShipSelected Auto Conditional 
 Int currentShipBaseFormID
 
 Event OnLoad()
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
     CreateShipsForSale(ShipsToSellListAlwaysDataset.ShipList, Game.GetPlayer().GetLevel(), myLandingMarker, shipsForSale)
+    RegisterForRemoteEvent((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).currentShip, "OnShipBought")
 
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
 EndEvent
 
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
-    Game.RemovePlayerOwnedShip(currentShip)
+    RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
 
-    If(currentShip != (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference)
+    Game.RemovePlayerOwnedShip(shipManagerScript.currentShip)
+
+    If(shipManagerScript.currentShip != (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
         CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker, shipsForSale)
-        currentShip.Disable()
+        shipManagerScript.currentShip.Disable()
     Else
-        currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
-        currentShip.SetActorRefOwner(self)
-        shipsForSale.Add(currentShip)
+        shipManagerScript.currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
+        shipManagerScript.currentShip.SetActorRefOwner(self)
+        shipsForSale.Add(shipManagerScript.currentShip)
     EndIf
     
-    currentShip = akSenderRef
+    shipManagerScript.currentShip = akSenderRef
 
     shipsForSale.Remove(shipsForSale.Find(akSenderRef))
 
-    If(currentShip == (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference)
+    If(shipManagerScript.currentShip == (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
         NoShipSelected = True
     Else
         NoShipSelected = False
-        currentShipBaseFormID = currentShip.GetLeveledSpaceshipBase().GetFormID()
+        currentShipBaseFormID = shipManagerScript.currentShip.GetLeveledSpaceshipBase().GetFormID()
     EndIf
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 EndEvent
@@ -112,10 +116,6 @@ SpaceshipReference function GetShipForSale(int index = 0)
 endFunction
 
 function StartShipVending()
-    If(currentShip == None)
-        currentShip = (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RAS_NoneShipReference
-        RegisterForRemoteEvent(currentShip, "OnShipBought")
-    EndIf
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 endFunction
 

@@ -4,6 +4,7 @@ ObjectReference Property DynamicTerminal Mandatory Const Auto
 
 Location Property TargetLocation  Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 Message Property RAS_ImpossibleToStartMessage Mandatory Const Auto
 ObjectReference Property RAS_ShipServicesActorREF Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
@@ -27,7 +28,7 @@ Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScrip
     If(kArgs[0] as Form == Self)
         RAS:NewGameManagerQuest:NewGameManagerQuestScript newGameManagerQuestScript = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
         RAS:NewGameConfiguration:ShipVendorScript myShipVendorScript = RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript
-        SpaceshipReference CurrentShip = myShipVendorScript.currentShip
+        SpaceshipReference CurrentShip = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).CurrentShip
 
         ;Fill aliases
         newGameManagerQuestScript.StartingLocationAlias.ForceLocationTo(TargetLocation)
@@ -169,7 +170,7 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
     If(!myShipVendorScript.NoShipSelected)
         If(index == 0)
             Game.GetPlayer().MoveTo(shipMarker)
-            Game.GetPlayer().MoveTo(myShipVendorScript.currentShip)
+            Game.GetPlayer().MoveTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).CurrentShip)
             Self.UnregisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
             Return
         Else

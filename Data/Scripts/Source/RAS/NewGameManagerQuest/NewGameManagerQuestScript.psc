@@ -46,7 +46,6 @@ FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
 ObjectReference Property MQPlayerStarbornShipREF Mandatory Const Auto
 ReferenceAlias Property StarbornGuardianSeat Mandatory Const Auto
-Quest Property DialogueShipServices Mandatory Const Auto
 ReferenceAlias Property StartingLocationActivatorAlias Mandatory Const Auto
 ReferenceAlias Property StartingGearTerminalAlias Mandatory Const Auto
 ReferenceAlias Property HomeChoosingActivatorAlias Mandatory Const Auto
@@ -64,8 +63,6 @@ RefCollectionAlias Property StartingLocationMapMarkersCollectionAlias Mandatory 
 
 InputEnableLayer Property InputLayer Auto
 ObjectReference Property FastTravelTarget Auto 
-SpaceshipReference Property RAS_NoneShipReference Auto
-Bool Property PedestrianStart Auto Conditional
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
@@ -322,15 +319,6 @@ Event Location.OnLocationLoaded(Location akSender)
 
   Self.UnregisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
 EndEvent
-
-Function SetupPlayerShip(SpaceshipReference akShip)
-  RAS_NoneShipReference = None
-  PedestrianStart = False
-  InputLayer.Delete()
-  DialogueShipServices.Reset()
-  DialogueShipServices.Start()
-  akShip.SetExteriorLoadDoorInaccessible(False)
-EndFunction
 
 Event ReferenceAlias.OnActivate(ReferenceAlias akSender, ObjectReference akActionRef)
     If(akSender == StartingLocationActivatorAlias)
