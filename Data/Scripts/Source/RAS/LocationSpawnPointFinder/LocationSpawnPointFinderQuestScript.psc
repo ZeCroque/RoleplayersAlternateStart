@@ -122,6 +122,39 @@ Function FindSpawnPointForLocation(Location akLocation)
     EndIf
 EndFunction
 
+ObjectReference[] Function InsertionSort(ObjectReference[] akArray)
+    Int i = 1
+    Int j = 0
+    ObjectReference tmp = None
+    While(i < akArray.Length && akArray[i] != None)
+        tmp = akArray[i]
+        j = i
+        While(j > 0 && akArray[j - 1] as String > tmp as String)
+            akArray[j] = akArray[j - 1]
+            j -= 1
+        EndWhile
+        akArray[j] = tmp
+        i += 1
+    EndWhile
+    return akArray
+EndFunction
+
+Function AddTerminalEntries(ObjectReference[] mapMarkers, Int offset)
+    Form viewportMapMarker = Game.GetFormFromFile(0xFE000003,"SFBGS008.esm")
+    Form[] tagReplacements = new Form[1]
+
+    Int i = 0
+    While(i < mapMarkers.Length && mapMarkers[i] != None)
+        Form mapMarker = mapMarkers[i]
+        If(mapMarker == viewportMapMarker) ;The undiscovered name of viewport is crap, so we hardcoded a fix
+            mapMarker = RAS_DynamicEntry_MapMarker_Viewport
+        EndIf
+        tagReplacements[0] = mapMarker
+        RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, i + 1 + offset, tagReplacements)
+        i += 1
+    EndWhile    
+EndFunction
+
 Function SelectMapMarker()
     RAS:NewGameConfiguration:ShipVendorScript myShipVendorScript = RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript
 
@@ -132,25 +165,44 @@ Function SelectMapMarker()
         RAS_StartingMapMarkerTerminalMenu.ClearDynamicMenuItems(startingMapMarkerTerminal)
     EndIf
 
+    ;Add ship entry first if applicable
     If(!myShipVendorScript.NoShipSelected)
         Form[] tagReplacements = new Form[1]
         tagReplacements[0] = RAS_DynamicEntry_MapMarker_Ship
         RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, 1, tagReplacements)
     EndIf
 
+    ;Split update-added city map markers and others and then add them to terminal
+    ObjectReference[] mapMarkers = StartingLocationMapMarkersCollectionAlias.GetArray()
+    ObjectReference[] cityMapMarkers = new ObjectReference[mapMarkers.Length]
+    ObjectReference[] mainMapMarkers = new ObjectReference[mapMarkers.Length]
     Int i = 0
-    While(i < StartingLocationMapMarkersCollectionAlias.GetCount())
-        Form[] tagReplacements = new Form[1]
-        Form mapMarker = StartingLocationMapMarkersCollectionAlias.GetAt(i)
-        Form viewportMapMarker = Game.GetFormFromFile(0xFE000003,"SFBGS008.esm")
-        If(mapMarker == viewportMapMarker)
-            mapMarker = RAS_DynamicEntry_MapMarker_Viewport
+    Int j = 0
+    Int k = 0
+    String mapMarkerEditorId
+    While(i < mapMarkers.Length)
+        mapMarkerEditorId = mapMarkers[i] as String
+        If(mapMarkerEditorId > "[ObjectReference < CithMapMarker_A" && mapMarkerEditorId < "[ObjectReference <CithMapMarker_Z") ;Akila city typo
+            cityMapMarkers[j] = mapMarkers[i]
+            j += 1
+        Else
+            If(mapMarkerEditorId > "[ObjectReference <CityMapMarker_A" && mapMarkerEditorId < "[ObjectReference <CityMapMarker_Z")
+                cityMapMarkers[j] = mapMarkers[i]
+                j += 1
+            Else
+                If(mapMarkerEditorId > "[ObjectReference <CityMapMarkers_A" && mapMarkerEditorId < "[ObjectReference <CityMapMarkers_Z")
+                    cityMapMarkers[j] = mapMarkers[i]
+                    j += 1
+                Else
+                    mainMapMarkers[k] = mapMarkers[i]
+                    k += 1
+                EndIf
+            EndIf
         EndIf
-        tagReplacements[0] = mapMarker
-        Bool hasShip = !myShipVendorScript.NoShipSelected
-        RAS_StartingMapMarkerTerminalMenu.AddDynamicMenuItem(startingMapMarkerTerminal, 0, i + 1 + hasShip as Int, tagReplacements)
         i += 1
     EndWhile
+    AddTerminalEntries(InsertionSort(mainMapMarkers), (!myShipVendorScript.NoShipSelected) as Int)
+    AddTerminalEntries(InsertionSort(cityMapMarkers), (!myShipVendorScript.NoShipSelected) as Int + j + 1)
     
     Self.RegisterForRemoteEvent(RAS_StartingMapMarkerTerminalMenu, "OnTerminalMenuItemRun")
     startingMapMarkerTerminal.Activate(Game.GetPlayer())
