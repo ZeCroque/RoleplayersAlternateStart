@@ -51,6 +51,7 @@ ReferenceAlias Property LevelManagerActivatorAlias Mandatory Const Auto
 ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
+ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden

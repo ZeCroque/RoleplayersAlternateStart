@@ -11,7 +11,7 @@ CustomEvent FragmentTriggered
 
 Struct NarrativeMod
     MiscObject SubmenuEntry
-    Form TextBody
+    Message TextBody
     MiscObject Fragment
     ConditionForm Condition
 EndStruct
@@ -41,13 +41,13 @@ Event OnActivate(ObjectReference akActionRef)
     Int i = 0
     Int j = 0
     While(i < NarrativeMods.Length)
-        If(NarrativeMods[i].Condition.IsTrue())
+        If(!NarrativeMods[i].Condition || NarrativeMods[i].Condition.IsTrue())
             MenuIdToNarrativeModIndex[j] = i
-            j += 1
 
             Form[] tagReplacements = new Form[1]
             tagReplacements[0] = NarrativeMods[i].SubmenuEntry
-            RAS_NarrativeAdjustmentsTerminalMenu.AddDynamicMenuItem(RAS_NarrativeAdjustmentsTerminalREF, 0, i + 1, tagReplacements)
+            RAS_NarrativeAdjustmentsTerminalMenu.AddDynamicMenuItem(RAS_NarrativeAdjustmentsTerminalREF, 0, j + 1, tagReplacements)
+            j += 1
         EndIf
         i += 1
     EndWhile
