@@ -29,6 +29,6 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
     Int index = auiMenuItemID - 1
     If(index < Settlements.Length)
         (DynamicTerminal as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).ChangeSelection(RAS_DynamicEntry_Start_Default, Settlements[auiMenuItemID - 1])
-        (RAS_DynamicEntry_Start_Default as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultStartFragment).TargetLocation = Settlements[auiMenuItemID - 1] as Location
+        (RAS_DynamicEntry_Start_Default as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultMoveToLocFragment).TargetLocation = Settlements[auiMenuItemID - 1] as Location
     EndIf
 EndEvent

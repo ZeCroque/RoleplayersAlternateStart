@@ -30,7 +30,7 @@ Guard Initializing ProtectsFunctionLogic
 Bool YetInit = False
 
 Event OnCellLoad()    
-    (RAS_DynamicEntry_Start_Default as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultStartFragment).TargetLocation = CityNewAtlantisLocation
+    (RAS_DynamicEntry_Start_Default as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultMoveToLocFragment).TargetLocation = CityNewAtlantisLocation
 
     Actor PlayerRef = Game.GetPlayer()
     If(PlayerRef.HasPerk(Trait_KidStuff))

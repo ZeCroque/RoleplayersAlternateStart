@@ -12,7 +12,6 @@ EndFunction
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
   If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc.HasKeyword(PCM_ArtifactCave) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int roll = Utility.RandomInt(1, 100)
-    Debug.Trace(roll)
     If(roll <= RAS_MQTriggerChance.GetValue() as Int)
       RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
       MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)

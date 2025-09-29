@@ -18,6 +18,7 @@ Form CurrentTextReplacement
 Bool Property HasValidSelection Auto Conditional
 
 CustomEvent SelectedFragmentTriggered
+CustomEvent EntryTriggered
 CustomEvent SubmenuTriggered
 
 Event OnCellLoad()
@@ -36,14 +37,15 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
         Int index = auiMenuItemID - MainTerminalIdOffset
         Form[] entriesArray = Entries.GetArray()
         If(index < entriesArray.Length)
+            var[] eventParams = new var[1]
+            eventParams[0] = entriesArray[index]
             If(entriesArray[index].HasKeyword(RAS_SubmenuEntryKeyword))
-                var[] eventParams = new var[1]
-                eventParams[0] = entriesArray[index]
                 Self.SendCustomEvent("SubmenuTriggered", eventParams)
                 Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
                 UpdateTerminalBody(TerminalSubmenu)
             Else
                 ChangeSelection(entriesArray[index] as MiscObject, entriesArray[index])
+                Self.SendCustomEvent("EntryTriggered", eventParams)
             EndIf
         EndIf
     EndIf
