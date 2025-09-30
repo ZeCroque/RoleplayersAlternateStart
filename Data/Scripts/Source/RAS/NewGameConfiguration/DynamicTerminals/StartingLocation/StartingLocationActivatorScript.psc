@@ -46,8 +46,7 @@ Event OnActivate(ObjectReference akActionRef)
     If((RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).HasValidSelection)
         RAS_StartsList.AddForm(RAS_DynamicEntry_Start_AtHome)
     EndIf
-
-    RAS_StartingLocationTerminalREF.Activate(akActionRef)
+    (RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).Start()
 EndEvent
 
 Function InitStarts()

@@ -21,15 +21,16 @@ CustomEvent SelectedFragmentTriggered
 CustomEvent EntryTriggered
 CustomEvent SubmenuTriggered
 
+Function Start()
+    UpdateTerminalBody(MainTerminalMenu)
+    UpdateTerminalList(Entries.GetArray(), False)
+    Activate(Game.GetPlayer())
+EndFunction
+
 Event OnCellLoad()
     Self.RegisterForRemoteEvent(MainTerminalMenu, "OnTerminalMenuItemRun")
 
     ChangeSelection(DefaultEntry, DefaultTextReplacement)
-EndEvent
-
-Event OnActivate(ObjectReference akActionRef)
-     UpdateTerminalBody(MainTerminalMenu)
-     UpdateTerminalList(Entries.GetArray(), False)
 EndEvent
 
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)

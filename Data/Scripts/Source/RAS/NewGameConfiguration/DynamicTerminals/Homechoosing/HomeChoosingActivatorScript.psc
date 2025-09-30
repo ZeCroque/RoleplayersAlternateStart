@@ -7,5 +7,5 @@ Event OnCellLoad()
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
-    RAS_HomeChoosingTerminalREF.Activate(akActionRef)
+    (RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).Start()
 EndEvent
