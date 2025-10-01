@@ -19,6 +19,11 @@ MiscObject Property RAS_DynamicEntry_MapMarker_Ship Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_MapMarker_Viewport Mandatory Const Auto
 Keyword Property LocTypeOrbit Mandatory Const Auto
 Keyword Property LocTypeSurface Mandatory Const Auto
+LocationAlias Property RandomDungeon Mandatory Const Auto
+LocationAlias Property RandomMine Mandatory Const Auto
+LocationAlias Property RandomScientificOutpost Mandatory Const Auto
+LocationAlias Property RandomSettlement Mandatory Const Auto
+LocationAlias Property RandomShipwreck Mandatory Const Auto
 
 ObjectReference startingMapMarkerTerminal 
 ObjectReference[] cityMapMarkers
