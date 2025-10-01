@@ -19,17 +19,16 @@ MiscObject Property RAS_DynamicEntry_MapMarker_Ship Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_MapMarker_Viewport Mandatory Const Auto
 Keyword Property LocTypeOrbit Mandatory Const Auto
 Keyword Property LocTypeSurface Mandatory Const Auto
-LocationAlias Property RandomDungeon Mandatory Const Auto
-LocationAlias Property RandomMine Mandatory Const Auto
-LocationAlias Property RandomScientificOutpost Mandatory Const Auto
-LocationAlias Property RandomSettlement Mandatory Const Auto
-LocationAlias Property RandomShipwreck Mandatory Const Auto
+ReferenceAlias Property RandomLocationConfigurationTerminalAlias Mandatory Const Auto
+Terminal Property RAS_RandomStartConfigurationTerminal Mandatory Const Auto
 
 ObjectReference startingMapMarkerTerminal 
 ObjectReference[] cityMapMarkers
 ObjectReference[] mainMapMarkers
 int mainMapMarkersCount
 ObjectReference shipMarker
+
+ObjectReference randomLocationConfigurationTerminal
 
 ;Fill alliases, sets the shipMarker global and returns:
 ;   -1 if no ship marker found
@@ -307,3 +306,16 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
         EndIf
     EndIf
 EndEvent
+
+; 7: Dungeon
+; 10: Mine
+; 11: Scientific Outpost
+; 12: Shipwreck
+; 13: CivilianOutpost
+Function ConfigureRandomLocation(Int aliasIndex)
+    If(!randomLocationConfigurationTerminal)
+        randomLocationConfigurationTerminal = Game.GetPlayer().PlaceAtMe(RAS_RandomStartConfigurationTerminal)
+    EndIf
+    RandomLocationConfigurationTerminalAlias.ForceRefTo(randomLocationConfigurationTerminal)
+    randomLocationConfigurationTerminal.Activate(Game.GetPlayer())
+EndFunction
