@@ -14,7 +14,7 @@ EndEvent
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
         Self.RegisterForRemoteEvent(RAS_RandomStartConfigurationTerminalMenu, "OnTerminalMenuItemRun")
-        (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).ConfigureRandomLocation(AliasId)
+        (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).StartRandomLocationConfigurationTerminal(AliasId)
     Endif
 EndEvent
 

@@ -298,16 +298,63 @@ Function SelectMapMarkerAndMove(Bool moveShip)
     startingMapMarkerTerminal.Activate(Game.GetPlayer())
 EndFunction
 
+Message Function GetEntryForLevelTarget()
+    Int levelMode = RAS_LocationUseCustomLevelRange.GetValue() as Int
+    If(!levelMode)
+        Return RAS_LocationLevelEntry_Default
+    Else
+        Return RAS_LocationLevelEntry_Custom
+    EndIf
+EndFunction
+
+Function UpdateRandomLocationConfigurationLevelMenuBody()
+    RAS_RandomStartConfigurationTerminal_LevelMenu.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
+    Form[] tagReplacements = new Form[1]
+    tagReplacements[0] = GetEntryForLevelTarget()
+    RAS_RandomStartConfigurationTerminal_LevelMenu.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
+EndFunction
+
+Message Function GetEntryForHabilityTarget()
+    Int habitabilityTarget = RAS_LocationHabitabilityLevel.GetValue() as Int
+    If(habitabilityTarget == 0)
+        Return RAS_HabitabilityEntry_Any
+    ElseIf(habitabilityTarget == 1)
+        Return RAS_HabitabilityEntry_Low
+    ElseIf(habitabilityTarget == 2)
+        Return RAS_HabitabilityEntry_Medium
+    Else
+        Return RAS_HabitabilityEntry_High
+    EndIf
+EndFunction
+
+Function UpdateRandomLocationConfigurationHabitabilityMenuBody()
+    RAS_RandomStartConfigurationTerminal_HabitabilityMenu.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
+    Form[] tagReplacements = new Form[1]
+    tagReplacements[0] = GetEntryForHabilityTarget()
+    RAS_RandomStartConfigurationTerminal_HabitabilityMenu.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
+EndFunction
+
+Function UpdateRandomLocationConfigurationMainMenu()
+    RAS_RandomStartConfigurationTerminalMenu.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
+    Form[] tagReplacements = new Form[2]
+    tagReplacements[0] = GetEntryForLevelTarget()
+    tagReplacements[1] = GetEntryForHabilityTarget()
+    RAS_RandomStartConfigurationTerminalMenu.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
+EndFunction
+
 ; 7: Dungeon
 ; 10: Mine
 ; 11: Scientific Outpost
 ; 12: Shipwreck
 ; 13: CivilianOutpost
-Function ConfigureRandomLocation(Int aliasIndex)
+Function StartRandomLocationConfigurationTerminal(Int aliasIndex)
     If(!randomLocationConfigurationTerminal)
         randomLocationConfigurationTerminal = Game.GetPlayer().PlaceAtMe(RAS_RandomStartConfigurationTerminal)
     EndIf
     RandomLocationConfigurationTerminalAlias.ForceRefTo(randomLocationConfigurationTerminal)
+    UpdateRandomLocationConfigurationMainMenu()
+    UpdateRandomLocationConfigurationLevelMenuBody()
+    UpdateRandomLocationConfigurationHabitabilityMenuBody()
     Self.RegisterForRemoteEvent(RAS_RandomStartConfigurationTerminalMenu, "OnTerminalMenuItemRun")
     randomLocationConfigurationTerminal.Activate(Game.GetPlayer())
     (GetAlias(aliasIndex) as LocationAlias).Clear()
@@ -333,54 +380,32 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
             EndIf
         EndIf
     ElseIf akTerminalBase == RAS_RandomStartConfigurationTerminalMenu
-        If(auiMenuItemID == 3)
+        If(auiMenuItemID == 1)
+            UpdateRandomLocationConfigurationLevelMenuBody()
+        ElseIf(auiMenuItemID == 2)
+            UpdateRandomLocationConfigurationHabitabilityMenuBody()
+        ElseIf(auiMenuItemID == 3)
             Self.UnregisterForRemoteEvent(RAS_RandomStartConfigurationTerminalMenu, "OnTerminalMenuItemRun")
         EndIf
     ElseIf akTerminalBase == RAS_RandomStartConfigurationTerminal_LevelMenu
         If(auiMenuItemID == 1)
             RAS_LocationUseCustomLevelRange.SetValue(0)
-  
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_LocationLevelEntry_Default
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         ElseIf(auiMenuItemID == 2)
             RAS_LocationUseCustomLevelRange.SetValue(1)
-  
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_LocationLevelEntry_Custom
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         EndIf
+        UpdateRandomLocationConfigurationLevelMenuBody()
+        UpdateRandomLocationConfigurationMainMenu()
     ElseIf akTerminalBase == RAS_RandomStartConfigurationTerminal_HabitabilityMenu
         If(auiMenuItemID == 1)
             RAS_LocationHabitabilityLevel.SetValue(0)
-  
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_HabitabilityEntry_Any
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         ElseIf(auiMenuItemID == 2)
             RAS_LocationHabitabilityLevel.SetValue(1)
-  
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_HabitabilityEntry_Low
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         ElseIf(auiMenuItemID == 3)
             RAS_LocationHabitabilityLevel.SetValue(2)
-  
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_HabitabilityEntry_Medium
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         ElseIf(auiMenuItemID == 4)
             RAS_LocationHabitabilityLevel.SetValue(3)
-
-            akTerminalBase.ClearDynamicBodyTextItems(randomLocationConfigurationTerminal)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = RAS_HabitabilityEntry_High
-            akTerminalBase.AddDynamicBodyTextItem(randomLocationConfigurationTerminal, 0, 0, tagReplacements)
         EndIf
+        UpdateRandomLocationConfigurationHabitabilityMenuBody()
+        UpdateRandomLocationConfigurationMainMenu()
     EndIf
 EndEvent

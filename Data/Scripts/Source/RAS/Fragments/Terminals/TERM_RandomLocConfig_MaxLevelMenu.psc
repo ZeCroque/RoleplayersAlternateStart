@@ -1,5 +1,5 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname Fragments:Terminals:TERM__010017CF Extends TerminalMenu Hidden Const
+Scriptname RAS:Fragments:Terminals:TERM_RandomLocConfig_MaxLevelMenu Extends TerminalMenu Hidden Const
 
 ;BEGIN FRAGMENT Fragment_TerminalMenu_00
 Function Fragment_TerminalMenu_00(ObjectReference akTerminalRef)
