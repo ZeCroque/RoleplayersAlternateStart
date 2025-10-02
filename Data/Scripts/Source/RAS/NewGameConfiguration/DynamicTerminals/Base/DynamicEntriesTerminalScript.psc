@@ -97,3 +97,11 @@ Function CallSelectedFragment()
         Self.SendCustomEvent("SelectedFragmentTriggered", eventParams)
     EndIf
 EndFunction
+
+Function ResetSelection()
+    ChangeSelection(DefaultEntry, DefaultTextReplacement)
+EndFunction
+
+MiscObject Function GetCurrentFragment()
+    Return CurrentFragment
+EndFunction

@@ -20,10 +20,11 @@ MiscObject Property RAS_DynamicEntry_Start_Default Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_AtHome Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_AtDreamHome Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_AtParents Mandatory Const Auto
+MiscObject Property RAS_DynamicEntry_Start_Shipwrecked Mandatory Const Auto
 Perk Property Trait_KidStuff Mandatory Const Auto
 Perk Property TRAIT_StarterHome Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
-
+ObjectReference Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
 
 Guard Initializing ProtectsFunctionLogic
@@ -43,10 +44,28 @@ Event OnCellLoad()
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
+    RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript startingLocationTerminal = (RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript)
+    
     If((RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).HasValidSelection)
         RAS_StartsList.AddForm(RAS_DynamicEntry_Start_AtHome)
+    Else
+        RAS_StartsList.RemoveAddedForm(RAS_DynamicEntry_Start_AtHome)
+        If(startingLocationTerminal.GetCurrentFragment() == RAS_DynamicEntry_Start_AtHome)
+            startingLocationTerminal.ResetSelection()
+        EndIf
     EndIf
-    (RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).Start()
+
+    If((RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).NoShipSelected)
+        RAS_StartsList.AddForm(RAS_DynamicEntry_Start_Shipwrecked)
+    Else
+        RAS_StartsList.RemoveAddedForm(RAS_DynamicEntry_Start_Shipwrecked)
+        If(startingLocationTerminal.GetCurrentFragment() == RAS_DynamicEntry_Start_Shipwrecked)
+            startingLocationTerminal.ResetSelection()
+        EndIf
+    EndIf
+
+
+    startingLocationTerminal.Start()
 EndEvent
 
 Function InitStarts()
