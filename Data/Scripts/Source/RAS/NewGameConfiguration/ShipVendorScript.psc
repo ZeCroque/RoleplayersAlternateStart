@@ -22,6 +22,8 @@ Message Property RAS_VehicleUnlockingMessage Mandatory Const Auto
 Bool Property NoShipSelected Auto Conditional 
 { If the currently owned ship is the none ship, this boolean is true (Not a dupe of pedestrian as it's updated right away and not upo entering black hole) }
 
+CustomEvent ShipChanged
+
 Bool CapsGivenToUnlockVehicles = False
 
 ObjectReference myLandingMarker 
@@ -62,6 +64,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
         NoShipSelected = False
         currentShipBaseFormID = shipManagerScript.currentShip.GetLeveledSpaceshipBase().GetFormID()
     EndIf
+    Self.SendCustomEvent("ShipChanged")
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 EndEvent
 

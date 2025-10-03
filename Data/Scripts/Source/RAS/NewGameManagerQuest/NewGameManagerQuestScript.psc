@@ -52,11 +52,14 @@ ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
 ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
+ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
+
+CustomEvent ConfigurationChanged
 
 Event OnQuestInit()
   If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
@@ -85,12 +88,16 @@ Event OnQuestInit()
 
   ;Register for activators
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
+   Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
   Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
   Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
+  Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
   Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
   Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
   Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
+  Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
   Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
+  Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
 EndEvent
 
 Event OnStageSet(int auiStageID, int auiItemID)
@@ -325,3 +332,21 @@ Event ReferenceAlias.OnActivate(ReferenceAlias akSender, ObjectReference akActio
       SetObjectiveCompleted(15)
  EndIf
 EndEvent
+
+Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SelectionChanged(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] akArgs)
+  HandleConfigurationChanged(akSender as ObjectReference)
+EndEvent
+
+Event RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript.SelectionChanged(RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript akSender, var[] akArgs)
+  HandleConfigurationChanged(akSender as ObjectReference)
+EndEvent
+
+Event RAS:NewGameConfiguration:ShipVendorScript.ShipChanged(RAS:NewGameConfiguration:ShipVendorScript akSender, var[] akArgs)
+  HandleConfigurationChanged(akSender as ObjectReference)
+EndEvent
+
+Function HandleConfigurationChanged(ObjectReference akConfigurator)
+  var[] eventParams = new var[1]
+  eventParams[0] = akConfigurator
+  Self.SendCustomEvent("ConfigurationChanged", eventParams)
+EndFunction

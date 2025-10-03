@@ -7,6 +7,7 @@ MiscObject Property RAS_DynamicEntry_NA_Disable Mandatory Const Auto
 TerminalMenu Property RAS_NarrativeAdjustmentsTerminalMenu Mandatory Const Auto
 TerminalMenu Property RAS_NarrativeAdjustmentsTerminal_Submenu Mandatory Const Auto
 
+CustomEvent SelectionChanged
 CustomEvent FragmentTriggered
 
 Struct NarrativeMod
@@ -65,11 +66,11 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
     ElseIf(akTerminalBase == RAS_NarrativeAdjustmentsTerminal_Submenu)
         If(auiMenuItemID == 0)
             SelectedFragments[CurrentIndex] = RAS_DynamicEntry_NA_Disable
-            UpdateSubmenuBody()
         ElseIf(auiMenuItemID == 1)
             SelectedFragments[CurrentIndex] = RAS_DynamicEntry_NA_Enable
-            UpdateSubmenuBody()
-        EndIf
+        EndIf            
+        UpdateSubmenuBody()
+        Self.SendCustomEvent("SelectionChanged")
     EndIf
 EndEvent
 
