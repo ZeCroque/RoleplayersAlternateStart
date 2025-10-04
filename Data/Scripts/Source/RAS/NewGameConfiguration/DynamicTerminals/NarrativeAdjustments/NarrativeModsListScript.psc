@@ -1,0 +1,5 @@
+Scriptname RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModsListScript extends MiscObject
+
+Import RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModStruct
+
+NarrativeMod[] Property NarrativeModsList Mandatory Const Auto
