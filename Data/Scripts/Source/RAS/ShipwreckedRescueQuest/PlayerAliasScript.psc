@@ -1,6 +1,54 @@
 Scriptname RAS:ShipwreckedRescueQuest:PlayerAliasScript extends ReferenceAlias
 
 Activator Property RAS_RescueActivator Mandatory Auto Const
+MiscObject Property Mfg_Tier01_CommRelay Mandatory Const Auto
+MiscObject Property InorgCommonCopper Mandatory Const Auto
+MiscObject Property InorgCommonAluminum Mandatory Const Auto
+GlobalVariable Property RAS_ShipwreckedRescueQuest_AluminumCount Mandatory Const Auto
+GlobalVariable Property RAS_ShipwreckedRescueQuest_CopperCount Mandatory Const Auto
+
+Event OnInit()
+    AddInventoryEventFilter(Mfg_Tier01_CommRelay)
+    AddInventoryEventFilter(InorgCommonCopper)
+    AddInventoryEventFilter(InorgCommonAluminum)
+EndEvent
+
+Function UpdateQuestIfApplicable()
+    If(GetOwningQuest().IsObjectiveCompleted(0) && GetOwningQuest().IsObjectiveCompleted(1) && GetOwningQuest().IsObjectiveCompleted(2))
+        GetOwningQuest().SetStage(5)
+    EndIf
+EndFunction
+
+Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason)
+    Debug.Trace(akBaseItem)
+    If(akBaseItem == Mfg_Tier01_CommRelay)
+        GetOwningQuest().SetObjectiveCompleted(2)
+        RemoveInventoryEventFilter(Mfg_Tier01_CommRelay)
+        UpdateQuestIfApplicable()
+    ElseIf(akBaseItem == InorgCommonCopper)
+        Int newValue = RAS_ShipwreckedRescueQuest_CopperCount.GetValueInt() + aiItemCount
+        If(newValue < 5)
+            RAS_ShipwreckedRescueQuest_CopperCount.SetValue(newValue)
+        Else
+            RAS_ShipwreckedRescueQuest_CopperCount.SetValue(5)
+            RemoveInventoryEventFilter(InorgCommonCopper)
+            GetOwningQuest().SetObjectiveCompleted(1)
+            UpdateQuestIfApplicable()
+        EndIf
+        GetOwningQuest().UpdateCurrentInstanceGlobal(RAS_ShipwreckedRescueQuest_CopperCount)
+    Else
+        Int newValue = RAS_ShipwreckedRescueQuest_AluminumCount.GetValueInt() + aiItemCount
+        If(newValue < 5)
+            RAS_ShipwreckedRescueQuest_AluminumCount.SetValue(newValue)
+        Else
+            RAS_ShipwreckedRescueQuest_AluminumCount.SetValue(5)
+            RemoveInventoryEventFilter(InorgCommonAluminum)
+            GetOwningQuest().SetObjectiveCompleted(0)
+            UpdateQuestIfApplicable()
+        EndIf
+        GetOwningQuest().UpdateCurrentInstanceGlobal(RAS_ShipwreckedRescueQuest_AluminumCount)
+    EndIf
+EndEvent
 
 Event OnOutpostPlaced(ObjectReference akOutpostBeacon)
     If(GetOwningQuest().GetStageDone(5))

@@ -28,7 +28,7 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
         targetLoc.RefillAlias()
         If(locationSpawnPointFinderQuestScript.MoveToLocation(targetLoc.GetLocation(), !myShipVendorScript.NoShipSelected))
             RAS_ShipwreckedRescueQuest.SetStage(0)
-            (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).PlanetAlias.ForceLocationTo(targetLoc.GetLocation().GetParentLocations()[0])
+            (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).SetShipwreckLocation(targetLoc.GetLocation()) 
         Else
             RAS_ImpossibleToStartMessage.Show()
         EndIf
