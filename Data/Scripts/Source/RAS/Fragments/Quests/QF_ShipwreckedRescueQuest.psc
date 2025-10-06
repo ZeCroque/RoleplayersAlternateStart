@@ -61,6 +61,13 @@ EndFunction
 Function Fragment_Stage_0030_Item_00()
 ;BEGIN CODE
 SetObjectiveCompleted(25)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Stage_0050_Item_00
+Function Fragment_Stage_0050_Item_00()
+;BEGIN CODE
 Stop()
 ;END CODE
 EndFunction

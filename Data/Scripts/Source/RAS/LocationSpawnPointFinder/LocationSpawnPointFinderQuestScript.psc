@@ -32,16 +32,52 @@ Message Property RAS_HabitabilityEntry_Any Auto Const Mandatory
 Message Property RAS_HabitabilityEntry_Low Auto Const Mandatory
 Message Property RAS_HabitabilityEntry_Medium Auto Const Mandatory
 Message Property RAS_HabitabilityEntry_High Auto Const Mandatory
+Keyword Property LocTypeSettlement Mandatory Const Auto
+FormList Property RAS_ExcludedSettlementsLocationList Mandatory Const Auto
+FormList Property RAS_SettlementsLocationList Mandatory Const Auto
+FormList Property RAS_ExcludedStarstationsLocationList Mandatory Const Auto
+FormList Property RAS_StarstationsLocationList Mandatory Const Auto
+RefCollectionAlias Property ShipTechCollectionAlias Mandatory Const Auto
 
 ObjectReference startingMapMarkerTerminal 
 ObjectReference[] cityMapMarkers
 ObjectReference[] mainMapMarkers
 int mainMapMarkersCount
 ObjectReference shipMarker
-
 ObjectReference randomLocationConfigurationTerminal
 
-;Fill alliases, sets the shipMarker global and returns:
+Event OnQuestInit()
+    RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x38CE7, "ShatteredSpace.esm"))  ;Dazra, quest location
+
+    Keyword[] keywords = new Keyword[1]
+    keywords[0] = LocTypeSettlement
+    Location[] allSettlements = Game.GetMatchingLocations(WantedKeywords = keywords)
+    Int i = 0
+    While i < allSettlements.Length
+        Location[] parents = allSettlements[i].GetParentLocations()
+        If(parents.Length)
+            If(parents[0].HasKeyword(LocTypeSurface)) ;looking for direct parent only to elude sub-locations
+                If(!RAS_ExcludedSettlementsLocationList.HasForm(allSettlements[i]))
+                    RAS_SettlementsLocationList.AddForm(allSettlements[i])
+                EndIf
+            Else
+                Int j = 0
+                While(j < parents.Length)
+                    If(parents[j].HasKeyword(LocTypeOrbit))
+                        If(!RAS_ExcludedStarstationsLocationList.HasForm(allSettlements[i]))
+                            RAS_StarstationsLocationList.AddForm(allSettlements[i])
+                        EndIf
+                        j = parents.Length ;break
+                    EndIf
+                    j += 1
+                EndWhile
+            EndIf
+        EndIf
+        i += 1
+    EndWhile
+EndEvent
+
+;Fill aliases, sets the shipMarker global and returns:
 ;   -1 if no ship marker found
 ;    0 if docking port found
 ;    1 if spaceport marker found
@@ -116,21 +152,26 @@ Function MoveToSpacestationReference(SpaceshipReference ship, Bool moveShip, Boo
     EndIf
 EndFunction
 
+;Moves ship to marker, disabling yet present ship if needed
+Function MoveShipToMarker(SpaceshipReference akShip, ObjectReference akShipMarker)
+    ;Sometimes the ship tech could lead to a secondary ship marker that can be occupied, so we remove that ship if applicable (eg: RedMile)
+    ObjectReference[] linkedShips = akShipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
+    If(linkedShips.Length)
+        linkedShips[0].Disable()
+    EndIf
+
+    akShip.MoveTo(akShipMarker)
+    akShip.SetLinkedRef(akShipMarker, CurrentInteractionLinkedRefKeyword)
+    akShip.Enable()
+EndFunction
+
 ; /!\ It's necessary to call FindShipMarkerForLocation beforehand /!\
 ;Moves player and/or ship to a planet reference. 
 ;    If moving player and ship, will move to ship
 ;    If moving only player but no destination provided, will prompt for a map marker if several available or will move to the ship marker elsewise
 Function MoveToPlanetReference(SpaceshipReference ship, Bool moveShip, Bool movePlayer = True, ObjectReference playerDestination = None)
     If(moveShip)
-        ;Sometimes the ship tech could lead to a secondary ship marker that can be occupied, so we remove that ship if applicable (eg: RedMile)
-        ObjectReference[] linkedShips = shipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
-        If(linkedShips.Length)
-            linkedShips[0].Disable()
-        EndIf
-
-        ship.MoveTo(shipMarker)
-        ship.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
-        ship.Enable()
+        MoveShipToMarker(ship, shipMarker)
     EndIf
 
     If(movePlayer)

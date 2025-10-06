@@ -51,7 +51,7 @@ Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemRefere
 EndEvent
 
 Event OnOutpostPlaced(ObjectReference akOutpostBeacon)
-    If(GetOwningQuest().GetStageDone(5))
+    If(GetOwningQuest().GetStage() < 10)
         GetOwningQuest().SetStage(10)
         RegisterForRemoteEvent(akOutpostBeacon, "OnWorkshopObjectPlaced")
     EndIf
@@ -62,7 +62,22 @@ Event ObjectReference.OnWorkshopObjectPlaced(ObjectReference akSender, ObjectRef
         If(akReference.GetBaseObject() == RAS_RescueActivator as Form)
             (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).RescueBeaconAlias.ForceRefTo(akReference)
             GetOwningQuest().SetStage(15)
-            Clear()
         EndIf
     EndIf
+EndEvent
+
+Event OnLocationChange(Location akOldLoc, Location akNewLoc)
+    If(GetOwningQuest().GetStage() == 30)
+        RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript)
+        Game.GetPlayer().MoveTo(shipwreckedRescueQuestScript.ShipMapMarkerAlias.GetReference())
+        Utility.Wait(2)
+        Self.RegisterForDistanceGreaterThanEvent(Game.GetPlayer(), shipwreckedRescueQuestScript.ShipAlias.GetReference(), 20)
+    EndIf
+EndEvent
+
+Event OnDistanceGreaterThan(ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID)
+    SpaceshipReference ship = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).ShipAlias.GetShipReference()
+    Self.UnregisterForDistanceEvents(Game.GetPlayer(), ship)
+    ship.DisableWithTakeOffOrLanding()
+    GetOwningQuest().SetStage(50)
 EndEvent

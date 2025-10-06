@@ -1,34 +1,29 @@
-Scriptname RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:StarstationSubmenuFragment extends Form
+Scriptname RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultLocationSubmenuFragment extends Form
 
 Import RAS:NewGameConfiguration:DynamicTerminals:Base:EntryStruct
 
 ObjectReference Property DynamicTerminal Mandatory Const Auto
 TerminalMenu Property TerminalSubmenu Mandatory Const Auto
-
-ObjectReference Property RAS_StartingLocationActivator Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_Default Mandatory Const Auto
+FormList Property LocationsList Mandatory Const Auto
 
 Entry[] Settlements
 
 Event OnInit()
-
     Self.RegisterForCustomEvent(DynamicTerminal as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SubmenuTriggered")
-
-    (RAS_StartingLocationActivator as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).InitStarts()
-    Form[] settlementsArray = (RAS_StartingLocationActivator as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_SettlementsLocationList.GetArray()
-    Settlements = new Entry[settlementsArray.Length]
-    Int i = 0
-    While i < Settlements.Length
-        Settlements[i] = new Entry
-        Settlements[i].Fragment = settlementsArray[i]
-        i += 1
-    EndWhile
 EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SubmenuTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
-        Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
+        Settlements = new Entry[LocationsList.GetSize()]
+        Int i = 0
+        While i < LocationsList.GetSize()
+            Settlements[i] = new Entry
+            Settlements[i].Fragment = LocationsList.GetAt(i)
+            i += 1
+        EndWhile
         (DynamicTerminal as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).UpdateTerminalList(Settlements, True)
+        Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
     Else
         Self.UnregisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
     Endif
