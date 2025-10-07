@@ -28,16 +28,16 @@ EndFunction
 Function SetRescueShip(SpaceshipReference akShip)
     ShipAlias.ForceRefTo(akShip)
     ShipAlias.RefillDependentAliases()
-    ObjectReference[] ramps = akShip.GetLandingRamps()
-    Self.RegisterForRemoteEvent(ramps[0], "OnOpen")
+
+    Self.RegisterForRemoteEvent(ShipAlias.GetShipReference(), "OnShipRampDown")
 
     ObjectReference[] doors = akShip.GetExteriorLoadDoors()
     ShipDoorAlias.ForceRefTo(doors[0])
     Self.RegisterForRemoteEvent(doors[0], "OnActivate")
 EndFunction
 
-Event ObjectReference.OnOpen(ObjectReference akSender, ObjectReference akActionRef)
-    SetStage(25)
+Event SpaceshipReference.OnShipRampDown(SpaceshipReference akSender)
+   SetStage(25)
 EndEvent
 
 Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akActionRef)
@@ -57,11 +57,35 @@ Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akAct
          If(shipTechLocation && shipTechLocation.GetParentLocations()[0].HasKeyword(LocTypeSurface))
             settlements[j] = shipTechLocation
             shipMarkers[j] = shipTechCollectionAlias.GetAt(i).GetLinkedRef(LinkShipLandingMarker01)
-            Form[] tagReplacements = new Form[1]
-            tagReplacements[0] = shipTechLocation
-            RAS_ShipwreckedRescueDestinationTerminalMenu.AddDynamicMenuItem(shipwreckedTerminal, 0, j + 1, tagReplacements)
             j += 1
         EndIf
+        i += 1
+    EndWhile
+
+    i = 0
+    j = 0
+    Location tmp = None
+    ObjectReference tmp2 = None
+    While(i < settlements.Length && settlements[i] != None)
+        tmp = settlements[i]
+        tmp2 = shipMarkers[i]
+        j = i
+        While(j > 0 && settlements[j - 1] as String > tmp as String)
+            settlements[j] = settlements[j - 1]
+            shipMarkers[j] = shipMarkers[j - 1]
+            j -= 1
+        EndWhile
+        settlements[j] = tmp
+        shipMarkers[j] = tmp2
+        i += 1
+    EndWhile
+
+    i = 0
+    While(i < settlements.Length && settlements[i] != None)
+        Debug.Trace(settlements[i])
+        Form[] tagReplacements = new Form[1]
+        tagReplacements[0] = settlements[i]
+        RAS_ShipwreckedRescueDestinationTerminalMenu.AddDynamicMenuItem(shipwreckedTerminal, 0, i + 1, tagReplacements)
         i += 1
     EndWhile
 
