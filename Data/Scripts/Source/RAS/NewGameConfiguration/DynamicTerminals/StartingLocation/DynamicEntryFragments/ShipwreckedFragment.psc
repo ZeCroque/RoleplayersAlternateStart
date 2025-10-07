@@ -6,6 +6,7 @@ ObjectReference Property RAS_ShipServicesActorREF Mandatory Const Auto
 Message Property RAS_ImpossibleToStartMessage Mandatory Const Auto
 TerminalMenu Property RAS_RandomStartConfigurationTerminalMenu Mandatory Const Auto
 Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
+Message Property RAS_ShipwreckStartTutorialMessage Mandatory Const Auto
 
 Int AliasId = 12
 
@@ -30,6 +31,7 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
             RAS_ShipwreckedRescueQuest.Start()
             (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).SetShipwreckLocation(targetLoc.GetLocation())
             RAS_ShipwreckedRescueQuest.SetStage(0)
+            RAS_ShipwreckStartTutorialMessage.Show()
         Else
             RAS_ImpossibleToStartMessage.Show()
         EndIf

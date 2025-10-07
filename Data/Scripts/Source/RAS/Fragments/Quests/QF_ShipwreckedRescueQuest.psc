@@ -65,6 +65,14 @@ SetObjectiveCompleted(25)
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_0040_Item_00
+Function Fragment_Stage_0040_Item_00()
+;BEGIN CODE
+SetStage(50)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_Stage_0050_Item_00
 Function Fragment_Stage_0050_Item_00()
 ;BEGIN CODE

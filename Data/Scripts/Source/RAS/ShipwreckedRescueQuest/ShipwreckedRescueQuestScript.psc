@@ -13,17 +13,55 @@ Terminal Property RAS_ShipwreckedRescueDestinationTerminal Mandatory Const Auto
 TerminalMenu Property RAS_ShipwreckedRescueDestinationTerminalMenu Mandatory Const Auto
 Keyword Property LocTypeSurface Mandatory Const Auto
 Keyword Property LinkShipLandingMarker01 Mandatory Const Auto
+Perk Property Skill_PlanetaryHabitation Mandatory Const Auto
+ConditionForm Property RAS_HasPlanetaryHabRank2 Mandatory Const Auto
+ConditionForm Property RAS_HasPlanetaryHabRank3 Mandatory Const Auto
+ConditionForm Property RAS_HasPlanetaryHabRank4 Mandatory Const Auto
 
 Location targetLoc
 Location[] settlements
 ObjectReference[] shipMarkers
 ObjectReference shipwreckedTerminal
+Int perkRank
 
 Function SetShipwreckLocation(Location akLocation)
     ShipwreckLocationAlias.ForceLocationTo(akLocation)
     PlanetAlias.ForceLocationTo(akLocation.GetParentLocations()[0])
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
+
+    Actor playerRef = Game.GetPlayer()
+    perkRank = 0
+    If(playerRef.HasPerk(Skill_PlanetaryHabitation))
+        If(RAS_HasPlanetaryHabRank2.IsTrue())
+            perkRank = 2
+        ElseIf(RAS_HasPlanetaryHabRank3.IsTrue())
+            perkRank = 3
+        ElseIf(RAS_HasPlanetaryHabRank4.IsTrue())
+            perkRank = 4
+        Else
+            perkRank = 1
+        EndIf
+        playerRef.RemovePerk(Skill_PlanetaryHabitation)
+    EndIf
+
+    Int i = 0
+    While(i < 4)
+        playerRef.AddPerk(Skill_PlanetaryHabitation)
+        i += 1
+    EndWhile
+EndFunction
+
+Function ClearPlanetaryHabSkillChanges()
+    If(perkRank > -1)
+        Actor playerRef = Game.GetPlayer()
+        playerRef.RemovePerk(Skill_PlanetaryHabitation)
+        Int i = 0
+        While(i < perkRank)
+            playerRef.AddPerk(Skill_PlanetaryHabitation)
+            i += 1
+        EndWhile
+    EndIf
 EndFunction
 
 Function SetRescueShip(SpaceshipReference akShip)
@@ -39,6 +77,10 @@ EndFunction
 
 Event SpaceshipReference.OnShipRampDown(SpaceshipReference akSender)
    SetStage(25)
+EndEvent
+
+Event OnQuestStarted()
+    perkRank = -1
 EndEvent
 
 Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akActionRef)
