@@ -1,5 +1,6 @@
 Scriptname RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript extends Quest
 
+ReferenceAlias Property PlayerAlias Mandatory Const Auto
 LocationAlias Property PlanetAlias Mandatory Const Auto
 LocationAlias Property ShipwreckLocationAlias Mandatory Const Auto
 ReferenceAlias Property RescueBeaconAlias Mandatory Const Auto
@@ -82,7 +83,6 @@ Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akAct
 
     i = 0
     While(i < settlements.Length && settlements[i] != None)
-        Debug.Trace(settlements[i])
         Form[] tagReplacements = new Form[1]
         tagReplacements[0] = settlements[i]
         RAS_ShipwreckedRescueDestinationTerminalMenu.AddDynamicMenuItem(shipwreckedTerminal, 0, i + 1, tagReplacements)

@@ -20,7 +20,6 @@ Function UpdateQuestIfApplicable()
 EndFunction
 
 Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason)
-    Debug.Trace(akBaseItem)
     If(akBaseItem == Mfg_Tier01_CommRelay)
         GetOwningQuest().SetObjectiveCompleted(2)
         RemoveInventoryEventFilter(Mfg_Tier01_CommRelay)

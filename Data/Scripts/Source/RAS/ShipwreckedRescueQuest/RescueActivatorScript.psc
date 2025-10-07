@@ -54,21 +54,32 @@ Auto State Available
             offsets[1] = Utility.RandomInt()
             landingMarker = Game.GetPlayer().PlaceAtMe(ShipLandingMarker_60m_Medium, 1, False, False, True, offsets, None, True)
             landingZoneAvailable = CheckLandingSpace(landingMarker)
+            triesCount += 1
         EndWhile
-        
-        If(landingZoneAvailable)
-            SpaceshipReference ship = landingMarker.PlaceShipAtMe(LShip_Vendor_Generic_A_Responder, aiLevelMod = 2, abInitiallyDisabled = true)
-            (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).SetRescueShip(ship)
 
-            If(RAS_ShipwreckedRescueQuest.GetStage() == 30)
+        If(landingZoneAvailable)
+            If(RAS_ShipwreckedRescueQuest.GetStage() == 50)
                 RAS_ShipwreckedRescueQuest.Reset()
+                RAS_ShipwreckedRescueQuest.Start()
+                RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript
+                shipwreckedRescueQuestScript.PlayerAlias.RefillAlias()
+                shipwreckedRescueQuestScript.PlanetAlias.ForceLocationTo(Game.GetPlayer().GetCurrentLocation().GetParentLocations()[0])
+            ElseIf(RAS_ShipwreckedRescueQuest.GetStage() == 0)
+                RAS_ShipwreckedRescueQuest.Start()
+                RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript
+                shipwreckedRescueQuestScript.PlayerAlias.RefillAlias()
+                shipwreckedRescueQuestScript.PlanetAlias.ForceLocationTo(Game.GetPlayer().GetCurrentLocation().GetParentLocations()[0])
             EndIf
             RAS_ShipwreckedRescueQuest.SetStage(20)
+
+            SpaceshipReference ship = landingMarker.PlaceShipAtMe(LShip_Vendor_Generic_A_Responder, aiLevelMod = 2, abInitiallyDisabled = true)
+            (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).SetRescueShip(ship)
 
             ship.SetLinkedRef(landingMarker, CurrentInteractionLinkedRefKeyword, True)
             ship.EnableWithLanding()
         Else
             RAS_UnableToPlaceRescueShipMessage.Show()
+            GotoState("Available")
         EndIf
     EndEvent
 EndState
