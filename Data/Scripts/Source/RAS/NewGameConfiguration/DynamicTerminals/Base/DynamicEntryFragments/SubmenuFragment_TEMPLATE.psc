@@ -10,7 +10,8 @@ EndEvent
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SubmenuTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
         Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
-         ;You can dynamically add your entries here with (DynamicTerminal as RAS_DynamicEntriesTerminalScript).UpdateTerminalList(myArray)
+        ;Dynamically add your entries here with (DynamicTerminal as RAS_DynamicEntriesTerminalScript).UpdateTerminalList(myArray)
+        ;Don't do any other computation or the terminal will update before it finishes (prepare your data beforehand)
     Else
         Self.UnregisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
     Endif

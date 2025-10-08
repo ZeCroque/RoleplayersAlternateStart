@@ -21,6 +21,7 @@ Message Property RAS_SelectionInvalidatedMessage Mandatory Const Auto
 
 MiscObject CurrentFragment
 Form CurrentTextReplacement
+Int CurrentSubmenuIndex
 Bool Property HasValidSelection Auto Conditional Hidden
 Int Property SelectedEntryIndex Auto Conditional Hidden
 
@@ -62,6 +63,7 @@ Event OnCellLoad()
     EndWhile
 
     ChangeSelection(DefaultEntry, DefaultTextReplacement, False)
+    SelectedEntryIndex = DefaultIndex
     UpdateTerminalList(Entries, False)
     UpdateTerminalBodies()
 
@@ -70,18 +72,25 @@ EndEvent
 
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
     If(akTerminalBase == MainTerminalMenu)
+        CurrentSubmenuIndex = 0
         Int index = auiMenuItemID - MainTerminalIdOffset
         If(index < Entries.Length)
             var[] eventParams = new var[1]
             eventParams[0] = Entries[index].Fragment
             If(Entries[index].Fragment.HasKeyword(RAS_SubmenuEntryKeyword))
                 Self.SendCustomEvent("SubmenuTriggered", eventParams)
+                CurrentSubmenuIndex = index
                 Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
                 UpdateTerminalBody(TerminalSubmenu)
             Else
                 ChangeSelection(Entries[index].Fragment as MiscObject, Entries[index].Fragment)
+                SelectedEntryIndex = index
                 Self.SendCustomEvent("EntryTriggered", eventParams)
             EndIf
+        EndIf
+    Else
+        If(auiMenuItemID != 65535)
+            SelectedEntryIndex = CurrentSubmenuIndex
         EndIf
     EndIf
 EndEvent
@@ -105,6 +114,7 @@ Function UpdateTerminalList(Entry[] array, Bool isSubMenu = True)
             (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).InvalidatedTerminal.ForceRefTo(Self)
             RAS_SelectionInvalidatedMessage.Show()
             ChangeSelection(DefaultEntry, DefaultTextReplacement, True)
+            SelectedEntryIndex = DefaultIndex
         EndIf
         i = i + 1
     EndWhile
@@ -128,16 +138,6 @@ Function ChangeSelection(MiscObject akFragment, Form akTextSelection, Bool notif
     UpdateTerminalBodies()
 
     HasValidSelection = CurrentFragment != RAS_DynamicEntry_Base_None
-
-    SelectedEntryIndex = DefaultIndex
-    Int i = 0
-    While(i < Entries.Length)
-        If(Entries[i].Fragment == akFragment)
-            SelectedEntryIndex = i
-            i = Entries.Length
-        EndIf
-        i += 1
-    EndWhile
 
     If(notify)
         Self.SendCustomEvent("SelectionChanged")

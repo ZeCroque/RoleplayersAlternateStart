@@ -11,10 +11,11 @@ Entry[] Settlements
 
 Event OnInit()
     Self.RegisterForCustomEvent(DynamicTerminal as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SubmenuTriggered")
+    Self.RegisterForRemoteEvent(DynamicTerminal, "OnActivate")
 EndEvent
 
-Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SubmenuTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
-    If(kArgs[0] as Form == Self)
+Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akActionRef)
+    If(!Settlements.Length)
         Settlements = new Entry[LocationsList.GetSize()]
         Int i = 0
         While i < LocationsList.GetSize()
@@ -22,6 +23,11 @@ Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScrip
             Settlements[i].Fragment = LocationsList.GetAt(i)
             i += 1
         EndWhile
+    EndIf
+EndEvent
+
+Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SubmenuTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
+    If(kArgs[0] as Form == Self)
         (DynamicTerminal as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).UpdateTerminalList(Settlements, True)
         Self.RegisterForRemoteEvent(TerminalSubmenu, "OnTerminalMenuItemRun")
     Else

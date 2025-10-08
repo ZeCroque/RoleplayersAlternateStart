@@ -37,7 +37,7 @@ Event OnCellLoad()
     i = 0
     Int j
     Int lastIndex = 0
-    While(i < NarrativeMods.Length)
+    While(i < narrativeModsListArray.Length)
         j = 0
         RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModsListScript narrativeModsListScript = narrativeModsListArray[i] as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModsListScript
         While(j < narrativeModsListScript.NarrativeModsList.Length)
