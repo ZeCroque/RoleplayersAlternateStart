@@ -21,6 +21,7 @@ Message Property RAS_SelectionInvalidatedMessage Mandatory Const Auto
 MiscObject CurrentFragment
 Form CurrentTextReplacement
 Bool Property HasValidSelection Auto Conditional Hidden
+Int Property SelectedEntryIndex Auto Conditional Hidden
 
 CustomEvent SelectedFragmentTriggered
 CustomEvent EntryTriggered
@@ -48,7 +49,11 @@ Event OnCellLoad()
         j = 0
         RAS:NewGameConfiguration:DynamicTerminals:Base:EntriesListScript entriesListScript = entriesListsArray[i] as RAS:NewGameConfiguration:DynamicTerminals:Base:EntriesListScript
         While(j < entriesListScript.EntriesList.Length)
-            Entries[lastIndex + j] = entriesListScript.EntriesList[j]
+            Int entryIndex = lastIndex + j
+            Entries[entryIndex] = entriesListScript.EntriesList[j]
+            If(Entries[entryIndex].Index)
+                Entries[entryIndex].Index.SetValueInt(entryIndex)
+            EndIf
             j += 1
         EndWhile
         lastIndex = j
@@ -122,6 +127,16 @@ Function ChangeSelection(MiscObject akFragment, Form akTextSelection, Bool notif
     UpdateTerminalBodies()
 
     HasValidSelection = CurrentFragment != RAS_DynamicEntry_Base_None
+
+    SelectedEntryIndex = -1
+    Int i = 0
+    While(i < Entries.Length)
+        If(Entries[i].Fragment == akFragment)
+            SelectedEntryIndex = i
+            i = Entries.Length
+        EndIf
+        i += 1
+    EndWhile
 
     If(notify)
         Self.SendCustomEvent("SelectionChanged")

@@ -4,4 +4,5 @@ Struct Entry
     Form Fragment
     ConditionForm Condition
     Bool NegateCondition
+    GlobalVariable Index
 EndStruct

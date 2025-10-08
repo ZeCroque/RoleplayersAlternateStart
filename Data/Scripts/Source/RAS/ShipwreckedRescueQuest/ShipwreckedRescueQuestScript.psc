@@ -1,4 +1,4 @@
-Scriptname RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript extends Quest
+Scriptname RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript extends Quest Conditional
 
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
 LocationAlias Property PlanetAlias Mandatory Const Auto
@@ -17,6 +17,8 @@ Perk Property Skill_PlanetaryHabitation Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank2 Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank3 Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank4 Mandatory Const Auto
+
+Bool Property ShowMapMarkers Auto Conditional
 
 Location targetLoc
 Location[] settlements
