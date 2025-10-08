@@ -39,6 +39,8 @@ FormList Property RAS_ExcludedStarstationsLocationList Mandatory Const Auto
 FormList Property RAS_StarstationsLocationList Mandatory Const Auto
 RefCollectionAlias Property ShipTechCollectionAlias Mandatory Const Auto
 
+Location Property TargetLocation Auto Hidden
+
 ObjectReference startingMapMarkerTerminal 
 ObjectReference[] cityMapMarkers
 ObjectReference[] mainMapMarkers
@@ -201,17 +203,17 @@ EndFunction
 Bool Function MoveToReference(ObjectReference targetReference, Bool moveShip)
     SpaceshipReference CurrentShip = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).CurrentShip
 
-    Location currentLocation = targetReference.GetCurrentLocation() 
+    TargetLocation = targetReference.GetCurrentLocation()
     Location landableLocation = None
     Location[] parents = targetReference.GetCurrentLocation().GetParentLocations()
     Int i = 0
     While(i < parents.Length)
         If(parents[i].HasKeyword(LocTypeOrbit))
-            landableLocation = currentLocation
+            landableLocation = TargetLocation
             i = parents.Length ;break
         ElseIf(parents[i].HasKeyword(LocTypeSurface))
             If(i == 0)
-                landableLocation = currentLocation
+                landableLocation = TargetLocation
             Else
                 landableLocation = parents[i - 1]
             EndIf
@@ -239,6 +241,7 @@ EndFunction
 Bool Function MoveToLocation(Location akLocation, Bool moveShip, Bool movePlayer = True)
     SpaceshipReference CurrentShip = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).CurrentShip
 
+    TargetLocation = akLocation
     Int shipMarkerType = FindShipMarkerForLocation(akLocation)
     If(shipMarkerType == 0) ;spacestation
         MoveToSpacestationReference(CurrentShip, moveShip, movePlayer)
@@ -246,7 +249,7 @@ Bool Function MoveToLocation(Location akLocation, Bool moveShip, Bool movePlayer
     ElseIf(shipMarkerType > 0) ;planet (settlement/POI)(undefined behavior if no ship tech (2) and more than one ship landing marker)
         MoveToPlanetReference(CurrentShip, moveShip, movePlayer)
         Return True
-    ElseIf(movePlayer && StartingLocationMapMarkersCollectionAlias.GetCount()) ;Fallback to the only known ref we have
+    ElseIf(movePlayer && !moveShip && StartingLocationMapMarkersCollectionAlias.GetCount()) ;Fallback to the only known ref we have
         Game.GetPlayer().MoveTo(StartingLocationMapMarkersCollectionAlias.GetAt(0))
         Return True
     EndIf

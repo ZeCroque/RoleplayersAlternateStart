@@ -23,6 +23,7 @@ Function InitNoneShip()
     InputLayer.EnableFarTravel(False)
     InputLayer.EnableGravJump(False)
     InputLayer.EnableTakeoff(False)
+    InputLayer.EnableFastTravel(False)
 
     ;We start as pedestrian and will eventually update when player enters black hole
     PedestrianStart = True

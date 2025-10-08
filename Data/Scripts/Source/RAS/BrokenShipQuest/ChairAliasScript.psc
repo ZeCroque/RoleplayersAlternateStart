@@ -1,16 +1,15 @@
-Scriptname RAS:FrontierPickupQuest:ChairAliasScript extends ReferenceAlias
+Scriptname RAS:BrokenShipQuest:ChairAliasScript extends ReferenceAlias
 
 Message Property RAS_RepairShipMessage Mandatory Const Auto
 Message Property RAS_RepairFailedMessage Mandatory Const Auto
 Message Property RAS_RepairSucceededMessage Mandatory Const Auto
-Form Property ShipRepairKit Mandatory Const Auto
-Form Property InorgCommonIron Mandatory Const Auto
+Potion Property ShipRepairKit Mandatory Const Auto
+MiscObject Property InorgCommonIron Mandatory Const Auto
 
 Function RepairShip()
     GetReference().BlockActivation(False, False)
     RAS_RepairSucceededMessage.Show()
-    GetOwningQuest().SetStage(20)
-    Clear()
+    GetOwningQuest().SetStage(10)
 EndFunction
 
 Event OnActivate(ObjectReference akActionRef)
@@ -34,8 +33,4 @@ Event OnActivate(ObjectReference akActionRef)
     ElseIf(Choice == 3)
         RepairShip()
     Endif
-EndEvent
-
-Event OnCellLoad()
-    GetOwningQuest().SetStage(10)
 EndEvent

@@ -14,6 +14,7 @@ MiscObject Property RAS_DynamicEntry_Base_None Mandatory Const Auto
 FormList Property EntriesLists Mandatory Const Auto
 MiscObject Property DefaultEntry Mandatory Const Auto
 Form Property DefaultTextReplacement Mandatory Const Auto
+Int Property DefaultIndex Mandatory Const Auto
 
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Message Property RAS_SelectionInvalidatedMessage Mandatory Const Auto
@@ -128,7 +129,7 @@ Function ChangeSelection(MiscObject akFragment, Form akTextSelection, Bool notif
 
     HasValidSelection = CurrentFragment != RAS_DynamicEntry_Base_None
 
-    SelectedEntryIndex = -1
+    SelectedEntryIndex = DefaultIndex
     Int i = 0
     While(i < Entries.Length)
         If(Entries[i].Fragment == akFragment)
