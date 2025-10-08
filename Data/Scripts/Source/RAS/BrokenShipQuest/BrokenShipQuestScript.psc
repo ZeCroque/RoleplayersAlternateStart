@@ -10,7 +10,7 @@ Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 Bool Property ShowMapMarkers Auto Conditional
-
+Bool Property IsEnabled Auto Conditional
 
 Event OnQuestStarted()
     Location targetLocation = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).TargetLocation

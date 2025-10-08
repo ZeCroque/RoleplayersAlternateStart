@@ -13,6 +13,7 @@ Message Property RAS_SelectionInvalidatedMessage Mandatory Const Auto
 FormList Property RAS_NarrativeAdjustmentsList Mandatory Const Auto
 
 CustomEvent SelectionChanged
+CustomEvent FragmentStateChanged
 CustomEvent FragmentTriggered
 
 NarrativeMod[] NarrativeMods
@@ -94,6 +95,10 @@ Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemI
             SelectedFragments[CurrentIndex] = RAS_DynamicEntry_NA_Enable
         EndIf            
         UpdateSubmenuBody()
+        var[] eventParams = new var[2]
+        eventParams[0] = NarrativeMods[CurrentIndex].Fragment
+        eventParams[1] = auiMenuItemID as Bool
+        SendCustomEvent("FragmentStateChanged", eventParams)
         Self.SendCustomEvent("SelectionChanged")
     EndIf
 EndEvent
