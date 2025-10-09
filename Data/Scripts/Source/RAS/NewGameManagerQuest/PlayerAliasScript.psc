@@ -12,6 +12,11 @@ Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Auto
 
+Event OnPlayerLoadGame()
+    ;Forces dynamic terminals to update after reloading the game
+    (GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).HandleConfigurationChanged(None)
+EndEvent
+
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     If(akNewLoc)
         If(GetOwningQuest().GetStage() == 11)
