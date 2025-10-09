@@ -2,4 +2,4 @@ Scriptname RAS:NewGameConfiguration:DynamicTerminals:Base:EntriesListScript exte
 
 Import RAS:NewGameConfiguration:DynamicTerminals:Base:EntryStruct
 
-Entry[] Property EntriesList Mandatory Const Auto
+Entry[] Property EntriesList Auto

@@ -1,11 +1,15 @@
-Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:DynamicEntryFragments:NewAtlantisWellFragment extends Form Const
+Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:DynamicEntryFragments:DefaultFragment extends MiscObject
 
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
-Quest Property DialogueUCNewAtlantis Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_AtHome Mandatory Const Auto
-GlobalVariable Property UC05_PlayerIsUCCitizen Mandatory Const Auto
-Quest Property UC_NA_Home_Well_Misc Mandatory Const Auto
-ObjectReference Property OutpostWellPlayerHouse_Ref Mandatory Const Auto
+
+Quest Property UnlockQuest Auto
+Int Property UnlockQuestStage Auto
+Quest Property DirectionQuest Auto
+Int Property DirectionQuestStage Auto
+GlobalVariable Property UnlockGlobal Auto
+Key Property UnlockKey Auto
+ObjectReference Property TargetReference Auto
 
 Event OnInit()
     RegisterForCustomEvent(RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectedFragmentTriggered")
@@ -14,24 +18,25 @@ EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.EntryTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
-        Self.RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
         RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:HouseFragment houseFragment = RAS_DynamicEntry_Start_AtHome as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:HouseFragment
-        houseFragment.TargetReference = OutpostWellPlayerHouse_Ref
-        houseFragment.DirectionQuest = UC_NA_Home_Well_Misc
-        houseFragment.DirectionQuestStage = 1000
-    Else
-        Self.UnregisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")        
+        houseFragment.TargetReference = TargetReference
+        houseFragment.DirectionQuest = DirectionQuest
+        houseFragment.DirectionQuestStage = DirectionQuestStage
     Endif
 EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
-        UC05_PlayerIsUCCitizen.SetValueInt(1)
-        DialogueUCNewAtlantis.SetStage(364)
-    Endif
-EndEvent        
+        If(UnlockQuest)
+            UnlockQuest.SetStage(UnlockQuestStage)
+        EndIf
 
-Event Actor.OnLocationChange(Actor akSender, Location akOldLoc, Location akNewLoc)
-    Game.GetPlayer().MoveTo(Game.GetForm(0xEEFB4) as ObjectReference)
-    Self.RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
+        If(UnlockGlobal)
+            UnlockGlobal.SetValueInt(1)
+        EndIf
+
+        If(UnlockKey)
+            Game.GetPlayer().AddItem(UnlockKey)
+        EndIf
+    Endif
 EndEvent
