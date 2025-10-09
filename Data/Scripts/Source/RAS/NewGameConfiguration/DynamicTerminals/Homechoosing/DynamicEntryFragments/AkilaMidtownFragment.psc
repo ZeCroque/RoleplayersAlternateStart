@@ -1,10 +1,10 @@
-Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:DynamicEntryFragments:NeonSleepingCrateFragment extends Form Const
+Scriptname RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:DynamicEntryFragments:AkilaMidtownFragment extends Form Const
 
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
-Quest Property DialogueFCNeon Mandatory Const Auto
+Quest Property DialogueFCAkilaCity Mandatory Const Auto
 MiscObject Property RAS_DynamicEntry_Start_AtHome Mandatory Const Auto
-ObjectReference Property Neon_PlayerCrateWorkshopRef Mandatory Const Auto
-Quest Property DialogueFCNeon_PlayerHomeQuest Mandatory Const Auto
+Quest Property FC_AC_Home_MidtownHouse_Misc Mandatory Const Auto
+ObjectReference Property COCMarkerHeading Mandatory Const Auto
 
 Event OnInit()
     RegisterForCustomEvent(RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectedFragmentTriggered")
@@ -13,13 +13,13 @@ EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.EntryTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
-        (RAS_DynamicEntry_Start_AtHome as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultMoveToRefFragment).TargetReference = Neon_PlayerCrateWorkshopRef
+        (RAS_DynamicEntry_Start_AtHome as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultMoveToRefFragment).TargetReference = COCMarkerHeading
     Endif
 EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SelectedFragmentTriggered(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] kArgs)
     If(kArgs[0] as Form == Self)
-        DialogueFCNeon.SetStage(620)
-        DialogueFCNeon_PlayerHomeQuest.SetStage(20)
+        DialogueFCAkilaCity.SetStage(810)
+        FC_AC_Home_MidtownHouse_Misc.SetStage(1000)
     Endif
 EndEvent
