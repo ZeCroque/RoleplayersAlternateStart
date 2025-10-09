@@ -153,5 +153,6 @@ Function CallSelectedFragment()
 EndFunction
 
 Event RAS:NewGameManagerQuest:NewGameManagerQuestScript.ConfigurationChanged(RAS:NewGameManagerQuest:NewGameManagerQuestScript akSender, var[] akArgs)
+    UpdateTerminalBodies()
     UpdateTerminalList(Entries, False)
 EndEvent
