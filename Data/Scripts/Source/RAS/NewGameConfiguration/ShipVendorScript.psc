@@ -6,7 +6,7 @@ Keyword property LinkShipLandingMarker01 auto const mandatory
 Keyword property SpaceshipStoredLink auto const mandatory
 { link ships to landing marker }
     
-ShipVendorListScript property ShipsToSellListAlwaysDataset auto
+ShipVendorListScript[] property ShipsToSellList auto
 { The data set for ships that should always be available for sale. }
 
 Location Property ShipVendorLocation Mandatory Const Auto
@@ -22,6 +22,8 @@ Message Property RAS_VehicleUnlockingMessage Mandatory Const Auto
 Bool Property NoShipSelected Auto Conditional 
 { If the currently owned ship is the none ship, this boolean is true (Not a dupe of pedestrian as it's updated right away and not upo entering black hole) }
 
+FormList Property RAS_ShipList Mandatory Const Auto
+
 CustomEvent ShipChanged
 
 Bool CapsGivenToUnlockVehicles = False
@@ -32,10 +34,24 @@ SpaceshipReference[] shipsForSale
 Int currentShipBaseFormID
 
 Event OnLoad()
+    FormList SVFAlways = Game.GetFormFromFile(0x83e, "ShipVendorFramework.esm") as FormList 
+    If(SVFAlways)
+        AddSVFMapToList(SVFAlways)
+        AddSVFMapToList(Game.GetFormFromFile(0x83f, "ShipVendorFramework.esm") as FormList)
+        AddSVFMapToList(Game.GetFormFromFile(0x840, "ShipVendorFramework.esm") as FormList )
+    Else
+        AddVanillaShipsToList(ShipsToSellList, Game.GetPlayer().GetLevel())
+    EndIf
+
+    LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray(true) as LeveledSpaceshipBase[]
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
-    CreateShipsForSale(ShipsToSellListAlwaysDataset.ShipList, Game.GetPlayer().GetLevel(), myLandingMarker, shipsForSale)
-
+    Int i = 0
+    While(i < shipArray.Length)
+        CreateShipForSale(shipArray[i], myLandingMarker, shipsForSale)
+        i += 1
+    EndWhile
+                
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
 EndEvent
@@ -68,17 +84,41 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
 EndEvent
 
-function CreateShipsForSale(ShipVendorListScript:ShipToSell[] shipToSellList, int playerLevel, ObjectReference createMarker, SpaceshipReference[] shipList)
-    int i = 0
-    if shipToSellList.Length > 0
-        while i < shipToSellList.Length
-            ShipVendorListScript:ShipToSell theShipToSell = shipToSellList[i]
+Function AddSVFMapToList(FormList akMap)
+    Int i = 0
+    Int j = 0
+    Int k = 0
+    FormList[] map = akMap.GetArray() as FormList[]
+    While(i < map.Length)
+        FormList[] vendorLists = map[i].GetArray() as FormList[]
+        j = 0
+        While(j < vendorLists.Length)
+            LeveledSpaceshipBase[] ships = vendorLists[j].GetArray() as LeveledSpaceshipBase[]
+            k = 0
+            While(k < ships.Length)
+                RAS_ShipList.AddForm(ships[k])
+                k += 1
+            EndWhile
+            j += 1
+        EndWhile
+        i += 1
+    EndWhile
+EndFunction
+
+function AddVanillaShipsToList(ShipVendorListScript[] shipToSellList, int playerLevel)
+    Int i = 0
+    Int j = 0
+    While(i < shipToSellList.Length)
+        j = 0
+        while j < shipToSellList[i].ShipList.Length
+            ShipVendorListScript:ShipToSell theShipToSell = shipToSellList[i].ShipList[j]
             if playerLevel >= theShipToSell.minLevel
-                CreateShipForSale(theShipToSell.leveledShip, createMarker, shipList)
+                RAS_ShipList.AddForm(theShipToSell.leveledShip)
             endif
-            i += 1
+            j += 1
         endWhile
-    endif
+        i += 1
+    EndWhile
 EndFunction
 
 function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
