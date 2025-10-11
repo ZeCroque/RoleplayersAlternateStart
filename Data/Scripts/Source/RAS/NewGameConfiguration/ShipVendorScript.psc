@@ -24,6 +24,9 @@ Bool Property NoShipSelected Auto Conditional
 
 FormList Property RAS_ShipList Mandatory Const Auto
 
+Faction Property CrimeFactionCrimsonFleet Mandatory Const Auto
+Faction Property VaruunFaction Mandatory Const Auto
+
 CustomEvent ShipChanged
 
 Bool CapsGivenToUnlockVehicles = False
@@ -33,7 +36,7 @@ SpaceshipReference[] shipsForSale
 
 Int currentShipBaseFormID
 
-Event OnLoad()
+Function InitShips()
     FormList SVFAlways = Game.GetFormFromFile(0x83e, "ShipVendorFramework.esm") as FormList 
     If(SVFAlways)
         AddSVFMapToList(SVFAlways)
@@ -43,7 +46,7 @@ Event OnLoad()
         AddVanillaShipsToList(ShipsToSellList, Game.GetPlayer().GetLevel())
     EndIf
 
-    LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray(true) as LeveledSpaceshipBase[]
+    LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray() as LeveledSpaceshipBase[]
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
     Int i = 0
@@ -51,6 +54,10 @@ Event OnLoad()
         CreateShipForSale(shipArray[i], myLandingMarker, shipsForSale)
         i += 1
     EndWhile
+EndFunction
+
+Event OnLoad()
+    InitShips()
                 
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
@@ -122,8 +129,9 @@ function AddVanillaShipsToList(ShipVendorListScript[] shipToSellList, int player
 EndFunction
 
 function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
-    SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true, akEncLoc = ShipVendorLocation)
-    if newShip
+    SpaceshipReference newShip = None
+    newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
+    if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
         shipList.Add(newShip)
         newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
         newShip.SetActorRefOwner(self)
@@ -133,8 +141,8 @@ function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectRefer
 endFunction
 
 function CreateUnleveledShipForSale(SpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
-    SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true, akEncLoc = ShipVendorLocation)
-    if newShip
+    SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
+    if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
         shipList.Add(newShip)
         newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
         newShip.SetActorRefOwner(self)
