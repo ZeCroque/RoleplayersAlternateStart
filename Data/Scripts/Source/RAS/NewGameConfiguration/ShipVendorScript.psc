@@ -26,8 +26,12 @@ FormList Property RAS_ShipList Mandatory Const Auto
 
 Faction Property CrimeFactionCrimsonFleet Mandatory Const Auto
 Faction Property VaruunFaction Mandatory Const Auto
+ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
+Message Property RAS_ShiptechNotReadyMessage Mandatory Const Auto
+Message Property RAS_ShiptechTutorialMessage Mandatory Const Auto
 
 CustomEvent ShipChanged
+Guard ShipListGuard ProtectsFunctionLogic
 
 Bool CapsGivenToUnlockVehicles = False
 
@@ -36,7 +40,10 @@ SpaceshipReference[] shipsForSale
 
 Int currentShipBaseFormID
 
-Function InitShips()
+Bool ShipTechTutorialShown = False
+Bool AwaitingLevelUpdate = False
+
+Function InitShipsList() RequiresGuard(ShipListGuard)
     FormList SVFAlways = Game.GetFormFromFile(0x83e, "ShipVendorFramework.esm") as FormList 
     If(SVFAlways)
         AddSVFMapToList(SVFAlways)
@@ -45,9 +52,10 @@ Function InitShips()
     Else
         AddVanillaShipsToList(ShipsToSellList, Game.GetPlayer().GetLevel())
     EndIf
+EndFunction
 
+Function GenerateShips() RequiresGuard(ShipListGuard)
     LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray() as LeveledSpaceshipBase[]
-    myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     shipsForSale = new SpaceshipReference[0]
     Int i = 0
     While(i < shipArray.Length)
@@ -56,11 +64,55 @@ Function InitShips()
     EndWhile
 EndFunction
 
+Function ClearShips() RequiresGuard(ShipListGuard) 
+    Debug.Trace("clearing ships")
+    Int i = 0
+    While(i < shipsForSale.Length)
+        shipsForSale[i].SetLinkedRef(None, SpaceshipStoredLink)
+        shipsForSale[i].SetActorRefOwner(None)
+        shipsForSale[i].Disable()
+        shipsForSale[i] = None
+        i += 1
+    EndWhile
+EndFunction
+
 Event OnLoad()
-    InitShips()
-                
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
+    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageLevelActivatorScript, "PlayerLeveledUp")
+    
+    myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
+    LockGuard ShipListGuard
+        BlockActivation(True, False)
+        InitShipsList()
+        GenerateShips()
+        BlockActivation(False, False)
+    EndLockGuard
+EndEvent
+
+Event RAS:NewGameConfiguration:ManageLevelActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageLevelActivatorScript akSender, var[] akArgs)
+    If(!AwaitingLevelUpdate)
+        AwaitingLevelUpdate = True
+        LockGuard ShipListGuard
+            AwaitingLevelUpdate = False
+            BlockActivation(True, False)
+            ClearShips()
+            GenerateShips()
+            BlockActivation(False, False)
+        EndLockGuard
+    EndIf
+EndEvent
+
+Event OnActivate(ObjectReference akActionRef)
+    If(!ShipTechTutorialShown)
+        ShipTechTutorialShown = True        
+        RAS_ShiptechTutorialMessage.Show()
+    EndIf
+    
+    TryLockGuard ShipListGuard
+    Else
+        RAS_ShiptechNotReadyMessage.Show()
+    EndTryLockGuard
 EndEvent
 
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)

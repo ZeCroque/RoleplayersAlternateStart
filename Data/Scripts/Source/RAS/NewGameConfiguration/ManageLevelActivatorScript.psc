@@ -5,6 +5,8 @@ Message Property RAS_SetLevelMessage Mandatory Const Auto
 
 Bool NeverChangedLevel = True
 
+CustomEvent PlayerLeveledUp
+
 Event OnLoad()
     PlayAnimation("Stage2NoTransition")
 EndEvent
@@ -51,4 +53,5 @@ Function AddLevels(Int count)
     NeverChangedLevel = False
     Int PlayerLevel = Game.GetPlayerLevel()
     Game.RewardPlayerXP(Game.GetXPForLevel(PlayerLevel + count) - Game.GetXPForLevel(PlayerLevel), true)
+    SendCustomEvent("PlayerLeveledUp")
 EndFunction
