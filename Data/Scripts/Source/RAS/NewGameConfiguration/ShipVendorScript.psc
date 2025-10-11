@@ -65,7 +65,6 @@ Function GenerateShips() RequiresGuard(ShipListGuard)
 EndFunction
 
 Function ClearShips() RequiresGuard(ShipListGuard) 
-    Debug.Trace("clearing ships")
     Int i = 0
     While(i < shipsForSale.Length)
         shipsForSale[i].SetLinkedRef(None, SpaceshipStoredLink)

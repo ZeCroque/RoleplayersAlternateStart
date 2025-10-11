@@ -14,6 +14,7 @@ ConditionForm Property RAS_HasCommerceRank4 Mandatory Const Auto
 GlobalVariable Property RAS_LowBudget Mandatory Const Auto
 Armor Property Clothes_GenWare_01 Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
 
 Bool Property KeepGearMode Auto Conditional
 
@@ -22,7 +23,13 @@ Bool Property KeepGearMode Auto Conditional
 Bool GearYetBought = False
 
 Event OnLoad()
+    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageLevelActivatorScript, "PlayerLeveledUp")
+    
 	BlockActivation()	
+EndEvent
+
+Event RAS:NewGameConfiguration:ManageLevelActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageLevelActivatorScript akSender, var[] akArgs)
+    RAS_VendorContainerREF.Reset()
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
