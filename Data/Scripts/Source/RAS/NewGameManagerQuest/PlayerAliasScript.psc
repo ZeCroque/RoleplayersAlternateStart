@@ -11,6 +11,11 @@ FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Auto
+ObjectReference Property RAS_StartingStuffContainer Mandatory Const Auto
+
+Event OnInit()
+    AddInventoryEventFilter(None)
+EndEvent
 
 Event OnPlayerLoadGame()
     ;Forces dynamic terminals to update after reloading the game
@@ -21,6 +26,8 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     If(akNewLoc)
         If(GetOwningQuest().GetStage() == 11)
             ;Setting up new game after player left Unity
+
+            (GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RestoreItems()
 
             ;Advancing quests
             GetOwningQuest().SetStage(100)
@@ -54,5 +61,11 @@ EndEvent
 Event OnItemUnequipped(Form akBaseObject, ObjectReference akReference)
     If((GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
         RAS_TmpItemsToEquipBack.AddForm(akBaseObject)
+    EndIf
+EndEvent
+
+Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
+    If(Utility.IntToHex(akBaseItem.GetFormID()) > 0x01000000) ;Non vanilla (can be DLC)
+        RAS_StartingStuffContainer.AddItem(akBaseItem, aiItemCount)
     EndIf
 EndEvent

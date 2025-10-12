@@ -38,7 +38,7 @@ GlobalVariable Property MQ401_SkipMQ Mandatory Const Auto
 Quest Property MQ402 Mandatory Const Auto
 Quest Property COM_Companion_SamCoe_CoraCoe_Handler Mandatory Const Auto
 Faction Property EyeBoardingFaction Mandatory Const Auto
-ObjectReference Property RAS_StarbornStuffTmpContainer Mandatory Const Auto
+ObjectReference Property RAS_StartingStuffContainer Mandatory Const Auto
 ObjectReference Property Frontier_ModularREF Mandatory Const Auto
 FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 GlobalVariable Property MQ101SaveOff Mandatory Const Auto
@@ -88,7 +88,7 @@ Event OnQuestInit()
 
   ;Register for activators
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
-   Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
+  Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
   Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
   Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
   Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
@@ -175,6 +175,25 @@ Function HookMQ()
     Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
 EndFunction
 
+Function RestoreItems()
+  Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
+  Int i = 0
+  While(i < ItemsToEquipBack.Length)
+    Game.GetPlayer().EquipItem(ItemsToEquipBack[i], true)
+    RAS_StartingStuffContainer.RemoveItem(ItemsToEquipBack[i])
+    i = i + 1
+  EndWhile
+  While(RAS_StartingStuffContainer.GetItemCount() > 0)    
+    ObjectReference itemRef = RAS_StartingStuffContainer.DropFirstObject()
+    Game.GetPlayer().AddItem(itemRef, abSilent = True)
+    Int currentItemCount = RAS_StartingStuffContainer.GetItemCount(itemRef.GetBaseObject())
+    If(currentItemCount)
+      RAS_StartingStuffContainer.RemoveItem(itemRef.GetBaseObject(), currentItemCount, True)
+      Game.GetPlayer().AddItem(itemRef, currentItemCount, abSilent = True)
+    EndIf
+  EndWhile
+EndFunction
+
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   MQ101SaveOff.SetValue(0) ;Prevent saving in NG+
   Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
@@ -184,7 +203,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Actor PlayerREF = Game.GetPlayer()
     PlayerREF.RemoveFromFaction(ConstellationFaction)
     PlayerREF.SetValue(PlayerXPBonusMult, 1)
-    PlayerREF.RemoveAllItems()
+    PlayerREF.RemoveAllItems() ;mod added items will be saved by player alias logic
     PlayerREF.RemoveItem(LodgeKey) ;for some reason RemoveAllItems doesn't remove this
 
     Actor Vasco = VascoREF as Actor
@@ -195,21 +214,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     Vasco.RemovePerk(Crew_Ship_Weapons_EM)
 
     If(StarbornVanillaStart)
-      ;Restore inventory silently
-      Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
-      Int i = 0
-      While(i < ItemsToEquipBack.Length)
-        Game.GetPlayer().EquipItem(ItemsToEquipBack[i], true)
-        RAS_StarbornStuffTmpContainer.RemoveItem(ItemsToEquipBack[i])
-        i = i + 1
-      EndWhile
-      i = 0
-      Int ItemCount = RAS_StarbornStuffTmpContainer.GetItemCount()
-      While(i < ItemCount)
-        Game.GetPlayer().AddItem(akItemToAdd = RAS_StarbornStuffTmpContainer.DropFirstObject(), abSilent = True)
-        i = i + 1
-      EndWhile
-    
+      RestoreItems()
       Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
     EndIf
   ElseIf(akSender == FFLodge01 && auiStageID == 10)
@@ -237,7 +242,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
         StarbornVanillaStart = True
 
         ;Put starborn items aside to prevent them from being erased with MQ101 quest rewards by hooks
-        Game.GetPlayer().RemoveAllItems(RAS_StarbornStuffTmpContainer)
+        Game.GetPlayer().RemoveAllItems(RAS_StartingStuffContainer)
         
         ;Register hooks
         HookMQ()
