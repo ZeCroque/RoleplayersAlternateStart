@@ -3,6 +3,7 @@ Scriptname RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript extends Quest
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
 LocationAlias Property PlanetAlias Mandatory Const Auto
 LocationAlias Property ShipwreckLocationAlias Mandatory Const Auto
+ReferenceAlias Property ShipwreckMapMarkerAlias Mandatory Const Auto
 ReferenceAlias Property RescueBeaconAlias Mandatory Const Auto
 ReferenceAlias Property ShipAlias Mandatory Const Auto
 ReferenceAlias Property ShipDoorAlias Mandatory Const Auto
@@ -29,6 +30,7 @@ Int perkRank
 Function SetShipwreckLocation(Location akLocation)
     ShipwreckLocationAlias.ForceLocationTo(akLocation)
     PlanetAlias.ForceLocationTo(akLocation.GetParentLocations()[0])
+    ShipwreckMapMarkerAlias.RefillAlias()
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
 

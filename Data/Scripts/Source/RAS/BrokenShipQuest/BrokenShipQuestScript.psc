@@ -3,6 +3,7 @@ Scriptname RAS:BrokenShipQuest:BrokenShipQuestScript extends Quest Conditional
 LocationAlias Property StartingLocationAlias Mandatory Const Auto
 LocationAlias Property PlanetAlias Mandatory Const Auto
 LocationAlias Property MaterialsLocationAlias Mandatory Const Auto
+ReferenceAlias Property StartingLocationMapMarkerAlias Mandatory Const Auto
 ReferenceAlias Property ShipAlias Mandatory Const Auto
 ReferenceAlias Property ShipPilotChair Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
@@ -16,6 +17,7 @@ Event OnQuestStarted()
     Location targetLocation = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).TargetLocation
     StartingLocationAlias.ForceLocationTo(targetLocation)
     PlanetAlias.ForceLocationTo(targetLocation.GetParentLocations()[0])
+    StartingLocationMapMarkerAlias.RefillAlias()
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
     
