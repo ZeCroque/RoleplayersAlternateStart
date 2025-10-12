@@ -19,6 +19,8 @@ Event OnTriggerEnter(ObjectReference akActionRef)
                     Return
                 EndIf
             EndIf
+
+            Game.RequestSave()
             
             ;Move player to its destination
             (RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).CallSelectedFragment()
