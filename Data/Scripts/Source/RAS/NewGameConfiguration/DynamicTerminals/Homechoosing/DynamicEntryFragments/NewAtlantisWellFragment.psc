@@ -6,6 +6,8 @@ MiscObject Property RAS_DynamicEntry_Start_AtHome Mandatory Const Auto
 GlobalVariable Property UC05_PlayerIsUCCitizen Mandatory Const Auto
 Quest Property UC_NA_Home_Well_Misc Mandatory Const Auto
 ObjectReference Property OutpostWellPlayerHouse_Ref Mandatory Const Auto
+ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
+GlobalVariable Property RAS_DynamicTerminalIndex_Start_AtHome Mandatory Const Auto
 
 Event OnInit()
     RegisterForCustomEvent(RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectedFragmentTriggered")
@@ -32,6 +34,8 @@ Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScrip
 EndEvent        
 
 Event Actor.OnLocationChange(Actor akSender, Location akOldLoc, Location akNewLoc)
-    Game.GetPlayer().MoveTo(Game.GetForm(0xEEFB4) as ObjectReference)
-    Self.RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
+    If((RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).SelectedEntryIndex == RAS_DynamicTerminalIndex_Start_AtHome.GetValueInt())
+        Game.GetPlayer().MoveTo(Game.GetForm(0xEEFB4) as ObjectReference)
+    Endif
+    Self.UnregisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
 EndEvent
