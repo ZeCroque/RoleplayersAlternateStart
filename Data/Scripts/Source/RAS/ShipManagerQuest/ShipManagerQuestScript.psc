@@ -4,6 +4,7 @@ Quest Property DialogueShipServices Mandatory Const Auto
 ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
+GlobalVariable Property MQ204_TurnOffCF01Arrest Mandatory Const Auto
 
 SpaceshipReference Property CurrentShip Auto Hidden
 SpaceshipReference Property RAS_NoneShipReference Auto Hidden
@@ -28,6 +29,9 @@ Function InitNoneShip()
     ;We start as pedestrian and will eventually update when player enters black hole
     PedestrianStart = True
 
+    ;Prevent sysdef quest from triggering
+    MQ204_TurnOffCF01Arrest.SetValueInt(1)
+
     ;Removes ship services techs dialogs
     DialogueShipServices.Stop()
 EndFunction
@@ -42,6 +46,9 @@ Function SetupPlayerShip(SpaceshipReference akShip)
 
     ;No longer pedestrian
     PedestrianStart = False
+
+    ;Enables back sysdef quest
+    MQ204_TurnOffCF01Arrest.SetValueInt(0)
 
     ;Add back ship services tech dialogs
     DialogueShipServices.Reset()
