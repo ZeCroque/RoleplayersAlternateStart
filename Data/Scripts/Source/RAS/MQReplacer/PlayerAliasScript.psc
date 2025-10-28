@@ -1,7 +1,7 @@
 Scriptname RAS:MQReplacer:PlayerAliasScript extends ReferenceAlias
 
 Message Property RAS_KeepArtifactMessage Mandatory Const Auto
-Keyword Property PCM_ArtifactCave Mandatory Const Auto
+LocationRefType Property LocStoryArtifactRoomReserveMarkerLocRef Mandatory Const Auto
 GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
 GlobalVariable Property RAS_MQTriggerChance Mandatory Const Auto
 
@@ -10,7 +10,7 @@ Function HandleArtifact(ObjectReference akArtifactRef)
 EndFunction
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
-  If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc.HasKeyword(PCM_ArtifactCave) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
+  If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int roll = Utility.RandomInt(1, 100)
     If(roll <= RAS_MQTriggerChance.GetValue() as Int)
       RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
