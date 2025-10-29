@@ -1,18 +1,20 @@
 # Roleplayers' Alternate Start
 
 ## Index:
+
 1. Overview
 2. Details
-3. Mod content
-4. Installation
-5. Known Issues
-6. Compatibility
-7. My other mods
-8. Recommended Mods
-9. Credits
-10. Tools used
-11. Licensing/Legal 
-12. Other
+3. Frequently Asked Questions
+4. Known Issues
+5. Mod content
+6. Installation
+7. Compatibility
+8. My other mods
+9. Recommended Mods
+10. Credits
+11. Tools used
+12. Licensing/Legal 
+13. Feedback
 
 ## 1. OVERVIEW
 
@@ -79,7 +81,46 @@ Skip the early-game grind and jump straight into the higher-level loops if you w
 
 The ships sold by the custom technician and the gear available at the vending terminal will update automatically. 
 
-## 3. MOD CONTENT
+## 3. FREQUENTLY ASKED QUESTIONS
+
+#### Will it come to Creations?
+Yes, I'm currently ensuring the mod is stable, I'll release afterward.
+
+#### The mod won't start with my NG+ save, is it normal?
+Infortunately, yes. Currently only fresh start are supported. NG+ suppport will come soon™
+
+#### Is there a way to trigger the MQ by going to Vectera?
+No, not yet 😕
+
+#### In which POI can the artifact added by the mod spawn?
+Here's a list:
+- [Abandoned Mineral Refinery](https://starfieldwiki.net/wiki/Starfield:Abandoned_Mineral_Refinery)
+- [NeuraDyne Botany Laboratory](https://starfieldwiki.net/wiki/Starfield:NeuraDyne_Botany_Laboratory)
+- [Abandoned Muybridge Pharmaceuticals Lab](https://starfieldwiki.net/wiki/Starfield:Abandoned_Muybridge_Pharmaceuticals_Lab)
+- [Forgotten Mech Graveyard](https://starfieldwiki.net/wiki/Starfield:Forgotten_Mech_Graveyard)
+- [Deserted Robotics Lab](https://starfield.fandom.com/wiki/Deserted_Robotics_Lab)
+- [Abandoned Cryo Lab](https://starfieldwiki.net/wiki/Starfield:Abandoned_Cryo_Lab)
+- [Abandoned Maintenance Bay](https://starfieldwiki.net/wiki/Starfield:Abandoned_Maintenance_Bay)
+- [Pressurized Cave](https://starfieldwiki.net/wiki/Starfield:Pressurized_Cave)
+- [Occupied Cave](https://starfieldwiki.net/wiki/Starfield:Occupied_Cave)
+- [Deserted UC Listening Post](https://starfieldwiki.net/wiki/Starfield:Deserted_UC_Listening_Post)
+- [Abandoned Mine](https://starfieldwiki.net/wiki/Starfield:Abandoned_Mine)
+- [Thermal Rise](https://starfieldwiki.net/wiki/Starfield:Thermal_Rise)
+- [Hillside Cave](https://starfieldwiki.net/wiki/Starfield:Hillside_Cave)
+- [Mineral Caverns](https://starfieldwiki.net/wiki/Starfield:Mineral_Caverns)
+- [Cave](https://starfieldwiki.net/wiki/Starfield:Cave) (only in the "OEAF008" layout)
+
+#### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
+Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the *Feedback* section if you find that dialog already listed before requesting.
+
+## 4. KNOWN ISSUES
+
+- The ship called by the rescue beacon may clip into rocks or float slightly after landing. This is a current engine limitation; I will update if a solution is found.
+- No voice lines for the dialogs added to Maurice Lyon and the ship technicians.
+
+Please let me know if you find something else.
+
+## 5. MOD CONTENT
 
 This mod consists of two main files : 
 - *RoleplayersAlternateStart.esm* (mid master)
@@ -88,7 +129,7 @@ This mod consists of two main files :
 And one optional :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
 
-## 4. INSTALLATION
+## 6. INSTALLATION
 
 **Automatic (Recommended)**
 - Use the Mod Manager Download button. Install and enable the file(s) in your favorite mod manager (ModOrganizer2 is my personal preference).
@@ -99,14 +140,11 @@ And one optional :
 **Note:**
 On existing saves, the mod will de-activate itself and shouldn't cause any issues.
 
-## 5. KNOWN ISSUES
-- The ship called by the rescue beacon may clip into rocks or float slightly after landing. This is a current engine limitation; I will update if a solution is found.
-- No voice lines for the dialogs added to Maurice Lyon and the ship technicians.
+## 7. COMPATIBILITY
 
-Please let me know if you find something else.
-
-## 6. COMPATIBILITY
 - Other alternate start mods (either free or paid) are obviously incompatible
+- [Unity Framework by DJLegends](https://www.nexusmods.com/starfield/mods/12567) currently incompatible (patch planned)
+- [Revelation - Main Quest Overhaul](https://www.nexusmods.com/starfield/mods/10418): compatible
 - [Choose Your Variant Universe by Aurelianis](https://www.nexusmods.com/starfield/mods/9273): compatible
 - [Ship Vendor Framework by rux616](https://www.nexusmods.com/starfield/mods/10057) : support embedded in the main file. You can choose any ship added to the framework as a starting ship.
 - Most of DownfallNemesis' house mods have embedded support in the main file (I didn't port the quest-locked ones) :
@@ -119,16 +157,19 @@ Please let me know if you find something else.
     - [Trait Starter Homes](https://www.nexusmods.com/starfield/mods/13929)
 - [Take Items Through Unity - No Console Commands by Wartortle](https://www.nexusmods.com/starfield/mods/7309) : compatibility patch included. Re-install my mod if you're adding this one part way.
 
-## 7. MY OTHER MODS
+## 8. MY OTHER MODS
+
 - [Astra Economy - Legendary Trading and Rerolling](https://www.nexusmods.com/starfield/mods/11256) : Simple mod to exchange legendary equipments for Astras or reroll your existing legendary gear by talking with Stache from the Trackers Alliance's HQ
 
-## 8. RECOMMENDED MODS
+## 9. RECOMMENDED MODS
+
 - [Not Yet Shattered Space by paulbrock](https://www.nexusmods.com/starfield/mods/14112)
 - [The Trackers Alliance Delayed Start by strangeWindmill](https://www.nexusmods.com/starfield/mods/11533)
 - [Nova Transit System by LySoftDev (Creations)](https://creations.bethesda.net/fr/starfield/details/78c9469f-7b64-42e6-a62c-d0a33cad067c/Nova_Transit_System) — Especially useful for pedestrian starts
 - DownfallNemesis' house mods
 
-## 9. CREDITS
+## 10. CREDITS
+
 - Thanks to Bethesda Softworks for this great game
 - Thanks to the authors of the tools listed below
 - Thanks to SKK for the mod [Fast Start New Game](https://www.nexusmods.com/starfield/mods/5971) which have been a good scripting resource to make my own hooks to MQ
@@ -137,7 +178,8 @@ Please let me know if you find something else.
 - Thanks to Redzy7 for his post on Starfield's design style for the thumbnail (https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/)
 - Thanks to the Starfield's fonts authors
 
-## 10. TOOLS USED
+## 11. TOOLS USED
+
 - Creation Kit
 - SF1Edit
 - Starfield Plugin Bridge
@@ -152,14 +194,15 @@ Please let me know if you find something else.
 - Gimp
 - ChatGPT as a help for naming things, writing quests logs, this mod page, etc...
 
-## 11. LICENSING/LEGAL 
+## 12. LICENSING/LEGAL 
+
 If you want to modify and/or redistribute this mod, I would like to be contacted first please. Note that it is under GPL3 licensing, thus you have the obligation to make any modification done to the original source code available somewhere publicly.
 
 You CANNOT, by any mean, upload this mod as a Creation accessible through the in-game menu. I plan to do it myself, but I prefer to wait for community feedback before doing so.
 
 You can find the source code here : https://github.com/ZeCroque/RoleplayersAlternateStart
 
-## 12. OTHER
+## 13. FEEDBACK
 
 *Found a bug or have an idea for new features? Let me know in the comment section!*
 
@@ -170,6 +213,10 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
     - SSNN, about our involvement on Vectera
     - Player's parents, about the job at Argos
     - Lin says "Dusty" during her recruitment dialog
+    - Sarah mentions Vectera in her companion dialogs
+    - Vladimir mention Constellation if you contact the Eye
+    - Mrs. Whimore random encounter has a constellation dialog option
+    - Simeon Bankowski (potential crewmate) has a constellation dialog option
     - Let me now !
 - AI-generated voices for Maurice Lyon and the ship technicians
 - Prevent Neshar arrest & add another way to start the "Loose Ends" questline

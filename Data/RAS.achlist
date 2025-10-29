@@ -83,6 +83,8 @@
 	"Data\\Scripts\\RAS\\ShipwreckedRescueQuest\\PlayerAliasScript.pex",
 	"Data\\Scripts\\RAS\\ShipwreckedRescueQuest\\RescueActivatorScript.pex",
 	"Data\\Scripts\\RAS\\ShipwreckedRescueQuest\\ShipwreckedRescueQuestScript.pex",
+	"Data\\Scripts\\RAS\\UpdateQuest\\PlayerAliasScript.pex",
+	"Data\\Scripts\\RAS\\UpdateQuest\\UpdateQuestScript.pex",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.ffxanim",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.wem",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\002ae4e8.ffxanim",
