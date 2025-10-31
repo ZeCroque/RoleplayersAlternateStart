@@ -9,6 +9,8 @@ ActorValue Property PlayerUnityTimesEntered Auto Const mandatory
 ObjectReference Property VascoREF Auto Const Mandatory
 Quest Property FFLodge01 Mandatory Const Auto
 Quest Property City_NA_Aquilus01 Mandatory Const Auto
+Quest Property TraitQuest Mandatory Const Auto
+Quest Property TraitUnwantedHero Mandatory Const Auto
 Perk Property Crew_Ship_AneutronicFusion Mandatory Const Auto
 Perk Property Crew_Ship_Shields Mandatory Const Auto
 Perk Property Crew_Ship_Weapons_EM Mandatory Const Auto
@@ -157,6 +159,8 @@ Function HookMQ()
     ;Add required triggers from stages we skipped
     City_NA_Aquilus01.Start()
     MQProgress.SetValue(2)
+    TraitQuest.Start()
+    TraitUnwantedHero.Stop()
 
     ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
     Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")

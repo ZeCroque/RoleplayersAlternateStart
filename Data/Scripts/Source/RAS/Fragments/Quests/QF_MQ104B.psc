@@ -605,6 +605,13 @@ Alias_Heller.GetActorRef().SetGhost(false)
 ;run crew quests
 LinEliteCrewQuest.SetStage(1)
 HellerEliteCrewQuest.SetStage(1)
+
+;trigger unwanted hero if applicable now it makes sense
+If(Game.GetPlayer().HasPerk(TRAIT_UnwantedHero))
+  TraitUnwantedHero.Reset()
+  TraitUnwantedHero.Start()
+  TraitUnwantedHero.SetStage(80)
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -730,3 +737,7 @@ ObjectReference Property VecteraShipLandingMarker Auto Const
 Keyword Property CurrentInteractionLinkedRefKeyword Auto Const Mandatory
 
 ObjectReference Property LC001VecteraLiftDoor Auto Const
+
+Perk Property TRAIT_UnwantedHero Mandatory Const Auto
+
+Quest Property TraitUnwantedHero Mandatory Const Auto

@@ -8,6 +8,9 @@ Quest Property MQ103 Mandatory Const Auto
 Quest Property MQ104A Mandatory Const Auto
 Quest Property RAS_MQ104B Mandatory Const Auto
 Quest Property MQ105 Mandatory Const Auto
+Quest Property TraitQuest Mandatory Const Auto
+Quest Property TraitUnwantedHero Mandatory Const Auto
+Perk Property TRAIT_UnwantedHero Mandatory Const Auto
 
 Float LastVersion = 1.04
 
@@ -29,6 +32,15 @@ Function Update()
                 EndIf
             Else
                 (RAS_MQ104B as RAS:MQ104B:MQ104BScript).HookMQ()
+            EndIf
+
+            TraitQuest.Start()
+            If(Game.GetPlayer().HasPerk(TRAIT_UnwantedHero))
+                If(RAS_MQ104B.IsCompleted())
+                    TraitUnwantedHero.SetStage(80)
+                Else
+                    TraitUnwantedHero.Stop()
+                EndIf
             EndIf
         EndIf
 
