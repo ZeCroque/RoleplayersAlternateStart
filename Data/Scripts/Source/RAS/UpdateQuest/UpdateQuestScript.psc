@@ -11,8 +11,6 @@ Quest Property MQ105 Mandatory Const Auto
 Quest Property TraitQuest Mandatory Const Auto
 Quest Property TraitUnwantedHero Mandatory Const Auto
 Perk Property TRAIT_UnwantedHero Mandatory Const Auto
-Quest Property SQ_PlayerShip Mandatory Const Auto
-Message Property RAS_PlaceholderDebugMessage Mandatory Const Auto
 
 Float LastVersion = 1.04
 
@@ -46,21 +44,6 @@ Function Update()
             EndIf
         EndIf
 
-        ;Debug
-        SQ_PlayerShipScript playerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
-        RAS:ShipManagerQuest:ShipManagerQuestScript rasShipScript = RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript
-        If(playerShipQuest.PlayerShip.GetShipReference() == rasShipScript.RAS_NoneShipReference)
-            Int i = 0
-            While(i < playerShipQuest.PlayerShips.GetCount())
-                SpaceshipReference ship = playerShipQuest.PlayerShips.GetAt(i) as SpaceshipReference
-                If(ship != rasShipScript.RAS_NoneShipReference)
-                    playerShipQuest.ResetHomeShip(ship)
-                    RAS_PlaceholderDebugMessage.Show()
-                    Return
-                EndIf
-                i += 1
-            EndWhile
-        EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
