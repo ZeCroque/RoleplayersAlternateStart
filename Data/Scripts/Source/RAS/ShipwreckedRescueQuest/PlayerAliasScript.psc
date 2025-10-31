@@ -68,7 +68,7 @@ EndEvent
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     If(GetOwningQuest().GetStage() < 30)
         RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript)
-        If(akNewLoc.GetCurrentPlanet() != shipwreckedRescueQuestScript.PlanetAlias.GetLocation().GetCurrentPlanet())
+        If(akNewLoc.GetCurrentPlanet() && akNewLoc.GetCurrentPlanet() != shipwreckedRescueQuestScript.PlanetAlias.GetLocation().GetCurrentPlanet())
             GetOwningQuest().FailAllObjectives()
             GetOwningQuest().SetStage(40)
             shipwreckedRescueQuestScript.ClearPlanetaryHabSkillChanges()
@@ -80,6 +80,17 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
         Utility.Wait(2)
         Self.RegisterForDistanceGreaterThanEvent(Game.GetPlayer(), shipwreckedRescueQuestScript.ShipAlias.GetReference(), 20)
     EndIf
+EndEvent
+
+Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
+    RegisterForRemoteEvent(akShip, "OnShipTakeOff")
+EndEvent
+
+Event SpaceshipReference.OnShipTakeOff(SpaceshipReference akSender, bool abComplete)
+    GetOwningQuest().FailAllObjectives()
+    GetOwningQuest().SetStage(40)
+    (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).ClearPlanetaryHabSkillChanges()
+    UnregisterForRemoteEvent(akSender, "OnShipTakeOff")
 EndEvent
 
 Event OnDistanceGreaterThan(ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID)
