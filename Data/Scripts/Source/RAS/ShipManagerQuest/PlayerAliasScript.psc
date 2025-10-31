@@ -19,6 +19,16 @@ Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
     EndIf
 EndEvent
 
+;In case the user uses StarfieldEngineFixes with DisableForcedHomeshipChangeOnPurchase, we force the bought ship as home ship if the player is pedestrian
+Event OnPlayerBuyShip(SpaceshipReference akShip)
+    If(RAS_NewGameManagerQuest.GetStageDone(100))
+        RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (GetOwningQuest() as RAS:ShipManagerQuest:ShipManagerQuestScript)
+        If(shipManagerScript.RAS_NoneShipReference)
+            (SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(akShip)
+        EndIf
+    EndIf
+EndEvent
+
 Event OnSit(ObjectReference akFurniture)
     ;whenever the player sits in the pilot seat, set this ship to be the current ship
     If akFurniture.HasRefType(Ship_PilotSeat_RefType)
