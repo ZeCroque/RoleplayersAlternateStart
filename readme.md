@@ -110,6 +110,12 @@ Here's a list:
 - [Mineral Caverns](https://starfieldwiki.net/wiki/Starfield:Mineral_Caverns)
 - [Cave](https://starfieldwiki.net/wiki/Starfield:Cave) (only in the "OEAF008" layout)
 
+#### Does it support vanilla traits ?
+Yes, indeed. There's a few things to note however :
+- While I made it so you can visit your parents from game start, they will only have dialogs after you join Constellation
+- The adoring fan will only show up after you complete the "Echoes From Vectera" quest, otherwise his dialogs wouldn't have made any sense (thanks to  TwoArmedMan15 for suggesting that)
+- The dream home quest will trigger at the start of the game (you need to complete "One Small Step" in vanilla)
+
 #### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
 Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the *Feedback* section if you find that dialog already listed before requesting.
 
