@@ -5,6 +5,7 @@ ObjectReference Property RAS_ShipVendorMarker Mandatory Const Auto
 ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
 GlobalVariable Property MQ204_TurnOffCF01Arrest Mandatory Const Auto
+RefCollectionAlias Property ShipsToSell Mandatory Const Auto
 
 SpaceshipReference Property CurrentShip Auto Hidden
 SpaceshipReference Property RAS_NoneShipReference Auto Hidden

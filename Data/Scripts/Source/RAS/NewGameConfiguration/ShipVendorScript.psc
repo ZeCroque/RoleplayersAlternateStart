@@ -29,6 +29,7 @@ Faction Property VaruunFaction Mandatory Const Auto
 ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
 Message Property RAS_ShiptechNotReadyMessage Mandatory Const Auto
 Message Property RAS_ShiptechTutorialMessage Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
 CustomEvent ShipChanged
 Guard ShipListGuard ProtectsFunctionLogic
@@ -36,7 +37,7 @@ Guard ShipListGuard ProtectsFunctionLogic
 Bool CapsGivenToUnlockVehicles = False
 
 ObjectReference myLandingMarker 
-SpaceshipReference[] shipsForSale
+RefCollectionAlias shipsToSell
 
 Int currentShipBaseFormID
 
@@ -55,23 +56,22 @@ Function InitShipsList() RequiresGuard(ShipListGuard)
 EndFunction
 
 Function GenerateShips() RequiresGuard(ShipListGuard)
+    shipsToSell = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).ShipsToSell
     LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray() as LeveledSpaceshipBase[]
-    shipsForSale = new SpaceshipReference[0]
     Int i = 0
     While(i < shipArray.Length)
-        CreateShipForSale(shipArray[i], myLandingMarker, shipsForSale)
+        CreateShipForSale(shipArray[i], myLandingMarker)
         i += 1
     EndWhile
 EndFunction
 
 Function ClearShips() RequiresGuard(ShipListGuard) 
-    Int i = 0
-    While(i < shipsForSale.Length)
-        shipsForSale[i].SetLinkedRef(None, SpaceshipStoredLink)
-        shipsForSale[i].SetActorRefOwner(None)
-        shipsForSale[i].Disable()
-        shipsForSale[i] = None
-        i += 1
+    While(shipsToSell.GetCount())
+        SpaceshipReference ship = shipsToSell.GetAt(0) as SpaceshipReference
+        ship.SetLinkedRef(None, SpaceshipStoredLink)
+        ship.SetActorRefOwner(None)
+        ship.Disable()
+        shipsToSell.RemoveRef(ship)
     EndWhile
 EndFunction
 
@@ -117,20 +117,23 @@ EndEvent
 Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
 
+    SQ_PlayerShipScript playerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    playerShipQuest.ResetHomeShip(akSenderRef)
+    playerShipQuest.PlayerShips.RemoveRef(shipManagerScript.currentShip)
     Game.RemovePlayerOwnedShip(shipManagerScript.currentShip)
 
     If(shipManagerScript.currentShip != (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
-        CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker, shipsForSale)
         shipManagerScript.currentShip.Disable()
+        CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker)
     Else
         shipManagerScript.currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
         shipManagerScript.currentShip.SetActorRefOwner(self)
-        shipsForSale.Add(shipManagerScript.currentShip)
+        shipsToSell.AddRef(shipManagerScript.currentShip)
     EndIf
     
     shipManagerScript.currentShip = akSenderRef
 
-    shipsForSale.Remove(shipsForSale.Find(akSenderRef))
+    shipsToSell.RemoveRef(akSenderRef)
 
     If(shipManagerScript.currentShip == shipManagerScript.RAS_NoneShipReference)
         NoShipSelected = True
@@ -139,7 +142,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
         currentShipBaseFormID = shipManagerScript.currentShip.GetLeveledSpaceshipBase().GetFormID()
     EndIf
     Self.SendCustomEvent("ShipChanged")
-    myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
+    myLandingMarker.ShowHangarMenu(0, self, shipsToSell.GetAt(0) as SpaceshipReference, True)
 EndEvent
 
 Function AddSVFMapToList(FormList akMap)
@@ -179,46 +182,32 @@ function AddVanillaShipsToList(ShipVendorListScript[] shipToSellList, int player
     EndWhile
 EndFunction
 
-function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
+function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker)
     SpaceshipReference newShip = None
     newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
     if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
-        shipList.Add(newShip)
         newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
         newShip.SetActorRefOwner(self)
         RegisterForRemoteEvent(newShip, "OnShipBought")
         newShip.RemoveAllItems()
+        shipsToSell.AddRef(newShip)
     endif
 endFunction
 
-function CreateUnleveledShipForSale(SpaceshipBase leveledShipToCreate, ObjectReference landingMarker, SpaceshipReference[] shipList)
+function CreateUnleveledShipForSale(SpaceshipBase leveledShipToCreate, ObjectReference landingMarker)
     SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
     if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
-        shipList.Add(newShip)
         newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
         newShip.SetActorRefOwner(self)
         RegisterForRemoteEvent(newShip, "OnShipBought")
         newShip.RemoveAllItems()
+        shipsToSell.AddRef(newShip)
     endif
-endFunction
-
-SpaceshipReference function GetShipForSale(int index = 0)
-    SpaceshipReference shipforSale = NONE
-    if shipsForSale.Length > 0
-        if index > -1 && index < shipsForSale.Length
-            shipforSale = shipsForSale[index]
-        elseif index >= shipsForSale.Length
-            shipforSale = shipsForSale[shipsForSale.Length-1]
-        else
-            shipforSale = shipsForSale[0]
-        endif
-    endif
-    return shipforSale
 endFunction
 
 function StartShipVending()
     RegisterForRemoteEvent((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).currentShip, "OnShipBought")
-    myLandingMarker.ShowHangarMenu(0, self, GetShipForSale(), True)
+    myLandingMarker.ShowHangarMenu(0, self, shipsToSell.GetAt(0) as SpaceshipReference, True)
 endFunction
 
 function StartShipEditing()
