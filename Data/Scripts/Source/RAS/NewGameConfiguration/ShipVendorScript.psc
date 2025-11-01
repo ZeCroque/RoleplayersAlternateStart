@@ -23,6 +23,7 @@ Bool Property NoShipSelected Auto Conditional
 { If the currently owned ship is the none ship, this boolean is true (Not a dupe of pedestrian as it's updated right away and not upo entering black hole) }
 
 FormList Property RAS_ShipList Mandatory Const Auto
+ActorValue Property RAS_ShipBaseIndex Mandatory Const Auto
 
 Faction Property CrimeFactionCrimsonFleet Mandatory Const Auto
 Faction Property VaruunFaction Mandatory Const Auto
@@ -39,7 +40,7 @@ Bool CapsGivenToUnlockVehicles = False
 ObjectReference myLandingMarker 
 RefCollectionAlias shipsToSell
 
-Int currentShipBaseFormID
+Int currentShipBaseIndex
 
 Bool ShipTechTutorialShown = False
 Bool AwaitingLevelUpdate = False
@@ -60,7 +61,7 @@ Function GenerateShips() RequiresGuard(ShipListGuard)
     LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray() as LeveledSpaceshipBase[]
     Int i = 0
     While(i < shipArray.Length)
-        CreateShipForSale(shipArray[i], myLandingMarker)
+        CreateShipForSale(shipArray[i], myLandingMarker, i)
         i += 1
     EndWhile
 EndFunction
@@ -124,7 +125,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
 
     If(shipManagerScript.currentShip != (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
         shipManagerScript.currentShip.Disable()
-        CreateUnleveledShipForSale(Game.GetForm(currentShipBaseFormID) as SpaceshipBase, myLandingMarker)
+        CreateShipForSale(RAS_ShipList.GetAt(currentShipBaseIndex) as LeveledSpaceshipBase, myLandingMarker, currentShipBaseIndex)
     Else
         shipManagerScript.currentShip.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
         shipManagerScript.currentShip.SetActorRefOwner(self)
@@ -132,14 +133,14 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     EndIf
     
     shipManagerScript.currentShip = akSenderRef
-
+    Int shipIndex = akSenderRef.GetValueInt(RAS_ShipBaseIndex)
     shipsToSell.RemoveRef(akSenderRef)
 
     If(shipManagerScript.currentShip == shipManagerScript.RAS_NoneShipReference)
         NoShipSelected = True
     Else
         NoShipSelected = False
-        currentShipBaseFormID = shipManagerScript.currentShip.GetLeveledSpaceshipBase().GetFormID()
+        currentShipBaseIndex = shipIndex 
     EndIf
     Self.SendCustomEvent("ShipChanged")
     myLandingMarker.ShowHangarMenu(0, self, shipsToSell.GetAt(0) as SpaceshipReference, True)
@@ -182,7 +183,7 @@ function AddVanillaShipsToList(ShipVendorListScript[] shipToSellList, int player
     EndWhile
 EndFunction
 
-function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker)
+function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectReference landingMarker, Int shipBaseIndex)
     SpaceshipReference newShip = None
     newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
     if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
@@ -191,17 +192,7 @@ function CreateShipForSale(LeveledSpaceshipBase leveledShipToCreate, ObjectRefer
         RegisterForRemoteEvent(newShip, "OnShipBought")
         newShip.RemoveAllItems()
         shipsToSell.AddRef(newShip)
-    endif
-endFunction
-
-function CreateUnleveledShipForSale(SpaceshipBase leveledShipToCreate, ObjectReference landingMarker)
-    SpaceshipReference newShip = landingMarker.PlaceShipAtMe(leveledShipToCreate, aiLevelMod = 2, abInitiallyDisabled = true)
-    if(newShip && newShip.IsBoundGameObjectAvailable() && !newShip.IsInFaction(CrimeFactionCrimsonFleet) && !newShip.IsInFaction(VaruunFaction))
-        newShip.SetLinkedRef(landingMarker, SpaceshipStoredLink)
-        newShip.SetActorRefOwner(self)
-        RegisterForRemoteEvent(newShip, "OnShipBought")
-        newShip.RemoveAllItems()
-        shipsToSell.AddRef(newShip)
+        newShip.SetValue(RAS_ShipBaseIndex, shipBaseIndex)
     endif
 endFunction
 
