@@ -55,6 +55,7 @@ ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
 ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
 ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
+Keyword Property RAS_StartMQ101EventKeyword Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -63,48 +64,9 @@ Bool Property StarbornVanillaStart Auto Conditional
 
 CustomEvent ConfigurationChanged
 
-Event OnQuestInit()
-  If MQ101.GetStageDone(105) == True || (Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
-    Stop()
-  ElseIf(MQ101Debug.GetValue() != 5.0)
-    RAS_MQ101DebugModifiedMessage.Show()
-    Stop()
-  Else
-    StayBlack.Apply() 
-    Game.HideHudMenus()
-    Game.SetInChargen(True, True, False)
-    InputLayer = InputEnableLayer.Create()
-    InputLayer.DisablePlayerControls()
-    If(Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0 && Game.GetPlayer().GetValue(RAS_AlternateStart))
-      StarbornStart = True
-      StarbornGuardianSeat.GetReference().Disable()
-      FastTravelTarget = MQPlayerStarbornShipREF
-
-      Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
-      Self.RegisterForRemoteEvent(MQPlayerStarbornShipREF.GetCurrentLocation(), "OnLocationLoaded")
-    Else
-      FastTravelTarget = RAS_ChooseStartCellMarkerREF
-      Game.FastTravel(RAS_GameStartCellMarkerREF) 
-    EndIf
-  EndIf
-
-  ;Register for activators
-  Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
-  Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
-  Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
-  Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
-  Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
-  Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
-  Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
-  Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
-  Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
-  Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
-  Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
-EndEvent
-
 Event OnStageSet(int auiStageID, int auiItemID)
   If(auiStageID == 5)
-    If(RAS_ChooseStartTypeMessage.Show() == 0)
+      RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
       FastTravelTarget = VecteraMineStarMarker
       Game.FastTravel(RAS_TmpCellMarkerREF)
       Game.ForceFirstPerson()
@@ -113,13 +75,30 @@ Event OnStageSet(int auiStageID, int auiItemID)
       MQ101.SetObjectiveDisplayed(5, False, True)
       SetObjectiveCompleted(10)
       CompleteQuest()
-    Else
-      Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
-      (MQ101 as mq101script).VSEnableLayer.Delete()
-      Game.PrecacheCharGen()
-      Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
-      Game.ShowRaceMenu(None, 0, None, None, None) 
-    EndIf
+  ElseIf(auiStageID == 10)  
+    ;Register for activators 
+    ;TODO function
+    Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
+    Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
+    Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
+    Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
+    Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
+    Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
+    Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
+    Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
+    Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
+    Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
+    Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
+   
+    MQ101Debug.SetValueInt(11)
+    RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
+    Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+    (MQ101 as mq101script).VSEnableLayer.Delete()
+    Game.PrecacheCharGen()
+    Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+    Game.ShowRaceMenu(None, 0, None, None, None) 
+
+    ;TODO vanilla+ option with MQ101
   EndIf
 EndEvent
 
@@ -127,7 +106,6 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
 
-    SetStage(10) ;Show choose start objective and targets
     ;Locks the lodge until we start the custom quest
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
