@@ -64,20 +64,7 @@ Bool Property StarbornVanillaStart Auto Conditional
 
 CustomEvent ConfigurationChanged
 
-Event OnStageSet(int auiStageID, int auiItemID)
-  If(auiStageID == 5)
-      RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
-      FastTravelTarget = VecteraMineStarMarker
-      Game.FastTravel(RAS_TmpCellMarkerREF)
-      Game.ForceFirstPerson()
-      (MQ101 as mq101script).VSEnableLayer.EnableCamSwitch(false)
-      MQ101.SetActive()
-      MQ101.SetObjectiveDisplayed(5, False, True)
-      SetObjectiveCompleted(10)
-      CompleteQuest()
-  ElseIf(auiStageID == 10)  
-    ;Register for activators 
-    ;TODO function
+Function InitCustomStart()
     Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
     Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
     Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
@@ -89,18 +76,25 @@ Event OnStageSet(int auiStageID, int auiItemID)
     Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
     Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
     Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
-   
-    MQ101Debug.SetValueInt(11)
-    RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
-    Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
-    (MQ101 as mq101script).VSEnableLayer.Delete()
-    Game.PrecacheCharGen()
-    Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
-    Game.ShowRaceMenu(None, 0, None, None, None) 
 
-    ;TODO vanilla+ option with MQ101
+    Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+
+    Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+EndFunction
+
+Event OnStageSet(int auiStageID, int auiItemID)
+  If(auiStageID == 5)
+    SetObjectiveCompleted(10)
+    CompleteQuest()      
+    Stop()
+
+    Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
+    RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
+
+    InputLayer.Delete()
   EndIf
 EndEvent
+;TODO vanilla+ option with MQ101
 
 Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
@@ -110,51 +104,56 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
     NewAtlantisToLodgeDoorREF.SetLockLevel(254)
     NewAtlantisToLodgeDoorREF.Lock()
 
-    HookMQ()
+    SetStage(10)
+    CustomStartSetup()
+    ;TODO remove constellation gear
+    Game.FastTravel(RAS_ChooseStartCellMarkerREF)
+    StayBlack.Remove()
+    InputLayer.Delete()
   EndIf
 EndEvent
 
+Function CustomStartSetup()
+  City_NA_Aquilus01.Start()
+  MQProgress.SetValue(2)
+  TraitQuest.Start()
+  TraitUnwantedHero.Stop()
+
+  ; if (TraitKidStuff.IsRunning())
+  ;   TraitKidStuff.SetStageNoWait(25)
+  ; endif
+
+  ; ; If the player has the Starter Home trait, queue up the quest
+  ; If ( Game.GetPlayer().HasPerk(PERK_StarterHome) )
+  ;   TraitStarterHome.SetStageNoWait(100)
+  ; Else
+  ;   TraitStarterHome.Stop()
+  ; EndIf
+EndFunction
+
 Function HookMQ()
-    Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
+  Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Used to trigger RAS_MQ104B
 
-    ;This will ensure we don't see the quest in the log
-    MQ101.SetObjectiveDisplayed(5, False, True) ;Vanilla
-    MQ101.SetObjectiveDisplayed(170, False, True) ;Starborn
+  ;TODO try to play bink video
 
-    ;Hooking quests to shutdown/silence
-    Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
-    Self.RegisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
-    Self.RegisterForRemoteEvent(MQ_TutorialQuest_Misc04, "OnQuestStarted")
-    Self.RegisterForRemoteEvent(FFLodge01, "OnStageSet")
-    Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Also used to trigger RAS_MQ104B
+  Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
+  ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
+  Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
+  MQ104B.Start()
+  MQ104B.SetStage(390) ;Prevents Sarah commentary
+  MQ104B.Stop()
+  Game.GetPlayer().SetValue(PlayerXPBonusMult, 1)
+  
+  ;Prevent companion comments about the mining operation
+  VecteraWorldCompanionCommentTrigger.GetReference().Disable()
+  VecteraMineCompanionCommentTrigger.GetReference().Disable()
 
-    ;We need to stop the quest to prevent scenes to occur, but we need to have this stage done for constellation dialogs to work
-    ;So we set the final stage but we will undo all the changes once the final stage is set (we'll set them back later)
-    MQ101.SetStage(1335) ;disable NA ship tech special greeting
-    MQ101.SetStage(1800) 
-    MQ101.Stop()
+  ;Register to open drill wall
+  Self.RegisterForRemoteEvent(MineWallBreakable.GetReference(), "OnCellLoad")
 
-    ;Add required triggers from stages we skipped
-    City_NA_Aquilus01.Start()
-    MQProgress.SetValue(2)
-    TraitQuest.Start()
-    TraitUnwantedHero.Stop()
-
-    ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
-    Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
-    MQ104B.Start()
-    MQ104B.SetStage(390) ;Prevents Sarah commentary
-    MQ104B.Stop()
-    
-    ;Prevent companion comments about the mining operation
-    VecteraWorldCompanionCommentTrigger.GetReference().Disable()
-    VecteraMineCompanionCommentTrigger.GetReference().Disable()
-
-    ;Register to undo drill anim each time
-    Self.RegisterForRemoteEvent(MineWallBreakable.GetReference(), "OnCellLoad")
-
-    ;Register to remove unwanted vasco trigger
-    Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
+  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+  ;Register to remove unwanted vasco trigger  
+  Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
 EndFunction
 
 Function RestoreItems()
@@ -177,38 +176,17 @@ Function RestoreItems()
 EndFunction
 
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
-  MQ101SaveOff.SetValue(0) ;Prevent saving in NG+
-  Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
-  If(akSender == MQ101 && auiStageID == 9000)
-    Game.FastTravel(RAS_TmpCellMarkerREF)
-
-    Actor PlayerREF = Game.GetPlayer()
-    PlayerREF.RemoveFromFaction(ConstellationFaction)
-    PlayerREF.SetValue(PlayerXPBonusMult, 1)
-    PlayerREF.RemoveAllItems() ;mod added items will be saved by player alias logic
-    PlayerREF.RemoveItem(LodgeKey) ;for some reason RemoveAllItems doesn't remove this
-
-    Actor Vasco = VascoREF as Actor
-    Vasco.RemoveFromFaction(PotentialCrewFaction)
-    Vasco.RemovePerk(Crew_Ship_AneutronicFusion)
-    Vasco.RemovePerk(Crew_Ship_Shields)
-    Vasco.RemovePerk(Crew_Ship_Shields)
-    Vasco.RemovePerk(Crew_Ship_Weapons_EM)
-
-    If(StarbornVanillaStart)
-      RestoreItems()
-      Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
-    EndIf
-  ElseIf(akSender == FFLodge01 && auiStageID == 10)
-    FFLodge01.SetObjectiveDisplayed(10, false, true)
-    Self.UnregisterForRemoteEvent(FFLodge01, "OnStageSet")
-  ElseIf(akSender == MQ102)
-    If(auiStageID == 10)
-      MQ102.SetObjectiveDisplayed(10, false, true)
-    ElseIf(auiStageID == 1150)
+  ; MQ101SaveOff.SetValue(0) ;Prevent saving in NG+
+  ; Utility.Wait(1.0) ;meant to lose the race with the fragment that runs in parallel, unfortunately bugprone
+  If(akSender == MQ101 && auiStageID == 0)
+      Utility.Wait(2)
+      Game.FadeOutGame(True, True, 0.0, 0.1, True)          
+      Utility.Wait(0.1)
+      StayBlack.Remove()
+      Self.UnregisterForRemoteEvent(MQ101, "OnStageSet")
+  ElseIf(akSender == MQ102 && auiStageID == 1150)
       RAS_MQ104B.SetStage(10)
       Self.UnregisterForRemoteEvent(MQ102, "OnStageSet")
-    Endif
   ElseIf(akSender == MQ104B)
     If(auiStageID == 390)
       MQ104B.SetObjectiveDisplayed(115, False, True)
@@ -216,74 +194,63 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       RAS_MQ104B.SetStage(0)
       Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
     EndIf
-  ElseIf(akSender == MQ401 )
-    If(auiStageID == 110)    
-      SetObjectiveDisplayed(10, False, True)
-      If(MQ401_VariantCurrent.GetValue() == 0)
-        MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
-        StarbornVanillaStart = True
+  ; ElseIf(akSender == MQ401 )
+  ;   If(auiStageID == 110)    
+  ;     SetObjectiveDisplayed(10, False, True)
+  ;     If(MQ401_VariantCurrent.GetValue() == 0)
+  ;       MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
+  ;       StarbornVanillaStart = True
 
-        ;Put starborn items aside to prevent them from being erased with MQ101 quest rewards by hooks
-        Game.GetPlayer().RemoveAllItems(RAS_StartingStuffContainer)
+  ;       ;Put starborn items aside to prevent them from being erased with MQ101 quest rewards by hooks
+  ;       Game.GetPlayer().RemoveAllItems(RAS_StartingStuffContainer)
         
-        ;Register hooks
-        HookMQ()
+  ;       ;Register hooks
+  ;       HookMQ()
 
-        ;Setting up mq101 clone and make sure we stop listening to unequip events on alias
-        RAS_MQ101.SetStage(25)
-        RAS_MQ101.SetActive()
-      Else
-        Game.FastTravel(RAS_TmpCellMarkerREF)
-      EndIf
-    ElseIf(auiStageID == 300)
-      RAS_MQ101.CompleteAllObjectives()
-      RAS_MQ101.SetStage(2100)
-      MQ401_SkipMQ.SetValueInt(1)
-      MQ102.Stop()
-      MQ402.SetStage(10)
+  ;       ;Setting up mq101 clone and make sure we stop listening to unequip events on alias
+  ;       RAS_MQ101.SetStage(25)
+  ;       RAS_MQ101.SetActive()
+  ;     Else
+  ;       Game.FastTravel(RAS_TmpCellMarkerREF)
+  ;     EndIf
+  ;   ElseIf(auiStageID == 300)
+  ;     RAS_MQ101.CompleteAllObjectives()
+  ;     RAS_MQ101.SetStage(2100)
+  ;     MQ401_SkipMQ.SetValueInt(1)
+  ;     MQ102.Stop()
+  ;     MQ402.SetStage(10)
 
-      COM_Companion_SamCoe_CoraCoe_Handler.Start()
-      If(MQ401.GetStageDone(300))
-        FFLodge01.Stop()
-      Else
-        FFLodge01.SetObjectiveDisplayed(10, true, true)
-      EndIf
+  ;     COM_Companion_SamCoe_CoraCoe_Handler.Start()
+  ;     If(MQ401.GetStageDone(300))
+  ;       FFLodge01.Stop()
+  ;     Else
+  ;       FFLodge01.SetObjectiveDisplayed(10, true, true)
+  ;     EndIf
 
-      Actor PlayerREF = Game.GetPlayer()
-      PlayerREF.AddToFaction(ConstellationFaction)
-      PlayerREF.AddItem(LodgeKey)
-      PlayerREF.addtoFaction(EyeBoardingFaction)
+  ;     Actor PlayerREF = Game.GetPlayer()
+  ;     PlayerREF.AddToFaction(ConstellationFaction)
+  ;     PlayerREF.AddItem(LodgeKey)
+  ;     PlayerREF.addtoFaction(EyeBoardingFaction)
 
-      Actor Vasco = VascoREF as Actor
-      Vasco.SetFactionRank(PotentialCrewFaction, 1)
-      Vasco.AddPerk(Crew_Ship_AneutronicFusion)
-      Vasco.AddPerk(Crew_Ship_Shields)
-      Vasco.AddPerk(Crew_Ship_Shields)
-      Vasco.AddPerk(Crew_Ship_Weapons_EM)
+  ;     Actor Vasco = VascoREF as Actor
+  ;     Vasco.SetFactionRank(PotentialCrewFaction, 1)
+  ;     Vasco.AddPerk(Crew_Ship_AneutronicFusion)
+  ;     Vasco.AddPerk(Crew_Ship_Shields)
+  ;     Vasco.AddPerk(Crew_Ship_Shields)
+  ;     Vasco.AddPerk(Crew_Ship_Weapons_EM)
 
-      Game.AddPlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
-    EndIf
-  EndIf
-EndEvent
-
-Event Quest.OnQuestStarted(Quest akSender)
-  If(akSender == MQ101PostQuest)
-    MQ101PostQuest.Stop() ;removes unwanted dialogs
-    Self.UnregisterForRemoteEvent(MQ101PostQuest, "OnQuestStarted")
-  ElseIf(akSender == MQ_TutorialQuest_Misc04)
-    MQ_TutorialQuest_Misc04.Stop()
-    Self.UnregisterForRemoteEvent(MQ_TutorialQuest_Misc04, "OnQuestStarted")
+  ;     Game.AddPlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
+  ;   EndIf
   EndIf
 EndEvent
 
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
   If(akSender == NewAtlantisToLodgeDoorREF)
     (Game.GetFormFromFile(0x110644, "Starfield.esm") as ObjectReference).Disable() ;Disable warning creating MQ101 trigger
-    
     Self.UnregisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
   ElseIf(akSender == MineWallBreakable.GetReference())
-    Utility.Wait(1) ;Wait for drill anim to end
-    MineWallBreakable.GetReference().PlayAnimation("Stage1")
+    ;Utility.Wait(1) ;Wait for drill anim to end
+    MineWallBreakable.GetReference().PlayAnimation("Stage2")
   EndIf
 EndEvent
 

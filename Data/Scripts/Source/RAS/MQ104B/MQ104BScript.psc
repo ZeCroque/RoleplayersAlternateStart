@@ -27,7 +27,7 @@ Function HookMQ()
   Self.RegisterForRemoteEvent(MQ104A, "OnStageSet")
 EndFunction
 
-Event OnQuestInit()
+Event OnQuestStarted()
     ;Find references from Starfield.esm (adding properties was modifying the cells so this a workaround)
     LC001CliffsidePersistentREF = Game.GetFormFromFile(0xAE2B, "Starfield.esm") as ObjectReference 
     Self.RegisterForRemoteEvent(LC001CliffsidePersistentREF, "OnCellLoad")

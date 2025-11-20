@@ -47,25 +47,25 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             ;Triggers narrative adjustments
             (RAS_NarrativeAdjustmentsActivatorREF as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript).TriggerAllValidFragment()
             Clear()
-        ElseIf(akNewLoc == VecteraMineLocation && GetOwningQuest().GetStage() == 5)
-            ;Vanilla start
-            GetOwningQuest().Stop()
-            MQ101.SetObjectiveDisplayed(5, True, True)
-            Heller.GetReference().RemoveKeyword(AnimFlavorTechReader)
-            Heller.GetReference().Reset(Game.GetPlayer())
-            Clear()
+        ; ElseIf(akNewLoc == VecteraMineLocation && GetOwningQuest().GetStage() == 5)
+        ;     ;Vanilla start
+        ;     GetOwningQuest().Stop()
+        ;     MQ101.SetObjectiveDisplayed(5, True, True)
+        ;     Heller.GetReference().RemoveKeyword(AnimFlavorTechReader)
+        ;     Heller.GetReference().Reset(Game.GetPlayer())
+        ;     Clear()
         Endif
     EndIf
 EndEvent
 
-Event OnItemUnequipped(Form akBaseObject, ObjectReference akReference)
-    If((GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
-        RAS_TmpItemsToEquipBack.AddForm(akBaseObject)
-    EndIf
-EndEvent
+; Event OnItemUnequipped(Form akBaseObject, ObjectReference akReference)
+;     If((GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornVanillaStart && RAS_MQ101.GetStageDone(25) == False)
+;         RAS_TmpItemsToEquipBack.AddForm(akBaseObject)
+;     EndIf
+; EndEvent
 
-Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
-    If(Utility.IntToHex(akBaseItem.GetFormID()) > 0x01000000) ;Non vanilla (can be DLC)
-        RAS_StartingStuffContainer.AddItem(akBaseItem, aiItemCount)
-    EndIf
-EndEvent
+; Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
+;     If(Utility.IntToHex(akBaseItem.GetFormID()) > 0x01000000) ;Non vanilla (can be DLC)
+;         RAS_StartingStuffContainer.AddItem(akBaseItem, aiItemCount)
+;     EndIf
+; EndEvent
