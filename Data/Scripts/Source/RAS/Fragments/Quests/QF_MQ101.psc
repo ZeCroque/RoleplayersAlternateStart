@@ -171,8 +171,13 @@ Function Fragment_Stage_1800_Item_00()
 Game.StopDialogueCamera()
 CompleteAllObjectives()
 
-MQ102.SetObjectiveDisplayed(10, true, true)
-FFLodge01.SetObjectiveDisplayed(10, true, true)
+;Setting some vanilla mq101 triggers for mod compat
+MQ101.SetStage(310) ;Watch added
+MQ101.SetStage(1310) ;New atlantis landing
+MQ101.SetStage(1810) ;Stopping
+
+MQ102.SetStageNoWait(10)
+FFLodge01.SetStageNoWait(10)
 
 Actor PlayerREF = Game.GetPlayer()
 PlayerREF.AddToFaction(ConstellationFaction)
@@ -184,6 +189,14 @@ VascoREF.AddPerk(Crew_AneutronicFusion)
 VascoREF.AddPerk(Crew_Ship_Shields)
 VascoREF.AddPerk(Crew_Ship_Shields)
 VascoREF.AddPerk(Crew_Ship_Weapons_EM)
+VascoEliteCrewQuest.SetStageNoWait(1)
+
+;UnGhost Actors
+SarahMorgan.GetActorRef().SetGhost(False)
+WalterStroud.GetActorRef().SetGhost(False)
+Vasco.GetActorRef().SetGhost(False)
+Matteo.GetActorRef().SetGhost(False)
+Noel.GetActorRef().SetGhost(False)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -235,3 +248,13 @@ Faction Property PotentialCrewFaction Auto Const Mandatory
 Key Property LodgeKey Auto Const Mandatory
 
 Quest Property RAS_MQ104B Auto Const Mandatory
+
+Quest Property VascoEliteCrewQuest Mandatory Const Auto
+
+ReferenceAlias Property WalterStroud Mandatory Const Auto
+
+ReferenceAlias Property Matteo Mandatory Const Auto
+
+ReferenceAlias Property Noel Mandatory Const Auto
+
+Quest Property MQ101 Mandatory Const Auto

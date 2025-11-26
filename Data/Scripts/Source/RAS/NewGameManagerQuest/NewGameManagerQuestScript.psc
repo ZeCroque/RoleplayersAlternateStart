@@ -29,6 +29,9 @@ ObjectReference Property RAS_ChooseStartCellMarkerREF Mandatory Const Auto
 ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property MineWallBreakable Mandatory Const Auto
+ReferenceAlias Property MineBoringMachine Mandatory Const Auto
+ReferenceAlias Property ArtifactDeposit Mandatory Const Auto
+ObjectReference Property MQ101_BoringCollision Const Mandatory Auto
 Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
 ActorValue Property RAS_AlternateStart Mandatory Const Auto
 GlobalVariable Property MQ101Debug Mandatory Const Auto
@@ -56,6 +59,9 @@ ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
 ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
 ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
 Keyword Property RAS_StartMQ101EventKeyword Mandatory Const Auto
+Quest Property TraitKidStuff Mandatory Const Auto
+Quest Property TraitStarterHome Mandatory Const Auto
+Perk Property PERK_StarterHome Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -119,25 +125,23 @@ Function CustomStartSetup()
   TraitQuest.Start()
   TraitUnwantedHero.Stop()
 
-  ; if (TraitKidStuff.IsRunning())
-  ;   TraitKidStuff.SetStageNoWait(25)
-  ; endif
+  If(TraitKidStuff.IsRunning())
+    TraitKidStuff.SetStageNoWait(25)
+  EndIf
 
-  ; ; If the player has the Starter Home trait, queue up the quest
-  ; If ( Game.GetPlayer().HasPerk(PERK_StarterHome) )
-  ;   TraitStarterHome.SetStageNoWait(100)
-  ; Else
-  ;   TraitStarterHome.Stop()
-  ; EndIf
+  ; If the player has the Starter Home trait, queue up the quest
+  If (Game.GetPlayer().HasPerk(PERK_StarterHome))
+    TraitStarterHome.SetStageNoWait(100)
+  Else
+    TraitStarterHome.Stop()
+  EndIf
 EndFunction
 
 Function HookMQ()
   Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Used to trigger RAS_MQ104B
 
-  ;TODO try to play bink video
-
-  Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
   ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
+  Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
   Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
   MQ104B.Start()
   MQ104B.SetStage(390) ;Prevents Sarah commentary
@@ -148,8 +152,10 @@ Function HookMQ()
   VecteraWorldCompanionCommentTrigger.GetReference().Disable()
   VecteraMineCompanionCommentTrigger.GetReference().Disable()
 
-  ;Register to open drill wall
+  ;Register to open drill wall and disable collision and artifact
   Self.RegisterForRemoteEvent(MineWallBreakable.GetReference(), "OnCellLoad")
+  MQ101_BoringCollision.DisableNoWait()
+  ArtifactDeposit.TryToDisableNoWait()
 
   (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
   ;Register to remove unwanted vasco trigger  
@@ -249,8 +255,9 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
     (Game.GetFormFromFile(0x110644, "Starfield.esm") as ObjectReference).Disable() ;Disable warning creating MQ101 trigger
     Self.UnregisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
   ElseIf(akSender == MineWallBreakable.GetReference())
-    ;Utility.Wait(1) ;Wait for drill anim to end
+    Utility.Wait(1) ;Wait for drill anim to end
     MineWallBreakable.GetReference().PlayAnimation("Stage2")
+    MineBoringMachine.GetRef().PlayAnimation("Stage2NoTransition")
   EndIf
 EndEvent
 
