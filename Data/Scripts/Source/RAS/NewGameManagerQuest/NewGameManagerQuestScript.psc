@@ -30,7 +30,9 @@ ReferenceAlias Property VecteraWorldCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property VecteraMineCompanionCommentTrigger Mandatory Const Auto
 ReferenceAlias Property MineWallBreakable Mandatory Const Auto
 ReferenceAlias Property MineBoringMachine Mandatory Const Auto
+ReferenceAlias Property CharGenFurniture Auto Const Mandatory
 ReferenceAlias Property ArtifactDeposit Mandatory Const Auto
+ReferenceAlias Property CustomArtifactDeposit Mandatory Const Auto
 ObjectReference Property MQ101_BoringCollision Const Mandatory Auto
 Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
 ActorValue Property RAS_AlternateStart Mandatory Const Auto
@@ -62,6 +64,11 @@ Keyword Property RAS_StartMQ101EventKeyword Mandatory Const Auto
 Quest Property TraitKidStuff Mandatory Const Auto
 Quest Property TraitStarterHome Mandatory Const Auto
 Perk Property PERK_StarterHome Mandatory Const Auto
+ObjectReference Property LC001VecteraLiftDoor Mandatory Auto Const
+Activator Property MQ01_Artifact01_Activator Mandatory Const Auto
+ObjectReference Property MQ101_LGT_A Auto Const Mandatory
+ObjectReference Property MQ101_LGT_B Auto Const Mandatory
+ReferenceAlias Property Heller Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -69,6 +76,15 @@ Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
 CustomEvent ConfigurationChanged
+
+Function LockPlayer()
+  StayBlack.Apply() 
+  Game.HideHudMenus()
+
+  Game.SetInChargen(True, True, False)
+  InputLayer = InputEnableLayer.Create()
+  InputLayer.DisablePlayerControls()
+EndFunction
 
 Function InitCustomStart()
     Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
@@ -88,16 +104,60 @@ Function InitCustomStart()
     Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
 EndFunction
 
+Function InitVanillaStart()  
+  InputLayer.Delete()
+
+  Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
+  RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
+EndFunction
+
+Function HookVanillaCharGen()
+  CustomArtifactDeposit.ForceRefTo(ArtifactDeposit.GetReference().PlaceAtMe(MQ01_Artifact01_Activator))
+  ArtifactDeposit.TryToDisable()
+EndFunction
+
+Function SetupVanillaCharGen()    
+  Actor HellerREF = Heller.GetActorRef()
+  If(!RegisterForAnimationEvent(HellerREF, "CharacterGenStart"))
+    RegisterForRemoteEvent(HellerREF, "OnLoad")
+  EndIf
+EndFunction
+
+Event ObjectReference.OnLoad(ObjectReference akSender)
+	Actor HellerREF = Heller.GetActorRef()
+	RegisterForAnimationEvent(HellerREF, "CharacterGenStart")
+EndEvent
+
+Event OnAnimationEvent(ObjectReference akSource, string asEventName)
+  StartVanillaCharGen()
+EndEvent
+
+Function StartVanillaCharGen()
+  Actor PlayerREF = Game.GetPlayer()
+	Game.FadeOutGame(True, True, 0.0, 0.1, True) ;fade out
+	Utility.Wait(0.5)	;wait for the fade
+	MQ101_LGT_A.DisableNoWait()
+	MQ101_LGT_B.EnableNoWait() ;swap lights
+	RegisterForMenuOpenCloseEvent("ChargenMenu")
+	RegisterForRemoteEvent(PlayerREF, "OnGetUp")
+	CharGenFurniture.GetRef().Activate(Game.GetPlayer()) ;get the player out of furniture
+EndFunction
+
+Event Actor.OnGetUp(Actor akSender, ObjectReference akFurniture)
+	Actor PlayerREF = Game.GetPlayer()
+	Game.FadeOutGame(False, True, 0.5, 0.1) ;fade in so we see the char menu
+	Game.ShowRaceMenu(uiMode=2)
+	CharGenFurniture.getRef().BlockActivation(True, True)
+	UnRegisterForRemoteEvent(PlayerREF, "OnGetUp")
+EndEvent
+
 Event OnStageSet(int auiStageID, int auiItemID)
   If(auiStageID == 5)
     SetObjectiveCompleted(10)
     CompleteQuest()      
     Stop()
 
-    Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
-    RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
-
-    InputLayer.Delete()
+    InitVanillaStart()
   EndIf
 EndEvent
 ;TODO vanilla+ option with MQ101
@@ -105,17 +165,20 @@ EndEvent
 Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
+    If(GetStage() == 0)
+      ;Locks the lodge until we start the custom quest
+      NewAtlantisToLodgeDoorREF.SetLockLevel(254)
+      NewAtlantisToLodgeDoorREF.Lock()
 
-    ;Locks the lodge until we start the custom quest
-    NewAtlantisToLodgeDoorREF.SetLockLevel(254)
-    NewAtlantisToLodgeDoorREF.Lock()
-
-    SetStage(10)
-    CustomStartSetup()
-    ;TODO remove constellation gear
-    Game.FastTravel(RAS_ChooseStartCellMarkerREF)
-    StayBlack.Remove()
-    InputLayer.Delete()
+      SetStage(10)
+      CustomStartSetup()
+      ;TODO remove constellation gear
+      Game.FastTravel(RAS_ChooseStartCellMarkerREF)
+      StayBlack.Remove()
+      InputLayer.Delete()
+    Else
+      MQ101.SetStage(105)
+    EndIf
   EndIf
 EndEvent
 
@@ -135,9 +198,17 @@ Function CustomStartSetup()
   Else
     TraitStarterHome.Stop()
   EndIf
+
+  LC001VecteraLiftDoor.SetLockLevel(254)
+  LC001VecteraLiftDoor.Lock()
 EndFunction
 
 Function HookMQ()
+  ;Setting some vanilla mq101 triggers for mod compat
+  MQ101.SetStage(310) ;Watch added
+  MQ101.SetStage(1310) ;New atlantis landing
+  MQ101.SetStage(1810) ;Stopping
+
   Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Used to trigger RAS_MQ104B
 
   ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
@@ -157,9 +228,11 @@ Function HookMQ()
   MQ101_BoringCollision.DisableNoWait()
   ArtifactDeposit.TryToDisableNoWait()
 
-  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
   ;Register to remove unwanted vasco trigger  
-  Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")
+  Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")  
+
+  ;Prevent watch anim  
+  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
 EndFunction
 
 Function RestoreItems()
@@ -188,7 +261,9 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       Utility.Wait(2)
       Game.FadeOutGame(True, True, 0.0, 0.1, True)          
       Utility.Wait(0.1)
+      Game.ForceFirstPerson()
       StayBlack.Remove()
+
       Self.UnregisterForRemoteEvent(MQ101, "OnStageSet")
   ElseIf(akSender == MQ102 && auiStageID == 1150)
       RAS_MQ104B.SetStage(10)

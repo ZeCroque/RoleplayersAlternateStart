@@ -171,11 +171,6 @@ Function Fragment_Stage_1800_Item_00()
 Game.StopDialogueCamera()
 CompleteAllObjectives()
 
-;Setting some vanilla mq101 triggers for mod compat
-MQ101.SetStage(310) ;Watch added
-MQ101.SetStage(1310) ;New atlantis landing
-MQ101.SetStage(1810) ;Stopping
-
 MQ102.SetStageNoWait(10)
 FFLodge01.SetStageNoWait(10)
 
@@ -256,5 +251,3 @@ ReferenceAlias Property WalterStroud Mandatory Const Auto
 ReferenceAlias Property Matteo Mandatory Const Auto
 
 ReferenceAlias Property Noel Mandatory Const Auto
-
-Quest Property MQ101 Mandatory Const Auto

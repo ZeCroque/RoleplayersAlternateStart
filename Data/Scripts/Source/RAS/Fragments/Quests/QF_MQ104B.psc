@@ -4,9 +4,6 @@ Scriptname RAS:Fragments:Quests:QF_MQ104B Extends Quest Hidden Const
 ;BEGIN FRAGMENT Fragment_Stage_0000_Item_00
 Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
-LC001VecteraLiftDoor.SetLockLevel(254)
-LC001VecteraLiftDoor.Lock()
-
 ;undo crew quests changes
 Actor LinRef = Alias_Lin.GetActorRef()
 LinRef.RemoveFromFaction(PotentialCrewFaction)
