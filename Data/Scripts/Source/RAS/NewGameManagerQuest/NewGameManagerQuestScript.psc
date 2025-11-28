@@ -69,6 +69,9 @@ Activator Property MQ01_Artifact01_Activator Mandatory Const Auto
 ObjectReference Property MQ101_LGT_A Auto Const Mandatory
 ObjectReference Property MQ101_LGT_B Auto Const Mandatory
 ReferenceAlias Property Heller Mandatory Const Auto
+Activator Property RAS_PlayerStuffActivator Mandatory Const Auto
+ReferenceAlias Property PlayerStuffActivatorAlias Mandatory Const Auto
+Quest Property RAS_PlayerStuffPickUpQuest Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -126,6 +129,9 @@ EndFunction
 Event ObjectReference.OnLoad(ObjectReference akSender)
 	Actor HellerREF = Heller.GetActorRef()
 	RegisterForAnimationEvent(HellerREF, "CharacterGenStart")
+  ObjectReference playerStuffTarget = (Game.GetForm(0x66872) as ObjectReference)
+  PlayerStuffActivatorAlias.ForceRefTo(playerStuffTarget.PlaceAtMe(RAS_PlayerStuffActivator))
+  playerStuffTarget.Disable()
 EndEvent
 
 Event OnAnimationEvent(ObjectReference akSource, string asEventName)
@@ -178,6 +184,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
       InputLayer.Delete()
     Else
       MQ101.SetStage(105)
+      RAS_PlayerStuffPickUpQuest.Start()
     EndIf
   EndIf
 EndEvent

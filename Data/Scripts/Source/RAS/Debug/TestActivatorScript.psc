@@ -16,7 +16,8 @@ Event OnActivate(ObjectReference akActionRef)
 	; Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
 
 	RAS:NewGameManagerQuest:NewGameManagerQuestScript newGameManagerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
-	newGameManagerQuest.LockPlayer()
+	newGameManagerQuest.LockPlayer()	
+	Game.GetPlayer().RemoveAllItems(newGameManagerQuest.RAS_StartingStuffContainer)
 	newGameManagerQuest.InitVanillaStart()
 	newGameManagerQuest.HookVanillaCharGen()
 
