@@ -72,6 +72,8 @@ ReferenceAlias Property Heller Mandatory Const Auto
 Activator Property RAS_PlayerStuffActivator Mandatory Const Auto
 ReferenceAlias Property PlayerStuffActivatorAlias Mandatory Const Auto
 Quest Property RAS_PlayerStuffPickUpQuest Mandatory Const Auto
+Scene Property MQ101_VascoShipServicesScene Mandatory Const Auto
+Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -114,10 +116,22 @@ Function InitVanillaStart()
   RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
 EndFunction
 
-Function HookVanillaCharGen()
+Function HookVanillaMQ101()
+  RAS_MQReplacerQuest.Stop()
+
   CustomArtifactDeposit.ForceRefTo(ArtifactDeposit.GetReference().PlaceAtMe(MQ01_Artifact01_Activator))
   ArtifactDeposit.TryToDisable()
+
+  NewAtlantisToLodgeDoorREF.Unlock()
+
+  Self.RegisterForRemoteEvent(MQ101_VascoShipServicesScene, "OnEnd")
 EndFunction
+
+Event Scene.OnEnd(Scene akSender)
+  MQ101.SetStage(1335)
+  MQ101.SetStage(1340)
+  Self.UnregisterForRemoteEvent(MQ101_VascoShipServicesScene, "OnEnd")
+EndEvent
 
 Function SetupVanillaCharGen()    
   Actor HellerREF = Heller.GetActorRef()

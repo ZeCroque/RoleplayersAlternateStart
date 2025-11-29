@@ -19,7 +19,7 @@ Event OnActivate(ObjectReference akActionRef)
 	newGameManagerQuest.LockPlayer()	
 	Game.GetPlayer().RemoveAllItems(newGameManagerQuest.RAS_StartingStuffContainer)
 	newGameManagerQuest.InitVanillaStart()
-	newGameManagerQuest.HookVanillaCharGen()
+	newGameManagerQuest.HookVanillaMQ101()
 
 	LC001VecteraLiftDoor.Unlock()
 EndEvent
