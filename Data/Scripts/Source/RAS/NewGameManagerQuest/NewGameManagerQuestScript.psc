@@ -74,6 +74,10 @@ ReferenceAlias Property PlayerStuffActivatorAlias Mandatory Const Auto
 Quest Property RAS_PlayerStuffPickUpQuest Mandatory Const Auto
 Scene Property MQ101_VascoShipServicesScene Mandatory Const Auto
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
+Armor Property Spacesuit_Constellation_01 Mandatory Const Auto
+Armor Property Spacesuit_Constellation_Backpack_01 Mandatory Const Auto
+Armor Property Spacesuit_Constellation_Helmet_01 Mandatory Const Auto
+Armor Property Clothes_Miner_UtilitySuit Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -92,21 +96,21 @@ Function LockPlayer()
 EndFunction
 
 Function InitCustomStart()
-    Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
-    Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
-    Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
-    Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
-    Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
-    Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
-    Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
-    Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
-    Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
-    Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
-    Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
+  Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
+  Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
+  Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(HomeChoosingActivatorAlias, "OnActivate")
+  Self.RegisterForCustomEvent((HomeChoosingActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:HomeChoosing:HomeChoosingActivatorScript).RAS_HomeChoosingTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
+  Self.RegisterForRemoteEvent(LevelManagerActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(CharGenActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
+  Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
+  Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
+  Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
 
-    Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+  Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
 
-    Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+  Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
 EndFunction
 
 Function InitVanillaStart()  
@@ -173,6 +177,11 @@ EndEvent
 
 Event OnStageSet(int auiStageID, int auiItemID)
   If(auiStageID == 5)
+    Game.GetPlayer().RemoveItem(Spacesuit_Constellation_01, abSilent = True)
+    Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Backpack_01, abSilent = True)
+    Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Helmet_01, abSilent = True)
+    Game.GetPlayer().RemoveItem(Clothes_Miner_UtilitySuit, abSilent = True)
+
     SetObjectiveCompleted(10)
     CompleteQuest()      
     Stop()
@@ -192,7 +201,7 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
 
       SetStage(10)
       CustomStartSetup()
-      ;TODO remove constellation gear
+      
       Game.FastTravel(RAS_ChooseStartCellMarkerREF)
       StayBlack.Remove()
       InputLayer.Delete()
@@ -204,6 +213,11 @@ Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
 EndEvent
 
 Function CustomStartSetup()
+  Game.GetPlayer().RemoveItem(Spacesuit_Constellation_01, abSilent = True)
+  Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Backpack_01, abSilent = True)
+  Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Helmet_01, abSilent = True)
+  Game.GetPlayer().RemoveItem(Clothes_Miner_UtilitySuit, abSilent = True)
+
   City_NA_Aquilus01.Start()
   MQProgress.SetValue(2)
   TraitQuest.Start()
