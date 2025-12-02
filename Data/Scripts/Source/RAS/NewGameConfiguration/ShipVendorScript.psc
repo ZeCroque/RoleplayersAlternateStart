@@ -31,6 +31,7 @@ ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
 Message Property RAS_ShiptechNotReadyMessage Mandatory Const Auto
 Message Property RAS_ShiptechTutorialMessage Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
+Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
 CustomEvent ShipChanged
 Guard ShipListGuard ProtectsFunctionLogic
@@ -57,13 +58,22 @@ Function InitShipsList() RequiresGuard(ShipListGuard)
 EndFunction
 
 Function GenerateShips() RequiresGuard(ShipListGuard)
-    shipsToSell = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).ShipsToSell
+    RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerQuest = RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript
+    shipsToSell = shipManagerQuest.ShipsToSell
     LeveledSpaceshipBase[] shipArray = RAS_ShipList.GetArray() as LeveledSpaceshipBase[]
     Int i = 0
     While(i < shipArray.Length)
         CreateShipForSale(shipArray[i], myLandingMarker, i)
         i += 1
     EndWhile
+
+    If((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).StarbornStart)
+        shipManagerQuest.RAS_NoneShipReference.SetLinkedRef(myLandingMarker, SpaceshipStoredLink)
+        shipManagerQuest.RAS_NoneShipReference.SetActorRefOwner(self)
+        RegisterForRemoteEvent(shipManagerQuest.RAS_NoneShipReference, "OnShipBought")
+        shipManagerQuest.RAS_NoneShipReference.RemoveAllItems()
+        shipsToSell.AddRef(shipManagerQuest.RAS_NoneShipReference)
+    EndIf
 EndFunction
 
 Function ClearShips() RequiresGuard(ShipListGuard) 
@@ -123,7 +133,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     playerShipQuest.PlayerShips.RemoveRef(shipManagerScript.currentShip)
     Game.RemovePlayerOwnedShip(shipManagerScript.currentShip)
 
-    If(shipManagerScript.currentShip != (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
+    If(shipManagerScript.currentShip != shipManagerScript.RAS_NoneShipReference && shipManagerScript.currentShip != shipManagerScript.GuardianShip)
         shipManagerScript.currentShip.Disable()
         CreateShipForSale(RAS_ShipList.GetAt(currentShipBaseIndex) as LeveledSpaceshipBase, myLandingMarker, currentShipBaseIndex)
     Else

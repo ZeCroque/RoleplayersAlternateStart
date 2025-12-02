@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:Quests:QF_NewGameManagerQuest Extends Quest Hidden Cons
 ;BEGIN FRAGMENT Fragment_Stage_0000_Item_00
 Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
-If(MQ101.GetStageDone(105) == False && Game.GetPlayer().GetValue(PlayerUnityTimesEntered) == 0)
+If(MQ101.GetStageDone(105) == False)
     SetObjectiveDisplayed(10)
 EndIf
 ;END CODE

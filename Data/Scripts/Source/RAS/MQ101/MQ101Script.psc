@@ -8,6 +8,7 @@ Scene Property RAS_MQ101_VascoOutsideLodge Auto Const Mandatory
 ObjectReference Property MQ101SetStage1510Trigger Mandatory Const Auto
 ObjectReference Property MQ101SetStage1600Trigger Mandatory Const Auto
 Static Property XMarker Mandatory Const Auto
+Scene Property RAS_MQ401_001_LodgeIntro Auto Const
 
 ObjectReference Property Artifact01REF Auto
 
@@ -39,7 +40,7 @@ Event OnDistanceLessThan(ObjectReference akObj1, ObjectReference akObj2, float a
     If(GetStageDone(20)) ;If its the non-starborn variant
         SetStage(1600)
     Else
-        ;RAS_MQ401_001_LodgeIntro.Start() TODO
+        RAS_MQ401_001_LodgeIntro.Start()
     EndIf
     UnregisterForDistanceEvents(akObj1, akObj2)
 EndEvent

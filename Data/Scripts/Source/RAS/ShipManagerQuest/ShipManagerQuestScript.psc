@@ -6,20 +6,16 @@ ActorValue Property SpaceshipRegistration Mandatory Const Auto
 Form Property RAS_NoneShip Mandatory Const Auto 
 GlobalVariable Property MQ204_TurnOffCF01Arrest Mandatory Const Auto
 RefCollectionAlias Property ShipsToSell Mandatory Const Auto
+LeveledSpaceshipBase Property LShip_StarbornGuardian_PlayerShip Mandatory Const Auto
+Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 
+SpaceshipReference Property GuardianShip Auto Hidden
 SpaceshipReference Property CurrentShip Auto Hidden
 SpaceshipReference Property RAS_NoneShipReference Auto Hidden
 Bool Property PedestrianStart Auto Conditional
 InputEnableLayer InputLayer
 
-Function InitNoneShip()
-    ;Sets the none ship to player
-    RAS_NoneShipReference = RAS_ShipVendorMarker.PlaceShipAtMe(RAS_NoneShip)
-    Game.AddPlayerOwnedShip(RAS_NoneShipReference)
-    Game.TrySetPlayerHomeSpaceShip(RAS_NoneShipReference)
-    RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
-    CurrentShip = RAS_NoneShipReference
-
+Function InitPedestrianStart()
     ;Disable space
     InputLayer = InputEnableLayer.Create()
     InputLayer.EnableFarTravel(False)
@@ -35,6 +31,33 @@ Function InitNoneShip()
 
     ;Removes ship services techs dialogs
     DialogueShipServices.Stop()
+EndFunction
+
+Function InitNoneShip()
+    ;Sets the none ship to player
+    RAS_NoneShipReference = RAS_ShipVendorMarker.PlaceShipAtMe(RAS_NoneShip)
+    Game.AddPlayerOwnedShip(RAS_NoneShipReference)
+    Game.TrySetPlayerHomeSpaceShip(RAS_NoneShipReference)
+    RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
+    CurrentShip = RAS_NoneShipReference
+
+    InitPedestrianStart()
+EndFunction
+
+Function InitStarbornShip()
+    GuardianShip = RAS_ShipVendorMarker.PlaceShipAtMe(LShip_StarbornGuardian_PlayerShip, aiLevelMod = 2, abInitiallyDisabled = true)
+    GuardianShip.Enable()
+    Game.AddPlayerOwnedShip(GuardianShip)
+    Game.TrySetPlayerHomeSpaceShip(GuardianShip)
+    GuardianShip.SetValue(SpaceshipRegistration, 1)
+    CurrentShip = GuardianShip
+    (RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).NoShipSelected = False
+    
+    ;We init as a pedestrian to handle the case and to fix ship tech dialogs, it will be undone if needed anywway
+    InitPedestrianStart()
+
+    ;Put none ship to the vendor in case player wants to be a pedestrian starborn
+    RAS_NoneShipReference = RAS_ShipVendorMarker.PlaceShipAtMe(RAS_NoneShip)
 EndFunction
 
 Function SetupPlayerShip(SpaceshipReference akShip)

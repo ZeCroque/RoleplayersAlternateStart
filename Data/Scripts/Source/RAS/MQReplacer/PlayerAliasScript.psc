@@ -5,6 +5,7 @@ LocationRefType Property LocStoryArtifactRoomReserveMarkerLocRef Mandatory Const
 GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
 GlobalVariable Property RAS_MQTriggerChance Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+ActorValue Property RAS_MinerStart Mandatory Const Auto
 
 Function HandleArtifact(ObjectReference akArtifactRef)
   Self.AddInventoryEventFilter(akArtifactRef.GetBaseObject())
@@ -13,8 +14,12 @@ EndFunction
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
   If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int roll = Utility.RandomInt(1, 100)
-    If(roll <= RAS_MQTriggerChance.GetValue() as Int)
-      (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).HookMQ()
+    If(roll <= RAS_MQTriggerChance.GetValue() as Int)      
+      Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
+      
+      RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
+      managerQuest.PreventMQ101FirstStage()
+      managerQuest.HookMQ()
 
       RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
       MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
