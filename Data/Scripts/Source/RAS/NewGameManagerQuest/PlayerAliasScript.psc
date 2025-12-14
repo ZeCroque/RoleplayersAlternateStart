@@ -52,9 +52,8 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
                 RAS_MQReplacerQuest.SetStage(0)
             ElseIf(managerQuest.StarbornStart && RAS_DisableStarborn.GetValueInt() == 0)
                 managerQuest.CustomStarbornStartSetup()
-            Else                
-                ;TODO save PlayerUnityTimesEntered in duplicate var and restore it on mq305
-                Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0.0)
+            Else           
+                managerQuest.DisableStarborn()
                 managerQuest.CustomStartSetup()       
                 RAS_MQReplacerQuest.SetStage(0)
             EndIf

@@ -85,6 +85,7 @@ ObjectReference Property ArtifactNotYetTakenEnableMarker Auto Const Mandatory
 ObjectReference Property VecteraInteriorNPCEnableMarker Mandatory Const Auto
 ObjectReference Property LC003_InteriorBaseActorEnableMarker Auto Const Mandatory
 Message Property Tutorial_NewGamePlusMSGBox Auto Const Mandatory
+Quest Property MQ305 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -288,6 +289,12 @@ Function HookMQ()
   (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
 EndFunction
 
+Function DisableStarborn()
+  UnityCount = Game.GetPlayer().GetValueInt(PlayerUnityTimesEntered)
+  Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0.0)
+  Self.RegisterForRemoteEvent(MQ305, "OnStageSet")
+EndFunction
+
 Function RestoreItems()
   Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
   Int i = 0
@@ -384,6 +391,8 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       RAS_MQ101.CompleteAllObjectives()
       RAS_MQ101.SetStage(2100)
     EndIf
+  ElseIf(akSender == MQ305 && auiStageID == 100)
+    Game.GetPlayer().SetValue(PlayerUnityTimesEntered, UnityCount)
   EndIf
 EndEvent
 
