@@ -86,6 +86,10 @@ ObjectReference Property VecteraInteriorNPCEnableMarker Mandatory Const Auto
 ObjectReference Property LC003_InteriorBaseActorEnableMarker Auto Const Mandatory
 Message Property Tutorial_NewGamePlusMSGBox Auto Const Mandatory
 Quest Property MQ305 Mandatory Const Auto
+Quest Property RAS_ShipManagerQuest Mandatory Const Auto
+Outfit Property Outfit_Starborn Auto Const Mandatory
+Perk Property StarbornSkillCheck Auto Const Mandatory
+GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -110,12 +114,18 @@ Function PreventMQ101FirstStage()
   If(UnityCount > 0)  
     Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")        
-  Else
-    MQ101Debug.SetValueInt(11)
-  EndIf
+  EndIf    
+  MQ101Debug.SetValueInt(11)
 EndFunction
 
-Function InitCustomStart()
+Function RegisterForChargen()
+  Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+EndFunction
+
+Function InitCustomStart()  
+  Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+  SetStage(10)
+
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
   Self.RegisterForCustomEvent((StartingLocationActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:StartingLocationActivatorScript).RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript, "SelectionChanged")
   Self.RegisterForRemoteEvent(StartingGearTerminalAlias, "OnActivate")
@@ -128,9 +138,15 @@ Function InitCustomStart()
   Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
   Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
 
-  Self.RegisterForMenuOpenCloseEvent("ChargenMenu")
+  If(StarbornStart)
+      (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitStarbornShip()
 
-  Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+      ; give the player the right starting gear
+      Game.GetPlayer().SetOutfit(Outfit_Starborn)
+      Game.GetPlayer().AddPerk(StarbornSkillCheck)
+  Else
+      (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitNoneShip()
+  EndIf
 EndFunction
 
 Function InitVanillaStart()  
@@ -218,12 +234,8 @@ EndEvent
 Event OnMenuOpenCloseEvent(String asMenuName, Bool abOpening)
   If (asMenuName == "ChargenMenu" && abOpening == False)
     Self.UnregisterForMenuOpenCloseEvent("ChargenMenu")
-    If(GetStage() == 0)
-      SetStage(10)
-      
+    If(GetStage() == 10)
       Game.FastTravel(RAS_ChooseStartCellMarkerREF)
-      StayBlack.Remove()
-      InputLayer.Delete()
     Else
       MQ101.SetStage(105)
       RAS_PlayerStuffPickUpQuest.Start()
@@ -315,15 +327,26 @@ Function RestoreItems()
 EndFunction
 
 Function CustomStarbornStartSetup()
-  Tutorial_NewGamePlusMSGBox.Show()
+  If(MQ401_VariantCurrent.GetValue() == 0)  
+    StarbornVanillaStart = True
 
-  ;Start MQ    
-  PreventMQ101FirstStage()            
-  Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
+    ;If player is not a miner, register hooks
+    If(Game.GetPlayer().GetValue(RAS_MinerStart) == 0)
+      Self.RegisterForRemoteEvent(MQ401, "OnStageSet")
+    EndIf
+  EndIf
+
+  ;Init the game
+  Tutorial_NewGamePlusMSGBox.Show()
+  Game.SetInChargen(False, False, False)
+
+  ;Setup MQ
+  PreventMQ101FirstStage()  
+  RAS_StartMQ101EventKeyword.SendStoryEventAndWait()  
   MQ401.SetStage(10)
   MQProgress.SetValue(2)
 
-  ;Start other quest
+  ;Start other quests
   City_NA_Aquilus01.Start()
   TraitQuest.Start()
 
@@ -333,10 +356,8 @@ Function CustomStarbornStartSetup()
   Heller.GetActorRef().moveto(MQ104B_LinSandbox_CenterMarker)
   VecteraInteriorNPCEnableMarker.DisableNoWait()
 
+  Self.RegisterForRemoteEvent(MineWallBreakable.GetReference(), "OnCellLoad")
   MQ101_BoringCollision.DisableNoWait()
-  MineBoringMachine.GetRef().PlayAnimation("Stage2")
-  MineWallBreakable.GetRef().PlayAnimation("Stage2")
-
   ArtifactDeposit.GetRef().DisableNoWait()
   ArtifactNotYetTakenEnableMarker.DisableNoWait()
 
@@ -354,7 +375,7 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       StayBlack.Remove()
     EndIf
 
-    If(UnityCount > 0)
+    If(UnityCount > 0 && RAS_DisableStarborn.GetValueInt() == 0)
       Game.GetPlayer().SetValue(PlayerUnityTimesEntered, UnityCount)
     EndIf
 
@@ -370,23 +391,18 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       Self.UnregisterForRemoteEvent(MQ104B, "OnStageSet")
     EndIf
   ElseIf(akSender == MQ401 )
-    If(auiStageID == 110)    
-      If(MQ401_VariantCurrent.GetValue() == 0)        
-        Game.SetInChargen(False, False, False)
-        
-        MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
-        StarbornVanillaStart = True
+    If(auiStageID == 110)                
+      MQ401_VariantCurrent.SetValue(1) ;Changing at this point wont impact universe output but will prevent lodge scene
 
-        ;Register hooks
-        HookMQ()
+      ;Register hooks
+      HookMQ()
 
-        ;Setting up mq101 clone and make sure we stop listening to unequip events on alias
-        RAS_MQ101.SetStage(25)
-        RAS_MQ101.SetActive()
+      ;Setting up mq101 clone and make sure we stop listening to unequip events on alias
+      RAS_MQ101.SetStage(25)
+      RAS_MQ101.SetActive()
 
-        ;Remove the frontier as it will be given later after Vectera quest
-        Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
-      EndIf
+      ;Remove the frontier as it will be given later after Vectera quest
+      Game.RemovePlayerOwnedShip(Frontier_ModularREF as SpaceshipReference)
     ElseIf(auiStageID == 300)
       RAS_MQ101.CompleteAllObjectives()
       RAS_MQ101.SetStage(2100)

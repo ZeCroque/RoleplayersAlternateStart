@@ -25,6 +25,7 @@ Event OnPlayerBuyShip(SpaceshipReference akShip)
         RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (GetOwningQuest() as RAS:ShipManagerQuest:ShipManagerQuestScript)
         If(shipManagerScript.RAS_NoneShipReference)
             (SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(akShip)
+            akShip.Enable()
         EndIf
     EndIf
 EndEvent

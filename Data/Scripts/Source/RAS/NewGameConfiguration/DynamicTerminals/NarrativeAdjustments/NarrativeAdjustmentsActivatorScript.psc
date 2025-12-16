@@ -43,7 +43,11 @@ Event OnCellLoad()
         RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModsListScript narrativeModsListScript = narrativeModsListArray[i] as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeModsListScript
         While(j < narrativeModsListScript.NarrativeModsList.Length)
             NarrativeMods[lastIndex + j] = narrativeModsListScript.NarrativeModsList[j]
-            SelectedFragments[lastIndex + j] = RAS_DynamicEntry_NA_Disable
+            If(!narrativeModsListScript.NarrativeModsList[j].DefaultValueCondition || !narrativeModsListScript.NarrativeModsList[j].DefaultValueCondition.IsTrue())
+                SelectedFragments[lastIndex + j] = RAS_DynamicEntry_NA_Disable
+            Else
+                SelectedFragments[lastIndex + j] = RAS_DynamicEntry_NA_Enable
+            EndIf
             j += 1
         EndWhile
         lastIndex = j

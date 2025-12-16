@@ -6,4 +6,5 @@ Struct NarrativeMod
     MiscObject Fragment
     ConditionForm Condition
     Bool NegateCondition
+    ConditionForm DefaultValueCondition
 EndStruct

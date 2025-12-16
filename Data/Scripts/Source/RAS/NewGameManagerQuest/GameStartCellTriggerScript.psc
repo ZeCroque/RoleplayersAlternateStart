@@ -10,14 +10,19 @@ Event OnCellLoad()
     managerQuest.LockPlayer()
     Game.FadeOutGame(False, True, 0.0, 0.1, False) ;finishes main menu loading
 
-    Bool isStarbornStart = Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
-    managerQuest.StarbornStart = isStarbornStart
+    managerQuest.StarbornStart = Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
 
     If(RAS_ChooseStartTypeMessage.Show() == 0)    
         RAS_NewGameManagerQuest.SetStage(5)
     Else
-        (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).InitCustomStart()
-        Game.PrecacheCharGen()
-        Game.ShowRaceMenu(None, isStarbornStart as Int, None, None, None)
+        If(!managerQuest.StarbornStart)
+            managerQuest.RegisterForChargen()
+            Game.PrecacheCharGen()
+            Game.ShowRaceMenu(None, 0, None, None, None)
+            managerQuest.InitCustomStart()
+        Else
+            managerQuest.InitCustomStart()
+            Game.FastTravel(managerQuest.RAS_ChooseStartCellMarkerREF)
+        EndIf
     EndIf
 EndEvent
