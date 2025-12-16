@@ -15,7 +15,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
   If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int roll = Utility.RandomInt(1, 100)
     If(roll <= RAS_MQTriggerChance.GetValue() as Int)      
-      Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
+      Game.GetPlayer().SetValue(RAS_MinerStart, 0.0)
       
       RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
       managerQuest.PreventMQ101FirstStage()

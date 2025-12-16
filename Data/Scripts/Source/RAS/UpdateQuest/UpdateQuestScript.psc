@@ -11,8 +11,9 @@ Quest Property MQ105 Mandatory Const Auto
 Quest Property TraitQuest Mandatory Const Auto
 Quest Property TraitUnwantedHero Mandatory Const Auto
 Perk Property TRAIT_UnwantedHero Mandatory Const Auto
+ActorValue Property RAS_MinerStart Mandatory Const Auto
 
-Float LastVersion = 1.04
+Float LastVersion = 1.10
 
 Event OnQuestInit()
     Update()
@@ -43,7 +44,9 @@ Function Update()
                 EndIf
             EndIf
         EndIf
-
+        If(RAS_ModVersion.GetValue() < 1.10)
+            Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
+        EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
