@@ -5,22 +5,14 @@ ObjectReference Property LC001VecteraLiftDoor Auto Const
 Quest Property 	RAS_NewGameManagerQuest Mandatory Const Auto
 
 Event OnActivate(ObjectReference akActionRef)
-	; RAS:Debug:ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS:Debug:ArtifactGenerationQuestScript
+	RAS:Debug:ArtifactGenerationQuestScript questScript = RAS_ArtifactGenerationQuest as RAS:Debug:ArtifactGenerationQuestScript
 
-	; If(!RAS_ArtifactGenerationQuest.IsRunning())
-	; 	RAS_ArtifactGenerationQuest.Start()
-	; Else
-	; 	questScript.ArtifactLocation.RefillAlias()
-	; 	questScript.ArtifactLocationMarker.RefillAlias()
-	; EndIf
-	; Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
-
-	RAS:NewGameManagerQuest:NewGameManagerQuestScript newGameManagerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
-	newGameManagerQuest.LockPlayer()	
-	Game.GetPlayer().RemoveAllItems(newGameManagerQuest.RAS_StartingStuffContainer)
-	newGameManagerQuest.InitVanillaStart()
-	newGameManagerQuest.HookVanillaMQ101()
-
-	LC001VecteraLiftDoor.Unlock()
+	If(!RAS_ArtifactGenerationQuest.IsRunning())
+		RAS_ArtifactGenerationQuest.Start()
+	Else
+		questScript.ArtifactLocation.RefillAlias()
+		questScript.ArtifactLocationMarker.RefillAlias()
+	EndIf
+	Game.FastTravel(questScript.ArtifactLocationMarker.GetReference())
 EndEvent
 

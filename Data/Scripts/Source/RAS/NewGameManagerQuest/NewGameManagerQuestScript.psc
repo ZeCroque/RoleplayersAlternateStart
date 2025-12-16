@@ -89,6 +89,7 @@ Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 Outfit Property Outfit_Starborn Auto Const Mandatory
 Perk Property StarbornSkillCheck Auto Const Mandatory
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
+Quest Property DialogueUCNewAtlantis_Argos Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -98,6 +99,7 @@ Bool Property StarbornVanillaStart Auto Conditional
 CustomEvent ConfigurationChanged
 
 Int UnityCount = 0
+Bool DoOnce = False
 
 Function LockPlayer()
   StayBlack.Apply() 
@@ -265,6 +267,8 @@ Function CustomStartSetup()
   ;Locks the lodge until we start the custom quest
   NewAtlantisToLodgeDoorREF.SetLockLevel(254)
   NewAtlantisToLodgeDoorREF.Lock()
+
+  DialogueUCNewAtlantis_Argos.Stop()
 EndFunction
 
 Function HookMQ()
@@ -372,6 +376,13 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
       Utility.Wait(0.1)
       Game.ForceFirstPerson()
       StayBlack.Remove()
+
+      If(!DialogueUCNewAtlantis_Argos.IsRunning() && !DoOnce)
+        DoOnce = True
+        DialogueUCNewAtlantis_Argos.Reset()
+        Utility.Wait(0.2)
+        DialogueUCNewAtlantis_Argos.Start()
+      EndIf
     EndIf
 
     If(UnityCount > 0 && RAS_DisableStarborn.GetValueInt() == 0)
