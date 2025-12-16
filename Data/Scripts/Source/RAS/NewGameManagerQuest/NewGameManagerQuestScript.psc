@@ -59,7 +59,6 @@ ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
 ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
 ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
-Keyword Property RAS_StartMQ101EventKeyword Mandatory Const Auto
 Quest Property TraitKidStuff Mandatory Const Auto
 Quest Property TraitStarterHome Mandatory Const Auto
 Perk Property PERK_StarterHome Mandatory Const Auto
@@ -153,7 +152,7 @@ Function InitVanillaStart()
   InputLayer.Delete()
 
   Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
-  RAS_StartMQ101EventKeyword.SendStoryEventAndWait()
+  MQ101.Start()
 EndFunction
 
 Function HookVanillaMQ101()
@@ -342,7 +341,7 @@ Function CustomStarbornStartSetup()
 
   ;Setup MQ
   PreventMQ101FirstStage()  
-  RAS_StartMQ101EventKeyword.SendStoryEventAndWait()  
+  MQ101.Start()  
   MQ401.SetStage(10)
   MQProgress.SetValue(2)
 

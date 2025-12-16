@@ -140,7 +140,6 @@ Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akAct
 EndEvent
 
 Event TerminalMenu.OnTerminalMenuItemRun(TerminalMenu akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef)
-    ;todo movetoship tecch only, move samaratain and move to ship
     Int index = auiMenuItemID - 1
     If(index < settlements.Length)
         SetStage(30)

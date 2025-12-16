@@ -14,7 +14,6 @@ Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
     If(aChangedOptions.Find(RAS_RemovePlaceholderShip) != -1)
         SQ_PlayerShipScript playerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
         RAS:ShipManagerQuest:ShipManagerQuestScript rasShipScript = RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript
-        Debug.Trace(playerShipQuest.PlayerShip.GetShipReference().GetLeveledSpaceshipBase())
         If(playerShipQuest.PlayerShip.GetShipReference() == rasShipScript.RAS_NoneShipReference)
             Int i = 0
             While(i < playerShipQuest.PlayerShips.GetCount())
