@@ -1,9 +1,7 @@
 Scriptname RAS:MQ104B:MQ104BScript extends Quest
 
 Quest Property RAS_MQ104B Auto Const Mandatory
-Quest Property MQ103 Mandatory Const Auto
-Quest Property MQ104A Mandatory Const Auto
-Quest Property MQ105 Mandatory Const Auto
+
 Quest Property LinEliteCrewQuest Auto Const
 Quest Property HellerEliteCrewQuest Auto Const
 ObjectReference LC001MQ104B_TerminalPower
@@ -21,11 +19,6 @@ ObjectReference MQ104BSetStage20Trigger001
 ObjectReference MQ104BSetStage140Trigger
 ObjectReference MQ104BSetStage150Trigger
 ObjectReference MQ104BSetStage400Trigger
-
-Function HookMQ()
-  Self.RegisterForRemoteEvent(MQ103, "OnStageSet")
-  Self.RegisterForRemoteEvent(MQ104A, "OnStageSet")
-EndFunction
 
 Event OnQuestStarted()
     ;Find references from Starfield.esm (adding properties was modifying the cells so this a workaround)
@@ -46,8 +39,6 @@ Event OnQuestStarted()
     ;Hook crew quests
     Self.RegisterForRemoteEvent(LinEliteCrewQuest, "OnStageSet")
     Self.RegisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
-
-    HookMQ()
 EndEvent
 
 Event ObjectReference.OnCellLoad(ObjectReference akSender)
@@ -83,7 +74,7 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
             Self.UnregisterForRemoteEvent(CrashedShipMapMarker.GetReference(), "OnCellLoad")
         ElseIf(akSender == LodgePersistentREF)
             MQ104BSetStage400Trigger = Game.GetFormFromFile(0x2BBA2A, "Starfield.esm") as ObjectReference 
-             Self.RegisterForRemoteEvent(MQ104BSetStage400Trigger, "OnTriggerEnter")
+            Self.RegisterForRemoteEvent(MQ104BSetStage400Trigger, "OnTriggerEnter")
 
             Self.UnregisterForRemoteEvent(LodgePersistentREF, "OnCellLoad")
         EndIf
@@ -97,18 +88,6 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   ElseIf(akSender == HellerEliteCrewQuest && auiStageID == 50)
     RAS_MQ104B.SetStage(125)
     Self.UnregisterForRemoteEvent(HellerEliteCrewQuest, "OnStageSet")
-  ElseIf(akSender == MQ103 && auiStageID == 2000)
-    If(MQ104A.GetStageDone(1000) && RAS_MQ104B.GetStageDone(1000))
-      MQ105.SetStage(10)
-      Self.UnregisterForRemoteEvent(MQ103, "OnStageSet")
-      Self.UnregisterForRemoteEvent(MQ104A, "OnStageSet")
-    EndIf
-  ElseIf(akSender == MQ104A && auiStageID == 1000)
-      If(MQ103.GetStageDone(2000) && RAS_MQ104B.GetStageDone(1000))
-        MQ105.SetStage(10)
-        Self.UnregisterForRemoteEvent(MQ103, "OnStageSet")
-        Self.UnregisterForRemoteEvent(MQ104A, "OnStageSet")
-      EndIf
   EndIf
 EndEvent
 

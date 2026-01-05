@@ -12,6 +12,7 @@ Quest Property TraitQuest Mandatory Const Auto
 Quest Property TraitUnwantedHero Mandatory Const Auto
 Perk Property TRAIT_UnwantedHero Mandatory Const Auto
 ActorValue Property RAS_MinerStart Mandatory Const Auto
+Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 
 Float LastVersion = 1.10
 
@@ -27,14 +28,6 @@ Function Update()
             EndIf
         EndIf
         If(RAS_ModVersion.GetValue() < 1.04)
-            If MQ103.IsCompleted() && MQ104A.IsCompleted() && RAS_MQ104B.IsCompleted()
-                If (MQ105.IsCompleted() == False) && (MQ105.IsRunning() == False)
-                    MQ105.SetStage(10)
-                EndIf
-            Else
-                (RAS_MQ104B as RAS:MQ104B:MQ104BScript).HookMQ()
-            EndIf
-
             TraitQuest.Start()
             If(Game.GetPlayer().HasPerk(TRAIT_UnwantedHero))
                 If(RAS_MQ104B.IsCompleted())
@@ -46,6 +39,14 @@ Function Update()
         EndIf
         If(RAS_ModVersion.GetValue() < 1.10)
             Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
+
+            If MQ103.IsCompleted() && MQ104A.IsCompleted() && RAS_MQ104B.IsCompleted()
+                If (MQ105.IsCompleted() == False) && (MQ105.IsRunning() == False)
+                    MQ105.SetStage(10)
+                EndIf
+            Else
+                (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RegisterMQ105Triggers()
+            EndIf
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)

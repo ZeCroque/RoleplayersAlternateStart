@@ -90,6 +90,9 @@ Outfit Property Outfit_Starborn Auto Const Mandatory
 Perk Property StarbornSkillCheck Auto Const Mandatory
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Quest Property DialogueUCNewAtlantis_Argos Mandatory Const Auto
+Quest Property MQ103 Mandatory Const Auto
+Quest Property MQ104A Mandatory Const Auto
+Quest Property MQ105 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -287,7 +290,9 @@ Function HookMQ()
   MQ104B.SetStage(390) ;Prevents Sarah commentary
   MQ104B.Stop()
   Game.GetPlayer().SetValue(PlayerXPBonusMult, 1)
-  
+
+  RegisterMQ105Triggers()
+
   ;Prevent companion comments about the mining operation
   VecteraWorldCompanionCommentTrigger.GetReference().Disable()
   VecteraMineCompanionCommentTrigger.GetReference().Disable()
@@ -302,6 +307,12 @@ Function HookMQ()
 
   ;Prevent watch anim  
   (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+EndFunction
+
+Function RegisterMQ105Triggers()
+  ;Register for MQ103 and MQ104A completion to trigger MQ105
+  Self.RegisterForRemoteEvent(MQ103, "OnStageSet")
+  Self.RegisterForRemoteEvent(MQ104A, "OnStageSet")
 EndFunction
 
 Function DisableStarborn()
@@ -419,6 +430,20 @@ Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
     EndIf
   ElseIf(akSender == MQ305 && auiStageID == 100)
     Game.GetPlayer().SetValue(PlayerUnityTimesEntered, UnityCount)
+  ElseIf(akSender == MQ103 && auiStageID == 2000)
+    Debug.Trace("kvejjgne" + MQ104A.GetStageDone(1000) + RAS_MQ104B.GetStageDone(1000))
+    If(MQ104A.GetStageDone(1000) && RAS_MQ104B.GetStageDone(1000))
+    Debug.Trace("rigrirk")
+      MQ105.SetStage(10)
+      Self.UnregisterForRemoteEvent(MQ103, "OnStageSet")
+      Self.UnregisterForRemoteEvent(MQ104A, "OnStageSet")
+    EndIf
+  ElseIf(akSender == MQ104A && auiStageID == 1000)
+      If(MQ103.GetStageDone(2000) && RAS_MQ104B.GetStageDone(1000))
+        MQ105.SetStage(10)
+        Self.UnregisterForRemoteEvent(MQ103, "OnStageSet")
+        Self.UnregisterForRemoteEvent(MQ104A, "OnStageSet")
+      EndIf
   EndIf
 EndEvent
 
