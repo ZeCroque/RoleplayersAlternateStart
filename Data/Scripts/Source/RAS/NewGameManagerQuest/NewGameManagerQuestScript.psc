@@ -93,6 +93,7 @@ Quest Property DialogueUCNewAtlantis_Argos Mandatory Const Auto
 Quest Property MQ103 Mandatory Const Auto
 Quest Property MQ104A Mandatory Const Auto
 Quest Property MQ105 Mandatory Const Auto
+Quest Property RAD02 Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -280,6 +281,7 @@ Function HookMQ()
   MQ101.SetStage(1310) ;New atlantis landing
   MQ101.SetObjectiveDisplayed(170, False, True)
   MQ101.SetStage(1810) ;Stopping
+  (RAD02 as RAD02Script).StoryCheck()
 
   Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Used to trigger RAS_MQ104B
 
