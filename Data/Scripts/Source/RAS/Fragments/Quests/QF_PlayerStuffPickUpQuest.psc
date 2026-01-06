@@ -5,6 +5,7 @@ Scriptname RAS:Fragments:Quests:QF_PlayerStuffPickUpQuest Extends Quest Hidden C
 Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
 SetObjectiveDisplayed(10)
+SetActive(True)
 ;END CODE
 EndFunction
 ;END FRAGMENT
