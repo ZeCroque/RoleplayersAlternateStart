@@ -36,14 +36,18 @@ Inspired by classic mods like [Start Me Up (Fallout 4)](https://www.nexusmods.co
 
 Enjoy the main quest from a different perspective that doesn't force you to roleplay as the miner BGS wanted you to be.
 
-Here's a detailed summary of what have been changed:
-1. You will find the first artifact randomly after level 5 upon reaching an eligible location with 33% chance (configurable).
-2. Once the artifact is acquired, you will dispose of it in your own way and eventually Constellation will reach out to you.
-3. Barrett will leave to assist the Vectera Mining Operation before your arrival at the Lodge, but it has nothing to do with the finding of an artifact. He simply got them into trouble with pirates during another mining operation (during which he found one of the two artifacts Constellation yet has).
-4. After entering the Lodge, you will proceed through the standard Constellation intro with all references to you being a miner removed 
-5. After Sarah's first quest, you will be tasked with rescuing Barrett on Vectera, again with no prior miner references.
-6. Completing Barrett's rescue unlocks the Frontier via a brief follow-up quest.
-7. In the standard NG+ start, all references to you being a miner have also been removed.
+There's now two ways of starting the main quest:
+- Going to the Argos Extractor Office in the Valberg Building (Commercial District of New Atlantis): if you accept the job you'll start the vanilla intro sequence.
+- Finding the Artifact Eta (the one normally found of Vectera) randomly while exploring: it will start an alternate starting sequence that skips the Vectera events.
+    - By default there's a 33% chance the artifact will spawn after level 5 upon reaching an eligible location. You can configure these conditions using the "Narrative Adjustments" terminal inside the starting cell. You can find the list of eligible locations in the FAQ section.
+    - Once the artifact is acquired, you will dispose of it in your own way and eventually Constellation will reach out to you.
+    - Barrett will leave to assist the Vectera Mining Operation before your arrival at the Lodge. During his recovery of Constellation's second artifact he attracted pirate attention, and the Argos miners have evidence that hostile activity is present in the area.
+    - After entering the Lodge, you will proceed through the standard Constellation intro with all references to you being a miner removed 
+    - After Sarah's first quest, you will be tasked with rescuing Barrett on Vectera, again with no prior miner references.
+    - Completing Barrett's rescue unlocks the Frontier via a brief follow-up quest.
+    - The vanilla "One Small Step" quest will be entirely skipped when doing this alternate entry point in the MQ, so it will prevent events depending on it to occur, such as the SSNN interview about the Vectera events. You might want that quest to be completed for mod compatibility however: you can do it with the "Narrative Adjustments" terminal.
+
+Those two options are obviously mutually exclusive.
 
 ### Starting Options
 
@@ -59,8 +63,8 @@ Start with any vanilla home already unlocked (except quest tied ones, like the M
 
 ### Narrative Adjustments
 
-Fine-tune how your story unfolds by adding some modifiers to existing quests or applying some immersive constraints to your character: 
-- **Delay the Main Quest Start**: choose at which level and under which odds the artifact will spawn — or completely disable the Main Quest 
+Fine-tune how your story unfolds by adding some modifiers to existing quests or applying some immersive constraints to your character. You can notably: 
+- **Customize Main Quest Starting Conditions**: choose at which level and under which odds the artifact will spawn — or completely disable the Main Quest 
 - **Start with a Broken Ship**: your ship will be unable to take off at start and you will have to gather basics materials to repair it
 
 ### Ship Options
@@ -81,16 +85,20 @@ Skip the early-game grind and jump straight into the higher-level loops if you w
 
 The ships sold by the custom technician and the gear available at the vending terminal will update automatically. 
 
+### NG+ Starts
+
+After going through the Unity, you will be prompted if you want to go through the Vanilla NG+ process or if you want to customize this new beginning.
+- The vanilla option will take into account whether or not you were an Argos miner in the previous universe and will adapt the Lodge intro scene accordingly
+- The custom option comes with extra "Narrative Adjustments":
+    - **Argos Miner**: choose to start as if you were a miner in the previous universe, even if you did the alternate MQ start (and vice-versa)
+    - **Non-Starborn NG+**: choose to remove all the starborn references & logic and play as if you never reached the Unity (it will still increase the Unity count for the next universe)
+
+Regardless of your choices at the Narrative Adjustments terminal, you can keep the Starborn Guardian or exchange it for any other ship, including the pedestrian one. You're also free to sell the Starborn Suit to the gear terminal if you don't want it.
+
 ## 3. FREQUENTLY ASKED QUESTIONS
 
 #### Will it come to Creations?
 Yes, I'm currently ensuring the mod is stable, I'll release afterward.
-
-#### The mod won't start with my NG+ save, is it normal?
-Infortunately, yes. Currently only fresh start are supported. NG+ suppport will come soon™
-
-#### Is there a way to trigger the MQ by going to Vectera?
-No, not yet 😕
 
 #### In which POI can the artifact added by the mod spawn?
 Here's a list:
@@ -180,6 +188,7 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 - Thanks to the authors of the tools listed below
 - Thanks to SKK for the mod [Fast Start New Game](https://www.nexusmods.com/starfield/mods/5971) which have been a good scripting resource to make my own hooks to MQ
 - Thanks to wskeever for the mod [Summoning of Ship - Ship Remote Control](https://www.nexusmods.com/starfield/mods/6216) and especially the ship landing navmesh logic that I use for the rescue beacon
+- Thanks to Wynterhawk for the Creation [Roll Your Own Start](https://creations.bethesda.net/en/starfield/details/c27a121a-c565-4ae0-9394-c58952c98f86/Wynter__39_s_Roll_Your_Own_Start) which learnt me a proper way to edit the new game logic that have been crucial for the 1.1.0 update.
 - Thanks to xtcrefugee for answering my questions about mid/small masters on the Starfield Modding Discord
 - Thanks to Redzy7 for his post on Starfield's design style for the thumbnail (https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/)
 - Thanks to the Starfield's fonts authors
@@ -216,7 +225,6 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
 - Optional file to remove as much reference as possible of the player being a miner in any dialog. Known references:
     - Yumi at UC Vanguard office, about troubles we had with pirates
     - During the SysDef scene upon player arrest, about being a miner
-    - SSNN, about our involvement on Vectera
     - Player's parents, about the job at Argos
     - Lin says "Dusty" during her recruitment dialog
     - Sarah mentions Vectera in her companion dialogs
