@@ -106,7 +106,7 @@ Int Function FindShipMarkerForLocation(Location akLocation)
         ObjectReference[] dockingPorts = shipDockingDoor.GetRefsLinkedToMe(SpaceshipDockDoor)
         Int i = 0
         While(i < dockingPorts.Length)
-            If(dockingPorts[i].GetParentCell() == shipExteriorCell)
+            If(dockingPorts[i].GetParentCell() == shipExteriorCell && dockingPorts[i].GetLockLevel() == 0)
                 shipMarker = dockingPorts[i]
                 Return 0
             EndIf
