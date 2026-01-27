@@ -14,6 +14,7 @@ ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Au
 ObjectReference Property RAS_StartingStuffContainer Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
 Event OnInit()
     AddInventoryEventFilter(None)
@@ -36,6 +37,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             RAS:NewGameConfiguration:ShipVendorScript vendorScript = RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript
             vendorScript.UnregisterFromEvents()
             RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
+            (SQ_PlayerShip as SQ_PlayerShipScript).PlayerShip.ForceRefTo(shipManagerScript.CurrentShip)
             If(shipManagerScript.currentShip != shipManagerScript.RAS_NoneShipReference) 
                 shipManagerScript.SetupPlayerShip(shipManagerScript.currentShip)
             EndIf

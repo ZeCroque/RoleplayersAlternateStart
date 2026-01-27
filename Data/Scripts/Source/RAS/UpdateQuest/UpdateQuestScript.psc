@@ -18,6 +18,7 @@ ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 GlobalVariable Property MissionBoardAccessAllowed_Constellation Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
 Float LastVersion = 1.11
 
@@ -67,6 +68,11 @@ Function Update()
             If(RAS_MQ101.GetStageDone(1800))
                 MissionBoardAccessAllowed_Constellation.SetValueInt(1)
             EndIf    
+
+            RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
+            If(shipManagerScript.PedestrianStart)
+                (SQ_PlayerShip as SQ_PlayerShipScript).PlayerShip.ForceRefTo(shipManagerScript.CurrentShip)
+            EndIf
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
