@@ -14,6 +14,8 @@ Perk Property TRAIT_UnwantedHero Mandatory Const Auto
 ActorValue Property RAS_MinerStart Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 ActorValue Property Experience Mandatory Const Auto
+ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
+Quest Property MQ101 Mandatory Const Auto
 
 Float LastVersion = 1.11
 
@@ -55,6 +57,10 @@ Function Update()
             If(XP < ExpectedXP)
                 Game.GetPlayer().SetValue(Experience, ExpectedXP)
             EndIf
+
+            If(MQ101.GetStageDone(1810))
+                NewAtlantisToLodgeDoorREF.BlockActivation(false)
+            EndIf        
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)

@@ -306,6 +306,7 @@ Function HookMQ()
 
   ;Prevent watch anim  
   (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+  NewAtlantisToLodgeDoorREF.BlockActivation(false)
 EndFunction
 
 Function RegisterMQ105Triggers()
