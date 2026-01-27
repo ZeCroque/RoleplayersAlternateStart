@@ -1,26 +1,29 @@
 # MQ101
+vasco outsideLodge 00C154A2 [IA]
 
-vasco 34b: 0037A509
-walter34: 00DA93F4
-matteo 34b: 0001C892
-sarah 34b: 006DFDE7
-walter 34b 2: 00F17729
+vasco 34b 1 0037A509
+vasco 34b 2 0070B4A5 -> 00897D0B [IA]
+walter 34b 00DA93F4
+matteo 34b 0001C892
+sarah 34b 006DFDE7
+walter 34b 2 00F17729
 
-matteo 34c: 00EB7496
+matteo 34c 00EB7496
 
 sarah 35 1 00094E94
+sarah 35 2 0042F39A -> 002FA7CF [IA]
 sarah 35 3 (2) 00E619A1 -> 00B2C914
 sarah 35 3 (3) 005F9DF1
 
-sarah 36 1:  00F6BEFC
-walter 36 1 -> dcd1a1 + ec6fc1 + 5ede34 -> 005469F4 
+sarah 36 1  00F6BEFC
+walter 36 1 dcd1a1 + ec6fc1 + 5ede34 -> 005469F4 
 walter 36 2 00dc3f9d -> 0078CB21
-matteo 36 1 (1) 00BFCC45 -> 006B338C / 00B09ACA
-matteo 36 1 (2) 00F4632B -> 008F3966 / 0014BF14
-matteo 36 1 (3) 00C28AAF -> 00418A9B / 000043E2
-sarah 36 2 : 00DC6EBC
+matteo 36 1 (1) 00BFCC45 -> 006B338C [IA] / 00B09ACA [IA]
+matteo 36 1 (2) 00F4632B -> 008F3966 [IA] / 0014BF14 [IA]
+matteo 36 1 (3) 00C28AAF -> 00418A9B [IA] / 000043E2 [IA]
+sarah 36 2 00DC6EBC
 
-sarah 37 :007B0907
+sarah 37 007B0907
 sarah 37 2 (1) 008E362C
 sarah 37 2 (2) 00C4DFE7
 sarah 37 2 (3a) 00F9DD48
@@ -35,7 +38,7 @@ sarah 39b 0036D429
 noel 39b 00106437
 noel 39b 2 001F769D
 noel 39b 3 008C5A41
-sarah 39b 3 009D1671 -> 00D1E3B5  / 009D1671
+sarah 39b 3 009D1671 -> 00D1E3B5 [IA] / 009D1671
 
 walter 39c 00A25BB4
 matteo 39c 00AF6F09
@@ -66,8 +69,10 @@ sarah 42 3b 00D7BFB7
 sarah 01 1a 007DFC14
 sarah 01 1b 00D98445
 sarah 01 2 00B06C75
-vasco 004D54B0
+vasco 01 004D54B0
 
+vasco 02 C0F712 -> B6A32C [IA]
+sarah 02 1 CC1479 -> B37BDC [IA]
 sarah 02 3 (1) 000353AC
 sarah 02 3 (2) 0019BBBD
 walter 02 1 (1) 00ec6fc1 + 00dcd1a1 + 00238ea0 -> 007C13D0
@@ -87,7 +92,8 @@ sarah 02 5 (3) 00F26965
 
 # MQ104B
 
-lin 01 2 0001FAC8 -> 002F063C
+lin 01 1 00452B2B -> 004A1647 [IA]
+lin 01 2 0001FAC8 -> 002F063C [IA]
 Lin 01 4 (1a) 00170A3A
 Lin 01 4 (1b) 00345E55
 Lin 01 4 (2) 005CA99B
@@ -137,6 +143,7 @@ lin 02 3 (3b)  0057302E
 lin 02 3 (3c)  0071532D
 lin 02 4 00432BA3
 
+heller 03 1 002408DF -> 00710C1C [IA]
 lin 03 009B3B19
 heller 03 1.5 002408DF -> 00D8A2C2
 heller 03 2 000536F6
@@ -275,6 +282,7 @@ barrett 15 1a 0019A1A9
 barrett 15 1c 00A72B26
 barett 15 2 (1) 000D9758
 barrett 15 2 (2) 003CC406
+barrett 15 3 NULL -> 00BEF213 [IA]
 
 lin stage30hellos 1 00F4FF43
 lin stage30hellos 2 000297E5 -> 00D4A8C5
@@ -303,6 +311,8 @@ matsura stagge300hello 3 0029688D
 bodyguardhello 1 00D895F5
 bodyguardhello 2 002AE4E8
 bodyguardhello 3 00131451
+
+lin prequest_extra_dialog e4c7ae [IA]
 
 # ship tech
 00686132
