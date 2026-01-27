@@ -2,7 +2,7 @@ Scriptname RAS:NewGameManagerQuest:ChooseStartCellTriggerScript extends ObjectRe
 
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Keyword Property AnimArchetypePlayer Mandatory Const Auto
-ActorValue Property Experience Mandatory Const Auto
+
 Armor Property Clothes_GenWare_01 Mandatory Const Auto
 Message Property RAS_CustomStartTutorialMessage Mandatory Const Auto
 Armor Property Spacesuit_Constellation_01 Mandatory Const Auto
@@ -15,7 +15,6 @@ Event OnCellLoad()
     Game.SetInChargen(False, False, False)
     RAS_NewGameManagerQuest.SetActive()
     Game.GetPlayer().ChangeAnimArchetype(AnimArchetypePlayer)
-    Game.GetPlayer().SetValue(Experience, 0)
 
     Game.GetPlayer().RemoveItem(Spacesuit_Constellation_01, abSilent = True)
     Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Backpack_01, abSilent = True)

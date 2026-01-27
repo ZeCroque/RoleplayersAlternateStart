@@ -17,7 +17,6 @@ Perk Property Crew_Ship_Weapons_EM Mandatory Const Auto
 Faction Property ConstellationFaction Mandatory Const Auto
 Faction Property PotentialCrewFaction Mandatory Const Auto
 Key Property LodgeKey Auto Const Mandatory
-ActorValue Property PlayerXPBonusMult Auto Const Mandatory
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 ImageSpaceModifier Property StayBlack Mandatory Const Auto
 ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
@@ -286,12 +285,10 @@ Function HookMQ()
   Self.RegisterForRemoteEvent(MQ102, "OnStageSet") ;Used to trigger RAS_MQ104B
 
   ;Prevent the real MQ104B to happen and wait for closing stage to undo the changes in RAS_MQ104B stage 5 fragment
-  Game.GetPlayer().SetValue(PlayerXPBonusMult, 0) ;Prevent level up
   Self.RegisterForRemoteEvent(MQ104B, "OnStageSet")
   MQ104B.Start()
   MQ104B.SetStage(390) ;Prevents Sarah commentary
   MQ104B.Stop()
-  Game.GetPlayer().SetValue(PlayerXPBonusMult, 1)
 
   RegisterMQ105Triggers()
 

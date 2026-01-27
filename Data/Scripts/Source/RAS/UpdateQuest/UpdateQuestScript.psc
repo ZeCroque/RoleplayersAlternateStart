@@ -13,8 +13,9 @@ Quest Property TraitUnwantedHero Mandatory Const Auto
 Perk Property TRAIT_UnwantedHero Mandatory Const Auto
 ActorValue Property RAS_MinerStart Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+ActorValue Property Experience Mandatory Const Auto
 
-Float LastVersion = 1.10
+Float LastVersion = 1.11
 
 Event OnQuestInit()
     Update()
@@ -46,6 +47,13 @@ Function Update()
                 EndIf
             Else
                 (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).RegisterMQ105Triggers()
+            EndIf
+        EndIf
+        If(RAS_ModVersion.GetValue() < 1.11)
+            Float XP = Game.GetPlayer().GetValue(Experience)
+            Float ExpectedXP = Game.GetXPForLevel(Game.GetPlayerLevel())
+            If(XP < ExpectedXP)
+                Game.GetPlayer().SetValue(Experience, ExpectedXP)
             EndIf
         EndIf
     EndIf        
