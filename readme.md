@@ -170,6 +170,7 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
     - [Small Akila Player Home](https://www.nexusmods.com/starfield/mods/11444)
     - [Trait Starter Homes](https://www.nexusmods.com/starfield/mods/13929)
 - [Take Items Through Unity - No Console Commands by Wartortle](https://www.nexusmods.com/starfield/mods/7309) : compatibility patch included. Re-install my mod if you're adding this one part way.
+- [POI Variations - No More Duplicates by PlatinumPoster](https://www.nexusmods.com/starfield/mods/10825) : compatibility patch included. Re-install my mod if you're adding this one part way.
 
 ## 8. MY OTHER MODS
 
