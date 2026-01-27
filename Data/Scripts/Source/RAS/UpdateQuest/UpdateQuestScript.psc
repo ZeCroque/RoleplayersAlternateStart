@@ -16,6 +16,8 @@ Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 ActorValue Property Experience Mandatory Const Auto
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
+Quest Property RAS_MQ101 Mandatory Const Auto
+GlobalVariable Property MissionBoardAccessAllowed_Constellation Mandatory Const Auto
 
 Float LastVersion = 1.11
 
@@ -60,7 +62,11 @@ Function Update()
 
             If(MQ101.GetStageDone(1810))
                 NewAtlantisToLodgeDoorREF.BlockActivation(false)
-            EndIf        
+            EndIf    
+
+            If(RAS_MQ101.GetStageDone(1800))
+                MissionBoardAccessAllowed_Constellation.SetValueInt(1)
+            EndIf    
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)

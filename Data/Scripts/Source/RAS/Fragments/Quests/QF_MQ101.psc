@@ -177,6 +177,7 @@ FFLodge01.SetStageNoWait(10)
 Actor PlayerREF = Game.GetPlayer()
 PlayerREF.AddToFaction(ConstellationFaction)
 PlayerREF.AddItem(LodgeKey)
+MissionBoardAccessAllowed_Constellation.SetValueInt(1)
 
 Actor VascoREF = Vasco.GetReference() as Actor
 VascoREF.SetFactionRank(PotentialCrewFaction, 1)
@@ -251,3 +252,5 @@ ReferenceAlias Property WalterStroud Mandatory Const Auto
 ReferenceAlias Property Matteo Mandatory Const Auto
 
 ReferenceAlias Property Noel Mandatory Const Auto
+
+GlobalVariable Property MissionBoardAccessAllowed_Constellation Mandatory Const Auto
