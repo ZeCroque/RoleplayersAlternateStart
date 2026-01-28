@@ -24,7 +24,7 @@ Inspired by classic mods like [Start Me Up (Fallout 4)](https://www.nexusmods.co
 
 ### Features
 
-- **Skip the Vectera Intro**: Begin your journey without the miner prologue. Start the main quest simply by finding the artifact out in the world (configurable). All references to Vectera in main quest dialogue have been removed. Some lines were edited or spliced, while others were created with generative AI.
+- **Skip the Vectera Intro**: Begin your journey without the miner prologue. Start the main quest simply by finding the artifact out in the world (configurable). All references to Vectera in main quest dialogue have been removed. Some lines were edited or spliced, while others were created with generative AI (except for Creations version).
 - **Immersive Beginning**: The custom start configuration takes place in a carefully crafted starting cell, based on the Unity end-game area, designed to feel natural and fully part of the game world.
 - **Dynamic Integration**: Automatically detects and includes mod-added locations, ships, and items in the starting options — no patches required.
 - **Fully compatible with anything**: No vanilla quests are changed — the mod relies on hooks and replacers. Vanilla starts remain fully playable, including any modifications from other mods.
@@ -97,9 +97,6 @@ Regardless of your choices at the Narrative Adjustments terminal, you can keep t
 
 ## 3. FREQUENTLY ASKED QUESTIONS
 
-#### Will it come to Creations?
-Yes, I'm currently ensuring the mod is stable, I'll release afterward.
-
 #### In which POI can the artifact added by the mod spawn?
 Here's a list:
 - [Abandoned Mineral Refinery](https://starfieldwiki.net/wiki/Starfield:Abandoned_Mineral_Refinery)
@@ -140,8 +137,9 @@ This mod consists of two main files :
 - *RoleplayersAlternateStart.esm* (mid master)
 - *RoleplayersAlternateStart - Main.ba2*
 
-And one optional :
+And two optionals :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
+- *RAS_POIVariationsPatch.esm* (small master)
 
 ## 6. INSTALLATION
 
@@ -157,8 +155,8 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 ## 7. COMPATIBILITY
 
 - Other alternate start mods (either free or paid) are obviously incompatible
-- [Unity Framework by DJLegends](https://www.nexusmods.com/starfield/mods/12567) currently incompatible (patch planned)
-- [Revelation - Main Quest Overhaul](https://www.nexusmods.com/starfield/mods/10418): compatible
+- [Unity Framework by DJLegends](https://www.nexusmods.com/starfield/mods/12567): compatible
+- [Revelation - Main Quest Overhaul by Gothos25](https://www.nexusmods.com/starfield/mods/10418): compatible
 - [Choose Your Variant Universe by Aurelianis](https://www.nexusmods.com/starfield/mods/9273): compatible
 - [Ship Vendor Framework by rux616](https://www.nexusmods.com/starfield/mods/10057) : support embedded in the main file. You can choose any ship added to the framework as a starting ship.
 - Most of DownfallNemesis' house mods have embedded support in the main file (I didn't port the quest-locked ones) :
@@ -214,13 +212,11 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 
 If you want to modify and/or redistribute this mod, I would like to be contacted first please. Note that it is under GPL3 licensing, thus you have the obligation to make any modification done to the original source code available somewhere publicly.
 
-You CANNOT, by any mean, upload this mod as a Creation accessible through the in-game menu. I plan to do it myself, but I prefer to wait for community feedback before doing so.
-
 You can find the source code here : https://github.com/ZeCroque/RoleplayersAlternateStart
 
 ## 13. FEEDBACK
 
-*Found a bug or have an idea for new features? Let me know in the comment section!*
+*Found a bug or have an idea for new features? Let me know in NexusMods' comment section or on my [Discord server](https://discord.gg/K9Jk4y2tjJ)!*
 
 **Planned features:**
 - Optional file to remove as much reference as possible of the player being a miner in any dialog. Known references:
