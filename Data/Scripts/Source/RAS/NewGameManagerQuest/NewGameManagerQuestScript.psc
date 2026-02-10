@@ -119,7 +119,6 @@ Function PreventMQ101FirstStage()
     Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0)
     Self.RegisterForRemoteEvent(MQ101, "OnStageSet")        
   EndIf    
-  MQ101Debug.SetValueInt(11)
 EndFunction
 
 Function RegisterForChargen()
@@ -128,6 +127,7 @@ EndFunction
 
 Function InitCustomStart()  
   Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
+  MQ101Debug.SetValueInt(11) ;Enable sustenance and disable MQ101 first stages for MQReplacer or autocomplete feature
   SetStage(10)
 
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
@@ -156,6 +156,7 @@ EndFunction
 Function InitVanillaStart()  
   InputLayer.Delete()
 
+  MQ101Debug.SetValueInt(0)
   Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
   MQ101.Start()
 EndFunction

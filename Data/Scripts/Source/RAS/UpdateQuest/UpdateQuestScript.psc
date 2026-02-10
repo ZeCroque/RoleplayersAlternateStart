@@ -19,8 +19,9 @@ Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 GlobalVariable Property MissionBoardAccessAllowed_Constellation Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
+GlobalVariable Property MQ101Debug Mandatory Const Auto
 
-Float LastVersion = 1.11
+Float LastVersion = 1.12
 
 Event OnQuestInit()
     Update()
@@ -73,6 +74,9 @@ Function Update()
             If(shipManagerScript.PedestrianStart)
                 (SQ_PlayerShip as SQ_PlayerShipScript).PlayerShip.ForceRefTo(shipManagerScript.CurrentShip)
             EndIf
+        EndIf
+        If(RAS_ModVersion.GetValue() < 1.12)
+            MQ101Debug.SetValueInt(11)
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
