@@ -383,11 +383,13 @@ EndFunction
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   If(akSender == MQ101)
     If(auiStageID == 0)
-      Utility.Wait(2)
-      Game.FadeOutGame(True, True, 0.0, 0.1, True)          
-      Utility.Wait(0.1)
-      Game.ForceFirstPerson()
-      StayBlack.Remove()
+      If(Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
+        Utility.Wait(2)
+        Game.FadeOutGame(True, True, 0.0, 0.1, True)          
+        Utility.Wait(0.1)
+        Game.ForceFirstPerson()
+        StayBlack.Remove()
+      EndIf
 
       If(!DialogueUCNewAtlantis_Argos.IsRunning() && !DoOnce)
         DoOnce = True

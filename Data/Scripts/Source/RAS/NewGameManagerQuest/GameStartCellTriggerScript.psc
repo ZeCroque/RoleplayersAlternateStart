@@ -1,7 +1,6 @@
 Scriptname RAS:NewGameManagerQuest:GameStartCellTriggerScript extends ObjectReference Const
 
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
-ImageSpaceModifier Property StayBlack Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Mandatory Const Auto
 
