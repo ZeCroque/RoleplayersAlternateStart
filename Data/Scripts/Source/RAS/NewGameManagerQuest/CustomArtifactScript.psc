@@ -6,6 +6,7 @@ Quest Property MQ101 Auto Const Mandatory
 Scene Property MQ101_001b_MiningWalkScene Auto Const Mandatory
 Scene Property MQ101_002_LinSupervisorScene Auto Const Mandatory
 Scene Property MQ101_004_WallDownScene Auto Const Mandatory
+Scene Property MQ101_004b_WaitingAtTunnelScene Mandatory Const Auto
 Armor Property Spacesuit_Miner_Helmet_Lin_NOTPLAYABLE Auto Const Mandatory
 Armor Property Spacesuit_Miner_Helmet_Orange_Heller_NOTPLAYABLE Auto Const Mandatory
 Weapon Property Crew_Elite_Sidestar Auto Const Mandatory
@@ -40,6 +41,7 @@ Event OnActivate(ObjectReference akActionRef)
         MQ101_001b_MiningWalkScene.Stop()
         MQ101_002_LinSupervisorScene.Stop()
         MQ101_004_WallDownScene.Stop()
+        MQ101_004b_WaitingAtTunnelScene.Stop()
 
         ;preload the area if we haven't already
         If MQ101.GetStageDone(5) == 0
