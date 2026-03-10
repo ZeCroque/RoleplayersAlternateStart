@@ -383,7 +383,8 @@ EndFunction
 Event Quest.OnStageSet(Quest akSender, Int auiStageID, Int auiItemID)
   If(akSender == MQ101)
     If(auiStageID == 0)
-      If(Game.GetPlayer().GetValue(RAS_AlternateStart) == 0)
+      ;Unfade the game only on vanilla start/argos MQ entry point
+      If(Game.GetPlayer().GetValue(RAS_AlternateStart) == 0 || MQ101Debug.GetValueInt() == 0)
         Utility.Wait(2)
         Game.FadeOutGame(True, True, 0.0, 0.1, True)          
         Utility.Wait(0.1)
