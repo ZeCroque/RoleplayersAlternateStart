@@ -169,6 +169,8 @@ Function HookVanillaMQ101()
   ArtifactDeposit.TryToDisable()
 
   NewAtlantisToLodgeDoorREF.Unlock()
+  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = False
+  NewAtlantisToLodgeDoorREF.BlockActivation(True)
 
   Self.RegisterForRemoteEvent(MQ101_VascoShipServicesScene, "OnEnd")
 EndFunction
@@ -268,9 +270,11 @@ Function CustomStartSetup()
   LC001VecteraLiftDoor.SetLockLevel(254)
   LC001VecteraLiftDoor.Lock()
 
-  ;Locks the lodge until we start the custom quest
+  ;Locks the lodge until we start the custom quest & prevent watch anim
   NewAtlantisToLodgeDoorREF.SetLockLevel(254)
   NewAtlantisToLodgeDoorREF.Lock()
+  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+  NewAtlantisToLodgeDoorREF.BlockActivation(false)
 
   DialogueUCNewAtlantis_Argos.Stop()
 EndFunction
@@ -304,10 +308,6 @@ Function HookMQ()
 
   ;Register to remove unwanted vasco trigger  
   Self.RegisterForRemoteEvent(NewAtlantisToLodgeDoorREF, "OnCellLoad")  
-
-  ;Prevent watch anim  
-  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
-  NewAtlantisToLodgeDoorREF.BlockActivation(false)
 EndFunction
 
 Function RegisterMQ105Triggers()

@@ -77,6 +77,11 @@ Function Update()
         EndIf
         If(RAS_ModVersion.GetValue() < 1.12)
             MQ101Debug.SetValueInt(11)
+
+            If(!MQ101.IsRunning())
+                (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+                NewAtlantisToLodgeDoorREF.BlockActivation(false)
+            EndIf
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
