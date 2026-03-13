@@ -319,6 +319,7 @@ EndFunction
 Function DisableStarborn()
   UnityCount = Game.GetPlayer().GetValueInt(PlayerUnityTimesEntered)
   Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0.0)
+  Game.GetPlayer().RemovePerk(StarbornSkillCheck)
   Self.RegisterForRemoteEvent(MQ305, "OnStageSet")
 EndFunction
 
