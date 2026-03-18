@@ -93,6 +93,8 @@ Quest Property MQ103 Mandatory Const Auto
 Quest Property MQ104A Mandatory Const Auto
 Quest Property MQ105 Mandatory Const Auto
 Quest Property RAD02 Mandatory Const Auto
+Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
+Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -254,6 +256,9 @@ Function CustomStartSetup()
   City_NA_Aquilus01.Start()
   MQProgress.SetValue(2)
   TraitQuest.Start()
+  Trait_RaisedUniversalBoxEnabler.SetStage(500)
+  Trait_RaisedEnlightenedBoxEnabler.SetStage(500)
+
   TraitUnwantedHero.Stop()
 
   If(TraitKidStuff.IsRunning())
@@ -365,6 +370,8 @@ Function CustomStarbornStartSetup()
   ;Start other quests
   City_NA_Aquilus01.Start()
   TraitQuest.Start()
+  Trait_RaisedUniversalBoxEnabler.SetStage(500)
+  Trait_RaisedEnlightenedBoxEnabler.SetStage(500)
 
   ;Setup vectera
   Barrett.GetActorRef().Moveto(MQ104B_LinSandbox_CenterMarker)
