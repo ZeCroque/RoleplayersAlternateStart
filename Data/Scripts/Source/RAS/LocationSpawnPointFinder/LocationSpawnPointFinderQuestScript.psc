@@ -4,7 +4,7 @@ LocationAlias Property StartingLocationAlias Mandatory Const Auto
 LocationAlias Property StartingLocationParentAlias Mandatory Const Auto
 ReferenceAlias Property StartingLocationShipMarkerAlias Mandatory Const Auto
 ReferenceAlias Property StartingLocationShipTechAlias Mandatory Const Auto
-ReferenceAlias Property StartingLocationDockingPortDoorAlias Mandatory Const Auto
+RefCollectionAlias Property StartingLocationDockingPortDoorCollectionAlias Mandatory Const Auto
 ReferenceAlias Property StartingLocationParentMapMarkerAlias Mandatory Const Auto
 RefCollectionAlias Property StartingLocationMapMarkersCollectionAlias Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
@@ -47,6 +47,7 @@ ObjectReference[] mainMapMarkers
 int mainMapMarkersCount
 ObjectReference shipMarker
 ObjectReference randomLocationConfigurationTerminal
+ObjectReference shipDockingDoor
 
 Event OnQuestInit()
     RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x38CE7, "ShatteredSpace.esm"))  ;Dazra, quest location
@@ -96,23 +97,28 @@ Int Function FindShipMarkerForLocation(Location akLocation)
     StartingLocationParentMapMarkerAlias.RefillAlias()
 
     ;Sets up spaceship markers if applicable
-    StartingLocationDockingPortDoorAlias.RefillAlias()
-    ObjectReference shipDockingDoor = StartingLocationDockingPortDoorAlias.GetReference()
-    
-    ;Find spaceship docking ports
-    If(shipDockingDoor && StartingLocationParentMapMarkerAlias.GetReference())
-        Cell shipExteriorCell = shipDockingDoor.GetParentCell().GetParentRef().GetLinkedCell(SpaceshipLinkedExterior)
+    StartingLocationDockingPortDoorCollectionAlias.RefillAlias()
+    Int doorCount = StartingLocationDockingPortDoorCollectionAlias.GetCount() 
+    Int i = 0
+    While(i < doorCount)
+        shipDockingDoor = StartingLocationDockingPortDoorCollectionAlias.GetAt(i)
+        
+        ;Find spaceship docking ports
+        If(shipDockingDoor && StartingLocationParentMapMarkerAlias.GetReference())
+            Cell shipExteriorCell = shipDockingDoor.GetParentCell().GetParentRef().GetLinkedCell(SpaceshipLinkedExterior)
 
-        ObjectReference[] dockingPorts = shipDockingDoor.GetRefsLinkedToMe(SpaceshipDockDoor)
-        Int i = 0
-        While(i < dockingPorts.Length)
-            If(dockingPorts[i].GetParentCell() == shipExteriorCell && dockingPorts[i].GetLockLevel() == 0)
-                shipMarker = dockingPorts[i]
-                Return 0
-            EndIf
-            i += 1
-        EndWhile
-    EndIf
+            ObjectReference[] dockingPorts = shipDockingDoor.GetRefsLinkedToMe(SpaceshipDockDoor)
+            Int j = 0
+            While(j < dockingPorts.Length)
+                If(dockingPorts[j].GetParentCell() == shipExteriorCell && shipDockingDoor.GetLockLevel() == 0 && dockingPorts[j].GetLockLevel() == 0)
+                    shipMarker = dockingPorts[j]
+                    Return 0
+                EndIf
+                j += 1
+            EndWhile
+        EndIf
+        i += 1
+    EndWhile
  
     StartingLocationShipTechAlias.RefillAlias()
     ObjectReference shipTech = StartingLocationShipTechAlias.GetReference()
@@ -146,7 +152,7 @@ Function MoveToSpacestationReference(SpaceshipReference ship, Bool moveShip, Boo
             Game.GetPlayer().MoveTo(ship)
         Else
             If(!playerDestination)
-                Game.GetPlayer().MoveTo(StartingLocationDockingPortDoorAlias.GetReference().GetLinkedRef(DynamicallyLinkedDoorTeleportMarkerKeyword))
+                Game.GetPlayer().MoveTo(shipDockingDoor.GetLinkedRef(DynamicallyLinkedDoorTeleportMarkerKeyword))
             Else
                 Game.GetPlayer().MoveTo(playerDestination)
             EndIf
