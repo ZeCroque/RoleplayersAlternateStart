@@ -178,24 +178,25 @@ EndFunction
 ;    If moving player and ship, will move to ship
 ;    If moving only player but no destination provided, will prompt for a map marker if several available or will move to the ship marker elsewise
 Function MoveToPlanetReference(SpaceshipReference ship, Bool moveShip, Bool movePlayer = True, ObjectReference playerDestination = None)
+    ;First moves the player (if appropriate) as moving a ship in unloaded area can be problematic
+    If(movePlayer)
+        Game.GetPlayer().MoveTo(shipMarker)
+        Game.GetPlayer().WaitFor3DLoad()
+    EndIf
+    
     If(moveShip)
         MoveShipToMarker(ship, shipMarker)
     EndIf
 
     If(movePlayer)
         If(!playerDestination)
-            If(StartingLocationMapMarkersCollectionAlias.GetCount() <= 1)
-                ;If one map marker or less, skip menu
-                If(moveShip)
-                    ;We move to shipMarker before moving to ship to ensure landing cell has loaded properly
-                    Game.GetPlayer().MoveTo(shipMarker)
-                    Game.GetPlayer().MoveTo(ship)
-                Else
-                    ;We move to shipMarker instead of mapMarker because it can have strange placement on some settlements (eg: RedMile)
-                    ;In addition it allow us to handle the same way the no map marker and single map marker cases
-                    Game.GetPlayer().MoveTo(shipMarker)
-                EndIf
-            Else
+            If(moveShip)
+                ;We move to ship to make sure player is not clipping inside ship if theres no need for a prompt/if player dismisses the prompt
+                Game.GetPlayer().MoveTo(ship)
+            EndIf
+
+            ;If there is more than one map marker in the location shows a prompt
+            If(StartingLocationMapMarkersCollectionAlias.GetCount() > 1)
                 SelectMapMarkerAndMove(moveShip)
             EndIf
         Else
