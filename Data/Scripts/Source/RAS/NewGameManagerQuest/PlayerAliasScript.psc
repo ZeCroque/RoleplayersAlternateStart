@@ -11,7 +11,6 @@ FormList Property RAS_TmpItemsToEquipBack Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
 ObjectReference Property RAS_HomeChoosingTerminalREF Mandatory Const Auto
 ObjectReference Property RAS_NarrativeAdjustmentsActivatorREF Mandatory Const Auto
-ObjectReference Property RAS_StartingStuffContainer Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto

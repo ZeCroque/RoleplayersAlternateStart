@@ -161,6 +161,7 @@ Function InitVanillaStart()
   MQ101Debug.SetValueInt(0)
   Self.RegisterForRemoteEvent(MQ101, "OnStageSet")
   MQ101.Start()
+  MQ101.SetActive()
 EndFunction
 
 Function HookVanillaMQ101()
@@ -326,25 +327,6 @@ Function DisableStarborn()
   Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 0.0)
   Game.GetPlayer().RemovePerk(StarbornSkillCheck)
   Self.RegisterForRemoteEvent(MQ305, "OnStageSet")
-EndFunction
-
-Function RestoreItems()
-  Form[] ItemsToEquipBack = RAS_TmpItemsToEquipBack.GetArray()
-  Int i = 0
-  While(i < ItemsToEquipBack.Length)
-    Game.GetPlayer().EquipItem(ItemsToEquipBack[i], true)
-    RAS_StartingStuffContainer.RemoveItem(ItemsToEquipBack[i])
-    i = i + 1
-  EndWhile
-  While(RAS_StartingStuffContainer.GetItemCount() > 0)    
-    ObjectReference itemRef = RAS_StartingStuffContainer.DropFirstObject()
-    Game.GetPlayer().AddItem(itemRef, abSilent = True)
-    Int currentItemCount = RAS_StartingStuffContainer.GetItemCount(itemRef.GetBaseObject())
-    If(currentItemCount)
-      RAS_StartingStuffContainer.RemoveItem(itemRef.GetBaseObject(), currentItemCount, True)
-      Game.GetPlayer().AddItem(itemRef, currentItemCount, abSilent = True)
-    EndIf
-  EndWhile
 EndFunction
 
 Function CustomStarbornStartSetup()
