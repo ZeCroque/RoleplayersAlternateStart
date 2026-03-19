@@ -19,7 +19,6 @@ Faction Property PotentialCrewFaction Mandatory Const Auto
 Key Property LodgeKey Auto Const Mandatory
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 ImageSpaceModifier Property StayBlack Mandatory Const Auto
-ObjectReference Property RAS_TmpCellMarkerREF Mandatory Const Auto
 GlobalVariable Property MQProgress Mandatory Const Auto
 ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
 Message Property RAS_ChooseStartTypeMessage Mandatory Const Auto
