@@ -76,7 +76,6 @@
 	"Data\\Scripts\\RAS\\NewGameManagerQuest\\GameStartCellTriggerScript.pex",
 	"Data\\Scripts\\RAS\\NewGameManagerQuest\\NewGameManagerQuestScript.pex",
 	"Data\\Scripts\\RAS\\NewGameManagerQuest\\PlayerAliasScript.pex",
-	"Data\\Scripts\\RAS\\NewGameManagerQuest\\TmpCellTriggerScript.pex",
 	"Data\\Scripts\\RAS\\ShipManagerQuest\\PlayerAliasScript.pex",
 	"Data\\Scripts\\RAS\\ShipManagerQuest\\ShipManagerQuestScript.pex",
 	"Data\\Scripts\\RAS\\ShipwreckedRescueQuest\\PlayerAliasScript.pex",
