@@ -22,6 +22,8 @@ Quest Property SQ_PlayerShip Mandatory Const Auto
 GlobalVariable Property MQ101Debug Mandatory Const Auto
 Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
 Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
+GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
+Perk Property StarbornSkillCheck Auto Const Mandatory
 
 Float LastVersion = 1.12
 
@@ -82,6 +84,10 @@ Function Update()
 
             Trait_RaisedUniversalBoxEnabler.SetStage(500)
             Trait_RaisedEnlightenedBoxEnabler.SetStage(500)
+
+            If(RAS_DisableStarborn.GetValueInt() == 1)
+                Game.GetPlayer().RemovePerk(StarbornSkillCheck)
+            EndIf
 
             If(!MQ101.IsRunning())
                 (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
