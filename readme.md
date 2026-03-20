@@ -137,9 +137,10 @@ This mod consists of two main files :
 - *RoleplayersAlternateStart.esm* (mid master)
 - *RoleplayersAlternateStart - Main.ba2*
 
-And two optionals :
+And three optionals :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
 - *RAS_POIVariationsPatch.esm* (small master)
+- *RAS_ShatteredSpacePatch* (small master)
 
 ## 6. INSTALLATION
 
