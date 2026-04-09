@@ -141,6 +141,7 @@ And three optionals :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
 - *RAS_POIVariationsPatch.esm* (small master)
 - *RAS_ShatteredSpacePatch* (small master)
+- *RAS_TerranArmadaPatch* (small master)
 
 ## 6. INSTALLATION
 
