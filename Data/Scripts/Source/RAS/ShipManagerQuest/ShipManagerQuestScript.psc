@@ -8,12 +8,19 @@ GlobalVariable Property MQ204_TurnOffCF01Arrest Mandatory Const Auto
 RefCollectionAlias Property ShipsToSell Mandatory Const Auto
 LeveledSpaceshipBase Property LShip_StarbornGuardian_PlayerShip Mandatory Const Auto
 Actor Property RAS_ShipServicesActorREF Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
 SpaceshipReference Property GuardianShip Auto Hidden
 SpaceshipReference Property CurrentShip Auto Hidden
 SpaceshipReference Property RAS_NoneShipReference Auto Hidden
 Bool Property PedestrianStart Auto Conditional
+
+Quest CruiseModeQuest
 InputEnableLayer InputLayer
+
+Event OnQuestInit()
+    InitFreeLanes()
+EndEvent
 
 Function InitPedestrianStart()
     ;Disable space
@@ -77,7 +84,36 @@ Function SetupPlayerShip(SpaceshipReference akShip)
     ;Add back ship services tech dialogs
     DialogueShipServices.Reset()
     DialogueShipServices.Start()
-
-    ;Shutting player alias script
-    Stop()
 EndFunction
+
+Function InitFreeLanes()
+    CruiseModeQuest = Game.GetFormFromFile(0x7DCFA, "SFBGS00D.esm") as Quest
+    SQ_PlayerShipScript shipScript = SQ_PlayerShip as SQ_PlayerShipScript
+    Self.RegisterForRemoteEvent(shipScript.PlayerShip, "OnAliasChanged")
+    Self.RegisterForRemoteEvent(shipScript.PlayerShip.GetShipReference(), "OnLocationChange")
+    Self.RegisterForRemoteEvent(shipScript.PlayerShip.GetShipReference(), "OnShipUndock")
+EndFunction
+
+Event ReferenceAlias.OnAliasChanged(ReferenceAlias akSource, ObjectReference akObject, bool abRemove)
+    Self.UnregisterForAllRemoteEvents()
+    Self.RegisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShip, "OnAliasChanged")
+    Self.RegisterForRemoteEvent(akObject as SpaceshipReference, "OnLocationChange")
+    Self.RegisterForRemoteEvent(akObject as SpaceshipReference, "OnShipUndock")
+EndEvent
+
+Event SpaceshipReference.OnLocationChange(SpaceshipReference akSource, Location akOldLoc, Location akNewLoc)
+    SFBGS00D:SFBGS00D_CruiseMode_Tutorial_Script cruiseModeScript = CruiseModeQuest as SFBGS00D:SFBGS00D_CruiseMode_Tutorial_Script
+    If akSource.IsInSpace() && !akSource.IsDocked() && !CruiseModeQuest.GetStageDone(cruiseModeScript.iDisplayTutorialStage)
+        cruiseModeScript.ShowTutorial()
+        Self.UnregisterForAllRemoteEvents()
+        Stop()
+    EndIf
+EndEvent
+
+Event SpaceshipReference.OnShipUndock(SpaceshipReference akSender, Bool abComplete, SpaceshipReference akUndocking, SpaceshipReference akParent)
+    If abComplete == True
+        (CruiseModeQuest as SFBGS00D:SFBGS00D_CruiseMode_Tutorial_Script).ShowTutorial()
+        Self.UnregisterForAllRemoteEvents()
+        Stop()
+    EndIf
+EndEvent

@@ -25,7 +25,7 @@ Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Perk Property StarbornSkillCheck Auto Const Mandatory
 
-Float LastVersion = 1.12
+Float LastVersion = 1.13
 
 Event OnQuestInit()
     Update()
@@ -93,6 +93,9 @@ Function Update()
                 (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
                 NewAtlantisToLodgeDoorREF.BlockActivation(false)
             EndIf
+        EndIf   
+        If(RAS_ModVersion.GetValue() < 1.13)
+            (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitFreeLanes()
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
