@@ -52,6 +52,7 @@ ObjectReference shipDockingDoor
 
 Event OnQuestInit()
     RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x38CE7, "ShatteredSpace.esm"))  ;Dazra, quest location
+    RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x1782, "sfta05.esm"))  ;Seokguh Villa from Trackers Alliance, quest location
 
     Keyword[] keywords = new Keyword[1]
     keywords[0] = LocTypeSettlement
