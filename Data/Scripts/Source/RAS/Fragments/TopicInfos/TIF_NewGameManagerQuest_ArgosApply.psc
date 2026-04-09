@@ -8,7 +8,8 @@ Actor akSpeaker = akSpeakerRef as Actor
 RAS:NewGameManagerQuest:NewGameManagerQuestScript kmyQuest = GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript
 ;END AUTOCAST
 ;BEGIN CODE
-kmyQuest.LockPlayer()	
+kmyQuest.LockPlayer()
+RAS_ArgosStartWarning.Show()	
 Game.GetPlayer().RemoveAllItems(kmyQuest.RAS_StartingStuffContainer)
 Game.GetPlayer().MoveTo(kmyQuest.RAS_GameStartCellMarkerREF)
 kmyQuest.InitVanillaStart()
@@ -22,3 +23,5 @@ EndFunction
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 ObjectReference Property LC001VecteraLiftDoor Auto Const Mandatory
+
+Message Property RAS_ArgosStartWarning Auto Const Mandatory
