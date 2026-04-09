@@ -38,6 +38,7 @@ FormList Property RAS_SettlementsLocationList Mandatory Const Auto
 FormList Property RAS_ExcludedStarstationsLocationList Mandatory Const Auto
 FormList Property RAS_StarstationsLocationList Mandatory Const Auto
 RefCollectionAlias Property ShipTechCollectionAlias Mandatory Const Auto
+Keyword Property LocTypeStarstationExterior Mandatory Const Auto
 
 Location Property TargetLocation Auto Hidden
 
@@ -66,7 +67,7 @@ Event OnQuestInit()
             Else
                 Int j = 0
                 While(j < parents.Length)
-                    If(parents[j].HasKeyword(LocTypeOrbit))
+                    If(parents[j].HasKeyword(LocTypeOrbit) || parents[j].HasKeyword(LocTypeStarstationExterior))
                         If(!RAS_ExcludedStarstationsLocationList.HasForm(allSettlements[i]))
                             RAS_StarstationsLocationList.AddForm(allSettlements[i])
                         EndIf
