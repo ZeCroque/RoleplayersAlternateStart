@@ -137,11 +137,12 @@ This mod consists of two main files :
 - *RoleplayersAlternateStart.esm* (mid master)
 - *RoleplayersAlternateStart - Main.ba2*
 
-And three optionals :
+And five optionals :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
 - *RAS_POIVariationsPatch.esm* (small master)
 - *RAS_ShatteredSpacePatch* (small master)
 - *RAS_TerranArmadaPatch* (small master)
+- *RAS_TerranArmadaPatch - Main.ba2*
 
 ## 6. INSTALLATION
 
