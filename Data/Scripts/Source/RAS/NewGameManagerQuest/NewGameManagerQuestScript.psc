@@ -94,6 +94,7 @@ Quest Property MQ105 Mandatory Const Auto
 Quest Property RAD02 Mandatory Const Auto
 Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
 Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
+ReferenceAlias Property LodgeDoorAlias Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -129,6 +130,7 @@ EndFunction
 Function InitCustomStart()  
   Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
   MQ101Debug.SetValueInt(11) ;Enable sustenance and disable MQ101 first stages for MQReplacer or autocomplete feature
+  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True ;Skips lodge door script
   SetStage(10)
 
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
@@ -171,8 +173,7 @@ Function HookVanillaMQ101()
   ArtifactDeposit.TryToDisable()
 
   NewAtlantisToLodgeDoorREF.Unlock()
-  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = False
-  NewAtlantisToLodgeDoorREF.BlockActivation(True)
+  (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(True)
 
   Self.RegisterForRemoteEvent(MQ101_VascoShipServicesScene, "OnEnd")
 EndFunction
@@ -278,8 +279,7 @@ Function CustomStartSetup()
   ;Locks the lodge until we start the custom quest & prevent watch anim
   NewAtlantisToLodgeDoorREF.SetLockLevel(254)
   NewAtlantisToLodgeDoorREF.Lock()
-  (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
-  NewAtlantisToLodgeDoorREF.BlockActivation(false)
+  (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(False)
 
   DialogueUCNewAtlantis_Argos.Stop()
 EndFunction

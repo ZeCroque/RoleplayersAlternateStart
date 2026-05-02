@@ -25,7 +25,7 @@ Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Perk Property StarbornSkillCheck Auto Const Mandatory
 
-Float LastVersion = 1.13
+Float LastVersion = 1.15
 
 Event OnQuestInit()
     Update()
@@ -64,11 +64,7 @@ Function Update()
             Float ExpectedXP = Game.GetXPForLevel(Game.GetPlayerLevel())
             If(XP < ExpectedXP)
                 Game.GetPlayer().SetValue(Experience, ExpectedXP)
-            EndIf
-
-            If(MQ101.GetStageDone(1810))
-                NewAtlantisToLodgeDoorREF.BlockActivation(false)
-            EndIf    
+            EndIf  
 
             If(RAS_MQ101.GetStageDone(1800))
                 MissionBoardAccessAllowed_Constellation.SetValueInt(1)
@@ -88,14 +84,16 @@ Function Update()
             If(RAS_DisableStarborn.GetValueInt() == 1)
                 Game.GetPlayer().RemovePerk(StarbornSkillCheck)
             EndIf
-
-            If(!MQ101.IsRunning())
-                (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
-                NewAtlantisToLodgeDoorREF.BlockActivation(false)
-            EndIf
         EndIf   
         If(RAS_ModVersion.GetValue() < 1.13)
             (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitFreeLanes()
+        EndIf
+        If(RAS_ModVersion.GetValue() < 1.15)
+            (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True ;skip base script
+
+            ReferenceAlias LodgeDoorAlias = RAS_NewGameManagerQuest.GetAlias(52) as ReferenceAlias
+            LodgeDoorAlias.RefillAlias()
+            (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(MQ101.IsRunning() && !MQ101.GetStageDone(1510))
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
