@@ -194,6 +194,8 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 - Thanks to xtcrefugee for answering my questions about mid/small masters on the Starfield Modding Discord
 - Thanks to Redzy7 for his post on Starfield's design style for the thumbnail (https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/)
 - Thanks to the Starfield's fonts authors
+- Thanks Fabeco00 for the brazilian portuguese translation
+- Thanks Peter4Master for the chinese translations
 
 ## 11. TOOLS USED
 
