@@ -44,7 +44,7 @@ Function InitNoneShip()
     ;Sets the none ship to player
     RAS_NoneShipReference = RAS_ShipVendorMarker.PlaceShipAtMe(RAS_NoneShip)
     Game.AddPlayerOwnedShip(RAS_NoneShipReference)
-    Game.TrySetPlayerHomeSpaceShip(RAS_NoneShipReference)
+    (SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(RAS_NoneShipReference)
     RAS_NoneShipReference.SetValue(SpaceshipRegistration, 1)
     CurrentShip = RAS_NoneShipReference
 
@@ -56,6 +56,7 @@ Function InitStarbornShip()
     GuardianShip.Enable()
     Game.AddPlayerOwnedShip(GuardianShip)
     Game.TrySetPlayerHomeSpaceShip(GuardianShip)
+    (SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(GuardianShip)
     GuardianShip.SetValue(SpaceshipRegistration, 1)
     CurrentShip = GuardianShip
     (RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).NoShipSelected = False
