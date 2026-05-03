@@ -3,9 +3,19 @@ Scriptname RAS:MQReplacer:MQReplacerScript extends Quest
 LocationAlias Property ArtifactLocation Mandatory Const Auto
 ReferenceAlias Property PlayerAlias Mandatory Const Auto
 ReferenceAlias Property MauriceLyonAlias Mandatory Const Auto
+FormList Property RAS_ExcludedArtifactLocationsList Mandatory Const Auto
 
 ObjectReference Property Artifact01REF Auto Hidden
 ObjectReference Property Artifact01REFCopy Auto Hidden
+
+Function InitArtifactExclusionList()
+  RAS_ExcludedArtifactLocationsList.AddForm(Game.GetFormFromFile(0x3AA68, "poi_variations_shuffle.esm"))
+  RAS_ExcludedArtifactLocationsList.AddForm(Game.GetFormFromFile(0x671A2, "poi_variations_shuffle.esm"))
+EndFunction
+
+Event OnQuestInit()
+  InitArtifactExclusionList()
+EndEvent
 
 Function HandleArtifact(ObjectReference akArtifactRef, ObjectReference akArtifactCopy)
   Artifact01REF = akArtifactRef

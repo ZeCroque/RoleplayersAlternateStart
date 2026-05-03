@@ -24,6 +24,7 @@ Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
 Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Perk Property StarbornSkillCheck Auto Const Mandatory
+Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 
 Float LastVersion = 1.15
 
@@ -94,6 +95,8 @@ Function Update()
             ReferenceAlias LodgeDoorAlias = RAS_NewGameManagerQuest.GetAlias(52) as ReferenceAlias
             LodgeDoorAlias.RefillAlias()
             (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(MQ101.IsRunning() && !MQ101.GetStageDone(1510))
+        
+            (RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).InitArtifactExclusionList()
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
