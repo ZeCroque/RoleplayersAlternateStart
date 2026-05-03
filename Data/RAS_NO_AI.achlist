@@ -93,6 +93,8 @@
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\NonStarbornFragment.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\CompleteMQ101Fragment.pex",
 	"Data\\Scripts\\RAS\\Fragments\\TopicInfos\\TIF_NewGameManagerQuest_ArgosApply.pex",
+	"Data\\Scripts\\RAS\\NewGameManagerQuest\\FrontDoorToLodgeScript.pex",
+	"Data\\Scripts\\MQ401VariantQuestScript.pex",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.ffxanim",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.wem",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\002ae4e8.ffxanim",

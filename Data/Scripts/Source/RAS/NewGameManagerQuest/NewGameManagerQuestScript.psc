@@ -95,6 +95,7 @@ Quest Property RAD02 Mandatory Const Auto
 Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
 Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 ReferenceAlias Property LodgeDoorAlias Mandatory Const Auto
+Quest Property MQ401a Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -282,6 +283,10 @@ Function CustomStartSetup()
   (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(False)
 
   DialogueUCNewAtlantis_Argos.Stop()
+
+  RAS_MQReplacerQuest.SetStage(0)  
+  MQ401a.Start() ;We replaced the script of variant universes so it does nothing if RAS_MQReplacerQuest is running, so no QF will trigger
+  MQ401a.CompleteQuest() ;Completing this MQ variant should ensure DLCs starts (except if it relies on stage 1000 like terran armada, but it's fixed differently)
 EndFunction
 
 Function HookMQ()
@@ -289,6 +294,7 @@ Function HookMQ()
   MQ101.SetStage(310) ;Watch added
   MQ101.SetStage(1310) ;New atlantis landing
   MQ101.SetObjectiveDisplayed(170, False, True)
+  MQ101.CompleteQuest()
   MQ101.SetStage(1810) ;Stopping
   (RAD02 as RAD02Script).StoryCheck()
 

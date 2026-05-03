@@ -1,6 +1,5 @@
 Scriptname RAS:NewGameManagerQuest:PlayerAliasScript extends ReferenceAlias
 
-Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property MQ101 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
@@ -50,13 +49,11 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript
             If(!managerQuest.StarbornStart)
                 managerQuest.CustomStartSetup()   
-                RAS_MQReplacerQuest.SetStage(0)
             ElseIf(managerQuest.StarbornStart && RAS_DisableStarborn.GetValueInt() == 0)
                 managerQuest.CustomStarbornStartSetup()
             Else           
                 managerQuest.DisableStarborn()
                 managerQuest.CustomStartSetup()       
-                RAS_MQReplacerQuest.SetStage(0)
             EndIf
 
             Clear()
