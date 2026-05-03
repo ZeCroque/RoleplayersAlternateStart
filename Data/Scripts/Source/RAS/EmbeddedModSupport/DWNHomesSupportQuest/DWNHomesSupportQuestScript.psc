@@ -1,4 +1,4 @@
-Scriptname RAS:EmbeddedModSupport:DWNHomesSupportQuest extends Quest
+Scriptname RAS:EmbeddedModSupport:DWNHomesSupportQuest:DWNHomesSupportQuestScript extends Quest
 
 Import RAS:NewGameConfiguration:DynamicTerminals:Base:EntryStruct
 
@@ -32,7 +32,7 @@ Event OnQuestInit()
     entryCount += (nhGlob != None) as Int
     Key akilaKey = Game.GetFormFromFile(0x4dd5, "DWN_SmallAkilaHouse.esm") as Key
     entryCount += (akilaKey != None) as Int
-    Key neonAptKey = Game.GetFormFromFile(0x99f, "DWN_NeonCoreApartment.esm") as Key
+    Key neonAptKey = Game.GetFormFromFile(0x199f, "DWN_NeonCoreApartment.esm") as Key
     entryCount += (neonAptKey != None) as Int
     Quest akilaTrait = Game.GetFormFromFile(0xa07, "DWN_TraitStarterHomes.esm") as Quest
     entryCount += (akilaTrait != None) as Int
