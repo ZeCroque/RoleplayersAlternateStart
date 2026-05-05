@@ -169,7 +169,10 @@ EndFunction
 Function HookVanillaMQ101()
   Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
   RAS_MQReplacerQuest.Stop()
-
+  
+  TraitUnwantedHero.Reset()
+  TraitUnwantedHero.Start()
+  
   CustomArtifactDeposit.ForceRefTo(ArtifactDeposit.GetReference().PlaceAtMe(MQ01_Artifact01_Activator))
   ArtifactDeposit.TryToDisable()
 

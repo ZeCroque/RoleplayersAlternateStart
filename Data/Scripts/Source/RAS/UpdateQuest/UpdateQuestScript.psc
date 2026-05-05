@@ -97,6 +97,17 @@ Function Update()
             (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(MQ101.IsRunning() && !MQ101.GetStageDone(1510))
         
             (RAS_MQReplacerQuest as RAS:MQReplacer:MQReplacerScript).InitArtifactExclusionList()
+
+            If(Game.GetPlayer().HasPerk(TRAIT_UnwantedHero))
+                If(MQ101Debug.GetValue() == 0)
+                    If(!TraitUnwantedHero.IsRunning())
+                        TraitUnwantedHero.Reset()
+                        If(MQ101.IsCompleted())
+                            TraitUnwantedHero.Start()
+                        EndIf
+                    EndIf    
+                EndIf
+            EndIf
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
