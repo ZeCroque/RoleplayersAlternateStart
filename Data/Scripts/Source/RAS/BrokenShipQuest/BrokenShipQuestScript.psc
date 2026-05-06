@@ -8,8 +8,8 @@ ReferenceAlias Property ShipAlias Mandatory Const Auto
 ReferenceAlias Property ShipPilotChair Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
-InputEnableLayer Property InputLayer Auto Hidden
 Bool Property ShowMapMarkers Auto Conditional
 Bool Property IsEnabled Auto Conditional
 
@@ -21,15 +21,15 @@ Event OnQuestStarted()
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
     
-    ShipAlias.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).CurrentShip)
+    RAS:ShipManagerQuest:ShipManagerQuestScript rasShipManager = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
+    
+    ShipAlias.ForceRefTo(rasShipManager.CurrentShip)
     ShipAlias.RefillDependentAliases()
     ShipPilotChair.GetReference().BlockActivation(True, False)
-
-    InputLayer = InputEnableLayer.Create()
-    InputLayer.EnableFarTravel(False)
-    InputLayer.EnableGravJump(False)
-    InputLayer.EnableTakeoff(False)
-    InputLayer.EnableFastTravel(False)
+    rasShipManager.InitNoneShip()
+    SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    shipQuest.RemovePlayerShip(ShipAlias.GetShipReference())
+    shipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
 
     SetStage(0)
 EndEvent

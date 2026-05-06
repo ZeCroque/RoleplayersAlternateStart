@@ -26,7 +26,6 @@ RAS:BrokenShipQuest:BrokenShipQuestScript kmyQuest = __temp as RAS:BrokenShipQue
 ;END AUTOCAST
 ;BEGIN CODE
 SetObjectiveCompleted(5)
-kmyQuest.InputLayer = None
 Stop()
 ;END CODE
 EndFunction

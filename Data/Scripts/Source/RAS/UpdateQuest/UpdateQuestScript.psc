@@ -25,6 +25,7 @@ Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Perk Property StarbornSkillCheck Auto Const Mandatory
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
+Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 
 Float LastVersion = 1.15
 
@@ -108,8 +109,45 @@ Function Update()
                     EndIf    
                 EndIf
             EndIf
+
+            If(RAS_BrokenShipQuest.IsRunning())
+                RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
+                SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
+
+                If(Game.GetPlayerHomeSpaceShip() == brokenShip)                                  
+                    SQ_PlayerShipScript playerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+                    Int shipCount = playerShipQuest.PlayerShips.GetCount()        
+
+                    Self.RegisterForRemoteEvent(playerShipQuest.PlayerShips, "OnAliasChanged")
+                    SpaceshipReference newHomeShip = None
+                    If(shipCount == 1)
+                        (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitNoneShip()
+                    Else      
+                        Int i = 0
+                        While(i < shipCount)
+                            SpaceshipReference ownedShip = playerShipQuest.PlayerShips.GetAt(i) as SpaceshipReference
+                            If(ownedShip !=  brokenShip)
+                                playerShipQuest.ResetHomeShip(newHomeShip)
+                                    
+                                i = shipCount
+                            EndIf
+                        EndWhile
+                    EndIf                  
+                    playerShipQuest.RemovePlayerShip(brokenShip)
+                    playerShipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
+                EndIf                
+            EndIf
         EndIf
     EndIf        
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
 
+Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectReference akObject, bool abRemove)
+    If(abRemove)
+        SpaceshipReference brokenShip = (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).ShipAlias.GetShipReference()
+        If(akObject == brokenShip)
+            brokenShip.Enable()
+            Self.UnregisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShips, "OnAliasChanged")
+        EndIf
+    EndIf
+EndEvent
