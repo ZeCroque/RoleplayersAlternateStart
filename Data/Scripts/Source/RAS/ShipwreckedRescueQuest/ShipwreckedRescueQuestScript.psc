@@ -30,7 +30,7 @@ Int perkRank
 Function SetShipwreckLocation(Location akLocation)
     ShipwreckLocationAlias.ForceLocationTo(akLocation)
     PlanetAlias.ForceLocationTo(akLocation.GetParentLocations()[0])
-    ShipwreckMapMarkerAlias.RefillAlias()
+    ShipwreckMapMarkerAlias.ForceRefTo((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).StartingLocationMapMarkersCollectionAlias.GetAt(0))
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
 

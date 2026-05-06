@@ -17,7 +17,7 @@ Event OnQuestStarted()
     Location targetLocation = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).TargetLocation
     StartingLocationAlias.ForceLocationTo(targetLocation)
     PlanetAlias.ForceLocationTo(targetLocation.GetParentLocations()[0])
-    StartingLocationMapMarkerAlias.RefillAlias()
+    StartingLocationMapMarkerAlias.ForceRefTo((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).StartingLocationMapMarkersCollectionAlias.GetAt(0))
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
     
