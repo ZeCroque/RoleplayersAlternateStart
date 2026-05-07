@@ -26,6 +26,7 @@ GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Perk Property StarbornSkillCheck Auto Const Mandatory
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
+ObjectReference Property KreetMapMarker Mandatory Const Auto
 
 Float LastVersion = 1.15
 
@@ -136,6 +137,10 @@ Function Update()
                     playerShipQuest.RemovePlayerShip(brokenShip)
                     playerShipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
                 EndIf                
+            EndIf
+
+            If(MQ101.GetStage() == 0)
+                KreetMapMarker.SetMarkerVisibleOnStarMap(False)
             EndIf
         EndIf
     EndIf        

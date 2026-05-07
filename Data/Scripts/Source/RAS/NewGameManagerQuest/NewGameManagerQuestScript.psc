@@ -96,6 +96,7 @@ Quest Property Trait_RaisedUniversalBoxEnabler Mandatory Const Auto
 Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 ReferenceAlias Property LodgeDoorAlias Mandatory Const Auto
 Quest Property MQ401a Mandatory Const Auto
+ObjectReference Property KreetMapMarker Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -131,7 +132,10 @@ EndFunction
 Function InitCustomStart()  
   Game.GetPlayer().SetValue(RAS_AlternateStart, 1)
   MQ101Debug.SetValueInt(11) ;Enable sustenance and disable MQ101 first stages for MQReplacer or autocomplete feature
+  
   (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True ;Skips lodge door script
+  KreetMapMarker.SetMarkerVisibleOnStarMap(False)
+
   SetStage(10)
 
   Self.RegisterForRemoteEvent(StartingLocationActivatorAlias, "OnActivate")
@@ -178,6 +182,7 @@ Function HookVanillaMQ101()
 
   NewAtlantisToLodgeDoorREF.Unlock()
   (LodgeDoorAlias as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(True)
+  KreetMapMarker.SetMarkerVisibleOnStarMap(True)
 
   Self.RegisterForRemoteEvent(MQ101_VascoShipServicesScene, "OnEnd")
 EndFunction
