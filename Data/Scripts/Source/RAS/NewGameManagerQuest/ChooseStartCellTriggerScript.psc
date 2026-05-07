@@ -34,6 +34,10 @@ Event OnCellLoad()
     ;Add base gear    
     If(managerQuest.StarbornStart)
         Game.GetPlayer().SetOutfit(Outfit_Starborn)
+        Game.GetPlayer().RemoveItem(Spacesuit_Constellation_01, abSilent = True)
+        Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Backpack_01, abSilent = True)
+        Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Helmet_01, abSilent = True)
+        Game.GetPlayer().RemoveItem(Clothes_Miner_UtilitySuit, abSilent = True)
     EndIf
     Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
     Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
