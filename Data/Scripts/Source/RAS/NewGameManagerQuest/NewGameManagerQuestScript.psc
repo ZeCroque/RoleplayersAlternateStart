@@ -84,7 +84,6 @@ ObjectReference Property LC003_InteriorBaseActorEnableMarker Auto Const Mandator
 Message Property Tutorial_NewGamePlusMSGBox Auto Const Mandatory
 Quest Property MQ305 Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
-Outfit Property Outfit_Starborn Auto Const Mandatory
 Perk Property StarbornSkillCheck Auto Const Mandatory
 GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 Quest Property DialogueUCNewAtlantis_Argos Mandatory Const Auto
@@ -100,6 +99,7 @@ ObjectReference Property KreetMapMarker Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
+Armor Property CurrentStarbornSuit Auto Hidden
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
@@ -152,9 +152,6 @@ Function InitCustomStart()
 
   If(StarbornStart)
       (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitStarbornShip()
-
-      ; give the player the right starting gear
-      Game.GetPlayer().SetOutfit(Outfit_Starborn)
       Game.GetPlayer().AddPerk(StarbornSkillCheck)
   Else
       (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).InitNoneShip()

@@ -14,6 +14,8 @@ GlobalVariable Property RAS_DisableStarborn Mandatory Const Auto
 ActorValue Property PlayerUnityTimesEntered Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
+Keyword Property ManufacturerStarborn Mandatory Const Auto
+ObjectReference Property RAS_VendorContainerREF Mandatory Const Auto
 
 Event OnInit()
     AddInventoryEventFilter(None)
@@ -57,7 +59,17 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
                 managerQuest.CustomStartSetup()       
             EndIf
 
+            managerQuest.RAS_StartingStuffContainer.RemoveAllItems(Game.GetPlayer())
+
             Clear()
         Endif
+    EndIf
+EndEvent
+
+Event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason)
+    If(akBaseItem.HasKeyword(ManufacturerStarborn))
+        (GetOwningQuest() as RAS:NewGameManagerQuest:NewGameManagerQuestScript).CurrentStarbornSuit = akBaseItem as Armor
+        RAS_VendorContainerREF.RemoveItem(akBaseItem)
+        RemoveAllInventoryEventFilters()
     EndIf
 EndEvent

@@ -15,6 +15,7 @@ GlobalVariable Property RAS_LowBudget Mandatory Const Auto
 Armor Property Clothes_GenWare_01 Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
+Outfit Property Outfit_Starborn Auto Const Mandatory
 
 Bool Property KeepGearMode Auto Conditional
 
@@ -47,12 +48,13 @@ Event OnActivate(ObjectReference akActionRef)
                         HasUndersuit = True
                     EndIf
                     Game.GetPlayer().RemoveAllItems(RAS_VendorContainerREF)
+                    RAS_VendorContainerREF.RemoveItem((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).CurrentStarbornSuit)
+                    Game.GetPlayer().SetOutfit(Outfit_Starborn)
                     If(HasUndersuit)
                         Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
                         Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
                     EndIf
-                    RAS_CurrentBudget.SetValue(RAS_LowBudget.GetValue() as Int)
-                    RAS_NewGameManagerQuest.UpdateCurrentInstanceGlobal(RAS_CurrentBudget)
+
                     KeepGearMode = False
                     GearYetBought = False
                 Else
