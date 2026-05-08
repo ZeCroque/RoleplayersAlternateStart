@@ -137,12 +137,8 @@ This mod consists of two main files :
 - *RoleplayersAlternateStart.esm* (mid master)
 - *RoleplayersAlternateStart - Main.ba2*
 
-And five optionals :
+And one optional :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
-- *RAS_POIVariationsPatch.esm* (small master)
-- *RAS_ShatteredSpacePatch* (small master)
-- *RAS_TerranArmadaPatch* (small master)
-- *RAS_TerranArmadaPatch - Main.ba2*
 
 ## 6. INSTALLATION
 
@@ -171,7 +167,11 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
     - [Small Akila Player Home](https://www.nexusmods.com/starfield/mods/11444)
     - [Trait Starter Homes](https://www.nexusmods.com/starfield/mods/13929)
 - [Take Items Through Unity - No Console Commands by Wartortle](https://www.nexusmods.com/starfield/mods/7309) : compatibility patch included. Re-install my mod if you're adding this one part way.
-- [POI Variations - No More Duplicates by PlatinumPoster](https://www.nexusmods.com/starfield/mods/10825) : compatibility patch included. Re-install my mod if you're adding this one part way.
+- [POI Variations - No More Duplicates by PlatinumPoster](https://www.nexusmods.com/starfield/mods/10825) : compatible
+- [Nova Transit System by LySoftDev (Creations)](https://creations.bethesda.net/fr/starfield/details/78c9469f-7b64-42e6-a62c-d0a33cad067c/Nova_Transit_System): compatible, but make sure my mod is loaded after this one
+- [Starborn Trait by IgnusT](https://www.nexusmods.com/starfield/mods/10019): incompatible
+- [Auto Hide HUD and Widgets - SFSE by LarannKiar](https://www.nexusmods.com/starfield/mods/8946): will not work until you complete "One Small Step" (either the replacer introduced by the mod, or the vanilla Argos quest)
+
 
 ## 8. MY OTHER MODS
 
