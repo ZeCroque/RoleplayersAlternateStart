@@ -55,7 +55,6 @@ ReferenceAlias Property LevelManagerActivatorAlias Mandatory Const Auto
 ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
-ReferenceAlias Property MQDelayTerminalAlias Mandatory Const Auto
 ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
 Quest Property TraitKidStuff Mandatory Const Auto
 Quest Property TraitStarterHome Mandatory Const Auto

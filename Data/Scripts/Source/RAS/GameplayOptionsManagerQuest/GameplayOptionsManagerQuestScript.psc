@@ -1,31 +1,44 @@
 Scriptname RAS:GameplayOptionsManagerQuest:GameplayOptionsManagerQuestScript extends Quest
 
-GameplayOption Property RAS_RemovePlaceholderShip Mandatory Const Auto
-Quest Property SQ_PlayerShip Mandatory Const Auto
-Message Property RAS_PlaceholderDebugScriptSuccess Mandatory Const Auto
-Message Property RAS_PlaceholderDebugScriptError Mandatory Const Auto
-Quest Property RAS_ShipManagerQuest Mandatory Const Auto
+GameplayOption Property RAS_MQTriggerChanceOption Mandatory Const Auto
+GlobalVariable Property RAS_MQTriggerChance Mandatory Const Auto
+GameplayOption Property RAS_MQLevelThresholdOption Mandatory Const Auto
+GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
 
 Event OnQuestInit()
     RegisterForGameplayOptionChangedEvent()
 EndEvent
 
 Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
-    If(aChangedOptions.Find(RAS_RemovePlaceholderShip) != -1)
-        SQ_PlayerShipScript playerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
-        RAS:ShipManagerQuest:ShipManagerQuestScript rasShipScript = RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript
-        If(playerShipQuest.PlayerShip.GetShipReference() == rasShipScript.RAS_NoneShipReference)
-            Int i = 0
-            While(i < playerShipQuest.PlayerShips.GetCount())
-                SpaceshipReference ship = playerShipQuest.PlayerShips.GetAt(i) as SpaceshipReference
-                If(ship != rasShipScript.RAS_NoneShipReference)
-                    playerShipQuest.ResetHomeShip(ship)
-                    RAS_PlaceholderDebugScriptSuccess.Show()
-                    Return
-                EndIf
-                i += 1
-            EndWhile
+    Int optionIndex = aChangedOptions.Find(RAS_MQTriggerChanceOption)
+    If(optionIndex != -1)
+        If(aChangedOptions[optionIndex].GetValue() == 0)
+            RAS_MQTriggerChance.SetValueInt(0)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 1)
+            RAS_MQTriggerChance.SetValueInt(10)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 2)
+            RAS_MQTriggerChance.SetValueInt(25)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 3)
+            RAS_MQTriggerChance.SetValueInt(33)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 4)
+            RAS_MQTriggerChance.SetValueInt(50)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 5)
+            RAS_MQTriggerChance.SetValueInt(100)
         EndIf
-        RAS_PlaceholderDebugScriptError.Show()
+    EndIf
+    
+    optionIndex = aChangedOptions.Find(RAS_MQLevelThresholdOption)
+    If(optionIndex != -1)
+        If(aChangedOptions[optionIndex].GetValue() == 0)
+            RAS_MQLevelThreshold.SetValueInt(1)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 1)
+            RAS_MQLevelThreshold.SetValueInt(5)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 2)
+            RAS_MQLevelThreshold.SetValueInt(10)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 3)
+            RAS_MQLevelThreshold.SetValueInt(25)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 4)
+            RAS_MQLevelThreshold.SetValueInt(50)
+        EndIf
     EndIf
 EndEvent
