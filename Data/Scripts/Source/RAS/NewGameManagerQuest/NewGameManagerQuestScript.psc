@@ -96,6 +96,7 @@ Quest Property Trait_RaisedEnlightenedBoxEnabler Mandatory Const Auto
 ReferenceAlias Property LodgeDoorAlias Mandatory Const Auto
 Quest Property MQ401a Mandatory Const Auto
 ObjectReference Property KreetMapMarker Mandatory Const Auto
+Perk Property TRAIT_UnwantedHero Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -171,8 +172,10 @@ Function HookVanillaMQ101()
   Game.GetPlayer().SetValue(RAS_MinerStart, 1.0)
   RAS_MQReplacerQuest.Stop()
   
-  TraitUnwantedHero.Reset()
-  TraitUnwantedHero.Start()
+  If(Game.GetPlayer().HasPerk(TRAIT_UnwantedHero))
+    TraitUnwantedHero.Reset()
+    TraitUnwantedHero.Start()
+  EndIf
   
   CustomArtifactDeposit.ForceRefTo(ArtifactDeposit.GetReference().PlaceAtMe(MQ01_Artifact01_Activator))
   ArtifactDeposit.TryToDisable()
