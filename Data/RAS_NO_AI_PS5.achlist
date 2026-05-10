@@ -96,6 +96,7 @@
 	"Data\\Scripts\\RAS\\NewGameManagerQuest\\FrontDoorToLodgeScript.pex",
 	"Data\\Scripts\\MQ401VariantQuestScript.pex",
 	"Data\\Scripts\\RAS\\EmbeddedModSupport\\TERIntroHandlerQuest\\PlayerAliasScript.pex",
+	"Data\\Scripts\\RAS\\Fragments\\TopicInfos\\TIF_NewGameManagerQuest_NoArgosStart.pex",
 	"PS5\\Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.ffxanim",
 	"PS5\\Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.wem",
 	"PS5\\Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\002ae4e8.ffxanim",
