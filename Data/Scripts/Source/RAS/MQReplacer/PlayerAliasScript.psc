@@ -4,16 +4,15 @@ Message Property RAS_KeepArtifactMessage Mandatory Const Auto
 LocationRefType Property LocStoryArtifactRoomReserveMarkerLocRef Mandatory Const Auto
 GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
 GlobalVariable Property RAS_MQTriggerChance Mandatory Const Auto
-Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
-ActorValue Property RAS_MinerStart Mandatory Const Auto
 FormList Property RAS_ExcludedArtifactLocationsList Mandatory Const Auto
+Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 
 Function HandleArtifact(ObjectReference akArtifactRef)
   Self.AddInventoryEventFilter(akArtifactRef.GetBaseObject())
 EndFunction
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
-  If(GetOwningQuest().GetStage() < 10 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
+  If(GetOwningQuest().GetStage() < 10 && RAS_MQReplacerIntroQuest.GetStage() == 0 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int excludedListSize = RAS_ExcludedArtifactLocationsList.GetSize()
     Int i = 0
     Bool excluded = False
@@ -28,16 +27,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     If(!excluded)
       Int roll = Utility.RandomInt(1, 100)
       If(roll <= RAS_MQTriggerChance.GetValue() as Int)      
-        Game.GetPlayer().SetValue(RAS_MinerStart, 0.0)
-        
-        RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
-        managerQuest.PreventMQ101FirstStage()
-        managerQuest.HookMQ()
-
-        RAS:MQReplacer:MQReplacerScript MQReplacerQuestScript = GetOwningQuest() as RAS:MQReplacer:MQReplacerScript
-        MQReplacerQuestScript.ArtifactLocation.ForceLocationTo(akNewLoc)
-        MQReplacerQuestScript.ArtifactLocation.RefillDependentAliases()
-        MQReplacerQuestScript.SetStage(10)  
+          (GetOwningQuest() as RAS:MQReplacer:MQReplacerScript).StartMQReplacer(akNewLoc)
       EndIf
     EndIf
   EndIf

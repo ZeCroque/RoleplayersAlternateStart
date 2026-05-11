@@ -31,17 +31,18 @@ Quest Property MQ401a Mandatory Const Auto
 Quest Property MQ401 Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
+Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 
 Float LastVersion
 
 Event OnQuestInit()
-    LastVersion = 1.18
+    LastVersion = 1.20
     RAS_ModVersion.SetValue(LastVersion)
     Update()
 EndEvent
 
 Function Update()
-    LastVersion = 1.18
+    LastVersion = 1.20
     If(Game.GetPlayer().GetValueInt(RAS_AlternateStart))
         If(RAS_ModVersion.GetValue() < 1.03)
             If((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).PedestrianStart)
@@ -161,7 +162,10 @@ Function Update()
                 brokenShip.Enable()
                 brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
             EndIf
-        EndIf   
+        EndIf  
+        If(RAS_ModVersion.GetValue() < 1.20)
+            (RAS_MQReplacerIntroQuest as RAS:MQReplacer:MQReplacerIntroQuestScript).RegisterForHunterQuest()
+        EndIf 
     EndIf      
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
