@@ -22,6 +22,7 @@ EndFunction
 Function Fragment_Stage_0005_Item_00()
 ;BEGIN CODE
 SetObjectiveDisplayed(0)
+RAS_TheGuideStartWarning.ShowAsHelpMessage("", 10, 0, 1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -44,6 +45,16 @@ CompleteQuest()
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_0100_Item_00
+Function Fragment_Stage_0100_Item_00()
+;BEGIN CODE
+Alias_TheGuide.TryToDisable()
+SetObjectiveFailed(0)
+Stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 Quest Property RAS_MQReplacerQuest Auto Const Mandatory
@@ -55,3 +66,5 @@ ReferenceAlias Property Alias_TheGuide Auto Const Mandatory
 ReferenceAlias Property Alias_HunterPreMQ106Sit Auto Const Mandatory
 
 ReferenceAlias Property Alias_HunterPreMQ106Marker Auto Const Mandatory
+
+Message Property RAS_TheGuideStartWarning Auto Const Mandatory

@@ -16,6 +16,8 @@ kmyQuest.InitVanillaStart()
 kmyQuest.HookVanillaMQ101()
 
 LC001VecteraLiftDoor.Unlock()
+
+RAS_MQReplacerIntroQuest.SetStage(100)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -25,3 +27,5 @@ EndFunction
 ObjectReference Property LC001VecteraLiftDoor Auto Const Mandatory
 
 Message Property RAS_ArgosStartWarning Auto Const Mandatory
+
+Quest Property RAS_MQReplacerIntroQuest Auto Const Mandatory

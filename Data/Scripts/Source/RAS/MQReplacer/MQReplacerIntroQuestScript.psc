@@ -13,5 +13,6 @@ EndEvent
 Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
     If(auiStageID  == 125)
         SetStage(1)
+        UnregisterForRemoteEvent(MQ_HunterPreMQ106, "OnStageSet")
     EndIf
 EndEvent
