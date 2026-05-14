@@ -27,6 +27,8 @@ Perk Property StarbornSkillCheck Auto Const Mandatory
 Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 ObjectReference Property KreetMapMarker Mandatory Const Auto
+Quest Property MQ401a Mandatory Const Auto
+Quest Property MQ401 Mandatory Const Auto
 
 Float LastVersion = 1.17
 
@@ -146,6 +148,9 @@ Function Update()
     EndIf        
     If(RAS_ModVersion.GetValue() < 1.17)
         (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
+        If(MQ401a.IsRunning() && !MQ401.IsRunning())
+            MQ401a.Stop()
+        EndIf
     EndIf
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction

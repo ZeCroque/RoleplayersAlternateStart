@@ -301,6 +301,7 @@ Function CustomStartSetup()
   RAS_MQReplacerQuest.SetStage(0)  
   MQ401a.Start() ;We replaced the script of variant universes so it does nothing if RAS_MQReplacerQuest is running, so no QF will trigger
   MQ401a.CompleteQuest() ;Completing this MQ variant should ensure DLCs starts (except if it relies on stage 1000 like terran armada, but it's fixed differently)
+  MQ401a.Stop()
   PlaceCustomTrigger()
 EndFunction
 
