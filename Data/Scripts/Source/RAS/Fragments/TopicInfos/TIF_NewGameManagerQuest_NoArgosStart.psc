@@ -5,7 +5,9 @@ Scriptname RAS:Fragments:TopicInfos:TIF_NewGameManagerQuest_NoArgosStart Extends
 Function Fragment_End(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-RAS_ArgosStartUnavailableWarning.Show(RAS_MQTriggerChance.GetValue(), RAS_MQLevelThreshold.GetValue())
+If(RAS_MQReplacerQuest.GetStage() < 10) 
+    RAS_ArgosStartUnavailableWarning.Show(RAS_MQTriggerChance.GetValue(), RAS_MQLevelThreshold.GetValue())
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -17,3 +19,5 @@ Message Property RAS_ArgosStartUnavailableWarning Auto Const Mandatory
 GlobalVariable Property RAS_MQTriggerChance Auto Const Mandatory
 
 GlobalVariable Property RAS_MQLevelThreshold Auto Const Mandatory
+
+Quest Property RAS_MQReplacerQuest Auto Const Mandatory
