@@ -50,6 +50,10 @@ ObjectReference shipMarker
 ObjectReference randomLocationConfigurationTerminal
 ObjectReference shipDockingDoor
 
+ObjectReference Function GetShipMarker()
+    Return shipMarker
+EndFunction
+
 Event OnQuestInit()
     RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x38CE7, "ShatteredSpace.esm"))  ;Dazra, quest location
     RAS_ExcludedSettlementsLocationList.AddForm(Game.GetFormFromFile(0x1782, "sfta05.esm"))  ;Seokguh Villa from Trackers Alliance, quest location

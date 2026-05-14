@@ -29,6 +29,8 @@ Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 ObjectReference Property KreetMapMarker Mandatory Const Auto
 Quest Property MQ401a Mandatory Const Auto
 Quest Property MQ401 Mandatory Const Auto
+Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
+Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 
 Float LastVersion = 1.17
 
@@ -151,6 +153,12 @@ Function Update()
         If(MQ401a.IsRunning() && !MQ401.IsRunning())
             MQ401a.Stop()
         EndIf
+        If(RAS_BrokenShipQuest.IsRunning())
+            RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
+            SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
+            brokenShip.Enable()
+            brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
+        EndIf
     EndIf
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
@@ -160,6 +168,7 @@ Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectRefer
         SpaceshipReference brokenShip = (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).ShipAlias.GetShipReference()
         If(akObject == brokenShip)
             brokenShip.Enable()
+            brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), Game.GetForm(0x1940B) as Keyword)
             Self.UnregisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShips, "OnAliasChanged")
         EndIf
     EndIf

@@ -9,6 +9,7 @@ ReferenceAlias Property ShipPilotChair Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
+Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 
 Bool Property ShowMapMarkers Auto Conditional
 Bool Property IsEnabled Auto Conditional
@@ -26,10 +27,23 @@ Event OnQuestStarted()
     ShipAlias.ForceRefTo(rasShipManager.CurrentShip)
     ShipAlias.RefillDependentAliases()
     ShipPilotChair.GetReference().BlockActivation(True, False)
-    rasShipManager.InitNoneShip()
+
     SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    Self.RegisterForRemoteEvent(shipQuest.PlayerShips, "OnAliasChanged")
+    rasShipManager.InitNoneShip()
     shipQuest.RemovePlayerShip(ShipAlias.GetShipReference())
     shipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
 
     SetStage(0)
+EndEvent
+
+Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectReference akObject, bool abRemove)
+    If(abRemove)
+        SpaceshipReference brokenShip = ShipAlias.GetShipReference()
+        If(akObject == brokenShip)
+            brokenShip.Enable()
+            brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
+            Self.UnregisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShips, "OnAliasChanged")
+        EndIf
+    EndIf
 EndEvent
