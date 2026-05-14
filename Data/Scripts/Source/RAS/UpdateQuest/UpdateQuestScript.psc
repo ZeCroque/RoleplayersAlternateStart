@@ -28,7 +28,7 @@ Quest Property RAS_MQReplacerQuest Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 ObjectReference Property KreetMapMarker Mandatory Const Auto
 
-Float LastVersion = 1.15
+Float LastVersion = 1.17
 
 Event OnQuestInit()
     Update()
@@ -144,6 +144,9 @@ Function Update()
             EndIf
         EndIf
     EndIf        
+    If(RAS_ModVersion.GetValue() < 1.17)
+        (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
+    EndIf
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
 

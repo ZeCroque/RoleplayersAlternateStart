@@ -97,10 +97,16 @@ ReferenceAlias Property LodgeDoorAlias Mandatory Const Auto
 Quest Property MQ401a Mandatory Const Auto
 ObjectReference Property KreetMapMarker Mandatory Const Auto
 Perk Property TRAIT_UnwantedHero Mandatory Const Auto
+ObjectReference Property MQ101SetStage1600Trigger Mandatory Const Auto
+Activator Property EmptyTrigger Mandatory Const Auto
+LocationRefType Property Lodge_EnterLibraryTrigger_RefType Mandatory Const Auto
+Location Property CityNewAtlantisLodgeLocation Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
 Armor Property CurrentStarbornSuit Auto Hidden
+ObjectReference Property CustomTrigger Auto Hidden
+
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 
@@ -295,6 +301,13 @@ Function CustomStartSetup()
   RAS_MQReplacerQuest.SetStage(0)  
   MQ401a.Start() ;We replaced the script of variant universes so it does nothing if RAS_MQReplacerQuest is running, so no QF will trigger
   MQ401a.CompleteQuest() ;Completing this MQ variant should ensure DLCs starts (except if it relies on stage 1000 like terran armada, but it's fixed differently)
+  PlaceCustomTrigger()
+EndFunction
+
+Function PlaceCustomTrigger()
+  CustomTrigger = MQ101SetStage1600Trigger.PlaceAtMe(EmptyTrigger)
+  CustomTrigger.SetLocRefType(CityNewAtlantisLodgeLocation, Lodge_EnterLibraryTrigger_RefType)
+  RegisterForDistanceLessThanEvent(CustomTrigger, Game.GetPlayer(), 5)
 EndFunction
 
 Function HookMQ()
@@ -461,6 +474,13 @@ Event ObjectReference.OnCellLoad(ObjectReference akSender)
     MineWallBreakable.GetReference().PlayAnimation("Stage2")
     MineBoringMachine.GetRef().PlayAnimation("Stage2NoTransition")
   EndIf
+EndEvent
+
+Event OnDistanceLessThan(ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID)
+    If(MQ104A.GetStageDone(60))
+      MQ104A.SetStage(80)
+      UnregisterForDistanceEvents(akObj1, akObj2)
+    EndIf
 EndEvent
 
 Event ReferenceAlias.OnActivate(ReferenceAlias akSender, ObjectReference akActionRef)
