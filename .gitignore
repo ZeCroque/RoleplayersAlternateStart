@@ -1,7 +1,9 @@
 *.ignore.*
 *.pex
+*.wem
 *.esm
 *.ba2
+*.dat
 SF1Edit Backups
 SF1Edit Cache
 meta.ini
