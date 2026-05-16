@@ -148,22 +148,22 @@ Function Update()
                 KreetMapMarker.SetMarkerVisibleOnStarMap(False)
             EndIf
         EndIf
-    EndIf        
-    If(RAS_ModVersion.GetValue() < 1.17)
-        (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
-        If(MQ401a.IsRunning() && !MQ401.IsRunning())
-            MQ401a.Stop()
+        If(RAS_ModVersion.GetValue() < 1.17)
+            (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
+            If(MQ401a.IsRunning() && !MQ401.IsRunning())
+                MQ401a.Stop()
+            EndIf
+            If(RAS_BrokenShipQuest.IsRunning())
+                RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
+                SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
+                brokenShip.Enable()
+                brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
+            EndIf
         EndIf
-        If(RAS_BrokenShipQuest.IsRunning())
-            RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
-            SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
-            brokenShip.Enable()
-            brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
-        EndIf
-    EndIf
-    If(RAS_ModVersion.GetValue() < 1.20)
-        (RAS_MQReplacerIntroQuest as RAS:MQReplacer:MQReplacerIntroQuestScript).RegisterForHunterQuest()
-    EndIf
+        If(RAS_ModVersion.GetValue() < 1.20)
+            (RAS_MQReplacerIntroQuest as RAS:MQReplacer:MQReplacerIntroQuestScript).RegisterForHunterQuest()
+        EndIf    
+    EndIf  
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
 
