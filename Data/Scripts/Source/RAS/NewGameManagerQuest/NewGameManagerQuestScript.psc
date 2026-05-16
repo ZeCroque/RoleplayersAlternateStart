@@ -100,6 +100,7 @@ ObjectReference Property MQ101SetStage1600Trigger Mandatory Const Auto
 Activator Property EmptyTrigger Mandatory Const Auto
 LocationRefType Property Lodge_EnterLibraryTrigger_RefType Mandatory Const Auto
 Location Property CityNewAtlantisLodgeLocation Mandatory Const Auto
+Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 
 InputEnableLayer Property InputLayer Auto Hidden
 ObjectReference Property FastTravelTarget Auto Hidden
@@ -298,6 +299,8 @@ Function CustomStartSetup()
   DialogueUCNewAtlantis_Argos.Stop()
 
   RAS_MQReplacerQuest.SetStage(0)  
+  RAS_MQReplacerIntroQuest.SetStage(0) 
+
   MQ401a.Start() ;We replaced the script of variant universes so it does nothing if RAS_MQReplacerQuest is running, so no QF will trigger
   MQ401a.CompleteQuest() ;Completing this MQ variant should ensure DLCs starts (except if it relies on stage 1000 like terran armada, but it's fixed differently)
   MQ401a.Stop()
