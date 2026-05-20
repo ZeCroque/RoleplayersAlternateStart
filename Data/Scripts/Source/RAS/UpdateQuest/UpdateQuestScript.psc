@@ -165,7 +165,12 @@ Function Update()
         EndIf  
         If(RAS_ModVersion.GetValue() < 1.20)
             (RAS_MQReplacerIntroQuest as RAS:MQReplacer:MQReplacerIntroQuestScript).RegisterForHunterQuest()
-        EndIf 
+            
+            RAS:ShipManagerQuest:ShipManagerQuestScript managerQuest = RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript
+            If(managerQuest.PedestrianStart)
+                managerQuest.RegisterForMonocleMenu()
+            EndIf
+        EndIf    
     EndIf      
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction

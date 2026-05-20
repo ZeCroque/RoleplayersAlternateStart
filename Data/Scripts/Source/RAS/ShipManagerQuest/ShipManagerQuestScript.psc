@@ -22,6 +22,10 @@ Event OnQuestInit()
     InitFreeLanes()
 EndEvent
 
+Function RegisterForMonocleMenu()
+    RegisterForMenuOpenCloseEvent("MonocleMenu")
+EndFunction
+
 Function InitPedestrianStart()
     ;Disable space
     InputLayer = InputEnableLayer.Create()
@@ -38,6 +42,8 @@ Function InitPedestrianStart()
 
     ;Removes ship services techs dialogs
     DialogueShipServices.Stop()
+
+    RegisterForMonocleMenu()
 EndFunction
 
 Function InitNoneShip()
@@ -117,4 +123,8 @@ Event SpaceshipReference.OnShipUndock(SpaceshipReference akSender, Bool abComple
         Self.UnregisterForAllRemoteEvents()
         Stop()
     EndIf
+EndEvent
+
+Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
+    InputLayer.EnableFastTravel(abOpening)
 EndEvent
