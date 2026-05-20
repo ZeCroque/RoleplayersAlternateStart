@@ -4,10 +4,10 @@ Potion Property ShipRepairKit Mandatory Const Auto
 MiscObject Property InorgCommonIron Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_IronCount Mandatory Const Auto
 
-Event OnInit()
+Function StartTrackingResources()
     AddInventoryEventFilter(ShipRepairKit)
     AddInventoryEventFilter(InorgCommonIron)
-EndEvent
+EndFunction
 
 Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason)
     If(akBaseItem == ShipRepairKit)

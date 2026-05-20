@@ -7,7 +7,6 @@ Potion Property ShipRepairKit Mandatory Const Auto
 MiscObject Property InorgCommonIron Mandatory Const Auto
 
 Function RepairShip()
-    GetReference().BlockActivation(False, False)
     RAS_RepairSucceededMessage.Show()
     GetOwningQuest().SetStage(10)
 EndFunction
