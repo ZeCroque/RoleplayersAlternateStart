@@ -31,6 +31,7 @@ Event OnQuestStarted()
     SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
     Self.RegisterForRemoteEvent(shipQuest.PlayerShips, "OnAliasChanged")
     rasShipManager.InitNoneShip()
+    rasShipManager.CurrentShip = ShipAlias.GetShipReference()
     shipQuest.RemovePlayerShip(ShipAlias.GetShipReference())
     shipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
 
