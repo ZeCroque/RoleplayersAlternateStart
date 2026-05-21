@@ -7,6 +7,9 @@ GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
 GameplayOption Property RAS_BrokenShipRepairCostOption Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
+GameplayOption Property RAS_BrokenShipMapMarkerOption Mandatory Const Auto
+GameplayOption Property RAS_ShipwreckedMapMarkerOption Mandatory Const Auto
+Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
 
 Event OnQuestInit()
     RegisterForGameplayOptionChangedEvent()
@@ -57,5 +60,15 @@ Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
             RAS_BrokenShipQuest_ShiptechRepairCost.SetValueInt(50000)
         EndIf
         RAS_BrokenShipQuest.UpdateCurrentInstanceGlobal(RAS_BrokenShipQuest_ShiptechRepairCost)
+    EndIf
+
+    optionIndex = aChangedOptions.Find(RAS_BrokenShipMapMarkerOption)
+    If(optionIndex != -1)
+        (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript) .ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
+    EndIf
+
+    optionIndex = aChangedOptions.Find(RAS_ShipwreckedMapMarkerOption)
+    If(optionIndex != -1)
+        (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript) .ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
     EndIf
 EndEvent

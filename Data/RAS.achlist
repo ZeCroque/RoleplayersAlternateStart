@@ -58,8 +58,6 @@
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\NarrativeModStruct.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\BrokenShipMapMarkerFragment.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\ItemFragment_TEMPLATE.pex",
-	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\ShipModifierFragment.pex",
-	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\NarrativeAdjustments\\DynamicEntryFragments\\ShipwreckedMapMarkerFragment.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\StartingLocation\\StartingLocationActivatorScript.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\StartingLocation\\DynamicEntryFragments\\DefaultLocationSubmenuFragment.pex",
 	"Data\\Scripts\\RAS\\NewGameConfiguration\\DynamicTerminals\\StartingLocation\\DynamicEntryFragments\\DefaultMoveToLocFragment.pex",
