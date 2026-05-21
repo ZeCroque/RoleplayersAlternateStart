@@ -4,6 +4,9 @@ GameplayOption Property RAS_MQTriggerChanceOption Mandatory Const Auto
 GlobalVariable Property RAS_MQTriggerChance Mandatory Const Auto
 GameplayOption Property RAS_MQLevelThresholdOption Mandatory Const Auto
 GlobalVariable Property RAS_MQLevelThreshold Mandatory Const Auto
+GameplayOption Property RAS_BrokenShipRepairCostOption Mandatory Const Auto
+GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
+Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 
 Event OnQuestInit()
     RegisterForGameplayOptionChangedEvent()
@@ -40,5 +43,19 @@ Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
         ElseIf(aChangedOptions[optionIndex].GetValue() == 4)
             RAS_MQLevelThreshold.SetValueInt(50)
         EndIf
+    EndIf
+
+    optionIndex = aChangedOptions.Find(RAS_BrokenShipRepairCostOption)
+    If(optionIndex != -1)
+        If(aChangedOptions[optionIndex].GetValue() == 0)
+            RAS_BrokenShipQuest_ShiptechRepairCost.SetValueInt(1000)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 1)
+            RAS_BrokenShipQuest_ShiptechRepairCost.SetValueInt(10000)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 2)
+            RAS_BrokenShipQuest_ShiptechRepairCost.SetValueInt(25000)
+        ElseIf(aChangedOptions[optionIndex].GetValue() == 3)
+            RAS_BrokenShipQuest_ShiptechRepairCost.SetValueInt(50000)
+        EndIf
+        RAS_BrokenShipQuest.UpdateCurrentInstanceGlobal(RAS_BrokenShipQuest_ShiptechRepairCost)
     EndIf
 EndEvent
