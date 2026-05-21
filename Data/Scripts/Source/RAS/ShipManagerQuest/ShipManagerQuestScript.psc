@@ -91,6 +91,8 @@ Function SetupPlayerShip(SpaceshipReference akShip)
     ;Add back ship services tech dialogs
     DialogueShipServices.Reset()
     DialogueShipServices.Start()
+
+    UnregisterForMenuOpenCloseEvent("MonocleMenu")
 EndFunction
 
 Function InitFreeLanes()
