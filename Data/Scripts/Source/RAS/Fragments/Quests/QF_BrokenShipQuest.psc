@@ -6,7 +6,7 @@ Function Fragment_Stage_0000_Item_00()
 ;BEGIN CODE
 SetObjectiveDisplayed(0)
 SetObjectiveDisplayed(1)
-(Alias_PlayerAlias as RAS:BrokenShipQuest:PlayerAliasScript).StartTrackingResources()
+(PlayerAlias as RAS:BrokenShipQuest:PlayerAliasScript).StartTrackingResources()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -34,13 +34,28 @@ Quest __temp = self as Quest
 RAS:BrokenShipQuest:BrokenShipQuestScript kmyQuest = __temp as RAS:BrokenShipQuest:BrokenShipQuestScript
 ;END AUTOCAST
 ;BEGIN CODE
-Alias_ShipPilotChair.GetReference().BlockActivation(False, False)
+ShipPilotChair.GetReference().BlockActivation(False, False)
 
 SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
 If(shipQuest.PlayerShip.GetShipReference() == (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
-    shipQuest.ResetHomeShip(kmyQuest.ShipAlias.GetShipReference())
+    SpaceshipReference brokenShip = kmyQuest.ShipAlias.GetShipReference()
+    shipQuest.ResetHomeShip(brokenShip)
+
+    ObjectReference shipMarker = ShipServicesTechAlias.GetRef().GetLinkedRef(LinkShipLandingMarker01)
+    
+    ObjectReference[] linkedShips = shipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
+    If(linkedShips.Length)
+        linkedShips[0].Disable()
+    EndIf
+
+    brokenShip.MoveTo(shipMarker)
+    brokenShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
+    brokenShip.EnableWithLanding()
+Else
+    shipQuest.AddPlayerOwnedShip(kmyQuest.ShipAlias.GetShipReference())
 EndIf
 
+SetObjectiveCompleted(2)
 SetObjectiveCompleted(5)
 Stop()
 ;END CODE
@@ -49,10 +64,16 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-ReferenceAlias Property Alias_PlayerAlias Auto Const Mandatory
+ReferenceAlias Property PlayerAlias Auto Const Mandatory
 
-ReferenceAlias Property Alias_ShipPilotChair Auto Const Mandatory
+ReferenceAlias Property ShipPilotChair Auto Const Mandatory
 
 Quest Property SQ_PlayerShip Auto Const Mandatory
 
 Quest Property RAS_ShipManagerQuest Auto Const Mandatory
+
+ReferenceAlias Property ShipServicesTechAlias Auto Const Mandatory
+
+Keyword Property LinkShipLandingMarker01 Auto Const Mandatory
+
+Keyword Property CurrentInteractionLinkedRefKeyword Auto Const Mandatory

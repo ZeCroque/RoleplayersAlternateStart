@@ -32,6 +32,7 @@ Quest Property MQ401 Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
+GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
 
 Float LastVersion
 
@@ -170,6 +171,8 @@ Function Update()
             If(managerQuest.PedestrianStart)
                 managerQuest.RegisterForMonocleMenu()
             EndIf
+
+            RAS_BrokenShipQuest.UpdateCurrentInstanceGlobal(RAS_BrokenShipQuest_ShiptechRepairCost)
         EndIf    
     EndIf      
     RAS_ModVersion.SetValue(LastVersion)

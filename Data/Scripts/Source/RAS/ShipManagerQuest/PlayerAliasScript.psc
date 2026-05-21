@@ -16,7 +16,7 @@ Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
         SpaceshipReference brokenShip = (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).ShipAlias.GetShipRef()
         RAS:ShipManagerQuest:ShipManagerQuestScript shipManagerScript = GetOwningQuest() as RAS:ShipManagerQuest:ShipManagerQuestScript
         SQ_PlayerShipScript sqPlayerShipQuest = SQ_PlayerShip as SQ_PlayerShipScript
-        If(akShip != brokenShip)                  
+        If(akShip != brokenShip || RAS_BrokenShipQuest.GetStage() == 10)                  
             If(shipManagerScript.RAS_NoneShipReference && akShip != shipManagerScript.RAS_NoneShipReference)
                 sqPlayerShipQuest.RemovePlayerShip(shipManagerScript.RAS_NoneShipReference)
                 shipManagerScript.SetupPlayerShip(akShip)
@@ -26,7 +26,7 @@ Event OnHomeShipSet(SpaceshipReference akShip, SpaceshipReference akPrevious)
             RAS_BrokenHomeshipError.ShowAsHelpMessage("", 10, 0, 1)
         EndIf
 
-        If(akPrevious == brokenShip)
+        If(akPrevious == brokenShip && RAS_BrokenShipQuest.GetStage() != 10)
             sqPlayerShipQuest.RemovePlayerShip(akPrevious)
             sqPlayerShipQuest.PlayerShip.ForceRefTo(shipManagerScript.RAS_NoneShipReference)
         EndIf
