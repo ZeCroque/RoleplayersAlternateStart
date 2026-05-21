@@ -19,6 +19,14 @@ SetObjectiveDisplayed(2)
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_Stage_0001_Item_00
+Function Fragment_Stage_0001_Item_00()
+;BEGIN CODE
+SetObjectiveDisplayed(6)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_Stage_0005_Item_00
 Function Fragment_Stage_0005_Item_00()
 ;BEGIN CODE
@@ -41,22 +49,25 @@ If(shipQuest.PlayerShip.GetShipReference() == (RAS_ShipManagerQuest as RAS:ShipM
     SpaceshipReference brokenShip = kmyQuest.ShipAlias.GetShipReference()
     shipQuest.ResetHomeShip(brokenShip)
 
-    ObjectReference shipMarker = ShipServicesTechAlias.GetRef().GetLinkedRef(LinkShipLandingMarker01)
+    If(GetStageDone(1))
+        ObjectReference shipMarker = ShipServicesTechAlias.GetRef().GetLinkedRef(LinkShipLandingMarker01)
     
-    ObjectReference[] linkedShips = shipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
-    If(linkedShips.Length)
-        linkedShips[0].Disable()
-    EndIf
+        ObjectReference[] linkedShips = shipMarker.GetRefsLinkedToMe(CurrentInteractionLinkedRefKeyword)
+        If(linkedShips.Length)
+            linkedShips[0].Disable()
+        EndIf
 
-    brokenShip.MoveTo(shipMarker)
-    brokenShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
-    brokenShip.EnableWithLanding()
+        brokenShip.MoveTo(shipMarker)
+        brokenShip.SetLinkedRef(shipMarker, CurrentInteractionLinkedRefKeyword)
+        brokenShip.EnableWithLanding()
+    Endif
 Else
     shipQuest.AddPlayerOwnedShip(kmyQuest.ShipAlias.GetShipReference())
 EndIf
 
 SetObjectiveCompleted(2)
 SetObjectiveCompleted(5)
+SetObjectiveCompleted(6)
 Stop()
 ;END CODE
 EndFunction

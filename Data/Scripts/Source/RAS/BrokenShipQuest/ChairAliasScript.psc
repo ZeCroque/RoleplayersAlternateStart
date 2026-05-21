@@ -5,6 +5,7 @@ Message Property RAS_RepairFailedMessage Mandatory Const Auto
 Message Property RAS_RepairSucceededMessage Mandatory Const Auto
 Potion Property ShipRepairKit Mandatory Const Auto
 MiscObject Property InorgCommonIron Mandatory Const Auto
+ConditionForm Property RAS_PlayerSelectedRandomStart Mandatory Const Auto
 
 Function RepairShip()
     RAS_RepairSucceededMessage.Show()
@@ -12,24 +13,26 @@ Function RepairShip()
 EndFunction
 
 Event OnActivate(ObjectReference akActionRef)
-    ObjectReference PlayerREF = Game.GetPlayer()
-    
-    Int Choice = RAS_RepairShipMessage.Show()
-    If(Choice == 1)
-        If(PlayerREF.GetItemCount(ShipRepairKit) > 0)
-            PlayerREF.RemoveItem(ShipRepairKit)
+    If(RAS_PlayerSelectedRandomStart.IsTrue())
+        ObjectReference PlayerREF = Game.GetPlayer()
+        
+        Int Choice = RAS_RepairShipMessage.Show()
+        If(Choice == 1)
+            If(PlayerREF.GetItemCount(ShipRepairKit) > 0)
+                PlayerREF.RemoveItem(ShipRepairKit)
+                RepairShip()
+            Else
+                RAS_RepairFailedMessage.Show()
+            EndIf
+        ElseIf(Choice == 2)
+            If(PlayerREF.GetComponentCount(InorgCommonIron) > 9)
+                Game.GetPlayer().RemoveItemByComponent(InorgCommonIron, 10)
+                RepairShip()
+            Else
+                RAS_RepairFailedMessage.Show()
+            EndIf
+        ElseIf(Choice == 3)
             RepairShip()
-        Else
-            RAS_RepairFailedMessage.Show()
-        EndIf
-    ElseIf(Choice == 2)
-        If(PlayerREF.GetComponentCount(InorgCommonIron) > 9)
-            Game.GetPlayer().RemoveItemByComponent(InorgCommonIron, 10)
-            RepairShip()
-        Else
-            RAS_RepairFailedMessage.Show()
-        EndIf
-    ElseIf(Choice == 3)
-        RepairShip()
-    Endif
+        Endif
+    EndIf
 EndEvent

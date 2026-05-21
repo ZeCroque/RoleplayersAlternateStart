@@ -3,6 +3,7 @@ Scriptname RAS:BrokenShipQuest:PlayerAliasScript extends ReferenceAlias
 Potion Property ShipRepairKit Mandatory Const Auto
 MiscObject Property InorgCommonIron Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_IronCount Mandatory Const Auto
+ConditionForm Property RAS_PlayerSelectedRandomStart Mandatory Const Auto
 
 Function StartTrackingResources()
     AddInventoryEventFilter(ShipRepairKit)
@@ -29,5 +30,13 @@ Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemRefere
             GetOwningQuest().SetStage(5)
         EndIf
         GetOwningQuest().UpdateCurrentInstanceGlobal(RAS_BrokenShipQuest_IronCount)
+    EndIf
+EndEvent
+
+Event OnLocationChange(Location akOldLoc, Location akNewLoc)
+    If(RAS_PlayerSelectedRandomStart.IsTrue())
+        If(akNewLoc.GetCurrentPlanet() && akNewLoc.GetCurrentPlanet() != (GetOwningQuest() as RAS:BrokenShipQuest:BrokenShipQuestScript).PlanetAlias.GetLocation().GetCurrentPlanet())
+            GetOwningQuest().SetStage(1)
+        EndIf
     EndIf
 EndEvent
