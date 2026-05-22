@@ -32,13 +32,16 @@ Quest Property MQ401 Mandatory Const Auto
 Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 
-Float LastVersion = 1.17
+Float LastVersion
 
 Event OnQuestInit()
+    LastVersion = 1.17
+    RAS_ModVersion.SetValue(LastVersion)
     Update()
 EndEvent
 
 Function Update()
+    LastVersion = 1.17
     If(Game.GetPlayer().GetValueInt(RAS_AlternateStart))
         If(RAS_ModVersion.GetValue() < 1.03)
             If((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).PedestrianStart)
@@ -146,20 +149,20 @@ Function Update()
             If(MQ101.GetStage() == 0)
                 KreetMapMarker.SetMarkerVisibleOnStarMap(False)
             EndIf
-        EndIf
-    EndIf        
-    If(RAS_ModVersion.GetValue() < 1.17)
-        (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
-        If(MQ401a.IsRunning() && !MQ401.IsRunning())
-            MQ401a.Stop()
-        EndIf
-        If(RAS_BrokenShipQuest.IsRunning())
-            RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
-            SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
-            brokenShip.Enable()
-            brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
-        EndIf
-    EndIf
+        EndIf 
+        If(RAS_ModVersion.GetValue() < 1.17)
+            (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).PlaceCustomTrigger()
+            If(MQ401a.IsRunning() && !MQ401.IsRunning())
+                MQ401a.Stop()
+            EndIf
+            If(RAS_BrokenShipQuest.IsRunning())
+                RAS:BrokenShipQuest:BrokenShipQuestScript brokenShipQuest = RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript
+                SpaceshipReference brokenShip = brokenShipQuest.ShipAlias.GetShipReference()
+                brokenShip.Enable()
+                brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), CurrentInteractionLinkedRefKeyword)
+            EndIf
+        EndIf   
+    EndIf      
     RAS_ModVersion.SetValue(LastVersion)
 EndFunction
 
