@@ -33,6 +33,7 @@ Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
+Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
 
 Float LastVersion
 
@@ -173,6 +174,9 @@ Function Update()
             EndIf
 
             RAS_BrokenShipQuest.UpdateCurrentInstanceGlobal(RAS_BrokenShipQuest_ShiptechRepairCost)
+            (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).RegisterForShipEvents()
+
+            (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).RegisterForShipEvents()
         EndIf    
     EndIf      
     RAS_ModVersion.SetValue(LastVersion)

@@ -66,15 +66,12 @@ Event ObjectReference.OnWorkshopObjectPlaced(ObjectReference akSender, ObjectRef
 EndEvent
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
+    RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript)
     If(GetOwningQuest().GetStage() < 30)
-        RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript)
         If(akNewLoc.GetCurrentPlanet() && akNewLoc.GetCurrentPlanet() != shipwreckedRescueQuestScript.PlanetAlias.GetLocation().GetCurrentPlanet())
-            GetOwningQuest().FailAllObjectives()
-            GetOwningQuest().SetStage(40)
-            shipwreckedRescueQuestScript.ClearPlanetaryHabSkillChanges()
+            shipwreckedRescueQuestScript.HandleLocationChangedWithoutBeacon(akNewLoc)
         EndIf
-    Else
-        RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript shipwreckedRescueQuestScript = (GetOwningQuest() as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript)
+    Else      
         Game.GetPlayer().MoveTo(shipwreckedRescueQuestScript.ShipMapMarkerAlias.GetReference())
         shipwreckedRescueQuestScript.ClearPlanetaryHabSkillChanges()
         Utility.Wait(2)

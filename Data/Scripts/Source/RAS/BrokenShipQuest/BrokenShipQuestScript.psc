@@ -10,9 +10,16 @@ Quest Property RAS_LocationSpawnPointFinderQuest Mandatory Const Auto
 Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
+ConditionForm Property RAS_PlayerSelectedRandomStart Mandatory Const Auto
 
 Bool Property ShowMapMarkers Auto Conditional
 Bool Property IsEnabled Auto Conditional
+
+Function RegisterForShipEvents()
+    SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    Self.RegisterForRemoteEvent(shipQuest.PlayerShip, "OnAliasChanged")
+    Self.RegisterForRemoteEvent(shipQuest.PlayerShip.GetShipReference(), "OnLocationChange")
+EndFunction
 
 Event OnQuestStarted()
     Location targetLocation = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).TargetLocation
@@ -35,6 +42,8 @@ Event OnQuestStarted()
     shipQuest.RemovePlayerShip(ShipAlias.GetShipReference())
     shipQuest.PlayerShip.ForceRefTo((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).RAS_NoneShipReference)
 
+    RegisterForShipEvents()
+
     SetStage(0)
 EndEvent
 
@@ -47,4 +56,23 @@ Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectRefer
             Self.UnregisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShips, "OnAliasChanged")
         EndIf
     EndIf
+EndEvent
+
+Event ReferenceAlias.OnAliasChanged(ReferenceAlias akSource, ObjectReference akObject, bool abRemove)
+    If(abRemove)    
+        Self.UnregisterForRemoteEvent(akObject as SpaceshipReference, "OnLocationChange")        
+    Else
+        Self.RegisterForRemoteEvent(akObject as SpaceshipReference, "OnLocationChange")
+    EndIf
+EndEvent
+
+Function HandleLocationChanged(Location akNewLoc)
+    If(RAS_PlayerSelectedRandomStart.IsTrue())
+        SetStage(1)
+        Self.UnregisterForAllRemoteEvents()
+    EndIf
+EndFunction
+
+Event SpaceshipReference.OnLocationChange(SpaceshipReference akSource, Location akOldLoc, Location akNewLoc)
+    HandleLocationChanged(akNewLoc)
 EndEvent

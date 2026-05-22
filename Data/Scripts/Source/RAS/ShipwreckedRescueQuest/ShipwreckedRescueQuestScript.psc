@@ -18,6 +18,7 @@ Perk Property Skill_PlanetaryHabitation Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank2 Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank3 Mandatory Const Auto
 ConditionForm Property RAS_HasPlanetaryHabRank4 Mandatory Const Auto
+Quest Property SQ_PlayerShip Mandatory Const Auto
 
 Bool Property ShowMapMarkers Auto Conditional
 
@@ -85,6 +86,35 @@ EndEvent
 
 Event OnQuestStarted()
     perkRank = -1
+    RegisterForShipEvents()
+EndEvent
+
+Function RegisterForShipEvents()
+    SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    Self.RegisterForRemoteEvent(shipQuest.PlayerShip, "OnAliasChanged")
+    Self.RegisterForRemoteEvent(shipQuest.PlayerShip.GetShipReference(), "OnLocationChange")
+EndFunction
+
+Event ReferenceAlias.OnAliasChanged(ReferenceAlias akSource, ObjectReference akObject, bool abRemove)
+    If(abRemove)    
+        Self.UnregisterForRemoteEvent(akObject as SpaceshipReference, "OnLocationChange")        
+    Else
+        Self.RegisterForRemoteEvent(akObject  as SpaceshipReference, "OnLocationChange")
+    EndIf
+EndEvent
+
+Function HandleLocationChangedWithoutBeacon(Location akNewLoc)
+    FailAllObjectives()
+    SetStage(40)
+    ClearPlanetaryHabSkillChanges()
+
+    SQ_PlayerShipScript shipQuest = SQ_PlayerShip as SQ_PlayerShipScript
+    Self.UnregisterForRemoteEvent(shipQuest.PlayerShip, "OnAliasChanged")
+    Self.UnregisterForRemoteEvent(shipQuest.PlayerShip.GetShipReference(), "OnLocationChange")
+EndFunction
+
+Event SpaceshipReference.OnLocationChange(SpaceshipReference akSource, Location akOldLoc, Location akNewLoc)
+    HandleLocationChangedWithoutBeacon(akNewLoc)
 EndEvent
 
 Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akActionRef)
