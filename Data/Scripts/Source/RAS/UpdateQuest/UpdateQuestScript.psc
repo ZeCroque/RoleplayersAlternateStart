@@ -35,13 +35,13 @@ Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 Float LastVersion
 
 Event OnQuestInit()
-    LastVersion = 1.17
+    LastVersion = 1.18
     RAS_ModVersion.SetValue(LastVersion)
     Update()
 EndEvent
 
 Function Update()
-    LastVersion = 1.17
+    LastVersion = 1.18
     If(Game.GetPlayer().GetValueInt(RAS_AlternateStart))
         If(RAS_ModVersion.GetValue() < 1.03)
             If((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).PedestrianStart)
