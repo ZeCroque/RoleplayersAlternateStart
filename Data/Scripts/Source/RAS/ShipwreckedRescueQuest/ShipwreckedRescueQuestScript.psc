@@ -22,18 +22,27 @@ Quest Property SQ_PlayerShip Mandatory Const Auto
 
 Bool Property ShowMapMarkers Auto Conditional
 
-Location targetLoc
 Location[] settlements
 ObjectReference[] shipMarkers
 ObjectReference shipwreckedTerminal
 Int perkRank
 
-Function SetShipwreckLocation(Location akLocation)
+Function SetupMaterials(Location akLocation)
     ShipwreckLocationAlias.ForceLocationTo(akLocation)
     PlanetAlias.ForceLocationTo(akLocation.GetParentLocations()[0])
     ShipwreckMapMarkerAlias.ForceRefTo((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).StartingLocationMapMarkersCollectionAlias.GetAt(0))
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
+EndFunction
+
+Function SetShipwreckLocation(Location akLocation)
+    SetupMaterials(akLocation)
+    While(!MaterialsLocationAlias.GetLocation())
+        LocationAlias targetLoc = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetAlias(12) as LocationAlias
+        targetLoc.RefillAlias()
+        (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).MoveToLocation(targetLoc.GetLocation(), False)
+        SetupMaterials(targetLoc.GetLocation())
+    EndWhile
 
     Actor playerRef = Game.GetPlayer()
     perkRank = 0

@@ -32,6 +32,10 @@ CustomEvent SelectionChanged
 
 Entry[] Entries
 
+MiscObject Function GetCurrentFragment()
+    Return CurrentFragment
+EndFunction
+
 Event OnCellLoad()
     Self.RegisterForRemoteEvent(MainTerminalMenu, "OnTerminalMenuItemRun")
 

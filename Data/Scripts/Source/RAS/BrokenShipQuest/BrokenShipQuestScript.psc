@@ -11,6 +11,8 @@ Quest Property RAS_ShipManagerQuest Mandatory Const Auto
 Quest Property SQ_PlayerShip Mandatory Const Auto
 Keyword Property CurrentInteractionLinkedRefKeyword Mandatory Const Auto
 ConditionForm Property RAS_PlayerSelectedRandomStart Mandatory Const Auto
+ObjectReference Property RAS_StartingLocationTerminalREF Mandatory Const Auto
+ObjectReference Property RAS_GameStartCellMarkerREF Mandatory Const Auto
 
 Bool Property ShowMapMarkers Auto Conditional
 Bool Property IsEnabled Auto Conditional
@@ -21,13 +23,28 @@ Function RegisterForShipEvents()
     Self.RegisterForRemoteEvent(shipQuest.PlayerShip.GetShipReference(), "OnLocationChange")
 EndFunction
 
-Event OnQuestStarted()
+Function SetupMaterials()
     Location targetLocation = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).TargetLocation
     StartingLocationAlias.ForceLocationTo(targetLocation)
     PlanetAlias.ForceLocationTo(targetLocation.GetParentLocations()[0])
     StartingLocationMapMarkerAlias.ForceRefTo((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).StartingLocationMapMarkersCollectionAlias.GetAt(0))
     MaterialsLocationAlias.RefillAlias()
     MaterialsLocationAlias.RefillDependentAliases()
+EndFunction
+
+Event OnQuestStarted()
+    If(RAS_PlayerSelectedRandomStart.IsTrue())
+        Int randomAliasId = ((RAS_StartingLocationTerminalREF as RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript).GetCurrentFragment() as RAS:NewGameConfiguration:DynamicTerminals:StartingLocation:DynamicEntryFragments:DefaultRandomLocationFragment).AliasId
+        While(!MaterialsLocationAlias.GetLocation())
+            SetupMaterials()
+            If(!MaterialsLocationAlias.GetLocation())
+                LocationAlias targetLoc = (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetAlias(randomAliasId) as LocationAlias
+                targetLoc.RefillAlias()
+                Game.GetPlayer().MoveTo(RAS_GameStartCellMarkerREF)
+                (RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).MoveToLocation(targetLoc.GetLocation(), True)
+            EndIf
+        EndWhile
+    EndIf
     
     RAS:ShipManagerQuest:ShipManagerQuestScript rasShipManager = (RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript)
     
@@ -67,7 +84,7 @@ Event ReferenceAlias.OnAliasChanged(ReferenceAlias akSource, ObjectReference akO
 EndEvent
 
 Function HandleLocationChanged(Location akNewLoc)
-    If(RAS_PlayerSelectedRandomStart.IsTrue())
+    If(RAS_PlayerSelectedRandomStart.IsTrue() && ShipAlias.GetReference())
         SetStage(1)
         Self.UnregisterForAllRemoteEvents()
     EndIf
