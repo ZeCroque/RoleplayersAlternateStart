@@ -70,6 +70,8 @@ Event OnActivate(ObjectReference akActionRef)
 
         ;next scene plays
         RAS_MQ101_005_FaceGenScene.Start()
+
+        TryToDisableNoWait()
     EndIf
 EndEvent
 

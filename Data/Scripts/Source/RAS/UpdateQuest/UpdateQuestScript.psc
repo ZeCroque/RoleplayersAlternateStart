@@ -177,6 +177,10 @@ Function Update()
             (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).RegisterForShipEvents()
 
             (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).RegisterForShipEvents()
+
+            If(MQ101.IsCompleted())
+                (RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).CustomArtifactDeposit.TryToDisable()
+            EndIf
         EndIf    
     EndIf      
     RAS_ModVersion.SetValue(LastVersion)
