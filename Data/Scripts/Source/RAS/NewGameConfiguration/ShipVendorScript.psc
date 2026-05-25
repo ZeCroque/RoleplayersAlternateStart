@@ -143,6 +143,7 @@ Event SpaceshipReference.OnShipBought(SpaceshipReference akSenderRef)
     EndIf
     
     shipManagerScript.currentShip = akSenderRef
+    shipManagerScript.UpdateCurrentShipSize()
     Int shipIndex = akSenderRef.GetValueInt(RAS_ShipBaseIndex)
     shipsToSell.RemoveRef(akSenderRef)
 

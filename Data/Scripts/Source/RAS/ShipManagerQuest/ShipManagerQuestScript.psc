@@ -14,9 +14,28 @@ SpaceshipReference Property GuardianShip Auto Hidden
 SpaceshipReference Property CurrentShip Auto Hidden
 SpaceshipReference Property RAS_NoneShipReference Auto Hidden
 Bool Property PedestrianStart Auto Conditional
+Int Property ShipSize Auto Conditional
 
 Quest CruiseModeQuest
 InputEnableLayer InputLayer
+
+Float Function GetCurrentShipGreatestShipDimension()
+    If(CurrentShip.GetLength() > CurrentShip.GetWidth())
+        Return CurrentShip.GetLength()
+    Else
+        Return CurrentShip.GetWidth()
+    EndIf
+EndFunction
+
+Function UpdateCurrentShipSize()
+    If(GetCurrentShipGreatestShipDimension() < 40.0)
+        ShipSize = 0
+    ElseIf(GetCurrentShipGreatestShipDimension() >= 40.0 && GetCurrentShipGreatestShipDimension() < 60.0)
+        ShipSize = 1
+    Else
+        ShipSize = 2
+    EndIf
+EndFunction
 
 Event OnQuestInit()
     InitFreeLanes()
@@ -65,6 +84,7 @@ Function InitStarbornShip()
     (SQ_PlayerShip as SQ_PlayerShipScript).ResetHomeShip(GuardianShip)
     GuardianShip.SetValue(SpaceshipRegistration, 1)
     CurrentShip = GuardianShip
+    UpdateCurrentShipSize()
     (RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).NoShipSelected = False
     
     ;We init as a pedestrian to handle the case and to fix ship tech dialogs, it will be undone if needed anywway
