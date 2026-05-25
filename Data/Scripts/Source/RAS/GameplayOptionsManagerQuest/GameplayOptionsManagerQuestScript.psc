@@ -10,6 +10,10 @@ Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 GameplayOption Property RAS_BrokenShipMapMarkerOption Mandatory Const Auto
 GameplayOption Property RAS_ShipwreckedMapMarkerOption Mandatory Const Auto
 Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
+GameplayOption Property RAS_LodgeDoorDebugOption Mandatory Const Auto
+ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
+Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
+Message Property RAS_LodgeDoorDebugMessage Mandatory Const Auto
 
 Event OnQuestInit()
     RegisterForGameplayOptionChangedEvent()
@@ -64,11 +68,20 @@ Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
 
     optionIndex = aChangedOptions.Find(RAS_BrokenShipMapMarkerOption)
     If(optionIndex != -1)
-        (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript) .ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
+        (RAS_BrokenShipQuest as RAS:BrokenShipQuest:BrokenShipQuestScript).ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
     EndIf
 
     optionIndex = aChangedOptions.Find(RAS_ShipwreckedMapMarkerOption)
     If(optionIndex != -1)
-        (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript) .ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
+        (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).ShowMapMarkers = aChangedOptions[optionIndex].GetValue() 
+    EndIf
+
+    optionIndex = aChangedOptions.Find(RAS_LodgeDoorDebugOption)
+    If(optionIndex != -1)
+        (NewAtlantisToLodgeDoorREF as FrontDoorToLodgeScript).LodgeFrontDoorOpen = True
+        ((RAS_NewGameManagerQuest.GetAlias(52) as ReferenceAlias) as RAS:NewGameManagerQuest:FrontDoorToLodgeScript).SetWatchAnimationRequired(False)
+        NewAtlantisToLodgeDoorREF.BlockActivation(False)
+        NewAtlantisToLodgeDoorREF.Unlock()
+        RAS_LodgeDoorDebugMessage.ShowAsHelpMessage("", 5.0, 0.0, 1)
     EndIf
 EndEvent

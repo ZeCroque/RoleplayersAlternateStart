@@ -96,7 +96,7 @@ Auto State waitingforPlayer
     EndEvent
 EndState
 
-State HasBeenActivated
+State HasBeenTriggered
     Event OnLoad()
         ;do nothing
     EndEvent
