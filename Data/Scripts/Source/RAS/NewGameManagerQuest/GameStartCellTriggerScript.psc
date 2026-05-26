@@ -12,9 +12,10 @@ Event OnCellLoad()
 
         managerQuest.StarbornStart = Game.GetPlayer().GetValue(PlayerUnityTimesEntered) > 0
 
-        If(RAS_ChooseStartTypeMessage.Show() == 0)    
+        Int choice = RAS_ChooseStartTypeMessage.Show()
+        If(choice == 0)    
             RAS_NewGameManagerQuest.SetStage(5)
-        Else
+        ElseIf(choice == 1)
             If(!managerQuest.StarbornStart)
                 managerQuest.RegisterForChargen()
                 Game.PrecacheCharGen()
@@ -24,6 +25,13 @@ Event OnCellLoad()
                 managerQuest.InitCustomStart()
                 Game.FastTravel(managerQuest.RAS_ChooseStartCellMarkerREF)
             EndIf
+        Else
+            Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 1.0)
+            managerQuest.StarbornStart = True
+            managerQuest.RegisterForChargen()
+            Game.PrecacheCharGen()
+            Game.ShowRaceMenu(None, 0, None, None, None)
+            managerQuest.InitCustomStart()
         EndIf
     EndIf
 EndEvent
