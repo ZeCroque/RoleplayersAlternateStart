@@ -28,6 +28,7 @@ Event OnCellLoad()
         Else
             Game.GetPlayer().SetValue(PlayerUnityTimesEntered, 1.0)
             managerQuest.StarbornStart = True
+            managerQuest.ImmediateStarbornStart = True
             managerQuest.RegisterForChargen()
             Game.PrecacheCharGen()
             Game.ShowRaceMenu(None, 0, None, None, None)

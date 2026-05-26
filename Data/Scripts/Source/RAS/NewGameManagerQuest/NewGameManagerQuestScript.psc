@@ -55,6 +55,7 @@ ReferenceAlias Property LevelManagerActivatorAlias Mandatory Const Auto
 ReferenceAlias Property CharGenActivatorAlias Mandatory Const Auto
 ReferenceAlias Property UnityShipServiceTechAlias Mandatory Const Auto
 ReferenceAlias Property NarrativeAdjustmentsActivatorAlias Mandatory Const Auto
+ReferenceAlias Property CustomStarbornContainer Mandatory Const Auto
 ReferenceAlias Property InvalidatedTerminal Mandatory Const Auto
 Quest Property TraitKidStuff Mandatory Const Auto
 Quest Property TraitStarterHome Mandatory Const Auto
@@ -109,6 +110,7 @@ ObjectReference Property CustomTrigger Auto Hidden
 
 Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
+Bool Property ImmediateStarbornStart Auto Conditional
 
 CustomEvent ConfigurationChanged
 
@@ -155,6 +157,7 @@ Function InitCustomStart()
   Self.RegisterForRemoteEvent(UnityShipServiceTechAlias, "OnActivate")
   Self.RegisterForCustomEvent(UnityShipServiceTechAlias.GetActorRef() as RAS:NewGameConfiguration:ShipVendorScript, "ShipChanged")
   Self.RegisterForRemoteEvent(NarrativeAdjustmentsActivatorAlias, "OnActivate")
+  Self.RegisterForRemoteEvent(CustomStarbornContainer, "OnActivate")
   Self.RegisterForCustomEvent(NarrativeAdjustmentsActivatorAlias.GetRef() as RAS:NewGameConfiguration:DynamicTerminals:NarrativeAdjustments:NarrativeAdjustmentsActivatorScript, "SelectionChanged")
 
   If(StarbornStart)
@@ -502,7 +505,9 @@ Event ReferenceAlias.OnActivate(ReferenceAlias akSender, ObjectReference akActio
       SetObjectiveCompleted(12)
     ElseIf(akSender == NarrativeAdjustmentsActivatorAlias)
       SetObjectiveCompleted(15)
- EndIf
+    ElseIf(akSender == CustomStarbornContainer)
+      SetObjectiveCompleted(17)
+    EndIf
 EndEvent
 
 Event RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript.SelectionChanged(RAS:NewGameConfiguration:DynamicTerminals:Base:DynamicEntriesTerminalScript akSender, var[] akArgs)
