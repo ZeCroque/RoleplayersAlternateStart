@@ -1,7 +1,10 @@
-Scriptname RAS:NewGameConfiguration:ManageLevelActivatorScript extends ObjectReference
+Scriptname RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript extends ObjectReference
 
 Message Property RAS_AddLevelMessage Mandatory Const Auto
 Message Property RAS_SetLevelMessage Mandatory Const Auto
+Message Property RAS_ChooseCharacterSkillManagerMode Mandatory Const Auto
+Message Property RAS_SetPilotingSkillLevel Mandatory Const Auto
+Perk Property Skill_Piloting Mandatory Const Auto
 
 Bool NeverChangedLevel = True
 
@@ -12,6 +15,28 @@ Event OnLoad()
 EndEvent
 
 Event OnActivate(ObjectReference akActionRef)
+    If(RAS:Utility:ModInfo.IsAchievementFriendly())
+        HandlePilotingSkillMode()
+    Else
+        If(RAS_ChooseCharacterSkillManagerMode.Show())
+            HandlePilotingSkillMode()
+        Else
+            HandleLevelMode()
+        EndIf
+    EndIf
+EndEvent
+
+Function HandlePilotingSkillMode()    
+    Game.GetPlayer().RemovePerk(Skill_Piloting)
+    Int choice = RAS_SetPilotingSkillLevel.Show()   
+    Int i = 0
+    While i < choice
+        Game.GetPlayer().AddPerk(Skill_Piloting)
+        i += 1
+    EndWhile
+EndFunction
+
+Function HandleLevelMode()
     If(NeverChangedLevel)
         Int choice = RAS_SetLevelMessage.Show()
         If(choice < 5)
@@ -30,7 +55,7 @@ Event OnActivate(ObjectReference akActionRef)
     Else
         ShowLevelMessage()
     EndIf
-EndEvent
+EndFunction
 
 Function ShowLevelMessage()
     Int choice = RAS_AddLevelMessage.Show()

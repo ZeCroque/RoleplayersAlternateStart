@@ -24,12 +24,12 @@ Bool Property KeepGearMode Auto Conditional
 Bool GearYetBought = False
 
 Event OnLoad()
-    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageLevelActivatorScript, "PlayerLeveledUp")
+    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript, "PlayerLeveledUp")
     
 	BlockActivation()	
 EndEvent
 
-Event RAS:NewGameConfiguration:ManageLevelActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageLevelActivatorScript akSender, var[] akArgs)
+Event RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript akSender, var[] akArgs)
     RAS_VendorContainerREF.Reset()
 EndEvent
 

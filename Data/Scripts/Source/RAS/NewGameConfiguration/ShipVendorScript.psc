@@ -89,7 +89,7 @@ EndFunction
 Event OnLoad()
     RegisterForMenuOpenCloseEvent("DialogueMenu")
     RegisterForMenuOpenCloseEvent("SpaceshipEditorMenu")
-    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageLevelActivatorScript, "PlayerLeveledUp")
+    Self.RegisterForCustomEvent(RAS_AnomalyActivatorREF01 as RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript, "PlayerLeveledUp")
     
     myLandingMarker = GetLinkedRef(LinkShipLandingMarker01)
     LockGuard ShipListGuard
@@ -100,7 +100,7 @@ Event OnLoad()
     EndLockGuard
 EndEvent
 
-Event RAS:NewGameConfiguration:ManageLevelActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageLevelActivatorScript akSender, var[] akArgs)
+Event RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript.PlayerLeveledUp(RAS:NewGameConfiguration:ManageCharacterSkillsActivatorScript akSender, var[] akArgs)
     If(!AwaitingLevelUpdate)
         AwaitingLevelUpdate = True
         LockGuard ShipListGuard
