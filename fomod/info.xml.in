@@ -1,0 +1,9 @@
+<fomod>
+	<Name>Roleplayers Alternate Start</Name>
+	<Author>ZeCroque</Author>
+	<Version>@MOD_VERSION_STRING@</Version>
+	<Description>An alternate start mod designed for roleplayers, fully dynamic, with main quest replacement and dialog edits.</Description>
+	<Groups>
+		<element>Quests and Adventures</element>
+	</Groups>
+</fomod>

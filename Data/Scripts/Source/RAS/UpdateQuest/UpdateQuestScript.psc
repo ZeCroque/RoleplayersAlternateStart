@@ -35,16 +35,12 @@ Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
 Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
 
-Float LastVersion
-
 Event OnQuestInit()
-    LastVersion = 1.20
-    RAS_ModVersion.SetValue(LastVersion)
+    RAS_ModVersion.SetValue(RAS:Utility:ModInfo.GetModVersion())
     Update()
 EndEvent
 
 Function Update()
-    LastVersion = 1.20
     If(Game.GetPlayer().GetValueInt(RAS_AlternateStart))
         If(RAS_ModVersion.GetValue() < 1.03)
             If((RAS_ShipManagerQuest as RAS:ShipManagerQuest:ShipManagerQuestScript).PedestrianStart)
@@ -183,7 +179,7 @@ Function Update()
             EndIf
         EndIf    
     EndIf      
-    RAS_ModVersion.SetValue(LastVersion)
+    RAS_ModVersion.SetValue(RAS:Utility:ModInfo.GetModVersion())
 EndFunction
 
 Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectReference akObject, bool abRemove)

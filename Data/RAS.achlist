@@ -93,6 +93,7 @@
 	"Data\\Scripts\\RAS\\Fragments\\TopicInfos\\TIF_NewGameManagerQuest_NoArgosStart.pex",
 	"Data\\Scripts\\RAS\\Fragments\\Quests\\QF_MQReplacerIntroQuest.pex",
 	"Data\\Scripts\\RAS\\MQReplacer\\MQReplacerIntroQuestScript.pex",
+	"Data\\Scripts\\RAS\\Utility\\ModInfo.pex",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.ffxanim",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\00131451.wem",
 	"Data\\Sound\\voice\\roleplayersalternatestart.esm\\crimsonfleetfemale01\\002ae4e8.ffxanim",
