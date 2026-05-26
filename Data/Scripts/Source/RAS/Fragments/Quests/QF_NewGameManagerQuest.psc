@@ -13,6 +13,10 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_Stage_0010_Item_00
 Function Fragment_Stage_0010_Item_00()
+;BEGIN AUTOCAST TYPE RAS:NewGameManagerQuest:NewGameManagerQuestScript
+Quest __temp = self as Quest
+RAS:NewGameManagerQuest:NewGameManagerQuestScript kmyQuest = __temp as RAS:NewGameManagerQuest:NewGameManagerQuestScript
+;END AUTOCAST
 ;BEGIN CODE
 SetObjectiveDisplayed(11)
 SetObjectiveDisplayed(12)
@@ -20,6 +24,10 @@ SetObjectiveDisplayed(13)
 SetObjectiveDisplayed(14)
 SetObjectiveDisplayed(15)
 SetObjectiveDisplayed(16)
+If(kmyQuest.StarbornStart)
+    SetObjectiveDisplayed(17)
+    (GetAlias(53) as ReferenceAlias).TryToEnable()
+EndIf
 ;END CODE
 EndFunction
 ;END FRAGMENT
