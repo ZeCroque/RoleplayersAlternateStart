@@ -29,11 +29,13 @@ def createAllStringFiles():
             shutil.copy("./Data/Strings/" + stringFile, "./Data/Strings/" + stringFile.replace("en", supportedLanguage))
 
 def main():
+    if os.path.isdir("./Data/Strings/"):
+        shutil.rmtree("./Data/Strings")
     replaceCKLaunchArgs("-TagifyPlugin:RoleplayersAlternateStart.esp")
     runCK()
     replaceCKLaunchArgs("-ExportText:RoleplayersAlternateStart.esp")
     runCK()
-    replaceCKLaunchArgs("-CompileTextExport:RoleplayersAlternateStart.esp en H:\\Games\\steamapps\\common\\Starfield\\TextExport\\RoleplayersAlternateStart.esp")
+    replaceCKLaunchArgs("-CompileTextExport:RoleplayersAlternateStart.esp en H:/Games/steamapps/common/Starfield/TextExport/RoleplayersAlternateStart.esp")
     runCK()
     createAllStringFiles()
     replaceCKLaunchArgs("")
