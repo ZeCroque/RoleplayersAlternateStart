@@ -1,0 +1,4644 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SSTXMLRessources>
+  <Params>
+    <Addon>RoleplayersAlternateStart</Addon>
+    <Source>en</Source>
+    <Dest>zhhant</Dest>
+    <Version>2</Version>
+  </Params>
+  <Content>
+    <String List="0" sID="000004">
+      <EDID>RAS_MQLevelThresholdOption</EDID>
+      <REC id="4" idMax="4">GPOF:RESN</REC>
+      <Source>50</Source>
+      <Dest>50</Dest>
+    </String>
+    <String List="0" sID="000006">
+      <EDID>RAS_MQLevelThresholdOption</EDID>
+      <REC id="3" idMax="4">GPOF:RESN</REC>
+      <Source>25</Source>
+      <Dest>25</Dest>
+    </String>
+    <String List="0" sID="000008">
+      <EDID>RAS_MQLevelThresholdOption</EDID>
+      <REC id="2" idMax="4">GPOF:RESN</REC>
+      <Source>10</Source>
+      <Dest>10</Dest>
+    </String>
+    <String List="0" sID="00000A">
+      <EDID>RAS_MQLevelThresholdOption</EDID>
+      <REC id="1" idMax="4">GPOF:RESN</REC>
+      <Source>5</Source>
+      <Dest>5</Dest>
+    </String>
+    <String List="0" sID="00000C">
+      <EDID>RAS_MQLevelThresholdOption</EDID>
+      <REC id="0" idMax="4">GPOF:RESN</REC>
+      <Source>1</Source>
+      <Dest>1</Dest>
+    </String>
+    <String List="0" sID="000010">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>啟用</Dest>
+    </String>
+    <String List="0" sID="000012">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:RESN</REC>
+      <Source>Disabled</Source>
+      <Dest>禁用</Dest>
+    </String>
+    <String List="0" sID="000016">
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>啟用</Dest>
+    </String>
+    <String List="0" sID="000018">
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:RESN</REC>
+      <Source>Disabled</Source>
+      <Dest>禁用</Dest>
+    </String>
+    <String List="0" sID="00001C">
+      <EDID>RAS_MQTriggerChanceOption</EDID>
+      <REC id="5" idMax="5">GPOF:RESN</REC>
+      <Source>100%</Source>
+      <Dest>100%</Dest>
+    </String>
+    <String List="0" sID="00001E">
+      <EDID>RAS_MQTriggerChanceOption</EDID>
+      <REC id="4" idMax="5">GPOF:RESN</REC>
+      <Source>50%</Source>
+      <Dest>50%</Dest>
+    </String>
+    <String List="0" sID="000020">
+      <EDID>RAS_MQTriggerChanceOption</EDID>
+      <REC id="3" idMax="5">GPOF:RESN</REC>
+      <Source>33%</Source>
+      <Dest>33%</Dest>
+    </String>
+    <String List="0" sID="000022">
+      <EDID>RAS_MQTriggerChanceOption</EDID>
+      <REC id="2" idMax="5">GPOF:RESN</REC>
+      <Source>25%</Source>
+      <Dest>25%</Dest>
+    </String>
+    <String List="0" sID="000024">
+      <EDID>RAS_MQTriggerChanceOption</EDID>
+      <REC id="1" idMax="5">GPOF:RESN</REC>
+      <Source>10%</Source>
+      <Dest>10%</Dest>
+    </String>
+    <String List="0" sID="00002F">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="3" idMax="3">GPOF:RESN</REC>
+      <Source>50000</Source>
+      <Dest>50000</Dest>
+    </String>
+    <String List="0" sID="000031">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="2" idMax="3">GPOF:RESN</REC>
+      <Source>25000</Source>
+      <Dest>25000</Dest>
+    </String>
+    <String List="0" sID="000033">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="1" idMax="3">GPOF:RESN</REC>
+      <Source>10000</Source>
+      <Dest>10000</Dest>
+    </String>
+    <String List="0" sID="000035">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="0" idMax="3">GPOF:RESN</REC>
+      <Source>1000</Source>
+      <Dest>1000</Dest>
+    </String>
+    <String List="0" sID="000039">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00003A">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.name&gt;</Source>
+      <Dest>目前選擇: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00003B">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="00003C">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="00003D">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00003E">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.name&gt;</Source>
+      <Dest>目前選擇: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00003F">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose a destination</Source>
+      <Dest>選擇目的地</Dest>
+    </String>
+    <String List="0" sID="000040">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose a destination</Source>
+      <Dest>選擇目的地</Dest>
+    </String>
+    <String List="0" sID="000041">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="000042">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <Source>70</Source>
+      <Dest>70</Dest>
+    </String>
+    <String List="0" sID="000043">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <Source>50</Source>
+      <Dest>50</Dest>
+    </String>
+    <String List="0" sID="000044">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <Source>25</Source>
+      <Dest>25</Dest>
+    </String>
+    <String List="0" sID="000045">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <Source>10</Source>
+      <Dest>10</Dest>
+    </String>
+    <String List="0" sID="000046">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current maximum: &lt;Global=RAS_LocationMaxLevel&gt;</Source>
+      <Dest>目前最大值: &lt;Global=RAS_LocationMaxLevel&gt;</Dest>
+    </String>
+    <String List="0" sID="000047">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Max level configuration</Source>
+      <Dest>最高等級配置</Dest>
+    </String>
+    <String List="0" sID="000048">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Max level configuration</Source>
+      <Dest>最高等級配置</Dest>
+    </String>
+    <String List="0" sID="000049">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="5" idMax="5">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="00004A">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="4" idMax="5">TMLM:ITXT</REC>
+      <Source>70</Source>
+      <Dest>70</Dest>
+    </String>
+    <String List="0" sID="00004B">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="3" idMax="5">TMLM:ITXT</REC>
+      <Source>50</Source>
+      <Dest>50</Dest>
+    </String>
+    <String List="0" sID="00004C">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="2" idMax="5">TMLM:ITXT</REC>
+      <Source>25</Source>
+      <Dest>25</Dest>
+    </String>
+    <String List="0" sID="00004D">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="1" idMax="5">TMLM:ITXT</REC>
+      <Source>10</Source>
+      <Dest>10</Dest>
+    </String>
+    <String List="0" sID="00004E">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC id="0" idMax="5">TMLM:ITXT</REC>
+      <Source>1</Source>
+      <Dest>1</Dest>
+    </String>
+    <String List="0" sID="00004F">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current minimum: &lt;Global=RAS_LocationMinLevel&gt;</Source>
+      <Dest>目前最小值: &lt;Global=RAS_LocationMinLevel&gt;</Dest>
+    </String>
+    <String List="0" sID="000050">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Min level configuration</Source>
+      <Dest>最低等級配置</Dest>
+    </String>
+    <String List="0" sID="000051">
+      <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Min level configuration</Source>
+      <Dest>最低等級配置</Dest>
+    </String>
+    <String List="0" sID="000052">
+      <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
+      <REC id="1" idMax="1">TMLM:ITXT</REC>
+      <Source>Enable</Source>
+      <Dest>啟用</Dest>
+    </String>
+    <String List="0" sID="000053">
+      <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
+      <REC id="0" idMax="1">TMLM:ITXT</REC>
+      <Source>Disable</Source>
+      <Dest>禁用</Dest>
+    </String>
+    <String List="0" sID="000054">
+      <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>&lt;0.name&gt;
+
+Current state: &lt;1.name&gt;</Source>
+      <Dest>&lt;0.name&gt;
+
+目前狀態: &lt;1.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000055">
+      <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Select Narrative Adjustments</Source>
+      <Dest>選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="000056">
+      <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Select Narrative Adjustments</Source>
+      <Dest>選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="000057">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ITXT</REC>
+      <Source>Start Free Shopping</Source>
+      <Dest>開始免費購物</Dest>
+    </String>
+    <String List="0" sID="000058">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ITXT</REC>
+      <Source>Start Shopping</Source>
+      <Dest>開始購物</Dest>
+    </String>
+    <String List="0" sID="000059">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC>TMLM:ISTX</REC>
+      <Source>Choose a budget</Source>
+      <Dest>選擇預算</Dest>
+    </String>
+    <String List="0" sID="00005A">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ITXT</REC>
+      <Source>Choose a budget</Source>
+      <Dest>選擇預算</Dest>
+    </String>
+    <String List="0" sID="00005B">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can choose the starting gear of your character.
+You will start by choosing a budget - or setting a custom one - and then spend that budget on a virtual trader selling goods from all the Settled Systems.
+You also have the option to get that starting gear for free if you want to keep the full budget. 
+Current budget: &lt;Global=RAS_CurrentBudget&gt;
+Notes : 
+- The vendor will update itself if you level up with the &quot;Level Manager Activator&quot;
+- The vendor will sell modded items if they were added to the vanilla leveled lists.</Source>
+      <Dest>這裡可以設定你的角色起始裝備。
+你會先選擇一個預算（也可以自訂），然後用這筆預算向虛擬商人購買整個已開發星系中的物品。
+如果你想保留全部預算，也可以選擇免費取得起始裝備。
+ 
+目前預算: &lt;Global=RAS_CurrentBudget&gt;
+注意事項: 
+- 如果你使用「等級管理啟動器（Level Manager Activator）」升級，商人的商品內容會自動更新。
+- 如果模組物品有加入原版的等級清單，這個商人也會販售那些模組物品。</Dest>
+    </String>
+    <String List="0" sID="00005C">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose your Starting Gear</Source>
+      <Dest>選擇你的起始裝備</Dest>
+    </String>
+    <String List="0" sID="00005D">
+      <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose your Starting Gear</Source>
+      <Dest>選擇你的起始裝備</Dest>
+    </String>
+    <String List="0" sID="00005E">
+      <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00005F">
+      <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.name&gt;</Source>
+      <Dest>目前選擇: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000060">
+      <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Template</Source>
+      <Dest>範本</Dest>
+    </String>
+    <String List="0" sID="000061">
+      <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Template</Source>
+      <Dest>範本</Dest>
+    </String>
+    <String List="0" sID="000062">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="000063">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC id="1" idMax="1">TMLM:ISTX</REC>
+      <Source>Max level configuration</Source>
+      <Dest>最高等級配置</Dest>
+    </String>
+    <String List="0" sID="000064">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ITXT</REC>
+      <Source>Max level configuration</Source>
+      <Dest>最高等級配置</Dest>
+    </String>
+    <String List="0" sID="000065">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC id="0" idMax="1">TMLM:ISTX</REC>
+      <Source>Min level configuration</Source>
+      <Dest>最低等級配置</Dest>
+    </String>
+    <String List="0" sID="000066">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ITXT</REC>
+      <Source>Min level configuration</Source>
+      <Dest>最低等級配置</Dest>
+    </String>
+    <String List="0" sID="000067">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can define a maximum and a minimum level for the location in which you will start.
+Maximum must be greater than minimum, so if you see few options in the minimum submenu it means you need to increase your maximum (and vice versa).
+Min Level: &lt;Global=RAS_LocationMinLevel&gt;
+Max Level: &lt;Global=RAS_LocationMaxLevel&gt;</Source>
+      <Dest>您可以在此定義起始位置的最高和最低等級。
+最高級別必須大於最低級別，因此，如果您在最低級別子選單中看到較少選項，則表示您需要提高最高級別（反之亦然）。
+最低等級: &lt;Global=RAS_LocationMinLevel&gt;
+最高等級: &lt;Global=RAS_LocationMaxLevel&gt;</Dest>
+    </String>
+    <String List="0" sID="000068">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Custom Location Level Configuration</Source>
+      <Dest>自訂位置等級配置</Dest>
+    </String>
+    <String List="0" sID="000069">
+      <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Custom Location Level Configuration</Source>
+      <Dest>自訂位置等級配置</Dest>
+    </String>
+    <String List="0" sID="00006A">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <Source>Back</Source>
+      <Dest>返回</Dest>
+    </String>
+    <String List="0" sID="00006B">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <Source>Remove 100000</Source>
+      <Dest>移除 100000</Dest>
+    </String>
+    <String List="0" sID="00006C">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <Source>Remove 10000</Source>
+      <Dest>移除 10000</Dest>
+    </String>
+    <String List="0" sID="00006D">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <Source>Remove 1000</Source>
+      <Dest>移除 1000</Dest>
+    </String>
+    <String List="0" sID="00006E">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <Source>Remove 500</Source>
+      <Dest>移除 500</Dest>
+    </String>
+    <String List="0" sID="00006F">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current budget: &lt;Global=RAS_CurrentBudget&gt;</Source>
+      <Dest>目前預算: &lt;Global=RAS_CurrentBudget&gt;</Dest>
+    </String>
+    <String List="0" sID="000070">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Remove credits</Source>
+      <Dest>移除信用幣</Dest>
+    </String>
+    <String List="0" sID="000071">
+      <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Remove credits</Source>
+      <Dest>移除信用幣</Dest>
+    </String>
+    <String List="0" sID="000072">
+      <EDID>RAS_DynamicEntriesTerminalMenu_Template</EDID>
+      <REC id="1" idMax="1">TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000073">
+      <EDID>RAS_DynamicEntriesTerminalMenu_Template</EDID>
+      <REC id="0" idMax="1">TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000074">
+      <EDID>RAS_DynamicEntriesTerminalMenu_Template</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.Name&gt;</Source>
+      <Dest>目前選擇: &lt;0.Name&gt;</Dest>
+    </String>
+    <String List="0" sID="000075">
+      <EDID>RAS_DynamicEntriesTerminalMenu_Template</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Template</Source>
+      <Dest>範本</Dest>
+    </String>
+    <String List="0" sID="000076">
+      <EDID>RAS_DynamicEntriesTerminalMenu_Template</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Template</Source>
+      <Dest>範本</Dest>
+    </String>
+    <String List="0" sID="000077">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ISTX</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="000078">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="000079">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ISTX</REC>
+      <Source>Remove credits</Source>
+      <Dest>移除信用幣</Dest>
+    </String>
+    <String List="0" sID="00007A">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ITXT</REC>
+      <Source>Remove credits</Source>
+      <Dest>移除信用幣</Dest>
+    </String>
+    <String List="0" sID="00007B">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ISTX</REC>
+      <Source>Add Credits</Source>
+      <Dest>添加信用幣</Dest>
+    </String>
+    <String List="0" sID="00007C">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ITXT</REC>
+      <Source>Add Credits</Source>
+      <Dest>添加信用幣</Dest>
+    </String>
+    <String List="0" sID="00007D">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current budget: &lt;Global=RAS_CurrentBudget&gt;</Source>
+      <Dest>目前預算: &lt;Global=RAS_CurrentBudget&gt;</Dest>
+    </String>
+    <String List="0" sID="00007E">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Custom budget</Source>
+      <Dest>客製化預算</Dest>
+    </String>
+    <String List="0" sID="00007F">
+      <EDID>RAS_StartingGearTerminal_CustomBudgetMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Custom budget</Source>
+      <Dest>客製化預算</Dest>
+    </String>
+    <String List="0" sID="000080">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="000081">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC>TMLM:ISTX</REC>
+      <Source>Custom range</Source>
+      <Dest>自訂範圍</Dest>
+    </String>
+    <String List="0" sID="000082">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ITXT</REC>
+      <Source>Custom range</Source>
+      <Dest>自訂範圍</Dest>
+    </String>
+    <String List="0" sID="000083">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ITXT</REC>
+      <Source>Game default (around player level)</Source>
+      <Dest>遊戲預設（圍繞玩家等級）</Dest>
+    </String>
+    <String List="0" sID="000084">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can choose how the player level will influence the location in which you will start.
+Current setting: &lt;0.name&gt;</Source>
+      <Dest>在這裡您可以選擇玩家等級如何影響您的起始位置。
+目前設定: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000085">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Location Level Configuration</Source>
+      <Dest>位置等級配置</Dest>
+    </String>
+    <String List="0" sID="000086">
+      <EDID>RAS_RandomStartConfigurationTerminal_LevelMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Location Level Configuration</Source>
+      <Dest>位置等級配置</Dest>
+    </String>
+    <String List="0" sID="000087">
+      <EDID>RAS_StartingMapMarkerTerminalMenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000088">
+      <EDID>RAS_StartingMapMarkerTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Choose one of the sub-locations in the list to start your journey.</Source>
+      <Dest>選擇清單中的一個子位置來開始您的旅程。</Dest>
+    </String>
+    <String List="0" sID="000089">
+      <EDID>RAS_StartingMapMarkerTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Select a sub-location</Source>
+      <Dest>選擇子位置</Dest>
+    </String>
+    <String List="0" sID="00008A">
+      <EDID>RAS_StartingMapMarkerTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Select a sub-location</Source>
+      <Dest>選擇子位置</Dest>
+    </String>
+    <String List="0" sID="00008B">
+      <EDID>RAS_StartingLocationTerminalMenu</EDID>
+      <REC id="1" idMax="1">TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00008C">
+      <EDID>RAS_StartingLocationTerminalMenu</EDID>
+      <REC id="0" idMax="1">TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="00008D">
+      <EDID>RAS_StartingLocationTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can choose where your journey will begin.
+
+Current Selection: &lt;0.Name&gt;</Source>
+      <Dest>您可以在這裡選擇旅程的起點。
+
+目前選擇: &lt;0.Name&gt;</Dest>
+    </String>
+    <String List="0" sID="00008E">
+      <EDID>RAS_StartingLocationTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="00008F">
+      <EDID>RAS_StartingLocationTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="000090">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <Source>Back</Source>
+      <Dest>返回</Dest>
+    </String>
+    <String List="0" sID="000091">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <Source>Add 100000</Source>
+      <Dest>添加 100000</Dest>
+    </String>
+    <String List="0" sID="000092">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <Source>Add 10000</Source>
+      <Dest>添加 10000</Dest>
+    </String>
+    <String List="0" sID="000093">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <Source>Add 1000</Source>
+      <Dest>添加 1000</Dest>
+    </String>
+    <String List="0" sID="000094">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <Source>Add 500</Source>
+      <Dest>添加 500</Dest>
+    </String>
+    <String List="0" sID="000095">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current budget: &lt;Global=RAS_CurrentBudget&gt;</Source>
+      <Dest>目前預算: &lt;Global=RAS_CurrentBudget&gt;</Dest>
+    </String>
+    <String List="0" sID="000096">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Add Credits</Source>
+      <Dest>添加信用幣</Dest>
+    </String>
+    <String List="0" sID="000097">
+      <EDID>RAS_StartingGearTerminal_AddBudgetMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Add Credits</Source>
+      <Dest>添加信用幣</Dest>
+    </String>
+    <String List="0" sID="000098">
+      <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000099">
+      <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can change the course of some events in your upcoming playthrough or set some starting modifiers to your adventure.</Source>
+      <Dest>在這裡，您可以更改遊戲過程中某些事件的進程，或為您的冒險設定一些起始修改器。</Dest>
+    </String>
+    <String List="0" sID="00009A">
+      <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Select Narrative Adjustments</Source>
+      <Dest>選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="00009B">
+      <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Select Narrative Adjustments</Source>
+      <Dest>選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="00009C">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="00009D">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC>TMLM:ISTX</REC>
+      <Source>Custom budget</Source>
+      <Dest>客製化預算</Dest>
+    </String>
+    <String List="0" sID="00009E">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <Source>Custom budget</Source>
+      <Dest>客製化預算</Dest>
+    </String>
+    <String List="0" sID="00009F">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <Source>High (&lt;Global=RAS_HighBudget&gt;)</Source>
+      <Dest>高 (&lt;Global=RAS_HighBudget&gt;)</Dest>
+    </String>
+    <String List="0" sID="0000A0">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <Source>Medium (&lt;Global=RAS_MediumBudget&gt;)</Source>
+      <Dest>中 (&lt;Global=RAS_MediumBudget&gt;)</Dest>
+    </String>
+    <String List="0" sID="0000A1">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <Source>Low (&lt;Global=RAS_LowBudget&gt;)</Source>
+      <Dest>低 (&lt;Global=RAS_LowBudget&gt;)</Dest>
+    </String>
+    <String List="0" sID="0000A2">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current budget: &lt;Global=RAS_CurrentBudget&gt;</Source>
+      <Dest>目前預算: &lt;Global=RAS_CurrentBudget&gt;</Dest>
+    </String>
+    <String List="0" sID="0000A3">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose a budget</Source>
+      <Dest>選擇預算</Dest>
+    </String>
+    <String List="0" sID="0000A4">
+      <EDID>RAS_StartingGearTerminal_BudgetMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose a budget</Source>
+      <Dest>選擇預算</Dest>
+    </String>
+    <String List="0" sID="0000A5">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="0000A6">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <Source>High</Source>
+      <Dest>高</Dest>
+    </String>
+    <String List="0" sID="0000A7">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <Source>Medium</Source>
+      <Dest>中</Dest>
+    </String>
+    <String List="0" sID="0000A8">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <Source>Low</Source>
+      <Dest>低</Dest>
+    </String>
+    <String List="0" sID="0000A9">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <Source>Any</Source>
+      <Dest>任何</Dest>
+    </String>
+    <String List="0" sID="0000AA">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can choose how livable the location in which you will start will be.
+Current habitability target: &lt;0.name&gt;</Source>
+      <Dest>在這裡您可以選擇您出發地點的可居住位置。
+目前可居住目標: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="0000AB">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Location Habitability Configuration</Source>
+      <Dest>可居住地點配置</Dest>
+    </String>
+    <String List="0" sID="0000AC">
+      <EDID>RAS_RandomStartConfigurationTerminal_HabitabilityMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Location Habitability Configuration</Source>
+      <Dest>可居住地點配置</Dest>
+    </String>
+    <String List="0" sID="0000AD">
+      <EDID>RAS_HomeChoosingTerminalMenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="0000AE">
+      <EDID>RAS_HomeChoosingTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can choose if your character has a place they call their own.
+You will not necessarily start here, but it&apos;s a possibility you have in the &quot;Starting Location Terminal&quot;.
+
+Selected home: &lt;0.Name&gt;
+
+Note: you will get this home as an addition to the house you get from the &quot;Kid Stuff&quot; or &quot;Dream Home&quot; traits, not as a replacement.</Source>
+      <Dest>在這裡，你可以選擇角色是否擁有一個屬於自己的居所。
+你不一定會從這裡開始遊戲，但在「起始位置終端」中，可以選擇這個選項。
+
+選擇房屋: &lt;0.Name&gt;
+
+注意：這個房子不是換掉原本的房子，而是額外再給你一間。不管你有「孩子氣」或是「夢想家園」特質已有房子，這個都是額外加的，而不是取代原本的房子。</Dest>
+    </String>
+    <String List="0" sID="0000AF">
+      <EDID>RAS_HomeChoosingTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose a Home</Source>
+      <Dest>選擇你的家</Dest>
+    </String>
+    <String List="0" sID="0000B0">
+      <EDID>RAS_HomeChoosingTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose a Home</Source>
+      <Dest>選擇你的家</Dest>
+    </String>
+    <String List="0" sID="0000B1">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC id="2" idMax="2">TMLM:ITXT</REC>
+      <Source>Validate</Source>
+      <Dest>確認</Dest>
+    </String>
+    <String List="0" sID="0000B2">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC id="1" idMax="1">TMLM:ISTX</REC>
+      <Source>Location Habitability Configuration</Source>
+      <Dest>可居住地點配置</Dest>
+    </String>
+    <String List="0" sID="0000B3">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC id="1" idMax="2">TMLM:ITXT</REC>
+      <Source>Location Habitability Configuration</Source>
+      <Dest>可居住地點配置</Dest>
+    </String>
+    <String List="0" sID="0000B4">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC id="0" idMax="1">TMLM:ISTX</REC>
+      <Source>Location Level Configuration</Source>
+      <Dest>位置等級配置</Dest>
+    </String>
+    <String List="0" sID="0000B5">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC id="0" idMax="2">TMLM:ITXT</REC>
+      <Source>Location Level Configuration</Source>
+      <Dest>位置等級配置</Dest>
+    </String>
+    <String List="0" sID="0000B6">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Here you can configure some criterias that will help picking the random location in which you will start.
+
+Level requirement: &lt;0.name&gt;
+Habitability requirement: &lt;1.name&gt;</Source>
+      <Dest>您可以在此處配置一些標準，以幫助您選擇開始的隨機位置。
+
+等級要求: &lt;0.name&gt;
+居住要求: &lt;1.name&gt;</Dest>
+    </String>
+    <String List="0" sID="0000B7">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Starting location configuration</Source>
+      <Dest>起始位置配置</Dest>
+    </String>
+    <String List="0" sID="0000B8">
+      <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Starting location configuration</Source>
+      <Dest>起始位置配置</Dest>
+    </String>
+    <String List="0" sID="0000BA">
+      <EDID>RAS_DynamicTerminalBody_NA_ShipModifier</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Here you can choose to have your starting ship being damaged at start and unable to fly. If you start at a random POI, some crafting mats will be placed on a nearby dungeon. Elsewise, you will need to pay a ship tech.</Source>
+      <Dest>在這裡，您可以選擇讓您的起始飛船在開始時受損，需要您在漫遊太空之前使用一些基本材料進行修復。</Dest>
+    </String>
+    <String List="0" sID="0000BB">
+      <EDID>RAS_ShipwreckStartTutorialMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Shipwreck Start</Source>
+      <Dest>船難開局</Dest>
+    </String>
+    <String List="0" sID="0000BD">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC id="4" idMax="4">MESG:ITXT</REC>
+      <Source>Done</Source>
+      <Dest>完成</Dest>
+    </String>
+    <String List="0" sID="0000BE">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC id="3" idMax="4">MESG:ITXT</REC>
+      <Source>Add 50 Levels</Source>
+      <Dest>增加 50 級</Dest>
+    </String>
+    <String List="0" sID="0000BF">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC id="2" idMax="4">MESG:ITXT</REC>
+      <Source>Add 10 Levels</Source>
+      <Dest>增加 10 級</Dest>
+    </String>
+    <String List="0" sID="0000C0">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC id="1" idMax="4">MESG:ITXT</REC>
+      <Source>Add 5 Levels</Source>
+      <Dest>增加 5 級</Dest>
+    </String>
+    <String List="0" sID="0000C1">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC id="0" idMax="4">MESG:ITXT</REC>
+      <Source>Add 1 Level</Source>
+      <Dest>增加 1 級</Dest>
+    </String>
+    <String List="0" sID="0000C2">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Manage Level</Source>
+      <Dest>等級管理</Dest>
+    </String>
+    <String List="0" sID="0000C4">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>是</Dest>
+    </String>
+    <String List="0" sID="0000C5">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>否</Dest>
+    </String>
+    <String List="0" sID="0000C6">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Random Start Warning</Source>
+      <Dest>隨機位置 行人警告</Dest>
+    </String>
+    <String List="0" sID="0000C8">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>是</Dest>
+    </String>
+    <String List="0" sID="0000C9">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>否</Dest>
+    </String>
+    <String List="0" sID="0000CA">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Unlock New Homestead Home Furniture</Source>
+      <Dest>解鎖新家園家具</Dest>
+    </String>
+    <String List="0" sID="0000CE">
+      <EDID>RAS_HabitabilityEntry_High</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>High</Source>
+      <Dest>高</Dest>
+    </String>
+    <String List="0" sID="0000CF">
+      <EDID>RAS_SelectionInvalidatedMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Selection invalidated</Source>
+      <Dest>選擇無效</Dest>
+    </String>
+    <String List="0" sID="0000D2">
+      <EDID>RAS_SetPilotingSkillLevel</EDID>
+      <REC id="4" idMax="4">MESG:ITXT</REC>
+      <Source>4</Source>
+      <Dest>4</Dest>
+    </String>
+    <String List="0" sID="0000D3">
+      <EDID>RAS_SetPilotingSkillLevel</EDID>
+      <REC id="3" idMax="4">MESG:ITXT</REC>
+      <Source>3</Source>
+      <Dest>3</Dest>
+    </String>
+    <String List="0" sID="0000D4">
+      <EDID>RAS_SetPilotingSkillLevel</EDID>
+      <REC id="2" idMax="4">MESG:ITXT</REC>
+      <Source>2</Source>
+      <Dest>2</Dest>
+    </String>
+    <String List="0" sID="0000D5">
+      <EDID>RAS_SetPilotingSkillLevel</EDID>
+      <REC id="1" idMax="4">MESG:ITXT</REC>
+      <Source>1</Source>
+      <Dest>1</Dest>
+    </String>
+    <String List="0" sID="0000D6">
+      <EDID>RAS_SetPilotingSkillLevel</EDID>
+      <REC id="0" idMax="4">MESG:ITXT</REC>
+      <Source>None</Source>
+      <Dest>無</Dest>
+    </String>
+    <String List="0" sID="0000DB">
+      <EDID>RAS_StarstationStartWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>是</Dest>
+    </String>
+    <String List="0" sID="0000DC">
+      <EDID>RAS_StarstationStartWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>否</Dest>
+    </String>
+    <String List="0" sID="0000DD">
+      <EDID>RAS_StarstationStartWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Starstation Warning</Source>
+      <Dest>星際站 行人警告</Dest>
+    </String>
+    <String List="0" sID="0000DF">
+      <EDID>RAS_RescueShipYetCalledMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Rescue Ship Yet Called</Source>
+      <Dest>救援船尚未被召喚</Dest>
+    </String>
+    <String List="0" sID="0000E2">
+      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Rescue Ship Landing Impossible</Source>
+      <Dest>救援飛船無法登陸</Dest>
+    </String>
+    <String List="0" sID="0000E4">
+      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>About Vehicle Unlocking</Source>
+      <Dest>關於車輛解鎖</Dest>
+    </String>
+    <String List="0" sID="0000E8">
+      <EDID>RAS_LocationLevelEntry_Default</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Default</Source>
+      <Dest>預設</Dest>
+    </String>
+    <String List="0" sID="0000E9">
+      <EDID>RAS_FactionNotAvailableMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Factions Not Available</Source>
+      <Dest>派係不可用</Dest>
+    </String>
+    <String List="0" sID="0000EB">
+      <EDID>RAS_HabitabilityEntry_Low</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Low</Source>
+      <Dest>低</Dest>
+    </String>
+    <String List="0" sID="0000EC">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="3" idMax="3">MESG:ITXT</REC>
+      <Source>[Starship Engineering] Repair</Source>
+      <Dest>[飛船工程] 修理</Dest>
+    </String>
+    <String List="0" sID="0000ED">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="2" idMax="3">MESG:ITXT</REC>
+      <Source>[10 Iron] Repair</Source>
+      <Dest>[10 鐵] 修理</Dest>
+    </String>
+    <String List="0" sID="0000EE">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="1" idMax="3">MESG:ITXT</REC>
+      <Source>[1 Ship Part] Repair</Source>
+      <Dest>[1 飛船零件] 修理</Dest>
+    </String>
+    <String List="0" sID="0000EF">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="0" idMax="3">MESG:ITXT</REC>
+      <Source>Leave</Source>
+      <Dest>離開</Dest>
+    </String>
+    <String List="0" sID="0000F0">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Ship damaged</Source>
+      <Dest>飛船受損</Dest>
+    </String>
+    <String List="0" sID="0000F2">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="5" idMax="5">MESG:ITXT</REC>
+      <Source>Cancel</Source>
+      <Dest>取消</Dest>
+    </String>
+    <String List="0" sID="0000F3">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="4" idMax="5">MESG:ITXT</REC>
+      <Source>Custom Levelling</Source>
+      <Dest>自訂等級</Dest>
+    </String>
+    <String List="0" sID="0000F4">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="3" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 50</Source>
+      <Dest>將等級設為 50</Dest>
+    </String>
+    <String List="0" sID="0000F5">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="2" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 25</Source>
+      <Dest>將等級設為 25</Dest>
+    </String>
+    <String List="0" sID="0000F6">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="1" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 10</Source>
+      <Dest>將等級設為 10</Dest>
+    </String>
+    <String List="0" sID="0000F7">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="0" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 5</Source>
+      <Dest>將等級設為 5</Dest>
+    </String>
+    <String List="0" sID="0000F8">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Manage Level</Source>
+      <Dest>等級管理</Dest>
+    </String>
+    <String List="0" sID="0000FA">
+      <EDID>RAS_CustomStartTutorialMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Configuring Your Journey</Source>
+      <Dest>配置您的旅程</Dest>
+    </String>
+    <String List="0" sID="0000FC">
+      <EDID>RAS_HabitabilityEntry_Any</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Any</Source>
+      <Dest>任何</Dest>
+    </String>
+    <String List="0" sID="0000FE">
+      <EDID>RAS_MQ101DebugModifiedMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Roleplayers Alternate Start - Incompatible mod detected</Source>
+      <Dest>角色扮演者開始 - 偵測到不相容的模式</Dest>
+    </String>
+    <String List="0" sID="000100">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Successfuly repaired</Source>
+      <Dest>成功修復</Dest>
+    </String>
+    <String List="0" sID="000102">
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Starting Ship Tutorial</Source>
+      <Dest>起始飛船教學</Dest>
+    </String>
+    <String List="0" sID="000109">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Custom</Source>
+      <Dest>自訂</Dest>
+    </String>
+    <String List="0" sID="00010A">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Vanilla</Source>
+      <Dest>原版</Dest>
+    </String>
+    <String List="0" sID="00010B">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>New Game Type</Source>
+      <Dest>新遊戲類型</Dest>
+    </String>
+    <String List="0" sID="00010D">
+      <EDID>RAS_ImpossibleToStartMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Impossible To Start</Source>
+      <Dest>無法開始</Dest>
+    </String>
+    <String List="0" sID="000115">
+      <EDID>RAS_HabitabilityEntry_Medium</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Medium</Source>
+      <Dest>中</Dest>
+    </String>
+    <String List="0" sID="000116">
+      <EDID>RAS_ConfirmStartMessage</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>是</Dest>
+    </String>
+    <String List="0" sID="000117">
+      <EDID>RAS_ConfirmStartMessage</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>否</Dest>
+    </String>
+    <String List="0" sID="000118">
+      <EDID>RAS_ConfirmStartMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Starting your adventure</Source>
+      <Dest>開始你的冒險</Dest>
+    </String>
+    <String List="0" sID="00011A">
+      <EDID>RAS_RepairFailedMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Can&apos;t repair</Source>
+      <Dest>無法修復</Dest>
+    </String>
+    <String List="0" sID="00011C">
+      <EDID>RAS_LocationLevelEntry_Custom</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Custom</Source>
+      <Dest>自訂</Dest>
+    </String>
+    <String List="0" sID="00011D">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Cancel</Source>
+      <Dest>取消</Dest>
+    </String>
+    <String List="0" sID="00011E">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Reset gear</Source>
+      <Dest>重置裝備</Dest>
+    </String>
+    <String List="0" sID="00011F">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Keep gear</Source>
+      <Dest>保留裝備</Dest>
+    </String>
+    <String List="0" sID="000120">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Keep Current Gear</Source>
+      <Dest>保留當前裝備</Dest>
+    </String>
+    <String List="0" sID="000128">
+      <EDID>RAS_ShiptechNotReadyMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Ship Tech not Ready</Source>
+      <Dest>船舶技術尚未準備好</Dest>
+    </String>
+    <String List="0" sID="00012A">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>是</Dest>
+    </String>
+    <String List="0" sID="00012B">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>否</Dest>
+    </String>
+    <String List="0" sID="00012C">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Broken Ship Warning</Source>
+      <Dest>損壞飛船 行人警告</Dest>
+    </String>
+    <String List="0" sID="000133">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="3" idMax="3">QUST:NNAM</REC>
+      <Source>Sell the artifact</Source>
+      <Dest>出售神器</Dest>
+    </String>
+    <String List="0" sID="000134">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="2" idMax="3">QUST:NNAM</REC>
+      <Source>Bring the artifact to an expert</Source>
+      <Dest>將神器帶​​給專家</Dest>
+    </String>
+    <String List="0" sID="000135">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="1" idMax="3">QUST:NNAM</REC>
+      <Source>(Optional) Ask a ship technician the location of a museum</Source>
+      <Dest>（可選）向船舶技術員詢問博物館的位置</Dest>
+    </String>
+    <String List="0" sID="000136">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="0" idMax="3">QUST:NNAM</REC>
+      <Source>Find the source of the interferences</Source>
+      <Dest>找到干擾源</Dest>
+    </String>
+    <String List="0" sID="00013B">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>A strange artifact</Source>
+      <Dest>奇怪的神器</Dest>
+    </String>
+    <String List="0" sID="000140">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="3" idMax="4">QUST:NNAM</REC>
+      <Source>Repair your ship</Source>
+      <Dest>修理你的船</Dest>
+    </String>
+    <String List="0" sID="000142">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="1" idMax="4">QUST:NNAM</REC>
+      <Source>Find Ship Parts</Source>
+      <Dest>尋找飛船零件</Dest>
+    </String>
+    <String List="0" sID="000143">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="0" idMax="4">QUST:NNAM</REC>
+      <Source>Find Iron (&lt;Global=RAS_BrokenShipQuest_IronCount&gt;/10)</Source>
+      <Dest>尋找鐵 (&lt;Global=RAS_BrokenShipQuest_IronCount&gt;/10)</Dest>
+    </String>
+    <String List="0" sID="000149">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Grounded</Source>
+      <Dest>停靠</Dest>
+    </String>
+    <String List="0" sID="00014A">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="7" idMax="7">QUST:NNAM</REC>
+      <Source>Board the rescue ship</Source>
+      <Dest>登上救援船</Dest>
+    </String>
+    <String List="0" sID="00014B">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="6" idMax="7">QUST:NNAM</REC>
+      <Source>Wait for a rescue ship to arrive</Source>
+      <Dest>等待救援船抵達</Dest>
+    </String>
+    <String List="0" sID="00014C">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="5" idMax="7">QUST:NNAM</REC>
+      <Source>Activate the Rescue Beacon</Source>
+      <Dest>啟動求救信標</Dest>
+    </String>
+    <String List="0" sID="00014D">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="4" idMax="7">QUST:NNAM</REC>
+      <Source>Build a Rescue Beacon</Source>
+      <Dest>建造求救信標</Dest>
+    </String>
+    <String List="0" sID="00014E">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="3" idMax="7">QUST:NNAM</REC>
+      <Source>Place an Outpost Beacon</Source>
+      <Dest>放置哨站信標</Dest>
+    </String>
+    <String List="0" sID="00014F">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="2" idMax="7">QUST:NNAM</REC>
+      <Source>Find a Communication Relay</Source>
+      <Dest>尋找通信中繼</Dest>
+    </String>
+    <String List="0" sID="000150">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="1" idMax="7">QUST:NNAM</REC>
+      <Source>Find Copper (&lt;Global=RAS_ShipwreckedRescueQuest_CopperCount&gt;/5)</Source>
+      <Dest>尋找銅 (&lt;Global=RAS_ShipwreckedRescueQuest_CopperCount&gt;/5)</Dest>
+    </String>
+    <String List="0" sID="000151">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="0" idMax="7">QUST:NNAM</REC>
+      <Source>Find Aluminum (&lt;Global=RAS_ShipwreckedRescueQuest_AluminumCount&gt;/5)</Source>
+      <Dest>尋找鋁 (&lt;Global=RAS_ShipwreckedRescueQuest_AluminumCount&gt;/5)</Dest>
+    </String>
+    <String List="0" sID="00015A">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Emergency Pickup</Source>
+      <Dest>緊急接送</Dest>
+    </String>
+    <String List="0" sID="000163">
+      <EDID>RAS_FrontierPickUpQuest</EDID>
+      <REC id="1" idMax="1">QUST:NNAM</REC>
+      <Source>Repair the Frontier</Source>
+      <Dest>修復邊境</Dest>
+    </String>
+    <String List="0" sID="000164">
+      <EDID>RAS_FrontierPickUpQuest</EDID>
+      <REC id="0" idMax="1">QUST:NNAM</REC>
+      <Source>Enter the Frontier on Vectera</Source>
+      <Dest>進入維特拉的邊界</Dest>
+    </String>
+    <String List="0" sID="000189">
+      <EDID>[FD000852]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Here to take you home.</Source>
+      <Dest>來接你回家。</Dest>
+    </String>
+    <String List="0" sID="0001C4">
+      <EDID>[FD000922]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Let&apos;s keep traveling together.</Source>
+      <Dest>讓我們繼續一起旅行。</Dest>
+    </String>
+    <String List="0" sID="0001C9">
+      <EDID>[FD000928]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>We should go our separate ways.</Source>
+      <Dest>我們應該各走各的路。</Dest>
+    </String>
+    <String List="0" sID="000268">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="19" idMax="19">QUST:NNAM</REC>
+      <Source>Talk to Barrett</Source>
+      <Dest>與巴雷特交談</Dest>
+    </String>
+    <String List="0" sID="000269">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="18" idMax="19">QUST:NNAM</REC>
+      <Source>Wait for Barrett</Source>
+      <Dest>等待巴雷特</Dest>
+    </String>
+    <String List="0" sID="00026A">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="17" idMax="19">QUST:NNAM</REC>
+      <Source>Enter the Library</Source>
+      <Dest>進入圖書館</Dest>
+    </String>
+    <String List="0" sID="00026B">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="16" idMax="19">QUST:NNAM</REC>
+      <Source>Return to the Lodge</Source>
+      <Dest>返回群星小屋</Dest>
+    </String>
+    <String List="0" sID="00026C">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="15" idMax="19">QUST:NNAM</REC>
+      <Source>Kill Matsura</Source>
+      <Dest>殺死松浦</Dest>
+    </String>
+    <String List="0" sID="00026D">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="14" idMax="19">QUST:NNAM</REC>
+      <Source>Rescue Barrett</Source>
+      <Dest>拯救巴雷特</Dest>
+    </String>
+    <String List="0" sID="00026E">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="13" idMax="19">QUST:NNAM</REC>
+      <Source>(Optional) Recruit Heller as Crew</Source>
+      <Dest>（可選）招募海勒為船員</Dest>
+    </String>
+    <String List="0" sID="00026F">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="12" idMax="19">QUST:NNAM</REC>
+      <Source>Travel to &lt;alias=BarrettDungeonPlanetLocation&gt;</Source>
+      <Dest>前往 &lt;alias=BarrettDungeonPlanetLocation&gt;</Dest>
+    </String>
+    <String List="0" sID="000270">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="11" idMax="19">QUST:NNAM</REC>
+      <Source>Listen to &quot;Emergency Transmission 02&quot;</Source>
+      <Dest>收聽 &quot;緊急通訊 02&quot;</Dest>
+    </String>
+    <String List="0" sID="000271">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="10" idMax="19">QUST:NNAM</REC>
+      <Source>Talk to Heller</Source>
+      <Dest>與海勒交談</Dest>
+    </String>
+    <String List="0" sID="000272">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="9" idMax="19">QUST:NNAM</REC>
+      <Source>Find Barrett and Heller</Source>
+      <Dest>找到巴雷特和海勒</Dest>
+    </String>
+    <String List="0" sID="000273">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="8" idMax="19">QUST:NNAM</REC>
+      <Source>(Optional) Recruit Lin as Crew</Source>
+      <Dest>（可選）招募林監工為船員</Dest>
+    </String>
+    <String List="0" sID="000274">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="7" idMax="19">QUST:NNAM</REC>
+      <Source>Travel to &lt;Alias=CrashedShipPlanetLocation&gt;</Source>
+      <Dest>前往 &lt;Alias=CrashedShipPlanetLocation&gt;</Dest>
+    </String>
+    <String List="0" sID="000275">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="6" idMax="19">QUST:NNAM</REC>
+      <Source>Return to Lin</Source>
+      <Dest>回去找林監工</Dest>
+    </String>
+    <String List="0" sID="000276">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="5" idMax="19">QUST:NNAM</REC>
+      <Source>Listen to &quot;Emergency Transmission 01&quot;</Source>
+      <Dest>收聽 &quot;緊急通訊 01&quot;</Dest>
+    </String>
+    <String List="0" sID="000277">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="4" idMax="19">QUST:NNAM</REC>
+      <Source>Find a Clue to Barrett&apos;s Location</Source>
+      <Dest>找到巴雷特所在位置的線索</Dest>
+    </String>
+    <String List="0" sID="000278">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="3" idMax="19">QUST:NNAM</REC>
+      <Source>(Optional) Obtain 3 Power Cells</Source>
+      <Dest>（可選）取得 3 顆備用電池</Dest>
+    </String>
+    <String List="0" sID="000279">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="2" idMax="19">QUST:NNAM</REC>
+      <Source>Fix the Comms Computer</Source>
+      <Dest>修復通訊電腦</Dest>
+    </String>
+    <String List="0" sID="00027A">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="1" idMax="19">QUST:NNAM</REC>
+      <Source>Talk to Lin</Source>
+      <Dest>與林監工交談</Dest>
+    </String>
+    <String List="0" sID="00027B">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="0" idMax="19">QUST:NNAM</REC>
+      <Source>Find out what happened on Vectera</Source>
+      <Dest>了解維特拉上發生了什麼</Dest>
+    </String>
+    <String List="0" sID="000284">
+      <EDID>RAS_MQ104B</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Echoes from Vectera</Source>
+      <Dest>來自維特拉的迴音</Dest>
+    </String>
+    <String List="0" sID="0002CD">
+      <EDID>[FD000B76]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Tell me about the Artifacts. I want to know everything.</Source>
+      <Dest>跟我講講那些神器吧。我想知道一切。</Dest>
+    </String>
+    <String List="0" sID="0002D0">
+      <EDID>[FD000B7C]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Join Constellation? What does that mean?</Source>
+      <Dest>加入群星團？這意味著什麼？</Dest>
+    </String>
+    <String List="0" sID="0002EC">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="8" idMax="8">QUST:NNAM</REC>
+      <Source>Talk to Sarah</Source>
+      <Dest>與莎拉交談</Dest>
+    </String>
+    <String List="0" sID="0002ED">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="7" idMax="8">QUST:NNAM</REC>
+      <Source>Listen to the Meeting</Source>
+      <Dest>聆聽會議</Dest>
+    </String>
+    <String List="0" sID="0002EE">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="6" idMax="8">QUST:NNAM</REC>
+      <Source>Place the Artifact</Source>
+      <Dest>放置神器</Dest>
+    </String>
+    <String List="0" sID="0002EF">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="5" idMax="8">QUST:NNAM</REC>
+      <Source>Listen to the Meeting</Source>
+      <Dest>聆聽會議</Dest>
+    </String>
+    <String List="0" sID="0002F0">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="4" idMax="8">QUST:NNAM</REC>
+      <Source>Talk to Sarah</Source>
+      <Dest>與莎拉交談</Dest>
+    </String>
+    <String List="0" sID="0002F1">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="3" idMax="8">QUST:NNAM</REC>
+      <Source>Enter the library</Source>
+      <Dest>進入圖書館</Dest>
+    </String>
+    <String List="0" sID="0002F2">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="2" idMax="8">QUST:NNAM</REC>
+      <Source>Enter the Lodge</Source>
+      <Dest>進入群星小屋</Dest>
+    </String>
+    <String List="0" sID="0002F3">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="1" idMax="8">QUST:NNAM</REC>
+      <Source>Go to the Lodge (MAST District)</Source>
+      <Dest>前往群星小屋</Dest>
+    </String>
+    <String List="0" sID="0002F4">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="0" idMax="8">QUST:NNAM</REC>
+      <Source>Read the letter from Constellation</Source>
+      <Dest>閱讀群星團的來信</Dest>
+    </String>
+    <String List="0" sID="0002FC">
+      <EDID>RAS_MQ101</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>One Small Step</Source>
+      <Dest>一小步</Dest>
+    </String>
+    <String List="0" sID="000307">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="8" idMax="8">QUST:NNAM</REC>
+      <Source>Start a new adventure</Source>
+      <Dest>開始新的冒險</Dest>
+    </String>
+    <String List="0" sID="000309">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="6" idMax="8">QUST:NNAM</REC>
+      <Source>(Optional) Change your Appearance</Source>
+      <Dest>（可選）改變你的外觀</Dest>
+    </String>
+    <String List="0" sID="00030A">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="5" idMax="8">QUST:NNAM</REC>
+      <Source>(Optional) Select Narrative Adjustments</Source>
+      <Dest>（可選）選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="00030C">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="3" idMax="8">QUST:NNAM</REC>
+      <Source>(Optional) Choose your Starting Gear</Source>
+      <Dest>（可選）選擇你的起始裝備</Dest>
+    </String>
+    <String List="0" sID="00030D">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="2" idMax="8">QUST:NNAM</REC>
+      <Source>(Optional) Choose a Ship</Source>
+      <Dest>（可選）選擇船隻</Dest>
+    </String>
+    <String List="0" sID="00030E">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="1" idMax="8">QUST:NNAM</REC>
+      <Source>(Optional) Choose a Home</Source>
+      <Dest>（可選）選擇房屋</Dest>
+    </String>
+    <String List="0" sID="00030F">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="0" idMax="8">QUST:NNAM</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="000316">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Choose your start</Source>
+      <Dest>選擇你的開始</Dest>
+    </String>
+    <String List="0" sID="000349">
+      <EDID>RASChooseStartCell</EDID>
+      <REC>CELL:FULL</REC>
+      <Source>The Unity</Source>
+      <Dest>The Unity</Dest>
+    </String>
+    <String List="0" sID="00034A">
+      <EDID>RAS_NoneShip</EDID>
+      <REC>GBFM:FULL</REC>
+      <Source>No ship available</Source>
+      <Dest>沒有可用的飛船</Dest>
+    </String>
+    <String List="0" sID="00034B">
+      <EDID>RAS_RandomStartConfigurationTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>RandomStartConfigurationTerminal</Source>
+      <Dest>隨機起始配置終端機</Dest>
+    </String>
+    <String List="0" sID="00034C">
+      <EDID>RAS_StartingLocationTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Starting Location Terminal</Source>
+      <Dest>起始位置終端機</Dest>
+    </String>
+    <String List="0" sID="00034D">
+      <EDID>RAS_HomeChoosingTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Home Choosing Terminal</Source>
+      <Dest>選擇居所終端機</Dest>
+    </String>
+    <String List="0" sID="00034E">
+      <EDID>RAS_StartingMapMarkerTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>StartingMapMarkerTerminal</Source>
+      <Dest>起始地圖標記終端機</Dest>
+    </String>
+    <String List="0" sID="00034F">
+      <EDID>RAS_NarrativeAdjustmentsTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Narrative Adjustments Terminal</Source>
+      <Dest>劇情調整終端機</Dest>
+    </String>
+    <String List="0" sID="000350">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Shipwrecked Rescue Destination Terminal</Source>
+      <Dest>沈船救援目的地終端機</Dest>
+    </String>
+    <String List="0" sID="000351">
+      <EDID>RAS_DynamicEntriesTerminal_Template</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Dynamic Entries Terminal</Source>
+      <Dest>動態項目終端機</Dest>
+    </String>
+    <String List="0" sID="000352">
+      <EDID>RAS_StartingGearTerminal</EDID>
+      <REC>TERM:FULL</REC>
+      <Source>Choose your Starting Gear</Source>
+      <Dest>選擇你的起始裝備</Dest>
+    </String>
+    <String List="0" sID="000353">
+      <EDID>RAS_ShipServicesActor</EDID>
+      <REC>NPC_:FULL</REC>
+      <Source>Choose a Ship</Source>
+      <Dest>選擇船隻</Dest>
+    </String>
+    <String List="0" sID="000355">
+      <EDID>RAS_DynamicEntry_Home_DWNTraitFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Trait Starter Home</Source>
+      <Dest>[DWN] 派系新手之家</Dest>
+    </String>
+    <String List="0" sID="000356">
+      <EDID>RAS_DynamicEntry_Base_None</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>None</Source>
+      <Dest>無</Dest>
+    </String>
+    <String List="0" sID="000357">
+      <EDID>RAS_DynamicEntry_Start_RandomSettlement</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Random Civilian Outpost</Source>
+      <Dest>隨機平民前哨站</Dest>
+    </String>
+    <String List="0" sID="000358">
+      <EDID>RAS_DynamicEntry_Home_DWNNewHomesteadFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] New Homestead House</Source>
+      <Dest>[DWN] 新宅基地</Dest>
+    </String>
+    <String List="0" sID="000359">
+      <EDID>RAS_DynamicEntry_Home_AkilaMidtown</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Akila Stretch Apartment</Source>
+      <Dest>阿基拉城 漫地區公寓</Dest>
+    </String>
+    <String List="0" sID="00035A">
+      <EDID>RAS_DynamicEntry_NA_Enable</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Enabled</Source>
+      <Dest>啟用</Dest>
+    </String>
+    <String List="0" sID="00035B">
+      <EDID>RAS_DynamicEntry_Home_DWNAkilaHouseFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Small Akila Home</Source>
+      <Dest>[DWN] 小型 Akila 住宅</Dest>
+    </String>
+    <String List="0" sID="00035C">
+      <EDID>RAS_DynamicEntry_Home_DWNNeonApartmentFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Neon Core Apartment</Source>
+      <Dest>[DWN] 霓虹城公寓</Dest>
+    </String>
+    <String List="0" sID="00035D">
+      <EDID>RAS_DynamicEntry_Start_Shipwrecked</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Shipwrecked</Source>
+      <Dest>船難</Dest>
+    </String>
+    <String List="0" sID="00035E">
+      <EDID>RAS_DynamicEntry_Start_AtParents</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Your Parents&apos; Home</Source>
+      <Dest>你父母的家</Dest>
+    </String>
+    <String List="0" sID="00035F">
+      <EDID>RAS_DynamicEntry_Start_StarstationSubmenu</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Starstations</Source>
+      <Dest>星際站</Dest>
+    </String>
+    <String List="0" sID="000360">
+      <EDID>RAS_DynamicEntry_Start_RandomMine</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Random Mine</Source>
+      <Dest>隨機礦坑</Dest>
+    </String>
+    <String List="0" sID="000361">
+      <EDID>RAS_DynamicEntry_Start_SettlementSubmenu</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Settlements</Source>
+      <Dest>定居點</Dest>
+    </String>
+    <String List="0" sID="000362">
+      <EDID>RAS_DynamicEntry_Start_RandomDungeon</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Random Dungeon</Source>
+      <Dest>隨機地下城</Dest>
+    </String>
+    <String List="0" sID="000363">
+      <EDID>RAS_DynamicEntry_Start_Default</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Default</Source>
+      <Dest>預設</Dest>
+    </String>
+    <String List="0" sID="000365">
+      <EDID>RAS_DynamicEntry_MapMarker_Viewport</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>The Viewport</Source>
+      <Dest>觀景港</Dest>
+    </String>
+    <String List="0" sID="000367">
+      <EDID>RAS_DynamicEntry_NA_ShipModifierFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Broken Ship Start</Source>
+      <Dest>損壞飛船開局</Dest>
+    </String>
+    <String List="0" sID="000368">
+      <EDID>RAS_DynamicEntry_Home_DWNEarthDomeFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Earth Dome</Source>
+      <Dest>[DWN] 地球穹頂之家</Dest>
+    </String>
+    <String List="0" sID="000369">
+      <EDID>RAS_DynamicEntry_Start_AtDreamHome</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Your dream home</Source>
+      <Dest>夢想家園</Dest>
+    </String>
+    <String List="0" sID="00036A">
+      <EDID>RAS_DynamicEntry_Start_AtHome</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Your home</Source>
+      <Dest>你的家</Dest>
+    </String>
+    <String List="0" sID="00036B">
+      <EDID>RAS_DynamicEntry_Home_AkilaCore</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Akila Core Residence</Source>
+      <Dest>阿基拉城 核心區住宅</Dest>
+    </String>
+    <String List="0" sID="00036C">
+      <EDID>RAS_DynamicEntry_NA_ShipModifierSubmenu</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Broken Ship Start</Source>
+      <Dest>損壞飛船開局</Dest>
+    </String>
+    <String List="0" sID="00036D">
+      <EDID>RAS_Artifact_ETA</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Artifact ETA</Source>
+      <Dest>神器 ETA</Dest>
+    </String>
+    <String List="0" sID="00036E">
+      <EDID>RAS_DynamicEntry_Home_NeonSkySuite</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Neon Sky Suite</Source>
+      <Dest>霓虹城 天際套房</Dest>
+    </String>
+    <String List="0" sID="000371">
+      <EDID>RAS_DynamicEntry_Home_NewAtlantisWell</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>The Well Apartment</Source>
+      <Dest>深井區公寓</Dest>
+    </String>
+    <String List="0" sID="000372">
+      <EDID>RAS_DynamicEntry_Home_DWNVolIIHotelFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] VolII Hotel - Room 42</Source>
+      <Dest>[DWN] VolII 飯店 - 42 號房</Dest>
+    </String>
+    <String List="0" sID="000373">
+      <EDID>RAS_DynamicEntry_MapMarker_Ship</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>At my Ship</Source>
+      <Dest>在我的船上</Dest>
+    </String>
+    <String List="0" sID="000374">
+      <EDID>RAS_DynamicEntry_Home_NeonSleepingCrate</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Neon Sleeping Crate</Source>
+      <Dest>霓虹城 睡眠箱</Dest>
+    </String>
+    <String List="0" sID="000375">
+      <EDID>RAS_DynamicEntry_NA_Disable</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Disabled</Source>
+      <Dest>禁用</Dest>
+    </String>
+    <String List="0" sID="000376">
+      <EDID>RAS_DynamicEntry_Home_DWNParadisoFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Paradiso Cabin</Source>
+      <Dest>[DWN] 天堂小屋</Dest>
+    </String>
+    <String List="0" sID="000379">
+      <EDID>RAS_DynamicEntry_Start_RandomScientificOutpost</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Random Scientific Outpost</Source>
+      <Dest>隨機科學哨站</Dest>
+    </String>
+    <String List="0" sID="00037A">
+      <EDID>RAS_ConstellationInvite</EDID>
+      <REC>BOOK:FNAM</REC>
+      <Source>Invitation to the Lodge</Source>
+      <Dest>群星小屋邀請</Dest>
+    </String>
+    <String List="0" sID="00037C">
+      <EDID>RAS_ConstellationInvite</EDID>
+      <REC>BOOK:FULL</REC>
+      <Source>Invitation to the Lodge</Source>
+      <Dest>群星小屋邀請</Dest>
+    </String>
+    <String List="0" sID="00037E">
+      <EDID>RAS_FactionsActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Select a Faction</Source>
+      <Dest>選擇派系</Dest>
+    </String>
+    <String List="0" sID="00037F">
+      <EDID>RAS_HomeChoosingActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Choose a Home</Source>
+      <Dest>選擇你的家</Dest>
+    </String>
+    <String List="0" sID="000380">
+      <EDID>RAS_TestActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Panel</Source>
+      <Dest>控制面板</Dest>
+    </String>
+    <String List="0" sID="000381">
+      <EDID>RAS_StartingLocationActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Choose Your Starting Location</Source>
+      <Dest>選擇您的開始位置</Dest>
+    </String>
+    <String List="0" sID="000382">
+      <EDID>RAS_NarrativeAdjustmentsActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Select Narrative Adjustments</Source>
+      <Dest>選擇敘述調整</Dest>
+    </String>
+    <String List="0" sID="000384">
+      <EDID>RAS_CharGenActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Change your Appearance</Source>
+      <Dest>改變你的外觀</Dest>
+    </String>
+    <String List="0" sID="000386">
+      <EDID>RAS_RescueActivator</EDID>
+      <REC>ACTI:ATTX</REC>
+      <Source>Call Rescue</Source>
+      <Dest>呼叫救援</Dest>
+    </String>
+    <String List="0" sID="000387">
+      <EDID>RAS_RescueActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Rescue Beacon</Source>
+      <Dest>求救信標</Dest>
+    </String>
+    <String List="1" sID="0000B9">
+      <EDID>RAS_KeepArtifactMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>I feel like I should keep this artifact, or at least not give it up freely.</Source>
+      <Dest>我覺得我應該保留這個神器，或至少不要輕易放棄它。</Dest>
+    </String>
+    <String List="1" sID="0000BC">
+      <EDID>RAS_ShipwreckStartTutorialMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You&apos;ve been temporarily given the &quot;Planetary Habitation&quot; perk, as you may require it in order to build an outpost and a rescue beacon. 
+Once you get off this planet (with the rescue beacon or another solution) the perk will be removed (or set back to the rank it was at before the crash).</Source>
+      <Dest>您已暫時獲得“行星居住”特權，因為您可能需要它來建造前哨站和救援信標。
+一旦你離開這個星球（使用救援信標或其他解決方案），該特權將被移除（或恢復到墜毀前的等級）。</Dest>
+    </String>
+    <String List="1" sID="0000C3">
+      <EDID>RAS_AddLevelMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Here you can level up your character.</Source>
+      <Dest>在這裡您可以提升您的角色等級。</Dest>
+    </String>
+    <String List="1" sID="0000C7">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Starting as a pedestrian in a random location can soft-lock you (your only escape would be to hijack an enemy ship, and you&apos;re not even sure there would be one nor it would be the right ship class). 
+
+Are you sure you wish to continue ?</Source>
+      <Dest>從隨機位置的行人開始可能會將您軟鎖定（您唯一的逃脫方法是劫持一艘敵艦，而您甚至不確定是否有一艘敵艦，也不確定它是否是正確的船級）。
+
+您確定要繼續嗎？</Dest>
+    </String>
+    <String List="1" sID="0000CB">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Do you want to unlock the furniture in the New Homestead home right now ?</Source>
+      <Dest>您想立即解鎖新家園的家具嗎？</Dest>
+    </String>
+    <String List="1" sID="0000D0">
+      <EDID>RAS_SelectionInvalidatedMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The configuration you just did invalidated the choice you made at the &lt;Alias=InvalidatedTerminal&gt;. The selection has been reset to default.</Source>
+      <Dest>您剛才的配置使您在 &lt;Alias=InvalidatedTerminal&gt; 處所做的選擇無效。該選擇已重設為預設值。</Dest>
+    </String>
+    <String List="1" sID="0000DE">
+      <EDID>RAS_StarstationStartWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Starting as a pedestrian in a starstation can soft-lock you as they may be no ship tech at the location. 
+
+Are you sure you wish to continue ?</Source>
+      <Dest>從星際站上的行人開始，您可能會被軟鎖定，因為該位置可能沒有飛船技術員。
+
+您確定要繼續嗎？</Dest>
+    </String>
+    <String List="1" sID="0000E0">
+      <EDID>RAS_RescueShipYetCalledMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You already called for a rescue ship, please wait for it to land.</Source>
+      <Dest>您已呼叫救援飛船，請等待其登陸。</Dest>
+    </String>
+    <String List="1" sID="0000E3">
+      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Impossible to find a landing point for the rescue ship. Please try again and if it doesn&apos;t work a second time, try to place this beacon in a flatter place.</Source>
+      <Dest>無法找到救援飛船的著陸點。請重試，如果第二次仍失敗，請嘗試將此信標放置在較平坦的地方。</Dest>
+    </String>
+    <String List="1" sID="0000E5">
+      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You will be given the amount of caps required to unlock the vehicles feature. If you cancel the purchase, they will be taken back.
+
+Beware: Unlocking vehicles is irreversible.</Source>
+      <Dest>您將獲得解鎖車輛功能所需的信用幣。如果你取消購買，系統會把點數收回。
+
+注意：解鎖車輛是不可逆的。</Dest>
+    </String>
+    <String List="1" sID="0000EA">
+      <EDID>RAS_FactionNotAvailableMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Factions will be available in an upcoming update.</Source>
+      <Dest>派系將在即將發布的更新中推出。</Dest>
+    </String>
+    <String List="1" sID="0000F1">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The ship is damaged and won&apos;t start.</Source>
+      <Dest>飛船受損了，無法啟動。</Dest>
+    </String>
+    <String List="1" sID="0000F9">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Here you can set your character to a given level or you can reach a custom level by leveling up artificially.</Source>
+      <Dest>在這裡，你可以將角色設定為指定等級，或者透過自行增加的方式達到自訂等級。</Dest>
+    </String>
+    <String List="1" sID="0000FF">
+      <EDID>RAS_MQ101DebugModifiedMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You installed another mod that edits the MQ101Debug global variable, most likely another alternate start mod. Mod is disabled. See the modpage for more information.
+If you doesn&apos;t find the incompatible mod in the &quot;Incompatibilities&quot; section of the mod description, feel free to report it in the comment section.</Source>
+      <Dest>您安裝了另一個編輯 MQ101Debug 全域變數的模組，很可能是另一個替代啟動模組。該模組已停用。請參閱模組頁面以了解更多資訊。
+如果您在模組描述的「不相容」部分中沒有找到不相容的模組，請隨時在評論部分報告。</Dest>
+    </String>
+    <String List="1" sID="000101">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The ship is now ready to go!</Source>
+      <Dest>飛船已準備出發！</Dest>
+    </String>
+    <String List="1" sID="000103">
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Here you can choose and customize a starting ship. You will access the ship technician dialogs as usual, except everything will be free.
+
+If you don&apos;t choose a ship you&apos;ll start as a pedestrian and will have to buy one later on.
+
+If you chose a ship and changed your mind, you can choose back the &quot;ship&quot; called &quot;No Ship Selected&quot; and you&apos;ll be a pedestrian again (it will be at the end of the list).
+
+Beware, if you modify a ship and then change your selection, the modified ship will be reset.
+
+If you level up using the &quot;Level Manager Activator&quot; the ship list will be modified accordingly.</Source>
+      <Dest>在這裡，您可以選擇並自訂起始飛船。您將像往常一樣訪問飛船技師對話框，但所有內容都是免費的。
+
+如果您不選擇飛船，您將以步行者的身份開始遊戲，之後需要購買飛船。
+
+如果您選擇了飛船後又改變了主意，您可以重新選擇名為“未選擇飛船”的飛船，然後您將再次成為步行者（該飛船位於列表末尾）。
+
+請注意，如果您修改了飛船，然後又更改了選擇，修改後的飛船將被重置。
+
+如果您使用「等級管理器啟動器」升級，飛船清單也會隨之修改。</Dest>
+    </String>
+    <String List="1" sID="00010C">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>What kind of new game are you willing to create ?</Source>
+      <Dest>您希望創造什麼樣的新遊戲？</Dest>
+    </String>
+    <String List="1" sID="00010E">
+      <EDID>RAS_ImpossibleToStartMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Error! Impossible to teleport the player to the selected location. Please choose another.</Source>
+      <Dest>錯誤！無法將玩家傳送至所選位置。請選擇其他位置。</Dest>
+    </String>
+    <String List="1" sID="000119">
+      <EDID>RAS_ConfirmStartMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Are you ready to start your new adventure ?</Source>
+      <Dest>您準備好開始新的冒險了嗎？</Dest>
+    </String>
+    <String List="1" sID="00011B">
+      <EDID>RAS_RepairFailedMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You don&apos;t have the required item(s).</Source>
+      <Dest>您沒有所需的物品。</Dest>
+    </String>
+    <String List="1" sID="000121">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You already chose a starting gear. Would you like to keep it and buy additional items or do you want to start anew ?</Source>
+      <Dest>您已選擇起始裝備。您想保留它並購買其他物品，還是想重新開始？</Dest>
+    </String>
+    <String List="1" sID="000126">
+      <EDID>RAS_StartNotReadyMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>I don&apos;t feel ready to go there...</Source>
+      <Dest>我還沒準備好去那裡…</Dest>
+    </String>
+    <String List="1" sID="000129">
+      <EDID>RAS_ShiptechNotReadyMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The ship list is still generating. Please wait a couple of seconds and try again.</Source>
+      <Dest>飛船列表仍在生成中。請等待幾秒鐘後重試。</Dest>
+    </String>
+    <String List="1" sID="000137">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="3" idMax="3">QUST:CNAM</REC>
+      <Source>I showed the artifact to Maurice Lyon in New Homestead and he directed me to a group of explorer named &quot;Constellation&quot; based in the MAST district in New Atlantis. I should go there and show them my finding.</Source>
+      <Dest>我把這件神器拿給新家園的莫里斯·里昂看，他建議我去新亞特蘭提斯MAST區，找一群名叫「群星」的探險組織。我應該去那裡，把我的發現給他們看。</Dest>
+    </String>
+    <String List="1" sID="000138">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="2" idMax="3">QUST:CNAM</REC>
+      <Source>I sold the artifact for a good amount, but I feel it&apos;s not the end of the story...</Source>
+      <Dest>我把這神器賣了個好價錢，但我覺得故事還沒結束…</Dest>
+    </String>
+    <String List="1" sID="000139">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="1" idMax="3">QUST:CNAM</REC>
+      <Source>The interferences were created by a strange artifact, I should find someone that can identify it or simply sell it.</Source>
+      <Dest>這些干擾是由一個奇怪的物品造成的，我應該找一個可以鑑定它的人或乾脆把它賣掉。</Dest>
+    </String>
+    <String List="1" sID="00013A">
+      <EDID>RAS_MQReplacerQuest</EDID>
+      <REC id="0" idMax="3">QUST:CNAM</REC>
+      <Source>I have very strange interferences on my scanner, I should find what causes them.</Source>
+      <Dest>我的掃描器出現了非常奇怪的干擾，我應該找出導致干擾的原因。</Dest>
+    </String>
+    <String List="1" sID="000144">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="4" idMax="4">QUST:CNAM</REC>
+      <Source>The ship&apos;s fully repaired and ready to fly. It&apos;s not perfect, but it&apos;ll get me off this planet.</Source>
+      <Dest>飛船已完全修好，隨時可以起飛。它雖然不完美，但能帶我離開這個星球。</Dest>
+    </String>
+    <String List="1" sID="000145">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="3" idMax="4">QUST:CNAM</REC>
+      <Source>I’ve found what I need. Time to get the ship back in working order.</Source>
+      <Dest>我找到我需要的東西了。是時候讓飛船恢復正常運作了。</Dest>
+    </String>
+    <String List="1" sID="000148">
+      <EDID>RAS_BrokenShipQuest</EDID>
+      <REC id="0" idMax="4">QUST:CNAM</REC>
+      <Source>My ship&apos;s taken some damage and isn&apos;t flight-ready. If I want to leave &lt;Alias=PlanetAlias&gt;, I&apos;ll need to track down the right materials and carry out the repairs myself.</Source>
+      <Dest>我的飛船受損了，無法飛行。如果我想離開&lt;Alias=PlanetAlias&gt;，我需要自己找到合適的材料並進行維修。</Dest>
+    </String>
+    <String List="1" sID="000152">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="7" idMax="7">QUST:CNAM</REC>
+      <Source>It turned out I got away from &lt;Alias=PlanetAlias&gt; without the help of any emergency ship.</Source>
+      <Dest>事實證明，我在沒有任何緊急船隻的幫助下逃離了&lt;Alias=PlanetAlias&gt;。</Dest>
+    </String>
+    <String List="1" sID="000153">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="6" idMax="7">QUST:CNAM</REC>
+      <Source>I&apos;ve boarded the rescue vessel and left &lt;Alias=PlanetAlias&gt; behind.</Source>
+      <Dest>我已經登上救援飛船，並離開了 &lt;Alias=PlanetAlias&gt;。</Dest>
+    </String>
+    <String List="1" sID="000154">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="5" idMax="7">QUST:CNAM</REC>
+      <Source>A rescue ship has finally landed. My signal worked. If I can make it aboard, I&apos;ll be off this rock for good.</Source>
+      <Dest>救援飛船終於靠岸了。我的訊號成功了。如果我能上船，就能永遠離開這塊礁石了。</Dest>
+    </String>
+    <String List="1" sID="000155">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="4" idMax="7">QUST:CNAM</REC>
+      <Source>The rescue beacon I built is broadcasting. It could take a while, but eventually someone should pick up the signal. I just have to hold out until help arrives.</Source>
+      <Dest>我建造的救援信標正在發出訊號。可能需要一段時間，但最終應該會有人收到訊號。我只需要堅持到救援到來。</Dest>
+    </String>
+    <String List="1" sID="000156">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="3" idMax="7">QUST:CNAM</REC>
+      <Source>The rescue beacon is assembled. Switching it on will send a signal into space - my only chance for someone to find me. I should activate it now.</Source>
+      <Dest>救援信標已經組裝好了。打開它會向太空發送信號。這是我唯一的機會。我現在就應該啟動它。</Dest>
+    </String>
+    <String List="1" sID="000157">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="2" idMax="7">QUST:CNAM</REC>
+      <Source>The outpost beacon is in place. Now I can set up the rescue beacon itself and get ready to send out a signal for help.</Source>
+      <Dest>前哨信標已就位。現在我可以設定救援信標，並準備發出求救訊號了。</Dest>
+    </String>
+    <String List="1" sID="000158">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="1" idMax="7">QUST:CNAM</REC>
+      <Source>With the materials gathered, I need to claim a spot to build the beacon. Placing an outpost beacon will mark the area and give me a place to set up the signal array.</Source>
+      <Dest>收集到材料後，我需要找到一個地方來建造信標。放置一個哨站信標可以標記該區域，並給我一個設置訊號陣列的地方。</Dest>
+    </String>
+    <String List="1" sID="000159">
+      <EDID>RAS_ShipwreckedRescueQuest</EDID>
+      <REC id="0" idMax="7">QUST:CNAM</REC>
+      <Source>Shipwrecked! The crash left me stranded on &lt;Alias=PlanetAlias&gt; with no working systems and no way to reach orbit. If anyone’s going to find me, I’ll have to make it happen. I should start searching the area for the materials to build a rescue beacon.</Source>
+      <Dest>飛船炸了！墜毀事件讓我被困在&lt;Alias=PlanetAlias&gt;上，系統癱瘓，無法進入軌道。如果有人想找到我，我必須想想辦法。我應該開始在附近尋找建造救援信標所需的材料。</Dest>
+    </String>
+    <String List="1" sID="00027C">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="7" idMax="7">QUST:CNAM</REC>
+      <Source>Barrett is back at the Lodge safe and sound. He&apos;s offered to join me on my travels in the future.</Source>
+      <Dest>巴雷特平安回到了小屋。他表示以後願意和我一起旅行。</Dest>
+    </String>
+    <String List="1" sID="00027D">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="6" idMax="7">QUST:CNAM</REC>
+      <Source>Barrett is free. I should take him back to the Lodge.</Source>
+      <Dest>巴雷特自由了。我應該把他帶回群星小屋。</Dest>
+    </String>
+    <String List="1" sID="00027E">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="5" idMax="7">QUST:CNAM</REC>
+      <Source>Matsura, the pirate captain, is willing to let Barrett go in exchange for a ransom. I need to figure out a way to free Barrett.</Source>
+      <Dest>海盜船長松浦願意釋放巴雷特，但需要支付贖金。我得想個辦法把巴雷特救出來。</Dest>
+    </String>
+    <String List="1" sID="00027F">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="4" idMax="7">QUST:CNAM</REC>
+      <Source>Heller survived, but Barrett has been captured by the Crimson Fleet again. I need to find him.</Source>
+      <Dest>海勒倖存了下來，但巴雷特又被深紅艦隊抓走了。我得找到他。</Dest>
+    </String>
+    <String List="1" sID="000280">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="3" idMax="7">QUST:CNAM</REC>
+      <Source>I have the coordinates that should take me to the pirate ship that captured Barrett and Heller.</Source>
+      <Dest>我有座標，可以帶我到捕獲巴雷特和海勒的海盜船。</Dest>
+    </String>
+    <String List="1" sID="000281">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="2" idMax="7">QUST:CNAM</REC>
+      <Source>I found a transmission from Barrett! Lin needs to hear about this.</Source>
+      <Dest>我發現了巴雷特的傳訊！林監工需要知道這件事。</Dest>
+    </String>
+    <String List="1" sID="000282">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="1" idMax="7">QUST:CNAM</REC>
+      <Source>Barrett is gone, captured by pirates. My only hope is that there might be some clue on where they went on the broken computer in the comms building.</Source>
+      <Dest>巴雷特不見了，被海盜抓走了。我唯一的希望就是通訊大樓裡那台壞掉的電腦能找到一些線索，看他們去了哪裡。</Dest>
+    </String>
+    <String List="1" sID="000283">
+      <EDID>RAS_MQ104B</EDID>
+      <REC id="0" idMax="7">QUST:CNAM</REC>
+      <Source>Argos Extractors is packing up operations on Vectera, but there&apos;s no word about Barrett. I need to go there and find out what happened.</Source>
+      <Dest>阿戈斯採礦公司正在處理維特拉星球上的事，但巴雷特卻沒有消息。我得去那裡看看發生了什麼事。</Dest>
+    </String>
+    <String List="1" sID="0002F5">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="6" idMax="6">QUST:CNAM</REC>
+      <Source>I returned to the Lodge in this universe. Now, the search for the Artifacts continues.</Source>
+      <Dest>我回到了這個宇宙的小屋。現在，尋找神器的工作仍在繼續。</Dest>
+    </String>
+    <String List="1" sID="0002F6">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="5" idMax="6">QUST:CNAM</REC>
+      <Source>I brought the Artifact to Constellation, and now they want me to join. Sarah Morgan, the Chair of Constellation, is asking me to come with her on a mission.</Source>
+      <Dest>我把神器帶到了群星總部，現在他們想讓我加入。群星的主席莎拉·摩根邀請我和她一起執行一項任務。</Dest>
+    </String>
+    <String List="1" sID="0002F7">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="4" idMax="6">QUST:CNAM</REC>
+      <Source>I&apos;ve been reborn in a new universe. I should head back to the Lodge and see if I can pick up the trail of the Artifacts.</Source>
+      <Dest>我重生到了一個新的宇宙。我應該回小屋看看能不能找到文物的蹤跡。</Dest>
+    </String>
+    <String List="1" sID="0002F8">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="3" idMax="6">QUST:CNAM</REC>
+      <Source>I met a robot just outside the Lodge and he invited me in. I should follow him.</Source>
+      <Dest>我在小屋外面遇到了一個機器人，他邀請我進去。我應該跟著他。</Dest>
+    </String>
+    <String List="1" sID="0002F9">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="2" idMax="6">QUST:CNAM</REC>
+      <Source>Thanks to Maurice Lyon, the &quot;Constellation&quot; exploration group is awaiting my visit to discuss about the strange artifact I found. I should go to their headquarters in the MAST district of New Atlantis as soon as I can.</Source>
+      <Dest>感謝莫里斯·里昂，「群星」探險隊正在等我，討論我發現的奇怪文物。我應該盡快前往他們位於新亞特蘭提斯MAST區的總部。</Dest>
+    </String>
+    <String List="1" sID="0002FA">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="1" idMax="6">QUST:CNAM</REC>
+      <Source>I received a letter from a group of explorers named &quot;Constellation&quot;. They are looking after artifacts like the one I sold and want to know about the circumstances of my finding. I should go to the Lodge in the MAST district of New Atlantis if I&apos;m willing to help.</Source>
+      <Dest>我收到一封來自一群名為「群星」的探險組織來信。他們正在保管類似我賣掉的那件文物，並想了解我發現這些文物的情況。如果我願意幫忙，我應該去新亞特蘭提斯MAST區的小屋看看。</Dest>
+    </String>
+    <String List="1" sID="0002FB">
+      <EDID>RAS_MQ101</EDID>
+      <REC id="0" idMax="6">QUST:CNAM</REC>
+      <Source>The ship technicians gave me a letter from an organization named &quot;Constellation&quot;. I should read it to find out what they want.</Source>
+      <Dest>飛船上的技術人員給了我一封來自「群星」組織的信。我應該讀一讀，看看他們到底想要什麼。</Dest>
+    </String>
+    <String List="1" sID="000310">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="5" idMax="5">QUST:CNAM</REC>
+      <Source>I defined who I am. I can now start my journey.</Source>
+      <Dest>我確定了自己的身分。現在我可以開始我的旅程了。</Dest>
+    </String>
+    <String List="1" sID="000311">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="4" idMax="5">QUST:CNAM</REC>
+      <Source>When I&apos;m done customizing my new adventure, I should go into the big orb at the center.</Source>
+      <Dest>當我完成我的新冒險的定制後，我應該進入中心的大球體。</Dest>
+    </String>
+    <String List="1" sID="000312">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="3" idMax="5">QUST:CNAM</REC>
+      <Source>I need to choose where my adventure will begin.</Source>
+      <Dest>我需要選擇我的冒險從哪裡開始。</Dest>
+    </String>
+    <String List="1" sID="000314">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="1" idMax="5">QUST:CNAM</REC>
+      <Source>I&apos;m a miner for Argos Extractors on Vectera.</Source>
+      <Dest>我是 維特拉 上 阿戈斯採礦公司 的礦工。</Dest>
+    </String>
+    <String List="1" sID="000315">
+      <EDID>RAS_NewGameManagerQuest</EDID>
+      <REC id="0" idMax="5">QUST:CNAM</REC>
+      <Source>Placeholder</Source>
+      <Dest>佔位符</Dest>
+    </String>
+    <String List="1" sID="00037B">
+      <EDID>RAS_ConstellationInvite</EDID>
+      <REC>BOOK:DESC</REC>
+      <Source>Hi &lt;Alias=Player&gt;,
+
+You recently sold an artifact of great value for our small group of explorers. We are named &quot;Constellation&quot; and are thriving to resolve the mysteries of the universe and in particular the one tied to the artifacts like the one you found. If you&apos;re interested, we&apos;d like to exchange with you about the circumstances of your finding and are willing to answer the questions you might have to the best we can. You can find us at &quot;The Lodge&quot; in the MAST District of New Atlantis.
+
+Looking forward to a favourable reply,
+
+Best regards,
+
+Sarah Morgan, Head of Constellation</Source>
+      <Dest>嗨 &lt;Alias=Player&gt;,
+
+你最近替我們這個小型探險團體賣出了一件非常珍貴的神器。我們是「群星組織（Constellation）」，致力於解開宇宙的種種謎團，尤其是那些與你發現的神器相關的秘密。
+
+如果你有興趣，我們希望能和你交流當時發現這件神器的經過，也會盡我們所能回答你可能提出的任何問題。你可以在新亞特蘭提斯的 MAST 區域裡的「群星小屋（The Lodge）」找到我們。
+
+期待你給予正面的回覆。
+
+
+群星組織負責人　莎拉·摩根
+此致 敬上</Dest>
+    </String>
+    <String List="2" sID="00012E">
+      <EDID>[FD000833]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
+      <Dest>他叫巴雷特，是一個名為「群星」的探索小組成員。你可以在新亞特蘭提斯 MAST 區的群星小屋找到他們。我會提前告訴他們你要來。順便提醒巴雷特，下次可就更貴了！</Dest>
+    </String>
+    <String List="2" sID="00012F">
+      <EDID>[FD000833]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
+      <Dest>喔！這我以前見過。這種異常的重力特徵非常獨特……我不太清楚那到底是什麼，不過我認識一個人，他肯定能幫上你。</Dest>
+    </String>
+    <String List="2" sID="000130">
+      <EDID>[FD00082F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>There is a museum on New Homestead. Its owner is probably the most informed on that kind of stuff in all the Settled Systems.</Source>
+      <Dest>新家園有一座博物館。它的主人可能是所有定居星系群中最了解這類事情的人。</Dest>
+    </String>
+    <String List="2" sID="000131">
+      <EDID>[FD00082D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a strange artifact, do you know any expert whom could identify it ?</Source>
+      <Dest>我發現了一個奇怪的神器，你知道哪位專家可以鑑定它嗎？</Dest>
+    </String>
+    <String List="2" sID="000132">
+      <EDID>[FD000827]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
+      <Dest>我在探索時發現了一個奇怪的神器，有什麼線索可以知道它是什麼嗎？</Dest>
+    </String>
+    <String List="2" sID="00015B">
+      <EDID>[FD00173C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sure you can find something you like.</Source>
+      <Dest>我相信你一定能找到你喜歡的東西。</Dest>
+    </String>
+    <String List="2" sID="00015C">
+      <EDID>[FD00090F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sure, have at it.</Source>
+      <Dest>當然，來吧。</Dest>
+    </String>
+    <String List="2" sID="00015D">
+      <EDID>[FD0008F1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sure you can find something you like.</Source>
+      <Dest>我相信你一定能找到你喜歡的東西。</Dest>
+    </String>
+    <String List="2" sID="00015E">
+      <EDID>[FD00173A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let me see what ships you have for sale.</Source>
+      <Dest>讓我看看你有哪些船要出售。</Dest>
+    </String>
+    <String List="2" sID="00015F">
+      <EDID>[FD001743]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let me see what ships you have for sale.</Source>
+      <Dest>讓我看看你有哪些船要出售。</Dest>
+    </String>
+    <String List="2" sID="000160">
+      <EDID>[FD001740]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;d like to view my vehicles.</Source>
+      <Dest>我想查看我的載具。</Dest>
+    </String>
+    <String List="2" sID="000161">
+      <EDID>[FD00173F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;d like to purchase a vehicle.</Source>
+      <Dest>我想購買一輛載具。</Dest>
+    </String>
+    <String List="2" sID="000162">
+      <EDID>[FD001746]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;d like to view and modify my ships.</Source>
+      <Dest>我想查看和改裝我的飛船。</Dest>
+    </String>
+    <String List="2" sID="000166">
+      <EDID>[FD000B2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re lucky the boss is so generous.</Source>
+      <Dest>你真幸運，老闆這麼慷慨。</Dest>
+    </String>
+    <String List="2" sID="000167">
+      <EDID>[FD000B2C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Matsura&apos;s in charge.</Source>
+      <Dest>松浦負責。</Dest>
+    </String>
+    <String List="2" sID="000168">
+      <EDID>[FD000B2B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got nothing to say to you.</Source>
+      <Dest>沒什麼好對你說的。</Dest>
+    </String>
+    <String List="2" sID="000169">
+      <EDID>[FD000B29]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I enjoyed our conversation, but we&apos;re done. You all can go.</Source>
+      <Dest>我很享受我們的談話，不過我們結束了。你們都可以走了。</Dest>
+    </String>
+    <String List="2" sID="00016A">
+      <EDID>[FD000B28]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Our business is concluded. See yourselves out.</Source>
+      <Dest>我們的事情已經辦完了。自己出去吧。</Dest>
+    </String>
+    <String List="2" sID="00016B">
+      <EDID>[FD000B27]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He is free to go. I do not encourage you to return.</Source>
+      <Dest>他可以走了。我不建議你們再回來。</Dest>
+    </String>
+    <String List="2" sID="00016C">
+      <EDID>[FD000B25]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You two take a moment to talk. We&apos;ll get to me.</Source>
+      <Dest>你們兩個先聊一下，之後再處理跟我有關的事情。</Dest>
+    </String>
+    <String List="2" sID="00016D">
+      <EDID>[FD000B24]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I believe you&apos;re here for Barrett?</Source>
+      <Dest>我相信你是來找巴雷特的吧？</Dest>
+    </String>
+    <String List="2" sID="00016E">
+      <EDID>[FD000B23]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t you have a word with Barrett, first?</Source>
+      <Dest>為什麼不先和巴雷特談談呢？</Dest>
+    </String>
+    <String List="2" sID="00016F">
+      <EDID>[FD000B20]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Can&apos;t wait to see if Noel&apos;s theory about the Artifacts was correct.</Source>
+      <Dest>迫不及待想看看諾耶爾關於神器的理論是否正確。</Dest>
+    </String>
+    <String List="2" sID="000170">
+      <EDID>[FD000B1F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>After this, you&apos;re kind of a pirate aficionado. Too soon?</Source>
+      <Dest>經過這件事，你算是半個海盜達人了。太快了吧？</Dest>
+    </String>
+    <String List="2" sID="000171">
+      <EDID>[FD000B1E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So... back to the Lodge?</Source>
+      <Dest>那麼...回群星小屋？</Dest>
+    </String>
+    <String List="2" sID="000172">
+      <EDID>[FD000B1D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, uh... I can&apos;t say I feel too bad about you killing someone who kidnapped me and probably murdered a lot of people, but...</Source>
+      <Dest>嗯，呃……說實話，我對你殺了那個綁架我、可能還殺了很多人的人，並沒有太多罪惡感，但……</Dest>
+    </String>
+    <String List="2" sID="000173">
+      <EDID>[FD000B1B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You convince Matsura to let me go, and we&apos;ll be on our way.</Source>
+      <Dest>你說服松浦放我走，我們就能出發了。</Dest>
+    </String>
+    <String List="2" sID="000174">
+      <EDID>[FD000B19]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It&apos;s not so bad here. Although I wouldn&apos;t mind if you could talk Matsura into letting me go...</Source>
+      <Dest>這裡還不錯。不過如果你能說服松浦放我走，我也不介意…</Dest>
+    </String>
+    <String List="2" sID="000175">
+      <EDID>[FD000B17]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Something I can help you with?</Source>
+      <Dest>有什麼我可以幫忙的嗎？</Dest>
+    </String>
+    <String List="2" sID="000176">
+      <EDID>[FD000B16]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Can&apos;t believe Barrett snuck a transmission to us. He always finds a way.</Source>
+      <Dest>真不敢相信巴雷特偷偷傳了訊息給我們。他總是有辦法。</Dest>
+    </String>
+    <String List="2" sID="000177">
+      <EDID>[FD000B15]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Good luck finding Barrett. Keep an eye out for Heller while you&apos;re at it?</Source>
+      <Dest>祝你找到巴雷特好運。順便留意一下海勒的狀況好嗎？</Dest>
+    </String>
+    <String List="2" sID="000178">
+      <EDID>[FD000B13]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Just don&apos;t get your hopes up, okay?</Source>
+      <Dest>別抱太大希望，好嗎？</Dest>
+    </String>
+    <String List="2" sID="000179">
+      <EDID>[FD000B12]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m packing up. What a mess...</Source>
+      <Dest>我正在收拾東西。真是亂七八糟…</Dest>
+    </String>
+    <String List="2" sID="00017A">
+      <EDID>[FD000B11]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want to try fixing that computer, go ahead.</Source>
+      <Dest>如果你想嘗試修復那台電腦，那就去吧。</Dest>
+    </String>
+    <String List="2" sID="00017B">
+      <EDID>[FD000814]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You shouldn&apos;t be here. Leave me alone.</Source>
+      <Dest>你不該來這裡。別管我。</Dest>
+    </String>
+    <String List="2" sID="00017C">
+      <EDID>[FD000836]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You should let us help you, there&apos;s no reason for you to have to suffer needlessly.</Source>
+      <Dest>你應該讓我們幫助你，你沒有理由承​​受不必要的痛苦。</Dest>
+    </String>
+    <String List="2" sID="00017D">
+      <EDID>[FD000832]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You sure about that? A med kit might do wonders for you? All right, your choice.</Source>
+      <Dest>你確定？一個醫療包或許能幫到你？好吧，你自己決定。</Dest>
+    </String>
+    <String List="2" sID="00017E">
+      <EDID>[FD000830]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It would seem prudent to accept any and all help offered to you right now.</Source>
+      <Dest>現在接受任何提供的幫助似乎是明智的。</Dest>
+    </String>
+    <String List="2" sID="00017F">
+      <EDID>[FD000851]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And don&apos;t leave out any details.</Source>
+      <Dest>不要遺漏任何細節。</Dest>
+    </String>
+    <String List="2" sID="000180">
+      <EDID>[FD00084E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Just focus, all right? Any detail may be important.</Source>
+      <Dest>專注，好嗎？任何細節都可能很重要。</Dest>
+    </String>
+    <String List="2" sID="000181">
+      <EDID>[FD000839]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>As best you can recall, given your current state of mind.</Source>
+      <Dest>鑑於您目前的精神狀態，盡您所能回憶就好。</Dest>
+    </String>
+    <String List="2" sID="000182">
+      <EDID>[FD00083F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh yeah. There&apos;s no certainty to the universe at all. Once you really start getting out there, the laws of physics kind of turn into suggestions.</Source>
+      <Dest>哦，是的。宇宙根本沒有確定性。一旦你真正開始探索宇宙，物理定律就變成了建議。</Dest>
+    </String>
+    <String List="2" sID="000183">
+      <EDID>[FD000842]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re pulling my leg again, right? What&apos;s the weirdest thing you&apos;ve seen? No exaggerations this time.</Source>
+      <Dest>你又在開我玩笑了吧？你見過最奇怪的東西是什麼？這次別唬爛了。</Dest>
+    </String>
+    <String List="2" sID="000184">
+      <EDID>[FD000845]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Unicorn. Not kidding.</Source>
+      <Dest>獨角獸。不是開玩笑。</Dest>
+    </String>
+    <String List="2" sID="000185">
+      <EDID>[FD000845]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Hmm... Let me think...</Source>
+      <Dest>嗯...讓我想想...</Dest>
+    </String>
+    <String List="2" sID="000186">
+      <EDID>[FD00084F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Holy shit. You actually found me.</Source>
+      <Dest>我的天！你居然找到我了。</Dest>
+    </String>
+    <String List="2" sID="000187">
+      <EDID>[FD00084B]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>You go into the far reaches of space too tightly wound, your brain is just going to pop like a soda can.</Source>
+      <Dest>如果你太緊張地進入太空的遙遠範圍，你的大腦就會像汽水罐一樣爆裂。</Dest>
+    </String>
+    <String List="2" sID="000188">
+      <EDID>[FD00084B]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Okay, it was more of an extremophile in the vague shape of a horse, but my point still stands. You need an open mind out there.</Source>
+      <Dest>好吧，它更像是一種外形模糊的馬形極端微生物，但我的觀點仍然成立。你需要保持開放的心態。</Dest>
+    </String>
+    <String List="2" sID="00018A">
+      <EDID>[FD000852]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m here to take you home, Barrett.</Source>
+      <Dest>我來接你回家，巴雷特。</Dest>
+    </String>
+    <String List="2" sID="00018B">
+      <EDID>[FD000848]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait. The mythical mare with a magic horn thing? Come on. Was King Arthur riding on it too?</Source>
+      <Dest>等等。那匹長著角，神話中的母馬？拜託。亞瑟王騎著它嗎？</Dest>
+    </String>
+    <String List="2" sID="00018C">
+      <EDID>[FD000855]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You know, it&apos;s actually been kind of nice. Matsura the Grim here is a great host.</Source>
+      <Dest>你知道嗎，其實挺不錯的。這位嚴肅的松浦可是個很棒的人。</Dest>
+    </String>
+    <String List="2" sID="00018D">
+      <EDID>[FD000858]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yes. I don&apos;t know why, but yes.</Source>
+      <Dest>是的。我不知道為什麼，但確實如此。</Dest>
+    </String>
+    <String List="2" sID="00018E">
+      <EDID>[FD000861]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Matsura the Grim here and I actually have a lot in common.</Source>
+      <Dest>我和這位松浦其實有很多共同點。</Dest>
+    </String>
+    <String List="2" sID="00018F">
+      <EDID>[FD00085B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, you didn&apos;t need to worry too much. Matsura the Grim here is actually a wonderful host.</Source>
+      <Dest>放心吧，其實你不用太緊張。這個板著臉的松浦可是個超棒的人呢。</Dest>
+    </String>
+    <String List="2" sID="000190">
+      <EDID>[FD00085E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you... friends? With the... pirate?</Source>
+      <Dest>你的……朋友？和那個……海盜？</Dest>
+    </String>
+    <String List="2" sID="000191">
+      <EDID>[FD00086A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Both escape artists. Been captured by SysDef myself plenty of times.</Source>
+      <Dest>我們倆都是逃脫高手。我自己也被聯殖抓過好幾次。</Dest>
+    </String>
+    <String List="2" sID="000192">
+      <EDID>[FD000867]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>No reason captivity should be unpleasant.</Source>
+      <Dest>囚禁不一定要是不愉快的。</Dest>
+    </String>
+    <String List="2" sID="000193">
+      <EDID>[FD000864]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>No sense letting people&apos;s last moments be unpleasant.</Source>
+      <Dest>沒有必要讓人生的最後時刻變得不愉快。</Dest>
+    </String>
+    <String List="2" sID="000194">
+      <EDID>[FD000870]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I mean, Matsura. Real considerate.</Source>
+      <Dest>瞧，這就是我的意思，松浦。真體貼。</Dest>
+    </String>
+    <String List="2" sID="000195">
+      <EDID>[FD00086D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I like about you, Matsura. Real renaissance man.</Source>
+      <Dest>瞧，這就是我喜歡你的地方，松浦。真正的文藝復興者。</Dest>
+    </String>
+    <String List="2" sID="000196">
+      <EDID>[FD000873]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I&apos;m talking about. Relativity. We&apos;re all just creatures of the universe trying to get away from what&apos;s after us.</Source>
+      <Dest>瞧，這就是我所說的。相對論。我們都是宇宙中的生物，都在努力逃避追趕我們的一切。</Dest>
+    </String>
+    <String List="2" sID="000197">
+      <EDID>[FD000876]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I have enjoyed our time together, Barrett. But I can&apos;t just let you go, with nothing to show for it.</Source>
+      <Dest>我很享受我們在一起的時光，巴雷特。但我不能就這樣兩手空空讓你離開。</Dest>
+    </String>
+    <String List="2" sID="000198">
+      <EDID>[FD00087C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This won&apos;t be the last time Barrett escapes the Crimson Fleet. He always gets away. You know that.</Source>
+      <Dest>這不會是巴雷特最後一次逃離深紅艦隊。但他總是能逃脫。你知道的。</Dest>
+    </String>
+    <String List="2" sID="000199">
+      <EDID>[FD000879]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Is Constellation willing to pay ransom in exchange for this man&apos;s freedom?</Source>
+      <Dest>群星組織是否願意支付贖金來換取這個人的自由？</Dest>
+    </String>
+    <String List="2" sID="00019A">
+      <EDID>[FD00087F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I... uh... very well. Perhaps it would be best to just let Barrett go.</Source>
+      <Dest>我……呃……好吧。或許最好還是放巴雷特走吧。</Dest>
+    </String>
+    <String List="2" sID="00019B">
+      <EDID>[FD000888]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Pay &lt;Global=NPCDemandMoney_Large&gt; Credits] We&apos;ll pay. Here.</Source>
+      <Dest>[Pay &lt;Global=NPCDemandMoney_Large&gt; Credits] 我們會付錢的。這裡。</Dest>
+    </String>
+    <String List="2" sID="00019C">
+      <EDID>[FD000885]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want me to end all this with nothing to show for it?</Source>
+      <Dest>你想讓我毫無收穫的結束這一切嗎？</Dest>
+    </String>
+    <String List="2" sID="00019D">
+      <EDID>[FD000882]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hasn&apos;t Barrett been enough trouble? Just let him go.</Source>
+      <Dest>巴雷特還造成不夠多麻煩嗎？放他走吧。</Dest>
+    </String>
+    <String List="2" sID="00019E">
+      <EDID>[FD00088D]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>But neither of us are going, anywhere. We&apos;ll wait while you shore up your finances.</Source>
+      <Dest>但我們倆哪裡也不去。我們會等你把財務狀況搞好。</Dest>
+    </String>
+    <String List="2" sID="00019F">
+      <EDID>[FD00088D]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>I&apos;m afraid your pockets are a little light. </Source>
+      <Dest>恐怕你的口袋有點空。</Dest>
+    </String>
+    <String List="2" sID="0001A0">
+      <EDID>[FD00088B]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Goodbye, Barrett. I have enjoyed our time together.</Source>
+      <Dest>再見，巴雷特。我很享受我們在一起的時光。</Dest>
+    </String>
+    <String List="2" sID="0001A1">
+      <EDID>[FD00088B]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>That settles that.</Source>
+      <Dest>那就解決了。</Dest>
+    </String>
+    <String List="2" sID="0001A2">
+      <EDID>[FD000890]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;We do have some insurance set aside for this exact problem.&quot;</Source>
+      <Dest>&quot;我們確實為這種問題做了一些保險。&quot;</Dest>
+    </String>
+    <String List="2" sID="0001A3">
+      <EDID>[FD000897]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Very well. As a favor to the Fleet, I&apos;ll let Barrett go.</Source>
+      <Dest>好吧。為了幫艦隊一個忙，我就放了巴雷特。</Dest>
+    </String>
+    <String List="2" sID="0001A4">
+      <EDID>[FD000897]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Ah, I had heard some rumors among the captains that we had a new hotshot...</Source>
+      <Dest>啊，我聽到船長們傳言說我們有了一位新的高手…</Dest>
+    </String>
+    <String List="2" sID="0001A5">
+      <EDID>[FD000894]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Release my friend, or I take this up with Delgado.</Source>
+      <Dest>放了我的朋友，否則我就去找德爾加多處理。</Dest>
+    </String>
+    <String List="2" sID="0001A6">
+      <EDID>[FD00089A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Attack] You&apos;re a pirate. This only ends one way.</Source>
+      <Dest>[攻擊] 你是個海盜。就只有一種結局。</Dest>
+    </String>
+    <String List="2" sID="0001A7">
+      <EDID>[FD0008A7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We do have some insurance set aside for this exact problem.</Source>
+      <Dest>我們確實為這種問題做了一些保險。</Dest>
+    </String>
+    <String List="2" sID="0001A8">
+      <EDID>[FD0008A1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Take your time. Neither of us are going anywhere.</Source>
+      <Dest>慢慢來。我們倆哪裡也不去。</Dest>
+    </String>
+    <String List="2" sID="0001A9">
+      <EDID>[FD00089E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;ll be back later.</Source>
+      <Dest>我晚點回來。</Dest>
+    </String>
+    <String List="2" sID="0001AA">
+      <EDID>[FD0008B0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Does that mean you&apos;ll be paying me, Miss...?</Source>
+      <Dest>這是否意味著您會付錢給我，小姐…？</Dest>
+    </String>
+    <String List="2" sID="0001AB">
+      <EDID>[FD0008B9]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>And we would appreciate it if you could spread the word in the Crimson Fleet that Barrett shouldn&apos;t be harassed. It&apos;s not working out for any of us. </Source>
+      <Dest>如果你能在深紅艦隊裡傳達一聲，讓大家別再騷擾巴雷特，我們會非常感激。這對我們任何人都沒好處。</Dest>
+    </String>
+    <String List="2" sID="0001AC">
+      <EDID>[FD0008B9]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>We don&apos;t need to be introduced. Here&apos;s your money. </Source>
+      <Dest>我們不需要介紹。這是你的錢。</Dest>
+    </String>
+    <String List="2" sID="0001AD">
+      <EDID>[FD0008C2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That&apos;s a fair point. But I can&apos;t control a man&apos;s reputation.</Source>
+      <Dest>說得對。但我控制不了一個人的名聲。</Dest>
+    </String>
+    <String List="2" sID="0001AE">
+      <EDID>[FD0008D4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Very well. Goodbye to you all. I have enjoyed this little exchange.</Source>
+      <Dest>嗯……好吧。各位再見。我很享受這次小小的交流。</Dest>
+    </String>
+    <String List="2" sID="0001AF">
+      <EDID>[FD0008CB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Do what you can. A suggestion to the right ears can work wonders.</Source>
+      <Dest>盡你所能。一個合適的建議可以創造奇蹟。</Dest>
+    </String>
+    <String List="2" sID="0001B0">
+      <EDID>[FD0008DD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See ya around, Matsura. I mean... well, you know, hopefully not.</Source>
+      <Dest>回頭見，松浦。我是說……嗯，你知道的，希望不會再見。</Dest>
+    </String>
+    <String List="2" sID="0001B1">
+      <EDID>[FD0008E6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Enough. I must insist on payment for Barrett&apos;s release.</Source>
+      <Dest>夠了。我必須堅持要求支付釋放巴雷特的費用。</Dest>
+    </String>
+    <String List="2" sID="0001B2">
+      <EDID>[FD0008E4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett has some good friends, it seems. Very well. You&apos;re all free to go.</Source>
+      <Dest>看來巴雷特有幾個好朋友。好吧，你們都可以走了。</Dest>
+    </String>
+    <String List="2" sID="0001B3">
+      <EDID>[FD0008EE]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well that was surprisingly easy.</Source>
+      <Dest>嗯，這竟然出乎意料的簡單。</Dest>
+    </String>
+    <String List="2" sID="0001B4">
+      <EDID>[FD0008F2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Likewise, Matsura! Good luck with all the... you know, pirating...</Source>
+      <Dest>我也是，松浦！祝你在那些，海盜的行動上好運啦……</Dest>
+    </String>
+    <String List="2" sID="0001B5">
+      <EDID>[FD0008FA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It&apos;s been a real pleasure, Matsura. Really. Good luck out there with the... you know, hurting people and taking their money...</Source>
+      <Dest>松浦，真是榮幸之至。真的。祝你好運，別再傷害別人，搶走他們的錢財了…</Dest>
+    </String>
+    <String List="2" sID="0001B6">
+      <EDID>[FD0008FF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>From the hands of one Crimson Fleet pirate to yet another. And this time, that pirate is IN Constellation. Wonders never cease...</Source>
+      <Dest>從一名深紅艦隊海盜手裡到另一名海盜手裡。而這次，那名海盜竟然就在群星艦隊裡。真是奇事不斷……</Dest>
+    </String>
+    <String List="2" sID="0001B7">
+      <EDID>[FD000904]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Of course Barrett isn&apos;t in any danger. Why am I not surprised?</Source>
+      <Dest>巴雷特當然沒有危險。我怎麼一點也不驚訝呢？</Dest>
+    </String>
+    <String List="2" sID="0001B8">
+      <EDID>[FD000910]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you serious with this? I thought you were dead!</Source>
+      <Dest>你是認真的嗎？我還以為你死了呢！</Dest>
+    </String>
+    <String List="2" sID="0001B9">
+      <EDID>[FD00090D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;ve missed you too, Vasco.</Source>
+      <Dest>我也很想念你，瓦士古。</Dest>
+    </String>
+    <String List="2" sID="0001BA">
+      <EDID>[FD00090B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, this is turning into a regular Constellation party, isn&apos;t it? Should&apos;ve brought drinks.</Source>
+      <Dest>這下子，又是變成群星派對了，不是嗎？應該帶點酒水來。</Dest>
+    </String>
+    <String List="2" sID="0001BB">
+      <EDID>[FD000909]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And Heller&apos;s here! Will wonders never cease?</Source>
+      <Dest>海勒也來了！奇蹟還會繼續發生嗎？</Dest>
+    </String>
+    <String List="2" sID="0001BC">
+      <EDID>[FD000907]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And Lin&apos;s here! Will wonders never cease?</Source>
+      <Dest>林也來了！奇蹟還會繼續發生嗎？</Dest>
+    </String>
+    <String List="2" sID="0001BD">
+      <EDID>[FD00091A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett is unharmed. The statistical probability of this scenario has once again defied all known mathematical models.</Source>
+      <Dest>巴雷特毫髮無傷。這種情況的統計機率再次推翻了所有已知的數學模型。</Dest>
+    </String>
+    <String List="2" sID="0001BE">
+      <EDID>[FD000917]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Now why did I get a feeling this is what we&apos;d find? Good to see you, Barrett.</Source>
+      <Dest>我怎麼總覺得我們會找到這個？見到你真好，巴雷特。</Dest>
+    </String>
+    <String List="2" sID="0001BF">
+      <EDID>[FD000915]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I wish I could say this is the first time this has happened with Barrett. But, well, it isn&apos;t...</Source>
+      <Dest>我真希望能說這是巴雷特第一次遇到這種事，但……唉，事實並非如此。</Dest>
+    </String>
+    <String List="2" sID="0001C0">
+      <EDID>[FD000913]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I do not understand. Is Barrett being held hostage, or not?</Source>
+      <Dest>我不太明白，巴雷特到底是被挾持了，還是沒有？</Dest>
+    </String>
+    <String List="2" sID="0001C1">
+      <EDID>[FD00091F]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Why don&apos;t I stick around? Help you get adjusted to the weird corners of the universe?</Source>
+      <Dest>不然我就留下來吧？帶你慢慢習慣這宇宙那些怪異的角落。</Dest>
+    </String>
+    <String List="2" sID="0001C2">
+      <EDID>[FD00091F]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>You feel it a bit, can&apos;t you? Ever since I found the second one, had the visions. Being around them is just... comforting.</Source>
+      <Dest>你也有感覺吧？自從我找到第二個之後，就一直有那些異象。待在它們身邊，感覺就是……很安心。</Dest>
+    </String>
+    <String List="2" sID="0001C3">
+      <EDID>[FD000925]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Marvelous.</Source>
+      <Dest>奇妙。</Dest>
+    </String>
+    <String List="2" sID="0001C5">
+      <EDID>[FD000922]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Traveling together sounds good to me.</Source>
+      <Dest>我覺得一起旅行聽起來不錯。</Dest>
+    </String>
+    <String List="2" sID="0001C6">
+      <EDID>[FD000935]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Looks like we&apos;re all done here. Time to head back to the Lodge?</Source>
+      <Dest>看來我們這裡的事情都完成了。該回群星小屋了？</Dest>
+    </String>
+    <String List="2" sID="0001C7">
+      <EDID>[FD000935]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Goodnight, Matsura. Guess you&apos;ll be pillaging in the great beyond now...</Source>
+      <Dest>晚安，松浦。看來你現在得去來世劫掠一番了…</Dest>
+    </String>
+    <String List="2" sID="0001C8">
+      <EDID>[FD00092B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You don&apos;t want to get dragged down in the gravity of my genius. I get it. Let me know if you change your mind.</Source>
+      <Dest>你不想被我的天才能力拖累。我懂。如果你改變主意了，告訴我。</Dest>
+    </String>
+    <String List="2" sID="0001CA">
+      <EDID>[FD000928]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I think it&apos;s better if we go our own ways.</Source>
+      <Dest>我認為我們最好各走各的路。</Dest>
+    </String>
+    <String List="2" sID="0001CB">
+      <EDID>[FD000940]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sorry for the wait, everyone! Got a little held up on Vectera.</Source>
+      <Dest>抱歉讓大家久等了！我在維特拉那邊耽擱了一下。</Dest>
+    </String>
+    <String List="2" sID="0001CC">
+      <EDID>[FD000946]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, some of us were...</Source>
+      <Dest>嗯，我們中的一些人…</Dest>
+    </String>
+    <String List="2" sID="0001CD">
+      <EDID>[FD000943]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett! We were worried sick.</Source>
+      <Dest>巴雷特！我們擔心死了。</Dest>
+    </String>
+    <String List="2" sID="0001CE">
+      <EDID>[FD00094C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Actually, Walter HAS been complaining about you more than usual, which is always a sign when he&apos;s worried.</Source>
+      <Dest>說真的，沃爾特最近抱怨你比平常多得多，這通常就表示他在擔心呢。</Dest>
+    </String>
+    <String List="2" sID="0001CF">
+      <EDID>[FD000949]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I see what you did there, Walter. And I know you&apos;ve been secretly crying into your piles of money just waiting for my return.</Source>
+      <Dest>沃爾特，我看得出你的小心思。我也知道，你肯定一直偷偷抱著那堆錢哭，等著我回來呢。</Dest>
+    </String>
+    <String List="2" sID="0001D0">
+      <EDID>[FD000952]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Ha! And to think the first Artifact was taking up dust on the library shelf. Now look at them all.</Source>
+      <Dest>哈！想想看，第一件神器竟然在圖書館書架上積灰塵。現在看看它們。</Dest>
+    </String>
+    <String List="2" sID="0001D1">
+      <EDID>[FD000952]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Wait. Is that? </Source>
+      <Dest>等一下。是嗎？</Dest>
+    </String>
+    <String List="2" sID="0001D2">
+      <EDID>[FD000956]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You seem like a reasonable person. Cut your losses and let Barrett go.</Source>
+      <Dest>你看起來是個通情達理的人。減少損失，放巴雷特走吧。</Dest>
+    </String>
+    <String List="2" sID="0001D3">
+      <EDID>[FD00094F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t start, Khatri...</Source>
+      <Dest>別開始，卡特里…</Dest>
+    </String>
+    <String List="2" sID="0001D4">
+      <EDID>[FD00095B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m afraid that&apos;s not an option...</Source>
+      <Dest>恐怕這不是一個選擇......</Dest>
+    </String>
+    <String List="2" sID="0001D5">
+      <EDID>[FD000959]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm. Worth considering...</Source>
+      <Dest>嗯。值得考慮…</Dest>
+    </String>
+    <String List="2" sID="0001D6">
+      <EDID>[FD00095F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Look, Barrett is more trouble than he&apos;s worth. A lot of pirates are already dead.</Source>
+      <Dest>你看，巴雷特帶來的麻煩比他帶來的價值還多。很多海盜都死了。</Dest>
+    </String>
+    <String List="2" sID="0001D7">
+      <EDID>[FD000964]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All the more reason I need to make sure I&apos;m compensated...</Source>
+      <Dest>那更要確保我能拿到補償了</Dest>
+    </String>
+    <String List="2" sID="0001D8">
+      <EDID>[FD000962]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He does seem to be unusually skilled in that area...</Source>
+      <Dest>他在那方面似乎特別在行……</Dest>
+    </String>
+    <String List="2" sID="0001D9">
+      <EDID>[FD000968]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If you wanted bloodshed, you would&apos;ve attacked already.</Source>
+      <Dest>要是你想見血，早就動手了。</Dest>
+    </String>
+    <String List="2" sID="0001DA">
+      <EDID>[FD00096D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t assume because I haven&apos;t pulled my gun, that I won&apos;t...</Source>
+      <Dest>不要因為我沒有拔出槍就認為我不會…</Dest>
+    </String>
+    <String List="2" sID="0001DB">
+      <EDID>[FD00096B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm. True...</Source>
+      <Dest>嗯。確實如此…</Dest>
+    </String>
+    <String List="2" sID="0001DC">
+      <EDID>[FD000971]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You clearly get along with Barrett. You&apos;re friends.</Source>
+      <Dest>你顯然和巴雷特處得很好。你們是朋友。</Dest>
+    </String>
+    <String List="2" sID="0001DD">
+      <EDID>[FD000976]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>A ransom isn&apos;t about how much one gets along with the hostage...</Source>
+      <Dest>贖金不是用來衡量你和人質的關係的…</Dest>
+    </String>
+    <String List="2" sID="0001DE">
+      <EDID>[FD000974]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He HAS been more entertaining than most hostages...</Source>
+      <Dest>他比大多數人質更有趣…</Dest>
+    </String>
+    <String List="2" sID="0001DF">
+      <EDID>[FD00097A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You were just laughing it up the whole time?</Source>
+      <Dest>你一直在笑嗎？</Dest>
+    </String>
+    <String List="2" sID="0001E0">
+      <EDID>[FD00097D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hey, you&apos;re underselling my harrowing escape from certain doom, here. A little charm goes a long way when the knives are out!</Source>
+      <Dest>嘿，你把我那次逃過死劫的經歷說得太輕了。刀子亮出來的時候，一點魅力可是能派上大用場的！</Dest>
+    </String>
+    <String List="2" sID="0001E1">
+      <EDID>[FD000981]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who was that pirate, anyway?</Source>
+      <Dest>那個海盜到底是誰？</Dest>
+    </String>
+    <String List="2" sID="0001E2">
+      <EDID>[FD000988]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You all right, Lin?</Source>
+      <Dest>你還好嗎，林？</Dest>
+    </String>
+    <String List="2" sID="0001E3">
+      <EDID>[FD000984]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Think I butted heads with his mentor once, years back. Had that same kind of &quot;surprisingly hospitable&quot; vibe. </Source>
+      <Dest>我記得多年前跟他師傅有過交集。也有那種『意外地好客』的感覺。</Dest>
+    </String>
+    <String List="2" sID="0001E4">
+      <EDID>[FD000984]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Matsura the Grim? Honestly, a pretty nice guy as far as pirates go.</Source>
+      <Dest>嚴肅的松浦？說實話，就海盜來說，他算是個挺不錯的人。</Dest>
+    </String>
+    <String List="2" sID="0001E5">
+      <EDID>[FD00098B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m fine. In this line of work, you make do. Even when the worst happens.</Source>
+      <Dest>我沒事。幹這行，總得湊合著過。即使發生最壞的情況。</Dest>
+    </String>
+    <String List="2" sID="0001E6">
+      <EDID>[FD000996]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Only managed to scrounge up one so far. I&apos;m sure there&apos;s more around.</Source>
+      <Dest>目前只找到一個。我肯定還有很多。</Dest>
+    </String>
+    <String List="2" sID="0001E7">
+      <EDID>[FD000994]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t see what good it will do since they&apos;re already gone, but fine. Here. You need any more, feel free to scavenge around.</Source>
+      <Dest>既然他們都走了，我看不出這有什麼用，不過沒關係。給你。你還需要什麼，儘管去翻找吧。</Dest>
+    </String>
+    <String List="2" sID="0001E8">
+      <EDID>[FD000991]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got any more Power Cells?</Source>
+      <Dest>還有更多電池嗎？</Dest>
+    </String>
+    <String List="2" sID="0001E9">
+      <EDID>[FD00098F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I need a Power Cell to repair the comms computer.</Source>
+      <Dest>我需要一個電力單元來修理通訊電腦。</Dest>
+    </String>
+    <String List="2" sID="0001EA">
+      <EDID>[FD00099E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I don&apos;t mind keeping Barrett as my guest, but I won&apos;t say no to credits.</Source>
+      <Dest>我不介意讓巴雷特作為我的客人，但我不會拒絕信用幣。</Dest>
+    </String>
+    <String List="2" sID="0001EB">
+      <EDID>[FD00099C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You are here to free your friend? Do you have the money?</Source>
+      <Dest>你是來解救你朋友的？你有錢嗎？</Dest>
+    </String>
+    <String List="2" sID="0001EC">
+      <EDID>[FD00099A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Have you reconsidered paying the ransom for Barrett?</Source>
+      <Dest>你重新考慮過為巴雷特支付贖金嗎？</Dest>
+    </String>
+    <String List="2" sID="0001ED">
+      <EDID>[FD0009A2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So you must be the one Constellation sent to look after Barrett.</Source>
+      <Dest>所以你一定是群星派來看巴雷特的人。</Dest>
+    </String>
+    <String List="2" sID="0001EE">
+      <EDID>[FD0009B1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re right. What happened here?</Source>
+      <Dest>你說得對。發生了什麼事？</Dest>
+    </String>
+    <String List="2" sID="0001EF">
+      <EDID>[FD0009DC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That doesn&apos;t sound good.</Source>
+      <Dest>這聽起來不太好。</Dest>
+    </String>
+    <String List="2" sID="0001F0">
+      <EDID>[FD0009BA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I sense their loss hit you even harder than you realized. You cared about them.</Source>
+      <Dest>我感覺他們的離去對你的打擊比你想像的還要大。你很關心他們。</Dest>
+    </String>
+    <String List="2" sID="0001F1">
+      <EDID>[FD0009BD]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>You think if you&apos;re strict with them, that they&apos;ll focus on the work. Give you a little distance if things go wrong. But you want them to win. Every boss does.</Source>
+      <Dest>你以為對他們嚴格一點，他們就會專心做事。事情出差錯時，也能跟你保持點距離。可你其實是想讓他們成功的。每個老闆都是這樣。</Dest>
+    </String>
+    <String List="2" sID="0001F2">
+      <EDID>[FD0009BD]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>You&apos;re right. You tell yourself you got deadlines. That the credits are what matter. But it&apos;s people doing the job, not machines...</Source>
+      <Dest>你說得沒錯。你告訴自己有截止期限，說信用幣才重要。但真正做事的，是人，不是機器……</Dest>
+    </String>
+    <String List="2" sID="0001F3">
+      <EDID>[FD0009B4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Pirates. We were right, they were tracking us. They attacked as soon as they saw the Frontier. Some of my dusties... They didn&apos;t make it.</Source>
+      <Dest>是海盜。我們猜得沒錯，他們一路跟蹤我們。一看到我們就立刻開火。我的一些夥伴……撐不住了。</Dest>
+    </String>
+    <String List="2" sID="0001F4">
+      <EDID>[FD0009C3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, how could you have? You weren&apos;t here.</Source>
+      <Dest>好吧，你怎麼會知道呢？你當時不在這裡。</Dest>
+    </String>
+    <String List="2" sID="0001F5">
+      <EDID>[FD0009C0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sorry. I didn&apos;t know.</Source>
+      <Dest>抱歉，我不知道。</Dest>
+    </String>
+    <String List="2" sID="0001F6">
+      <EDID>[FD0009D5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I started steeling myself to go out fighting, then that idiot puts his hand on my shoulder and says &quot;stay here, Lin. I got you.&quot;</Source>
+      <Dest>我都已經做好打到最後一刻的準備了，結果那白癡把手搭在我肩上，說一句 &quot;林，你待在這就好。我罩你。&quot;</Dest>
+    </String>
+    <String List="2" sID="0001F7">
+      <EDID>[FD0009D2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Anyway, I was pinned down behind some crates with Barrett. Bullets and laser fire everywhere. No smile on that damn carefree face of his, like he knew this was it.</Source>
+      <Dest>總之，我跟巴雷特被壓在幾個箱子後面，子彈跟雷射光到處亂飛。他那張平常一副淡定的臉上完全沒有笑容，好像知道自己要完了。</Dest>
+    </String>
+    <String List="2" sID="0001F8">
+      <EDID>[FD0009D8]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I know that talk. Suicide mission.</Source>
+      <Dest>我知道那句話。自殺任務。</Dest>
+    </String>
+    <String List="2" sID="0001F9">
+      <EDID>[FD0009E4]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>And that&apos;s when they brought out Heller. *sigh*</Source>
+      <Dest>就在這時，他們把海勒帶了出來。 *嘆息*</Dest>
+    </String>
+    <String List="2" sID="0001FA">
+      <EDID>[FD0009E4]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Drags him out into the open at gunpoint and demands to talk &quot;or else I&apos;m going to demonstrate Newton&apos;s third law on this guy&apos;s temporal lobe.&quot;</Source>
+      <Dest>把他用槍押到空地上，逼他說話， &quot;不然我就要在這傢伙的顳葉上示範牛頓第三定律。&quot;</Dest>
+    </String>
+    <String List="2" sID="0001FB">
+      <EDID>[FD0009E4]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>Next thing I know, two of the pirates are dead, and he&apos;s got the third one in a headlock. </Source>
+      <Dest>接下來我知道的是，兩個海盜死了，第三個海盜被他鎖住了頭。</Dest>
+    </String>
+    <String List="2" sID="0001FC">
+      <EDID>[FD0009E0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This would be the part I would absolutely run away.</Source>
+      <Dest>這是我絕對會逃避的部分。</Dest>
+    </String>
+    <String List="2" sID="0001FD">
+      <EDID>[FD0009E7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It was going so well until that part.</Source>
+      <Dest>直到那部分為止一切都進展順利。</Dest>
+    </String>
+    <String List="2" sID="0001FE">
+      <EDID>[FD0009EF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Tell me what happened.</Source>
+      <Dest>告訴我發生了什麼事。</Dest>
+    </String>
+    <String List="2" sID="0001FF">
+      <EDID>[FD0009F9]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>*sigh* I&apos;ve lost a lot of people on this run. I just want to pack up.</Source>
+      <Dest>*嘆氣* 這次我失去了很多人。我只想把這邊收拾好。</Dest>
+    </String>
+    <String List="2" sID="000200">
+      <EDID>[FD0009F9]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>You want to try it, go ahead, but the odds of them being alive even if you could find them... </Source>
+      <Dest>你想嘗試一下，那就去嘗試吧，但即使你能找到他們，他們還活著的幾率也很小…</Dest>
+    </String>
+    <String List="2" sID="000201">
+      <EDID>[FD0009F9]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>They could have grav jumped anywhere. I tried pinging a transmission to the ship in the comms building before they left, but the pirates must&apos;ve fried it.</Source>
+      <Dest>他們可能在任何地方做重力跳躍。我在他們離開前有試著向通訊樓裡的飛船發送訊號，但海盜大概把設備弄壞了。</Dest>
+    </String>
+    <String List="2" sID="000202">
+      <EDID>[FD0009F6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I need to find Barrett and Heller.</Source>
+      <Dest>我需要找到巴雷特和海勒。</Dest>
+    </String>
+    <String List="2" sID="000203">
+      <EDID>[FD0009FC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So you just stood around and did nothing. Boss of the year right here.</Source>
+      <Dest>所以你就站在那裡什麼都不做。年度最佳老闆就在這裡。</Dest>
+    </String>
+    <String List="2" sID="000204">
+      <EDID>[FD0009F3]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>And that&apos;s the last I saw of either of them.</Source>
+      <Dest>那是我最後一次見到他們。</Dest>
+    </String>
+    <String List="2" sID="000205">
+      <EDID>[FD0009F3]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>I didn&apos;t overhear everything, but after the ten longest seconds of my life, Barrett put his hands up and both of them ended up getting taken aboard the pirate ship.</Source>
+      <Dest>我沒有聽到全部內容，但在我生命中最漫長的十秒鐘之後，巴雷特舉起了雙手，他們倆最終都被帶上了海盜船。</Dest>
+    </String>
+    <String List="2" sID="000206">
+      <EDID>[FD0009FF]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>Even if we knew where they were... *sigh* I&apos;ve lost a lot people on this run. I just want to pack up.</Source>
+      <Dest>就算我們知道他們在哪裡…*嘆氣* 這次襲擊我失去了很多人。我只想收拾行李走人。</Dest>
+    </String>
+    <String List="2" sID="000207">
+      <EDID>[FD0009FF]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>And for your information, I ran straight to the comms room when they were flying away. Tried to see if I could reach them, but the computer is fried.</Source>
+      <Dest>順便說一下，我在他們飛走的時候就立刻衝去通訊室了。本來想看看能不能聯絡上他們，但那台電腦早就壞了。</Dest>
+    </String>
+    <String List="2" sID="000208">
+      <EDID>[FD0009FF]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>Don&apos;t push it. I&apos;ve lost people. People I KNEW, all right?</Source>
+      <Dest>別逼我了。我失去了一些人。我認識的人，好嗎？</Dest>
+    </String>
+    <String List="2" sID="000209">
+      <EDID>[FD000A05]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Our clients need to know when operations start and stop. We handle the rest.</Source>
+      <Dest>客戶只需知曉營運何時開始和結束。剩下的交給我們。</Dest>
+    </String>
+    <String List="2" sID="00020A">
+      <EDID>[FD000A05]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Too risky to put that in the message. Too much liability. You know how it is.</Source>
+      <Dest>放到訊息裡風險太高了。責任太大。你也清楚情況。</Dest>
+    </String>
+    <String List="2" sID="00020B">
+      <EDID>[FD000A02]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>A courier said Argos was packing up. Why not mention the attack?</Source>
+      <Dest>有個信使說阿戈斯的人在收拾撤離，為什麼不順便提到他們遭到攻擊？</Dest>
+    </String>
+    <String List="2" sID="00020C">
+      <EDID>[FD000A0C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not quite. Barrett is more dangerous than you might think.</Source>
+      <Dest>不完全是。巴雷特比你想像的更危險。</Dest>
+    </String>
+    <String List="2" sID="00020D">
+      <EDID>[FD000A0A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Suicide? *chuckle*  Naw. The guys is seriously tougher than he looks.</Source>
+      <Dest>自殺？ *輕笑* 不。這傢伙比看起來強悍多了。</Dest>
+    </String>
+    <String List="2" sID="00020E">
+      <EDID>[FD000A08]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>For some, perhaps. Barrett is quite capable, all things considered.</Source>
+      <Dest>對某些人來說，也許如此。但總的來說，巴雷特的能力還是很強的。</Dest>
+    </String>
+    <String List="2" sID="00020F">
+      <EDID>[FD000A13]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not for them, anyway. Barrett is more dangerous than you might think.</Source>
+      <Dest>無論如何，對他們來說都不是。巴雷特比你想像的更危險。</Dest>
+    </String>
+    <String List="2" sID="000210">
+      <EDID>[FD000A11]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett&apos;s fine. You might think he&apos;s just a wise ass, but he&apos;s got skills.</Source>
+      <Dest>巴雷特還不錯。你可能覺得他只是個自作聰明的傢伙，但他確實很有本事。</Dest>
+    </String>
+    <String List="2" sID="000211">
+      <EDID>[FD000A0F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I do not know Barrett as well as some, but he seems quite confident in his abilities, and not without cause.</Source>
+      <Dest>我不像其他人那樣了解巴雷特，但他似乎對自己的能力非常有信心，而且這並非毫無道理。</Dest>
+    </String>
+    <String List="2" sID="000212">
+      <EDID>[FD000A1A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you joking, or are you just a coward?</Source>
+      <Dest>你在開玩笑嗎，還是你只是個膽小鬼？</Dest>
+    </String>
+    <String List="2" sID="000213">
+      <EDID>[FD000A18]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>What? I&apos;ve seen you handle worse odds. Heck, we&apos;ve done it together.</Source>
+      <Dest>什麼？我見過你處理更糟糕的情況。見鬼，我們一起經歷過。</Dest>
+    </String>
+    <String List="2" sID="000214">
+      <EDID>[FD000A16]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Your humor is ill-timed.</Source>
+      <Dest>你開玩笑真是選錯時機了。</Dest>
+    </String>
+    <String List="2" sID="000215">
+      <EDID>[FD000A21]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你是誰？</Dest>
+    </String>
+    <String List="2" sID="000216">
+      <EDID>[FD000A2A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hold still. Let me patch you up.</Source>
+      <Dest>別動。我幫你包紮一下。</Dest>
+    </String>
+    <String List="2" sID="000217">
+      <EDID>[FD000A24]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re on a lot of painkillers, but otherwise you&apos;re in surprisingly good health.</Source>
+      <Dest>你服用了很多止痛藥，但除此之外，你的健康狀況出奇地好。</Dest>
+    </String>
+    <String List="2" sID="000218">
+      <EDID>[FD000A27]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Considering the spaceship wreckage, you mean? Yeah, well, you missed the worst of it. Pretty sure we ripped through all the emergency meds that were salvageable...</Source>
+      <Dest>你是說那艘飛船殘骸嗎？嗯，你可沒看到最糟的部分。我敢肯定，我們把所有能打撈到的急救藥都拿光了……</Dest>
+    </String>
+    <String List="2" sID="000219">
+      <EDID>[FD000A2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
+      <Dest>沒事。沒事，我會沒事的。只是，你知道，我吃了很多止痛藥和止吐藥，所以不想動作太大。</Dest>
+    </String>
+    <String List="2" sID="00021A">
+      <EDID>[FD000A3D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That doesn&apos;t explain the crashed ship.</Source>
+      <Dest>這並不能解釋墜毀的飛船。</Dest>
+    </String>
+    <String List="2" sID="00021B">
+      <EDID>[FD000A36]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I need to know what happened, Heller.</Source>
+      <Dest>我需要知道發生了什麼事，海勒。</Dest>
+    </String>
+    <String List="2" sID="00021C">
+      <EDID>[FD000A3A]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Barrett was all: &quot;Sorry, brother, I&apos;ll get us out of this. Trust me...&quot;</Source>
+      <Dest>巴雷特說：“抱歉，兄弟，我會把我們救出來的。相信我…”</Dest>
+    </String>
+    <String List="2" sID="00021D">
+      <EDID>[FD000A3A]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Man, I was so terrified when I got pulled on board that pirate ship.</Source>
+      <Dest>天哪，當我被拖上那艘海盜船時，我真是太害怕了。</Dest>
+    </String>
+    <String List="2" sID="00021E">
+      <EDID>[FD000A40]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh, I&apos;m getting to that...</Source>
+      <Dest>哦，我明白了…</Dest>
+    </String>
+    <String List="2" sID="00021F">
+      <EDID>[FD000A49]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So he had a plan then?</Source>
+      <Dest>那麼他當時有一個計劃嗎？</Dest>
+    </String>
+    <String List="2" sID="000220">
+      <EDID>[FD000A43]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
+      <Dest>&quot;相信我&quot; 是我最常用的台詞，尤其是在別人根本不該相信我的時候。</Dest>
+    </String>
+    <String List="2" sID="000221">
+      <EDID>[FD000A4C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not... what you and I would call a plan, necessarily...</Source>
+      <Dest>不……不一定是我們會說的那種計畫啦……</Dest>
+    </String>
+    <String List="2" sID="000222">
+      <EDID>[FD000A5A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And he shot something he shouldn&apos;t have...</Source>
+      <Dest>結果他射了不該射的東西…</Dest>
+    </String>
+    <String List="2" sID="000223">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>I mean, I didn&apos;t think it would work, but they came in. All of a sudden, we were wrestling with two of them. Barrett reached for one of their guns...</Source>
+      <Dest>我是說，我本以為不會有用，結果他們真的進來了。瞬間，我們就跟其中兩個打成一團。巴雷特還伸手去抓他們的槍……</Dest>
+    </String>
+    <String List="2" sID="000224">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>I just remember him shouting &quot;This kid is a killer! How am I supposed to defend myself against these pearly whites? He&apos;s gonna bite my face off!&quot;</Source>
+      <Dest>我只記得他大喊： &quot;這小孩就是個殺手！我要怎麼防得了他那一口白牙？他會把我的臉咬掉的！&quot;</Dest>
+    </String>
+    <String List="2" sID="000225">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>He tells me we need to start pretending to fight each other. Trick the pirates into thinking they need to come in before one of us gets killed.</Source>
+      <Dest>他叫我們先假裝互相打起來，好騙海盜以為，如果不趕快介入，我們其中一個就會掛掉。</Dest>
+    </String>
+    <String List="2" sID="000226">
+      <EDID>[FD000A46]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah... I&apos;m starting to see that...</Source>
+      <Dest>是的...我開始明白了...</Dest>
+    </String>
+    <String List="2" sID="000227">
+      <EDID>[FD000A56]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And he shot someone he shouldn&apos;t have...</Source>
+      <Dest>他射殺了不該射殺的人…</Dest>
+    </String>
+    <String List="2" sID="000228">
+      <EDID>[FD000A52]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Crash like this. Looks like he smashed the flight controls completely.</Source>
+      <Dest>撞成這樣，看起來他把飛行控制完全砸壞了。</Dest>
+    </String>
+    <String List="2" sID="000229">
+      <EDID>[FD000A61]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But Barrett isn&apos;t here. I need to find him.</Source>
+      <Dest>但是巴雷特不在這裡。我得去找他。</Dest>
+    </String>
+    <String List="2" sID="00022A">
+      <EDID>[FD000A5E]</EDID>
+      <REC id="3" idMax="3">INFO:NAM1</REC>
+      <Source>Then he did the little... finger gun thing...</Source>
+      <Dest>然後他做了那個…手指槍的動作…</Dest>
+    </String>
+    <String List="2" sID="00022B">
+      <EDID>[FD000A5E]</EDID>
+      <REC id="2" idMax="3">INFO:NAM1</REC>
+      <Source>&quot;You missed the fun part, Heller! I mean, I go through all the trouble of saving your butt, and you weren&apos;t even awake to notice!&quot;</Source>
+      <Dest>你完全錯過最刺激的部分了，海勒！我費盡心力救你，你竟然沒醒來看！</Dest>
+    </String>
+    <String List="2" sID="00022C">
+      <EDID>[FD000A5E]</EDID>
+      <REC id="1" idMax="3">INFO:NAM1</REC>
+      <Source>I blacked out, and when I came to, there he was. Smiling like it was just another day on the job.</Source>
+      <Dest>我暈過去，醒來的時候，他就在那裡，笑得好像這只是日常工作一樣。</Dest>
+    </String>
+    <String List="2" sID="00022D">
+      <EDID>[FD000A5E]</EDID>
+      <REC id="0" idMax="3">INFO:NAM1</REC>
+      <Source>Bingo. Blasted the pilot right in the back, through to the flight console. Dropped orbit like a rock off a high-rise.</Source>
+      <Dest>正中目標！直接從後背打穿駕駛，再貫穿飛控台。軌道瞬間像石頭從高樓掉下去一樣直墜。</Dest>
+    </String>
+    <String List="2" sID="00022E">
+      <EDID>[FD000A65]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Skip to the end, Heller.</Source>
+      <Dest>講重點，海勒。</Dest>
+    </String>
+    <String List="2" sID="00022F">
+      <EDID>[FD000A69]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He really survived the crash without a scratch?</Source>
+      <Dest>他真的在這次事故中毫髮無傷嗎？</Dest>
+    </String>
+    <String List="2" sID="000230">
+      <EDID>[FD000A6F]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>And then really, really less excited when Barrett said &quot;it&apos;s okay, I got this...&quot; He mumbled something to them, and then they were all gone.</Source>
+      <Dest>然後當巴雷特說 &quot;沒事，我搞得定&quot; 的時候，他的反應卻冷淡到不行。他對他們嘀咕了幾句，然後他們就全都消失了。</Dest>
+    </String>
+    <String List="2" sID="000231">
+      <EDID>[FD000A6F]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>So I was real excited when a ship showed up. Then less excited when I realized it was a Crimson Fleet ship. </Source>
+      <Dest>所以當一艘船出現的時候我真的很興奮。但當我意識到這是一艘深紅艦隊的船時，我就沒那麼興奮了。</Dest>
+    </String>
+    <String List="2" sID="000232">
+      <EDID>[FD000A6F]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>Oh, yeah. Probably should&apos;ve talked about that first. Did I mention I&apos;m on a lot of painkillers?</Source>
+      <Dest>哦，是的。或許應該先說說這個。我有沒有提過我吃了很多止痛藥？</Dest>
+    </String>
+    <String List="2" sID="000233">
+      <EDID>[FD000A6C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well... no, I don&apos;t think so. I caught him holding his ribs a few times. Favored his left leg a bit, you know?</Source>
+      <Dest>嗯……不，我不這麼覺得。我看到他好幾次抱著肋骨。左腿還有點不方便，你懂的？</Dest>
+    </String>
+    <String List="2" sID="000234">
+      <EDID>[FD000A72]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>The Crimson Fleet has him. Again...</Source>
+      <Dest>深紅艦隊抓住了他。又一次…</Dest>
+    </String>
+    <String List="2" sID="000235">
+      <EDID>[FD000A7E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>They took him? Why?</Source>
+      <Dest>他們把他帶走了？為什麼？</Dest>
+    </String>
+    <String List="2" sID="000236">
+      <EDID>[FD000A78]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That was a long way of saying &quot;pirates have Barrett.&quot;</Source>
+      <Dest>簡單說，就是海盜抓走了巴雷特。</Dest>
+    </String>
+    <String List="2" sID="000237">
+      <EDID>[FD000A75]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I was drifting in and out, but yeah. I think so. </Source>
+      <Dest>我當時有點ㄎㄧㄤ，不過是的，我想是這樣沒錯。</Dest>
+    </String>
+    <String List="2" sID="000238">
+      <EDID>[FD000A81]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I was drifting in and out, but uh, I think I heard the word &quot;ransom&quot;?</Source>
+      <Dest>我時而恍惚，但是，我想我聽到了「贖金」這個詞？</Dest>
+    </String>
+    <String List="2" sID="000239">
+      <EDID>[FD000A87]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let&apos;s get you on your feet first.</Source>
+      <Dest>我們先讓你站起來。</Dest>
+    </String>
+    <String List="2" sID="00023A">
+      <EDID>[FD000A7B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah, you know, you&apos;re really the one who should be upset about all this... Me laying here half conscious? Real inconvenience...</Source>
+      <Dest>說真的，現在應該生氣的人是你吧……我在這邊半昏迷躺著，真是麻煩到你了啦。</Dest>
+    </String>
+    <String List="2" sID="00023B">
+      <EDID>[FD000A84]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
+      <Dest>在他們進行重力跳躍前，我收到飛船發出的訊號。猜是巴雷特傳的。只是我狀況不太好……沒能仔細聽。給你。</Dest>
+    </String>
+    <String List="2" sID="00023C">
+      <EDID>[FD000A8A]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>Let me know when you want to head out.</Source>
+      <Dest>當你想出發時請告訴我。</Dest>
+    </String>
+    <String List="2" sID="00023D">
+      <EDID>[FD000A8A]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Give me a minute. I think the worst of it is... yeah. I&apos;ll be all right. I&apos;ll be all right. Ready to wisecrack with the best of them...</Source>
+      <Dest>給我一分鐘。我想最糟的情況已經過去了……對，沒事了，我會好起來的。我還能準備好跟大家一樣耍嘴皮子。</Dest>
+    </String>
+    <String List="2" sID="00023E">
+      <EDID>[FD000A8A]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>Yeah. Just, uh, don&apos;t ask me to operate any heavy machinery for a while.</Source>
+      <Dest>是的。只是，呃，暫時別讓我操作任何重型機械。</Dest>
+    </String>
+    <String List="2" sID="00023F">
+      <EDID>[FD000A8D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sit tight. I&apos;ll come back for you later.</Source>
+      <Dest>坐穩了。我稍後回來接你。</Dest>
+    </String>
+    <String List="2" sID="000240">
+      <EDID>[FD000A96]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I think Argos is probably going to write this whole thing off. Plus I&apos;m ninety percent sure working for you would be safer. I hope...</Source>
+      <Dest>我想阿戈斯大概會把整件事當成損失處理吧。再說，我有九成把握，替你們工作應該比較安全。希望如此……</Dest>
+    </String>
+    <String List="2" sID="000241">
+      <EDID>[FD000A90]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>You&apos;ll let me know when you&apos;re heading out, right?</Source>
+      <Dest>你出去的時候會通知我，對嗎？</Dest>
+    </String>
+    <String List="2" sID="000242">
+      <EDID>[FD000A90]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Think the worst of it is over... Yeah, actually... Feeling pretty good.</Source>
+      <Dest>我認為最糟糕的情況已經過去了...是的，實際上...感覺非常好。</Dest>
+    </String>
+    <String List="2" sID="000243">
+      <EDID>[FD000A90]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>Oh, uh, yeah. Okay... Cool...</Source>
+      <Dest>哦，呃，是的。好的……很酷……</Dest>
+    </String>
+    <String List="2" sID="000244">
+      <EDID>[FD000A93]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Shouldn&apos;t we get you back to Argos?</Source>
+      <Dest>我們不應該送你回阿戈斯嗎？</Dest>
+    </String>
+    <String List="2" sID="000245">
+      <EDID>[FD000A99]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hey, uh, I should come with you, right? I don&apos;t think anyone else is coming...</Source>
+      <Dest>嘿，呃，我應該跟你一起走，對吧？我覺得沒有其他人會來…</Dest>
+    </String>
+    <String List="2" sID="000246">
+      <EDID>[FD000AC0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Heller! Are you all right?</Source>
+      <Dest>海勒！你還好嗎？</Dest>
+    </String>
+    <String List="2" sID="000247">
+      <EDID>[FD000AC3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh... hey Lin. Good to see ya again...</Source>
+      <Dest>喔……嘿，林。很高興再次見到你…</Dest>
+    </String>
+    <String List="2" sID="000248">
+      <EDID>[FD000AD1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah? Got anything?</Source>
+      <Dest>嗯？有什麼事嗎？</Dest>
+    </String>
+    <String List="2" sID="000249">
+      <EDID>[FD000ACF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Guessing there wasn&apos;t anything on that old computer, was there?</Source>
+      <Dest>我猜那台舊電腦上什麼都沒有，是嗎？</Dest>
+    </String>
+    <String List="2" sID="00024A">
+      <EDID>[FD000ACD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You find anything?</Source>
+      <Dest>你發現什麼了嗎？</Dest>
+    </String>
+    <String List="2" sID="00024B">
+      <EDID>[FD000ACB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So, you actually get that computer working again?</Source>
+      <Dest>那麼，你真的讓那台電腦重新運作了嗎？</Dest>
+    </String>
+    <String List="2" sID="00024C">
+      <EDID>[FD000AD4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a transmission. From Barrett.</Source>
+      <Dest>我找到一段通訊，來自巴雷特。</Dest>
+    </String>
+    <String List="2" sID="00024D">
+      <EDID>[FD000AD7]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>Okay, let me send you the location data embedded in the transmission. Find them, okay?</Source>
+      <Dest>好，讓我把傳輸裡嵌入的座標資料發給你。去找到他們，好嗎？</Dest>
+    </String>
+    <String List="2" sID="00024E">
+      <EDID>[FD000AD7]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Funny. Even knowing he&apos;s alive. I still never want to see him again. Heller, on the other hand...</Source>
+      <Dest>有趣的是，就算知道他還活著，我還是寧願永遠不要再見到他。不過海勒就另當別論了……</Dest>
+    </String>
+    <String List="2" sID="00024F">
+      <EDID>[FD000AD7]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>What? Let me see that...</Source>
+      <Dest>什麼？讓我看看…</Dest>
+    </String>
+    <String List="2" sID="000250">
+      <EDID>[FD000ADA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Still checking things out.</Source>
+      <Dest>仍在檢查。</Dest>
+    </String>
+    <String List="2" sID="000251">
+      <EDID>[FD000AE3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Be a while before Argos comes to pick me up. I&apos;ll be here if you need me.</Source>
+      <Dest>等會兒，阿戈斯會來接我。如果你需要我，我會在這裡。</Dest>
+    </String>
+    <String List="2" sID="000252">
+      <EDID>[FD000ADD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh. Okay...</Source>
+      <Dest>哦，好的...</Dest>
+    </String>
+    <String List="2" sID="000253">
+      <EDID>[FD000AE0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thanks Lin.</Source>
+      <Dest>謝謝，林。</Dest>
+    </String>
+    <String List="2" sID="000254">
+      <EDID>[FD000AE6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I knew it! You care about them. You&apos;re a softy.</Source>
+      <Dest>我就知道！你關心他們。你心軟了。</Dest>
+    </String>
+    <String List="2" sID="000255">
+      <EDID>[FD000AE9]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Just get after them, okay?</Source>
+      <Dest>追上他們就行了，好嗎？</Dest>
+    </String>
+    <String List="2" sID="000256">
+      <EDID>[FD000AE9]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Well don&apos;t start buying me stuffed animals for my birthday or anything, but yes, all right. I don&apos;t like seeing my people hurt. Even Barrett and Heller.</Source>
+      <Dest>好吧，別開始買毛絨玩具給我當生日禮物甚麼的，不過。我不喜歡看到我的人受傷。即使是巴雷特和海勒。</Dest>
+    </String>
+    <String List="2" sID="000257">
+      <EDID>[FD000AEC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t you come with me?</Source>
+      <Dest>為什麼不跟我一起去？</Dest>
+    </String>
+    <String List="2" sID="000258">
+      <EDID>[FD000AEF]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>But it might not be a bad time to think about a career change after... all this. If you have room in your crew for an outpost supervisor, maybe we can talk.</Source>
+      <Dest>不過經過……這一切後，也許現在正是考慮換工作的好時機。如果你們隊伍正好缺一個前哨站主管，也許我們可以聊聊。</Dest>
+    </String>
+    <String List="2" sID="000259">
+      <EDID>[FD000AEF]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Not really cut out for... whatever it is people like you and Barrett do.</Source>
+      <Dest>其實我並不適合……做你和巴雷特那種人會做的事情。</Dest>
+    </String>
+    <String List="2" sID="00025A">
+      <EDID>[FD000AEF]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>What? Really?</Source>
+      <Dest>啥？真的嗎？</Dest>
+    </String>
+    <String List="2" sID="00025B">
+      <EDID>[FD000AF2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And hey, if you ever need a little extra help, I&apos;ve been thinking about a career change lately. Maybe it&apos;s time to put Argos behind me.</Source>
+      <Dest>嘿，如果你需要額外的幫助，我最近在考慮換工作。也許是時候把阿戈斯拋在腦後了。</Dest>
+    </String>
+    <String List="2" sID="00025C">
+      <EDID>[FD000AF6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait wait wait! We&apos;re all citizens of the universe here! No one needs to die. Well, I mean, no one else...</Source>
+      <Dest>等等，等等！我們都是宇宙的公民！沒有人需要死。呃，我的意思是，沒有其他人需要死。</Dest>
+    </String>
+    <String List="2" sID="00025D">
+      <EDID>[FD000AF9]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Listen to your friend. I am trying to be reasonable.</Source>
+      <Dest>聽聽你朋友的意見。我正在努力講道理。</Dest>
+    </String>
+    <String List="2" sID="00025E">
+      <EDID>[FD000AFC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fine. Let&apos;s talk about this ransom.</Source>
+      <Dest>好吧。我們來談談贖金的事吧。</Dest>
+    </String>
+    <String List="2" sID="00025F">
+      <EDID>[FD000AFF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yes. Let&apos;s.</Source>
+      <Dest>是的，我們一起吧。</Dest>
+    </String>
+    <String List="2" sID="000260">
+      <EDID>[FD000B02]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Attack] Draw your weapon. Or not. I don&apos;t care.</Source>
+      <Dest>[攻擊] 拔出你的武器。或不拔。我不在乎。</Dest>
+    </String>
+    <String List="2" sID="000261">
+      <EDID>[FD000B05]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Very well.</Source>
+      <Dest>非常好。</Dest>
+    </String>
+    <String List="2" sID="000262">
+      <EDID>[FD000B0C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett&apos;s right. There are better ways of handling this than using violence.</Source>
+      <Dest>巴雷特說得對。除了暴力，還有更好的方法來解決這個問題。</Dest>
+    </String>
+    <String List="2" sID="000263">
+      <EDID>[FD000B0A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Maybe we don&apos;t antagonize the person holding Barrett hostage? Just a suggestion.</Source>
+      <Dest>或許我們不該去激怒那個劫持巴雷特的人？這只是個建議。</Dest>
+    </String>
+    <String List="2" sID="000264">
+      <EDID>[FD000B08]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If Barrett prefers a non-violent solution, we should consider it.</Source>
+      <Dest>如果巴雷特傾向於非暴力的解決方案，我們應該考慮。</Dest>
+    </String>
+    <String List="2" sID="000265">
+      <EDID>[FD000B89]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m from Constellation. I went here to find Barrett.</Source>
+      <Dest>我是群星組織的人，來這裡是為了找巴雷特。</Dest>
+    </String>
+    <String List="2" sID="000266">
+      <EDID>[FD0010EC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh! Before I forget, the Frontier - our main ship - should still be on Vectera. It got damaged during the gunfire so the pirates weren&apos;t able to steal it. I would bring some repairing stuff with me if I was to pick it up.</Source>
+      <Dest>喔！差點忘了，我們的主力艦「開拓號」應該還在維特拉。它在交火中受損，所以海盜沒能偷走。如果我要去取回它，我會帶一些修理工具。</Dest>
+    </String>
+    <String List="2" sID="000267">
+      <EDID>[FD000B8B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh! I thought you were some pirate coming back to kill me. Lucky me, right?</Source>
+      <Dest>哦！我以為你是回來殺我的海盜呢。我運氣真好，對吧？</Dest>
+    </String>
+    <String List="2" sID="000285">
+      <EDID>[FD000872]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Vasco. Identify.</Source>
+      <Dest>瓦士古。辨認。</Dest>
+    </String>
+    <String List="2" sID="000286">
+      <EDID>[FD00085A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hi! Sorry to bother you, but I&apos;ve been asked to transmit you a message. Here it is.</Source>
+      <Dest>你好！很抱歉打擾你，我受託給你捎個口信。給你。</Dest>
+    </String>
+    <String List="2" sID="000287">
+      <EDID>[FD000955]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Join you? Just because I found this artifact?</Source>
+      <Dest>加入你們？就因為我發現了這件神器？</Dest>
+    </String>
+    <String List="2" sID="000288">
+      <EDID>[FD000869]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Wait... there&apos;s something familiar about you...</Source>
+      <Dest>等等……你身上有些熟悉的東西……</Dest>
+    </String>
+    <String List="2" sID="000289">
+      <EDID>[FD000869]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Excuse me, this is a private...</Source>
+      <Dest>不好意思，這是私人的…</Dest>
+    </String>
+    <String List="2" sID="00028A">
+      <EDID>[FD000945]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Everyone will be in the library. Just inside.</Source>
+      <Dest>大家都會在圖書館。就在裡面。</Dest>
+    </String>
+    <String List="2" sID="00028B">
+      <EDID>[FD000841]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If you&apos;re interested, perhaps we&apos;ll give you a chance to join us today.</Source>
+      <Dest>如果您有興趣，也許我們今天會給您一個加入我們的機會。</Dest>
+    </String>
+    <String List="2" sID="00028C">
+      <EDID>[FD0008CA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Welcome to constellation, stranger! The others are awaiting you inside, please follow me.</Source>
+      <Dest>歡迎來到群星，陌生人！其他人正在裡面等你，請跟我來。</Dest>
+    </String>
+    <String List="2" sID="00028D">
+      <EDID>[FD000958]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh please. It&apos;s completely ridiculous. Easiest bet I&apos;ll ever win.</Source>
+      <Dest>拜託。這簡直荒唐。這可是我最輕鬆的賭注了。</Dest>
+    </String>
+    <String List="2" sID="00028E">
+      <EDID>[FD00087B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Scanning. Cross-referencing known employee records of our affiliated organizations. Please remain still...</Source>
+      <Dest>掃描中。交叉比對已知關聯機構員工記錄。請保持不動…</Dest>
+    </String>
+    <String List="2" sID="00028F">
+      <EDID>[FD000961]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You really think what I&apos;m suggesting is so outlandish? All the phenomenon we see out in the stars, and what I&apos;m saying is the most impossible theory?</Source>
+      <Dest>你真的覺得我提出的想法有這麼離譜嗎？宇宙中那些現象我們都看在眼裡，結果在你眼中，反而是我這個理論最不可能？</Dest>
+    </String>
+    <String List="2" sID="000290">
+      <EDID>[FD00096A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You two keep going on like this, and I&apos;m banning wagers. I&apos;m serious.</Source>
+      <Dest>你們兩個再這樣下去，我就禁止你們打賭。我是認真的。</Dest>
+    </String>
+    <String List="2" sID="000291">
+      <EDID>[FD000973]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We&apos;ll play nice. Just a little friendly conversation, Sarah. That&apos;s all.</Source>
+      <Dest>我們會表現得友善些。只是友善地聊幾句，莎拉。就這樣。</Dest>
+    </String>
+    <String List="2" sID="000292">
+      <EDID>[FD0009B6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh, this is just typical. She hands over our ship to some random thug who&apos;s trying to steal our belongings.</Source>
+      <Dest>唉，這還真是老套。她竟然把我們的飛船交給一個想搶我們東西的無名暴徒。</Dest>
+    </String>
+    <String List="2" sID="000293">
+      <EDID>[FD0009C4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Walter...</Source>
+      <Dest>沃爾特…</Dest>
+    </String>
+    <String List="2" sID="000294">
+      <EDID>[FD0009C5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we start with you telling me what Constellation is?</Source>
+      <Dest>我們先來告訴你什麼是群星吧？</Dest>
+    </String>
+    <String List="2" sID="000295">
+      <EDID>[FD00098E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We appear to have a visitor...</Source>
+      <Dest>我們好像有一位訪客…</Dest>
+    </String>
+    <String List="2" sID="000296">
+      <EDID>[FD0009A4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Welcome to Constellation. We have a lot to talk about.</Source>
+      <Dest>歡迎來到群星。我們有很多事情要聊。</Dest>
+    </String>
+    <String List="2" sID="000297">
+      <EDID>[FD0009B7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你是誰？</Dest>
+    </String>
+    <String List="2" sID="000298">
+      <EDID>[FD0009C8]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Very well. This is a private organization dedicated to exploration. Space primarily, but also anomalies throughout the Settled Systems.</Source>
+      <Dest>嗯……很好。這是一個致力於探索的私人組織。主要探索太空，但也探索定居星系群中的異常現象。</Dest>
+    </String>
+    <String List="2" sID="000299">
+      <EDID>[FD0009CA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>As far as we know, he could be building a gigantic bomb that will blew up as we finish.</Source>
+      <Dest>據我們所知，他可能正在造一顆巨型炸彈，等我們一完成就會引爆。</Dest>
+    </String>
+    <String List="2" sID="00029A">
+      <EDID>[FD0009BF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sarah Morgan. Chair of Constellation.</Source>
+      <Dest>莎拉摩根，群星的主席</Dest>
+    </String>
+    <String List="2" sID="00029B">
+      <EDID>[FD0009FE]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Walter...</Source>
+      <Dest>沃爾特…</Dest>
+    </String>
+    <String List="2" sID="00029C">
+      <EDID>[FD0009F5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh, this is just typical. She hands over our ship to some random thug who&apos;s trying to steal our belongings.</Source>
+      <Dest>唉，這還真是老套。她竟然把我們的飛船交給一個想搶我們東西的無名暴徒。</Dest>
+    </String>
+    <String List="2" sID="00029D">
+      <EDID>[FD000A07]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>As far as we know, he could be building a gigantic bomb that will blew up as we finish.</Source>
+      <Dest>據我們所知，他可能正在造一顆巨型炸彈，等我們一完成就會引爆。</Dest>
+    </String>
+    <String List="2" sID="00029E">
+      <EDID>[FD000A17]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. They&apos;re here. With the artifact.</Source>
+      <Dest>但那不會發生。他們在這裡，還帶著那件神器。</Dest>
+    </String>
+    <String List="2" sID="00029F">
+      <EDID>[FD000A12]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. She&apos;s here. With the artifact.</Source>
+      <Dest>但那不會發生。她在這裡，還帶著那件神器。</Dest>
+    </String>
+    <String List="2" sID="0002A0">
+      <EDID>[FD000A0E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. He&apos;s here. With the artifact.</Source>
+      <Dest>但那不會發生。他在這裡，還帶著那件神器。</Dest>
+    </String>
+    <String List="2" sID="0002A1">
+      <EDID>[FD000A32]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
+      <Dest>謝謝你，馬提歐。現在我們集中精力處理眼前的事情吧，好嗎？</Dest>
+    </String>
+    <String List="2" sID="0002A2">
+      <EDID>[FD000A3C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
+      <Dest>謝謝你，馬提歐。現在我們集中精力處理眼前的事情吧，好嗎？</Dest>
+    </String>
+    <String List="2" sID="0002A3">
+      <EDID>[FD0009F2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. They&apos;re here. And not threatening us.</Source>
+      <Dest>但那不會發生。他們在這裡，而且也沒有威脅我們。</Dest>
+    </String>
+    <String List="2" sID="0002A4">
+      <EDID>[FD0009EC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. She&apos;s here. And not threatening us.</Source>
+      <Dest>但那不會發生。她在這裡，而且也沒有威脅我們。</Dest>
+    </String>
+    <String List="2" sID="0002A5">
+      <EDID>[FD0009D7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But that&apos;s not gonna happen. He&apos;s here. And not threatening us.</Source>
+      <Dest>但那不會發生。他在這裡，而且也沒有威脅我們。</Dest>
+    </String>
+    <String List="2" sID="0002A6">
+      <EDID>[FD000A45]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>What happened when it was extracted? Did anyone see anything? Hear anything?</Source>
+      <Dest>拔出來之後發生了什麼事？有人看到什麼嗎？聽到什麼嗎？</Dest>
+    </String>
+    <String List="2" sID="0002A7">
+      <EDID>[FD000A4E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It was bright lights and music.</Source>
+      <Dest>燈光明亮，音樂動聽。</Dest>
+    </String>
+    <String List="2" sID="0002A8">
+      <EDID>[FD000A59]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Interesting. Similar to Barrett&apos;s description of the experience. With less embellishment...</Source>
+      <Dest>有意思。跟巴雷特描述的經歷很像，只是少了些修飾…</Dest>
+    </String>
+    <String List="2" sID="0002A9">
+      <EDID>[FD000A6E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So something DID happen. Barrett mentioned a loss of consciousness last time he found an Artifact.</Source>
+      <Dest>所以確實發生了一些事。巴雷特提到他上次發現神器時失去了意識。</Dest>
+    </String>
+    <String List="2" sID="0002AA">
+      <EDID>[FD000A64]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m not talking about this. That thing almost killed me.</Source>
+      <Dest>我不是說這個。那東西差點要了我的命。</Dest>
+    </String>
+    <String List="2" sID="0002AB">
+      <EDID>[FD000A9F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>There. Are you hearing this? Do you all believe me now?</Source>
+      <Dest>好了。你們聽到了嗎？現在你們都相信我了嗎？</Dest>
+    </String>
+    <String List="2" sID="0002AC">
+      <EDID>[FD000A77]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How many times has this happened? Who else has had these visions?</Source>
+      <Dest>這種情況發生過幾次？還有誰也經歷過這樣的異象？</Dest>
+    </String>
+    <String List="2" sID="0002AD">
+      <EDID>[FD000A8F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Whether it happened or not wasn&apos;t in doubt. But honestly, Khatri, if you expect us to believe in fairy tales...</Source>
+      <Dest>這件事是否發生，毋庸置疑。但說真的，卡特里……你以為我們會相信童話故事嗎？</Dest>
+    </String>
+    <String List="2" sID="0002AE">
+      <EDID>[FD000A98]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If this is the greatest mystery in the universe, why couldn&apos;t it be part of the ultimate mystery?</Source>
+      <Dest>如果這是宇宙中最大的謎團，為什麼它不能成為終極謎團的一部分呢？</Dest>
+    </String>
+    <String List="2" sID="0002AF">
+      <EDID>[FD000ABA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Right. Let&apos;s see...</Source>
+      <Dest>好的。讓我們看看…</Dest>
+    </String>
+    <String List="2" sID="0002B0">
+      <EDID>[FD000AD0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We know the Artifacts react to each other. The pieces we already have move when they&apos;re in close contact.</Source>
+      <Dest>我們知道神器之間會互相反應。我們現有的神器在緊密接觸時會移動。</Dest>
+    </String>
+    <String List="2" sID="0002B1">
+      <EDID>[FD000AD9]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Now, if we add this new one to the two we already have...</Source>
+      <Dest>現在，如果我們將這個新的新增到我們已經擁有的兩個中…</Dest>
+    </String>
+    <String List="2" sID="0002B2">
+      <EDID>[FD000AC2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Gentlemen, can we please focus?</Source>
+      <Dest>先生們，我們可以集中注意力嗎？</Dest>
+    </String>
+    <String List="2" sID="0002B3">
+      <EDID>[FD000B39]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>She&apos;s not the only one. If they&apos;re coming together, that means there&apos;s a set.</Source>
+      <Dest>她不是唯一一個。如果他們聚在一起，那就代表有一組了。</Dest>
+    </String>
+    <String List="2" sID="0002B4">
+      <EDID>[FD000AB3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Noel. I think it&apos;s time we tested your theory.</Source>
+      <Dest>諾耶爾。我想是時候驗證一下你的理論了。</Dest>
+    </String>
+    <String List="2" sID="0002B5">
+      <EDID>[FD000A80]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Why? We&apos;re not sure yet. So if you wouldn&apos;t mind adding another data point?</Source>
+      <Dest>為什麼？我們還不確定。所以，您介意再增加一個數據點嗎？</Dest>
+    </String>
+    <String List="2" sID="0002B6">
+      <EDID>[FD000A80]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>We think it&apos;s anyone else who pulls one out of the rock for the first time. </Source>
+      <Dest>我們認為這是其他人第一次從岩石中挖出它。</Dest>
+    </String>
+    <String List="2" sID="0002B7">
+      <EDID>[FD0021E0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>The Artifact. If you could place it on the table here.</Source>
+      <Dest>神器。如果你能把它放在這張桌子上就好了。</Dest>
+    </String>
+    <String List="2" sID="0002B8">
+      <EDID>[FD000AE2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>After you. Here&apos;s the Artifact you found. If you could place it on the table here.</Source>
+      <Dest>你先請。這是你找到的神器。請把它放在這張桌子上。</Dest>
+    </String>
+    <String List="2" sID="0002B9">
+      <EDID>[FD000B09]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Easy, girl. Breathe. You&apos;ll have a heart attack.</Source>
+      <Dest>放輕鬆，姑娘。深呼吸。不然你會心臟病發作的。</Dest>
+    </String>
+    <String List="2" sID="0002BA">
+      <EDID>[FD000B30]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Built by an intelligence outside the Settled Systems.</Source>
+      <Dest>由定居星系群之外的智慧文明所建造。</Dest>
+    </String>
+    <String List="2" sID="0002BB">
+      <EDID>[FD000B42]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Still two thousand credits for our little wager, Khatri?</Source>
+      <Dest>我們的小賭注還是兩千信用幣嗎，卡特里？</Dest>
+    </String>
+    <String List="2" sID="0002BC">
+      <EDID>[FD000B45]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re on, Walter.</Source>
+      <Dest>輪到你了，沃爾特。</Dest>
+    </String>
+    <String List="2" sID="0002BD">
+      <EDID>[FD000B36]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh my god. That&apos;s it. They&apos;re reacting! Look at how it&apos;s coming together.</Source>
+      <Dest>天哪！就是這樣！他們有反應了！看看效果如何。</Dest>
+    </String>
+    <String List="2" sID="0002BE">
+      <EDID>[FD000B3F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That energy that&apos;s arcing between them? No manufactured material in the Settled Systems can do that! None of them! This proves that...</Source>
+      <Dest>看到它們之間那股跳動的能量了嗎？定居星系裡沒有任何人造材料做得到！一個都沒有！這就證明了...</Dest>
+    </String>
+    <String List="2" sID="0002BF">
+      <EDID>[FD000B3C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not to take away from the moment, but, what are we going to do about our new friend here?</Source>
+      <Dest>不是想掃興，但我們要怎麼處理這位新朋友？</Dest>
+    </String>
+    <String List="2" sID="0002C0">
+      <EDID>[FD000B56]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That&apos;s it. Just like the others.</Source>
+      <Dest>就是這樣。和其他的一樣。</Dest>
+    </String>
+    <String List="2" sID="0002C1">
+      <EDID>[FD000B59]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And to imagine we thought there were only two of them at first...</Source>
+      <Dest>想像一下，我們一開始以為只有他們兩個人…</Dest>
+    </String>
+    <String List="2" sID="0002C2">
+      <EDID>[FD000B33]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, if we had all the answers, it wouldn&apos;t be exciting, now would it?</Source>
+      <Dest>好吧，如果我們知道了所有答案，那就不會令人興奮了，不是嗎？</Dest>
+    </String>
+    <String List="2" sID="0002C3">
+      <EDID>[FD000B6A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
+      <Dest>好的。我加入。告訴我接下來會發生什麼事。</Dest>
+    </String>
+    <String List="2" sID="0002C4">
+      <EDID>[FD000B79]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>As to what they are? What they&apos;re building? Well, you&apos;ll be part of solving that puzzle now.</Source>
+      <Dest>它們是什麼？它們在建造什麼？現在，你可以參與解答這個謎題了。</Dest>
+    </String>
+    <String List="2" sID="0002C5">
+      <EDID>[FD000B79]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Individually, they&apos;re just odd hunks of metal. Another oddity from the uncharted reaches of space.</Source>
+      <Dest>單獨看，它們只是些奇怪的金屬塊。不過是宇宙未探區域裡的又一個怪異產物。</Dest>
+    </String>
+    <String List="2" sID="0002C6">
+      <EDID>[FD001135]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re a... I see... So, some of our theories about the Artifacts are correct.</Source>
+      <Dest>你是......我明白了......所以，我們關於神器的一些理論是正確的。</Dest>
+    </String>
+    <String List="2" sID="0002C7">
+      <EDID>[FD000B73]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Come find me when you&apos;re ready.</Source>
+      <Dest>當你準備好了就來找我。</Dest>
+    </String>
+    <String List="2" sID="0002C8">
+      <EDID>[FD000B73]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Fair enough, but you need a place to stay in the city, right? Why don&apos;t you settle in here? We owe you that much.</Source>
+      <Dest>好吧，不過你在城裡總得有個地方住吧？你為什麼不在這裡安頓下來？我們欠你太多了。</Dest>
+    </String>
+    <String List="2" sID="0002C9">
+      <EDID>[FD000B6D]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Come find me when you&apos;re ready. You and I are going to be doing some traveling together. Get your feet wet.</Source>
+      <Dest>準備好了就來找我。我們一起去旅行。去體驗一下吧。</Dest>
+    </String>
+    <String List="2" sID="0002CA">
+      <EDID>[FD000B6D]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>You should take some time to get settled in. Introduce yourself to everyone. Some of our members aren&apos;t here, but you&apos;ll meet them soon.</Source>
+      <Dest>你應該花點時間適應一下。向大家介紹一下自己。有些成員沒到，但你很快就會認識他們。</Dest>
+    </String>
+    <String List="2" sID="0002CB">
+      <EDID>[FD000B70]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This is all a little much. I need some time to clear my head.</Source>
+      <Dest>這有一點過分了。我需要點時間理清思緒。</Dest>
+    </String>
+    <String List="2" sID="0002CC">
+      <EDID>[FD000B67]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>*chuckle* So, are you ready to get to work? See if exploration is the life you want to lead in this little universe of ours? </Source>
+      <Dest>*輕笑* 那麼，準備開始幹正事了嗎？想探索看看是不是你想在這小小宇宙裡過的生活？</Dest>
+    </String>
+    <String List="2" sID="0002CE">
+      <EDID>[FD000B76]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How much do you know about the Artifacts? What are they?</Source>
+      <Dest>你對這些神器了解多少？它們是什麼？</Dest>
+    </String>
+    <String List="2" sID="0002CF">
+      <EDID>[FD001129]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I see. It was months ago. So... why are you showing up now?</Source>
+      <Dest>我明白了。幾個月前的事了。所以……你為什麼現在才出現？</Dest>
+    </String>
+    <String List="2" sID="0002D1">
+      <EDID>[FD000B7C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want me in Constellation? What does that mean? What&apos;s expected?</Source>
+      <Dest>你想讓我加入群星？這是什麼意思？有什麼期待嗎？</Dest>
+    </String>
+    <String List="2" sID="0002D2">
+      <EDID>[FD001126]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This appears to be the person who sold the Artifact.</Source>
+      <Dest>這看起來就是出售這個神器的人。</Dest>
+    </String>
+    <String List="2" sID="0002D3">
+      <EDID>[FD000B7F]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Beyond that, you&apos;ll be expected to use your own judgement. Just like the rest of us.</Source>
+      <Dest>除此之外，你還需要運用自己的判斷力。就像我們其他人一樣。</Dest>
+    </String>
+    <String List="2" sID="0002D4">
+      <EDID>[FD000B7F]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>We&apos;re all here because we&apos;re committed to exploring space. Humanity may have settled the stars, but that doesn&apos;t mean we should stop diving into the unknown.</Source>
+      <Dest>我們在這裡，是因為我們致力於探索太空。人類或許已經征服了星空，但這並不代表我們應該停止探索未知世界。</Dest>
+    </String>
+    <String List="2" sID="0002D5">
+      <EDID>[FD000BA9]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>One of our members, Barrett, went to another planet to assist an Argos Extractors mining operation - the same one he accidentally got into trouble with pirates earlier. So if they are a bit on edge, please forgive them. They&apos;re under a lot of stress.</Source>
+      <Dest>我們的一名成員巴雷特去了另一顆星球，協助阿戈斯採礦公司的行動，就是他之前不小心和海盜惹上麻煩的那個地方。所以如果他們現在有點緊張，還請見諒。他們正承受著很大的壓力。</Dest>
+    </String>
+    <String List="2" sID="0002D6">
+      <EDID>[FD000B82]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>In addition to credits, why don&apos;t we set you up with a backpack with some boost capability? You&apos;ll need it out in the field, anyway. Just mind your head.</Source>
+      <Dest>除了信用幣，我們可以為你配一個有噴射功能的背包嗎？反正你在野外也用得上。不過要注意你的頭。</Dest>
+    </String>
+    <String List="2" sID="0002D7">
+      <EDID>[FD000B82]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>And here. I think you&apos;ve earned something for bringing the Artifact to us.</Source>
+      <Dest>還有這個。我想你把神器帶給我們，應該得到一些回報。</Dest>
+    </String>
+    <String List="2" sID="0002D8">
+      <EDID>[FD00112F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Interesting...</Source>
+      <Dest>嗯...有趣...</Dest>
+    </String>
+    <String List="2" sID="0002D9">
+      <EDID>[FD00112C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Repeat Main Quest] I want to join Constellation. Unravel this mystery with you.</Source>
+      <Dest>[重複主線任務] 我想加入群星。和你一起解開這個謎。</Dest>
+    </String>
+    <String List="2" sID="0002DA">
+      <EDID>[FD00113B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re taking their word for it? What if this person&apos;s just delusional?</Source>
+      <Dest>你相信他們說的話？萬一這人只是妄想症患者呢？</Dest>
+    </String>
+    <String List="2" sID="0002DB">
+      <EDID>[FD001161]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We probably know as much as you do at this point. As you can see, they&apos;re forming something now that we have multiple pieces. What it is, we&apos;ll have to find out together.</Source>
+      <Dest>我們現在知道的可能和你一樣多。正如你所見，它們正在形成某種東西，因為我們掌握了多個碎片。它到底是什麼，我們得一起去弄清楚。</Dest>
+    </String>
+    <String List="2" sID="0002DC">
+      <EDID>[FD001149]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear them out? We know next to nothing. We have everything to gain if they&apos;re telling the truth.</Source>
+      <Dest>我們為什麼不聽他們說完？我們幾乎一無所知。如果他們說的是實話，我們就會受益匪淺。</Dest>
+    </String>
+    <String List="2" sID="0002DD">
+      <EDID>[FD001147]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear him out? We know next to nothing. We have everything to gain if he&apos;s telling the truth.</Source>
+      <Dest>我們為什麼不聽他說完？我們幾乎一無所知。如果他說的是實話，我們就會受益匪淺。</Dest>
+    </String>
+    <String List="2" sID="0002DE">
+      <EDID>[FD001145]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear her out? We know next to nothing. We have everything to gain if she&apos;s telling the truth.</Source>
+      <Dest>我們為什麼不聽她說完？我們幾乎一無所知。如果她說的是實話，我們就會受益匪淺。</Dest>
+    </String>
+    <String List="2" sID="0002DF">
+      <EDID>[FD001142]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... they still showed up, didn&apos;t they? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>可是……他們還是出現了，不是嗎？堅持不懈不是探險家的標誌性特質嗎？</Dest>
+    </String>
+    <String List="2" sID="0002E0">
+      <EDID>[FD001140]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... she still showed up, didn&apos;t she? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>可是……她還是出現了，不是嗎？堅持不懈不是探險家的標誌性特質嗎？</Dest>
+    </String>
+    <String List="2" sID="0002E1">
+      <EDID>[FD00113E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... he still showed up, didn&apos;t he? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>可是……他還是出現了，不是嗎？堅持不懈不是探險家的標誌性特質嗎？</Dest>
+    </String>
+    <String List="2" sID="0002E2">
+      <EDID>[FD001132]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Skip Main Quest] I&apos;m not who you think. I&apos;m Starborn. I know what the Artifacts are.</Source>
+      <Dest>[跳過主線任務] 我不是你想像的人。我是星裔。我知道神器是什麼。</Dest>
+    </String>
+    <String List="2" sID="0002E3">
+      <EDID>[FD001152]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m ready. Let&apos;s find out what these Artifacts are.</Source>
+      <Dest>我準備好了。我們去看看這些神器是什麼。</Dest>
+    </String>
+    <String List="2" sID="0002E4">
+      <EDID>[FD001155]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Good. We&apos;ll set you up with a room. Take some time to meet everyone. Then when you&apos;re ready, you and I will be doing some traveling together. Get your feet wet.</Source>
+      <Dest>很好。我們會給你安排房間。花點時間跟大家認識。等你準備好了，我們就可以一起去旅行了。快去體驗一下吧。</Dest>
+    </String>
+    <String List="2" sID="0002E5">
+      <EDID>[FD001138]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want this random thug in our organization? After getting lost the first time?</Source>
+      <Dest>你想讓這個腦袋破洞的混混加入我們組織？他上次不是還迷路了？</Dest>
+    </String>
+    <String List="2" sID="0002E6">
+      <EDID>[FD00114F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. Let&apos;s hear it.</Source>
+      <Dest>好的。說來聽聽。</Dest>
+    </String>
+    <String List="2" sID="0002E7">
+      <EDID>[FD00115E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You really don&apos;t know anything about the Artifacts?</Source>
+      <Dest>你真的對神器一無所知嗎？</Dest>
+    </String>
+    <String List="2" sID="0002E8">
+      <EDID>[FD00115B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fair enough. We have a spare room you can use, and I&apos;m sure everyone here would like a word with you. Once you&apos;re ready, come find me.</Source>
+      <Dest>好吧。我們有個空房間可以給你用，我相信這裡每個人都想跟你談談。等你準備好了就來找我。</Dest>
+    </String>
+    <String List="2" sID="0002E9">
+      <EDID>[FD00114C]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>If you&apos;re serious about wanting to be a part of this, then you have to know that we are diving headfirst into the unknown. There could be considerable risks.</Source>
+      <Dest>如果你真的想參與其中，那麼你必須明白，我們正在一頭栽進未知的世界，其中可能存在相當大的風險。</Dest>
+    </String>
+    <String List="2" sID="0002EA">
+      <EDID>[FD00114C]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>We&apos;re at the beginning of a very important discovery here. What you found: the Artifact. There&apos;s more, and they&apos;re creating something we don&apos;t understand yet.</Source>
+      <Dest>我們正處在一項極為重要的發現開端。就是你找到的那個...神器。還有更多，而且它們正在形成某種我們尚未理解的東西。</Dest>
+    </String>
+    <String List="2" sID="0002EB">
+      <EDID>[FD001158]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Maybe I should get settled in first. Take a breather.</Source>
+      <Dest>也許我應該先安頓下來，喘口氣。</Dest>
+    </String>
+    <String List="2" sID="000319">
+      <EDID>[FD0009EA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你是誰？</Dest>
+    </String>
+  </Content>
+</SSTXMLRessources>
