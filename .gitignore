@@ -9,6 +9,8 @@
 *.strings
 SF1Edit Backups
 SF1Edit Cache
+build
+output
 meta.ini
 Backup
 Release

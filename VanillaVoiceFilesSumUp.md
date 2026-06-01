@@ -17,12 +17,12 @@ matteo 34c 00EB7496
 
 sarah 35 1 00094E94
 sarah 35 2 0042F39A -> 002FA7CF [IA]
-sarah 35 3 (2) 00E619A1 -> 00B2C914
+sarah 35 3 (2) 00E619A1 -> 00B2C914 [Spliced]
 sarah 35 3 (3) 005F9DF1
 
 sarah 36 1  00F6BEFC
-walter 36 1 dcd1a1 + ec6fc1 + 5ede34 -> 005469F4 
-walter 36 2 00dc3f9d -> 0078CB21
+walter 36 1 dcd1a1 + ec6fc1 + 5ede34 -> 005469F4 [Spliced]
+walter 36 2 00dc3f9d -> 0078CB21 [Spliced]
 matteo 36 1 (1) 00BFCC45 -> 006B338C [IA] / 00B09ACA [IA]
 matteo 36 1 (2) 00F4632B -> 008F3966 [IA] / 0014BF14 [IA]
 matteo 36 1 (3) 00C28AAF -> 00418A9B [IA] / 000043E2 [IA]
@@ -80,15 +80,15 @@ vasco 02 C0F712 -> B6A32C [IA]
 sarah 02 1 CC1479 -> B37BDC [IA]
 sarah 02 3 (1) 000353AC
 sarah 02 3 (2) 0019BBBD
-walter 02 1 (1) 00ec6fc1 + 00dcd1a1 + 00238ea0 -> 007C13D0
-walter 02 1 (2) 00672A1D -> 006E6549
+walter 02 1 (1) 00ec6fc1 + 00dcd1a1 + 00238ea0 -> 007C13D0 [Spliced]
+walter 02 1 (2) 00672A1D -> 006E6549 [Spliced]
 matteo 02 1 (1a) 00CC90FE
 matteo 02 1 (1b) 00506811
 matteo 02 1 (1c) 002D59D2
 matteo 02 2 (1a) 00C69EDA
 matteo 02 2 (1b) 00EC42FC
 matteo 02 2 (1c) 00965B27
-sarah 02 4 (1a) 00185419 -> 000450C4
+sarah 02 4 (1a) 00185419 -> 000450C4 [Spliced]
 sarah 02 4 (1b) 004C9391
 sarah 02 4 (2) 00510D24
 sarah 02 5 (1) 003AF35F
@@ -120,17 +120,17 @@ lin 01 8a 0089E415
 lin 01 8b 00A35F1C
 lin 01 9 (1a) 00F162DC
 lin 01 9 (1b) 00960150
-lin 01 9 (1c) 00B3D2CF -> 0022859B
-lin 01 9 (2a) 00CFB1CA -> 003E70FE
+lin 01 9 (1c) 00B3D2CF -> 0022859B [Spliced]
+lin 01 9 (2a) 00CFB1CA -> 003E70FE [Spliced]
 lin 01 9 (2b) 00FADF3B
-lin 01 9 (2c) 00F60031 -> 00014E3C
+lin 01 9 (2c) 00F60031 -> 00014E3C [Spliced]
 lin 01 9 (3a) 0003DC4C
 lin 01 9 (3b) 00B47B67
 
 lin 1a 1 (1) 003DB5BA
 lin 1a 1 (2) 00A41C5B
 
-lin 1b 1 00B7399F -> 0063B512
+lin 1b 1 00B7399F -> 0063B512 [Spliced]
 
 lin 02 1 (1) 00691C9D
 lin 02 1 (2) 0054AE05
@@ -150,7 +150,7 @@ lin 02 4 00432BA3
 
 heller 03 1 002408DF -> 00710C1C [IA]
 lin 03 009B3B19
-heller 03 1.5 002408DF -> 00D8A2C2
+heller 03 1.5 002408DF -> 00D8A2C2 [Spliced]
 heller 03 2 000536F6
 heller 03 3 (1) 001DFCBE
 heller 03 3 (2) 00274858
@@ -290,12 +290,12 @@ barrett 15 2 (2) 003CC406
 barrett 15 3 NULL -> 00BEF213 [IA]
 
 lin stage30hellos 1 00F4FF43
-lin stage30hellos 2 000297E5 -> 00D4A8C5
+lin stage30hellos 2 000297E5 -> 00D4A8C5 [Spliced]
 lin stage30hellos 3 00FA98F5
 
 lin stage110hellos 1 007A6E6C
 lin stage110hellos 2 002639C3
-lin stage110hellos 3 0019E256 -> 00A11968
+lin stage110hellos 3 0019E256 -> 00A11968 [Spliced]
 
 barrett stage150hello 1 00761133
 barrett stage150hello 3 0019FCD1
