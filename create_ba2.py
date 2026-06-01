@@ -62,11 +62,12 @@ def CreateBA2(fileListName, archiveName, outputFolder):
 def CreateLocalizedVoiceBA2(voiceList, voiceListPath, archiveNameBase, buildFolder, outputFolder):
     supportedLanguages = ["de", "es", "fr", "it", "ja", "pl", "ptbr", "zhhans"]
     for supportedLanguage in supportedLanguages:
-        fileListName = supportedLanguage + ".txt"
-        CopyFilesToBuildFolder(GetVoicesFromAchList(voiceListPath, "Localized", supportedLanguage), buildFolder)
-        InitFileList(fileListName, voiceList, buildFolder)
-        CreateBA2(fileListName, archiveNameBase + "Voices_" + supportedLanguage + ".ba2", outputFolder)
-        os.remove(buildFolder + fileListName)
+        if os.path.isdir("Data\\LocalizedVoices\\" + supportedLanguage):
+            fileListName = supportedLanguage + ".txt"
+            CopyFilesToBuildFolder(GetVoicesFromAchList(voiceListPath, "Localized", supportedLanguage), buildFolder)
+            InitFileList(fileListName, voiceList, buildFolder)
+            CreateBA2(fileListName, archiveNameBase + "Voices_" + supportedLanguage + ".ba2", outputFolder)
+            os.remove(buildFolder + fileListName)
 
 def CopyESMs(outputDir):
     esmPaths = glob.glob("./Data/*.esm")
@@ -115,17 +116,23 @@ def main():
     
     # Prepare build files
     CopyFilesToBuildFolder(mainFileList, buildFolder)
+    CopyFilesToBuildFolder(vanillaVoiceList, buildFolder)
     CopyFilesToBuildFolder(modifiedVoiceList, buildFolder)
 
-    # AI build
-    InitFileList(fileListName, mainFileList, buildFolder)
-    AppendToFileList(fileListName, modifiedVoiceList, buildFolder)   
+    # Main build
+    InitFileList(fileListName, mainFileList, buildFolder) 
     CreateBA2(fileListName, mainArchiveName + archiveExtension, artifactsSubpath + "Data\\")
     os.remove(buildFolder + fileListName)
     
-    # No-AI Build
-    InitFileList(fileListName, mainFileList, buildFolder)
-    CreateBA2(fileListName, mainArchiveName + "_NO_AI" + archiveExtension, artifactsSubpath + "Data\\")
+    # AI Voices
+    InitFileList(fileListName, vanillaVoiceList, buildFolder)
+    AppendToFileList(fileListName, modifiedVoiceList, buildFolder)
+    CreateBA2(fileListName, archiveNameBase + "Voices_en" + archiveExtension, artifactsSubpath + "Data\\")
+    os.remove(buildFolder + fileListName)
+
+    # NO AI Voices
+    InitFileList(fileListName, vanillaVoiceList, buildFolder)
+    CreateBA2(fileListName, archiveNameBase + "Voices_en_NO_AI" + archiveExtension, artifactsSubpath + "Data\\")
     os.remove(buildFolder + fileListName)
 
     # Localized voices
