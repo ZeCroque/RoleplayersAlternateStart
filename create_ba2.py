@@ -5,6 +5,18 @@ import os
 import shutil
 import re
 import glob
+import build
+
+modName = "RoleplayersAlternateStart"
+modNameLowerCase = modName.lower()
+archiveNameBase = modName + " - "
+mainArchiveName = archiveNameBase + "Main" 
+mainArchiveNameAF = modName + "_AF - Main"
+modFilePathAF = "./Data/" + modName + "_AF.esm"
+archiveExtension = ".ba2"
+buildFolder = "./build/"
+
+# ========================================================================
 
 def GetVoicesFromAchList(achlist, mode, languageCode=""):
     filelist = ""
@@ -47,14 +59,34 @@ def AppendToFileList(fileListName, fileList, buildFolder):
         output.write(fileList)
         output.write("\n")
 
-def CopyFilesToBuildFolder(fileList, buildFolder):
-    for file in fileList.splitlines():
-        dest = buildFolder + os.path.dirname(file)
-        matches = re.findall(".*([sS]ound.*)", dest)  
+def PrepareFileListForAF(fileListName, buildFolder):
+    with open(buildFolder + fileListName, 'r') as file:
+        filedata = file.read()
+
+    filedata = filedata.lower().replace(modNameLowerCase, modName + "_AF")
+
+    with open(buildFolder + fileListName, 'w') as file:
+        file.write(filedata)
+
+def CopyFilesToBuildFolder(fileList, buildFolder, isAF=False):
+    for file in fileList.splitlines():        
+        dest = (buildFolder + os.path.dirname(file)).lower()        
+        if isAF:        
+            matches = re.findall(".*" + modNameLowerCase, dest)  
+            if len(matches):
+                dest = dest.replace(modNameLowerCase, modNameLowerCase + "_AF")
+        matches = re.findall(".*(sound.*)", dest)  
         if(len(matches)):
             dest = buildFolder + "Data\\" + matches[0]
+
         os.makedirs(dest, exist_ok=True)
         shutil.copy(file, dest)
+
+        if isAF:
+            baseName = os.path.basename(file).lower()
+            matches = re.findall(modNameLowerCase, baseName) 
+            if len(matches):
+                shutil.move(dest + "/" + baseName, dest + "/" + baseName.replace(modNameLowerCase, modName + "_AF"))
 
 def CreateBA2(fileListName, archiveName, outputFolder):
     subprocess.run(["H:/Games/steamapps/common/Starfield/Tools/Archive2/Archive2.exe", "-s=" + fileListName, "-c=" + outputFolder + archiveName,  "-f=General", "-compression=None"], cwd='./build') 
@@ -89,25 +121,9 @@ def CopyArtifactsToDataFolder(artifactsPath):
     for artifact in artifacts:
         shutil.copy(artifact, "./Data/")
 
-def main():   
-    modName = "RoleplayersAlternateStart"
-    archiveNameBase = modName + " - "
-    mainArchiveName = archiveNameBase + "Main" 
-    archiveExtension = ".ba2"
-    buildFolder = "./build/"
-
-    mainFileList = GetFilesFromAchList("./Data/RAS_Main.achlist")
-    modifiedVoiceList = GetFilesFromAchList("./Data/RAS_ModifiedVoices.achlist")
-    vanillaVoiceListName = "./Data/RAS_VanillaVoices.achlist"
-    vanillaVoiceList = GetFilesFromAchList(vanillaVoiceListName)
-
 # ========================================================================
 
-    if os.path.isdir(buildFolder):
-        shutil.rmtree(buildFolder)
-
-# ========================================================================
-
+def CreateNexusArchive(mainFileList, modifiedVoiceList, vanillaVoiceList, vanillaVoiceListName):
     buildName = "Nexus"
     artifactsSubpath = "artifacts\\" + buildName + "\\"
     artifactsFullpath = buildFolder + artifactsSubpath
@@ -144,43 +160,72 @@ def main():
     # Create zip
     CopyFOMODFiles("RAS_Thumbnail.png", artifactsFullpath)
     
+    # Output
     os.makedirs(outputFolder, exist_ok=True)
     shutil.make_archive(outputFolder + modName, 'zip', artifactsFullpath)
 
     # Cleanup
     shutil.rmtree(buildFolder + "Data")
 
-# ========================================================================
-
+def CreateCreationArchives(mainFileList, vanillaVoiceList, vanillaVoiceListName, isAF=False):
     buildName = "Creation"
     artifactsSubpath = "artifacts\\" + buildName + "\\"
     artifactsFullpath = buildFolder + artifactsSubpath
     fileListName = buildName + ".txt"
+    archiveName = mainArchiveNameAF if isAF else mainArchiveName
 
     # Prepare common build files
-    CopyFilesToBuildFolder(mainFileList, buildFolder)
+    CopyFilesToBuildFolder(mainFileList, buildFolder, isAF)
     
     # Prepare file list
     InitFileList(fileListName, mainFileList, buildFolder)
     AppendToFileList(fileListName, vanillaVoiceList, buildFolder) 
+    if isAF:
+        PrepareFileListForAF(fileListName, buildFolder)
 
     # PC build
-    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "PC"), buildFolder)
-    CreateBA2(fileListName, mainArchiveName + archiveExtension, artifactsSubpath + "Data\\")
+    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "PC"), buildFolder, isAF)
+    CreateBA2(fileListName, archiveName + archiveExtension, artifactsSubpath + "Data\\")
 
     # Xbox build
-    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "Xbox"), buildFolder)
-    CreateBA2(fileListName, mainArchiveName + "_xbox" + archiveExtension, artifactsSubpath + "Data\\")
+    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "Xbox"), buildFolder, isAF)
+    CreateBA2(fileListName, archiveName + "_xbox" + archiveExtension, artifactsSubpath + "Data\\")
 
     # PS5 Build
-    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "PS5"), buildFolder)
-    CreateBA2(fileListName, mainArchiveName + "_ps" + archiveExtension, artifactsSubpath + "Data\\")
+    CopyFilesToBuildFolder(GetVoicesFromAchList(vanillaVoiceListName, "PS5"), buildFolder, isAF)
+    CreateBA2(fileListName, archiveName + "_ps" + archiveExtension, artifactsSubpath + "Data\\")
 
+    # Output
     CopyArtifactsToDataFolder(artifactsFullpath)
+    if(isAF):
+        shutil.copy("./Data/" + modName + ".esm", modFilePathAF)
 
     # Cleanup    
     os.remove(buildFolder + fileListName)
     shutil.rmtree(buildFolder + "Data")
+
+def main():   
+    mainFileList = GetFilesFromAchList("./Data/RAS_Main.achlist")
+    modifiedVoiceList = GetFilesFromAchList("./Data/RAS_ModifiedVoices.achlist")
+    vanillaVoiceListName = "./Data/RAS_VanillaVoices.achlist"
+    vanillaVoiceList = GetFilesFromAchList(vanillaVoiceListName)
+
+    if os.path.isdir(buildFolder):
+        shutil.rmtree(buildFolder)
+
+    if os.path.isfile(modFilePathAF):
+        os.remove(modFilePathAF)
+
+    # Non-AF
+    build.FillTemplates(0)
+    build.Build(0)
+    CreateNexusArchive(mainFileList, modifiedVoiceList, vanillaVoiceList, vanillaVoiceListName)
+    CreateCreationArchives(mainFileList, vanillaVoiceList, vanillaVoiceListName, False)
+
+    # AF
+    build.FillTemplates(1)
+    build.Build(1)
+    CreateCreationArchives(mainFileList, vanillaVoiceList, vanillaVoiceListName, True)
 
 if __name__ == "__main__":
     main()
