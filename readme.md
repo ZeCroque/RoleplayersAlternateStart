@@ -24,76 +24,107 @@ Inspired by classic mods like [Start Me Up (Fallout 4)](https://www.nexusmods.co
 
 ### Features
 
-- **Skip the Vectera Intro**: Begin your journey without the miner prologue. Start the main quest simply by finding the artifact out in the world (configurable). All references to Vectera in main quest dialogue have been removed. Some lines were edited or spliced, while others were created with generative AI (except for Creations version).
-- **Immersive Beginning**: The custom start configuration takes place in a carefully crafted starting cell, based on the Unity end-game area, designed to feel natural and fully part of the game world.
-- **Dynamic Integration**: Automatically detects and includes mod-added locations, ships, and items in the starting options — no patches required.
-- **Fully compatible with anything**: No vanilla quests are changed — the mod relies on hooks and replacers. Vanilla starts remain fully playable, including any modifications from other mods.
-- **Framework for Modders**: Built from the ground up to be easily extended by other mod authors (documentation will come later on). Also fully open-source — see *LICENSING/LEGAL* for more info.
+- **Multiple paths into the main quest**: Discover your first artifact naturally during exploration, get help from a mysterious new NPC, or follow the original miner introduction by taking the job at Argos HQ.
+- **Unique starting options**: Start shipwrecked on a remote planet and build a rescue beacon to escape. Or begin without a ship (or with a grounded one) and earn enough credits to get back into space. And more!
+- **Immersive introduction**: Begin your journey in a custom area inspired by the Unity, seamlessly integrated into the game's lore and narrative.
+- **Made with compatibility in mind**: The mod relies primarily on hooks and replacers, keeping vanilla quest edits to an absolute minimum to ensure compatibility with most mods.
+- **Dynamic integration**: Automatically detects and integrates mod-added locations, ships, and items into the starting options. No patches required.
+- **Modder-friendly**: Built from the ground up to be easily extended by other mod authors. Documentation is planned for a future release. Also fully open-source — see *LICENSING/LEGAL* for more info.
 
 ## 2. DETAILS
 
 ### Main Quest Edits
 
-Enjoy the main quest from a different perspective that doesn't force you to roleplay as the miner BGS wanted you to be.
+There are three ways to begin the main quest:
 
-There's now two ways of starting the main quest:
-- Going to the Argos Extractor Office in the Valberg Building (Commercial District of New Atlantis): if you accept the job you'll start the vanilla intro sequence.
-- Finding the Artifact Eta (the one normally found of Vectera) randomly while exploring: it will start an alternate starting sequence that skips the Vectera events.
-    - By default there's a 33% chance the artifact will spawn after level 5 upon reaching an eligible location. You can configure these conditions using the "Narrative Adjustments" terminal inside the starting cell. You can find the list of eligible locations in the FAQ section.
-    - Once the artifact is acquired, you will dispose of it in your own way and eventually Constellation will reach out to you.
-    - Barrett will leave to assist the Vectera Mining Operation before your arrival at the Lodge. During his recovery of Constellation's second artifact he attracted pirate attention, and the Argos miners have evidence that hostile activity is present in the area.
-    - After entering the Lodge, you will proceed through the standard Constellation intro with all references to you being a miner removed 
-    - After Sarah's first quest, you will be tasked with rescuing Barrett on Vectera, again with no prior miner references.
-    - Completing Barrett's rescue unlocks the Frontier via a brief follow-up quest.
-    - The vanilla "One Small Step" quest will be entirely skipped when doing this alternate entry point in the MQ, so it will prevent events depending on it to occur, such as the SSNN interview about the Vectera events. You might want that quest to be completed for mod compatibility however: you can do it with the "Narrative Adjustments" terminal.
+#### 1. Argos Recruit (Vanilla Start)
 
-Those two options are obviously mutually exclusive.
+Visit the Argos Extractors Office in the Valberg Building, located in New Atlantis' Commercial District. Accepting the job starts the original vanilla introduction on Vectera.
+
+#### 2. Organic Discovery
+
+Artifact Eta can be discovered naturally during exploration.
+
+- By default, it has a 33% chance to appear after level 5 when entering an eligible location.
+- These conditions can be customized through Gameplay Options.
+- A complete list of eligible locations is available in the FAQ.
+
+Discovering the artifact launches an alternate introduction that bypasses the Vectera opening sequence.
+
+#### 3. The Guide
+
+Speak with "The Guide", a unique Starborn NPC who appears at the Viewport in New Atlantis after your first encounter with the Hunter.
+
+"The Guide" will direct you toward Artifact Eta and initiate the same alternate introduction as the "Organic Discovery" path.
+
+#### How the Alternate Introduction Works
+
+- Once acquired, you may choose what to do with the artifact. Whatever you choose, Constellation will eventually learn of its existence and reach out to you.
+- Barrett will leave to assist the Vectera Mining Operation before your arrival at the Lodge. During his recovery of Constellation's second artifact, Barrett attracted pirate attention, prompting the Argos miners to call for help after discovering evidence of hostile activity in the area.
+- After entering the Lodge, you will proceed through the standard Constellation intro with new dialogue that does not reference Argos or Vectera (with optional spliced and AI-generated voices).
+- After Sarah's first quest, you will be tasked with rescuing Barrett on Vectera, again with no prior miner references.
+- Completing Barrett's rescue grants access to the Frontier via a brief follow-up quest.
+- The vanilla "One Small Step" quest is skipped entirely. As a result, events depending on it will not occur (e.g. the SSNN interview about the Vectera events). For compatibility with certain mods, you may still wish to mark the quest as completed. This can be done through the "Narrative Adjustments" terminal, but will disable the "Argos Recruit" entry point into the main quest.
+    
+The three starting methods are mutually exclusive: choosing one will disable the others.
 
 ### Starting Options
 
 Choose from a variety of starting scenarios:
 - **At a major Settlement or Starstation (except quest-locked ones, like Crucible or Dazra)**
-- **At a Random POI (outpost, mine or dungeon)**: with custom criteria to choose what kind of planet it will be on
+- **At a Random POI (outpost, mine or dungeon)**: with customizable criteria to determine the type of planet it will spawn on
 - **Shipwrecked**: crash-land in the middle of nowhere and call for help using a rescue beacon (the beacon can also be used during normal gameplay!)
 - **In your House/Dream Home/Parent's Home**
 
-### Starting home
+### Starting Home
 
-Start with any vanilla home already unlocked (except quest tied ones, like the Mercury Tower Penthouse) or even inside some mod-added ones. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (see *COMPATIBILITY* section for a detailed list).
+Start with any vanilla home already unlocked (except quest-tied ones, like the Mercury Tower Penthouse) as well as a selection of supported mod-added homes. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (see *COMPATIBILITY* section for a detailed list).
 
-### Narrative Adjustments
+### Starting Ship & Vehicle Options
 
-Fine-tune how your story unfolds by adding some modifiers to existing quests or applying some immersive constraints to your character. You can notably: 
-- **Customize Main Quest Starting Conditions**: choose at which level and under which odds the artifact will spawn — or completely disable the Main Quest 
-- **Start with a Broken Ship**: your ship will be unable to take off at start and you will have to gather basics materials to repair it
+Pick any vanilla ship as your starting one at a custom ship technician (or even mod-added ones if you have the [Ship Vendor Framework](https://www.nexusmods.com/starfield/mods/10057) installed). You can also customize it or unlock vehicles, at no cost.
 
-### Ship Options
+Alternatively, you can begin without a ship and acquire one later through normal gameplay.
 
-Pick any vanilla ship as your starting one at a custom ship technician (or even a mod-added one if you have the [Ship Vendor Framework](https://www.nexusmods.com/starfield/mods/10057) installed). You can also customize it or unlock vehicles, all free of charge.
+### Broken Ship Start
 
-If you don't, you will start as a pedestrian and will need to acquire a ship later on to explore space.
+Once you've selected a ship, a new "Narrative Adjustment" becomes available at the dedicated terminal. It's called "Broken Ship Start" and will make your ship unable to take off at first. 
+- If you start in a major Settlement or Starstation, you will need to ask a ship technician to repair it. 
+- If stranded in a remote location, you'll need to explore a nearby dungeon and gather the required parts to repair your ship and take off (if you escape the remote planet by other means, you can ask any ship technician to repair and recover your abandoned ship).
 
 ### Gear Options
 
-Build a custom starting loadout using a vending terminal that dynamically offers anything present in the leveled lists, including items added by other mods. 
+Build a custom starting loadout using a vending terminal that dynamically offers items from vanilla Starfield and compatible mods. Items must be distributed through leveled lists to appear automatically.
 
 Set a budget to limit your starting gear for a more immersive experience, or use the free shopping option to assemble your perfect loadout.
 
-### Leveling Options
+### Manage your Character
 
-Skip the early-game grind and jump straight into the higher-level loops if you wish.
+Customize your starting character by adjusting their level and setting their Piloting skill to any rank without completing the associated challenges.
 
-The ships sold by the custom technician and the gear available at the vending terminal will update automatically. 
+Ships offered by the custom technician and gear available through the vending terminal automatically scale with your chosen level.
 
 ### NG+ Starts
 
-After going through the Unity, you will be prompted if you want to go through the Vanilla NG+ process or if you want to customize this new beginning.
-- The vanilla option will take into account whether or not you were an Argos miner in the previous universe and will adapt the Lodge intro scene accordingly
-- The custom option comes with extra "Narrative Adjustments":
-    - **Argos Miner**: choose to start as if you were a miner in the previous universe, even if you did the alternate MQ start (and vice-versa)
-    - **Non-Starborn NG+**: choose to remove all the starborn references & logic and play as if you never reached the Unity (it will still increase the Unity count for the next universe)
+When doing NG+, you will be prompted if you want to go through the Vanilla process or if you want to customize this new beginning.
+- The "Vanilla" option preserves continuity with your previous universe, adapting the Lodge introduction based on whether your previous character followed the Argos miner path or an alternate start.
+- The "Custom" option comes with extra "Narrative Adjustments":
+    - **Argos Miner**: choose whether your counterpart in this universe is/was an Argos miner, regardless of the path taken in your previous universe.
+    - **Non-Starborn NG+**: removes Starborn-specific dialogue, allowing you to experience the new universe as if this were a fresh playthrough. Unity progression is still preserved for future universes.
 
-Regardless of your choices at the Narrative Adjustments terminal, you can keep the Starborn Guardian or exchange it for any other ship, including the pedestrian one. You're also free to sell the Starborn Suit to the gear terminal if you don't want it.
+Regardless of your "Narrative Adjustments" choices, you may keep the Starborn Guardian, exchange it for another ship, or even start without a ship entirely. 
+
+You're also free to dispose of the Starborn Suit if you don't want it (sell it to the gear terminal or drop it).
+
+You will also find the "Quantum Entanglement Device" inside the custom Unity, in case you want to pick up the gear you transferred from your previous universe early on.
+
+### Immediate Starborn
+
+You can choose to begin as a first-rank Starborn right from the main menu, gaining immediate access to the Starborn Guardian, the Starborn suit, and all Starborn-specific dialogue options.
+
+In addition, the "Quantum Entanglement Device" found within the custom Unity gains an alternative purpose when starting as a Starborn. With it, you can:
+- Unlock all Starborn powers
+- Learn all available "foreknowledge", granting access to every Starborn dialogue option.
 
 ## 3. FREQUENTLY ASKED QUESTIONS
 
@@ -124,6 +155,18 @@ Yes, indeed. There's a few things to note however :
 #### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
 Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the *Feedback* section if you find that dialog already listed before requesting.
 
+#### What counts as a compatible mod-added location?
+- All locations using the "LocTypeSettlement" keyword are automatically added to the "Settlements" or "Starstations" submenus. 
+- All location using the vanilla "LocTypeXXX" keywords for dungeons and civilian/scientific/mining outposts will be added to the random poll of corresponding options.
+- The mod will move the player (and, if appropriate, their ship) to a marker selected under the following logic:
+    - If there's a ship technician, their linked ship marker will be selected
+    - If there's no ship technician, a random ship marker will be selected
+    - If there's no ship marker, the map marker will be selected
+    - If there's several map markers, all of the above will be superseded and a terminal would appear to select a map marker (or the player ship, moving it first to an available ship marker, if appropriate)
+
+#### Why doesn't my mod-added weapon appear in the gear terminal?
+Only items distributed through leveled lists are automatically included.
+
 ## 4. KNOWN ISSUES
 
 - The ship called by the rescue beacon may clip into rocks or float slightly after landing. This is a current engine limitation; I will update if a solution is found.
@@ -133,12 +176,18 @@ Please let me know if you find something else.
 
 ## 5. MOD CONTENT
 
-This mod consists of two main files : 
+This mod consists of seven main files : 
 - *RoleplayersAlternateStart.esm* (mid master)
 - *RoleplayersAlternateStart - Main.ba2*
+- *RoleplayersAlternateStart - Voice_de.ba2*
+- *RoleplayersAlternateStart - Voice_en.ba2*
+- *RoleplayersAlternateStart - Voice_es.ba2*
+- *RoleplayersAlternateStart - Voice_fr.ba2*
+- *RoleplayersAlternateStart - Voice_ja.ba2*
 
 And one optional :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
+- *RoleplayersAlternateStart - Voice_en_NO_AI.ba2*
 
 ## 6. INSTALLATION
 
@@ -146,10 +195,10 @@ And one optional :
 - Use the Mod Manager Download button. Install and enable the file(s) in your favorite mod manager (ModOrganizer2 is my personal preference).
 
 **Manual**
-- Extract the required files (cf. `2. MOD CONTENT`) from the archive to your Data folder and activate them in the in-game Creations menu
+- Extract the required files (cf. `2. MOD CONTENT`) from the archive to your Data folder and activate them in the in-game Creations menu. Delete the *RoleplayersAlternateStart - Voice_en_NO_AI.ba2* file, or replace the regular file by removing *NO_AI* from the filename, depending on whether or not you want the spliced/AI-generated voices.
 
 **Note:**
-On existing saves, the mod will de-activate itself and shouldn't cause any issues.
+On existing saves, the mod will de-activate itself until NG+ and shouldn't cause any issues.
 
 ## 7. COMPATIBILITY
 
@@ -195,9 +244,10 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 - Thanks to xtcrefugee for answering my questions about mid/small masters on the Starfield Modding Discord
 - Thanks to Redzy7 for his post on Starfield's design style for the thumbnail (https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/)
 - Thanks to the Starfield's fonts authors
-- Thanks Fabeco00 for the brazilian portuguese translation
-- Thanks Peter4Master for the chinese translations
-- Thanks PearlCanopus for the german translation
+- Thanks to Fabeco00 for the brazilian portuguese translation
+- Thanks to Peter4Master for the chinese translations
+- Thanks to PearlCanopus for the german translation
+- Thanks to Draspian for the [Alternate Start - Immediate NGPlus](https://www.nexusmods.com/starfield/mods/4431) mod that greatly helped for the "Immediate Starborn (Custom)" option
 
 ## 11. TOOLS USED
 
@@ -209,7 +259,8 @@ On existing saves, the mod will de-activate itself and shouldn't cause any issue
 - WWise Audio Unpacker
 - Audacity
 - xVaSynth
-- FOMOD Creation Tool
+- xTranslator
+- FOMOD Creation Tool & FCK
 - Bethesda Archive Extractor
 - Champollion
 - Gimp
@@ -240,10 +291,6 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
 - Prevent Neshar arrest & add another way to start the "Loose Ends" questline
 - Faction starts
 - Random start
-- Improve the "Shipwrecked" quest
 - More criterias for random planet selection
 - Terminal/Message box customization
-- Outpost menu icon for the rescue beacon
-- Bypass skill challenges during character creation (SFSE)
-- French translation
 - You tell me!
