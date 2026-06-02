@@ -37,11 +37,23 @@
       <Source>1</Source>
       <Dest>1</Dest>
     </String>
+    <String List="0" sID="000010">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>已启用</Dest>
+    </String>
     <String List="0" sID="000012">
       <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
       <REC id="0" idMax="1">GPOF:RESN</REC>
       <Source>Disabled</Source>
       <Dest>禁用</Dest>
+    </String>
+    <String List="0" sID="000016">
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>已启用</Dest>
     </String>
     <String List="0" sID="000018">
       <EDID>RAS_BrokenShipMapMarkerOption</EDID>
@@ -1428,6 +1440,24 @@ Habitability requirement: &lt;1.name&gt;</Source>
       <Source>Enter the Frontier on Vectera</Source>
       <Dest>进入维特拉的边界</Dest>
     </String>
+    <String List="0" sID="000189">
+      <EDID>[FD000852]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Here to take you home.</Source>
+      <Dest>来带你回家的。</Dest>
+    </String>
+    <String List="0" sID="0001C4">
+      <EDID>[FD000922]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Let&apos;s keep traveling together.</Source>
+      <Dest>我们还是继续同行吧。</Dest>
+    </String>
+    <String List="0" sID="0001C9">
+      <EDID>[FD000928]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>We should go our separate ways.</Source>
+      <Dest>我们应该分道扬镳了。</Dest>
+    </String>
     <String List="0" sID="000268">
       <EDID>RAS_MQ104B</EDID>
       <REC id="19" idMax="19">QUST:NNAM</REC>
@@ -1554,6 +1584,18 @@ Habitability requirement: &lt;1.name&gt;</Source>
       <Source>Echoes from Vectera</Source>
       <Dest>来自维特拉的迴音</Dest>
     </String>
+    <String List="0" sID="0002CE">
+      <EDID>[FD000B76]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Tell me about the Artifacts. I want to know everything.</Source>
+      <Dest>和我说说神器的事情吧，我想仔细了解了解。</Dest>
+    </String>
+    <String List="0" sID="0002D1">
+      <EDID>[FD000B7C]</EDID>
+      <REC>INFO:RNAM</REC>
+      <Source>Join Constellation? What does that mean?</Source>
+      <Dest>加入群星组织？什么意思？</Dest>
+    </String>
     <String List="0" sID="0002EC">
       <EDID>RAS_MQ101</EDID>
       <REC id="8" idMax="8">QUST:NNAM</REC>
@@ -1679,6 +1721,12 @@ Habitability requirement: &lt;1.name&gt;</Source>
       <REC>QUST:FULL</REC>
       <Source>New Atlantis Main Dialogue</Source>
       <Dest>新亚特兰蒂斯城主要对话</Dest>
+    </String>
+    <String List="0" sID="000349">
+      <EDID>RASChooseStartCell</EDID>
+      <REC>CELL:FULL</REC>
+      <Source>The Unity</Source>
+      <Dest>The Unity</Dest>
     </String>
     <String List="0" sID="00034A">
       <EDID>RAS_NoneShip</EDID>
@@ -1872,6 +1920,12 @@ Habitability requirement: &lt;1.name&gt;</Source>
       <Source>Broken Ship Start</Source>
       <Dest>损坏飞船开局</Dest>
     </String>
+    <String List="0" sID="00036D">
+      <EDID>RAS_Artifact_ETA</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Artifact ETA</Source>
+      <Dest>神器伊塔</Dest>
+    </String>
     <String List="0" sID="00036E">
       <EDID>RAS_DynamicEntry_Home_NeonSkySuite</EDID>
       <REC>MISC:FULL</REC>
@@ -1949,6 +2003,12 @@ Habitability requirement: &lt;1.name&gt;</Source>
       <REC>ACTI:FULL</REC>
       <Source>Choose a Home</Source>
       <Dest>选择你的家</Dest>
+    </String>
+    <String List="0" sID="000380">
+      <EDID>RAS_TestActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Panel</Source>
+      <Dest>面板</Dest>
     </String>
     <String List="0" sID="000381">
       <EDID>RAS_StartingLocationActivator</EDID>
@@ -2385,34 +2445,34 @@ Sarah Morgan, Head of Constellation</Source>
 此致 敬上</Dest>
     </String>
     <String List="2" sID="00012E">
-      <EDID>[FD000833]</EDID>
-      <REC id="1" idMax="1">INFO:NAM1</REC>
-      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
-      <Dest>他叫巴雷特，是一个名为「群星」的探索小组成员。你可以在新亚特兰提斯 MAST 区的群星小屋找到他们。我会提前告诉他们你要来。顺便提醒巴雷特，下次可就更贵了！</Dest>
-    </String>
-    <String List="2" sID="00012F">
-      <EDID>[FD000833]</EDID>
-      <REC id="0" idMax="1">INFO:NAM1</REC>
-      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
-      <Dest>喔！这我以前见过。这种异常的重力特徵非常独特……我不太清楚那到底是什么，不过我认识一个人，他肯定能帮上你。</Dest>
-    </String>
-    <String List="2" sID="000130">
       <EDID>[FD00082F]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>There is a museum on New Homestead. Its owner is probably the most informed on that kind of stuff in all the Settled Systems.</Source>
       <Dest>新家园有一座博物馆。它的主人可能是所有定居星系群中最了解这类事情的人。</Dest>
     </String>
-    <String List="2" sID="000131">
+    <String List="2" sID="00012F">
+      <EDID>[FD000827]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
+      <Dest>我在探索时发现了一个奇怪的神器，有什么缐索可以知道它是什么吗？</Dest>
+    </String>
+    <String List="2" sID="000130">
       <EDID>[FD00082D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I found a strange artifact, do you know any expert whom could identify it ?</Source>
       <Dest>我发现了一个奇怪的神器，你知道哪位专家可以鑑定它吗？</Dest>
     </String>
+    <String List="2" sID="000131">
+      <EDID>[FD000833]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
+      <Dest>他叫巴雷特，是一个名为「群星」的探索小组成员。你可以在新亚特兰提斯 MAST 区的群星小屋找到他们。我会提前告诉他们你要来。顺便提醒巴雷特，下次可就更贵了！</Dest>
+    </String>
     <String List="2" sID="000132">
-      <EDID>[FD000827]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
-      <Dest>我在探索时发现了一个奇怪的神器，有什么缐索可以知道它是什么吗？</Dest>
+      <EDID>[FD000833]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
+      <Dest>喔！这我以前见过。这种异常的重力特徵非常独特……我不太清楚那到底是什么，不过我认识一个人，他肯定能帮上你。</Dest>
     </String>
     <String List="2" sID="00013E">
       <EDID>[FD000C08]</EDID>
@@ -2420,11 +2480,47 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Sure thing. We&apos;ll get it fixed up, good as new.</Source>
       <Dest>当然。我们会修好它，让它焕然一新。</Dest>
     </String>
+    <String List="2" sID="00015B">
+      <EDID>[FD0008F1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sure you can find something you like.</Source>
+      <Dest>我相信你会找到喜欢的东西。</Dest>
+    </String>
+    <String List="2" sID="00015C">
+      <EDID>[FD00090F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sure, have at it.</Source>
+      <Dest>当然，随便尝试。</Dest>
+    </String>
+    <String List="2" sID="00015D">
+      <EDID>[FD00173C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sure you can find something you like.</Source>
+      <Dest>我相信你会找到喜欢的东西。</Dest>
+    </String>
+    <String List="2" sID="00015E">
+      <EDID>[FD00173A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let me see what ships you have for sale.</Source>
+      <Dest>你出售飞船吗？</Dest>
+    </String>
+    <String List="2" sID="00015F">
+      <EDID>[FD001743]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let me see what ships you have for sale.</Source>
+      <Dest>你出售飞船吗？</Dest>
+    </String>
     <String List="2" sID="000160">
       <EDID>[FD001740]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;d like to view my vehicles.</Source>
       <Dest>我想查看我的载具。</Dest>
+    </String>
+    <String List="2" sID="000161">
+      <EDID>[FD00173F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;d like to purchase a vehicle.</Source>
+      <Dest>我想购买载具。</Dest>
     </String>
     <String List="2" sID="000162">
       <EDID>[FD001746]</EDID>
@@ -2432,17 +2528,185 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>I&apos;d like to view and modify my ships.</Source>
       <Dest>我想查看和改装我的飞船。</Dest>
     </String>
+    <String List="2" sID="000166">
+      <EDID>[FD000B2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re lucky the boss is so generous.</Source>
+      <Dest>老大很仁慈，你们运气不错。</Dest>
+    </String>
+    <String List="2" sID="000167">
+      <EDID>[FD000B2C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Matsura&apos;s in charge.</Source>
+      <Dest>这里松浦说了算。</Dest>
+    </String>
+    <String List="2" sID="000168">
+      <EDID>[FD000B2B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got nothing to say to you.</Source>
+      <Dest>我对你没什么好说的。</Dest>
+    </String>
+    <String List="2" sID="000169">
+      <EDID>[FD000B29]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I enjoyed our conversation, but we&apos;re done. You all can go.</Source>
+      <Dest>和你谈话很愉快，但我们已经谈完了。你们都可以走了。</Dest>
+    </String>
+    <String List="2" sID="00016A">
+      <EDID>[FD000B28]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Our business is concluded. See yourselves out.</Source>
+      <Dest>我们的交易已经完成了。慢走不送。</Dest>
+    </String>
+    <String List="2" sID="00016B">
+      <EDID>[FD000B27]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He is free to go. I do not encourage you to return.</Source>
+      <Dest>他可以走了。我不鼓励你们再回来。</Dest>
+    </String>
+    <String List="2" sID="00016C">
+      <EDID>[FD000B25]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You two take a moment to talk. We&apos;ll get to me.</Source>
+      <Dest>你们两个先聊一会，之后再说我的事。</Dest>
+    </String>
+    <String List="2" sID="00016D">
+      <EDID>[FD000B24]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I believe you&apos;re here for Barrett?</Source>
+      <Dest>我想你是来救巴雷特的吧？</Dest>
+    </String>
+    <String List="2" sID="00016E">
+      <EDID>[FD000B23]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t you have a word with Barrett, first?</Source>
+      <Dest>你为什么不先和巴雷特聊聊呢？</Dest>
+    </String>
+    <String List="2" sID="00016F">
+      <EDID>[FD000B20]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Can&apos;t wait to see if Noel&apos;s theory about the Artifacts was correct.</Source>
+      <Dest>诺维尔对于神器的理论究竟是否正确，我真想立刻一探究竟。</Dest>
+    </String>
+    <String List="2" sID="000170">
+      <EDID>[FD000B1F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>After this, you&apos;re kind of a pirate aficionado. Too soon?</Source>
+      <Dest>这件事之后，你也算是个海盗迷啦。玩笑开早了？</Dest>
+    </String>
+    <String List="2" sID="000171">
+      <EDID>[FD000B1E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So... back to the Lodge?</Source>
+      <Dest>那么...回群星小屋？</Dest>
+    </String>
+    <String List="2" sID="000172">
+      <EDID>[FD000B1D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, uh... I can&apos;t say I feel too bad about you killing someone who kidnapped me and probably murdered a lot of people, but...</Source>
+      <Dest>呃……他绑架了我，而且可能还杀过很多人，你杀他我也说不上难过，但……</Dest>
+    </String>
+    <String List="2" sID="000173">
+      <EDID>[FD000B1B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You convince Matsura to let me go, and we&apos;ll be on our way.</Source>
+      <Dest>你说服松浦放我走，我们马上就离开这。</Dest>
+    </String>
+    <String List="2" sID="000174">
+      <EDID>[FD000B19]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It&apos;s not so bad here. Although I wouldn&apos;t mind if you could talk Matsura into letting me go...</Source>
+      <Dest>这里没那么糟，但我也不介意你说服松浦放我走……</Dest>
+    </String>
+    <String List="2" sID="000175">
+      <EDID>[FD000B17]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Something I can help you with?</Source>
+      <Dest>有什么要帮忙的吗？</Dest>
+    </String>
+    <String List="2" sID="000176">
+      <EDID>[FD000B16]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Can&apos;t believe Barrett snuck a transmission to us. He always finds a way.</Source>
+      <Dest>真不敢相信巴雷特居然偷偷传了条信息给我们。他总能找到办法。</Dest>
+    </String>
+    <String List="2" sID="000177">
+      <EDID>[FD000B15]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Good luck finding Barrett. Keep an eye out for Heller while you&apos;re at it?</Source>
+      <Dest>祝你能找到巴雷特。也帮我留意一下海勒好吗？</Dest>
+    </String>
+    <String List="2" sID="000178">
+      <EDID>[FD000B13]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Just don&apos;t get your hopes up, okay?</Source>
+      <Dest>只是别抱太大希望，好吗？</Dest>
+    </String>
     <String List="2" sID="000179">
       <EDID>[FD000B12]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;m packing up. What a mess...</Source>
       <Dest>我正在收拾东西。真是乱七八糟…</Dest>
     </String>
+    <String List="2" sID="00017A">
+      <EDID>[FD000B11]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want to try fixing that computer, go ahead.</Source>
+      <Dest>你想试着修好那台电脑就去吧。</Dest>
+    </String>
     <String List="2" sID="00017B">
       <EDID>[FD000814]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You shouldn&apos;t be here. Leave me alone.</Source>
       <Dest>你不该来这里。别管我。</Dest>
+    </String>
+    <String List="2" sID="00017C">
+      <EDID>[FD000836]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You should let us help you, there&apos;s no reason for you to have to suffer needlessly.</Source>
+      <Dest>你应该让我们帮你，你根本无需要承受那种痛苦。</Dest>
+    </String>
+    <String List="2" sID="00017D">
+      <EDID>[FD000832]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You sure about that? A med kit might do wonders for you? All right, your choice.</Source>
+      <Dest>你确定吗？医疗包可能会对你大有帮助？好吧，你说了算。</Dest>
+    </String>
+    <String List="2" sID="00017E">
+      <EDID>[FD000830]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It would seem prudent to accept any and all help offered to you right now.</Source>
+      <Dest>现在接受别人给你的任何帮助似乎要谨慎点了。</Dest>
+    </String>
+    <String List="2" sID="00017F">
+      <EDID>[FD000851]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And don&apos;t leave out any details.</Source>
+      <Dest>不要漏掉任何细节。</Dest>
+    </String>
+    <String List="2" sID="000180">
+      <EDID>[FD00084E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Just focus, all right? Any detail may be important.</Source>
+      <Dest>集中精神。任何细节都可能很重要。</Dest>
+    </String>
+    <String List="2" sID="000181">
+      <EDID>[FD000839]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>As best you can recall, given your current state of mind.</Source>
+      <Dest>虽然你目前精神状态不佳，不过尽可能好好回想一下。</Dest>
+    </String>
+    <String List="2" sID="000182">
+      <EDID>[FD00083F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh yeah. There&apos;s no certainty to the universe at all. Once you really start getting out there, the laws of physics kind of turn into suggestions.</Source>
+      <Dest>哦是的。宇宙中不存在必然。一旦你真正开始深入宇宙，物理学定律就会变成参考意见。</Dest>
+    </String>
+    <String List="2" sID="000183">
+      <EDID>[FD000842]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re pulling my leg again, right? What&apos;s the weirdest thing you&apos;ve seen? No exaggerations this time.</Source>
+      <Dest>你又开始骗我玩了，对吧？你见过最怪异的东西是什么？这回不许夸大其词。</Dest>
     </String>
     <String List="2" sID="000184">
       <EDID>[FD000845]</EDID>
@@ -2456,6 +2720,12 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Hmm... Let me think...</Source>
       <Dest>唔……让我想想……</Dest>
     </String>
+    <String List="2" sID="000186">
+      <EDID>[FD00084F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Holy shit. You actually found me.</Source>
+      <Dest>我的天，你真的找到我了。</Dest>
+    </String>
     <String List="2" sID="000187">
       <EDID>[FD00084B]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
@@ -2467,6 +2737,126 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Okay, it was more of an extremophile in the vague shape of a horse, but my point still stands. You need an open mind out there.</Source>
       <Dest>好吧，它其实是某种样子有点像马的嗜极生物，但这不影响我的论点。在宇宙里你思想得开放些。</Dest>
+    </String>
+    <String List="2" sID="00018A">
+      <EDID>[FD000852]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m here to take you home, Barrett.</Source>
+      <Dest>我是来带你回家的，巴雷特。</Dest>
+    </String>
+    <String List="2" sID="00018B">
+      <EDID>[FD000848]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait. The mythical mare with a magic horn thing? Come on. Was King Arthur riding on it too?</Source>
+      <Dest>等会，你指的是故事里那种长了魔法尖角的母马？得了吧，那上面是不是还骑了个亚瑟王？</Dest>
+    </String>
+    <String List="2" sID="00018C">
+      <EDID>[FD000855]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You know, it&apos;s actually been kind of nice. Matsura the Grim here is a great host.</Source>
+      <Dest>其实我在这待着感觉还挺好的。死神松浦待客非常热情。</Dest>
+    </String>
+    <String List="2" sID="00018D">
+      <EDID>[FD000858]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yes. I don&apos;t know why, but yes.</Source>
+      <Dest>是的。我不知道为什么，不过是的。</Dest>
+    </String>
+    <String List="2" sID="00018E">
+      <EDID>[FD00085B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, you didn&apos;t need to worry too much. Matsura the Grim here is actually a wonderful host.</Source>
+      <Dest>哎，你不用太担心。死神松浦其实非常热情好客。</Dest>
+    </String>
+    <String List="2" sID="00018F">
+      <EDID>[FD000861]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Matsura the Grim here and I actually have a lot in common.</Source>
+      <Dest>死神松浦和我其实有很多共同点。</Dest>
+    </String>
+    <String List="2" sID="000190">
+      <EDID>[FD00085E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you... friends? With the... pirate?</Source>
+      <Dest>你和他……成了朋友？和……海盗？</Dest>
+    </String>
+    <String List="2" sID="000191">
+      <EDID>[FD00086A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Both escape artists. Been captured by SysDef myself plenty of times.</Source>
+      <Dest>我们都是逃脱专家。我被星防队抓到过好几次。</Dest>
+    </String>
+    <String List="2" sID="000192">
+      <EDID>[FD000867]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>No reason captivity should be unpleasant.</Source>
+      <Dest>监禁不一定非得让人难受。</Dest>
+    </String>
+    <String List="2" sID="000193">
+      <EDID>[FD000870]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I mean, Matsura. Real considerate.</Source>
+      <Dest>你瞧，我就是这个意思，松浦。你是个真正体贴周到的人。</Dest>
+    </String>
+    <String List="2" sID="000194">
+      <EDID>[FD000864]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>No sense letting people&apos;s last moments be unpleasant.</Source>
+      <Dest>不必让人在临终前还要受苦。</Dest>
+    </String>
+    <String List="2" sID="000195">
+      <EDID>[FD00086D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I like about you, Matsura. Real renaissance man.</Source>
+      <Dest>你瞧，所以我才这么喜欢你，松浦。你是个真正多才多艺的人。</Dest>
+    </String>
+    <String List="2" sID="000196">
+      <EDID>[FD000873]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See, that&apos;s what I&apos;m talking about. Relativity. We&apos;re all just creatures of the universe trying to get away from what&apos;s after us.</Source>
+      <Dest>你瞧，我就说嘛。相对论。我们都只是在宇宙中试图摆脱追捕的生物。</Dest>
+    </String>
+    <String List="2" sID="000197">
+      <EDID>[FD000876]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I have enjoyed our time together, Barrett. But I can&apos;t just let you go, with nothing to show for it.</Source>
+      <Dest>我们相处的时光很愉快，巴雷特。但我不能两手空空地放你走。</Dest>
+    </String>
+    <String List="2" sID="000198">
+      <EDID>[FD000879]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Is Constellation willing to pay ransom in exchange for this man&apos;s freedom?</Source>
+      <Dest>群星组织是否愿意支付赎金来换取这个男人的自由？</Dest>
+    </String>
+    <String List="2" sID="000199">
+      <EDID>[FD00087C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This won&apos;t be the last time Barrett escapes the Crimson Fleet. He always gets away. You know that.</Source>
+      <Dest>这不会是巴雷特最后一次逃离深红舰队。他总能成功逃脱，你也清楚。</Dest>
+    </String>
+    <String List="2" sID="00019A">
+      <EDID>[FD00087F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I... uh... very well. Perhaps it would be best to just let Barrett go.</Source>
+      <Dest>我……呃……好吧。或许最好还是该放巴雷特走。</Dest>
+    </String>
+    <String List="2" sID="00019B">
+      <EDID>[FD000888]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Pay &lt;Global=NPCDemandMoney_Large&gt; Credits] We&apos;ll pay. Here.</Source>
+      <Dest>[支付&lt;Global=NPCDemandMoney_Large&gt;信用币]我们付钱。给你。</Dest>
+    </String>
+    <String List="2" sID="00019C">
+      <EDID>[FD000885]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want me to end all this with nothing to show for it?</Source>
+      <Dest>你是要我两手空空地结束这一切？</Dest>
+    </String>
+    <String List="2" sID="00019D">
+      <EDID>[FD000882]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hasn&apos;t Barrett been enough trouble? Just let him go.</Source>
+      <Dest>巴雷特这个麻烦还不够大吗？你就放他走吧。</Dest>
     </String>
     <String List="2" sID="00019E">
       <EDID>[FD00088D]</EDID>
@@ -2492,17 +2882,59 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>That settles that.</Source>
       <Dest>成交。</Dest>
     </String>
+    <String List="2" sID="0001A2">
+      <EDID>[FD000890]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;We do have some insurance set aside for this exact problem.&quot;</Source>
+      <Dest>&quot;我们确实为这种问题做了一些保险。&quot;</Dest>
+    </String>
     <String List="2" sID="0001A3">
+      <EDID>[FD0008A1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Take your time. Neither of us are going anywhere.</Source>
+      <Dest>慢慢来，我们两个谁也不会离开这里。</Dest>
+    </String>
+    <String List="2" sID="0001A4">
       <EDID>[FD000897]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>Very well. As a favor to the Fleet, I&apos;ll let Barrett go.</Source>
       <Dest>很好。看在深红舰队的面子上，我会放巴雷特走。</Dest>
     </String>
-    <String List="2" sID="0001A4">
+    <String List="2" sID="0001A5">
       <EDID>[FD000897]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Ah, I had heard some rumors among the captains that we had a new hotshot...</Source>
       <Dest>啊，我听说舰长之间有传闻，说舰队里新来了一位大能人……</Dest>
+    </String>
+    <String List="2" sID="0001A6">
+      <EDID>[FD000894]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Release my friend, or I take this up with Delgado.</Source>
+      <Dest>放了我的朋友，不然我就把这件事告诉德尔加多。</Dest>
+    </String>
+    <String List="2" sID="0001A7">
+      <EDID>[FD00089A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Attack] You&apos;re a pirate. This only ends one way.</Source>
+      <Dest>[攻击]你是海盗，这件事只会有一种结局。</Dest>
+    </String>
+    <String List="2" sID="0001A8">
+      <EDID>[FD00089E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;ll be back later.</Source>
+      <Dest>我晚点再来。</Dest>
+    </String>
+    <String List="2" sID="0001A9">
+      <EDID>[FD0008A7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We do have some insurance set aside for this exact problem.</Source>
+      <Dest>我们确实为这种问题准备了专项保险。</Dest>
+    </String>
+    <String List="2" sID="0001AA">
+      <EDID>[FD0008B0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Does that mean you&apos;ll be paying me, Miss...?</Source>
+      <Dest>也就是说这位女士会付钱是吗，敢问芳名……？</Dest>
     </String>
     <String List="2" sID="0001AB">
       <EDID>[FD0008B9]</EDID>
@@ -2516,6 +2948,126 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>We don&apos;t need to be introduced. Here&apos;s your money. </Source>
       <Dest>我们不需要相互自我介绍。这是你的钱。 </Dest>
     </String>
+    <String List="2" sID="0001AD">
+      <EDID>[FD0008C2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That&apos;s a fair point. But I can&apos;t control a man&apos;s reputation.</Source>
+      <Dest>你说的有道理，但我没法操控一个人的名声。</Dest>
+    </String>
+    <String List="2" sID="0001AE">
+      <EDID>[FD0008D4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Very well. Goodbye to you all. I have enjoyed this little exchange.</Source>
+      <Dest>唔……很好。再见了各位。这次小小的交易非常愉快。</Dest>
+    </String>
+    <String List="2" sID="0001AF">
+      <EDID>[FD0008CB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Do what you can. A suggestion to the right ears can work wonders.</Source>
+      <Dest>你尽力就行。对合适的人施加心理暗示，有时能起到意想不到的效果。</Dest>
+    </String>
+    <String List="2" sID="0001B0">
+      <EDID>[FD0008DD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>See ya around, Matsura. I mean... well, you know, hopefully not.</Source>
+      <Dest>再见，松浦。我的意思是……呃，你懂，再也不见。</Dest>
+    </String>
+    <String List="2" sID="0001B1">
+      <EDID>[FD0008E6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Enough. I must insist on payment for Barrett&apos;s release.</Source>
+      <Dest>够了。恐怕你们必须支付巴雷特的赎金。</Dest>
+    </String>
+    <String List="2" sID="0001B2">
+      <EDID>[FD0008E4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett has some good friends, it seems. Very well. You&apos;re all free to go.</Source>
+      <Dest>看来巴雷特有一群好朋友。很好，你们可以走了。</Dest>
+    </String>
+    <String List="2" sID="0001B3">
+      <EDID>[FD0008EE]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well that was surprisingly easy.</Source>
+      <Dest>诶，没想到这么简单。</Dest>
+    </String>
+    <String List="2" sID="0001B4">
+      <EDID>[FD0008F2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Likewise, Matsura! Good luck with all the... you know, pirating...</Source>
+      <Dest>我也是，松浦！祝愿你的……呃，海盗活动……一帆风顺。</Dest>
+    </String>
+    <String List="2" sID="0001B5">
+      <EDID>[FD0008FA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It&apos;s been a real pleasure, Matsura. Really. Good luck out there with the... you know, hurting people and taking their money...</Source>
+      <Dest>我感到非常荣幸，松浦。真的。祝愿你的……呃，伤人越货事业……一帆风顺。</Dest>
+    </String>
+    <String List="2" sID="0001B6">
+      <EDID>[FD0008FF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>From the hands of one Crimson Fleet pirate to yet another. And this time, that pirate is IN Constellation. Wonders never cease...</Source>
+      <Dest>从深红舰队的一个海盗到另一个海盗手里。而这次这个海盗，居然是群星的一员。神奇的事真是接二连三……</Dest>
+    </String>
+    <String List="2" sID="0001B7">
+      <EDID>[FD000904]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Of course Barrett isn&apos;t in any danger. Why am I not surprised?</Source>
+      <Dest>巴雷特就一点事没有。为什么我一点都不意外呢？</Dest>
+    </String>
+    <String List="2" sID="0001B8">
+      <EDID>[FD000910]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you serious with this? I thought you were dead!</Source>
+      <Dest>你认真的吗？我还以为你死了！</Dest>
+    </String>
+    <String List="2" sID="0001B9">
+      <EDID>[FD00090D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;ve missed you too, Vasco.</Source>
+      <Dest>我也很想你，瓦斯科。</Dest>
+    </String>
+    <String List="2" sID="0001BA">
+      <EDID>[FD00090B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, this is turning into a regular Constellation party, isn&apos;t it? Should&apos;ve brought drinks.</Source>
+      <Dest>呃，这场面越来越像平常的群星派对了，不是么？早知道带饮料来了。</Dest>
+    </String>
+    <String List="2" sID="0001BB">
+      <EDID>[FD000909]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And Heller&apos;s here! Will wonders never cease?</Source>
+      <Dest>海勒也来了！奇迹简直没完了啊？</Dest>
+    </String>
+    <String List="2" sID="0001BC">
+      <EDID>[FD000907]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And Lin&apos;s here! Will wonders never cease?</Source>
+      <Dest>林姐也来了！奇迹简直没完了啊？</Dest>
+    </String>
+    <String List="2" sID="0001BD">
+      <EDID>[FD00091A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett is unharmed. The statistical probability of this scenario has once again defied all known mathematical models.</Source>
+      <Dest>巴雷特没有受伤。他受伤的统计概率同样有违所有已知数学模型。</Dest>
+    </String>
+    <String List="2" sID="0001BE">
+      <EDID>[FD000917]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Now why did I get a feeling this is what we&apos;d find? Good to see you, Barrett.</Source>
+      <Dest>我突然有种预感，这就是我们要找的东西。见到你真是太好了，巴雷特。</Dest>
+    </String>
+    <String List="2" sID="0001BF">
+      <EDID>[FD000915]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I wish I could say this is the first time this has happened with Barrett. But, well, it isn&apos;t...</Source>
+      <Dest>我也希望这是第一次有这样的事发生在巴雷特头上，可，呃，并非如此……</Dest>
+    </String>
+    <String List="2" sID="0001C0">
+      <EDID>[FD000913]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I do not understand. Is Barrett being held hostage, or not?</Source>
+      <Dest>我没搞懂。巴雷特究竟是不是人质？</Dest>
+    </String>
     <String List="2" sID="0001C1">
       <EDID>[FD00091F]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
@@ -2527,6 +3079,18 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>You feel it a bit, can&apos;t you? Ever since I found the second one, had the visions. Being around them is just... comforting.</Source>
       <Dest>你也有点感觉，对吧？自从我找到第二个神器，看到异象以后就有了。待在神器的附近就会让我感觉……很安心。</Dest>
+    </String>
+    <String List="2" sID="0001C3">
+      <EDID>[FD000925]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Marvelous.</Source>
+      <Dest>太棒了。</Dest>
+    </String>
+    <String List="2" sID="0001C5">
+      <EDID>[FD000922]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Traveling together sounds good to me.</Source>
+      <Dest>一起旅行，听起来不错。</Dest>
     </String>
     <String List="2" sID="0001C6">
       <EDID>[FD000935]</EDID>
@@ -2540,11 +3104,47 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Goodnight, Matsura. Guess you&apos;ll be pillaging in the great beyond now...</Source>
       <Dest>晚安，松浦。现在你大概要到那边的世界继续烧杀抢掠了……</Dest>
     </String>
+    <String List="2" sID="0001C8">
+      <EDID>[FD00092B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You don&apos;t want to get dragged down in the gravity of my genius. I get it. Let me know if you change your mind.</Source>
+      <Dest>我的聪明才智就像个重力场，而你不想被它困住。那好吧，如果你改主意了就告诉我。</Dest>
+    </String>
+    <String List="2" sID="0001CA">
+      <EDID>[FD000928]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I think it&apos;s better if we go our own ways.</Source>
+      <Dest>我觉得我们还是各走各的路比较好。</Dest>
+    </String>
+    <String List="2" sID="0001CB">
+      <EDID>[FD000940]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sorry for the wait, everyone! Got a little held up on Vectera.</Source>
+      <Dest>不好意思让各位久等了！我在维特拉星出了点事耽搁了一下。</Dest>
+    </String>
+    <String List="2" sID="0001CC">
+      <EDID>[FD000946]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, some of us were...</Source>
+      <Dest>嗯，是我们中的一部分人……</Dest>
+    </String>
     <String List="2" sID="0001CD">
       <EDID>[FD000943]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Barrett! We were worried sick.</Source>
       <Dest>巴雷特！我们担心死了。</Dest>
+    </String>
+    <String List="2" sID="0001CE">
+      <EDID>[FD00094C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Actually, Walter HAS been complaining about you more than usual, which is always a sign when he&apos;s worried.</Source>
+      <Dest>其实，最近沃尔特埋怨你的话比平时更多了，而他一担心别人就爱这样。</Dest>
+    </String>
+    <String List="2" sID="0001CF">
+      <EDID>[FD000949]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I see what you did there, Walter. And I know you&apos;ve been secretly crying into your piles of money just waiting for my return.</Source>
+      <Dest>我知道你什么意思，沃尔特。你“肯定”整天偷偷对着你堆积成山的钱以泪洗面，呆呆地盼着我回来吧。</Dest>
     </String>
     <String List="2" sID="0001D0">
       <EDID>[FD000952]</EDID>
@@ -2558,11 +3158,107 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Wait. Is that? </Source>
       <Dest>等等，那是？ </Dest>
     </String>
+    <String List="2" sID="0001D2">
+      <EDID>[FD000956]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You seem like a reasonable person. Cut your losses and let Barrett go.</Source>
+      <Dest>你似乎是个明事理的人。快点止损，放巴雷特走吧。</Dest>
+    </String>
+    <String List="2" sID="0001D3">
+      <EDID>[FD00094F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t start, Khatri...</Source>
+      <Dest>别来这套，卡特里……</Dest>
+    </String>
+    <String List="2" sID="0001D4">
+      <EDID>[FD00095B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m afraid that&apos;s not an option...</Source>
+      <Dest>恐怕这不是一个选择......</Dest>
+    </String>
+    <String List="2" sID="0001D5">
+      <EDID>[FD000959]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm. Worth considering...</Source>
+      <Dest>唔。值得考虑一下……</Dest>
+    </String>
+    <String List="2" sID="0001D6">
+      <EDID>[FD00095F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Look, Barrett is more trouble than he&apos;s worth. A lot of pirates are already dead.</Source>
+      <Dest>听着，巴雷特是个扫把星。已经死了很多海盗了。</Dest>
+    </String>
+    <String List="2" sID="0001D7">
+      <EDID>[FD000964]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All the more reason I need to make sure I&apos;m compensated...</Source>
+      <Dest>那只会让我要求赎金的理由更充分……</Dest>
+    </String>
+    <String List="2" sID="0001D8">
+      <EDID>[FD000962]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He does seem to be unusually skilled in that area...</Source>
+      <Dest>在这方面他确实显得异常熟练……</Dest>
+    </String>
+    <String List="2" sID="0001D9">
+      <EDID>[FD000968]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If you wanted bloodshed, you would&apos;ve attacked already.</Source>
+      <Dest>要是你想大开杀戒，那早就动手了。</Dest>
+    </String>
+    <String List="2" sID="0001DA">
+      <EDID>[FD000971]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You clearly get along with Barrett. You&apos;re friends.</Source>
+      <Dest>你和巴雷特处得很好啊，都交上朋友了。</Dest>
+    </String>
+    <String List="2" sID="0001DB">
+      <EDID>[FD00096D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t assume because I haven&apos;t pulled my gun, that I won&apos;t...</Source>
+      <Dest>别看我没掏枪，就以为我不会动手……</Dest>
+    </String>
+    <String List="2" sID="0001DC">
+      <EDID>[FD00096B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm. True...</Source>
+      <Dest>唔，确实……</Dest>
+    </String>
+    <String List="2" sID="0001DD">
+      <EDID>[FD000976]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>A ransom isn&apos;t about how much one gets along with the hostage...</Source>
+      <Dest>我和人质相处得怎样，和要不要赎金无关……</Dest>
+    </String>
+    <String List="2" sID="0001DE">
+      <EDID>[FD000974]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He HAS been more entertaining than most hostages...</Source>
+      <Dest>他确实比大部分人质都更有意思……</Dest>
+    </String>
+    <String List="2" sID="0001DF">
+      <EDID>[FD00097A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You were just laughing it up the whole time?</Source>
+      <Dest>你一直都是这样嬉皮笑脸的吗？</Dest>
+    </String>
+    <String List="2" sID="0001E0">
+      <EDID>[FD00097D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hey, you&apos;re underselling my harrowing escape from certain doom, here. A little charm goes a long way when the knives are out!</Source>
+      <Dest>嘿，你这么说是在贬低我逃脱绝境的超凡本领。危急时刻运用一点个人魅力会让你受益匪浅的！</Dest>
+    </String>
     <String List="2" sID="0001E1">
       <EDID>[FD000981]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Who was that pirate, anyway?</Source>
       <Dest>那个海盗到底是谁？</Dest>
+    </String>
+    <String List="2" sID="0001E2">
+      <EDID>[FD000988]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You all right, Lin?</Source>
+      <Dest>你还好吗，林姐？</Dest>
     </String>
     <String List="2" sID="0001E3">
       <EDID>[FD000984]</EDID>
@@ -2582,6 +3278,48 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>I&apos;m fine. In this line of work, you make do. Even when the worst happens.</Source>
       <Dest>我没事。干这行，总得凑合着过。即使发生最坏的情况。</Dest>
     </String>
+    <String List="2" sID="0001E6">
+      <EDID>[FD000996]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Only managed to scrounge up one so far. I&apos;m sure there&apos;s more around.</Source>
+      <Dest>目前我只找到一个，周围肯定还有更多。</Dest>
+    </String>
+    <String List="2" sID="0001E7">
+      <EDID>[FD000994]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Don&apos;t see what good it will do since they&apos;re already gone, but fine. Here. You need any more, feel free to scavenge around.</Source>
+      <Dest>他们都已经走了，我不明白那有什么用，不过给你吧。如果你还需要其他东西，可以在附近随便搜刮。</Dest>
+    </String>
+    <String List="2" sID="0001E8">
+      <EDID>[FD000991]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got any more Power Cells?</Source>
+      <Dest>还有电池吗？</Dest>
+    </String>
+    <String List="2" sID="0001E9">
+      <EDID>[FD00098F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I need a Power Cell to repair the comms computer.</Source>
+      <Dest>我需要电池来修理通讯电脑。</Dest>
+    </String>
+    <String List="2" sID="0001EA">
+      <EDID>[FD00099E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I don&apos;t mind keeping Barrett as my guest, but I won&apos;t say no to credits.</Source>
+      <Dest>我不介意让巴雷特继续在这做客，但我也不会拒绝信用币。</Dest>
+    </String>
+    <String List="2" sID="0001EB">
+      <EDID>[FD00099C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You are here to free your friend? Do you have the money?</Source>
+      <Dest>你是来这救你朋友的？钱准备好了吗？</Dest>
+    </String>
+    <String List="2" sID="0001EC">
+      <EDID>[FD00099A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Have you reconsidered paying the ransom for Barrett?</Source>
+      <Dest>你重新考虑过给巴雷特付赎金的事了吗？</Dest>
+    </String>
     <String List="2" sID="0001ED">
       <EDID>[FD0009A2]</EDID>
       <REC>INFO:NAM1</REC>
@@ -2593,6 +3331,18 @@ Sarah Morgan, Head of Constellation</Source>
       <REC>INFO:NAM1</REC>
       <Source>You&apos;re right. What happened here?</Source>
       <Dest>你说得对。发生了什么事？</Dest>
+    </String>
+    <String List="2" sID="0001EF">
+      <EDID>[FD0009DC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That doesn&apos;t sound good.</Source>
+      <Dest>听起来不太妙。</Dest>
+    </String>
+    <String List="2" sID="0001F0">
+      <EDID>[FD0009BA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I sense their loss hit you even harder than you realized. You cared about them.</Source>
+      <Dest>我感觉到他们的死对你的打击比你意识到的还要大。你在乎他们。</Dest>
     </String>
     <String List="2" sID="0001F1">
       <EDID>[FD0009BD]</EDID>
@@ -2612,11 +3362,35 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Pirates. We were right, they were tracking us. They attacked as soon as they saw the Frontier. Some of my dusties... They didn&apos;t make it.</Source>
       <Dest>是海盗。我们猜得没错，他们一路跟踪我们。一看到我们就立刻开火。我的一些伙伴……撑不住了。</Dest>
     </String>
+    <String List="2" sID="0001F4">
+      <EDID>[FD0009C3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, how could you have? You weren&apos;t here.</Source>
+      <Dest>你怎么会知道呢？你当时又不在。</Dest>
+    </String>
     <String List="2" sID="0001F5">
       <EDID>[FD0009C0]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;m sorry. I didn&apos;t know.</Source>
       <Dest>抱歉，我不知道。</Dest>
+    </String>
+    <String List="2" sID="0001F6">
+      <EDID>[FD0009D5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I started steeling myself to go out fighting, then that idiot puts his hand on my shoulder and says &quot;stay here, Lin. I got you.&quot;</Source>
+      <Dest>我都已经做好打到最后一刻的准备了，结果那白痴把手搭在我肩上，说一句 &quot;林，你待在这就好。我罩你。&quot;</Dest>
+    </String>
+    <String List="2" sID="0001F7">
+      <EDID>[FD0009D2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Anyway, I was pinned down behind some crates with Barrett. Bullets and laser fire everywhere. No smile on that damn carefree face of his, like he knew this was it.</Source>
+      <Dest>总之，我和巴雷特一起被困在了几个箱子后面，周围子弹激光乱飞。他脸上一点也没有他平时那副没心没肺的样子，就好像他知道时候到了。</Dest>
+    </String>
+    <String List="2" sID="0001F8">
+      <EDID>[FD0009D8]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I know that talk. Suicide mission.</Source>
+      <Dest>我知道那是什么意思，他打算牺牲自己。</Dest>
     </String>
     <String List="2" sID="0001F9">
       <EDID>[FD0009E4]</EDID>
@@ -2635,6 +3409,24 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>Next thing I know, two of the pirates are dead, and he&apos;s got the third one in a headlock. </Source>
       <Dest>等我回过神来，两个海盗已经死了，而他正死死箍着第三个海盗的头。 </Dest>
+    </String>
+    <String List="2" sID="0001FC">
+      <EDID>[FD0009E0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This would be the part I would absolutely run away.</Source>
+      <Dest>如果是我，绝对会在这时逃走。</Dest>
+    </String>
+    <String List="2" sID="0001FD">
+      <EDID>[FD0009E7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It was going so well until that part.</Source>
+      <Dest>到那为止一切都很顺利。</Dest>
+    </String>
+    <String List="2" sID="0001FE">
+      <EDID>[FD0009EF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Tell me what happened.</Source>
+      <Dest>告诉我发生了什么。</Dest>
     </String>
     <String List="2" sID="0001FF">
       <EDID>[FD0009F9]</EDID>
@@ -2659,6 +3451,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC>INFO:NAM1</REC>
       <Source>I need to find Barrett and Heller.</Source>
       <Dest>我需要找到巴雷特和海勒。</Dest>
+    </String>
+    <String List="2" sID="000203">
+      <EDID>[FD0009FC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So you just stood around and did nothing. Boss of the year right here.</Source>
+      <Dest>所以你就呆在这什么也不做，真是年度最佳老板。</Dest>
     </String>
     <String List="2" sID="000204">
       <EDID>[FD0009F3]</EDID>
@@ -2702,6 +3500,108 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Too risky to put that in the message. Too much liability. You know how it is.</Source>
       <Dest>在消息里提起那件事太冒险了，责任太大。你懂的。</Dest>
     </String>
+    <String List="2" sID="00020B">
+      <EDID>[FD000A02]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>A courier said Argos was packing up. Why not mention the attack?</Source>
+      <Dest>报信的人说阿戈斯正在撤离，为什么不提袭击的事情？</Dest>
+    </String>
+    <String List="2" sID="00020C">
+      <EDID>[FD000A0C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not quite. Barrett is more dangerous than you might think.</Source>
+      <Dest>不完全是那样。巴雷特比你想得要更危险。</Dest>
+    </String>
+    <String List="2" sID="00020D">
+      <EDID>[FD000A0A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Suicide? *chuckle*  Naw. The guys is seriously tougher than he looks.</Source>
+      <Dest>自杀？ *轻笑* 不。这傢伙比看起来犟悍多了。</Dest>
+    </String>
+    <String List="2" sID="00020E">
+      <EDID>[FD000A08]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>For some, perhaps. Barrett is quite capable, all things considered.</Source>
+      <Dest>也许对别人是吧。但巴雷特样样精通，很能干。</Dest>
+    </String>
+    <String List="2" sID="00020F">
+      <EDID>[FD000A13]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not for them, anyway. Barrett is more dangerous than you might think.</Source>
+      <Dest>对于那些海盗来说是不太好。巴雷特比你想得要更危险。</Dest>
+    </String>
+    <String List="2" sID="000210">
+      <EDID>[FD000A11]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett&apos;s fine. You might think he&apos;s just a wise ass, but he&apos;s got skills.</Source>
+      <Dest>巴雷特没事啦。你可能觉得他只会用脑子，但其实他功夫也不错。</Dest>
+    </String>
+    <String List="2" sID="000211">
+      <EDID>[FD000A0F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I do not know Barrett as well as some, but he seems quite confident in his abilities, and not without cause.</Source>
+      <Dest>虽然我不像某些人那样了解巴雷特，但他似乎对自己的能力相当自信，而且他有充分的理由。</Dest>
+    </String>
+    <String List="2" sID="000212">
+      <EDID>[FD000A1A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you joking, or are you just a coward?</Source>
+      <Dest>你是在开玩笑，还是说你就是个懦夫？</Dest>
+    </String>
+    <String List="2" sID="000213">
+      <EDID>[FD000A18]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>What? I&apos;ve seen you handle worse odds. Heck, we&apos;ve done it together.</Source>
+      <Dest>什么？我见过你应付过更严重的情况。我当时就和你在一起。</Dest>
+    </String>
+    <String List="2" sID="000214">
+      <EDID>[FD000A16]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Your humor is ill-timed.</Source>
+      <Dest>你的玩笑有点不合时宜。</Dest>
+    </String>
+    <String List="2" sID="000215">
+      <EDID>[FD000A21]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你们是什么人？</Dest>
+    </String>
+    <String List="2" sID="000216">
+      <EDID>[FD000A2A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hold still. Let me patch you up.</Source>
+      <Dest>别动，我来给你包扎。</Dest>
+    </String>
+    <String List="2" sID="000217">
+      <EDID>[FD000A24]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re on a lot of painkillers, but otherwise you&apos;re in surprisingly good health.</Source>
+      <Dest>你止痛药吃太多了，但除此之外你的健康状况好得出奇。</Dest>
+    </String>
+    <String List="2" sID="000218">
+      <EDID>[FD000A27]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Considering the spaceship wreckage, you mean? Yeah, well, you missed the worst of it. Pretty sure we ripped through all the emergency meds that were salvageable...</Source>
+      <Dest>你是说结合飞船的破损程度来看吗？是啊，你错过了最糟糕的部分。我非常肯定，我们已经搜遍了所有还能用的应急药物……</Dest>
+    </String>
+    <String List="2" sID="000219">
+      <EDID>[FD000A2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
+      <Dest>不不，我会没事的。我只是，呃，在我吃的那堆止痛药和晕船药缓过劲之前，不太想四处走动。</Dest>
+    </String>
+    <String List="2" sID="00021A">
+      <EDID>[FD000A3D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That doesn&apos;t explain the crashed ship.</Source>
+      <Dest>那没法解释飞船是怎么坠毁的。</Dest>
+    </String>
+    <String List="2" sID="00021B">
+      <EDID>[FD000A36]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I need to know what happened, Heller.</Source>
+      <Dest>我需要知道事情经过，海勒。</Dest>
+    </String>
     <String List="2" sID="00021C">
       <EDID>[FD000A3A]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
@@ -2714,47 +3614,113 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Man, I was so terrified when I got pulled on board that pirate ship.</Source>
       <Dest>哎，我被拖上那艘海盗船的时候简直吓坏了。</Dest>
     </String>
+    <String List="2" sID="00021E">
+      <EDID>[FD000A40]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh, I&apos;m getting to that...</Source>
+      <Dest>哦，我正要说这个呢……</Dest>
+    </String>
+    <String List="2" sID="00021F">
+      <EDID>[FD000A49]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So he had a plan then?</Source>
+      <Dest>所以那时他有计划吗？</Dest>
+    </String>
+    <String List="2" sID="000220">
+      <EDID>[FD000A43]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
+      <Dest>&quot;相信我&quot; 是我最常用的台词，尤其是在别人根本不该相信我的时候。</Dest>
+    </String>
+    <String List="2" sID="000221">
+      <EDID>[FD000A4C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not... what you and I would call a plan, necessarily...</Source>
+      <Dest>这个……也不一定真算得上计划……</Dest>
+    </String>
+    <String List="2" sID="000222">
+      <EDID>[FD000A5A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And he shot something he shouldn&apos;t have...</Source>
+      <Dest>然后他打中了不该打中的东西……</Dest>
+    </String>
     <String List="2" sID="000223">
+      <EDID>[FD000A46]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah... I&apos;m starting to see that...</Source>
+      <Dest>是的...我开始明白了...</Dest>
+    </String>
+    <String List="2" sID="000224">
+      <EDID>[FD000A56]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And he shot someone he shouldn&apos;t have...</Source>
+      <Dest>然后他打中了不该打中的人……</Dest>
+    </String>
+    <String List="2" sID="000225">
       <EDID>[FD000A4F]</EDID>
       <REC id="2" idMax="2">INFO:NAM1</REC>
       <Source>I mean, I didn&apos;t think it would work, but they came in. All of a sudden, we were wrestling with two of them. Barrett reached for one of their guns...</Source>
       <Dest>我是说，我本以为这计划没用，但他们真的进来了。一瞬间我们就和两个海盗扭打起来，巴雷特伸手去夺他们的枪……</Dest>
     </String>
-    <String List="2" sID="000224">
+    <String List="2" sID="000226">
       <EDID>[FD000A4F]</EDID>
       <REC id="1" idMax="2">INFO:NAM1</REC>
       <Source>I just remember him shouting &quot;This kid is a killer! How am I supposed to defend myself against these pearly whites? He&apos;s gonna bite my face off!&quot;</Source>
       <Dest>我只记得他大喊“这小子是个杀人犯！他要是用那口大白牙咬我可怎么办啊？他会把我脸都咬下来的！”</Dest>
     </String>
-    <String List="2" sID="000225">
+    <String List="2" sID="000227">
       <EDID>[FD000A4F]</EDID>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>He tells me we need to start pretending to fight each other. Trick the pirates into thinking they need to come in before one of us gets killed.</Source>
       <Dest>他告诉我，我们要假装打架来骗海盗，让他们觉得必须得介入进来，免得我们杀掉对方。</Dest>
     </String>
-    <String List="2" sID="00022A">
+    <String List="2" sID="000228">
+      <EDID>[FD000A52]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Crash like this. Looks like he smashed the flight controls completely.</Source>
+      <Dest>这样的坠毁，看来他是彻底打烂了飞行控制装置。</Dest>
+    </String>
+    <String List="2" sID="000229">
       <EDID>[FD000A5E]</EDID>
       <REC id="3" idMax="3">INFO:NAM1</REC>
       <Source>Then he did the little... finger gun thing...</Source>
       <Dest>然后他就……用手比划枪……</Dest>
     </String>
-    <String List="2" sID="00022B">
+    <String List="2" sID="00022A">
       <EDID>[FD000A5E]</EDID>
       <REC id="2" idMax="3">INFO:NAM1</REC>
       <Source>&quot;You missed the fun part, Heller! I mean, I go through all the trouble of saving your butt, and you weren&apos;t even awake to notice!&quot;</Source>
       <Dest>你错过了最有意思的部分，海勒！我是说，你昏过去了，甚至都不知道我费了多大的功夫救你！</Dest>
     </String>
-    <String List="2" sID="00022C">
+    <String List="2" sID="00022B">
       <EDID>[FD000A5E]</EDID>
       <REC id="1" idMax="3">INFO:NAM1</REC>
       <Source>I blacked out, and when I came to, there he was. Smiling like it was just another day on the job.</Source>
       <Dest>我昏过去了。等我醒来，他就在那里，脸上挂着平时的微笑。</Dest>
     </String>
-    <String List="2" sID="00022D">
+    <String List="2" sID="00022C">
       <EDID>[FD000A5E]</EDID>
       <REC id="0" idMax="3">INFO:NAM1</REC>
       <Source>Bingo. Blasted the pilot right in the back, through to the flight console. Dropped orbit like a rock off a high-rise.</Source>
       <Dest>说对咯。他从背后把飞行员和飞行控制台射了个对穿，然后飞船就像山顶落石一样掉下了轨道。</Dest>
+    </String>
+    <String List="2" sID="00022D">
+      <EDID>[FD000A61]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But Barrett isn&apos;t here. I need to find him.</Source>
+      <Dest>但巴雷特不在这里。我需要找到他。</Dest>
+    </String>
+    <String List="2" sID="00022E">
+      <EDID>[FD000A65]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Skip to the end, Heller.</Source>
+      <Dest>直接说结果吧，海勒。</Dest>
+    </String>
+    <String List="2" sID="00022F">
+      <EDID>[FD000A69]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He really survived the crash without a scratch?</Source>
+      <Dest>坠机之后他真的完全没受伤？</Dest>
     </String>
     <String List="2" sID="000230">
       <EDID>[FD000A6F]</EDID>
@@ -2774,7 +3740,67 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Oh, yeah. Probably should&apos;ve talked about that first. Did I mention I&apos;m on a lot of painkillers?</Source>
       <Dest>哦，对，可能应该一开始先说这个的。我有没有提到我吃了很多止痛药？</Dest>
     </String>
+    <String List="2" sID="000233">
+      <EDID>[FD000A6C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well... no, I don&apos;t think so. I caught him holding his ribs a few times. Favored his left leg a bit, you know?</Source>
+      <Dest>嗯……不，我不这么认为。我有几次看到他捂着肋骨，还稍微处理了下左腿的伤势。</Dest>
+    </String>
+    <String List="2" sID="000234">
+      <EDID>[FD000A72]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>The Crimson Fleet has him. Again...</Source>
+      <Dest>深红舰队又抓住他了……</Dest>
+    </String>
+    <String List="2" sID="000235">
+      <EDID>[FD000A7E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>They took him? Why?</Source>
+      <Dest>他们带走了他？为什么？</Dest>
+    </String>
+    <String List="2" sID="000236">
+      <EDID>[FD000A78]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That was a long way of saying &quot;pirates have Barrett.&quot;</Source>
+      <Dest>这么长的故事就讲了一句话：“海盗绑了巴雷特”。</Dest>
+    </String>
+    <String List="2" sID="000237">
+      <EDID>[FD000A75]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I was drifting in and out, but yeah. I think so. </Source>
+      <Dest>我当时不太清醒，不过是的，我想是这样。 </Dest>
+    </String>
+    <String List="2" sID="000238">
+      <EDID>[FD000A81]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I was drifting in and out, but uh, I think I heard the word &quot;ransom&quot;?</Source>
+      <Dest>我当时不太清醒，但，呃，我好像听到了“赎金”？</Dest>
+    </String>
+    <String List="2" sID="000239">
+      <EDID>[FD000A7B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah, you know, you&apos;re really the one who should be upset about all this... Me laying here half conscious? Real inconvenience...</Source>
+      <Dest>嗯，我说，你才是该为整件事头疼的人……躺在这半梦半醒的我，想必很碍事吧……</Dest>
+    </String>
+    <String List="2" sID="00023A">
+      <EDID>[FD000A87]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let&apos;s get you on your feet first.</Source>
+      <Dest>还是先帮你站稳吧。</Dest>
+    </String>
+    <String List="2" sID="00023B">
+      <EDID>[FD000A84]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
+      <Dest>在他们重力跃迁之前我从飞船收到了一个信号，估计是巴雷特。我的……状况一直不太好，所以我还没听。给你。</Dest>
+    </String>
     <String List="2" sID="00023C">
+      <EDID>[FD000A8D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Sit tight. I&apos;ll come back for you later.</Source>
+      <Dest>先别动，我之后再回来找你。</Dest>
+    </String>
+    <String List="2" sID="00023D">
       <EDID>[FD000A8A]</EDID>
       <REC id="2" idMax="2">INFO:NAM1</REC>
       <Source>Let me know when you want to head out.</Source>
@@ -2782,9 +3808,21 @@ Sarah Morgan, Head of Constellation</Source>
     </String>
     <String List="2" sID="00023E">
       <EDID>[FD000A8A]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>Give me a minute. I think the worst of it is... yeah. I&apos;ll be all right. I&apos;ll be all right. Ready to wisecrack with the best of them...</Source>
+      <Dest>等我一会。我觉得最要命的是……对。我会没事的，我会没事的。准备好最有意思的俏皮话……</Dest>
+    </String>
+    <String List="2" sID="00023F">
+      <EDID>[FD000A8A]</EDID>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>Yeah. Just, uh, don&apos;t ask me to operate any heavy machinery for a while.</Source>
       <Dest>好。只是，呃，暂时先别叫我操作重型机械了。</Dest>
+    </String>
+    <String List="2" sID="000240">
+      <EDID>[FD000A96]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I think Argos is probably going to write this whole thing off. Plus I&apos;m ninety percent sure working for you would be safer. I hope...</Source>
+      <Dest>我想阿戈斯估计会把整件事一笔勾销。况且我有九成把握给你干活会更安全些。但愿如此……</Dest>
     </String>
     <String List="2" sID="000241">
       <EDID>[FD000A90]</EDID>
@@ -2804,11 +3842,59 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Oh, uh, yeah. Okay... Cool...</Source>
       <Dest>哦，呃，行。好吧……没问题……</Dest>
     </String>
+    <String List="2" sID="000244">
+      <EDID>[FD000A93]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Shouldn&apos;t we get you back to Argos?</Source>
+      <Dest>我们不该送你回阿戈斯吗？</Dest>
+    </String>
+    <String List="2" sID="000245">
+      <EDID>[FD000A99]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hey, uh, I should come with you, right? I don&apos;t think anyone else is coming...</Source>
+      <Dest>嘿，呃，我应该跟你走，对吗？我觉得不会再有别人来了……</Dest>
+    </String>
     <String List="2" sID="000246">
       <EDID>[FD000AC0]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Heller! Are you all right?</Source>
       <Dest>海勒！你还好吗？</Dest>
+    </String>
+    <String List="2" sID="000247">
+      <EDID>[FD000AD1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah? Got anything?</Source>
+      <Dest>嗯？有什么发现吗？</Dest>
+    </String>
+    <String List="2" sID="000248">
+      <EDID>[FD000ACF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Guessing there wasn&apos;t anything on that old computer, was there?</Source>
+      <Dest>我猜那台旧电脑上没什么东西，对吧？</Dest>
+    </String>
+    <String List="2" sID="000249">
+      <EDID>[FD000ACD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You find anything?</Source>
+      <Dest>找到什么了吗？</Dest>
+    </String>
+    <String List="2" sID="00024A">
+      <EDID>[FD000ACB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So, you actually get that computer working again?</Source>
+      <Dest>所以，你真的修好了那台电脑？</Dest>
+    </String>
+    <String List="2" sID="00024B">
+      <EDID>[FD000AC3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh... hey Lin. Good to see ya again...</Source>
+      <Dest>哦……嘿，林姐。很高兴再次见到你……</Dest>
+    </String>
+    <String List="2" sID="00024C">
+      <EDID>[FD000AD4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a transmission. From Barrett.</Source>
+      <Dest>我找到了一条消息，来自巴雷特。</Dest>
     </String>
     <String List="2" sID="00024D">
       <EDID>[FD000AD7]</EDID>
@@ -2828,6 +3914,36 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>What? Let me see that...</Source>
       <Dest>什么？让我看看……</Dest>
     </String>
+    <String List="2" sID="000250">
+      <EDID>[FD000ADA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Still checking things out.</Source>
+      <Dest>我还在做检查。</Dest>
+    </String>
+    <String List="2" sID="000251">
+      <EDID>[FD000AE3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Be a while before Argos comes to pick me up. I&apos;ll be here if you need me.</Source>
+      <Dest>在阿戈斯的人来接应我之前还有一段时间，如果你有需要可以来这里找我。</Dest>
+    </String>
+    <String List="2" sID="000252">
+      <EDID>[FD000ADD]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh. Okay...</Source>
+      <Dest>哦，好的...</Dest>
+    </String>
+    <String List="2" sID="000253">
+      <EDID>[FD000AE0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thanks Lin.</Source>
+      <Dest>谢了，林姐。</Dest>
+    </String>
+    <String List="2" sID="000254">
+      <EDID>[FD000AE6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I knew it! You care about them. You&apos;re a softy.</Source>
+      <Dest>我就知道！其实你在乎他们，刀子嘴豆腐心。</Dest>
+    </String>
     <String List="2" sID="000255">
       <EDID>[FD000AE9]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
@@ -2839,6 +3955,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Well don&apos;t start buying me stuffed animals for my birthday or anything, but yes, all right. I don&apos;t like seeing my people hurt. Even Barrett and Heller.</Source>
       <Dest>你可别因为这个就送我毛绒玩具当生日礼物。不过是的，我承认。我不喜欢看到自己人受伤，即便是巴雷特和海勒也一样。</Dest>
+    </String>
+    <String List="2" sID="000257">
+      <EDID>[FD000AEC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t you come with me?</Source>
+      <Dest>你为什么不跟我走呢？</Dest>
     </String>
     <String List="2" sID="000258">
       <EDID>[FD000AEF]</EDID>
@@ -2858,6 +3980,66 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>What? Really?</Source>
       <Dest>什么？真的吗？</Dest>
     </String>
+    <String List="2" sID="00025B">
+      <EDID>[FD000AF2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And hey, if you ever need a little extra help, I&apos;ve been thinking about a career change lately. Maybe it&apos;s time to put Argos behind me.</Source>
+      <Dest>对了，如果你还需要人手，我最近在考虑换个工作。也许是时候该离开阿戈斯了。</Dest>
+    </String>
+    <String List="2" sID="00025C">
+      <EDID>[FD000AF6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait wait wait! We&apos;re all citizens of the universe here! No one needs to die. Well, I mean, no one else...</Source>
+      <Dest>等会等会！大家都是宇宙公民嘛，何必拼个你死我活的！呃，就算已经有人死了……</Dest>
+    </String>
+    <String List="2" sID="00025D">
+      <EDID>[FD000AF9]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Listen to your friend. I am trying to be reasonable.</Source>
+      <Dest>听听你朋友说的，我正在试着讲道理呢。</Dest>
+    </String>
+    <String List="2" sID="00025E">
+      <EDID>[FD000AFC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fine. Let&apos;s talk about this ransom.</Source>
+      <Dest>好吧。我们来聊聊赎金吧。</Dest>
+    </String>
+    <String List="2" sID="00025F">
+      <EDID>[FD000AFF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yes. Let&apos;s.</Source>
+      <Dest>好啊，那就聊聊。</Dest>
+    </String>
+    <String List="2" sID="000260">
+      <EDID>[FD000B02]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Attack] Draw your weapon. Or not. I don&apos;t care.</Source>
+      <Dest>[攻击]掏出你的武器来。不掏也行，我不在乎。</Dest>
+    </String>
+    <String List="2" sID="000261">
+      <EDID>[FD000B05]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Very well.</Source>
+      <Dest>就此别过。</Dest>
+    </String>
+    <String List="2" sID="000262">
+      <EDID>[FD000B0C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Barrett&apos;s right. There are better ways of handling this than using violence.</Source>
+      <Dest>巴雷特说得对。我们有更好的处理方式，不用动粗。</Dest>
+    </String>
+    <String List="2" sID="000263">
+      <EDID>[FD000B0A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Maybe we don&apos;t antagonize the person holding Barrett hostage? Just a suggestion.</Source>
+      <Dest>也许我们不要激怒绑架巴雷特的人？只是我的一点建议。</Dest>
+    </String>
+    <String List="2" sID="000264">
+      <EDID>[FD000B08]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If Barrett prefers a non-violent solution, we should consider it.</Source>
+      <Dest>要是巴雷特不愿意动用暴力，那我们应该好好考虑下。</Dest>
+    </String>
     <String List="2" sID="000265">
       <EDID>[FD000B89]</EDID>
       <REC>INFO:NAM1</REC>
@@ -2875,6 +4057,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC>INFO:NAM1</REC>
       <Source>Oh! I thought you were some pirate coming back to kill me. Lucky me, right?</Source>
       <Dest>哦！我以为你是回来杀我的海盗呢。我运气真好，对吧？</Dest>
+    </String>
+    <String List="2" sID="000285">
+      <EDID>[FD000872]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Vasco. Identify.</Source>
+      <Dest>瓦斯科。请确认。</Dest>
     </String>
     <String List="2" sID="000286">
       <EDID>[FD00085A]</EDID>
@@ -2900,6 +4088,12 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Excuse me, this is a private...</Source>
       <Dest>不好意思，这是私人……</Dest>
     </String>
+    <String List="2" sID="00028A">
+      <EDID>[FD000945]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Everyone will be in the library. Just inside.</Source>
+      <Dest>所有人都在图书馆。就在这里面。</Dest>
+    </String>
     <String List="2" sID="00028B">
       <EDID>[FD000841]</EDID>
       <REC>INFO:NAM1</REC>
@@ -2912,11 +4106,77 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Welcome to constellation, stranger! The others are awaiting you inside, please follow me.</Source>
       <Dest>欢迎来到群星，陌生人！其他人正在里面等你，请跟我来。</Dest>
     </String>
+    <String List="2" sID="00028D">
+      <EDID>[FD000958]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh please. It&apos;s completely ridiculous. Easiest bet I&apos;ll ever win.</Source>
+      <Dest>拜托。这简直无比荒谬。我这辈子没打过这么好赢的赌。</Dest>
+    </String>
+    <String List="2" sID="00028E">
+      <EDID>[FD00087B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Scanning. Cross-referencing known employee records of our affiliated organizations. Please remain still...</Source>
+      <Dest>扫描中。与关联公司已知员工记录交叉对照中，请站好别动……</Dest>
+    </String>
+    <String List="2" sID="00028F">
+      <EDID>[FD000961]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You really think what I&apos;m suggesting is so outlandish? All the phenomenon we see out in the stars, and what I&apos;m saying is the most impossible theory?</Source>
+      <Dest>你真觉得我的观点是天方夜谭？我们在宇宙中见过那么多光怪陆离的现象，你却依旧觉得我的理论绝对不现实？</Dest>
+    </String>
+    <String List="2" sID="000290">
+      <EDID>[FD00096A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You two keep going on like this, and I&apos;m banning wagers. I&apos;m serious.</Source>
+      <Dest>你们两个再这样我就要禁止打赌了。我是认真的。</Dest>
+    </String>
+    <String List="2" sID="000291">
+      <EDID>[FD000973]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We&apos;ll play nice. Just a little friendly conversation, Sarah. That&apos;s all.</Source>
+      <Dest>我们不会欺负人的，只是友好地聊聊天，莎拉。没别的意思。</Dest>
+    </String>
     <String List="2" sID="000292">
       <EDID>[FD0009B6]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Oh, this is just typical. She hands over our ship to some random thug who&apos;s trying to steal our belongings.</Source>
       <Dest>唉，这还真是老套。她竟然把我们的飞船交给一个想抢我们东西的无名暴徒。</Dest>
+    </String>
+    <String List="2" sID="000293">
+      <EDID>[FD0009C4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Walter...</Source>
+      <Dest>沃尔特……</Dest>
+    </String>
+    <String List="2" sID="000294">
+      <EDID>[FD00098E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We appear to have a visitor...</Source>
+      <Dest>我们似乎来了个客人……</Dest>
+    </String>
+    <String List="2" sID="000295">
+      <EDID>[FD0009C5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we start with you telling me what Constellation is?</Source>
+      <Dest>不如你先跟我说说群星组织是个什么东西？</Dest>
+    </String>
+    <String List="2" sID="000296">
+      <EDID>[FD0009A4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Welcome to Constellation. We have a lot to talk about.</Source>
+      <Dest>欢迎来到群星。我们需要好好聊聊。</Dest>
+    </String>
+    <String List="2" sID="000297">
+      <EDID>[FD0009B7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你们是什么人？</Dest>
+    </String>
+    <String List="2" sID="000298">
+      <EDID>[FD0009C8]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Very well. This is a private organization dedicated to exploration. Space primarily, but also anomalies throughout the Settled Systems.</Source>
+      <Dest>唔……好吧。这里是一家致力于探索活动的私人组织。我们主要探索太空，但也会调查定居星系群中的异常现象。</Dest>
     </String>
     <String List="2" sID="000299">
       <EDID>[FD0009CA]</EDID>
@@ -2929,6 +4189,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC>INFO:NAM1</REC>
       <Source>Sarah Morgan. Chair of Constellation.</Source>
       <Dest>莎拉摩根，群星的主席</Dest>
+    </String>
+    <String List="2" sID="00029B">
+      <EDID>[FD0009FE]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Walter...</Source>
+      <Dest>沃尔特……</Dest>
     </String>
     <String List="2" sID="00029C">
       <EDID>[FD0009F5]</EDID>
@@ -2960,6 +4226,18 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>But that&apos;s not gonna happen. He&apos;s here. With the artifact.</Source>
       <Dest>但那不会发生。他在这里，还带着那件神器。</Dest>
     </String>
+    <String List="2" sID="0002A1">
+      <EDID>[FD000A32]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
+      <Dest>谢谢你，马蒂奥。现在让我们把注意力集中到眼前的问题上吧？</Dest>
+    </String>
+    <String List="2" sID="0002A2">
+      <EDID>[FD000A3C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
+      <Dest>谢谢你，马蒂奥。现在让我们把注意力集中到眼前的问题上吧？</Dest>
+    </String>
     <String List="2" sID="0002A3">
       <EDID>[FD0009F2]</EDID>
       <REC>INFO:NAM1</REC>
@@ -2978,6 +4256,96 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>But that&apos;s not gonna happen. He&apos;s here. And not threatening us.</Source>
       <Dest>但那不会发生。他在这里，而且也没有威胁我们。</Dest>
     </String>
+    <String List="2" sID="0002A6">
+      <EDID>[FD000A45]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>What happened when it was extracted? Did anyone see anything? Hear anything?</Source>
+      <Dest>在取得神器的时候发生了什么？有人看到或是听到什么吗？</Dest>
+    </String>
+    <String List="2" sID="0002A7">
+      <EDID>[FD000A4E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>It was bright lights and music.</Source>
+      <Dest>有亮光和音乐。</Dest>
+    </String>
+    <String List="2" sID="0002A8">
+      <EDID>[FD000A59]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Interesting. Similar to Barrett&apos;s description of the experience. With less embellishment...</Source>
+      <Dest>有意思。和巴雷特所说的经历类似，只是说法没那么浮夸……</Dest>
+    </String>
+    <String List="2" sID="0002A9">
+      <EDID>[FD000A6E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So something DID happen. Barrett mentioned a loss of consciousness last time he found an Artifact.</Source>
+      <Dest>所以确实是发生了点什么。巴雷特提过，他上次找到神器的时候失去了意识。</Dest>
+    </String>
+    <String List="2" sID="0002AA">
+      <EDID>[FD000A64]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m not talking about this. That thing almost killed me.</Source>
+      <Dest>不是说这个。那玩意儿差点要了我的命。</Dest>
+    </String>
+    <String List="2" sID="0002AB">
+      <EDID>[FD000A9F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>There. Are you hearing this? Do you all believe me now?</Source>
+      <Dest>看吧。你们都听见了吗？现在你们相信我了吗？</Dest>
+    </String>
+    <String List="2" sID="0002AC">
+      <EDID>[FD000A77]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How many times has this happened? Who else has had these visions?</Source>
+      <Dest>这种事情发生过多少次了？还有谁看到了这些异象？</Dest>
+    </String>
+    <String List="2" sID="0002AD">
+      <EDID>[FD000A8F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Whether it happened or not wasn&apos;t in doubt. But honestly, Khatri, if you expect us to believe in fairy tales...</Source>
+      <Dest>问题不在于是否真的有人看到过异象。但老实说，卡特里，如果你想让我们相信童话故事……</Dest>
+    </String>
+    <String List="2" sID="0002AE">
+      <EDID>[FD000ABA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Right. Let&apos;s see...</Source>
+      <Dest>好的。让我们来看看……</Dest>
+    </String>
+    <String List="2" sID="0002AF">
+      <EDID>[FD000A98]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>If this is the greatest mystery in the universe, why couldn&apos;t it be part of the ultimate mystery?</Source>
+      <Dest>如果这就是宇宙中最大的奥秘，那它怎么就不是终极奥秘的一部分？</Dest>
+    </String>
+    <String List="2" sID="0002B0">
+      <EDID>[FD000AD0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We know the Artifacts react to each other. The pieces we already have move when they&apos;re in close contact.</Source>
+      <Dest>我们知道神器之间会相互影响。我们现有的碎片在距离相近时就会自行移动。</Dest>
+    </String>
+    <String List="2" sID="0002B1">
+      <EDID>[FD000AD9]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Now, if we add this new one to the two we already have...</Source>
+      <Dest>那么，如果我们把这个新的神器和现有的两个放到一起……</Dest>
+    </String>
+    <String List="2" sID="0002B2">
+      <EDID>[FD000AC2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Gentlemen, can we please focus?</Source>
+      <Dest>先生们，讲重点行吗？</Dest>
+    </String>
+    <String List="2" sID="0002B3">
+      <EDID>[FD000B39]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>She&apos;s not the only one. If they&apos;re coming together, that means there&apos;s a set.</Source>
+      <Dest>不光是她觉得激动。如果它们能合为一体，那就意味着神器是成套的。</Dest>
+    </String>
+    <String List="2" sID="0002B4">
+      <EDID>[FD000AB3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Noel. I think it&apos;s time we tested your theory.</Source>
+      <Dest>诺维尔，看来是时候来检验一下你的理论了。</Dest>
+    </String>
     <String List="2" sID="0002B5">
       <EDID>[FD000A80]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
@@ -2990,11 +4358,83 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>We think it&apos;s anyone else who pulls one out of the rock for the first time. </Source>
       <Dest>我们认为，最先将神器从石头中取出的人都会看到异象。 </Dest>
     </String>
+    <String List="2" sID="0002B7">
+      <EDID>[FD0021E0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>The Artifact. If you could place it on the table here.</Source>
+      <Dest>那个神器，请你把它放在这张桌子上。</Dest>
+    </String>
     <String List="2" sID="0002B8">
       <EDID>[FD000AE2]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>After you. Here&apos;s the Artifact you found. If you could place it on the table here.</Source>
       <Dest>你先请。这是你找到的神器。请把它放在这张桌子上。</Dest>
+    </String>
+    <String List="2" sID="0002B9">
+      <EDID>[FD000B30]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Built by an intelligence outside the Settled Systems.</Source>
+      <Dest>由定居星系群之外的文明打造。</Dest>
+    </String>
+    <String List="2" sID="0002BA">
+      <EDID>[FD000B09]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Easy, girl. Breathe. You&apos;ll have a heart attack.</Source>
+      <Dest>放松点，妹子。深呼吸。你这样是会犯心脏病的。</Dest>
+    </String>
+    <String List="2" sID="0002BB">
+      <EDID>[FD000B42]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Still two thousand credits for our little wager, Khatri?</Source>
+      <Dest>我们打的赌还是按两千信用币算吗，卡特里？</Dest>
+    </String>
+    <String List="2" sID="0002BC">
+      <EDID>[FD000B45]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re on, Walter.</Source>
+      <Dest>没错，沃尔特。</Dest>
+    </String>
+    <String List="2" sID="0002BD">
+      <EDID>[FD000B36]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh my god. That&apos;s it. They&apos;re reacting! Look at how it&apos;s coming together.</Source>
+      <Dest>我的天。就是这样，它们起反应了！看，它们正在逐渐合为一体。</Dest>
+    </String>
+    <String List="2" sID="0002BE">
+      <EDID>[FD000B3F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That energy that&apos;s arcing between them? No manufactured material in the Settled Systems can do that! None of them! This proves that...</Source>
+      <Dest>看到它们之间那股跳动的能量了吗？定居星系里没有任何人造材料做得到！一个都没有！这就证明了...</Dest>
+    </String>
+    <String List="2" sID="0002BF">
+      <EDID>[FD000B3C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Not to take away from the moment, but, what are we going to do about our new friend here?</Source>
+      <Dest>我不是想转移话题，但我们打算怎么处理这位新朋友？</Dest>
+    </String>
+    <String List="2" sID="0002C0">
+      <EDID>[FD000B56]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That&apos;s it. Just like the others.</Source>
+      <Dest>没错，就像其他的神器一样。</Dest>
+    </String>
+    <String List="2" sID="0002C1">
+      <EDID>[FD000B59]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And to imagine we thought there were only two of them at first...</Source>
+      <Dest>起初我们以为神器总共只有两个，没想到……</Dest>
+    </String>
+    <String List="2" sID="0002C2">
+      <EDID>[FD000B33]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Well, if we had all the answers, it wouldn&apos;t be exciting, now would it?</Source>
+      <Dest>如果我们知道所有问题的答案，事情也就没意思了，不是吗？</Dest>
+    </String>
+    <String List="2" sID="0002C3">
+      <EDID>[FD000B6A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
+      <Dest>好的，我加入。告诉我接下来该做什么。</Dest>
     </String>
     <String List="2" sID="0002C4">
       <EDID>[FD000B79]</EDID>
@@ -3007,6 +4447,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Individually, they&apos;re just odd hunks of metal. Another oddity from the uncharted reaches of space.</Source>
       <Dest>它们单独存在时只是一些古怪的金属块，又是一种来自宇宙未知空间的古怪事物。</Dest>
+    </String>
+    <String List="2" sID="0002C6">
+      <EDID>[FD001135]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re a... I see... So, some of our theories about the Artifacts are correct.</Source>
+      <Dest>你是......我明白了......所以，我们关于神器的一些理论是正确的。</Dest>
     </String>
     <String List="2" sID="0002C7">
       <EDID>[FD000B73]</EDID>
@@ -3032,17 +4478,41 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>You should take some time to get settled in. Introduce yourself to everyone. Some of our members aren&apos;t here, but you&apos;ll meet them soon.</Source>
       <Dest>你应该花些时间安顿下来，向大家介绍自己。部分成员现在不在这里，但你很快就会见到他们。</Dest>
     </String>
-    <String List="2" sID="0002CF">
+    <String List="2" sID="0002CB">
+      <EDID>[FD000B70]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This is all a little much. I need some time to clear my head.</Source>
+      <Dest>信息量有点太大了。我需要花些时间来理清思绪。</Dest>
+    </String>
+    <String List="2" sID="0002CC">
+      <EDID>[FD000B67]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>*chuckle* So, are you ready to get to work? See if exploration is the life you want to lead in this little universe of ours? </Source>
+      <Dest>*轻笑* 那么，准备开始干正事了吗？想探索看看是不是你想在这小小宇宙里过的生活？</Dest>
+    </String>
+    <String List="2" sID="0002CD">
       <EDID>[FD001129]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I see. It was months ago. So... why are you showing up now?</Source>
       <Dest>我明白了。几个月前的事了。所以……你为什么现在才出现？</Dest>
     </String>
-    <String List="2" sID="0002D2">
+    <String List="2" sID="0002CF">
+      <EDID>[FD000B76]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How much do you know about the Artifacts? What are they?</Source>
+      <Dest>对于神器你了解多少？它们是什么？</Dest>
+    </String>
+    <String List="2" sID="0002D0">
       <EDID>[FD001126]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>This appears to be the person who sold the Artifact.</Source>
       <Dest>这看起来就是出售这个神器的人。</Dest>
+    </String>
+    <String List="2" sID="0002D2">
+      <EDID>[FD000B7C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You want me in Constellation? What does that mean? What&apos;s expected?</Source>
+      <Dest>你想要我加入群星组织？你是什么意思？有什么需求？</Dest>
     </String>
     <String List="2" sID="0002D3">
       <EDID>[FD000B7F]</EDID>
@@ -3074,17 +4544,107 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>And here. I think you&apos;ve earned something for bringing the Artifact to us.</Source>
       <Dest>谢谢你把神器带给我们，这是给你的奖励。</Dest>
     </String>
+    <String List="2" sID="0002D8">
+      <EDID>[FD00112F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Interesting...</Source>
+      <Dest>嗯...有趣...</Dest>
+    </String>
+    <String List="2" sID="0002D9">
+      <EDID>[FD00112C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Repeat Main Quest] I want to join Constellation. Unravel this mystery with you.</Source>
+      <Dest>[重复主线任务]我想加入群星组织，和你一起解开这个谜团。</Dest>
+    </String>
     <String List="2" sID="0002DA">
       <EDID>[FD00113B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You&apos;re taking their word for it? What if this person&apos;s just delusional?</Source>
       <Dest>你相信他们说的话？万一这人只是妄想症患者呢？</Dest>
     </String>
+    <String List="2" sID="0002DB">
+      <EDID>[FD001161]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We probably know as much as you do at this point. As you can see, they&apos;re forming something now that we have multiple pieces. What it is, we&apos;ll have to find out together.</Source>
+      <Dest>目前我们知道的可能不比你多。如你所见，现在我们手上的多个神器开始融合成某种东西。而它究竟是什么，得由我们一起寻找答案。</Dest>
+    </String>
+    <String List="2" sID="0002DC">
+      <EDID>[FD001149]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear them out? We know next to nothing. We have everything to gain if they&apos;re telling the truth.</Source>
+      <Dest>何不听听这家伙怎么说？我们啥都不知道，但如果这家伙说的是真的，那我们就赚到了。</Dest>
+    </String>
+    <String List="2" sID="0002DD">
+      <EDID>[FD001147]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear him out? We know next to nothing. We have everything to gain if he&apos;s telling the truth.</Source>
+      <Dest>何不听听他怎么说？我们啥都不知道，但如果他说的是真的，那我们就赚到了。</Dest>
+    </String>
+    <String List="2" sID="0002DE">
+      <EDID>[FD001145]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Why don&apos;t we hear her out? We know next to nothing. We have everything to gain if she&apos;s telling the truth.</Source>
+      <Dest>我们何不听听她怎么说？我们啥都不知道，但如果她说的是真的，那我们就赚到了。</Dest>
+    </String>
+    <String List="2" sID="0002DF">
+      <EDID>[FD001132]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Skip Main Quest] I&apos;m not who you think. I&apos;m Starborn. I know what the Artifacts are.</Source>
+      <Dest>[跳过主线任务]我不是你认识的那个人。我是星裔，我知道神器是什么。</Dest>
+    </String>
+    <String List="2" sID="0002E0">
+      <EDID>[FD001152]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m ready. Let&apos;s find out what these Artifacts are.</Source>
+      <Dest>我准备好了。来弄清这些神器的真面目吧。</Dest>
+    </String>
+    <String List="2" sID="0002E1">
+      <EDID>[FD001142]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... they still showed up, didn&apos;t they? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>但……他还是出现了，不是吗？坚持不懈不正是探险家的特征吗？</Dest>
+    </String>
+    <String List="2" sID="0002E2">
+      <EDID>[FD001140]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... she still showed up, didn&apos;t she? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>但……她还是出现了，不是吗？坚持不懈不正是探险家的特征吗？</Dest>
+    </String>
+    <String List="2" sID="0002E3">
+      <EDID>[FD00113E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>But... he still showed up, didn&apos;t he? Isn&apos;t persistence a signature trait for an explorer?</Source>
+      <Dest>但……他还是出现了，不是吗？坚持不懈不正是探险家的特征吗？</Dest>
+    </String>
+    <String List="2" sID="0002E4">
+      <EDID>[FD001155]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Good. We&apos;ll set you up with a room. Take some time to meet everyone. Then when you&apos;re ready, you and I will be doing some traveling together. Get your feet wet.</Source>
+      <Dest>很好。我们会为你准备一间房。花点时间认识一下大家。然后等你准备好了，我们两个需要去一些地方，带你熟悉一下。</Dest>
+    </String>
     <String List="2" sID="0002E5">
       <EDID>[FD001138]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You want this random thug in our organization? After getting lost the first time?</Source>
       <Dest>你想让这个脑袋破洞的混混加入我们组织？他上次不是还迷路了？</Dest>
+    </String>
+    <String List="2" sID="0002E6">
+      <EDID>[FD00114F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. Let&apos;s hear it.</Source>
+      <Dest>好吧，来说说看吧。</Dest>
+    </String>
+    <String List="2" sID="0002E7">
+      <EDID>[FD00115E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You really don&apos;t know anything about the Artifacts?</Source>
+      <Dest>你真的对神器一无所知？</Dest>
+    </String>
+    <String List="2" sID="0002E8">
+      <EDID>[FD00115B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fair enough. We have a spare room you can use, and I&apos;m sure everyone here would like a word with you. Once you&apos;re ready, come find me.</Source>
+      <Dest>没问题。我们有一间空房给你住，另外我觉得大家肯定都想和你聊两句。等你准备好了就来找我。</Dest>
     </String>
     <String List="2" sID="0002E9">
       <EDID>[FD00114C]</EDID>
@@ -3097,6 +4657,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>We&apos;re at the beginning of a very important discovery here. What you found: the Artifact. There&apos;s more, and they&apos;re creating something we don&apos;t understand yet.</Source>
       <Dest>我们正处在一项极为重要的发现开端。就是你找到的那个...神器。还有更多，而且它们正在形成某种我们尚未理解的东西。</Dest>
+    </String>
+    <String List="2" sID="0002EB">
+      <EDID>[FD001158]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Maybe I should get settled in first. Take a breather.</Source>
+      <Dest>也许我应该先适应一下，喘口气。</Dest>
     </String>
     <String List="2" sID="0002FD">
       <EDID>[FD001577]</EDID>
@@ -3122,7 +4688,19 @@ Sarah Morgan, Head of Constellation</Source>
       <Source>Come on. Come on. Okay. Take it easy. You were out cold. No physical damage. Mentally, the jury&apos;s still out.</Source>
       <Dest>好了，醒醒，别紧张。你昏过去了。没有外伤。至于精神上嘛，还没下结论。</Dest>
     </String>
-    <String List="2" sID="00031C">
+    <String List="2" sID="000301">
+      <EDID>[FD000B32]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Maybe later.</Source>
+      <Dest>那就再说吧。</Dest>
+    </String>
+    <String List="2" sID="000318">
+      <EDID>[FD0009EA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>你们是什么人？</Dest>
+    </String>
+    <String List="2" sID="00031E">
       <EDID>[FD000A7D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Let me guess. Another mysterious stranger in a spacesuit?</Source>
@@ -3133,6 +4711,12 @@ Sarah Morgan, Head of Constellation</Source>
       <REC>INFO:NAM1</REC>
       <Source>Then explain it to me.</Source>
       <Dest>那你解释解释。</Dest>
+    </String>
+    <String List="2" sID="00032F">
+      <EDID>[FD000BFF]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yes?</Source>
+      <Dest>有事吗？</Dest>
     </String>
     <String List="2" sID="00033B">
       <EDID>[FD000BDE]</EDID>
