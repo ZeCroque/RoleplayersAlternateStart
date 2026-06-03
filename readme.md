@@ -126,6 +126,15 @@ In addition, the "Quantum Entanglement Device" found within the custom Unity gai
 - Unlock all Starborn powers
 - Learn all available "foreknowledge", granting access to every Starborn dialogue option.
 
+### Supported languages
+
+The mod is available in the following languages:
+- English
+- French
+- German (thanks to PearlCanopus)
+- Brazilian Portuguese (incomplete)(thanks to Fabeco00) 
+- Simplified Chinese (incomplete)(thanks to Peter4Master)
+
 ## 3. FREQUENTLY ASKED QUESTIONS
 
 #### In which POI can the artifact added by the mod spawn?
@@ -170,7 +179,8 @@ Only items distributed through leveled lists are automatically included.
 ## 4. KNOWN ISSUES
 
 - The ship called by the rescue beacon may clip into rocks or float slightly after landing. This is a current engine limitation; I will update if a solution is found.
-- No voice lines for the dialogs added to Maurice Lyon and the ship technicians.
+- No voice lines for the dialogs added to Maurice Lyon, Orora Sabine and the ship technicians.
+- No voice lines for "The Guide"
 
 Please let me know if you find something else.
 
@@ -185,7 +195,7 @@ This mod consists of seven main files :
 - *RoleplayersAlternateStart - Voice_fr.ba2*
 - *RoleplayersAlternateStart - Voice_ja.ba2*
 
-And one optional :
+And two optionals :
 - *RAS_ItemsThroughUnityPatch.esm* (small master)
 - *RoleplayersAlternateStart - Voice_en_NO_AI.ba2*
 
@@ -277,7 +287,7 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
 *Found a bug or have an idea for new features? Let me know in NexusMods' comment section or on my [Discord server](https://discord.gg/K9Jk4y2tjJ)!*
 
 **Planned features:**
-- Optional file to remove as much reference as possible of the player being a miner in any dialog. Known references:
+- Optional file to remove as much reference as possible of the player being a miner or part of Constellation in any dialog if you haven't started the MQ yet or have never been to Vectera. Known references:
     - Yumi at UC Vanguard office, about troubles we had with pirates
     - During the SysDef scene upon player arrest, about being a miner
     - Player's parents, about the job at Argos
@@ -286,11 +296,17 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
     - Vladimir mention Constellation if you contact the Eye
     - Mrs. Whimore random encounter has a constellation dialog option
     - Simeon Bankowski (potential crewmate) has a constellation dialog option
+    - Cora mentions the Frontier before you finish "Echoes on Vectera"
+    - Walter call you "rock breaker" in his first dialogs
+    - Reference to Argos during Barrett's quest "Breach of Contract"
+    - Constellation dialog option during "The Audition" quest for the Ebbside Strikers
+    - Lin & Heller appear during on of the "Revelations" flashbacks
     - Let me now !
 - AI-generated voices for Maurice Lyon and the ship technicians
-- Prevent Neshar arrest & add another way to start the "Loose Ends" questline
+- Voice acting for Orora Sabine and "The Guide"
 - Faction starts
 - Random start
+- Gear loadouts
 - More criterias for random planet selection
 - Terminal/Message box customization
 - You tell me!
