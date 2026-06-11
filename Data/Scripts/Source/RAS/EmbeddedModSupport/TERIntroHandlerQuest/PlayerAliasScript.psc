@@ -11,8 +11,9 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             Form AurieNoAutoStartQuest = Game.GetFormFromFile(0x81D, "Aurie_TerranArmadaNoAutoStart.esm")
             ConditionForm SamanthaDelayConds = Game.GetFormFromFile(0x821, "Samantha Says - Customizable Expansion Delay.esm") as ConditionForm
             Form NotYetTerranArmadaConds =  Game.GetFormFromFile(0x811, "NotYetTerranArmada.esm")
+            GameplayOption TYTGOTerranArmada = Game.GetFormFromFile(0x80B, "Take Your Time - Terran Armada.esm") as GameplayOption
             If(RAS_IsStartupEnded.IsTrue())
-                If(!NotYetTerranArmadaConds && !AurieNoAutoStartQuest && (!AurieDelayConds || AurieDelayConds.IsTrue(Game.GetPlayer())) && (!AurieMQDelayConds || AurieMQDelayConds.IsTrue(Game.GetPlayer())) && (!SamanthaDelayConds || SamanthaDelayConds.IsTrue(Game.GetPlayer())))
+                If(!NotYetTerranArmadaConds && !AurieNoAutoStartQuest && (!AurieDelayConds || AurieDelayConds.IsTrue(Game.GetPlayer())) && (!AurieMQDelayConds || AurieMQDelayConds.IsTrue(Game.GetPlayer())) && (!SamanthaDelayConds || SamanthaDelayConds.IsTrue(Game.GetPlayer())) && (!TYTGOTerranArmada || TYTGOTerranArmada.GetValue()))
                     SFTERMQIntro.Start()
                 EndIf
             EndIf
