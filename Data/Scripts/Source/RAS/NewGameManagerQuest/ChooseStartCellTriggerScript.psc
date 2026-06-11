@@ -11,6 +11,7 @@ Armor Property Spacesuit_Constellation_Helmet_01 Mandatory Const Auto
 Armor Property Clothes_Miner_UtilitySuit Mandatory Const Auto
 Outfit Property Outfit_Starborn Auto Const Mandatory
 Message Property RAS_StartingStuffWarning Mandatory Const Auto
+Message Property RAS_MissingSoundWarning Mandatory Const Auto
 
 Event OnCellLoad()
     RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
@@ -45,6 +46,7 @@ Event OnCellLoad()
     managerQuest.StayBlack.Remove()
     managerQuest.InputLayer.Delete()    
     RAS_CustomStartTutorialMessage.Show()
+    RAS_MissingSoundWarning.Show()
     If(hasExtraGear)
         RAS_StartingStuffWarning.ShowAsHelpMessage("", 10, 0, 1)
     EndIf

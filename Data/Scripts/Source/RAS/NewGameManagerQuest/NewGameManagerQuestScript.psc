@@ -36,7 +36,6 @@ Quest Property MQ_TutorialQuest_Misc04 Mandatory Const Auto
 ActorValue Property RAS_AlternateStart Mandatory Const Auto
 GlobalVariable Property MQ101Debug Mandatory Const Auto
 GlobalVariable Property MQ401_VariantCurrent Mandatory Const Auto
-Message Property RAS_MQ101DebugModifiedMessage Mandatory Const Auto
 Quest Property MQ401 Mandatory Const Auto
 Quest Property RAS_MQ101 Mandatory Const Auto
 GlobalVariable Property MQ401_SkipMQ Mandatory Const Auto
