@@ -11,7 +11,7 @@ Event OnQuestInit()
   If(!RAS_MQReplacerQuest)
     RAS_MQReplacerQuest = Game.GetFormFromFile(0x1F7C, "RoleplayersAlternateStart_AF.esm") as Quest
       If(!RAS_MQReplacerQuest)
-        RAS_MQReplacerQuest = Game.GetFormFromFile(0x1F7C, "RoleplayersAlternateStart_AF.esp") as Quest
+        RAS_MQReplacerQuest = Game.GetFormFromFile(0x1F7C, "RoleplayersAlternateStart.esp") as Quest
       EndIf
   EndIf
   
