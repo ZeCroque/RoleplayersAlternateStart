@@ -231,6 +231,11 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - [Starborn Trait by IgnusT](https://www.nexusmods.com/starfield/mods/10019): incompatible
 - [Auto Hide HUD and Widgets - SFSE by LarannKiar](https://www.nexusmods.com/starfield/mods/8946): will not work until you complete "One Small Step" (either the replacer introduced by the mod, or the vanilla Argos quest)
 - [Upgraded Companions by Aurelianis](https://www.nexusmods.com/starfield/mods/12030): Conflicts on the Lodge secondary dialogs (Noel, Matteo, Walter...). Put my mod after this one in your load order to get those dialogs. I might do a compatibility patch at some point.
+- The ["Not Yet Serie" by paulbrock](https://www.nexusmods.com/profile/paulbrock/mods): compatible
+- The ["Delayed Serie" by Aurelianis](https://www.nexusmods.com/profile/Aurelianis/mods?gameId=4187): compatible
+- [Take Your Time - Quests Don't Autostart by Gothos25](https://www.nexusmods.com/starfield/mods/10419): compatible
+- [Customizable Expansion Delay by Samantha Says](https://www.nexusmods.com/starfield/mods/16660): compatible
+- Globally, any mod that changes DLC starting conditions should work, except those affecting Terran Armada, for which I embedded in the main mod as many patches as I can. If you have issues or find a missing compatibility for Terran Armada, feel free to report :)
 
 
 ## 8. MY OTHER MODS
