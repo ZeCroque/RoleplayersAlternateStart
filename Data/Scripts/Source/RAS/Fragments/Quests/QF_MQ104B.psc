@@ -30,6 +30,7 @@ Function Fragment_Stage_0001_Item_00()
 Frontier_ModularREF.MoveTo(VecteraShipLandingMarker)
 Frontier_ModularREF.SetLinkedRef(VecteraShipLandingMarker, CurrentInteractionLinkedRefKeyword)
 Frontier_ModularREF.Enable()
+(Frontier_ModularREF as SpaceshipReference).SetExteriorLoadDoorInaccessible(True)
 ;END CODE
 EndFunction
 ;END FRAGMENT

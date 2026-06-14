@@ -35,6 +35,7 @@ Quest Property RAS_MQReplacerIntroQuest Mandatory Const Auto
 GlobalVariable Property RAS_BrokenShipQuest_ShiptechRepairCost Mandatory Const Auto
 Quest Property RAS_ShipwreckedRescueQuest Mandatory Const Auto
 Quest Property MQ_HunterPreMQ106 Mandatory Const Auto
+Quest Property RAS_FrontierPickupQuest Mandatory Const Auto
 
 Event OnQuestInit()
     RAS_ModVersion.SetValue(RAS:Utility:ModInfo.GetModVersion())
@@ -182,6 +183,9 @@ Function Update()
         If(RAS_ModVersion.GetValue() < 1.21)
             If(MQ_HunterPreMQ106.GetStageDone(125))
                 RAS_MQReplacerIntroQuest.SetStage(1)
+            EndIf
+            If(MQ101Debug.GetValue() != 0 && !RAS_FrontierPickupQuest.IsRunning())
+                ((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).Frontier_ModularREF as SpaceshipReference).SetExteriorLoadDoorInaccessible(True)
             EndIf
         EndIf    
     EndIf      

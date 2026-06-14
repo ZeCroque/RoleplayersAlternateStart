@@ -3,8 +3,8 @@ import os
 import glob
 import re
 
-modVersionString = "1.2.0"
-modVersionFloat = "1.20"
+modVersionString = "1.2.1"
+modVersionFloat = "1.21"
 
 def GetTemplatedVarValue(name, mode):
     if name == "MOD_VERSION":
