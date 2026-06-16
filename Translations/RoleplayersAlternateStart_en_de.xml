@@ -122,78 +122,30 @@ Wenn du das benutzt und auf dem PC spielst, wäre ich sehr an deinem Spielstand 
       <Dest>  Hauptmission Level-Schwelle</Dest>
     </String>
     <String List="0" sID="000010">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC id="1" idMax="1">GPOF:RESN</REC>
       <Source>Enabled</Source>
       <Dest>Aktiviert</Dest>
     </String>
     <String List="0" sID="000011">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC id="1" idMax="1">GPOF:VOVS</REC>
       <Source>{0}: Map marker is shown.</Source>
       <Dest>{0}: Die Kartenmarkierungen sind sichtbar.</Dest>
     </String>
     <String List="0" sID="000012">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC id="0" idMax="1">GPOF:RESN</REC>
       <Source>Disabled</Source>
       <Dest>Deaktiviert</Dest>
     </String>
     <String List="0" sID="000013">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC id="0" idMax="1">GPOF:VOVS</REC>
       <Source>{0}: Map marker is hidden.</Source>
       <Dest>{0}: Die Kartenmarkierungen sind versteckt.</Dest>
     </String>
     <String List="0" sID="000014">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
-      <REC>GPOF:DNAM</REC>
-      <Source>Shows or hides the map marker pointing to the resources required to build a rescue beacon (the resources will still be added to a nearby POI to ensure you&apos;re not soft-locked) 
-
-Requires the &quot;Shipwrecked&quot; starting location.
-
-{0}
-
-{1}</Source>
-      <Dest>Zeigt oder versteckt die Kartenmarkierungen zu den benötigten Ressourcen, um das Rettungssignal zu bauen. (Die Ressourcen werden unabhängig von dieser Einstellung an einem nahe gelegenen POI bereitgestellt, damit dein Fortschritt möglich bleibt.)
-
-Erfordert den Start/die Start-Lokation &quot;Schiffbrüchig&quot;.
-
-{0}
-
-{1}</Dest>
-    </String>
-    <String List="0" sID="000015">
-      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
-      <REC>GPOF:NNAM</REC>
-      <Source>  Shipwrecked Map Marker</Source>
-      <Dest>  &quot;Schiffbrüchig&quot; Kartenmarkierungen</Dest>
-    </String>
-    <String List="0" sID="000016">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="1" idMax="1">GPOF:RESN</REC>
-      <Source>Enabled</Source>
-      <Dest>Aktiviert</Dest>
-    </String>
-    <String List="0" sID="000017">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="1" idMax="1">GPOF:VOVS</REC>
-      <Source>{0}: Map marker is shown.</Source>
-      <Dest>{0}: Die Kartenmarkierungen sind sichtbar.</Dest>
-    </String>
-    <String List="0" sID="000018">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="0" idMax="1">GPOF:RESN</REC>
-      <Source>Disabled</Source>
-      <Dest>Deaktiviert</Dest>
-    </String>
-    <String List="0" sID="000019">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="0" idMax="1">GPOF:VOVS</REC>
-      <Source>{0}: Map marker is hidden.</Source>
-      <Dest>{0}: Die Kartenmarkierungen sind versteckt.</Dest>
-    </String>
-    <String List="0" sID="00001A">
       <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC>GPOF:DNAM</REC>
       <Source>Shows or hides the map marker pointing to the resources required to repair your ship (the resources will still be added to a nearby POI to ensure you&apos;re not soft-locked).
@@ -211,85 +163,85 @@ Erfordert den angepassten Start &quot;Abgestürzt&quot;.
 
 {1}</Dest>
     </String>
-    <String List="0" sID="00001B">
+    <String List="0" sID="000015">
       <EDID>RAS_BrokenShipMapMarkerOption</EDID>
       <REC>GPOF:NNAM</REC>
       <Source>  Broken Ship Map Marker</Source>
       <Dest>  &quot;Abgestürzt&quot; Kartenmarkierungen</Dest>
     </String>
-    <String List="0" sID="00001C">
+    <String List="0" sID="000016">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="5" idMax="5">GPOF:RESN</REC>
       <Source>100%</Source>
       <Dest>100%</Dest>
     </String>
-    <String List="0" sID="00001D">
+    <String List="0" sID="000017">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="5" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will be guaranteed to spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt garantiert.</Dest>
     </String>
-    <String List="0" sID="00001E">
+    <String List="0" sID="000018">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="4" idMax="5">GPOF:RESN</REC>
       <Source>50%</Source>
       <Dest>50%</Dest>
     </String>
-    <String List="0" sID="00001F">
+    <String List="0" sID="000019">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="4" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will have 50% chance to spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt mit einer Wahrscheinlichkeit von 50%.</Dest>
     </String>
-    <String List="0" sID="000020">
+    <String List="0" sID="00001A">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="3" idMax="5">GPOF:RESN</REC>
       <Source>33%</Source>
       <Dest>33%</Dest>
     </String>
-    <String List="0" sID="000021">
+    <String List="0" sID="00001B">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="3" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will have 33% chance to spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt mit einer Wahrscheinlichkeit von 33%.</Dest>
     </String>
-    <String List="0" sID="000022">
+    <String List="0" sID="00001C">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="2" idMax="5">GPOF:RESN</REC>
       <Source>25%</Source>
       <Dest>25%</Dest>
     </String>
-    <String List="0" sID="000023">
+    <String List="0" sID="00001D">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="2" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will have 25% chance to spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt mit einer Wahrscheinlichkeit von 25%.</Dest>
     </String>
-    <String List="0" sID="000024">
+    <String List="0" sID="00001E">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="1" idMax="5">GPOF:RESN</REC>
       <Source>10%</Source>
       <Dest>10%</Dest>
     </String>
-    <String List="0" sID="000025">
+    <String List="0" sID="00001F">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="1" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will have 10% chance to spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt mit einer Wahrscheinlichkeit von 10%.</Dest>
     </String>
-    <String List="0" sID="000026">
+    <String List="0" sID="000020">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="0" idMax="5">GPOF:RESN</REC>
       <Source>DISABLED</Source>
       <Dest>DEAKTIVIERT</Dest>
     </String>
-    <String List="0" sID="000027">
+    <String List="0" sID="000021">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC id="0" idMax="5">GPOF:VOVS</REC>
       <Source>{0}: The artifact will never spawn.</Source>
       <Dest>{0}: Das Artefakt spawnt niemals.</Dest>
     </String>
-    <String List="0" sID="000028">
+    <String List="0" sID="000022">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC>GPOF:DNAM</REC>
       <Source>Defines the chance the player has to randomly stumble upon the artifact when entering an eligible location.
@@ -319,91 +271,91 @@ Erfordert den angepassten Start &quot;Abgestürzt&quot;.
 
 {5}</Dest>
     </String>
-    <String List="0" sID="000029">
+    <String List="0" sID="000023">
       <EDID>RAS_MQTriggerChanceOption</EDID>
       <REC>GPOF:NNAM</REC>
       <Source>  Main Quest Trigger Chance</Source>
       <Dest>  Hauptmission Startwahrscheinlichkeit</Dest>
     </String>
-    <String List="0" sID="00002A">
+    <String List="0" sID="000024">
       <EDID>RAS_DebugTitle</EDID>
       <REC>GPOF:NNAM</REC>
       <Source> RAS - Debug</Source>
       <Dest>RAS - Debug</Dest>
     </String>
-    <String List="0" sID="00002B">
+    <String List="0" sID="000025">
       <EDID>RAS_VersionOption</EDID>
       <REC>GPOF:NNAM</REC>
-      <Source> Mod Version: 1.2.0</Source>
-      <Dest> Mod Version: 1.2.0</Dest>
+      <Source> Mod Version: 1.2.1</Source>
+      <Dest> Mod Version: 1.2.1</Dest>
     </String>
-    <String List="0" sID="00002C">
+    <String List="0" sID="000026">
       <EDID>RAS_MQTitle</EDID>
       <REC>GPOF:NNAM</REC>
       <Source> RAS - Main Quest</Source>
       <Dest> RAS - Hauptmission</Dest>
     </String>
-    <String List="0" sID="00002D">
+    <String List="0" sID="000027">
       <EDID>RAS_BrokenShipTitle</EDID>
       <REC>GPOF:NNAM</REC>
       <Source> RAS - Broken Ship</Source>
       <Dest> RAS - Abgestürzt</Dest>
     </String>
-    <String List="0" sID="00002E">
+    <String List="0" sID="000028">
       <EDID>RAS_ShipwreckedTitle</EDID>
       <REC>GPOF:NNAM</REC>
       <Source> RAS - Shipwrecked Start</Source>
       <Dest> RAS - Schiffbrüchig</Dest>
     </String>
-    <String List="0" sID="00002F">
+    <String List="0" sID="000029">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="3" idMax="3">GPOF:RESN</REC>
       <Source>50000</Source>
       <Dest>50000</Dest>
     </String>
-    <String List="0" sID="000030">
+    <String List="0" sID="00002A">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="3" idMax="3">GPOF:VOVS</REC>
       <Source>{0}: Very expensive.</Source>
       <Dest>{0}: Sehr teuer.</Dest>
     </String>
-    <String List="0" sID="000031">
+    <String List="0" sID="00002B">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="2" idMax="3">GPOF:RESN</REC>
       <Source>25000</Source>
       <Dest>25000</Dest>
     </String>
-    <String List="0" sID="000032">
+    <String List="0" sID="00002C">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="2" idMax="3">GPOF:VOVS</REC>
       <Source>{0}: Expensive.</Source>
       <Dest>{0}: Teuer.</Dest>
     </String>
-    <String List="0" sID="000033">
+    <String List="0" sID="00002D">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="1" idMax="3">GPOF:RESN</REC>
       <Source>10000</Source>
       <Dest>10000</Dest>
     </String>
-    <String List="0" sID="000034">
+    <String List="0" sID="00002E">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="1" idMax="3">GPOF:VOVS</REC>
       <Source>{0}: Default</Source>
       <Dest>{0}: Standard</Dest>
     </String>
-    <String List="0" sID="000035">
+    <String List="0" sID="00002F">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="0" idMax="3">GPOF:RESN</REC>
       <Source>1000</Source>
       <Dest>1000</Dest>
     </String>
-    <String List="0" sID="000036">
+    <String List="0" sID="000030">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC id="0" idMax="3">GPOF:VOVS</REC>
       <Source>{0}: Same than vanilla repair prices.</Source>
       <Dest>{0}: Reparaturkosten Spielstandard (Vanilla).</Dest>
     </String>
-    <String List="0" sID="000037">
+    <String List="0" sID="000031">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC>GPOF:DNAM</REC>
       <Source>Defines how much the player will have to pay to repair their broken ship.
@@ -417,7 +369,7 @@ Requires the &quot;Broken Ship Start&quot; narrative adjustment.
 {2}
 
 {3}</Source>
-      <Dest>Legt fest, wie viel der Spieler für die Reparatur seines beschädigten Schiffs (&quot;Abgestürzt&quot;) zahlen muss.
+      <Dest>Legt fest, wie viel der Spieler für die Reparatur seines defekten Schiffs (&quot;Abgestürzt&quot;) zahlen muss.
 
 Erfordert den angepassten Spielstart mit der Mission &quot;Abgestürzt&quot; (beschädigtes Schiff).
 
@@ -429,175 +381,199 @@ Erfordert den angepassten Spielstart mit der Mission &quot;Abgestürzt&quot; (be
 
 {3}</Dest>
     </String>
-    <String List="0" sID="000038">
+    <String List="0" sID="000032">
       <EDID>RAS_BrokenShipRepairCostOption</EDID>
       <REC>GPOF:NNAM</REC>
       <Source>  Broken Ship Repair Cost</Source>
       <Dest>  &quot;Abgestürzt&quot; Reparaturkosten</Dest>
     </String>
+    <String List="0" sID="000033">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>Aktiviert</Dest>
+    </String>
+    <String List="0" sID="000034">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:VOVS</REC>
+      <Source>{0}: Map marker is shown.</Source>
+      <Dest>{0}: Die Kartenmarkierungen sind sichtbar.</Dest>
+    </String>
+    <String List="0" sID="000035">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:RESN</REC>
+      <Source>Disabled</Source>
+      <Dest>Deaktiviert</Dest>
+    </String>
+    <String List="0" sID="000036">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:VOVS</REC>
+      <Source>{0}: Map marker is hidden.</Source>
+      <Dest>{0}: Die Kartenmarkierungen sind versteckt.</Dest>
+    </String>
+    <String List="0" sID="000037">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC>GPOF:DNAM</REC>
+      <Source>Shows or hides the map marker pointing to the resources required to build a rescue beacon (the resources will still be added to a nearby POI to ensure you&apos;re not soft-locked).
+
+Requires the &quot;Shipwrecked&quot; starting location.
+
+{0}
+
+{1}</Source>
+      <Dest>Zeigt oder versteckt die Kartenmarkierungen zu den benötigten Ressourcen, um das Rettungsnotsignal zu bauen. (Die Ressourcen werden unabhängig von dieser Einstellung an einem nahe gelegenen POI bereitgestellt, damit dein Fortschritt möglich bleibt.)
+
+Erfordert den Start/die Start-Lokation &quot;Schiffbrüchig&quot;.
+
+{0}
+
+{1}</Dest>
+    </String>
+    <String List="0" sID="000038">
+      <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
+      <REC>GPOF:NNAM</REC>
+      <Source>  Shipwrecked Map Marker</Source>
+      <Dest>  &quot;Schiffbrüchig&quot; Kartenmarkierungen</Dest>
+    </String>
     <String List="0" sID="000039">
-      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
       <REC>TMLM:ITXT</REC>
       <Source>&lt;0.name&gt;</Source>
       <Dest>&lt;0.name&gt;</Dest>
     </String>
     <String List="0" sID="00003A">
-      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Current Selection: &lt;0.name&gt;</Source>
       <Dest>Aktuelle Auswahl: &lt;0.name&gt;</Dest>
     </String>
     <String List="0" sID="00003B">
-      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
       <REC>TMLM:INAM</REC>
-      <Source>Choose your starting location</Source>
-      <Dest>Wähle deinen Startort</Dest>
+      <Source>Choose a destination</Source>
+      <Dest>Wähle ein Ziel</Dest>
     </String>
     <String List="0" sID="00003C">
-      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
       <REC>TMLM:FULL</REC>
-      <Source>Choose your starting location</Source>
-      <Dest>Wähle deinen Startort</Dest>
+      <Source>Choose a destination</Source>
+      <Dest>Wähle ein Ziel</Dest>
     </String>
     <String List="0" sID="00003D">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:ITXT</REC>
-      <Source>&lt;0.name&gt;</Source>
-      <Dest>&lt;0.name&gt;</Dest>
-    </String>
-    <String List="0" sID="00003E">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:BTXT</REC>
-      <Source>Current Selection: &lt;0.name&gt;</Source>
-      <Dest>Aktuelle Auswahl: &lt;0.name&gt;</Dest>
-    </String>
-    <String List="0" sID="00003F">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:INAM</REC>
-      <Source>Choose a destination</Source>
-      <Dest>Wähle ein Ziel</Dest>
-    </String>
-    <String List="0" sID="000040">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:FULL</REC>
-      <Source>Choose a destination</Source>
-      <Dest>Wähle ein Ziel</Dest>
-    </String>
-    <String List="0" sID="000041">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC id="4" idMax="4">TMLM:ITXT</REC>
       <Source>Validate</Source>
       <Dest>Prüfe</Dest>
     </String>
-    <String List="0" sID="000042">
+    <String List="0" sID="00003E">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC id="3" idMax="4">TMLM:ITXT</REC>
       <Source>70</Source>
       <Dest>70</Dest>
     </String>
-    <String List="0" sID="000043">
+    <String List="0" sID="00003F">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC id="2" idMax="4">TMLM:ITXT</REC>
       <Source>50</Source>
       <Dest>50</Dest>
     </String>
-    <String List="0" sID="000044">
+    <String List="0" sID="000040">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC id="1" idMax="4">TMLM:ITXT</REC>
       <Source>25</Source>
       <Dest>25</Dest>
     </String>
-    <String List="0" sID="000045">
+    <String List="0" sID="000041">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC id="0" idMax="4">TMLM:ITXT</REC>
       <Source>10</Source>
       <Dest>10</Dest>
     </String>
-    <String List="0" sID="000046">
+    <String List="0" sID="000042">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Current maximum: &lt;Global=RAS_LocationMaxLevel&gt;</Source>
       <Dest>Aktuelles Maximum: &lt;Global=RAS_LocationMaxLevel&gt;</Dest>
     </String>
-    <String List="0" sID="000047">
+    <String List="0" sID="000043">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Max level configuration</Source>
       <Dest>Maximale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000048">
+    <String List="0" sID="000044">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Max level configuration</Source>
       <Dest>Maximale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000049">
+    <String List="0" sID="000045">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="5" idMax="5">TMLM:ITXT</REC>
       <Source>Validate</Source>
       <Dest>Prüfe</Dest>
     </String>
-    <String List="0" sID="00004A">
+    <String List="0" sID="000046">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="4" idMax="5">TMLM:ITXT</REC>
       <Source>70</Source>
       <Dest>70</Dest>
     </String>
-    <String List="0" sID="00004B">
+    <String List="0" sID="000047">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="3" idMax="5">TMLM:ITXT</REC>
       <Source>50</Source>
       <Dest>50</Dest>
     </String>
-    <String List="0" sID="00004C">
+    <String List="0" sID="000048">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="2" idMax="5">TMLM:ITXT</REC>
       <Source>25</Source>
       <Dest>25</Dest>
     </String>
-    <String List="0" sID="00004D">
+    <String List="0" sID="000049">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="1" idMax="5">TMLM:ITXT</REC>
       <Source>10</Source>
       <Dest>10</Dest>
     </String>
-    <String List="0" sID="00004E">
+    <String List="0" sID="00004A">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC id="0" idMax="5">TMLM:ITXT</REC>
       <Source>1</Source>
       <Dest>1</Dest>
     </String>
-    <String List="0" sID="00004F">
+    <String List="0" sID="00004B">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Current minimum: &lt;Global=RAS_LocationMinLevel&gt;</Source>
       <Dest>Aktuelles Minimum: &lt;Global=RAS_LocationMinLevel&gt;</Dest>
     </String>
-    <String List="0" sID="000050">
+    <String List="0" sID="00004C">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Min level configuration</Source>
       <Dest>Minimale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000051">
+    <String List="0" sID="00004D">
       <EDID>RAS_RandomStartConfigurationTerminal_MinLevelMenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Min level configuration</Source>
       <Dest>Minimale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000052">
+    <String List="0" sID="00004E">
       <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
       <REC id="1" idMax="1">TMLM:ITXT</REC>
       <Source>Enable</Source>
       <Dest>Aktivieren</Dest>
     </String>
-    <String List="0" sID="000053">
+    <String List="0" sID="00004F">
       <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
       <REC id="0" idMax="1">TMLM:ITXT</REC>
       <Source>Disable</Source>
       <Dest>Deaktivieren</Dest>
     </String>
-    <String List="0" sID="000054">
+    <String List="0" sID="000050">
       <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>&lt;0.name&gt;
@@ -607,43 +583,43 @@ Current state: &lt;1.name&gt;</Source>
 
 Aktueller Status: &lt;1.name&gt;</Dest>
     </String>
-    <String List="0" sID="000055">
+    <String List="0" sID="000051">
       <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Select Narrative Adjustments</Source>
       <Dest>Wähle Story-Anpassungen</Dest>
     </String>
-    <String List="0" sID="000056">
+    <String List="0" sID="000052">
       <EDID>RAS_NarrativeAdjustmentsTerminal_Submenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Select Narrative Adjustments</Source>
       <Dest>Wähle Story-Anpassungen</Dest>
     </String>
-    <String List="0" sID="000057">
+    <String List="0" sID="000053">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC id="2" idMax="2">TMLM:ITXT</REC>
       <Source>Start Free Shopping</Source>
       <Dest>Beginne freien Einkauf</Dest>
     </String>
-    <String List="0" sID="000058">
+    <String List="0" sID="000054">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC id="1" idMax="2">TMLM:ITXT</REC>
       <Source>Start Shopping</Source>
       <Dest>Beginne Einkauf</Dest>
     </String>
-    <String List="0" sID="000059">
+    <String List="0" sID="000055">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC>TMLM:ISTX</REC>
       <Source>Choose a budget</Source>
       <Dest>Wähle einen Betrag</Dest>
     </String>
-    <String List="0" sID="00005A">
+    <String List="0" sID="000056">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC id="0" idMax="2">TMLM:ITXT</REC>
       <Source>Choose a budget</Source>
       <Dest>Wähle einen Betrag</Dest>
     </String>
-    <String List="0" sID="00005B">
+    <String List="0" sID="000057">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Here you can choose the starting gear of your character.
@@ -651,83 +627,83 @@ You will start by choosing a budget - or setting a custom one - and then spend t
 You also have the option to get that starting gear for free if you want to keep the full budget. 
 Current budget: &lt;Global=RAS_CurrentBudget&gt;
 Notes : 
-- The vendor will update itself if you level up with the &quot;Level Manager Activator&quot;
+- The vendor will update itself if you level up with the &quot;Character Skills Activator&quot;
 - The vendor will sell modded items if they were added to the vanilla leveled lists.</Source>
       <Dest>Hier kannst die die Startausrüstung deines Charakters wählen.
 Du wirst mit der Auswahl eines Budgets beginnen - oder eines festlegen - und dann das Budget bei einem virtuellen Händler, der Güter aus den gesamten Besiedelten Systemen verkauft.
 Du kannst auch wählen, die Startausrüstung kostenlos zu erhalten, wenn du das gesamte Geld behalten möchtest.
 Aktuelles Budget: &lt;Global=RAS_CurrentBudget&gt;
 Hinweise:
-- Der Händler wird sich anpassen, wenn du deinen Spielerlevel mit dem &quot;Spielerlevel-Aktivator&quot; änderst.
+- Der Händler wird sich anpassen, wenn du deinen Spielerlevel mit dem &quot;Charakter-Skill-Aktivator&quot; änderst.
 - Der Händler wird auch Mod-Gegenstände anbieten, wenn diese zu den Standard Leveled Lists hinzugefügt wurden.</Dest>
     </String>
-    <String List="0" sID="00005C">
+    <String List="0" sID="000058">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Choose your Starting Gear</Source>
       <Dest>Wähle deine Startausstattung</Dest>
     </String>
-    <String List="0" sID="00005D">
+    <String List="0" sID="000059">
       <EDID>RAS_StartingGearTerminal_MainMenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Choose your Starting Gear</Source>
       <Dest>Wähle deine Startausstattung</Dest>
     </String>
-    <String List="0" sID="00005E">
+    <String List="0" sID="00005A">
       <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
       <REC>TMLM:ITXT</REC>
       <Source>&lt;0.name&gt;</Source>
       <Dest>&lt;0.name&gt;</Dest>
     </String>
-    <String List="0" sID="00005F">
+    <String List="0" sID="00005B">
       <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Current Selection: &lt;0.name&gt;</Source>
       <Dest>Aktuelle Auswahl: &lt;0.name&gt;</Dest>
     </String>
-    <String List="0" sID="000060">
+    <String List="0" sID="00005C">
       <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Template</Source>
       <Dest>Template</Dest>
     </String>
-    <String List="0" sID="000061">
+    <String List="0" sID="00005D">
       <EDID>RAS_DynamicEntriesSubmenuTerminalMenu_Template</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Template</Source>
       <Dest>Template</Dest>
     </String>
-    <String List="0" sID="000062">
+    <String List="0" sID="00005E">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC id="2" idMax="2">TMLM:ITXT</REC>
       <Source>Validate</Source>
       <Dest>Prüfe</Dest>
     </String>
-    <String List="0" sID="000063">
+    <String List="0" sID="00005F">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC id="1" idMax="1">TMLM:ISTX</REC>
       <Source>Max level configuration</Source>
       <Dest>Maximale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000064">
+    <String List="0" sID="000060">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC id="1" idMax="2">TMLM:ITXT</REC>
       <Source>Max level configuration</Source>
       <Dest>Maximale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000065">
+    <String List="0" sID="000061">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC id="0" idMax="1">TMLM:ISTX</REC>
       <Source>Min level configuration</Source>
       <Dest>Minimale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000066">
+    <String List="0" sID="000062">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC id="0" idMax="2">TMLM:ITXT</REC>
       <Source>Min level configuration</Source>
       <Dest>Minimale Level-Konfiguration</Dest>
     </String>
-    <String List="0" sID="000067">
+    <String List="0" sID="000063">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC>TMLM:BTXT</REC>
       <Source>Here you can define a maximum and a minimum level for the location in which you will start.
@@ -739,17 +715,41 @@ Maximum muss größer sein als Minimum. Wenn du zu wenig Auswahl im Minimum-Unte
 Min Level: &lt;Global=RAS_LocationMinLevel&gt;
 Max Level: &lt;Global=RAS_LocationMaxLevel&gt;</Dest>
     </String>
-    <String List="0" sID="000068">
+    <String List="0" sID="000064">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC>TMLM:INAM</REC>
       <Source>Custom Location Level Configuration</Source>
       <Dest>Eigene Einstellungen für Lokations-Level</Dest>
     </String>
-    <String List="0" sID="000069">
+    <String List="0" sID="000065">
       <EDID>RAS_RandomStartConfigurationTerminal_CustomLevelMenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Custom Location Level Configuration</Source>
       <Dest>Eigene Einstellungen für Lokations-Level</Dest>
+    </String>
+    <String List="0" sID="000066">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000067">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.name&gt;</Source>
+      <Dest>Aktuelle Auswahl: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0" sID="000068">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>Wähle deinen Startort</Dest>
+    </String>
+    <String List="0" sID="000069">
+      <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose your starting location</Source>
+      <Dest>Wähle deinen Startort</Dest>
     </String>
     <String List="0" sID="00006A">
       <EDID>RAS_StartingGearTerminal_RemoveBudgetMenu</EDID>
@@ -1249,11 +1249,17 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Source>Starting location configuration</Source>
       <Dest>Einstellung der Start-Lokation</Dest>
     </String>
-    <String List="0" sID="0000BA">
+    <String List="0" sID="0000B9">
       <EDID>RAS_DynamicTerminalBody_NA_ShipModifier</EDID>
       <REC>MESG:FULL</REC>
       <Source>Here you can choose to have your starting ship being damaged at start and unable to fly. If you start at a random POI, some crafting mats will be placed on a nearby dungeon. Elsewise, you will need to pay a ship tech.</Source>
       <Dest>Hier kannst du auswählen, ob dein Starterschiff bei Spielstart beschädigt und flugunfähig ist. Wenn du an einem zufälligen POI startest, werden einige Crafting-Materialien in einem nahegelegenen Dungeon platziert. Alternativ wirst du einen Schiffsservicetechniker bezahlen müssen.</Dest>
+    </String>
+    <String List="0" sID="0000BA">
+      <EDID>RAS_HabitabilityEntry_Any</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Any</Source>
+      <Dest>Beliebig</Dest>
     </String>
     <String List="0" sID="0000BB">
       <EDID>RAS_ShipwreckStartTutorialMessage</EDID>
@@ -1298,370 +1304,376 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Dest>Steuere Spielerlevel</Dest>
     </String>
     <String List="0" sID="0000C4">
-      <EDID>RAS_RandomStartWarning</EDID>
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
       <REC id="1" idMax="1">MESG:ITXT</REC>
       <Source>Yes</Source>
       <Dest>Ja</Dest>
     </String>
     <String List="0" sID="0000C5">
-      <EDID>RAS_RandomStartWarning</EDID>
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
       <REC id="0" idMax="1">MESG:ITXT</REC>
       <Source>No</Source>
       <Dest>Nein</Dest>
     </String>
     <String List="0" sID="0000C6">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Pedestrian Random Start Warning</Source>
-      <Dest>Warnung: Zufälliger Start als Fußgänger</Dest>
-    </String>
-    <String List="0" sID="0000C8">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC id="1" idMax="1">MESG:ITXT</REC>
-      <Source>Yes</Source>
-      <Dest>Ja</Dest>
-    </String>
-    <String List="0" sID="0000C9">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC id="0" idMax="1">MESG:ITXT</REC>
-      <Source>No</Source>
-      <Dest>Nein</Dest>
-    </String>
-    <String List="0" sID="0000CA">
       <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
       <REC>MESG:FULL</REC>
       <Source>Unlock New Homestead Home Furniture</Source>
       <Dest>Schalte Möblierung für das New Homestead Haus frei.</Dest>
     </String>
-    <String List="0" sID="0000CC">
-      <EDID>RAS_PlayerStuffPickedUp</EDID>
+    <String List="0" sID="0000C8">
+      <EDID>RAS_DynamicTerminalBody_NA_NonStarborn</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Stuff picked up</Source>
-      <Dest>Sachen aufgenommen</Dest>
+      <Source>Here you can choose wether or not you will be a Starborn in this universe. If you choose not to be, you will have to find the artifact by your own (either with Argos or an alternate way) and you will no longer have the Starborn dialog options.</Source>
+      <Dest>Hier kannst du auswählen, ob du in diesem Universum ein Sternenblut sein möchtest oder nicht. Entscheidest du dich dagegen, musst du das Artefakt auf eigene Faust finden (entweder mit Hilfe von Argos oder auf anderem Wege) und du wirst nicht länger Sternenblut-Dialogoptionen haben.</Dest>
     </String>
-    <String List="0" sID="0000CE">
+    <String List="0" sID="0000C9">
       <EDID>RAS_HabitabilityEntry_High</EDID>
       <REC>MESG:FULL</REC>
       <Source>High</Source>
       <Dest>Hoch</Dest>
     </String>
-    <String List="0" sID="0000CF">
+    <String List="0" sID="0000CA">
       <EDID>RAS_SelectionInvalidatedMessage</EDID>
       <REC>MESG:FULL</REC>
       <Source>Selection invalidated</Source>
       <Dest>Auswahl ungültig</Dest>
     </String>
-    <String List="0" sID="0000D1">
+    <String List="0" sID="0000CC">
       <EDID>RAS_DynamicTerminalBody_NA_ArgosMiner</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Here you can choose wether or not the variant of your character inside this universe is/was a miner at Argos Extractor. If disabled, the game will consider he sold the artifact. It will be used for Lodge dialogs.</Source>
+      <Source>Here you can choose wether or not the variant of your character inside this universe is/was a miner at Argos Extractor. If disabled, the game will consider they sold the artifact. It will be used for Lodge dialogs.</Source>
       <Dest>Hier kannst du wählen, ob die Variante deines Charakters in diesem Universum Bergarbeiter bei Argos Extractor ist/war. Wenn deaktiviert, geht das Spiel davon aus, dass er das Artefakt verkauft hat. Das wird in den Dialogen in der Loge verwendet.</Dest>
     </String>
-    <String List="0" sID="0000D2">
+    <String List="0" sID="0000CD">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC id="4" idMax="4">MESG:ITXT</REC>
-      <Source>4</Source>
-      <Dest>4</Dest>
+      <Source>4 (Unlocks Class C ships)</Source>
+      <Dest>4 (Schaltet Class-C-Schiffe frei)</Dest>
     </String>
-    <String List="0" sID="0000D3">
+    <String List="0" sID="0000CE">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC id="3" idMax="4">MESG:ITXT</REC>
-      <Source>3</Source>
-      <Dest>3</Dest>
+      <Source>3 (Unlocks Class B ships)</Source>
+      <Dest>3 (Schaltet Class-B-Schiffe frei)</Dest>
     </String>
-    <String List="0" sID="0000D4">
+    <String List="0" sID="0000CF">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC id="2" idMax="4">MESG:ITXT</REC>
       <Source>2</Source>
       <Dest>2</Dest>
     </String>
-    <String List="0" sID="0000D5">
+    <String List="0" sID="0000D0">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC id="1" idMax="4">MESG:ITXT</REC>
       <Source>1</Source>
       <Dest>1</Dest>
     </String>
-    <String List="0" sID="0000D6">
+    <String List="0" sID="0000D1">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC id="0" idMax="4">MESG:ITXT</REC>
       <Source>None</Source>
       <Dest>Nichts</Dest>
     </String>
-    <String List="0" sID="0000D7">
+    <String List="0" sID="0000D2">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC>MESG:FULL</REC>
       <Source>Manage Piloting Skill</Source>
       <Dest>Stelle Skill &quot;Fliegen&quot; ein</Dest>
     </String>
-    <String List="0" sID="0000D9">
+    <String List="0" sID="0000D4">
       <EDID>RAS_TheGuideStartWarning</EDID>
       <REC>MESG:FULL</REC>
       <Source>The Guide Start Warning</Source>
       <Dest>Warnung: Start &quot;Die Ratgeberin&quot;</Dest>
     </String>
-    <String List="0" sID="0000DB">
+    <String List="0" sID="0000D6">
       <EDID>RAS_StarstationStartWarning</EDID>
       <REC id="1" idMax="1">MESG:ITXT</REC>
       <Source>Yes</Source>
       <Dest>Ja</Dest>
     </String>
-    <String List="0" sID="0000DC">
+    <String List="0" sID="0000D7">
       <EDID>RAS_StarstationStartWarning</EDID>
       <REC id="0" idMax="1">MESG:ITXT</REC>
       <Source>No</Source>
       <Dest>Nein</Dest>
     </String>
-    <String List="0" sID="0000DD">
+    <String List="0" sID="0000D8">
       <EDID>RAS_StarstationStartWarning</EDID>
       <REC>MESG:FULL</REC>
       <Source>Pedestrian Starstation Warning</Source>
       <Dest>Warnung für Fußgänger auf Sternenstationen</Dest>
     </String>
-    <String List="0" sID="0000DF">
+    <String List="0" sID="0000DA">
       <EDID>RAS_RescueShipYetCalledMessage</EDID>
       <REC>MESG:FULL</REC>
       <Source>Rescue Ship Yet Called</Source>
       <Dest>Rettungsschiff bereits gerufen</Dest>
     </String>
-    <String List="0" sID="0000E1">
-      <EDID>RAS_DynamicTerminalBody_NA_NonStarborn</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Here you can choose wether or not you will be a Starborn or not in this universe. If you choose not to be, you will have to find the artifact by your own (just like you did in the previous universe) and you will no longer have the Starborn dialog options.</Source>
-      <Dest>Hier kannst du auswählen, ob du in diesem Universum ein Sternenblut sein möchtest oder nicht. Entscheidest du dich dagegen, musst du das Artefakt auf eigene Faust finden (wie du es im letzten Universum auch musstest) und du wirst keine Sternenblut-Dialogoptionen erhalten.</Dest>
-    </String>
-    <String List="0" sID="0000E2">
-      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Rescue Ship Landing Impossible</Source>
-      <Dest>Landung des Rettungsschiffs unmöglich</Dest>
-    </String>
-    <String List="0" sID="0000E4">
-      <EDID>RAS_VehicleUnlockingMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>About Vehicle Unlocking</Source>
-      <Dest>Über das Freischalten von Fahrzeugen</Dest>
-    </String>
-    <String List="0" sID="0000E6">
-      <EDID>RAS_ArgosStartUnavailableWarning</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Argos Start Unavailable</Source>
-      <Dest>Argos Start nicht verfügbar</Dest>
-    </String>
-    <String List="0" sID="0000E8">
-      <EDID>RAS_LocationLevelEntry_Default</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Default</Source>
-      <Dest>Standard</Dest>
-    </String>
-    <String List="0" sID="0000E9">
-      <EDID>RAS_FactionNotAvailableMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Factions Not Available</Source>
-      <Dest>Fraktion nicht verfügbar</Dest>
-    </String>
-    <String List="0" sID="0000EB">
-      <EDID>RAS_HabitabilityEntry_Low</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Low</Source>
-      <Dest>Gering</Dest>
-    </String>
-    <String List="0" sID="0000EC">
-      <EDID>RAS_RepairShipMessage</EDID>
-      <REC id="3" idMax="3">MESG:ITXT</REC>
-      <Source>[Starship Engineering] Repair</Source>
-      <Dest>[Raumschifftechnik] Reparieren</Dest>
-    </String>
-    <String List="0" sID="0000ED">
-      <EDID>RAS_RepairShipMessage</EDID>
-      <REC id="2" idMax="3">MESG:ITXT</REC>
-      <Source>[10 Iron] Repair</Source>
-      <Dest>[10 Eisen] Reparieren</Dest>
-    </String>
-    <String List="0" sID="0000EE">
-      <EDID>RAS_RepairShipMessage</EDID>
-      <REC id="1" idMax="3">MESG:ITXT</REC>
-      <Source>[1 Ship Part] Repair</Source>
-      <Dest>[1x Schiffsteile] Reparieren</Dest>
-    </String>
-    <String List="0" sID="0000EF">
-      <EDID>RAS_RepairShipMessage</EDID>
-      <REC id="0" idMax="3">MESG:ITXT</REC>
-      <Source>Leave</Source>
-      <Dest>Verlassen</Dest>
-    </String>
-    <String List="0" sID="0000F0">
-      <EDID>RAS_RepairShipMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Ship damaged</Source>
-      <Dest>Schiff beschädigt</Dest>
-    </String>
-    <String List="0" sID="0000F2">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="5" idMax="5">MESG:ITXT</REC>
-      <Source>Cancel</Source>
-      <Dest>Abbrechen</Dest>
-    </String>
-    <String List="0" sID="0000F3">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="4" idMax="5">MESG:ITXT</REC>
-      <Source>Custom Levelling</Source>
-      <Dest>Angepasstes Level</Dest>
-    </String>
-    <String List="0" sID="0000F4">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="3" idMax="5">MESG:ITXT</REC>
-      <Source>Set Level to 50</Source>
-      <Dest>Einstellen auf Level 50</Dest>
-    </String>
-    <String List="0" sID="0000F5">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="2" idMax="5">MESG:ITXT</REC>
-      <Source>Set Level to 25</Source>
-      <Dest>Einstellen auf Level 25</Dest>
-    </String>
-    <String List="0" sID="0000F6">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="1" idMax="5">MESG:ITXT</REC>
-      <Source>Set Level to 10</Source>
-      <Dest>Einstellen auf Level 10</Dest>
-    </String>
-    <String List="0" sID="0000F7">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC id="0" idMax="5">MESG:ITXT</REC>
-      <Source>Set Level to 5</Source>
-      <Dest>Einstellen auf Level 5</Dest>
-    </String>
-    <String List="0" sID="0000F8">
-      <EDID>RAS_SetLevelMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Manage Level</Source>
-      <Dest>Steuere Spielerlevel</Dest>
-    </String>
-    <String List="0" sID="0000FA">
-      <EDID>RAS_CustomStartTutorialMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Configuring Your Journey</Source>
-      <Dest>Konfiguriere deine Reise</Dest>
-    </String>
-    <String List="0" sID="0000FC">
-      <EDID>RAS_HabitabilityEntry_Any</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Any</Source>
-      <Dest>Beliebig</Dest>
-    </String>
-    <String List="0" sID="0000FE">
-      <EDID>RAS_MQ101DebugModifiedMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Roleplayers Alternate Start - Incompatible mod detected</Source>
-      <Dest>Roleplayers Alternate Start - Inkompatible Mod entdeckt</Dest>
-    </String>
-    <String List="0" sID="000100">
-      <EDID>RAS_RepairSucceededMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Successfuly repaired</Source>
-      <Dest>erfolgreich repariert</Dest>
-    </String>
-    <String List="0" sID="000102">
-      <EDID>RAS_ShiptechTutorialMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Starting Ship Tutorial</Source>
-      <Dest>Starte Schiffs-Tutorial</Dest>
-    </String>
-    <String List="0" sID="000104">
-      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
-      <REC id="1" idMax="1">MESG:ITXT</REC>
-      <Source>Set Piloting Skill Rank</Source>
-      <Dest>Stelle den Level für &quot;Fliegen&quot; ein</Dest>
-    </String>
-    <String List="0" sID="000105">
-      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
-      <REC id="0" idMax="1">MESG:ITXT</REC>
-      <Source>Level Up</Source>
-      <Dest>Stufenaufstieg</Dest>
-    </String>
-    <String List="0" sID="000106">
-      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Character Skill Manager Mode</Source>
-      <Dest>Charakter-Skill Manager Modus</Dest>
-    </String>
-    <String List="0" sID="000108">
-      <EDID>RAS_ChooseStartTypeMessage</EDID>
-      <REC id="2" idMax="2">MESG:ITXT</REC>
-      <Source>Immediate Starborn (Custom)</Source>
-      <Dest>Sofort Starborn (Angepasst)</Dest>
-    </String>
-    <String List="0" sID="000109">
-      <EDID>RAS_ChooseStartTypeMessage</EDID>
-      <REC id="1" idMax="2">MESG:ITXT</REC>
-      <Source>Custom</Source>
-      <Dest>Angepasst</Dest>
-    </String>
-    <String List="0" sID="00010A">
-      <EDID>RAS_ChooseStartTypeMessage</EDID>
-      <REC id="0" idMax="2">MESG:ITXT</REC>
-      <Source>Vanilla</Source>
-      <Dest>Standard (Vanilla)</Dest>
-    </String>
-    <String List="0" sID="00010B">
-      <EDID>RAS_ChooseStartTypeMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>New Game Type</Source>
-      <Dest>Neuer Spieltyp</Dest>
-    </String>
-    <String List="0" sID="00010D">
-      <EDID>RAS_ImpossibleToStartMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Impossible To Start</Source>
-      <Dest>Start unmöglich</Dest>
-    </String>
-    <String List="0" sID="00010F">
-      <EDID>RAS_ChooseQEDMode</EDID>
-      <REC id="2" idMax="2">MESG:ITXT</REC>
-      <Source>Nothing</Source>
-      <Dest>Nichts</Dest>
-    </String>
-    <String List="0" sID="000110">
-      <EDID>RAS_ChooseQEDMode</EDID>
-      <REC id="1" idMax="2">MESG:ITXT</REC>
-      <Source>Unlock all foreknowledge dialogue options</Source>
-      <Dest>Schalte alle &quot;Sternenblut&quot;-Dialogoptionen frei.</Dest>
-    </String>
-    <String List="0" sID="000111">
-      <EDID>RAS_ChooseQEDMode</EDID>
-      <REC id="0" idMax="2">MESG:ITXT</REC>
-      <Source>Unlock starborn powers</Source>
-      <Dest>Sternenblutkräfte freischalten</Dest>
-    </String>
-    <String List="0" sID="000112">
-      <EDID>RAS_ChooseQEDMode</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>New Game Plus Customization</Source>
-      <Dest>Anpassungen Neues Spiel Plus (NG+)</Dest>
-    </String>
-    <String List="0" sID="000115">
-      <EDID>RAS_HabitabilityEntry_Medium</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Medium</Source>
-      <Dest>Mittel</Dest>
-    </String>
-    <String List="0" sID="000116">
+    <String List="0" sID="0000DC">
       <EDID>RAS_ConfirmStartMessage</EDID>
       <REC id="1" idMax="1">MESG:ITXT</REC>
       <Source>Yes</Source>
       <Dest>Ja</Dest>
     </String>
-    <String List="0" sID="000117">
+    <String List="0" sID="0000DD">
       <EDID>RAS_ConfirmStartMessage</EDID>
       <REC id="0" idMax="1">MESG:ITXT</REC>
       <Source>No</Source>
       <Dest>Nein</Dest>
     </String>
-    <String List="0" sID="000118">
+    <String List="0" sID="0000DE">
       <EDID>RAS_ConfirmStartMessage</EDID>
       <REC>MESG:FULL</REC>
       <Source>Starting your adventure</Source>
       <Dest>Starte dein Abenteuer</Dest>
+    </String>
+    <String List="0" sID="0000E0">
+      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Rescue Ship Landing Impossible</Source>
+      <Dest>Landung des Rettungsschiffs unmöglich</Dest>
+    </String>
+    <String List="0" sID="0000E2">
+      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>About Vehicle Unlocking</Source>
+      <Dest>Über das Freischalten von Fahrzeugen</Dest>
+    </String>
+    <String List="0" sID="0000E4">
+      <EDID>RAS_ArgosStartUnavailableWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Argos Start Unavailable</Source>
+      <Dest>Argos Start nicht verfügbar</Dest>
+    </String>
+    <String List="0" sID="0000E6">
+      <EDID>RAS_LocationLevelEntry_Default</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Default</Source>
+      <Dest>Standard</Dest>
+    </String>
+    <String List="0" sID="0000E7">
+      <EDID>RAS_FactionNotAvailableMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Factions Not Available</Source>
+      <Dest>Fraktion nicht verfügbar</Dest>
+    </String>
+    <String List="0" sID="0000E9">
+      <EDID>RAS_HabitabilityEntry_Low</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Low</Source>
+      <Dest>Gering</Dest>
+    </String>
+    <String List="0" sID="0000EA">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="3" idMax="3">MESG:ITXT</REC>
+      <Source>[Starship Engineering] Repair</Source>
+      <Dest>[Raumschifftechnik] Reparieren</Dest>
+    </String>
+    <String List="0" sID="0000EB">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="2" idMax="3">MESG:ITXT</REC>
+      <Source>[10 Iron] Repair</Source>
+      <Dest>[10 Eisen] Reparieren</Dest>
+    </String>
+    <String List="0" sID="0000EC">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="1" idMax="3">MESG:ITXT</REC>
+      <Source>[1 Ship Part] Repair</Source>
+      <Dest>[1x Schiffsteile] Reparieren</Dest>
+    </String>
+    <String List="0" sID="0000ED">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC id="0" idMax="3">MESG:ITXT</REC>
+      <Source>Leave</Source>
+      <Dest>Verlassen</Dest>
+    </String>
+    <String List="0" sID="0000EE">
+      <EDID>RAS_RepairShipMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Ship damaged</Source>
+      <Dest>Schiff beschädigt</Dest>
+    </String>
+    <String List="0" sID="0000F0">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="5" idMax="5">MESG:ITXT</REC>
+      <Source>Cancel</Source>
+      <Dest>Abbrechen</Dest>
+    </String>
+    <String List="0" sID="0000F1">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="4" idMax="5">MESG:ITXT</REC>
+      <Source>Custom Levelling</Source>
+      <Dest>Angepasstes Level</Dest>
+    </String>
+    <String List="0" sID="0000F2">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="3" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 50</Source>
+      <Dest>Einstellen auf Level 50</Dest>
+    </String>
+    <String List="0" sID="0000F3">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="2" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 25</Source>
+      <Dest>Einstellen auf Level 25</Dest>
+    </String>
+    <String List="0" sID="0000F4">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="1" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 10</Source>
+      <Dest>Einstellen auf Level 10</Dest>
+    </String>
+    <String List="0" sID="0000F5">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC id="0" idMax="5">MESG:ITXT</REC>
+      <Source>Set Level to 5</Source>
+      <Dest>Einstellen auf Level 5</Dest>
+    </String>
+    <String List="0" sID="0000F6">
+      <EDID>RAS_SetLevelMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Manage Level</Source>
+      <Dest>Steuere Spielerlevel</Dest>
+    </String>
+    <String List="0" sID="0000F8">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>Ja</Dest>
+    </String>
+    <String List="0" sID="0000F9">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>Nein</Dest>
+    </String>
+    <String List="0" sID="0000FA">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Broken Ship Warning</Source>
+      <Dest>Warnung: Start als Fußgänger mit beschädigtem Schiff</Dest>
+    </String>
+    <String List="0" sID="0000FC">
+      <EDID>RAS_PlayerStuffPickedUp</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Stuff picked up</Source>
+      <Dest>Sachen aufgenommen</Dest>
+    </String>
+    <String List="0" sID="0000FE">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>Ja</Dest>
+    </String>
+    <String List="0" sID="0000FF">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>Nein</Dest>
+    </String>
+    <String List="0" sID="000100">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Random Start Warning</Source>
+      <Dest>Warnung: Zufälliger Start als Fußgänger</Dest>
+    </String>
+    <String List="0" sID="000102">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Successfuly repaired</Source>
+      <Dest>erfolgreich repariert</Dest>
+    </String>
+    <String List="0" sID="000104">
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Starting Ship Tutorial</Source>
+      <Dest>Starte Schiffs-Tutorial</Dest>
+    </String>
+    <String List="0" sID="000106">
+      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Set Piloting Skill Rank</Source>
+      <Dest>Stelle den Level für &quot;Fliegen&quot; ein</Dest>
+    </String>
+    <String List="0" sID="000107">
+      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>Level Up</Source>
+      <Dest>Stufenaufstieg</Dest>
+    </String>
+    <String List="0" sID="000108">
+      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Character Skill Manager Mode</Source>
+      <Dest>Charakter Skill-Manager Modus</Dest>
+    </String>
+    <String List="0" sID="00010A">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Immediate Starborn (Custom)</Source>
+      <Dest>Sofort Starborn (Angepasst)</Dest>
+    </String>
+    <String List="0" sID="00010B">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Custom</Source>
+      <Dest>Angepasst</Dest>
+    </String>
+    <String List="0" sID="00010C">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Vanilla</Source>
+      <Dest>Standard (Vanilla)</Dest>
+    </String>
+    <String List="0" sID="00010D">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>New Game Type</Source>
+      <Dest>Neuer Spieltyp</Dest>
+    </String>
+    <String List="0" sID="00010F">
+      <EDID>RAS_ImpossibleToStartMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Impossible To Start</Source>
+      <Dest>Start unmöglich</Dest>
+    </String>
+    <String List="0" sID="000111">
+      <EDID>RAS_ChooseQEDMode</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Nothing</Source>
+      <Dest>Nichts</Dest>
+    </String>
+    <String List="0" sID="000112">
+      <EDID>RAS_ChooseQEDMode</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Unlock all foreknowledge dialogue options</Source>
+      <Dest>Schalte alle &quot;Sternenblut&quot;-Dialogoptionen frei.</Dest>
+    </String>
+    <String List="0" sID="000113">
+      <EDID>RAS_ChooseQEDMode</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Unlock starborn powers</Source>
+      <Dest>Sternenblutkräfte freischalten</Dest>
+    </String>
+    <String List="0" sID="000114">
+      <EDID>RAS_ChooseQEDMode</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>New Game Plus Customization</Source>
+      <Dest>Anpassungen Neues Spiel Plus (NG+)</Dest>
+    </String>
+    <String List="0" sID="000117">
+      <EDID>RAS_HabitabilityEntry_Medium</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Medium</Source>
+      <Dest>Mittel</Dest>
+    </String>
+    <String List="0" sID="000118">
+      <EDID>RAS_CustomStartTutorialMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Configuring Your Journey</Source>
+      <Dest>Konfiguriere deine Reise</Dest>
     </String>
     <String List="0" sID="00011A">
       <EDID>RAS_RepairFailedMessage</EDID>
@@ -1723,23 +1735,11 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Source>Ship Tech not Ready</Source>
       <Dest>Schiffstechniker nicht bereit</Dest>
     </String>
-    <String List="0" sID="00012A">
-      <EDID>RAS_BrokenShipWarning</EDID>
-      <REC id="1" idMax="1">MESG:ITXT</REC>
-      <Source>Yes</Source>
-      <Dest>Ja</Dest>
-    </String>
     <String List="0" sID="00012B">
-      <EDID>RAS_BrokenShipWarning</EDID>
-      <REC id="0" idMax="1">MESG:ITXT</REC>
-      <Source>No</Source>
-      <Dest>Nein</Dest>
-    </String>
-    <String List="0" sID="00012C">
-      <EDID>RAS_BrokenShipWarning</EDID>
+      <EDID>RAS_MissingSoundWarning</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Pedestrian Broken Ship Warning</Source>
-      <Dest>Warnung: Start als Fußgänger mit beschädigtem Schiff</Dest>
+      <Source>Missing Sounds Warning</Source>
+      <Dest>Warnung zu fehlenden Sounds</Dest>
     </String>
     <String List="0" sID="000133">
       <EDID>RAS_MQReplacerQuest</EDID>
@@ -1775,7 +1775,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_BrokenShipQuest</EDID>
       <REC id="4" idMax="4">QUST:NNAM</REC>
       <Source>Ask a ship technician to send a recovery mechanic</Source>
-      <Dest>Bitte einen Schiffsservicetechniker darum, einen Bergungsspezialisten zu schicken.</Dest>
+      <Dest>Bitte den Schiffsservicetechniker darum, einen Bergungsspezialisten zu schicken.</Dest>
     </String>
     <String List="0" sID="000140">
       <EDID>RAS_BrokenShipQuest</EDID>
@@ -1787,7 +1787,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_BrokenShipQuest</EDID>
       <REC id="2" idMax="4">QUST:NNAM</REC>
       <Source>Ask a ship technician to fix your ship</Source>
-      <Dest>Bitte einen Schiffsservicetechniker, dein Schiff zu reparieren.</Dest>
+      <Dest>Bitte den Schiffsservicetechniker, dein Schiff zu reparieren.</Dest>
     </String>
     <String List="0" sID="000142">
       <EDID>RAS_BrokenShipQuest</EDID>
@@ -1805,7 +1805,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_BrokenShipQuest</EDID>
       <REC>QUST:FULL</REC>
       <Source>Grounded</Source>
-      <Dest>Abgestürzt</Dest>
+      <Dest>Gelanded</Dest>
     </String>
     <String List="0" sID="00014A">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
@@ -1823,13 +1823,13 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="5" idMax="7">QUST:NNAM</REC>
       <Source>Activate the Rescue Beacon</Source>
-      <Dest>Aktiviere das Rettungssignal</Dest>
+      <Dest>Aktiviere das Rettungs-Signal</Dest>
     </String>
     <String List="0" sID="00014D">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="4" idMax="7">QUST:NNAM</REC>
       <Source>Build a Rescue Beacon</Source>
-      <Dest>Baue ein Rettungssignal</Dest>
+      <Dest>Baue ein Rettungs-Signal</Dest>
     </String>
     <String List="0" sID="00014E">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
@@ -1885,7 +1885,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Source>Here to take you home.</Source>
       <Dest>Ich bring dich nach Hause.</Dest>
     </String>
-    <String List="0" sID="0001C4">
+    <String List="0" sID="0001C6">
       <EDID>[FD000922]</EDID>
       <REC>INFO:RNAM</REC>
       <Source>Let&apos;s keep traveling together.</Source>
@@ -2023,7 +2023,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Source>Echoes from Vectera</Source>
       <Dest>Echos von Vectera</Dest>
     </String>
-    <String List="0" sID="0002CD">
+    <String List="0" sID="0002CE">
       <EDID>[FD000B76]</EDID>
       <REC>INFO:RNAM</REC>
       <Source>Tell me about the Artifacts. I want to know everything.</Source>
@@ -2105,7 +2105,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_NewGameManagerQuest</EDID>
       <REC id="7" idMax="8">QUST:NNAM</REC>
       <Source>(Optional) Interact  with the QED</Source>
-      <Dest>(Optional) Interagiere mit dem Quantenverstrickungsgerät</Dest>
+      <Dest>Interagiere mit dem Quantenverstrickungsgerät</Dest>
     </String>
     <String List="0" sID="000309">
       <EDID>RAS_NewGameManagerQuest</EDID>
@@ -2171,7 +2171,7 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>DialogueShipServices</EDID>
       <REC>QUST:FULL</REC>
       <Source>Ship Services Tech Dialogue</Source>
-      <Dest>Schiffsservicetechniker Dialog</Dest>
+      <Dest>Ship Services Tech Dialogue</Dest>
     </String>
     <String List="0" sID="000348">
       <EDID>DialogueUCNewAtlantis</EDID>
@@ -2201,13 +2201,13 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_StartingLocationTerminal</EDID>
       <REC>TERM:FULL</REC>
       <Source>Starting Location Terminal</Source>
-      <Dest>Terminal: Startort</Dest>
+      <Dest>Terminal: Start-Lokation</Dest>
     </String>
     <String List="0" sID="00034D">
       <EDID>RAS_HomeChoosingTerminal</EDID>
       <REC>TERM:FULL</REC>
       <Source>Home Choosing Terminal</Source>
-      <Dest>Terminal: Auswahl Spielerheim</Dest>
+      <Dest>Terminal: Auswahl des Zuhauses</Dest>
     </String>
     <String List="0" sID="00034E">
       <EDID>RAS_StartingMapMarkerTerminal</EDID>
@@ -2219,13 +2219,13 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_NarrativeAdjustmentsTerminal</EDID>
       <REC>TERM:FULL</REC>
       <Source>Narrative Adjustments Terminal</Source>
-      <Dest>Terminal: Story-Anpassungen</Dest>
+      <Dest>Terminal: Narrative Anpassungen</Dest>
     </String>
     <String List="0" sID="000350">
       <EDID>RAS_ShipwreckedRescueDestinationTerminal</EDID>
       <REC>TERM:FULL</REC>
       <Source>Shipwrecked Rescue Destination Terminal</Source>
-      <Dest>Schiffbrüchig - Terminal: Rettungsziel</Dest>
+      <Dest>Rettungsziel-Terminal für Schiffbrüchige</Dest>
     </String>
     <String List="0" sID="000351">
       <EDID>RAS_DynamicEntriesTerminal_Template</EDID>
@@ -2344,8 +2344,8 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
     <String List="0" sID="000364">
       <EDID>RAS_DynamicEntry_NA_ArgosMinerSubmenu</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Argos Miner</Source>
-      <Dest>Argos Bergarbeiter</Dest>
+      <Source>Override Previous Origin</Source>
+      <Dest>Überschreibe vorherigen Ursprung</Dest>
     </String>
     <String List="0" sID="000365">
       <EDID>RAS_DynamicEntry_MapMarker_Viewport</EDID>
@@ -2356,14 +2356,14 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
     <String List="0" sID="000366">
       <EDID>RAS_DynamicEntry_NA_ArgosMinerFragment</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Hide Shipwrecked Quest Map Marker</Source>
-      <Dest>Verstecke Kartenmarkierung für die Mission &quot;Schiffbrüchig&quot;</Dest>
+      <Source>Override Previous Origin</Source>
+      <Dest>Überschreibe vorherigen Ursprung</Dest>
     </String>
     <String List="0" sID="000367">
       <EDID>RAS_DynamicEntry_NA_ShipModifierFragment</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Broken Ship Start</Source>
-      <Dest>&quot;Abgestürzt&quot; (Start mit beschädigtem Schiff)</Dest>
+      <Source>Start with a Broken Ship</Source>
+      <Dest>Start mit beschädigtem Schiff</Dest>
     </String>
     <String List="0" sID="000368">
       <EDID>RAS_DynamicEntry_Home_DWNEarthDomeFragment</EDID>
@@ -2372,100 +2372,100 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Dest>[DWN] Earth Dome</Dest>
     </String>
     <String List="0" sID="000369">
-      <EDID>RAS_DynamicEntry_Start_AtDreamHome</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Your dream home</Source>
-      <Dest>Dein Traumhaus (Spielerhaus)</Dest>
-    </String>
-    <String List="0" sID="00036A">
-      <EDID>RAS_DynamicEntry_Start_AtHome</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Your home</Source>
-      <Dest>Dein Zuhause</Dest>
-    </String>
-    <String List="0" sID="00036B">
-      <EDID>RAS_DynamicEntry_Home_AkilaCore</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Akila Core Residence</Source>
-      <Dest>Akila: Core-Residenz</Dest>
-    </String>
-    <String List="0" sID="00036C">
-      <EDID>RAS_DynamicEntry_NA_ShipModifierSubmenu</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Broken Ship Start</Source>
-      <Dest>&quot;Abgestürzt&quot; (Start mit beschädigtem Schiff)</Dest>
-    </String>
-    <String List="0" sID="00036D">
-      <EDID>RAS_Artifact_ETA</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Artifact ETA</Source>
-      <Dest>Artefakt ETA</Dest>
-    </String>
-    <String List="0" sID="00036E">
-      <EDID>RAS_DynamicEntry_Home_NeonSkySuite</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Neon Sky Suite</Source>
-      <Dest>Neon: Sky-Suite</Dest>
-    </String>
-    <String List="0" sID="00036F">
-      <EDID>RAS_DynamicEntry_NA_NonStarbornSubmenu</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Non-Starborn NG+</Source>
-      <Dest>NG+ nicht als Sternenblut</Dest>
-    </String>
-    <String List="0" sID="000370">
-      <EDID>RAS_DynamicEntry_NA_CompleteMQ101Submenu</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Complete Vanilla &quot;One Small Step&quot; Quest</Source>
-      <Dest>Auto-Vervollständige Vanilla-Mission: &quot;Ein kleiner Schritt&quot;</Dest>
-    </String>
-    <String List="0" sID="000371">
-      <EDID>RAS_DynamicEntry_Home_NewAtlantisWell</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>The Well Apartment</Source>
-      <Dest>Das Unterdeck-Appartement (Spielerheim)</Dest>
-    </String>
-    <String List="0" sID="000372">
-      <EDID>RAS_DynamicEntry_Home_DWNVolIIHotelFragment</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>[DWN] VolII Hotel - Room 42</Source>
-      <Dest>[DWN] VolII Hotel - Raum 42 (Spielerheim)</Dest>
-    </String>
-    <String List="0" sID="000373">
       <EDID>RAS_DynamicEntry_MapMarker_Ship</EDID>
       <REC>MISC:FULL</REC>
       <Source>At my Ship</Source>
       <Dest>Auf meinem Schiff</Dest>
     </String>
-    <String List="0" sID="000374">
-      <EDID>RAS_DynamicEntry_Home_NeonSleepingCrate</EDID>
+    <String List="0" sID="00036A">
+      <EDID>RAS_DynamicEntry_Home_AkilaCore</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Neon Sleeping Crate</Source>
-      <Dest>Neon: Sleepcrate</Dest>
+      <Source>Akila Core Residence</Source>
+      <Dest>Akila: Core-Residenz</Dest>
     </String>
-    <String List="0" sID="000375">
-      <EDID>RAS_DynamicEntry_NA_Disable</EDID>
+    <String List="0" sID="00036B">
+      <EDID>RAS_DynamicEntry_NA_ShipModifierSubmenu</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Disabled</Source>
-      <Dest>Deaktiviert</Dest>
+      <Source>Start with a Broken Ship</Source>
+      <Dest>Start mit beschädigtem Schiff</Dest>
     </String>
-    <String List="0" sID="000376">
-      <EDID>RAS_DynamicEntry_Home_DWNParadisoFragment</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>[DWN] Paradiso Cabin</Source>
-      <Dest>[DWN] Paradiso Cabin (Spielerhaus)</Dest>
-    </String>
-    <String List="0" sID="000377">
+    <String List="0" sID="00036C">
       <EDID>RAS_DynamicEntry_NA_NonStarbornFragment</EDID>
       <REC>MISC:FULL</REC>
       <Source>Non-Starborn NG+</Source>
       <Dest>NG+ nicht als Sternenblut</Dest>
     </String>
+    <String List="0" sID="00036D">
+      <EDID>RAS_DynamicEntry_Home_NeonSkySuite</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Neon Sky Suite</Source>
+      <Dest>Neon: Sky-Suite</Dest>
+    </String>
+    <String List="0" sID="00036E">
+      <EDID>RAS_DynamicEntry_NA_NonStarbornSubmenu</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Non-Starborn NG+</Source>
+      <Dest>NG+ nicht als Sternenblut</Dest>
+    </String>
+    <String List="0" sID="00036F">
+      <EDID>RAS_DynamicEntry_NA_CompleteMQ101Submenu</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Complete Vanilla &quot;One Small Step&quot; Quest</Source>
+      <Dest>Vollständig Vanilla: &quot;Ein kleiner Schritt&quot;-Mission</Dest>
+    </String>
+    <String List="0" sID="000370">
+      <EDID>RAS_DynamicEntry_Home_NewAtlantisWell</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>The Well Apartment</Source>
+      <Dest>Das Unterdeck-Appartement (Spielerheim)</Dest>
+    </String>
+    <String List="0" sID="000371">
+      <EDID>RAS_DynamicEntry_Home_DWNVolIIHotelFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] VolII Hotel - Room 42</Source>
+      <Dest>[DWN] VolII Hotel - Raum 42 (Spielerheim)</Dest>
+    </String>
+    <String List="0" sID="000372">
+      <EDID>RAS_DynamicEntry_Start_AtHome</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Your home</Source>
+      <Dest>Dein Zuhause</Dest>
+    </String>
+    <String List="0" sID="000373">
+      <EDID>RAS_DynamicEntry_Home_NeonSleepingCrate</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Neon Sleeping Crate</Source>
+      <Dest>Neon: Sleepcrate</Dest>
+    </String>
+    <String List="0" sID="000374">
+      <EDID>RAS_DynamicEntry_NA_Disable</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Disabled</Source>
+      <Dest>Deaktiviert</Dest>
+    </String>
+    <String List="0" sID="000375">
+      <EDID>RAS_DynamicEntry_Home_DWNParadisoFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Paradiso Cabin</Source>
+      <Dest>[DWN] Paradiso Cabin (Spielerhaus)</Dest>
+    </String>
+    <String List="0" sID="000376">
+      <EDID>RAS_DynamicEntry_Start_AtDreamHome</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Your dream home</Source>
+      <Dest>Dein Traumhaus (Spielerhaus)</Dest>
+    </String>
+    <String List="0" sID="000377">
+      <EDID>RAS_Artifact_ETA</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Artifact ETA</Source>
+      <Dest>Artefakt ETA</Dest>
+    </String>
     <String List="0" sID="000378">
       <EDID>RAS_DynamicEntry_NA_CompleteMQ101Fragment</EDID>
       <REC>MISC:FULL</REC>
       <Source>Complete Vanilla &quot;One Small Step&quot; Quest</Source>
-      <Dest>Auto-Vervollständige Vanilla-Mission: &quot;Ein kleiner Schritt&quot;</Dest>
+      <Dest>Vollständig Vanilla: &quot;Ein kleiner Schritt&quot;-Mission</Dest>
     </String>
     <String List="0" sID="000379">
       <EDID>RAS_DynamicEntry_Start_RandomScientificOutpost</EDID>
@@ -2486,46 +2486,46 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <Dest>Einladung in die Loge</Dest>
     </String>
     <String List="0" sID="00037D">
+      <EDID>RAS_PlayerStuffActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Player Stuff</Source>
+      <Dest>Spielerkram</Dest>
+    </String>
+    <String List="0" sID="00037E">
       <EDID>RAS_AnomalyActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Manage your Character Skills</Source>
       <Dest>Verwalte deine Charakter-Skills</Dest>
     </String>
-    <String List="0" sID="00037E">
+    <String List="0" sID="00037F">
       <EDID>RAS_FactionsActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Select a Faction</Source>
       <Dest>Wähle eine Fraktion</Dest>
     </String>
-    <String List="0" sID="00037F">
+    <String List="0" sID="000380">
       <EDID>RAS_HomeChoosingActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Choose a Home</Source>
       <Dest>Wähle ein Heim</Dest>
     </String>
-    <String List="0" sID="000380">
+    <String List="0" sID="000381">
       <EDID>RAS_TestActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Panel</Source>
       <Dest>Panel</Dest>
     </String>
-    <String List="0" sID="000381">
+    <String List="0" sID="000382">
       <EDID>RAS_StartingLocationActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Choose Your Starting Location</Source>
       <Dest>Wähle deinen Startort</Dest>
     </String>
-    <String List="0" sID="000382">
+    <String List="0" sID="000383">
       <EDID>RAS_NarrativeAdjustmentsActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Select Narrative Adjustments</Source>
       <Dest>Wähle Story-Anpassungen</Dest>
-    </String>
-    <String List="0" sID="000383">
-      <EDID>RAS_PlayerStuffActivator</EDID>
-      <REC>ACTI:FULL</REC>
-      <Source>Player Stuff</Source>
-      <Dest>Spielerkram</Dest>
     </String>
     <String List="0" sID="000384">
       <EDID>RAS_CharGenActivator</EDID>
@@ -2549,20 +2549,14 @@ Anforderung an Bewohnbarkeit: &lt;1.name&gt;</Dest>
       <EDID>RAS_RescueActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Rescue Beacon</Source>
-      <Dest>Rettungssignal</Dest>
-    </String>
-    <String List="1" sID="0000B9">
-      <EDID>RAS_KeepArtifactMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>I feel like I should keep this artifact, or at least not give it up freely.</Source>
-      <Dest>Es habe das Gefühl, ich sollte das Artefakt behalten oder es zumindest nicht freiwillig hergeben.</Dest>
+      <Dest>Hilfe-Bake</Dest>
     </String>
     <String List="1" sID="0000BC">
       <EDID>RAS_ShipwreckStartTutorialMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>You&apos;ve been temporarily given the &quot;Planetary Habitation&quot; perk, as you may require it in order to build an outpost and a rescue beacon. 
 Once you get off this planet (with the rescue beacon or another solution) the perk will be removed (or set back to the rank it was at before the crash).</Source>
-      <Dest>Dir wurde vorübergehend der Skill „Planetenbesiedlung“ gewährt, da du ihn möglicherweise benötigst, um einen Außenposten und ein Rettungssignal zu bauen.  
+      <Dest>Dir wurde vorübergehend der Skill „Planetenbesiedlung“ gewährt, da du ihn möglicherweise benötigst, um einen Außenposten und ein Rettungs-Signal zu bauen.  
 Sobald du diesen Planeten verlässt (mittels Rettungssignal oder einer anderen Lösung), wird dir der Vorteil wieder entzogen (oder auf den Rang zurückgesetzt, den er vor dem Absturz hatte).</Dest>
     </String>
     <String List="1" sID="0000C3">
@@ -2572,40 +2566,24 @@ Sobald du diesen Planeten verlässt (mittels Rettungssignal oder einer anderen L
       <Dest>Hier kannst du deinen Charakter aufleveln</Dest>
     </String>
     <String List="1" sID="0000C7">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Starting as a pedestrian in a random location can soft-lock you (your only escape would be to hijack an enemy ship, and you&apos;re not even sure there would be one nor it would be the right ship class). 
-
-Are you sure you wish to continue ?</Source>
-      <Dest>Der Start als Fußgänger an einer zufälligen Lokation kann dich blockieren. Du könntest nur entkommen, wenn du ein Raumschiff kaperst, wobei du dir nicht sicher sein kannst, ob eines kommt und jenes die richtige Schiffsklasse hat.
-
-Bist du sicher, dass du fortsetzen möchtest?</Dest>
-    </String>
-    <String List="1" sID="0000CB">
       <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>Do you want to unlock the furniture in the New Homestead home right now ?</Source>
       <Dest>Möchtest du die Möblierung für das Haus in New Homestead sofort freischalten?</Dest>
     </String>
-    <String List="1" sID="0000CD">
-      <EDID>RAS_PlayerStuffPickedUp</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>You  finally retrieved your gear!</Source>
-      <Dest>Du hast deine Ausstattung ausgewählt!</Dest>
-    </String>
-    <String List="1" sID="0000D0">
+    <String List="1" sID="0000CB">
       <EDID>RAS_SelectionInvalidatedMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>The configuration you just did invalidated the choice you made at the &lt;Alias=InvalidatedTerminal&gt;. The selection has been reset to default.</Source>
-      <Dest>Die soeben getroffene Auswahl kollidiert mit folgender: &lt;Alias=InvalidatedTerminal&gt;. Die Auswahl wurde auf die Standardeinstellungen zurückgesetzt.</Dest>
+      <Dest>Die soeben getroffene Auswahl kollidiert mit folgender: &lt;Alias=InvalidatedTerminal&gt; Die Auswahl wurde auf die Standardeinstellungen zurückgesetzt.</Dest>
     </String>
-    <String List="1" sID="0000D8">
+    <String List="1" sID="0000D3">
       <EDID>RAS_SetPilotingSkillLevel</EDID>
       <REC>MESG:DESC</REC>
       <Source>Which rank should the piloting skill be set to?</Source>
       <Dest>Auf welchen Level soll der Skill &quot;Fliegen&quot; gesetzt werden?</Dest>
     </String>
-    <String List="1" sID="0000DA">
+    <String List="1" sID="0000D5">
       <EDID>RAS_TheGuideStartWarning</EDID>
       <REC>MESG:DESC</REC>
       <Source>The random artifact spawning logic is now disabled.
@@ -2613,7 +2591,7 @@ Once you entered the artifact location, Argos start will be unavailable.</Source
       <Dest>Die Logik für das zufällige Spawnen des Artefakts ist nun deaktiviert.
 Hast du die Spawn-Lokation betreten, wird der Argos-Start nicht länger verfügbar sein.</Dest>
     </String>
-    <String List="1" sID="0000DE">
+    <String List="1" sID="0000D9">
       <EDID>RAS_StarstationStartWarning</EDID>
       <REC>MESG:DESC</REC>
       <Source>Starting as a pedestrian in a starstation can soft-lock you as they may be no ship tech at the location. 
@@ -2623,78 +2601,170 @@ Are you sure you wish to continue ?</Source>
 
 Bist du sicher, dass du fortsetzen möchtest?</Dest>
     </String>
-    <String List="1" sID="0000E0">
+    <String List="1" sID="0000DB">
       <EDID>RAS_RescueShipYetCalledMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>You already called for a rescue ship, please wait for it to land.</Source>
       <Dest>Du hast nach einem Rettungsschiff gerufen. Bitte warte darauf, das es landet.</Dest>
     </String>
-    <String List="1" sID="0000E3">
+    <String List="1" sID="0000DF">
+      <EDID>RAS_ConfirmStartMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Are you ready to start your new adventure ?</Source>
+      <Dest>Bist du bereit ein neues Abenteuer zu beginnen?</Dest>
+    </String>
+    <String List="1" sID="0000E1">
       <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>Impossible to find a landing point for the rescue ship. Please try again and if it doesn&apos;t work a second time, try to place this beacon in a flatter place.</Source>
       <Dest>Unmöglich einen Landeplatz für das Rettungsschiff zu finden. Bitte versuche es erneut. Sollte es erneut nicht funktionieren, versuche das Signal an einer flacheren Stelle zu platzieren.</Dest>
     </String>
-    <String List="1" sID="0000E5">
+    <String List="1" sID="0000E3">
       <EDID>RAS_VehicleUnlockingMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>You will be given the amount of caps required to unlock the vehicles feature. If you cancel the purchase, they will be taken back.
+      <Source>You will be given the amount of credits required to unlock the vehicles feature. If you cancel the purchase, they will be taken back.
 
 Beware: Unlocking vehicles is irreversible.</Source>
-      <Dest>Du erhältst die erforderliche Menge Caps, um die Fahrzeugfunktion freizuschalten. Wenn ihr den Kauf storniert, werden sie zurückgenommen.
+      <Dest>Du erhältst die erforderliche Menge Credits, um die Fahrzeugfunktion freizuschalten. Wenn ihr den Kauf storniert, werden sie zurückgenommen.
 
 Achtung: Das Freischalten von Fahrzeugen ist unumkehrbar.</Dest>
     </String>
-    <String List="1" sID="0000E7">
+    <String List="1" sID="0000E5">
       <EDID>RAS_ArgosStartUnavailableWarning</EDID>
       <REC>MESG:DESC</REC>
-      <Source>Infortunately you cannot start the main quest with the Argos quest on that playthrough. Either:
+      <Source>Infortunately you cannot start the main quest with the Argos quest on that playthrough unless you do a NG+. Either:
 - You activated the &quot;Autocomplete vanilla &apos;One Small Step&apos; &quot; narrative adjustment.
 - You&apos;ve started the playthrough with a mod version under 1.1.0.
+- You&apos;ve already started the main quest with one of the following options.
 
-You will be able to do the Argos start only if you do NG+. You can still start the main quest by randomly stumbling upon the artifact.
-
+You can still start the main quest by randomly stumbling upon the artifact.
 Current settings for artifact spawn are: %.0f percent chance to spawn after level %.0f.
-Find eligible locations on the FAQ section of the mod page.
+You can change these settings in the &quot;Gameplay Options&quot; section of the main menu.
+You can find eligible locations on the FAQ section of the mod page.
 
-You can also get a map marker to the artifact by talking to &quot;The Guide&quot;, an NPC that will appear where &quot;The Hunter&quot; usually stays at &quot;The Viewort&quot;, once you&apos;ve spoken to the latter at least once.</Source>
-      <Dest>Unglücklicherweise kannst du die Haupt-Quest in diesem Spieldurchlauf nicht mit dem Argos Start beginnen. Es sei denn:
-- Du hast die Story-Anpassung &quot;Auto-Vervollständige Vanilla-Mission: &apos;Ein kleiner Schritt&apos;&quot; aktiviert.
+You can also start the main quest by talking to &quot;The Guide&quot;, an NPC that will appear where &quot;The Hunter&quot; usually stays at &quot;The Viewort&quot;, once you&apos;ve spoken to the latter at least once.</Source>
+      <Dest>Unglücklicherweise kannst du die Hauptmission in diesem Spieldurchlauf nicht mit dem Argos Start beginnen, wenn du nicht in ein NG+ startest. Es sei denn:
+- Du hast die inhaltliche Anpassung &quot;Auto-Vervollständige Vanilla-Mission: &apos;Ein kleiner Schritt&apos;&quot; aktiviert.
 - Du hast den Spieldurchlauf mit einer Mod-Version unter 1.1.0 gestartet.
+- Du hast die Hauptmission bereits mit einer der folgenden Optionen gestartet.
 
-Es wird dir nur möglich sein, den Argos-Start zu wählen, wenn du ein ins NG+ wechselst. Du kannst die Haupt-Questreihe noch immer beginnen, wenn du zufällig über das Artefakt stolperst.
-
-Die gegenwärtigen Einstellung für das Spawnen des Artefakts sind: %.0f% Chance bei Spielerlevel %.0f zu spawnen.
+Du kannst die Haupt-Questreihe noch immer beginnen, wenn du zufällig über das Artefakt stolperst.
+Die gegenwärtigen Einstellung für das Spawnen des Artefakts sind: %.0f% Chance bei Spielerlevel %.0f.
+Du kannst diese Einstellungen über die &quot;Spieleinstellungen&quot; im Hauptmenü ändern.
 Finde mögliche Spawn-Lokationen im FAQ-Bereich der Mod-Seite.
 
-Du kannst auch eine Kartenmarkierung des Artefakts erhalten, wenn du &quot;Die Ratgeberin&quot; ansprichst. &quot;Die Ratgeberin&quot; nimmt im &quot;Viewport&quot; den Platz des &quot;Hunters&quot; ein, nachdem du mindestens einmal mit Letzterem gesprochen hast.</Dest>
+Du kannst die Hauptmission auch starten, wenn du &quot;Die Ratgeberin&quot; ansprichst. &quot;Die Ratgeberin&quot; nimmt im &quot;Viewport&quot; den Platz des &quot;Hunters&quot; ein, nachdem du mindestens einmal mit Letzterem gesprochen hast.</Dest>
     </String>
-    <String List="1" sID="0000EA">
+    <String List="1" sID="0000E8">
       <EDID>RAS_FactionNotAvailableMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>Factions will be available in an upcoming update.</Source>
       <Dest>Fraktionen werden in einem zukünftigen Update verfügbar sein.</Dest>
     </String>
-    <String List="1" sID="0000F1">
+    <String List="1" sID="0000EF">
       <EDID>RAS_RepairShipMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>The ship is damaged and won&apos;t start.</Source>
       <Dest>Das Schiff ist beschädigt und wird nicht starten.</Dest>
     </String>
-    <String List="1" sID="0000F9">
+    <String List="1" sID="0000F7">
       <EDID>RAS_SetLevelMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>Here you can set your character to a given level or you can reach a custom level by leveling up artificially.</Source>
       <Dest>Hier kannst du für deinen Charakter einen vorgegeben oder selbst gewählten Spielerlevel einstellen, indem du künstlich hoch-levelst.</Dest>
     </String>
     <String List="1" sID="0000FB">
+      <EDID>RAS_BrokenShipWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Enabling the &quot;Broken Ship Start&quot; narrative adjustment while starting in a starstation can soft-lock you as there may be no ship technician at that location.
+
+Are you sure you wish to continue ?</Source>
+      <Dest>Das Aktivieren der narrativen Anpassung „Abgestürzt“ (Start mit beschädigten Schiff), während du in einer Raumstation startest, kann dich blockieren, falls es an dieser Lokation keinen Schiffsservicetechniker gibt.
+
+Bist du sicher, dass du fortfahren möchtest?</Dest>
+    </String>
+    <String List="1" sID="0000FD">
+      <EDID>RAS_PlayerStuffPickedUp</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You  finally retrieved your gear!</Source>
+      <Dest>Du hast deine Ausstattung ausgewählt!</Dest>
+    </String>
+    <String List="1" sID="000101">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Starting as a pedestrian in a random location can soft-lock you (your only escape would be to hijack an enemy ship, and you&apos;re not even sure there would be one nor it would be the right ship class). 
+
+Are you sure you wish to continue ?</Source>
+      <Dest>Der Start als Fußgänger an einer zufälligen Lokation kann dich blockieren. Du könntest nur entkommen, wenn du ein Raumschiff kaperst, wobei du dir nicht sicher sein kannst, ob eines kommt und jenes die richtige Schiffsklasse hat.
+
+Bist du sicher, dass du fortsetzen möchtest?</Dest>
+    </String>
+    <String List="1" sID="000103">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The ship is now ready to go!</Source>
+      <Dest>Das Schiff ist nun flugbereit!</Dest>
+    </String>
+    <String List="1" sID="000105">
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Here you can choose and customize a starting ship. You will access the ship technician dialogs as usual, except everything will be free.
+
+If you don&apos;t choose a ship you&apos;ll start as a pedestrian and will have to buy one later on.
+
+If you chose a ship and changed your mind, you can choose back the &quot;ship&quot; called &quot;No Ship Selected&quot; and you&apos;ll be a pedestrian again (it will be at the end of the list).
+
+Beware, if you modify a ship and then change your selection, the modified ship will be reset.
+
+If you level up using the &quot;Character Skills Activator&quot; the ship list will be modified accordingly.</Source>
+      <Dest>Hier kannst du ein Startschiff auswählen und anpassen. Du greifst wie gewohnt auf die Dialoge des Schiffsmechanikers zu - nur ist diesmal alles kostenlos.
+
+Wenn du kein Schiff wählst, startest du als Fußgänger und musst später eines kaufen.
+
+Wenn du ein Schiff gewählt und es dir anders überlegt hast, kannst du wieder das Schiff namens „Kein Schiff ausgewählt“ wählen - dann bist du wieder Fußgänger (es steht am Ende der Liste).
+
+Achtung: Wenn du ein Schiff veränderst und anschließend die Auswahl änderst, wird das veränderte Schiff zurückgesetzt.
+
+Wenn du über den „Charakter-Skill‑Aktivator“ aufsteigst, wird die Schiffliste entsprechend angepasst.</Dest>
+    </String>
+    <String List="1" sID="000109">
+      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>How are you willing to modify your character skills?</Source>
+      <Dest>Wie möchtest du deine Charakter-Skills anpassen?</Dest>
+    </String>
+    <String List="1" sID="00010E">
+      <EDID>RAS_ChooseStartTypeMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>What kind of new game are you willing to create ?</Source>
+      <Dest>Welche Art eines neuen Spiels möchtest du erstellen?</Dest>
+    </String>
+    <String List="1" sID="000110">
+      <EDID>RAS_ImpossibleToStartMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Error! Impossible to teleport the player to the selected location. Please retry, and if the problem persists, please report on Discord or Nexusmods.</Source>
+      <Dest>Fehler! Unmöglich den Spieler zur gewählten Position zu teleportieren. Bitte versuche es erneut. Besteht das Problem weiterhin, melde dies bitte auf Discord oder über Nexusmods.</Dest>
+    </String>
+    <String List="1" sID="000115">
+      <EDID>RAS_ChooseQEDMode</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>What do you want to do?</Source>
+      <Dest>Was möchtest du tun?</Dest>
+    </String>
+    <String List="1" sID="000116">
+      <EDID>RAS_BrokenHomeshipError</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You can&apos;t set a broken ship as your home ship. Your homeship has been reverted to the prior one.</Source>
+      <Dest>Du kannst ein beschädigtes Schiff nicht zu deinem Hauptschiff machen. Dein Hauptschiff wurde auf das Vorherige zurückgesetzt.</Dest>
+    </String>
+    <String List="1" sID="000119">
       <EDID>RAS_CustomStartTutorialMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>Traveler, welcome.
 
 You&apos;re standing within a place outside the flow of time, a staging ground between what was and what will be.
 
-Here, you can shape the beginning of your journey. Around you, you&apos;ll find various interactive elements to change different aspects of your character&apos;s background (starting gear, owned ship...) or to define how your story will unfold (starting location, owned home, narrative adjustments...).
+Here, you can shape the beginning of your journey. Around you, you&apos;ll find various interactive elements to change different aspects of your character&apos;s background (starting gear, owned ship, owned home...) or to define how your story will unfold (starting location, narrative adjustments...).
 
 Some elements are connected: setting an option may unlock or restrict others.
 For example:
@@ -2708,94 +2778,16 @@ When you&apos;re satisfied with your setup, step into the anomaly to begin your 
 
 Du befindest dich an einem Ort außerhalb des Flusses der Zeit, ein Zwischenraum zwischen dem, was war, und dem, was sein wird.
 
-Hier kannst du den Beginn deiner Reise gestalten. Um dich herum findest du verschiedene interaktive Elemente, mit denen du unterschiedliche Aspekte des Hintergrunds deines Charakters festlegst (Startausrüstung, dein Schiff) oder bestimmst, wie sich deine Geschichte entfalten wird (Startort, dein Zuhause, Story-Anpassungen).
+Hier kannst du den Beginn deiner Reise gestalten. Um dich herum findest du verschiedene interaktive Elemente, mit denen du unterschiedliche Aspekte des Hintergrunds deines Charakters festlegst (Startausrüstung, dein Schiff, eigenes Zuhause...) oder bestimmst, wie sich deine Geschichte entfalten wird (Startort, narrative Anpassungen).
 
 Einige Elemente stehen in Verbindung: Das Setzen einer Option kann andere Optionen freischalten oder einschränken.  
 Zum Beispiel:
 - Das Auswählen eines Zuhauses schaltet die Option frei, dein Abenteuer an diesem Ort zu beginnen.
-- Das Auswählen eines Startschiffs schaltet eine &quot;Story-Anpassung&quot; frei, die von dir verlangt, das Schiff vor der Abreise zu reparieren, entfernt aber gleichzeitig die Startoption &quot;Schiffbrüchig&quot;.
+- Das Auswählen eines Startschiffs schaltet eine &quot;narrative Anpassung&quot; frei, die von dir verlangt, das Schiff vor der Abreise zu reparieren, entfernt aber gleichzeitig die Startoption &quot;Schiffbrüchig&quot;.
 
 Vergiss nicht, einen Blick auf den Bereich &quot;Spieleinstellungen&quot; des Hauptmenüs zu werfen, wo du weitere Anpassungen vornehmen kannst.
 
 Wenn du mit deiner Auswahl zufrieden bist, tritt in die Anomalie, um deine Reise in den Besiedelten Systemen zu beginnen!</Dest>
-    </String>
-    <String List="1" sID="0000FD">
-      <EDID>RAS_LodgeDoorDebugMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>The lodge door has been opened.</Source>
-      <Dest>Die Tür zur Loge wurde geöffnet.</Dest>
-    </String>
-    <String List="1" sID="0000FF">
-      <EDID>RAS_MQ101DebugModifiedMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>You installed another mod that edits the MQ101Debug global variable, most likely another alternate start mod. Mod is disabled. See the modpage for more information.
-If you doesn&apos;t find the incompatible mod in the &quot;Incompatibilities&quot; section of the mod description, feel free to report it in the comment section.</Source>
-      <Dest>Du hast eine andere Mod installiert, die die globale Debug-Variable MQ101Debug verändert. Dies ist höchstwahrscheinlich eine andere Mod für alternative Starts. Die Mod wurde deaktiviert. Suche auf der Mod-Seite nach weiteren Informationen.
-Falls du die inkompatible Mod nicht in der Liste der Inkompatibilitäten in der Modbeschreibung findest, hinterlasse mir gern einen Report in der Kommentarsektion.</Dest>
-    </String>
-    <String List="1" sID="000101">
-      <EDID>RAS_RepairSucceededMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>The ship is now ready to go!</Source>
-      <Dest>Das Schiff ist nun flugbereit!</Dest>
-    </String>
-    <String List="1" sID="000103">
-      <EDID>RAS_ShiptechTutorialMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Here you can choose and customize a starting ship. You will access the ship technician dialogs as usual, except everything will be free.
-
-If you don&apos;t choose a ship you&apos;ll start as a pedestrian and will have to buy one later on.
-
-If you chose a ship and changed your mind, you can choose back the &quot;ship&quot; called &quot;No Ship Selected&quot; and you&apos;ll be a pedestrian again (it will be at the end of the list).
-
-Beware, if you modify a ship and then change your selection, the modified ship will be reset.
-
-If you level up using the &quot;Level Manager Activator&quot; the ship list will be modified accordingly.</Source>
-      <Dest>Hier kannst du ein Startschiff auswählen und anpassen. Du greifst wie gewohnt auf die Dialoge des Schiffsmechanikers zu - nur ist diesmal alles kostenlos.
-
-Wenn du kein Schiff wählst, startest du als Fußgänger und musst später eines kaufen.
-
-Wenn du ein Schiff gewählt und es dir anders überlegt hast, kannst du wieder das Schiff namens „Kein Schiff ausgewählt“ wählen - dann bist du wieder Fußgänger (es steht am Ende der Liste).
-
-Achtung: Wenn du ein Schiff veränderst und anschließend die Auswahl änderst, wird das veränderte Schiff zurückgesetzt.
-
-Wenn du über den „Level‑Manager‑Aktivator“ aufsteigst, wird die Schiffliste entsprechend angepasst.</Dest>
-    </String>
-    <String List="1" sID="000107">
-      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>How are you willing to modify your character skills?</Source>
-      <Dest>Wie möchtest du deine Charakter-Skills anpassen?</Dest>
-    </String>
-    <String List="1" sID="00010C">
-      <EDID>RAS_ChooseStartTypeMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>What kind of new game are you willing to create ?</Source>
-      <Dest>Welche Art eines neuen Spiels möchtest du erstellen?</Dest>
-    </String>
-    <String List="1" sID="00010E">
-      <EDID>RAS_ImpossibleToStartMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Error! Impossible to teleport the player to the selected location. Please choose another.</Source>
-      <Dest>Fehler! Unmöglich den Spieler zur gewählten Position zu teleportieren. Bitte wähle eine andere.</Dest>
-    </String>
-    <String List="1" sID="000113">
-      <EDID>RAS_ChooseQEDMode</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>What do you want to do?</Source>
-      <Dest>Was möchtest du tun?</Dest>
-    </String>
-    <String List="1" sID="000114">
-      <EDID>RAS_BrokenHomeshipError</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>You can&apos;t set a broken ship as your home ship. Your homeship has been reverted to the prior one.</Source>
-      <Dest>Du kannst ein beschädigtes Schiff nicht zu deinem Hauptschiff machen. Dein Hauptschiff wurde auf das Vorherige zurückgesetzt.</Dest>
-    </String>
-    <String List="1" sID="000119">
-      <EDID>RAS_ConfirmStartMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Are you ready to start your new adventure ?</Source>
-      <Dest>Bist du bereit ein neues Abenteuer zu beginnen?</Dest>
     </String>
     <String List="1" sID="00011B">
       <EDID>RAS_RepairFailedMessage</EDID>
@@ -2839,15 +2831,23 @@ Sie wird in einem Spind liegen und ein sonstiges Missionsziel wird darauf hinwei
       <Source>The ship list is still generating. Please wait a couple of seconds and try again.</Source>
       <Dest>Die Schiffsliste wird noch generiert. Bitte warte ein paar Sekunden und versuche es erneut.</Dest>
     </String>
-    <String List="1" sID="00012D">
-      <EDID>RAS_BrokenShipWarning</EDID>
+    <String List="1" sID="00012A">
+      <EDID>RAS_LodgeDoorDebugMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>Enabling the &quot;Broken Ship Start&quot; narrative adjustment while starting in a starstation can soft-lock you as there may be no ship technician at that location.
-
-Are you sure you wish to continue ?</Source>
-      <Dest>Das Aktivieren der Story-Anpassung „Abgestürzt“ (Start mit beschädigten Schiff), während du in einer Raumstation startest, kann dich blockieren, falls es an dieser Lokation keinen Schiffsservicetechniker gibt.
-
-Bist du sicher, dass du fortfahren möchtest?</Dest>
+      <Source>The lodge door has been opened.</Source>
+      <Dest>Die Tür zur Loge wurde geöffnet.</Dest>
+    </String>
+    <String List="1" sID="00012C">
+      <EDID>RAS_MissingSoundWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>If you&apos;re facing missing sounds (weapons, etc...), right after starting, no worries! Simply, save, exit, and reload. After that, the issue will be fixed once and for all. That&apos;s an engine issue impacting alternate starts mod, I can&apos;t do anything about it.</Source>
+      <Dest>Keine Sorge, wenn bei dir nach dem Start fehlende Sounds (Waffen, usw.) auftreten. Speichere einfach, beende das Spiel und lade erneut. Danach ist das Problem endgültig behoben. Das ist ein Engine-Problem, das die Alternate Starts-Mod betrifft - dagegen kann ich nichts tun.</Dest>
+    </String>
+    <String List="1" sID="00012D">
+      <EDID>RAS_KeepArtifactMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>I feel like I should keep this artifact, or at least not give it up freely.</Source>
+      <Dest>Es habe das Gefühl, ich sollte das Artefakt behalten oder es zumindest nicht freiwillig hergeben.</Dest>
     </String>
     <String List="1" sID="000137">
       <EDID>RAS_MQReplacerQuest</EDID>
@@ -2876,8 +2876,8 @@ Bist du sicher, dass du fortfahren möchtest?</Dest>
     <String List="1" sID="000144">
       <EDID>RAS_BrokenShipQuest</EDID>
       <REC id="4" idMax="4">QUST:CNAM</REC>
-      <Source>The ship&apos;s fully repaired and ready to fly. It&apos;s not perfect, but it&apos;ll get me off this planet.</Source>
-      <Dest>Das Schiff ist vollständig repariert und flugbereit. Es ist nicht perfekt aber es wird mich von diesem Planeten bringen.</Dest>
+      <Source>The ship&apos;s fully repaired and ready to fly!</Source>
+      <Dest>Das Schiff ist vollständig repariert und flugbereit.</Dest>
     </String>
     <String List="1" sID="000145">
       <EDID>RAS_BrokenShipQuest</EDID>
@@ -2889,7 +2889,7 @@ Bist du sicher, dass du fortfahren möchtest?</Dest>
       <EDID>RAS_BrokenShipQuest</EDID>
       <REC id="2" idMax="4">QUST:CNAM</REC>
       <Source>I left a broken ship on &lt;Alias=PlanetAlias&gt;. I should go back with some materials to fix it, or ask a ship technician to send a recovery mechanic to retrieve it.</Source>
-      <Dest>Ich habe ein beschädigtes Schiff auf &lt;Alias=PlanetAlias&gt; zurückgelassen. Ich sollte mit einigen Materialien zurückkehren, um es zu reparieren oder einen Schiffsservicetechniker bitten, einen Bergungsspezialisten für Reparatur und Rückführung des Schiffs zu schicken.</Dest>
+      <Dest>Ich habe ein beschädigtes Schiff auf &lt;Alias=PlanetAlias&gt; zurückgelassen. Ich sollte mit einigen Materialien zurückkehren, um es zu reparieren oder einen Schiffsservicetechniker bitten, einen Bergungsspezialisten für die Rückführung des Schiffs zu schicken.</Dest>
     </String>
     <String List="1" sID="000147">
       <EDID>RAS_BrokenShipQuest</EDID>
@@ -2925,19 +2925,19 @@ Bist du sicher, dass du fortfahren möchtest?</Dest>
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="4" idMax="7">QUST:CNAM</REC>
       <Source>The rescue beacon I built is broadcasting. It could take a while, but eventually someone should pick up the signal. I just have to hold out until help arrives.</Source>
-      <Dest>Das gebaute Rettungssignal sendet. Es könnte eine Weile dauern. Aber vielleicht fängt jemand ja zufällig meinen Hilferuf auf. Ich kann nur warten bis Hilfe eintrifft.</Dest>
+      <Dest>Das gebaute Rettungs-Signal sendet. Es könnte eine Weile dauern. Aber vielleicht fängt jemand ja zufällig mein Signal auf. Ich kann nur warten bis Hilfe eintrifft.</Dest>
     </String>
     <String List="1" sID="000156">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="3" idMax="7">QUST:CNAM</REC>
       <Source>The rescue beacon is assembled. Switching it on will send a signal into space - my only chance for someone to find me. I should activate it now.</Source>
-      <Dest>Das Rettungssignal ist errichtet. Es einzuschalten wird einen Hilferuf in den Weltraum senden - meine einzige Chance darauf, gefunden zu werden. Ich sollte es jetzt aktivieren.</Dest>
+      <Dest>Das Rettungs-Signal ist errichtet. Es einzuschalten wird ein Signal in den Weltraum senden - meine einzige Chance darauf, gefunden zu werden. Ich sollte es jetzt aktivieren.</Dest>
     </String>
     <String List="1" sID="000157">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="2" idMax="7">QUST:CNAM</REC>
       <Source>The outpost beacon is in place. Now I can set up the rescue beacon itself and get ready to send out a signal for help.</Source>
-      <Dest>Das Außenpostensignal steht. Nun kann ich das Rettungssignal selbst einrichten und mich für das Aussenden eines Hilfe-Signals bereit machen.</Dest>
+      <Dest>Das Außenpostensignal steht. Nun kann ich das Rettungs-Signal selbst einrichten und mich für das Aussenden eines Hilfe-Signals bereit machen.</Dest>
     </String>
     <String List="1" sID="000158">
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
@@ -2949,7 +2949,7 @@ Bist du sicher, dass du fortfahren möchtest?</Dest>
       <EDID>RAS_ShipwreckedRescueQuest</EDID>
       <REC id="0" idMax="7">QUST:CNAM</REC>
       <Source>Shipwrecked! The crash left me stranded on &lt;Alias=PlanetAlias&gt; with no working systems and no way to reach orbit. If anyone’s going to find me, I’ll have to make it happen. I should start searching the area for the materials to build a rescue beacon.</Source>
-      <Dest>Schiffbrüchig! Der Absturz ließ mich gestrandet auf &amp;lt;Alias=PlanetAlias&amp;gt; zurück. Ohne arbeitende Systeme und ohne einen Weg, den Orbit zu erreichen. Wenn mich irgend jemand finden soll, muss ich das möglich machen. Ich sollte die Gegend nach Material absuchen, um ein Rettungssignal zu bauen.</Dest>
+      <Dest>Schiffbrüchig! Der Absturz ließ mich gestrandet auf &lt;Alias=PlanetAlias&gt; zurück. Ohne arbeitende Systeme und ohne einen Weg, den Orbit zu erreichen. Wenn mich irgend jemand finden soll, muss ich das möglich machen. Ich sollte die Gegend nach Material absuchen, um ein Rettungssignal zu bauen.</Dest>
     </String>
     <String List="1" sID="00027C">
       <EDID>RAS_MQ104B</EDID>
@@ -3100,34 +3100,34 @@ Viele Grüße,
 Sarah Morgan, Leiterin der Constellation</Dest>
     </String>
     <String List="2" sID="00012E">
-      <EDID>[FD000833]</EDID>
-      <REC id="1" idMax="1">INFO:NAM1</REC>
-      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
-      <Dest>Sein Name ist Barrett. Er ist Mitglied einer Erkundungstruppe namens &quot;Constellation&quot;. Du wirst sie in einen luxuriösen Haus im MAST-Distrikt von New Atlantis finden. Ich warne sie vor, dass du vorbeikommst. Richte Barrett aus, dass es das nächste Mal teurer sein wird!</Dest>
+      <EDID>[FD000827]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
+      <Dest>Ich fand ein seltsames Artefakt beim Erkunden. Irgendeine Ahnung, was das ist?</Dest>
     </String>
     <String List="2" sID="00012F">
-      <EDID>[FD000833]</EDID>
-      <REC id="0" idMax="1">INFO:NAM1</REC>
-      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
-      <Dest>Oh! Das habe ich schon einmal gesehen. Diese anomalen Gravitationssignaturen sind sehr ungewöhnlich... Ich weiß zwar nicht viel darüber, aber ich kenne jemanden, der dir sicher helfen kann.</Dest>
-    </String>
-    <String List="2" sID="000130">
       <EDID>[FD00082F]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>There is a museum on New Homestead. Its owner is probably the most informed on that kind of stuff in all the Settled Systems.</Source>
       <Dest>Es gibt da ein Museum in New Homestead. Der Inhaber ist in den Besiedelten Systemen vermutlich der am besten Informierte in Bezug auf solche Sachen.</Dest>
     </String>
-    <String List="2" sID="000131">
+    <String List="2" sID="000130">
       <EDID>[FD00082D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I found a strange artifact, do you know any expert whom could identify it ?</Source>
       <Dest>Ich habe ein seltsames Artefakt gefunden. Kennst du irgendwelche Experten die das identifizieren könnten?</Dest>
     </String>
+    <String List="2" sID="000131">
+      <EDID>[FD000833]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
+      <Dest>Sein Name ist Barrett. Er ist Mitglied einer Erkundungstruppe namens &quot;Constellation&quot;. Du wirst sie in einen luxuriösen Haus im MAST-Distrikt von New Atlantis finden. Ich warne sie vor, dass du vorbeikommst. Richte Barrett aus, dass es das nächste Mal teurer sein wird!</Dest>
+    </String>
     <String List="2" sID="000132">
-      <EDID>[FD000827]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
-      <Dest>Ich fand ein seltsames Artefakt beim Erkunden. Irgendeine Ahnung, was das ist?</Dest>
+      <EDID>[FD000833]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
+      <Dest>Oh! Das habe ich schon einmal gesehen. Diese anomalen Gravitationssignaturen sind sehr ungewöhnlich... Ich weiß zwar nicht viel darüber, aber ich kenne jemanden, der dir sicher helfen kann.</Dest>
     </String>
     <String List="2" sID="00013C">
       <EDID>[FD000C0C]</EDID>
@@ -3148,16 +3148,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Sehr gerne. Bald sieht es wieder aus wie neu.</Dest>
     </String>
     <String List="2" sID="00015B">
-      <EDID>[FD00173C]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I&apos;m sure you can find something you like.</Source>
-      <Dest>Du findest sicher was, was dir gefällt.</Dest>
-    </String>
-    <String List="2" sID="00015C">
       <EDID>[FD00090F]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Sure, have at it.</Source>
       <Dest>Klar, nur zu.</Dest>
+    </String>
+    <String List="2" sID="00015C">
+      <EDID>[FD00173C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m sure you can find something you like.</Source>
+      <Dest>Du findest sicher was, was dir gefällt.</Dest>
     </String>
     <String List="2" sID="00015D">
       <EDID>[FD0008F1]</EDID>
@@ -3430,16 +3430,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>So ist es. Frag nicht, warum.</Dest>
     </String>
     <String List="2" sID="00018E">
-      <EDID>[FD000861]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Matsura the Grim here and I actually have a lot in common.</Source>
-      <Dest>Matsura und ich haben so einiges gemeinsam.</Dest>
-    </String>
-    <String List="2" sID="00018F">
       <EDID>[FD00085B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Well, you didn&apos;t need to worry too much. Matsura the Grim here is actually a wonderful host.</Source>
       <Dest>Hoffentlich habt ihr euch nicht gesorgt. Tatsächlich ist der miese Matsura ein guter Gastgeber.</Dest>
+    </String>
+    <String List="2" sID="00018F">
+      <EDID>[FD000861]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Matsura the Grim here and I actually have a lot in common.</Source>
+      <Dest>Matsura und ich haben so einiges gemeinsam.</Dest>
     </String>
     <String List="2" sID="000190">
       <EDID>[FD00085E]</EDID>
@@ -3574,28 +3574,28 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Lass meinen Freund gehen, sonst hört das Delgado.</Dest>
     </String>
     <String List="2" sID="0001A6">
-      <EDID>[FD00089A]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>[Attack] You&apos;re a pirate. This only ends one way.</Source>
-      <Dest>[Angreifen] Für Piraten gibt es nur eine Lösung.</Dest>
-    </String>
-    <String List="2" sID="0001A7">
-      <EDID>[FD0008A7]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>We do have some insurance set aside for this exact problem.</Source>
-      <Dest>Genau für dieses Problem haben wir eine Versicherung.</Dest>
-    </String>
-    <String List="2" sID="0001A8">
       <EDID>[FD0008A1]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Take your time. Neither of us are going anywhere.</Source>
       <Dest>Nimm dir Zeit. Wir gehen nirgendwo hin.</Dest>
     </String>
-    <String List="2" sID="0001A9">
+    <String List="2" sID="0001A7">
+      <EDID>[FD00089A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Attack] You&apos;re a pirate. This only ends one way.</Source>
+      <Dest>[Angreifen] Für Piraten gibt es nur eine Lösung.</Dest>
+    </String>
+    <String List="2" sID="0001A8">
       <EDID>[FD00089E]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;ll be back later.</Source>
       <Dest>Ich komme wieder.</Dest>
+    </String>
+    <String List="2" sID="0001A9">
+      <EDID>[FD0008A7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We do have some insurance set aside for this exact problem.</Source>
+      <Dest>Genau für dieses Problem haben wir eine Versicherung.</Dest>
     </String>
     <String List="2" sID="0001AA">
       <EDID>[FD0008B0]</EDID>
@@ -3622,16 +3622,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Gute Idee, aber das hängt auch von ihm ab.</Dest>
     </String>
     <String List="2" sID="0001AE">
-      <EDID>[FD0008D4]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Hmm... Very well. Goodbye to you all. I have enjoyed this little exchange.</Source>
-      <Dest>Hmm ... In Ordnung. Macht&apos;s gut zusammen. Hat Spaß gemacht.</Dest>
-    </String>
-    <String List="2" sID="0001AF">
       <EDID>[FD0008CB]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Do what you can. A suggestion to the right ears can work wonders.</Source>
       <Dest>Versuch es einfach bei den richtigen Leuten damit.</Dest>
+    </String>
+    <String List="2" sID="0001AF">
+      <EDID>[FD0008D4]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Very well. Goodbye to you all. I have enjoyed this little exchange.</Source>
+      <Dest>Hmm ... In Ordnung. Macht&apos;s gut zusammen. Hat Spaß gemacht.</Dest>
     </String>
     <String List="2" sID="0001B0">
       <EDID>[FD0008DD]</EDID>
@@ -3682,34 +3682,34 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Warum überrascht mich das nicht? Natürlich geht es Barrett gut.</Dest>
     </String>
     <String List="2" sID="0001B8">
-      <EDID>[FD000910]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Are you serious with this? I thought you were dead!</Source>
-      <Dest>Dein Ernst? Ich dachte, du bist tot!</Dest>
-    </String>
-    <String List="2" sID="0001B9">
       <EDID>[FD00090D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;ve missed you too, Vasco.</Source>
       <Dest>Du hast mir auch gefehlt.</Dest>
     </String>
-    <String List="2" sID="0001BA">
+    <String List="2" sID="0001B9">
       <EDID>[FD00090B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Well, this is turning into a regular Constellation party, isn&apos;t it? Should&apos;ve brought drinks.</Source>
       <Dest>Das entwickelt sich ja zu einer richtigen Party. Ich hätte was zu trinken mitbringen sollen.</Dest>
     </String>
-    <String List="2" sID="0001BB">
+    <String List="2" sID="0001BA">
       <EDID>[FD000909]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>And Heller&apos;s here! Will wonders never cease?</Source>
       <Dest>Heller ist hier! Wunder gibt es immer wieder!</Dest>
     </String>
-    <String List="2" sID="0001BC">
+    <String List="2" sID="0001BB">
       <EDID>[FD000907]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>And Lin&apos;s here! Will wonders never cease?</Source>
       <Dest>Lin ist hier! Wunder gibt es immer wieder!</Dest>
+    </String>
+    <String List="2" sID="0001BC">
+      <EDID>[FD000910]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Are you serious with this? I thought you were dead!</Source>
+      <Dest>Dein Ernst? Ich dachte, du bist tot!</Dest>
     </String>
     <String List="2" sID="0001BD">
       <EDID>[FD00091A]</EDID>
@@ -3753,23 +3753,23 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Source>Marvelous.</Source>
       <Dest>Fantastisch.</Dest>
     </String>
-    <String List="2" sID="0001C5">
-      <EDID>[FD000922]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Traveling together sounds good to me.</Source>
-      <Dest>Gemeinsam Reisen? Klingt gut für mich.</Dest>
-    </String>
-    <String List="2" sID="0001C6">
+    <String List="2" sID="0001C4">
       <EDID>[FD000935]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>Looks like we&apos;re all done here. Time to head back to the Lodge?</Source>
       <Dest>Hier wären wir fertig. Fliegen wir zurück zur Loge?</Dest>
     </String>
-    <String List="2" sID="0001C7">
+    <String List="2" sID="0001C5">
       <EDID>[FD000935]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Goodnight, Matsura. Guess you&apos;ll be pillaging in the great beyond now...</Source>
       <Dest>Gute Nacht, Matsura. Jetzt plünderst du in den Weiten des Jenseits ...</Dest>
+    </String>
+    <String List="2" sID="0001C7">
+      <EDID>[FD000922]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Traveling together sounds good to me.</Source>
+      <Dest>Gemeinsam Reisen? Klingt gut für mich.</Dest>
     </String>
     <String List="2" sID="0001C8">
       <EDID>[FD00092B]</EDID>
@@ -4000,28 +4000,28 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Bist du in Ordnung? Was ist hier passiert?</Dest>
     </String>
     <String List="2" sID="0001EF">
-      <EDID>[FD0009DC]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>That doesn&apos;t sound good.</Source>
-      <Dest>Das klingt nicht gut.</Dest>
-    </String>
-    <String List="2" sID="0001F0">
-      <EDID>[FD0009BA]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I sense their loss hit you even harder than you realized. You cared about them.</Source>
-      <Dest>Ihr Verlust traf dich unerwartet hart. Sie lagen dir am Herzen.</Dest>
-    </String>
-    <String List="2" sID="0001F1">
       <EDID>[FD0009BD]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>You think if you&apos;re strict with them, that they&apos;ll focus on the work. Give you a little distance if things go wrong. But you want them to win. Every boss does.</Source>
       <Dest>Ich war streng mit ihnen, damit sie gut arbeiten. Hielt sie auf Abstand, um sicher zu gehen. Doch als ihr Boss stehst du auf ihrer Seite.</Dest>
     </String>
-    <String List="2" sID="0001F2">
+    <String List="2" sID="0001F0">
       <EDID>[FD0009BD]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>You&apos;re right. You tell yourself you got deadlines. That the credits are what matter. But it&apos;s people doing the job, not machines...</Source>
       <Dest>So ist es. Bei uns geht es um Deadlines und die Credits. Doch am Ende haben wir es mit Menschen zu tun, nicht mit Maschinen ...</Dest>
+    </String>
+    <String List="2" sID="0001F1">
+      <EDID>[FD0009DC]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That doesn&apos;t sound good.</Source>
+      <Dest>Das klingt nicht gut.</Dest>
+    </String>
+    <String List="2" sID="0001F2">
+      <EDID>[FD0009BA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I sense their loss hit you even harder than you realized. You cared about them.</Source>
+      <Dest>Ihr Verlust traf dich unerwartet hart. Sie lagen dir am Herzen.</Dest>
     </String>
     <String List="2" sID="0001F3">
       <EDID>[FD0009B4]</EDID>
@@ -4252,16 +4252,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Du meinst, wenn man sich das Wrack anguckt? Tja, das Schlimmste hast du verpasst. Bin mir ziemlich sicher, dass wir alle Notfallmedikamente genommen haben ...</Dest>
     </String>
     <String List="2" sID="000219">
-      <EDID>[FD000A2D]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
-      <Dest>Nee. Nee, ist schon in Ordnung. Ich sollte mich nur nicht zu viel bewegen, bei all den Schmerzmitteln und Medis gegen Übelkeit.</Dest>
-    </String>
-    <String List="2" sID="00021A">
       <EDID>[FD000A3D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>That doesn&apos;t explain the crashed ship.</Source>
       <Dest>Das erklärt nicht den Absturz.</Dest>
+    </String>
+    <String List="2" sID="00021A">
+      <EDID>[FD000A2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
+      <Dest>Nee. Nee, ist schon in Ordnung. Ich sollte mich nur nicht zu viel bewegen, bei all den Schmerzmitteln und Medis gegen Übelkeit.</Dest>
     </String>
     <String List="2" sID="00021B">
       <EDID>[FD000A36]</EDID>
@@ -4294,16 +4294,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Er hatte also einen Plan?</Dest>
     </String>
     <String List="2" sID="000220">
-      <EDID>[FD000A43]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
-      <Dest>„Vertrau mir“ sag ich immer, wenn man mir nicht trauen sollte.</Dest>
-    </String>
-    <String List="2" sID="000221">
       <EDID>[FD000A4C]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Not... what you and I would call a plan, necessarily...</Source>
       <Dest>Nichts ... was diesen Namen unbedingt verdient ...</Dest>
+    </String>
+    <String List="2" sID="000221">
+      <EDID>[FD000A43]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
+      <Dest>„Vertrau mir“ sag ich immer, wenn man mir nicht trauen sollte.</Dest>
     </String>
     <String List="2" sID="000222">
       <EDID>[FD000A5A]</EDID>
@@ -4312,34 +4312,34 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Und er hat auf etwas geschossen, auf das er nicht hätte schießen dürfen ...</Dest>
     </String>
     <String List="2" sID="000223">
-      <EDID>[FD000A4F]</EDID>
-      <REC id="2" idMax="2">INFO:NAM1</REC>
-      <Source>I mean, I didn&apos;t think it would work, but they came in. All of a sudden, we were wrestling with two of them. Barrett reached for one of their guns...</Source>
-      <Dest>Hätte nicht gedacht, dass es klappt, aber sie kamen tatsächlich. Dann ging das Handgemenge los, und Barrett griff nach einer ihrer Waffen ...</Dest>
-    </String>
-    <String List="2" sID="000224">
-      <EDID>[FD000A4F]</EDID>
-      <REC id="1" idMax="2">INFO:NAM1</REC>
-      <Source>I just remember him shouting &quot;This kid is a killer! How am I supposed to defend myself against these pearly whites? He&apos;s gonna bite my face off!&quot;</Source>
-      <Dest>Er brüllte: „Der Junge ist ein Killer, wie soll ich mich gegen diese Zähne zur Wehr setzen? Der beißt mir das Gesicht ab!“</Dest>
-    </String>
-    <String List="2" sID="000225">
-      <EDID>[FD000A4F]</EDID>
-      <REC id="0" idMax="2">INFO:NAM1</REC>
-      <Source>He tells me we need to start pretending to fight each other. Trick the pirates into thinking they need to come in before one of us gets killed.</Source>
-      <Dest>Er wollte, dass wir einen Kampf anzetteln, damit die Piraten denken, sie müssen eingreifen, bevor einer von uns stirbt.</Dest>
-    </String>
-    <String List="2" sID="000226">
       <EDID>[FD000A46]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Yeah... I&apos;m starting to see that...</Source>
       <Dest>Ja ... so langsam kapier ich das ...</Dest>
     </String>
-    <String List="2" sID="000227">
+    <String List="2" sID="000224">
       <EDID>[FD000A56]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>And he shot someone he shouldn&apos;t have...</Source>
       <Dest>Und er hat jemanden erschossen, den er nicht hätte erschießen dürfen ...</Dest>
+    </String>
+    <String List="2" sID="000225">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="2" idMax="2">INFO:NAM1</REC>
+      <Source>I mean, I didn&apos;t think it would work, but they came in. All of a sudden, we were wrestling with two of them. Barrett reached for one of their guns...</Source>
+      <Dest>Hätte nicht gedacht, dass es klappt, aber sie kamen tatsächlich. Dann ging das Handgemenge los, und Barrett griff nach einer ihrer Waffen ...</Dest>
+    </String>
+    <String List="2" sID="000226">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="1" idMax="2">INFO:NAM1</REC>
+      <Source>I just remember him shouting &quot;This kid is a killer! How am I supposed to defend myself against these pearly whites? He&apos;s gonna bite my face off!&quot;</Source>
+      <Dest>Er brüllte: „Der Junge ist ein Killer, wie soll ich mich gegen diese Zähne zur Wehr setzen? Der beißt mir das Gesicht ab!“</Dest>
+    </String>
+    <String List="2" sID="000227">
+      <EDID>[FD000A4F]</EDID>
+      <REC id="0" idMax="2">INFO:NAM1</REC>
+      <Source>He tells me we need to start pretending to fight each other. Trick the pirates into thinking they need to come in before one of us gets killed.</Source>
+      <Dest>Er wollte, dass wir einen Kampf anzetteln, damit die Piraten denken, sie müssen eingreifen, bevor einer von uns stirbt.</Dest>
     </String>
     <String List="2" sID="000228">
       <EDID>[FD000A52]</EDID>
@@ -4348,46 +4348,46 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Bei so einem Absturz muss er die Flugsteuerung komplett zerstört haben.</Dest>
     </String>
     <String List="2" sID="000229">
-      <EDID>[FD000A61]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>But Barrett isn&apos;t here. I need to find him.</Source>
-      <Dest>Aber Barrett ist nicht hier. Ich muss ihn finden.</Dest>
-    </String>
-    <String List="2" sID="00022A">
       <EDID>[FD000A5E]</EDID>
       <REC id="3" idMax="3">INFO:NAM1</REC>
       <Source>Then he did the little... finger gun thing...</Source>
       <Dest>Dann machte er diese Schussgeste mit dem Zeigefinger.</Dest>
     </String>
-    <String List="2" sID="00022B">
+    <String List="2" sID="00022A">
       <EDID>[FD000A5E]</EDID>
       <REC id="2" idMax="3">INFO:NAM1</REC>
       <Source>&quot;You missed the fun part, Heller! I mean, I go through all the trouble of saving your butt, and you weren&apos;t even awake to notice!&quot;</Source>
       <Dest>„Du hast die Party verpennt, Heller! Da rette ich dir mal den Hintern, und du bekommst es nicht mal mit!“</Dest>
     </String>
-    <String List="2" sID="00022C">
+    <String List="2" sID="00022B">
       <EDID>[FD000A5E]</EDID>
       <REC id="1" idMax="3">INFO:NAM1</REC>
       <Source>I blacked out, and when I came to, there he was. Smiling like it was just another day on the job.</Source>
       <Dest>Ich verlor das Bewusstsein. Als ich aufwachte, grinste er mich an, als wäre nichts gewesen.</Dest>
     </String>
-    <String List="2" sID="00022D">
+    <String List="2" sID="00022C">
       <EDID>[FD000A5E]</EDID>
       <REC id="0" idMax="3">INFO:NAM1</REC>
       <Source>Bingo. Blasted the pilot right in the back, through to the flight console. Dropped orbit like a rock off a high-rise.</Source>
       <Dest>Bingo. Er schoss dem Piloten in den Rücken und direkt in die Flugsteuerung. Wir stürzten wie ein Stein aus dem Orbit.</Dest>
     </String>
-    <String List="2" sID="00022E">
-      <EDID>[FD000A65]</EDID>
+    <String List="2" sID="00022D">
+      <EDID>[FD000A61]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>Skip to the end, Heller.</Source>
-      <Dest>Komm zum Schluss, Heller.</Dest>
+      <Source>But Barrett isn&apos;t here. I need to find him.</Source>
+      <Dest>Aber Barrett ist nicht hier. Ich muss ihn finden.</Dest>
     </String>
-    <String List="2" sID="00022F">
+    <String List="2" sID="00022E">
       <EDID>[FD000A69]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>He really survived the crash without a scratch?</Source>
       <Dest>Er hat den Absturz wirklich ohne einen Kratzer überstanden?</Dest>
+    </String>
+    <String List="2" sID="00022F">
+      <EDID>[FD000A65]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Skip to the end, Heller.</Source>
+      <Dest>Komm zum Schluss, Heller.</Dest>
     </String>
     <String List="2" sID="000230">
       <EDID>[FD000A6F]</EDID>
@@ -4438,46 +4438,46 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Ich war nicht die ganze Zeit wach, aber... ja. Schätze schon. </Dest>
     </String>
     <String List="2" sID="000238">
-      <EDID>[FD000A81]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I was drifting in and out, but uh, I think I heard the word &quot;ransom&quot;?</Source>
-      <Dest>Ich ... habe nicht alles mitbekommen, aber ... es geht wohl um ... Lösegeld.</Dest>
-    </String>
-    <String List="2" sID="000239">
-      <EDID>[FD000A87]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Let&apos;s get you on your feet first.</Source>
-      <Dest>Bringen wir dich auf die Füße.</Dest>
-    </String>
-    <String List="2" sID="00023A">
       <EDID>[FD000A7B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Yeah, you know, you&apos;re really the one who should be upset about all this... Me laying here half conscious? Real inconvenience...</Source>
       <Dest>Genau, reg dich drüber auf ... Schließlich liege ich hier halb bewusstlos rum und falle dir zur Last.</Dest>
     </String>
-    <String List="2" sID="00023B">
-      <EDID>[FD000A84]</EDID>
+    <String List="2" sID="000239">
+      <EDID>[FD000A81]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
-      <Dest>Vor ihrem Grav-Sprung empfing ich ein Signal. Muss Barrett gewesen sein. Ich konnte es mir noch nicht anhören ... Hier.</Dest>
+      <Source>I was drifting in and out, but uh, I think I heard the word &quot;ransom&quot;?</Source>
+      <Dest>Ich ... habe nicht alles mitbekommen, aber ... es geht wohl um ... Lösegeld.</Dest>
     </String>
-    <String List="2" sID="00023C">
+    <String List="2" sID="00023A">
+      <EDID>[FD000A87]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Let&apos;s get you on your feet first.</Source>
+      <Dest>Bringen wir dich auf die Füße.</Dest>
+    </String>
+    <String List="2" sID="00023B">
       <EDID>[FD000A8A]</EDID>
       <REC id="2" idMax="2">INFO:NAM1</REC>
       <Source>Let me know when you want to head out.</Source>
       <Dest>Gib Bescheid, wenn du los willst.</Dest>
     </String>
-    <String List="2" sID="00023D">
+    <String List="2" sID="00023C">
       <EDID>[FD000A8A]</EDID>
       <REC id="1" idMax="2">INFO:NAM1</REC>
       <Source>Give me a minute. I think the worst of it is... yeah. I&apos;ll be all right. I&apos;ll be all right. Ready to wisecrack with the best of them...</Source>
       <Dest>Gib mir eine Sekunde. Das Schlimmste sollte ... ja. Das wird schon. Wird schon. Jetzt kann ich wieder Sprüche reißen ...</Dest>
     </String>
-    <String List="2" sID="00023E">
+    <String List="2" sID="00023D">
       <EDID>[FD000A8A]</EDID>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>Yeah. Just, uh, don&apos;t ask me to operate any heavy machinery for a while.</Source>
       <Dest>Ja. Hauptsache, ich muss erst mal kein schweres Gerät bedienen.</Dest>
+    </String>
+    <String List="2" sID="00023E">
+      <EDID>[FD000A84]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
+      <Dest>Vor ihrem Grav-Sprung empfing ich ein Signal. Muss Barrett gewesen sein. Ich konnte es mir noch nicht anhören ... Hier.</Dest>
     </String>
     <String List="2" sID="00023F">
       <EDID>[FD000A8D]</EDID>
@@ -4654,16 +4654,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Und hey, falls ihr je Hilfe braucht, bin ich gegenüber einer neuen Tätigkeit nicht abgeneigt. Vielleicht sollte ich Argos Adieu sagen.</Dest>
     </String>
     <String List="2" sID="00025C">
-      <EDID>[FD000AF6]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Wait wait wait! We&apos;re all citizens of the universe here! No one needs to die. Well, I mean, no one else...</Source>
-      <Dest>Halt, halt, halt! Wir teilen uns alle dasselbe Universum! Niemand muss sterben. Na ja, niemand sonst ...</Dest>
-    </String>
-    <String List="2" sID="00025D">
       <EDID>[FD000AF9]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Listen to your friend. I am trying to be reasonable.</Source>
       <Dest>Hör auf deinen Kumpel. Ich will keinen Stress.</Dest>
+    </String>
+    <String List="2" sID="00025D">
+      <EDID>[FD000AF6]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait wait wait! We&apos;re all citizens of the universe here! No one needs to die. Well, I mean, no one else...</Source>
+      <Dest>Halt, halt, halt! Wir teilen uns alle dasselbe Universum! Niemand muss sterben. Na ja, niemand sonst ...</Dest>
     </String>
     <String List="2" sID="00025E">
       <EDID>[FD000AFC]</EDID>
@@ -4708,16 +4708,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Wenn Barrett für eine gewaltlose Lösung ist, sollten wir das auch sein.</Dest>
     </String>
     <String List="2" sID="000265">
-      <EDID>[FD000B89]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I&apos;m from Constellation. I went here to find Barrett.</Source>
-      <Dest>Ich bin von der Constellation. Ich kam her, um Barrett zu finden.</Dest>
-    </String>
-    <String List="2" sID="000266">
       <EDID>[FD0010EC]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Oh! Before I forget, the Frontier - our main ship - should still be on Vectera. It got damaged during the gunfire so the pirates weren&apos;t able to steal it. I would bring some repairing stuff with me if I was to pick it up.</Source>
       <Dest>Oh! Bevor ich es vergesse, die Frontier - unser Hauptschiff - müsste noch auf Vectera sein. Sie wurde während des Feuergefechts beschädigt, so dass die Piraten sie nicht stehlen konnten. Ich würde etwas Material zur Reparatur mitnehmen, wenn ich sie einsammeln wollte.</Dest>
+    </String>
+    <String List="2" sID="000266">
+      <EDID>[FD000B89]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m from Constellation. I went here to find Barrett.</Source>
+      <Dest>Ich bin von der Constellation. Ich kam her, um Barrett zu finden.</Dest>
     </String>
     <String List="2" sID="000267">
       <EDID>[FD000B8B]</EDID>
@@ -4834,16 +4834,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Willkommen bei der Constellation. Es gibt viel zu besprechen.</Dest>
     </String>
     <String List="2" sID="000297">
-      <EDID>[FD0009B7]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Who are you?</Source>
-      <Dest>Wer bist du?</Dest>
-    </String>
-    <String List="2" sID="000298">
       <EDID>[FD0009C8]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Hmm... Very well. This is a private organization dedicated to exploration. Space primarily, but also anomalies throughout the Settled Systems.</Source>
       <Dest>Hmm ... okay. Wir sind eine private Erkundungsorganisation. Primär erforschen wir das All, aber auch Anomalien in den Besiedelten Systemen.</Dest>
+    </String>
+    <String List="2" sID="000298">
+      <EDID>[FD0009B7]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>Wer bist du?</Dest>
     </String>
     <String List="2" sID="000299">
       <EDID>[FD0009CA]</EDID>
@@ -4894,13 +4894,13 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Aber das wird nicht passieren. Er ist hier. Mit dem Artefakt.</Dest>
     </String>
     <String List="2" sID="0002A1">
-      <EDID>[FD000A32]</EDID>
+      <EDID>[FD000A3C]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
       <Dest>Danke, Matteo. Also, konzentrieren wir uns auf das, was vor uns liegt.</Dest>
     </String>
     <String List="2" sID="0002A2">
-      <EDID>[FD000A3C]</EDID>
+      <EDID>[FD000A32]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
       <Dest>Danke, Matteo. Also, konzentrieren wir uns auf das, was vor uns liegt.</Dest>
@@ -4936,16 +4936,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Helle Lichter und Musik.</Dest>
     </String>
     <String List="2" sID="0002A8">
-      <EDID>[FD000A59]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Interesting. Similar to Barrett&apos;s description of the experience. With less embellishment...</Source>
-      <Dest>Interessant. Ganz ähnlich hat Barrett es beschrieben. Wenn auch weniger blumig ...</Dest>
-    </String>
-    <String List="2" sID="0002A9">
       <EDID>[FD000A6E]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>So something DID happen. Barrett mentioned a loss of consciousness last time he found an Artifact.</Source>
       <Dest>Es ist also etwas passiert. Barrett ist ohnmächtig geworden, als er letztens ein Artefakt gefunden hat.</Dest>
+    </String>
+    <String List="2" sID="0002A9">
+      <EDID>[FD000A59]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Interesting. Similar to Barrett&apos;s description of the experience. With less embellishment...</Source>
+      <Dest>Interessant. Ganz ähnlich hat Barrett es beschrieben. Wenn auch weniger blumig ...</Dest>
     </String>
     <String List="2" sID="0002AA">
       <EDID>[FD000A64]</EDID>
@@ -5038,16 +5038,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Nach dir. Hier ist das Artefakt, das du gefunden hast. Leg es bitte hier auf den Tisch.</Dest>
     </String>
     <String List="2" sID="0002B9">
-      <EDID>[FD000B09]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Easy, girl. Breathe. You&apos;ll have a heart attack.</Source>
-      <Dest>Ruhig. Atme. Du kriegst noch einen Herzinfarkt.</Dest>
-    </String>
-    <String List="2" sID="0002BA">
       <EDID>[FD000B30]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Built by an intelligence outside the Settled Systems.</Source>
       <Dest>Von einer Intelligenz außerhalb der Besiedelten Systeme erschaffen.</Dest>
+    </String>
+    <String List="2" sID="0002BA">
+      <EDID>[FD000B09]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Easy, girl. Breathe. You&apos;ll have a heart attack.</Source>
+      <Dest>Ruhig. Atme. Du kriegst noch einen Herzinfarkt.</Dest>
     </String>
     <String List="2" sID="0002BB">
       <EDID>[FD000B42]</EDID>
@@ -5098,22 +5098,22 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Tja, wenn wir alle Antworten hätten, wäre es ja langweilig, oder?</Dest>
     </String>
     <String List="2" sID="0002C3">
-      <EDID>[FD000B6A]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
-      <Dest>Okay. Ich bin dabei. Wie geht&apos;s jetzt weiter?</Dest>
-    </String>
-    <String List="2" sID="0002C4">
       <EDID>[FD000B79]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>As to what they are? What they&apos;re building? Well, you&apos;ll be part of solving that puzzle now.</Source>
       <Dest>Aber was sie sind? Was sie ergeben? Tja, du darfst jetzt helfen, dieses Rätsel zu lösen.</Dest>
     </String>
-    <String List="2" sID="0002C5">
+    <String List="2" sID="0002C4">
       <EDID>[FD000B79]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Individually, they&apos;re just odd hunks of metal. Another oddity from the uncharted reaches of space.</Source>
       <Dest>Allein für sich sind sie nur seltsame Metallbrocken. Eine weitere Merkwürdigkeit aus den Weiten des Alls.</Dest>
+    </String>
+    <String List="2" sID="0002C5">
+      <EDID>[FD000B6A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
+      <Dest>Okay. Ich bin dabei. Wie geht&apos;s jetzt weiter?</Dest>
     </String>
     <String List="2" sID="0002C6">
       <EDID>[FD001135]</EDID>
@@ -5157,17 +5157,17 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Source>*chuckle* So, are you ready to get to work? See if exploration is the life you want to lead in this little universe of ours? </Source>
       <Dest>*Kichern* Also, bereit an die Arbeit zu gehen und herauszufinden, ob du dein Leben der Erkundung unseres kleinen Universums widmen willst? </Dest>
     </String>
-    <String List="2" sID="0002CE">
-      <EDID>[FD000B76]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>How much do you know about the Artifacts? What are they?</Source>
-      <Dest>Was wisst ihr über die Artefakte? Was sind sie?</Dest>
-    </String>
-    <String List="2" sID="0002CF">
+    <String List="2" sID="0002CD">
       <EDID>[FD001129]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I see. It was months ago. So... why are you showing up now?</Source>
       <Dest>Aha. Das war vor Monaten. Also... warum tauchst du jetzt hier auf?</Dest>
+    </String>
+    <String List="2" sID="0002CF">
+      <EDID>[FD000B76]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How much do you know about the Artifacts? What are they?</Source>
+      <Dest>Was wisst ihr über die Artefakte? Was sind sie?</Dest>
     </String>
     <String List="2" sID="0002D1">
       <EDID>[FD000B7C]</EDID>
@@ -5200,22 +5200,22 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Einer unserer Mitglieder, Barrett, ist auf einen anderen Planeten gegangen, um eine Bergbauoperation von Argos Extractors zu unterstützen - bei genau derselben, bei der er zuvor versehentlich mit Piraten aneinander geraten ist. Falls sie also etwas angespannt sind, entschuldige das bitte. Sie stehen unter großem Stress.</Dest>
     </String>
     <String List="2" sID="0002D6">
+      <EDID>[FD00112F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Interesting...</Source>
+      <Dest>Hmm ... interessant ...</Dest>
+    </String>
+    <String List="2" sID="0002D7">
       <EDID>[FD000B82]</EDID>
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>In addition to credits, why don&apos;t we set you up with a backpack with some boost capability? You&apos;ll need it out in the field, anyway. Just mind your head.</Source>
       <Dest>Zusätzlich zu den Credits erhältst du von uns einen Rucksack mit ein paar Extras. Du brauchst ihn da draußen ohnehin. Achte nur auf deinen Kopf.</Dest>
     </String>
-    <String List="2" sID="0002D7">
+    <String List="2" sID="0002D8">
       <EDID>[FD000B82]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>And here. I think you&apos;ve earned something for bringing the Artifact to us.</Source>
       <Dest>Und hier. Das hast du dir verdient, weil du uns das Artefakt gebracht hast.</Dest>
-    </String>
-    <String List="2" sID="0002D8">
-      <EDID>[FD00112F]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Hmm... Interesting...</Source>
-      <Dest>Hmm ... interessant ...</Dest>
     </String>
     <String List="2" sID="0002D9">
       <EDID>[FD00112C]</EDID>
@@ -5254,28 +5254,28 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Hören wir ihr doch zu. Wir wissen so gut wie nichts. Wenn sie die Wahrheit sagt, kann uns das sehr helfen.</Dest>
     </String>
     <String List="2" sID="0002DF">
+      <EDID>[FD001132]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>[Skip Main Quest] I&apos;m not who you think. I&apos;m Starborn. I know what the Artifacts are.</Source>
+      <Dest>[Hauptquest überspringen] Ich bin ein Sternenblut. Ich weiß, was die Artefakte sind.</Dest>
+    </String>
+    <String List="2" sID="0002E0">
       <EDID>[FD001142]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>But... they still showed up, didn&apos;t they? Isn&apos;t persistence a signature trait for an explorer?</Source>
       <Dest>Aber ... dey ist trotzdem hier, oder? Ist Hartnäckigkeit nicht der Schlüssel fürs Entdecken?</Dest>
     </String>
-    <String List="2" sID="0002E0">
+    <String List="2" sID="0002E1">
       <EDID>[FD001140]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>But... she still showed up, didn&apos;t she? Isn&apos;t persistence a signature trait for an explorer?</Source>
       <Dest>Aber ... sie ist trotzdem hier, oder? Ist Hartnäckigkeit nicht der Schlüssel fürs Entdecken?</Dest>
     </String>
-    <String List="2" sID="0002E1">
+    <String List="2" sID="0002E2">
       <EDID>[FD00113E]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>But... he still showed up, didn&apos;t he? Isn&apos;t persistence a signature trait for an explorer?</Source>
       <Dest>Aber ... er ist trotzdem hier, oder? Ist Hartnäckigkeit nicht der Schlüssel fürs Entdecken?</Dest>
-    </String>
-    <String List="2" sID="0002E2">
-      <EDID>[FD001132]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>[Skip Main Quest] I&apos;m not who you think. I&apos;m Starborn. I know what the Artifacts are.</Source>
-      <Dest>[Hauptquest überspringen] Ich bin ein Sternenblut. Ich weiß, was die Artefakte sind.</Dest>
     </String>
     <String List="2" sID="0002E3">
       <EDID>[FD001152]</EDID>
@@ -5284,22 +5284,22 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Ich bin bereit. Finden wir heraus, was diese Artefakte sind.</Dest>
     </String>
     <String List="2" sID="0002E4">
+      <EDID>[FD00114F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. Let&apos;s hear it.</Source>
+      <Dest>Alles klar. Schieß los.</Dest>
+    </String>
+    <String List="2" sID="0002E5">
       <EDID>[FD001155]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Good. We&apos;ll set you up with a room. Take some time to meet everyone. Then when you&apos;re ready, you and I will be doing some traveling together. Get your feet wet.</Source>
       <Dest>Gut. Wir geben dir ein Zimmer. Danach kannst du alle kennenlernen. Und wenn du dann bereit bist, gehen wir ein wenig auf Reisen. Ich zeig dir die Grundlagen.</Dest>
     </String>
-    <String List="2" sID="0002E5">
+    <String List="2" sID="0002E6">
       <EDID>[FD001138]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You want this random thug in our organization? After getting lost the first time?</Source>
       <Dest>Du willst diesen dahergelaufen Gauner in unserer Organisation? Nachdem er beim ersten Mal verschwand?</Dest>
-    </String>
-    <String List="2" sID="0002E6">
-      <EDID>[FD00114F]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>All right. Let&apos;s hear it.</Source>
-      <Dest>Alles klar. Schieß los.</Dest>
     </String>
     <String List="2" sID="0002E7">
       <EDID>[FD00115E]</EDID>
@@ -5368,28 +5368,28 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Hast du irgendwelche Jobs anzubieten?</Dest>
     </String>
     <String List="2" sID="000303">
+      <EDID>[FD000AA2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hello! How can I help you?</Source>
+      <Dest>Hallo! Kann ich ihnen helfen?</Dest>
+    </String>
+    <String List="2" sID="000304">
       <EDID>[FD001176]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>No, not currently. Sorry!</Source>
       <Dest>Nein, derzeit nicht. Entschuldigung!</Dest>
     </String>
-    <String List="2" sID="000304">
+    <String List="2" sID="000305">
       <EDID>[FD000AB8]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>We do! We urgently need someone for our mining operation on Vectera. Are you interested?</Source>
       <Dest>Haben wir. Wir brauchen dringend jemanden für unsere Bergbauoperation auf Vectera. Bist du interessiert?</Dest>
     </String>
-    <String List="2" sID="000305">
+    <String List="2" sID="000306">
       <EDID>[FD000AD6]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Perfect, I&apos;m taking the job!</Source>
       <Dest>Perfekt, ich nehme den Job!</Dest>
-    </String>
-    <String List="2" sID="000306">
-      <EDID>[FD000AA2]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Hello! How can I help you?</Source>
-      <Dest>Hallo! Kann ich ihnen helfen?</Dest>
     </String>
     <String List="2" sID="000317">
       <EDID>RAS_CommonEvasiveNameAnswer</EDID>
@@ -5416,22 +5416,22 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>&quot;Erwarten&quot; setzt Gewissheit voraus. Ich bevorzuge Geduld.</Dest>
     </String>
     <String List="2" sID="00031B">
+      <EDID>[FD000A9E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And where am I heading?</Source>
+      <Dest>Und wohin wende ich mich?</Dest>
+    </String>
+    <String List="2" sID="00031C">
       <EDID>[FD000A9A]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Someone offering directions to a place you were already heading.</Source>
       <Dest>Jemand, der Wegbeschreibung zu einem Ort anbietet, auf den du ohnehin zusteuerst.</Dest>
     </String>
-    <String List="2" sID="00031C">
+    <String List="2" sID="00031D">
       <EDID>[FD000A7D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Let me guess. Another mysterious stranger in a spacesuit?</Source>
       <Dest>Lass mich raten. Ein anderer, seltsamer Fremder in einem Raumanzug?</Dest>
-    </String>
-    <String List="2" sID="00031D">
-      <EDID>[FD000A9E]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>And where am I heading?</Source>
-      <Dest>Und wohin wende ich mich?</Dest>
     </String>
     <String List="2" sID="00031E">
       <EDID>[FD000AA5]</EDID>
@@ -5440,16 +5440,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Zu der Art von Entdeckung, die die Menschen verändert, die sie suchen.</Dest>
     </String>
     <String List="2" sID="00031F">
-      <EDID>[FD000AAB]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>That&apos;s not an answer.</Source>
-      <Dest>Das ist keine Antwort.</Dest>
-    </String>
-    <String List="2" sID="000320">
       <EDID>[FD000B41]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>An artifact. A doorway. A new beginning. Name it as you please.</Source>
       <Dest>Ein Artefakt. Ein Zugang. Ein Neuanfang. Nenne es, wie du willst.</Dest>
+    </String>
+    <String List="2" sID="000320">
+      <EDID>[FD000AAB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>That&apos;s not an answer.</Source>
+      <Dest>Das ist keine Antwort.</Dest>
     </String>
     <String List="2" sID="000321">
       <EDID>[FD000B3B]</EDID>
@@ -5476,16 +5476,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Und noch einmal: Du weißt nichts. Wenn dem so wäre, wüsstest du auch, dass deine Aussage sinnlos ist. </Dest>
     </String>
     <String List="2" sID="000325">
-      <EDID>[FD000B81]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Then explain it to me.</Source>
-      <Dest>Dann erkläre es mir.</Dest>
-    </String>
-    <String List="2" sID="000326">
       <EDID>[FD000B86]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You sound very confident for someone who&apos;s simply &quot;patient&quot;.</Source>
       <Dest>Du klingst sehr selbstsicher für jemanden, der einfach nur „geduldig“ ist.</Dest>
+    </String>
+    <String List="2" sID="000326">
+      <EDID>[FD000B81]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Then explain it to me.</Source>
+      <Dest>Dann erkläre es mir.</Dest>
     </String>
     <String List="2" sID="000327">
       <EDID>[FD000B84]</EDID>
@@ -5494,22 +5494,22 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Wenn ich es täte, würdest du den Rest dieses Gesprächs damit verbringen, zu entscheiden, ob du mir glaubst. Das bringt nichts. Die Antworten, die du suchst, wirst du irgendwann finden.</Dest>
     </String>
     <String List="2" sID="000328">
-      <EDID>[FD000B8E]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>So you&apos;re just standing there awaiting strangers willing to have a conversation?</Source>
-      <Dest>Du stehst hier also nur so rum und wartest darauf, dass dich irgendein Fremder anspricht?</Dest>
-    </String>
-    <String List="2" sID="000329">
       <EDID>[FD000B8C]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Confidence has very little to do with it. People are drawn toward certain questions eventually. When they do, they always find me.</Source>
       <Dest>Selbstsicherheit hat damit kaum zu tun. Menschen werden früher oder später zu bestimmten Fragen hingezogen. Wenn das passiert, finden sie mich immer.</Dest>
     </String>
-    <String List="2" sID="00032A">
+    <String List="2" sID="000329">
       <EDID>[FD000B95]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>And you think I&apos;m one of those people?</Source>
       <Dest>Und du glaubst, ich sei einer dieser Menschen?</Dest>
+    </String>
+    <String List="2" sID="00032A">
+      <EDID>[FD000B8E]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>So you&apos;re just standing there awaiting strangers willing to have a conversation?</Source>
+      <Dest>Du stehst hier also nur so rum und wartest darauf, dass dich irgendein Fremder anspricht?</Dest>
     </String>
     <String List="2" sID="00032B">
       <EDID>[FD000B91]</EDID>
@@ -5584,16 +5584,16 @@ Sarah Morgan, Leiterin der Constellation</Dest>
       <Dest>Dann ändert sich zunächst nichts. Du gehst fort. Du lenkst dich ab. Du überzeugst dich selbst, dass Neugier ignoriert werden kann. Und schließlich bringt dich etwas zurück zu diesem Gespräch.</Dest>
     </String>
     <String List="2" sID="000337">
-      <EDID>[FD000BCE]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Fine. Tell me where it is.</Source>
-      <Dest>Na gut, sag mir, wo es ist.</Dest>
-    </String>
-    <String List="2" sID="000338">
       <EDID>[FD000BD9]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;ll give you the coordinates. The journey itself will explain the rest better than I could.</Source>
       <Dest>Ich werde dir die Koordinaten geben. Die Reise an sich wird dir den Rest erklären, besser als ich es könnte.</Dest>
+    </String>
+    <String List="2" sID="000338">
+      <EDID>[FD000BCE]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fine. Tell me where it is.</Source>
+      <Dest>Na gut, sag mir, wo es ist.</Dest>
     </String>
     <String List="2" sID="000339">
       <EDID>[FD000BE8]</EDID>
