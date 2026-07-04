@@ -12,7 +12,7 @@ Function HandleArtifact(ObjectReference akArtifactRef)
 EndFunction
 
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
-  If(GetOwningQuest().GetStage() < 10 && RAS_MQReplacerIntroQuest.GetStage() == 0 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
+  If(GetOwningQuest().GetStage() < 10 && RAS_MQReplacerIntroQuest.GetStage() < 5 && akNewLoc && !akNewLoc.IsExplored() && akNewLoc && akNewLoc.HasRefType(LocStoryArtifactRoomReserveMarkerLocRef) && Game.GetPlayerLevel() >= RAS_MQLevelThreshold.GetValue() as Int)
     Int excludedListSize = RAS_ExcludedArtifactLocationsList.GetSize()
     Int i = 0
     Bool excluded = False
