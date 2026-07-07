@@ -5,7 +5,6 @@ Scriptname RAS:Fragments:Quests:QF_MQReplacerIntroQuest Extends Quest Hidden Con
 Function Fragment_Stage_0001_Item_00()
 ;BEGIN CODE
 Alias_TheGuide.TryToEnable()
-Alias_TheGuide.GetReference().MoveTo(Alias_HunterPreMQ106Marker.GetReference())
 ;END CODE
 EndFunction
 ;END FRAGMENT

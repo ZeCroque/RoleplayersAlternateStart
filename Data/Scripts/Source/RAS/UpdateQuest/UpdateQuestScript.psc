@@ -188,6 +188,16 @@ Function Update()
                 ((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).Frontier_ModularREF as SpaceshipReference).SetExteriorLoadDoorInaccessible(True)
             EndIf
         EndIf    
+        If(RAS_ModVersion.GetValue() < 1.22)
+            If(RAS_MQReplacerIntroQuest.GetStage() == 2)
+                Actor TheGuide = (RAS_MQReplacerIntroQuest.GetAlias(10) as ReferenceAlias).GetActorReference()
+                If(TheGuide.Is3DLoaded())
+                    TheGuide.MoveToFurniture((RAS_MQReplacerIntroQuest.GetAlias(12) as ReferenceAlias).GetReference())
+                Else
+                    RegisterForRemoteEvent(TheGuide, "OnLoad")
+                EndIf
+            EndIf
+        EndIf   
     EndIf      
     RAS_ModVersion.SetValue(RAS:Utility:ModInfo.GetModVersion())
 EndFunction
@@ -200,5 +210,12 @@ Event RefCollectionAlias.OnAliasChanged(RefCollectionAlias akSender, ObjectRefer
             brokenShip.SetLinkedRef((RAS_LocationSpawnPointFinderQuest as RAS:LocationSpawnPointFinder:LocationSpawnPointFinderQuestScript).GetShipMarker(), Game.GetForm(0x1940B) as Keyword)
             Self.UnregisterForRemoteEvent((SQ_PlayerShip as SQ_PlayerShipScript).PlayerShips, "OnAliasChanged")
         EndIf
+    EndIf
+EndEvent
+
+Event ObjectReference.OnLoad(ObjectReference akObject)
+    Actor theGuide = (RAS_MQReplacerIntroQuest.GetAlias(10) as ReferenceAlias).GetActorReference()
+    If(akObject == theGuide)
+        theGuide.MoveToFurniture((RAS_MQReplacerIntroQuest.GetAlias(12) as ReferenceAlias).GetReference())
     EndIf
 EndEvent
