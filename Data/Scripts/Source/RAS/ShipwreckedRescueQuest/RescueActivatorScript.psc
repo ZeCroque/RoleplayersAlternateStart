@@ -72,10 +72,10 @@ Auto State Available
             EndIf
             RAS_ShipwreckedRescueQuest.SetStage(20)
 
-            SpaceshipReference ship = landingMarker.PlaceShipAtMe(LShip_Vendor_Generic_A_Responder, aiLevelMod = 2, abInitiallyDisabled = true)
+            SpaceshipReference ship = landingMarker.PlaceShipAtMe(LShip_Vendor_Generic_A_Responder, aiLevelMod = 2, abInitiallyDisabled = true, abForcePersist = true)
             (RAS_ShipwreckedRescueQuest as RAS:ShipwreckedRescueQuest:ShipwreckedRescueQuestScript).SetRescueShip(ship)
 
-            ship.SetLinkedRef(landingMarker, CurrentInteractionLinkedRefKeyword, True)
+            ship.SetLinkedRef(landingMarker)
             ship.EnableWithLanding()
         Else
             RAS_UnableToPlaceRescueShipMessage.Show()
