@@ -4,7 +4,7 @@ Scriptname RAS:Fragments:Terminals:TERM_RandomLocConfig_MaxLevelMenu Extends Ter
 ;BEGIN FRAGMENT Fragment_TerminalMenu_00
 Function Fragment_TerminalMenu_00(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMaxLevel.SetValue(10)
+RAS_LocationMaxLevel.SetValue(5)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMaxLevel)
 ;END CODE
 EndFunction
@@ -13,7 +13,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_01
 Function Fragment_TerminalMenu_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMaxLevel.SetValue(25)
+RAS_LocationMaxLevel.SetValue(10)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMaxLevel)
 ;END CODE
 EndFunction
@@ -22,7 +22,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_02
 Function Fragment_TerminalMenu_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMaxLevel.SetValue(50)
+RAS_LocationMaxLevel.SetValue(25)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMaxLevel)
 ;END CODE
 EndFunction
@@ -30,6 +30,15 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_TerminalMenu_03
 Function Fragment_TerminalMenu_03(ObjectReference akTerminalRef)
+;BEGIN CODE
+RAS_LocationMaxLevel.SetValue(50)
+RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMaxLevel)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_TerminalMenu_04
+Function Fragment_TerminalMenu_04(ObjectReference akTerminalRef)
 ;BEGIN CODE
 RAS_LocationMaxLevel.SetValue(70)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMaxLevel)
