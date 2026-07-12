@@ -39,6 +39,7 @@ FormList Property RAS_ExcludedStarstationsLocationList Mandatory Const Auto
 FormList Property RAS_StarstationsLocationList Mandatory Const Auto
 RefCollectionAlias Property ShipTechCollectionAlias Mandatory Const Auto
 Keyword Property LocTypeStarstationExterior Mandatory Const Auto
+FormList Property RAS_ExcludedMapMarkerList Mandatory Const Auto
 
 Location Property TargetLocation Auto Hidden
 
@@ -320,9 +321,19 @@ Function SelectMapMarkerAndMove(Bool moveShip)
 
     ;Split update-added city map markers and others and then add them to terminal
     ObjectReference[] mapMarkers = StartingLocationMapMarkersCollectionAlias.GetArray()
+
+    Int i = 0
+    While(i < RAS_ExcludedMapMarkerList.GetSize())
+        Int index = mapMarkers.Find(RAS_ExcludedMapMarkerList.GetAt(i) as ObjectReference)
+        If(index > 0)
+            mapMarkers.Remove(index)
+        EndIf
+        i += 1
+    EndWhile
+
     cityMapMarkers = new ObjectReference[mapMarkers.Length]
     mainMapMarkers = new ObjectReference[mapMarkers.Length]
-    Int i = 0
+    i = 0
     Int j = 0
     Int k = 0
     String mapMarkerEditorId
