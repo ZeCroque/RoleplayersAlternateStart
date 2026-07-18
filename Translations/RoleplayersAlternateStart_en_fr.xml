@@ -20,6 +20,12 @@
       <Dest>An alternate start mod designed for roleplayers, fully dynamic and customizable, with many ways to trigger the main quest and a lot of starting options (including pedestrian and shipwrecked starts).</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_PlayerStuffActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Player Stuff</Source>
+      <Dest>Équipement du joueur</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_RescueActivator</EDID>
       <REC>ACTI:FULL</REC>
       <Source>Rescue Beacon</Source>
@@ -30,24 +36,6 @@
       <REC>ACTI:ATTX</REC>
       <Source>Call Rescue</Source>
       <Dest>Appeler à l&apos;aide</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_QEDActivator</EDID>
-      <REC>ACTI:FULL</REC>
-      <Source>Quantum Entanglement Device</Source>
-      <Dest>Dispositif d&apos;enchevêtrement quantique</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_CharGenActivator</EDID>
-      <REC>ACTI:FULL</REC>
-      <Source>Change your Appearance</Source>
-      <Dest>Changer d&apos;apparence</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_PlayerStuffActivator</EDID>
-      <REC>ACTI:FULL</REC>
-      <Source>Player Stuff</Source>
-      <Dest>Équipement du joueur</Dest>
     </String>
     <String List="0">
       <EDID>RAS_NarrativeAdjustmentsActivator</EDID>
@@ -86,6 +74,18 @@
       <Dest>Gérer vos caractéristiques</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_CharGenActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Change your Appearance</Source>
+      <Dest>Changer d&apos;apparence</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_QEDActivator</EDID>
+      <REC>ACTI:FULL</REC>
+      <Source>Quantum Entanglement Device</Source>
+      <Dest>Dispositif d&apos;enchevêtrement quantique</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_ConstellationInvite</EDID>
       <REC>BOOK:FULL</REC>
       <Source>Invitation to the Lodge</Source>
@@ -96,24 +96,6 @@
       <REC>BOOK:FNAM</REC>
       <Source>Invitation to the Lodge</Source>
       <Dest>Invitation à la Loge</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DynamicEntry_Start_RandomScientificOutpost</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Random Scientific Outpost</Source>
-      <Dest>Avant-poste scientifique aléatoire</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DynamicEntry_NA_CompleteMQ101Fragment</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Complete Vanilla &quot;One Small Step&quot; Quest</Source>
-      <Dest>Compléter la quête vanilla &quot;Un Petit Pas&quot;</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DynamicEntry_NA_NonStarbornFragment</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Non-Starborn NG+</Source>
-      <Dest>NG+ Non-Astrien</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_Home_DWNParadisoFragment</EDID>
@@ -134,12 +116,6 @@
       <Dest>Néon - Chambre-caisson</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicEntry_MapMarker_Ship</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>At my Ship</Source>
-      <Dest>Dans mon vaisseau</Dest>
-    </String>
-    <String List="0">
       <EDID>RAS_DynamicEntry_Home_DWNVolIIHotelFragment</EDID>
       <REC>MISC:FULL</REC>
       <Source>[DWN] VolII Hotel - Room 42</Source>
@@ -150,12 +126,6 @@
       <REC>MISC:FULL</REC>
       <Source>The Well Apartment</Source>
       <Dest>Appartement du Puits</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DynamicEntry_NA_CompleteMQ101Submenu</EDID>
-      <REC>MISC:FULL</REC>
-      <Source>Complete Vanilla &quot;One Small Step&quot; Quest</Source>
-      <Dest>Compléter la quête vanilla &quot;Un Petit Pas&quot;</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_NA_NonStarbornSubmenu</EDID>
@@ -170,10 +140,10 @@
       <Dest>Néon - Suite céleste</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_Artifact_ETA</EDID>
+      <EDID>RAS_DynamicEntry_Start_AtDreamHome</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Artifact ETA</Source>
-      <Dest>Artefact ÊTA</Dest>
+      <Source>Your dream home</Source>
+      <Dest>Dans la maison de vos rêves</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_NA_ShipModifierSubmenu</EDID>
@@ -182,10 +152,22 @@
       <Dest>Démarrer avec un vaisseau endommagé</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_DynamicEntry_MapMarker_Ship</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>At my Ship</Source>
+      <Dest>Dans mon vaisseau</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_DynamicEntry_Home_AkilaCore</EDID>
       <REC>MISC:FULL</REC>
       <Source>Akila Core Residence</Source>
       <Dest>Akila - Résidence du Noyau</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_Artifact_ETA</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>Artifact ETA</Source>
+      <Dest>Artefact ÊTA</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_Start_AtHome</EDID>
@@ -194,22 +176,22 @@
       <Dest>Dans votre logement</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicEntry_Start_AtDreamHome</EDID>
+      <EDID>RAS_DynamicEntry_Start_RandomScientificOutpost</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Your dream home</Source>
-      <Dest>Dans la maison de vos rêves</Dest>
+      <Source>Random Scientific Outpost</Source>
+      <Dest>Avant-poste scientifique aléatoire</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicEntry_Home_DWNEarthDomeFragment</EDID>
+      <EDID>RAS_DynamicEntry_NA_NonStarbornFragment</EDID>
       <REC>MISC:FULL</REC>
-      <Source>[DWN] Earth Dome</Source>
-      <Dest>[DWN] Terre - Maison sous dôme</Dest>
+      <Source>Non-Starborn NG+</Source>
+      <Dest>NG+ Non-Astrien</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicEntry_NA_ShipModifierFragment</EDID>
+      <EDID>RAS_DynamicEntry_Start_RandomSettlement</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Start with a Broken Ship</Source>
-      <Dest>Démarrer avec un vaisseau endommagé</Dest>
+      <Source>Random Civilian Outpost</Source>
+      <Dest>Avant-poste civil aléatoire</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_NA_ArgosMinerFragment</EDID>
@@ -302,10 +284,10 @@
       <Dest>[DWN] Nouveau-Départ - Maison</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicEntry_Start_RandomSettlement</EDID>
+      <EDID>RAS_DynamicEntry_NA_ShipModifierFragment</EDID>
       <REC>MISC:FULL</REC>
-      <Source>Random Civilian Outpost</Source>
-      <Dest>Avant-poste civil aléatoire</Dest>
+      <Source>Start with a Broken Ship</Source>
+      <Dest>Démarrer avec un vaisseau endommagé</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DynamicEntry_Base_None</EDID>
@@ -318,6 +300,12 @@
       <REC>MISC:FULL</REC>
       <Source>[DWN] Trait Starter Home</Source>
       <Dest>[DWN] Logement lié au trait d&apos;origine</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_DynamicEntry_Home_DWNEarthDomeFragment</EDID>
+      <REC>MISC:FULL</REC>
+      <Source>[DWN] Earth Dome</Source>
+      <Dest>[DWN] Terre - Maison sous dôme</Dest>
     </String>
     <String List="0">
       <EDID>RAS_TheGuide</EDID>
@@ -830,10 +818,16 @@
       <Dest>Vendez l&apos;artefact.</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicTerminalBody_NA_NonStarborn</EDID>
+      <EDID>RAS_PlayerStuffPickedUp</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Here you can choose wether or not you will be a Starborn in this universe. If you choose not to be, you will have to find the artifact by your own (either with Argos or an alternate way) and you will no longer have the Starborn dialog options.</Source>
-      <Dest>Ici vous pouvez choisir si vous désirez être un Astrien dans cet univers. Si vous décidez de ne pas l&apos;être, vous devrez trouver l&apos;artefact par vous même (comme vous le feriez dans une nouvelle partie standard) et vous n&apos;aurez plus les options de dialogue Astriennes.</Dest>
+      <Source>Stuff picked up</Source>
+      <Dest>Équipement récupéré</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Successfuly repaired</Source>
+      <Dest>Réparation réussie</Dest>
     </String>
     <String List="0">
       <EDID>RAS_MissingSoundWarning</EDID>
@@ -848,12 +842,6 @@
       <Dest>Technicien de vaisseau indisponible</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_DynamicTerminalBody_NA_CompleteMQ101</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Here you can choose to have the vanilla &quot;One Small Step&quot; quest silently completed at start. It can be useful for mod compatibility, but it will disable the Argos miner entrypoint into MQ. You can still start the MQ by finding the artifact while exploring.</Source>
-      <Dest>Ici vous pouvez choisir d&apos;avoir la quête vanilla &quot;Un petit pas&quot; complétée en arrière plan dès le départ. Cela peut être utile pour la compatibilité avec d&apos;autres mods, mais cela désactivera le point d&apos;entrée de la quête principale aux bureaux d&apos;Argos. Vous pouvez toujours démarrer celle-ci si vous trouvez l&apos;artefact en explorant.</Dest>
-    </String>
-    <String List="0">
       <EDID>RAS_StartingStuffWarning</EDID>
       <REC>MESG:FULL</REC>
       <Source>Modded Items Warning</Source>
@@ -866,34 +854,16 @@
       <Dest>Information à propos de votre équipement</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Keep Current Gear</Source>
-      <Dest>Gestion de votre équipement actuel</Dest>
+      <Source>Rescue Ship Landing Impossible</Source>
+      <Dest>Impossible d&apos;atterrir pour la navette de sauvetage</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ChooseGearAgainMessage</EDID>
-      <REC id="0" idMax="2">MESG:ITXT</REC>
-      <Source>Keep gear</Source>
-      <Dest>Garder l&apos;équipement</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_ChooseGearAgainMessage</EDID>
-      <REC id="1" idMax="2">MESG:ITXT</REC>
-      <Source>Reset gear</Source>
-      <Dest>Remettre à zéro</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_ChooseGearAgainMessage</EDID>
-      <REC id="2" idMax="2">MESG:ITXT</REC>
-      <Source>Cancel</Source>
-      <Dest>Annuler</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_LocationLevelEntry_Custom</EDID>
+      <EDID>RAS_DynamicTerminalBody_NA_NonStarborn</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Custom</Source>
-      <Dest>Personnalisé</Dest>
+      <Source>Here you can choose wether or not you will be a Starborn in this universe. If you choose not to be, you will have to find the artifact by your own (either with Argos or an alternate way) and you will no longer have the Starborn dialog options.</Source>
+      <Dest>Ici vous pouvez choisir si vous désirez être un Astrien dans cet univers. Si vous décidez de ne pas l&apos;être, vous devrez trouver l&apos;artefact par vous même (comme vous le feriez dans une nouvelle partie standard) et vous n&apos;aurez plus les options de dialogue Astriennes.</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RepairFailedMessage</EDID>
@@ -968,6 +938,30 @@
       <Dest>Astrien immédiat (Personnalisée)</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Unlock New Homestead Home Furniture</Source>
+      <Dest>Débloquer les meubles de la maison de Nouveau-Départ</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>Non</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>Oui</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_DynamicTerminalBody_NA_ShipModifier</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Here you can choose to have your starting ship being damaged at start and unable to fly. If you start at a random POI, some crafting mats will be placed on a nearby dungeon. Elsewise, you will need to pay a ship tech.</Source>
+      <Dest>Ici vous pouvez choisir de commencer avec un vaisseau endommagé et incapable de voler. Si vous commencez dans un emplacement aléatoire, des matériaux de réparation seront placé dans un donjon aux alentours. Sinon, vous devrez payer un technicien de vaisseau.</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
       <REC>MESG:FULL</REC>
       <Source>Character Skill Manager Mode</Source>
@@ -986,34 +980,10 @@
       <Dest>Gérer la compétence de pilotage</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ShiptechTutorialMessage</EDID>
+      <EDID>RAS_VehicleUnlockingMessage</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Starting Ship Tutorial</Source>
-      <Dest>Tutoriel pour le vaisseau de départ</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_RepairSucceededMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Successfuly repaired</Source>
-      <Dest>Réparation réussie</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Pedestrian Random Start Warning</Source>
-      <Dest>Avertissement - Piéton dans un emplacement aléatoire</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC id="0" idMax="1">MESG:ITXT</REC>
-      <Source>No</Source>
-      <Dest>Non</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC id="1" idMax="1">MESG:ITXT</REC>
-      <Source>Yes</Source>
-      <Dest>Oui</Dest>
+      <Source>About Vehicle Unlocking</Source>
+      <Dest>À propos du déblocage des véhicules</Dest>
     </String>
     <String List="0">
       <EDID>RAS_BrokenShipWarning</EDID>
@@ -1130,16 +1100,34 @@
       <Dest>Départ via Argos indisponible</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
       <REC>MESG:FULL</REC>
-      <Source>About Vehicle Unlocking</Source>
-      <Dest>À propos du déblocage des véhicules</Dest>
+      <Source>Keep Current Gear</Source>
+      <Dest>Gestion de votre équipement actuel</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Keep gear</Source>
+      <Dest>Garder l&apos;équipement</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Reset gear</Source>
+      <Dest>Remettre à zéro</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Cancel</Source>
+      <Dest>Annuler</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_LocationLevelEntry_Custom</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Rescue Ship Landing Impossible</Source>
-      <Dest>Impossible d&apos;atterrir pour la navette de sauvetage</Dest>
+      <Source>Custom</Source>
+      <Dest>Personnalisé</Dest>
     </String>
     <String List="0">
       <EDID>RAS_ConfirmStartMessage</EDID>
@@ -1244,28 +1232,10 @@
       <Dest>Élevée</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_PlayerStuffPickedUp</EDID>
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
       <REC>MESG:FULL</REC>
-      <Source>Stuff picked up</Source>
-      <Dest>Équipement récupéré</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Unlock New Homestead Home Furniture</Source>
-      <Dest>Débloquer les meubles de la maison de Nouveau-Départ</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC id="0" idMax="1">MESG:ITXT</REC>
-      <Source>No</Source>
-      <Dest>Non</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC id="1" idMax="1">MESG:ITXT</REC>
-      <Source>Yes</Source>
-      <Dest>Oui</Dest>
+      <Source>Starting Ship Tutorial</Source>
+      <Dest>Tutoriel pour le vaisseau de départ</Dest>
     </String>
     <String List="0">
       <EDID>RAS_AddLevelMessage</EDID>
@@ -1310,16 +1280,28 @@
       <Dest>Naufragé spatial</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Pedestrian Random Start Warning</Source>
+      <Dest>Avertissement - Piéton dans un emplacement aléatoire</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="0" idMax="1">MESG:ITXT</REC>
+      <Source>No</Source>
+      <Dest>Non</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC id="1" idMax="1">MESG:ITXT</REC>
+      <Source>Yes</Source>
+      <Dest>Oui</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_HabitabilityEntry_Any</EDID>
       <REC>MESG:FULL</REC>
       <Source>Any</Source>
       <Dest>Indifférent</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_DynamicTerminalBody_NA_ShipModifier</EDID>
-      <REC>MESG:FULL</REC>
-      <Source>Here you can choose to have your starting ship being damaged at start and unable to fly. If you start at a random POI, some crafting mats will be placed on a nearby dungeon. Elsewise, you will need to pay a ship tech.</Source>
-      <Dest>Ici vous pouvez choisir de commencer avec un vaisseau endommagé et incapable de voler. Si vous commencez dans un emplacement aléatoire, des matériaux de réparation seront placé dans un donjon aux alentours. Sinon, vous devrez payer un technicien de vaisseau.</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminalMenu</EDID>
@@ -1529,8 +1511,12 @@ Niveau d&apos;habitabilité actuel: &lt;0.name&gt;</Dest>
     <String List="0">
       <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
       <REC>TMLM:BTXT</REC>
-      <Source>Here you can change the course of some events in your upcoming playthrough or set some starting modifiers to your adventure.</Source>
-      <Dest>Ici vous pouvez changer le déroulement de certains événements de votre partie ou ajouter des modificateurs de départ pour votre aventure.</Dest>
+      <Source>Here you can change the course of some events in your upcoming playthrough or set some starting modifiers to your adventure.
+
+The list might be empty, depending on the choices you made on other activators (e.g. you will see the &quot;Start with a Broken Ship&quot; entry only after picking up a ship).</Source>
+      <Dest>Ici vous pouvez changer le déroulement de certains événements de votre partie ou ajouter des modificateurs de départ pour votre aventure.
+
+La liste peut être vide, en fonction des choix que vous avez fait sur les autres activateurs (ex: vous ne verrez l&apos;entrée &quot;Démarrer avec un vaisseau endommagé&quot; qu&apos;après avoir sélectionné un vaisseau).</Dest>
     </String>
     <String List="0">
       <EDID>RAS_NarrativeAdjustmentsTerminalMenu</EDID>
@@ -1821,6 +1807,30 @@ Réglage actuel: &lt;0.name&gt;</Dest>
       <Dest>Retour</Dest>
     </String>
     <String List="0">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:FULL</REC>
+      <Source>Choose a destination</Source>
+      <Dest>Choisir une destination</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:INAM</REC>
+      <Source>Choose a destination</Source>
+      <Dest>Choisir une destination</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:BTXT</REC>
+      <Source>Current Selection: &lt;0.name&gt;</Source>
+      <Dest>Sélection actuelle: &lt;0.name&gt;</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
+      <REC>TMLM:ITXT</REC>
+      <Source>&lt;0.name&gt;</Source>
+      <Dest>&lt;0.name&gt;</Dest>
+    </String>
+    <String List="0">
       <EDID>RAS_StartingLocationTerminal_Submenu</EDID>
       <REC>TMLM:FULL</REC>
       <Source>Choose your starting location</Source>
@@ -2084,57 +2094,87 @@ Current state: &lt;1.name&gt;</Source>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
-      <REC id="0" idMax="4">TMLM:ITXT</REC>
+      <REC id="0" idMax="5">TMLM:ITXT</REC>
+      <Source>5</Source>
+      <Dest>5</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
+      <REC id="1" idMax="5">TMLM:ITXT</REC>
       <Source>10</Source>
       <Dest>10</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
-      <REC id="1" idMax="4">TMLM:ITXT</REC>
+      <REC id="2" idMax="5">TMLM:ITXT</REC>
       <Source>25</Source>
       <Dest>25</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
-      <REC id="2" idMax="4">TMLM:ITXT</REC>
+      <REC id="3" idMax="5">TMLM:ITXT</REC>
       <Source>50</Source>
       <Dest>50</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
-      <REC id="3" idMax="4">TMLM:ITXT</REC>
+      <REC id="4" idMax="5">TMLM:ITXT</REC>
       <Source>70</Source>
       <Dest>70</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RandomStartConfigurationTerminal_MaxLevelMenu</EDID>
-      <REC id="4" idMax="4">TMLM:ITXT</REC>
+      <REC id="5" idMax="5">TMLM:ITXT</REC>
       <Source>Validate</Source>
       <Dest>Valider</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:FULL</REC>
-      <Source>Choose a destination</Source>
-      <Dest>Choisir une destination</Dest>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC>GPOF:NNAM</REC>
+      <Source>  Broken Ship Map Marker</Source>
+      <Dest>  Marqueur de quête pour départ avec vaisseau HS</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:INAM</REC>
-      <Source>Choose a destination</Source>
-      <Dest>Choisir une destination</Dest>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC>GPOF:DNAM</REC>
+      <Source>Shows or hides the map marker pointing to the resources required to repair your ship (the resources will still be added to a nearby POI to ensure you&apos;re not soft-locked).
+
+Requires the &quot;Broken Ship Start&quot; narrative adjustment.
+
+{0}
+
+{1} </Source>
+      <Dest>Cache ou affiche le marqueur de carte menant aux ressources requises pour réparer votre vaisseau (les ressources seront toujours ajoutées à un endroit aux alentours pour ne pas vous bloquer).
+
+Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
+
+{0}
+
+{1} </Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:BTXT</REC>
-      <Source>Current Selection: &lt;0.name&gt;</Source>
-      <Dest>Sélection actuelle: &lt;0.name&gt;</Dest>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:VOVS</REC>
+      <Source>{0}: Map marker is hidden.</Source>
+      <Dest>{0}: Le marqueur de quête est caché.</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_ShipwreckedRescueDestinationTerminalMenu</EDID>
-      <REC>TMLM:ITXT</REC>
-      <Source>&lt;0.name&gt;</Source>
-      <Dest>&lt;0.name&gt;</Dest>
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="0" idMax="1">GPOF:RESN</REC>
+      <Source>Disabled</Source>
+      <Dest>Désactivé</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:VOVS</REC>
+      <Source>{0}: Map marker is shown.</Source>
+      <Dest>{0}: Le marqueur de quête est affiché.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
+      <REC id="1" idMax="1">GPOF:RESN</REC>
+      <Source>Enabled</Source>
+      <Dest>Activé</Dest>
     </String>
     <String List="0">
       <EDID>RAS_ShipwreckedMapMarkerOption</EDID>
@@ -2154,7 +2194,7 @@ Requires the &quot;Shipwrecked&quot; starting location.
 {1}</Source>
       <Dest>Cache ou affiche le marqueur de carte menant aux ressources requises pour construire une balise de détresse (les ressources seront toujours ajoutées à un endroit aux alentours pour ne pas vous bloquer).
 
-Requiert l&apos;emplacement de départ &quot;&quot;Naufragé spatial&quot;.
+Requiert l&apos;emplacement de départ &quot;Naufragé spatial&quot;.
 
 {0}
 
@@ -2185,84 +2225,28 @@ Requiert l&apos;emplacement de départ &quot;&quot;Naufragé spatial&quot;.
       <Dest>Activé</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <EDID>RAS_MQCompleteVanillaQuestOption</EDID>
       <REC>GPOF:NNAM</REC>
-      <Source>  Broken Ship Repair Cost</Source>
-      <Dest>  Coût de réparation du vaisseau</Dest>
+      <Source>  Complete vanilla &quot;One Small Step&quot;</Source>
+      <Dest>  Compléter la quête vanilla &quot;Un Petit Pas&quot;</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <EDID>RAS_MQCompleteVanillaQuestOption</EDID>
       <REC>GPOF:DNAM</REC>
-      <Source>Defines how much the player will have to pay to repair their broken ship.
+      <Source>If you haven&apos;t started the MQ yet, you can silently complete the first vanilla main quest by activating this option. Elsewise, it would have no effect.
 
-Requires the &quot;Broken Ship Start&quot; narrative adjustment.
+This will NOT start the main quest. It just completes various tutorial steps to make sure mods relying on them start properly.
 
-{0}
+If you activate this, you won&apos;t be able to start the main quest anymore by going to the Argos Extractor offices. Starting by exploring or with &quot;The Guide&quot; is still possible.
 
-{1}
+THIS CANNOT BE UNDONE.</Source>
+      <Dest>Si vous n&apos;avez pas encore commencé la quête principale, vous pouvez terminer silencieusement la première quête principale vanilla en activant cette option.
 
-{2}
+Cela ne démarrera PAS la quête principale. Cela complète simplement différentes étapes du tutoriel pour faire en sorte que les mods qui en dépendent démarrent correctement.
 
-{3}</Source>
-      <Dest>Définit combien le joueur devra payer pour réparer son vaisseau.
+Si vous activez ceci, vous ne pourrez plus démarrer la quête principale en allant aux bureaux d&apos;Argos Extractors. Vous pouvez toutefois toujours le faire en trouvant l&apos;artefact aléatoirement ou à l&apos;aide du &quot;Guide&quot;.
 
-Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
-
-{0}
-
-{1}
-
-{2}
-
-{3}</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="0" idMax="3">GPOF:VOVS</REC>
-      <Source>{0}: Same than vanilla repair prices.</Source>
-      <Dest>{0}: Prix de réparation de vaisseaux vanilla.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="0" idMax="3">GPOF:RESN</REC>
-      <Source>1000</Source>
-      <Dest>1000</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="1" idMax="3">GPOF:VOVS</REC>
-      <Source>{0}: Default</Source>
-      <Dest>{0}: Par défaut.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="1" idMax="3">GPOF:RESN</REC>
-      <Source>10000</Source>
-      <Dest>10000</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="2" idMax="3">GPOF:VOVS</REC>
-      <Source>{0}: Expensive.</Source>
-      <Dest>{0}: Coûteux.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="2" idMax="3">GPOF:RESN</REC>
-      <Source>25000</Source>
-      <Dest>25000</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="3" idMax="3">GPOF:VOVS</REC>
-      <Source>{0}: Very expensive.</Source>
-      <Dest>{0}: Très coûteux.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipRepairCostOption</EDID>
-      <REC id="3" idMax="3">GPOF:RESN</REC>
-      <Source>50000</Source>
-      <Dest>50000</Dest>
+CETTE ACTION EST IRREVERSIBLE.</Dest>
     </String>
     <String List="0">
       <EDID>RAS_ShipwreckedTitle</EDID>
@@ -2285,8 +2269,8 @@ Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
     <String List="0">
       <EDID>RAS_VersionOption</EDID>
       <REC>GPOF:NNAM</REC>
-      <Source> Mod Version: 1.2.0</Source>
-      <Dest>Version du mod: 1.2.0</Dest>
+      <Source> Mod Version: 1.2.2</Source>
+      <Dest> Version du mod: 1.2.2</Dest>
     </String>
     <String List="0">
       <EDID>RAS_DebugTitle</EDID>
@@ -2403,54 +2387,6 @@ Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
       <Dest>100 %</Dest>
     </String>
     <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC>GPOF:NNAM</REC>
-      <Source>  Broken Ship Map Marker</Source>
-      <Dest>  Marqueur de quête pour départ avec vaisseau HS</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC>GPOF:DNAM</REC>
-      <Source>Shows or hides the map marker pointing to the resources required to repair your ship (the resources will still be added to a nearby POI to ensure you&apos;re not soft-locked).
-
-Requires the &quot;Broken Ship Start&quot; narrative adjustment.
-
-{0}
-
-{1} </Source>
-      <Dest>Cache ou affiche le marqueur de carte menant aux ressources requises pour réparer votre vaisseau (les ressources seront toujours ajoutées à un endroit aux alentours pour ne pas vous bloquer).
-
-Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
-
-{0}
-
-{1} </Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="0" idMax="1">GPOF:VOVS</REC>
-      <Source>{0}: Map marker is hidden.</Source>
-      <Dest>{0}: Le marqueur de quête est caché.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="0" idMax="1">GPOF:RESN</REC>
-      <Source>Disabled</Source>
-      <Dest>Désactivé</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="1" idMax="1">GPOF:VOVS</REC>
-      <Source>{0}: Map marker is shown.</Source>
-      <Dest>{0}: Le marqueur de quête est affiché.</Dest>
-    </String>
-    <String List="0">
-      <EDID>RAS_BrokenShipMapMarkerOption</EDID>
-      <REC id="1" idMax="1">GPOF:RESN</REC>
-      <Source>Enabled</Source>
-      <Dest>Activé</Dest>
-    </String>
-    <String List="0">
       <EDID>RAS_MQLevelThresholdOption</EDID>
       <REC>GPOF:NNAM</REC>
       <Source>  Main Quest Level Threshold</Source>
@@ -2557,6 +2493,86 @@ If you&apos;re using this and are on PC, I&apos;m really interested in having yo
       <Dest>Si dans votre partie la porte de la Loge ne s&apos;ouvre pas après avoir démarré la quête principale dans les bureaux d&apos;Argos ou en trouvant l&apos;artefact aléatoirement (ou avec &quot;Le Guide&quot;), vous pouvez activer cette option pour la forcer à s&apos;ouvrir.
 
 Si vous utilisez cette option et êtes sur PC, je suis très intéressé par votre sauvegarde. Vous pouvez me l&apos;envoyer sur Discord ou en DM sur Nexusmods.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC>GPOF:NNAM</REC>
+      <Source>  Broken Ship Repair Cost</Source>
+      <Dest>  Coût de réparation du vaisseau</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC>GPOF:DNAM</REC>
+      <Source>Defines how much the player will have to pay to repair their broken ship.
+
+Requires the &quot;Broken Ship Start&quot; narrative adjustment.
+
+{0}
+
+{1}
+
+{2}
+
+{3}</Source>
+      <Dest>Définit combien le joueur devra payer pour réparer son vaisseau.
+
+Requiert l&apos;ajustement narratif &quot;Départ avec vaisseau HS&quot;.
+
+{0}
+
+{1}
+
+{2}
+
+{3}</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="0" idMax="3">GPOF:VOVS</REC>
+      <Source>{0}: Same than vanilla repair prices.</Source>
+      <Dest>{0}: Prix de réparation de vaisseaux vanilla.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="0" idMax="3">GPOF:RESN</REC>
+      <Source>1000</Source>
+      <Dest>1000</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="1" idMax="3">GPOF:VOVS</REC>
+      <Source>{0}: Default</Source>
+      <Dest>{0}: Par défaut.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="1" idMax="3">GPOF:RESN</REC>
+      <Source>10000</Source>
+      <Dest>10000</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="2" idMax="3">GPOF:VOVS</REC>
+      <Source>{0}: Expensive.</Source>
+      <Dest>{0}: Coûteux.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="2" idMax="3">GPOF:RESN</REC>
+      <Source>25000</Source>
+      <Dest>25000</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="3" idMax="3">GPOF:VOVS</REC>
+      <Source>{0}: Very expensive.</Source>
+      <Dest>{0}: Très coûteux.</Dest>
+    </String>
+    <String List="0">
+      <EDID>RAS_BrokenShipRepairCostOption</EDID>
+      <REC id="3" idMax="3">GPOF:RESN</REC>
+      <Source>50000</Source>
+      <Dest>50000</Dest>
     </String>
     <String List="0">
       <EDID>RAS_RootGroup</EDID>
@@ -2815,6 +2831,18 @@ Sarah Morgan, Directrice de Constellation</Dest>
       <Dest>J&apos;ai montré l&apos;artefact à Maurice Lyon à Nouveau-Départ et il m&apos;a dirigé vers un groupe d&apos;explorateurs nommé &quot;Constellation&quot;, basé dans le quartier du TAMS de New Atlantis. Je devrais m&apos;y rendre et leur montrer ma découverte.</Dest>
     </String>
     <String List="1">
+      <EDID>RAS_PlayerStuffPickedUp</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You  finally retrieved your gear!</Source>
+      <Dest>Vous avez finalement retrouvé votre équipement !</Dest>
+    </String>
+    <String List="1">
+      <EDID>RAS_RepairSucceededMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>The ship is now ready to go!</Source>
+      <Dest>Le vaisseau peut désormais voler à nouveau !</Dest>
+    </String>
+    <String List="1">
       <EDID>RAS_MissingSoundWarning</EDID>
       <REC>MESG:DESC</REC>
       <Source>If you&apos;re facing missing sounds (weapons, etc...), right after starting, no worries! Simply, save, exit, and reload. After that, the issue will be fixed once and for all. That&apos;s an engine issue impacting alternate starts mod, I can&apos;t do anything about it.</Source>
@@ -2857,10 +2885,10 @@ Ils seront dans une armoire et il y aura un marqueur de quête qui vous l&apos;i
 </Dest>
     </String>
     <String List="1">
-      <EDID>RAS_ChooseGearAgainMessage</EDID>
+      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>You already chose a starting gear. Would you like to keep it and buy additional items or do you want to start anew ?</Source>
-      <Dest>Vous avez déjà choisi un équipement de départ. Voulez-vous le garder et acheter des objets supplémentaires ou voulez-vous recommencer ? </Dest>
+      <Source>Impossible to find a landing point for the rescue ship. Please try again and if it doesn&apos;t work a second time, try to place this beacon in a flatter place.</Source>
+      <Dest>Impossible de trouver une zone d&apos;atterrissage pour la navette de secours. Veuillez s&apos;il vous plaît réessayer et si cela ne fonctionne toujour pas, essayez de placer la balise sur une zone plus plate.</Dest>
     </String>
     <String List="1">
       <EDID>RAS_RepairFailedMessage</EDID>
@@ -2915,8 +2943,16 @@ Quand vous serez satisfait de vos réglages, rendez vous au niveau de l&apos;ano
     <String List="1">
       <EDID>RAS_ImpossibleToStartMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>Error! Impossible to teleport the player to the selected location. Please retry, and if the problem persists, please report on Discord or Nexusmods.</Source>
-      <Dest>Erreur! Impossible de téléporter le joueur à l&apos;emplacement sélectionné. Veuillez ré-essayer. Si le problème persiste, signalez le bug sur Discord ou NexusMods SVP.</Dest>
+      <Source>Error! Impossible to find a proper starting location. 
+
+It&apos;s often caused by mods that edit POIs distribution, such as &quot;Desolation&quot; or &quot;Goldilocks&quot;. Sometime retrying is enough, sometimes you will have to change your settings.
+
+If after several tries the problem persists (or if it happens on a particular settlement/spacestation), please report on Discord or Nexusmods.</Source>
+      <Dest>Erreur! Impossible de trouver un emplacement de départ valable.
+
+C&apos;est souvent dû aux mods qui changed la répartition des points d&apos;intérêt, comme &quot;Desolation&quot; ou &quot;Goldilocks&quot;. Parfois il suffit de ré-essayer, parfois vous devrez changer les réglages.
+
+Si après plusieurs essais le problème persiste (ou si il survient pour une ville/une station spatiale spécifique), veuillez SVP en faire part sur Discord ou NexusMods).</Dest>
     </String>
     <String List="1">
       <EDID>RAS_ChooseStartTypeMessage</EDID>
@@ -2925,55 +2961,32 @@ Quand vous serez satisfait de vos réglages, rendez vous au niveau de l&apos;ano
       <Dest>Quelle type de nouvelle partie voulez-vous créer ?</Dest>
     </String>
     <String List="1">
-      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>How are you willing to modify your character skills?</Source>
-      <Dest>Comment voulez-vous modifier les caractéristiques de votre personnage ?</Dest>
-    </String>
-    <String List="1">
-      <EDID>RAS_ShiptechTutorialMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Here you can choose and customize a starting ship. You will access the ship technician dialogs as usual, except everything will be free.
-
-If you don&apos;t choose a ship you&apos;ll start as a pedestrian and will have to buy one later on.
-
-If you chose a ship and changed your mind, you can choose back the &quot;ship&quot; called &quot;No Ship Selected&quot; and you&apos;ll be a pedestrian again (it will be at the end of the list).
-
-Beware, if you modify a ship and then change your selection, the modified ship will be reset.
-
-If you level up using the &quot;Character Skills Activator&quot; the ship list will be modified accordingly.</Source>
-      <Dest>Ici vous pouvez choisir et modifier votre vaisseau de démarrage. Vous accèderez aux dialogues du technicien de vaisseau comme d&apos;habitude, excepté que tout sera gratuit.
-
-Si vous ne choisissez pas de vaisseau, vous commencerez comme piéton et devrez en acheter un plus tard.
-
-Si vous avez déjà choisi un vaisseau mais changez ensuite d&apos;avis, vous pouvez de nouveau choisir le &quot;vaisseau&quot; appelé &quot;Aucun vaisseau disponible&quot; et serez de nouveau piéton (il sera à la fin de la liste).
-
-Attention, si vous modifiez un vaisseau et en choisissez ensuite un autre, le vaisseau modifié sera remis à zéro.
-
-Si vous montez de niveau grâce à l&apos;&quot;Activateur de gestion de caractéristiques&quot;, la liste de vaisseaux sera actualisée en fonction.
-    </Dest>
-    </String>
-    <String List="1">
-      <EDID>RAS_RepairSucceededMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>The ship is now ready to go!</Source>
-      <Dest>Le vaisseau peut désormais voler à nouveau !</Dest>
-    </String>
-    <String List="1">
-      <EDID>RAS_RandomStartWarning</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Starting as a pedestrian in a random location can soft-lock you (your only escape would be to hijack an enemy ship, and you&apos;re not even sure there would be one nor it would be the right ship class). 
-
-Are you sure you wish to continue ?</Source>
-      <Dest>Commencer comme piéton dans un emplacement aléatoire peut vous bloquer (votre seule échappatoire serait de voler un vaisseau ennemi, et ce n&apos;est pas sûr qu&apos;il y en aura un et qu&apos;il sera adapté à votre niveau de pilotage le cas échéant).
-
-Êtes-vous sûr de vouloir continuer ?</Dest>
+      <Source>Do you want to unlock the furniture in the New Homestead home right now ?</Source>
+      <Dest>Voulez vous débloquer les meubles de votre maison à Nouveau-Départ tout de suite ?</Dest>
     </String>
     <String List="1">
       <EDID>RAS_KeepArtifactMessage</EDID>
       <REC>MESG:DESC</REC>
       <Source>I feel like I should keep this artifact, or at least not give it up freely.</Source>
       <Dest>J&apos;ai le sentiment que je devrais garder cet artefact, ou du moins ne pas m&apos;en débarrasser sans contrepartie.</Dest>
+    </String>
+    <String List="1">
+      <EDID>RAS_ChooseCharacterSkillManagerMode</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>How are you willing to modify your character skills?</Source>
+      <Dest>Comment voulez-vous modifier les caractéristiques de votre personnage ?</Dest>
+    </String>
+    <String List="1">
+      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You will be given the amount of credits required to unlock the vehicles feature. If you cancel the purchase, they will be taken back.
+
+Beware: Unlocking vehicles is irreversible.</Source>
+      <Dest>Vous allez recevoir le montant requis pour débloquer les véhicules. Si vous annulez votre achat, les crédits vous seront enlevés.
+
+Attention: Débloquer les véhicules est irréversible.</Dest>
     </String>
     <String List="1">
       <EDID>RAS_BrokenShipWarning</EDID>
@@ -3007,7 +3020,7 @@ Are you sure you wish to continue ?</Source>
       <EDID>RAS_ArgosStartUnavailableWarning</EDID>
       <REC>MESG:DESC</REC>
       <Source>Infortunately you cannot start the main quest with the Argos quest on that playthrough unless you do a NG+. Either:
-- You activated the &quot;Autocomplete vanilla &apos;One Small Step&apos; &quot; narrative adjustment.
+- You activated the &quot;Autocomplete vanilla &apos;One Small Step&apos; &quot; gameplay option.
 - You&apos;ve started the playthrough with a mod version under 1.1.0.
 - You&apos;ve already started the main quest with one of the following options.
 
@@ -3016,9 +3029,9 @@ Current settings for artifact spawn are: %.0f percent chance to spawn after leve
 You can change these settings in the &quot;Gameplay Options&quot; section of the main menu.
 You can find eligible locations on the FAQ section of the mod page.
 
-You can also start the main quest by talking to &quot;The Guide&quot;, an NPC that will appear where &quot;The Hunter&quot; usually stays at &quot;The Viewort&quot;, once you&apos;ve spoken to the latter at least once.</Source>
+You can also start the main quest by talking to &quot;The Guide&quot;, an NPC that will appear where &quot;The Hunter&quot; usually stays at &quot;The Viewport&quot;, once you&apos;ve spoken to the latter at least once.</Source>
       <Dest>Malheureusement, vous ne pouvez pas démarrer le quête principale avec Argos dans cette partie et ne le pourrez qu&apos;après un NG+. Soit:
-- Vous avez activé l&apos;ajustement narratif &quot;Compléter la quête vanilla &apos;Une Petit Pas&apos;&quot;.
+- Vous avez activé l&apos;option de Gameplay &quot;Compléter la quête vanilla &apos;Une Petit Pas&apos; &quot;.
 - Vous avez commencé cette partie avec une version du mod inférieure à 1.1.0.
 - Vous avez déjà commencé la quête principale via une des options ci-dessous.
 
@@ -3027,23 +3040,14 @@ Les réglages pour l&apos;apparition de l&apos;artefact sont les suivants: %.0f 
 Vous pouvez changer ces réglages via la section &quot;Options de gameplay&quot; du menu principal. 
 Vous pouvez trouver les emplacements éligibles pour l&apos;apparition de l&apos;artefact dans la section FAQ de la description du mod.
 
-Vous pouvez également démarrer la quête principale à l&apos;aide du PNJ &quot;Le Guide&quot; se trouvant au &quot;Viewport&quot; de New Atlantis, là ou se tient habituellement &quot;Le Chasseur&quot;, après avoir parlé à ce dernier une première fois.</Dest>
+Vous pouvez également démarrer la quête principale à l&apos;aide du PNJ &quot;Le Guide&quot; se trouvant au &quot;Viewport&quot; de New Atlantis, là ou se tient habituellement &quot;Le Chasseur&quot;, après avoir parlé à ce dernier une première fois.
+    </Dest>
     </String>
     <String List="1">
-      <EDID>RAS_VehicleUnlockingMessage</EDID>
+      <EDID>RAS_ChooseGearAgainMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>You will be given the amount of credits required to unlock the vehicles feature. If you cancel the purchase, they will be taken back.
-
-Beware: Unlocking vehicles is irreversible.</Source>
-      <Dest>Vous allez recevoir le montant requis pour débloquer les véhicules. Si vous annulez votre achat, les crédits vous seront enlevés.
-
-Attention: Débloquer les véhicules est irréversible.</Dest>
-    </String>
-    <String List="1">
-      <EDID>RAS_UnableToPlaceRescueShipMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Impossible to find a landing point for the rescue ship. Please try again and if it doesn&apos;t work a second time, try to place this beacon in a flatter place.</Source>
-      <Dest>Impossible de trouver une zone d&apos;atterrissage pour la navette de secours. Veuillez s&apos;il vous plaît réessayer et si cela ne fonctionne toujour pas, essayez de placer la balise sur une zone plus plate.</Dest>
+      <Source>You already chose a starting gear. Would you like to keep it and buy additional items or do you want to start anew ?</Source>
+      <Dest>Vous avez déjà choisi un équipement de départ. Voulez-vous le garder et acheter des objets supplémentaires ou voulez-vous recommencer ? </Dest>
     </String>
     <String List="1">
       <EDID>RAS_ConfirmStartMessage</EDID>
@@ -3088,16 +3092,27 @@ Une fois découvert, il ne sera plus possible de travailler pour Argos.</Dest>
       <Dest>La configuration que vous venez d&apos;effectuer a invalidé les choix que vous aviez fait au &lt;Alias=InvalidatedTerminal&gt;. La sélection a été remise à zéro.</Dest>
     </String>
     <String List="1">
-      <EDID>RAS_PlayerStuffPickedUp</EDID>
+      <EDID>RAS_ShiptechTutorialMessage</EDID>
       <REC>MESG:DESC</REC>
-      <Source>You  finally retrieved your gear!</Source>
-      <Dest>Vous avez finalement retrouvé votre équipement !</Dest>
-    </String>
-    <String List="1">
-      <EDID>RAS_DWNNewHomesteadFurnitureMessage</EDID>
-      <REC>MESG:DESC</REC>
-      <Source>Do you want to unlock the furniture in the New Homestead home right now ?</Source>
-      <Dest>Voulez vous débloquer les meubles de votre maison à Nouveau-Départ tout de suite ?</Dest>
+      <Source>Here you can choose and customize a starting ship. You will access the ship technician dialogs as usual, except everything will be free.
+
+If you don&apos;t choose a ship you&apos;ll start as a pedestrian and will have to buy one later on.
+
+If you chose a ship and changed your mind, you can choose back the &quot;ship&quot; called &quot;No Ship Selected&quot; and you&apos;ll be a pedestrian again (it will be at the end of the list).
+
+Beware, if you modify a ship and then change your selection, the modified ship will be reset.
+
+If you level up using the &quot;Character Skills Activator&quot; the ship list will be modified accordingly.</Source>
+      <Dest>Ici vous pouvez choisir et modifier votre vaisseau de démarrage. Vous accèderez aux dialogues du technicien de vaisseau comme d&apos;habitude, excepté que tout sera gratuit.
+
+Si vous ne choisissez pas de vaisseau, vous commencerez comme piéton et devrez en acheter un plus tard.
+
+Si vous avez déjà choisi un vaisseau mais changez ensuite d&apos;avis, vous pouvez de nouveau choisir le &quot;vaisseau&quot; appelé &quot;Aucun vaisseau disponible&quot; et serez de nouveau piéton (il sera à la fin de la liste).
+
+Attention, si vous modifiez un vaisseau et en choisissez ensuite un autre, le vaisseau modifié sera remis à zéro.
+
+Si vous montez de niveau grâce à l&apos;&quot;Activateur de gestion de caractéristiques&quot;, la liste de vaisseaux sera actualisée en fonction.
+    </Dest>
     </String>
     <String List="1">
       <EDID>RAS_AddLevelMessage</EDID>
@@ -3114,6 +3129,16 @@ Once you get off this planet (with the rescue beacon or another solution) the pe
 
 Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non), la compétence vous sera retirée (ou remise au rang auquelle elle était avant le crash).</Dest>
     </String>
+    <String List="1">
+      <EDID>RAS_RandomStartWarning</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Starting as a pedestrian in a random location can soft-lock you (your only escape would be to hijack an enemy ship, and you&apos;re not even sure there would be one nor it would be the right ship class). 
+
+Are you sure you wish to continue ?</Source>
+      <Dest>Commencer comme piéton dans un emplacement aléatoire peut vous bloquer (votre seule échappatoire serait de voler un vaisseau ennemi, et ce n&apos;est pas sûr qu&apos;il y en aura un et qu&apos;il sera adapté à votre niveau de pilotage le cas échéant).
+
+Êtes-vous sûr de vouloir continuer ?</Dest>
+    </String>
     <String List="2">
       <EDID>[00252337]</EDID>
       <REC>INFO:NAM1</REC>
@@ -3127,16 +3152,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Peut-être. Mais les gens sont rarement les mêmes consécutivement.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000BFB]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Will I see you again?</Source>
-      <Dest>Est-ce que je vous reverrais ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000BF8]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I&apos;ve set you on a path. Where it leads will no longer depend on me.</Source>
       <Dest>Je vous ai mis sur la voie. Là où elle vous mènera ne dépend plus de moi.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000BFB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Will I see you again?</Source>
+      <Dest>Est-ce que je vous reverrais ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000BF3]</EDID>
@@ -3145,16 +3170,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>C&apos;est tout ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000BF1]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I could have. But then this conversation would&apos;ve been unbearably short.</Source>
-      <Dest>J&apos;aurais pu. Mais cette conversation aurait été insupportablement courte.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000BEF]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You could&apos;ve started with the coordinates.</Source>
       <Dest>Vous auriez pu commencer par les coordonnées.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000BF1]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I could have. But then this conversation would&apos;ve been unbearably short.</Source>
+      <Dest>J&apos;aurais pu. Mais cette conversation aurait été insupportablement courte.</Dest>
     </String>
     <String List="2">
       <EDID>[02000BEC]</EDID>
@@ -3241,16 +3266,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Oui ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000BC2]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>And if I&apos;m not interested?</Source>
-      <Dest>Et si ça ne m&apos;intéresse pas ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000BBE]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Why are you telling me?</Source>
       <Dest>Pourquoi me le dire ?</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000BC2]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And if I&apos;m not interested?</Source>
+      <Dest>Et si ça ne m&apos;intéresse pas ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000B97]</EDID>
@@ -3277,16 +3302,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Donc vous restez ici à attendre des étrangers disposés à avoir une conversation ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000B95]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>And you think I&apos;m one of those people?</Source>
-      <Dest>Et vous pensez que je suis l&apos;un d&apos;entre eux ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000B8C]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Confidence has very little to do with it. People are drawn toward certain questions eventually. When they do, they always find me.</Source>
       <Dest>La confiance n&apos;a aucun rapport avec ça. L&apos;univers est grand et les gens finissent toujours par être attirés par les mêmes questions. Ils viennent ensuite me trouver.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000B95]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>And you think I&apos;m one of those people?</Source>
+      <Dest>Et vous pensez que je suis l&apos;un d&apos;entre eux ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000B84]</EDID>
@@ -3319,12 +3344,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Donc il y en a d&apos;autres comme vous.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000B66]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>&quot;Another&quot; implies understanding. You understand very little.</Source>
-      <Dest>&quot;Un autre&quot; implique la compréhension. Vous comprenez très peu.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000B3B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>What exactly is that &quot;discovery&quot; you&apos;re speaking about?</Source>
@@ -3341,6 +3360,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>That&apos;s not an answer.</Source>
       <Dest>Ce n&apos;est pas une réponse.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000B66]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;Another&quot; implies understanding. You understand very little.</Source>
+      <Dest>&quot;Un autre&quot; implique la compréhension. Vous comprenez très peu.</Dest>
     </String>
     <String List="2">
       <EDID>[02000AA5]</EDID>
@@ -3373,16 +3398,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>&quot;Attendre&quot; implique la certitude. Je préfère la patience.</Dest>
     </String>
     <String List="2">
-      <EDID>[020009EA]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Who are you?</Source>
-      <Dest>Qui êtes vous ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[020009CE]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>So you were expecting me?</Source>
       <Dest>Donc vous m&apos;attendiez ?</Dest>
+    </String>
+    <String List="2">
+      <EDID>[020009EA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>Qui êtes vous ?</Dest>
     </String>
     <String List="2">
       <EDID>RAS_CommonEvasiveNameAnswer</EDID>
@@ -3469,12 +3494,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Si vous tenez vraiment à vous engager là-dedans, sachez que nous allons plonger la tête la première dans l&apos;inconnu. Les dangers risquent d&apos;être considérables.</Dest>
     </String>
     <String List="2">
-      <EDID>[0200115B]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Fair enough. We have a spare room you can use, and I&apos;m sure everyone here would like a word with you. Once you&apos;re ready, come find me.</Source>
-      <Dest>Comme vous voulez. Nous avons une chambre de libre à disposition, et je suis sûre que tout le monde ici a envie de vous parler. Quand ce sera fait, venez me trouver.</Dest>
-    </String>
-    <String List="2">
       <EDID>[0200115E]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You really don&apos;t know anything about the Artifacts?</Source>
@@ -3485,6 +3504,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>All right. Let&apos;s hear it.</Source>
       <Dest>Très bien. Je vous écoute.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[0200115B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Fair enough. We have a spare room you can use, and I&apos;m sure everyone here would like a word with you. Once you&apos;re ready, come find me.</Source>
+      <Dest>Comme vous voulez. Nous avons une chambre de libre à disposition, et je suis sûre que tout le monde ici a envie de vous parler. Quand ce sera fait, venez me trouver.</Dest>
     </String>
     <String List="2">
       <EDID>[02001138]</EDID>
@@ -3553,6 +3578,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Nous en savons probablement autant que vous à ce stade. Comme vous le voyez, ils forment quelque chose maintenant que nous en avons plusieurs. Quant à savoir ce qu&apos;ils forment, nous allons devoir le découvrir ensemble.</Dest>
     </String>
     <String List="2">
+      <EDID>[0200112F]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hmm... Interesting...</Source>
+      <Dest>Hmm... Intéressant...</Dest>
+    </String>
+    <String List="2">
       <EDID>[0200113B]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You&apos;re taking their word for it? What if this person&apos;s just delusional?</Source>
@@ -3575,12 +3606,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>In addition to credits, why don&apos;t we set you up with a backpack with some boost capability? You&apos;ll need it out in the field, anyway. Just mind your head.</Source>
       <Dest>En plus des crédits, que diriez-vous d&apos;un sac à dos pourvu d&apos;un jet-pack ? Vous en aurez besoin sur le terrain, de toute façon. Mais faites attention à votre tête.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[0200112F]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Hmm... Interesting...</Source>
-      <Dest>Hmm... Intéressant...</Dest>
     </String>
     <String List="2">
       <EDID>[02000BA9]</EDID>
@@ -3613,10 +3638,10 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Vous voulez que je rejoigne Constellation ? Qu&apos;est-ce que ça veut dire ? Qu&apos;attendez-vous de moi ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000B76]</EDID>
+      <EDID>[02000B67]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>How much do you know about the Artifacts? What are they?</Source>
-      <Dest>Que savez-vous des artefacts ? Que sont-ils ?</Dest>
+      <Source>*chuckle* So, are you ready to get to work? See if exploration is the life you want to lead in this little universe of ours? </Source>
+      <Dest>Vous avez envie de vous mettre au travail ? De découvrir si l&apos;exploration est la vie que vous voulez mener dans notre petit univers ? </Dest>
     </String>
     <String List="2">
       <EDID>[02001129]</EDID>
@@ -3625,10 +3650,10 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je vois. C&apos;était il y a des mois. Alors... Pourquoi vous présenter ici maintenant ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000B67]</EDID>
+      <EDID>[02000B76]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>*chuckle* So, are you ready to get to work? See if exploration is the life you want to lead in this little universe of ours? </Source>
-      <Dest>Vous avez envie de vous mettre au travail ? De découvrir si l&apos;exploration est la vie que vous voulez mener dans notre petit univers ? </Dest>
+      <Source>How much do you know about the Artifacts? What are they?</Source>
+      <Dest>Que savez-vous des artefacts ? Que sont-ils ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000B70]</EDID>
@@ -3647,6 +3672,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>Come find me when you&apos;re ready. You and I are going to be doing some traveling together. Get your feet wet.</Source>
       <Dest>Venez me trouver quand vous voudrez partir. Nous allons voyager un peu ensemble, que je puisse vous voir en action.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000B6A]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
+      <Dest>D&apos;accord. J&apos;en suis. Qu&apos;est-ce que je dois faire ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000B73]</EDID>
@@ -3679,12 +3710,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Quant à savoir ce qu&apos;ils sont, ce qu&apos;ils permettent d&apos;obtenir... vous allez pouvoir nous aider.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000B6A]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>All right. I&apos;m in. Tell me what happens next.</Source>
-      <Dest>D&apos;accord. J&apos;en suis. Qu&apos;est-ce que je dois faire ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000B33]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Well, if we had all the answers, it wouldn&apos;t be exciting, now would it?</Source>
@@ -3701,6 +3726,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>That&apos;s it. Just like the others.</Source>
       <Dest>C&apos;est ça. Exactement comme les autres.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A77]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>How many times has this happened? Who else has had these visions?</Source>
+      <Dest>Combien de fois cela est-il arrivé ? Qui d&apos;autre a eu ces visions ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000B3C]</EDID>
@@ -3769,16 +3800,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Mais nous ne savons pas encore pourquoi. Seriez-vous d&apos;accord pour nous en dire plus ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000AB3]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Noel. I think it&apos;s time we tested your theory.</Source>
-      <Dest>Je crois qu&apos;il est temps de mettre votre théorie à l&apos;épreuve, Noel.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000B39]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>She&apos;s not the only one. If they&apos;re coming together, that means there&apos;s a set.</Source>
       <Dest>Ce n&apos;est pas la seule. S&apos;ils s&apos;imbriquent, cela signifie qu&apos;il y en a d&apos;autres.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000AB3]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Noel. I think it&apos;s time we tested your theory.</Source>
+      <Dest>Je crois qu&apos;il est temps de mettre votre théorie à l&apos;épreuve, Noel.</Dest>
     </String>
     <String List="2">
       <EDID>[02000AC2]</EDID>
@@ -3817,10 +3848,10 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>La réalité de l&apos;événement n&apos;est pas en doute. Mais honnêtement Khatri, si vous pensez que nous allons croire à vos contes de fées...</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A77]</EDID>
+      <EDID>[02000A4E]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>How many times has this happened? Who else has had these visions?</Source>
-      <Dest>Combien de fois cela est-il arrivé ? Qui d&apos;autre a eu ces visions ?</Dest>
+      <Source>It was bright lights and music.</Source>
+      <Dest>Il y a eu des lumières brillantes et de la musique.</Dest>
     </String>
     <String List="2">
       <EDID>[02000A9F]</EDID>
@@ -3835,22 +3866,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je ne veux pas en parler. Cette chose a failli me tuer.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A6E]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>So something DID happen. Barrett mentioned a loss of consciousness last time he found an Artifact.</Source>
-      <Dest>Donc il s&apos;est passé quelque chose. Barrett dit avoir perdu connaissance la dernière fois qu&apos;il a trouvé un artefact.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A59]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Interesting. Similar to Barrett&apos;s description of the experience. With less embellishment...</Source>
       <Dest>Intéressant. Similaire à la description qu&apos;en avait faite Barrett. Avec moins de fioritures...</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A4E]</EDID>
+      <EDID>[02000A6E]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>It was bright lights and music.</Source>
-      <Dest>Il y a eu des lumières brillantes et de la musique.</Dest>
+      <Source>So something DID happen. Barrett mentioned a loss of consciousness last time he found an Artifact.</Source>
+      <Dest>Donc il s&apos;est passé quelque chose. Barrett dit avoir perdu connaissance la dernière fois qu&apos;il a trouvé un artefact.</Dest>
     </String>
     <String List="2">
       <EDID>[02000A45]</EDID>
@@ -3877,12 +3902,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Sauf que ce ça ne va pas arriver. Ielle est ici. Et ielle ne nous menace pas.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A3C]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
-      <Dest>Merci, Matteo. Concentrons-nous sur ce que nous savons, d&apos;accord ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A32]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
@@ -3907,16 +3926,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Sauf que ce ça ne va pas arriver. Ielle est ici. Avec l&apos;artefact.</Dest>
     </String>
     <String List="2">
+      <EDID>[02000A3C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thank you, Matteo. Now let&apos;s focus on what&apos;s in front of us, shall we?</Source>
+      <Dest>Merci, Matteo. Concentrons-nous sur ce que nous savons, d&apos;accord ?</Dest>
+    </String>
+    <String List="2">
       <EDID>[02000A07]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>As far as we know, he could be building a gigantic bomb that will blew up as we finish.</Source>
       <Dest>De ce qu&apos;on en sait, il pourrait être en train de construire une bombe gigantesque qui explosera dès qu&apos;on aura fini.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[020009F5]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Oh, this is just typical. She hands over our ship to some random thug who&apos;s trying to steal our belongings.</Source>
-      <Dest>C&apos;est du Sarah tout craché. Refiler notre vaisseau au premier mercenaire venu nous voler nos possessions.</Dest>
     </String>
     <String List="2">
       <EDID>[020009FE]</EDID>
@@ -3925,16 +3944,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Walter...</Dest>
     </String>
     <String List="2">
+      <EDID>[020009F5]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Oh, this is just typical. She hands over our ship to some random thug who&apos;s trying to steal our belongings.</Source>
+      <Dest>C&apos;est du Sarah tout craché. Refiler notre vaisseau au premier mercenaire venu nous voler nos possessions.</Dest>
+    </String>
+    <String List="2">
       <EDID>[020009BF]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Sarah Morgan. Chair of Constellation.</Source>
       <Dest>Sarah Morgan, dirigeante de Constellation.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[020009CA]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>As far as we know, he could be building a gigantic bomb that will blew up as we finish.</Source>
-      <Dest>De ce qu&apos;on en sait, il pourrait être en train de construire une bombe gigantesque qui explosera dès qu&apos;on aura fini.</Dest>
     </String>
     <String List="2">
       <EDID>[020009C8]</EDID>
@@ -3943,16 +3962,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Hum... Très bien. Nous sommes une organisation privée qui se consacre à l&apos;exploration de l&apos;espace, mais aussi aux anomalies qu&apos;on trouve dans les Systèmes occupés.</Dest>
     </String>
     <String List="2">
+      <EDID>[020009CA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>As far as we know, he could be building a gigantic bomb that will blew up as we finish.</Source>
+      <Dest>De ce qu&apos;on en sait, il pourrait être en train de construire une bombe gigantesque qui explosera dès qu&apos;on aura fini.</Dest>
+    </String>
+    <String List="2">
       <EDID>[020009B7]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Who are you?</Source>
       <Dest>Qui êtes vous ?</Dest>
-    </String>
-    <String List="2">
-      <EDID>[020009A4]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Welcome to Constellation. We have a lot to talk about.</Source>
-      <Dest>Bienvenue dans Constellation. Nous avons beaucoup à nous dire.</Dest>
     </String>
     <String List="2">
       <EDID>[0200098E]</EDID>
@@ -3961,10 +3980,10 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Il semblerait que nous ayons de la visite...</Dest>
     </String>
     <String List="2">
-      <EDID>[020009C5]</EDID>
+      <EDID>[020009A4]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>Why don&apos;t we start with you telling me what Constellation is?</Source>
-      <Dest>Pourquoi ne pas commencer par me dire ce qu&apos;est Constellation ?</Dest>
+      <Source>Welcome to Constellation. We have a lot to talk about.</Source>
+      <Dest>Bienvenue dans Constellation. Nous avons beaucoup à nous dire.</Dest>
     </String>
     <String List="2">
       <EDID>[020009C4]</EDID>
@@ -3979,16 +3998,22 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>C&apos;est du Sarah tout craché. Refiler notre vaisseau au premier mercenaire venu nous voler nos possessions.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000973]</EDID>
+      <EDID>[020009C5]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>We&apos;ll play nice. Just a little friendly conversation, Sarah. That&apos;s all.</Source>
-      <Dest>Ce ne sera pas la peine. C&apos;était une conversation amicale, Sarah, rien de plus.</Dest>
+      <Source>Why don&apos;t we start with you telling me what Constellation is?</Source>
+      <Dest>Pourquoi ne pas commencer par me dire ce qu&apos;est Constellation ?</Dest>
     </String>
     <String List="2">
       <EDID>[0200096A]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>You two keep going on like this, and I&apos;m banning wagers. I&apos;m serious.</Source>
       <Dest>Si vous continuez comme ça, je vais bannir les paris. Je ne plaisante pas.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000973]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>We&apos;ll play nice. Just a little friendly conversation, Sarah. That&apos;s all.</Source>
+      <Dest>Ce ne sera pas la peine. C&apos;était une conversation amicale, Sarah, rien de plus.</Dest>
     </String>
     <String List="2">
       <EDID>[02000961]</EDID>
@@ -4009,16 +4034,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Oh, je vous en prie. C&apos;est ridicule. Ce sera le pari le plus facile de ma vie.</Dest>
     </String>
     <String List="2">
-      <EDID>[020008CA]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Welcome to constellation, stranger! The others are awaiting you inside, please follow me.</Source>
-      <Dest>Bienvenu à Constellation, étranger! Les autres vous attendent à l&apos;intérieur, veuillez me suivre.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000841]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>If you&apos;re interested, perhaps we&apos;ll give you a chance to join us today.</Source>
       <Dest>Si cela vous intéresse, peut-être aurez-vous l&apos;opportunité de nous rejoindre aujourd&apos;hui.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[020008CA]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Welcome to constellation, stranger! The others are awaiting you inside, please follow me.</Source>
+      <Dest>Bienvenu à Constellation, étranger! Les autres vous attendent à l&apos;intérieur, veuillez me suivre.</Dest>
     </String>
     <String List="2">
       <EDID>[02000945]</EDID>
@@ -4177,16 +4202,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je le savais ! Vous vous souciez d&apos;eux, petit cœur d&apos;artichaut...</Dest>
     </String>
     <String List="2">
-      <EDID>[02000AE0]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Thanks Lin.</Source>
-      <Dest>Merci, Lin.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000ADD]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Oh. Okay...</Source>
       <Dest>Oh. D&apos;accord...</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000AE0]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Thanks Lin.</Source>
+      <Dest>Merci, Lin.</Dest>
     </String>
     <String List="2">
       <EDID>[02000AE3]</EDID>
@@ -4261,12 +4286,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Heller ! Est-ce que ça va ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A99]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Hey, uh, I should come with you, right? I don&apos;t think anyone else is coming...</Source>
-      <Dest>Hé, je devrais venir avec vous, non ? Je pense que vous ne trouverez personne d&apos;autre.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A93]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Shouldn&apos;t we get you back to Argos?</Source>
@@ -4297,6 +4316,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je pense qu&apos;Argos s&apos;apprête à faire une croix sur toute l&apos;opération. Et puis je suis certain d&apos;être plus en sécurité en travaillant pour vous. Enfin j&apos;espère...</Dest>
     </String>
     <String List="2">
+      <EDID>[02000A99]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Hey, uh, I should come with you, right? I don&apos;t think anyone else is coming...</Source>
+      <Dest>Hé, je devrais venir avec vous, non ? Je pense que vous ne trouverez personne d&apos;autre.</Dest>
+    </String>
+    <String List="2">
       <EDID>[02000A8A]</EDID>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>Yeah. Just, uh, don&apos;t ask me to operate any heavy machinery for a while.</Source>
@@ -4321,22 +4346,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Restez tranquille, je reviendrai vous chercher.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A84]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
-      <Dest>On a reçu un signal du vaisseau avant leur astroportation. J&apos;imagine qu&apos;il s&apos;agissait de Barrett. Je n&apos;étais pas en mesure de l&apos;écouter. Tenez.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A87]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Let&apos;s get you on your feet first.</Source>
       <Dest>Occupons-nous d&apos;abord de vous remettre sur pied.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A7B]</EDID>
+      <EDID>[02000A84]</EDID>
       <REC>INFO:NAM1</REC>
-      <Source>Yeah, you know, you&apos;re really the one who should be upset about all this... Me laying here half conscious? Real inconvenience...</Source>
-      <Dest>Ouais, pardon, c&apos;est franchement pas de bol pour vous que je me trouve là, à moitié inconscient.</Dest>
+      <Source>Got a signal from the ship before they grav jumped. Guessing it was Barrett. Haven&apos;t really been in a good... space to have a listen. Here you go.</Source>
+      <Dest>On a reçu un signal du vaisseau avant leur astroportation. J&apos;imagine qu&apos;il s&apos;agissait de Barrett. Je n&apos;étais pas en mesure de l&apos;écouter. Tenez.</Dest>
     </String>
     <String List="2">
       <EDID>[02000A81]</EDID>
@@ -4361,6 +4380,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>They took him? Why?</Source>
       <Dest>Ils l&apos;ont emmené ? Pourquoi ?</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A7B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Yeah, you know, you&apos;re really the one who should be upset about all this... Me laying here half conscious? Real inconvenience...</Source>
+      <Dest>Ouais, pardon, c&apos;est franchement pas de bol pour vous que je me trouve là, à moitié inconscient.</Dest>
     </String>
     <String List="2">
       <EDID>[02000A72]</EDID>
@@ -4393,16 +4418,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Et j&apos;étais encore moins, mais vraiment encore moins ravi quand Barrett a dit : “c&apos;est bon, je m&apos;en charge...” Il leur a marmonné quelque chose, puis ils sont tous partis.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A69]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>He really survived the crash without a scratch?</Source>
-      <Dest>Il a vraiment survécu au crash sans une égratignure ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A65]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Skip to the end, Heller.</Source>
       <Dest>Passez-moi les détails, Heller.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A69]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>He really survived the crash without a scratch?</Source>
+      <Dest>Il a vraiment survécu au crash sans une égratignure ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000A61]</EDID>
@@ -4471,6 +4496,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Ouais... Je commence à m&apos;en douter...</Dest>
     </String>
     <String List="2">
+      <EDID>[02000A43]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
+      <Dest>Me faire confiance, c&apos;est ce que je demande à ceux qui ne devraient pas me faire confiance.</Dest>
+    </String>
+    <String List="2">
       <EDID>[02000A5A]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>And he shot something he shouldn&apos;t have...</Source>
@@ -4481,12 +4512,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>Not... what you and I would call a plan, necessarily...</Source>
       <Dest>Pas nécessairement ce que vous et moi, on appellerait un plan...</Dest>
-    </String>
-    <String List="2">
-      <EDID>[02000A43]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>&quot;Trust me&quot; is my go to line when someone shouldn&apos;t trust me.</Source>
-      <Dest>Me faire confiance, c&apos;est ce que je demande à ceux qui ne devraient pas me faire confiance.</Dest>
     </String>
     <String List="2">
       <EDID>[02000A49]</EDID>
@@ -4519,22 +4544,28 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je dois savoir ce qui est arrivé, Heller.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A2D]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
-      <Dest>Nan. Nan, ça ira. Faut juste que je bouge pas trop, avec tous les antidouleurs et les antivomitifs que j&apos;ai dans le sang.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000A3D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>That doesn&apos;t explain the crashed ship.</Source>
       <Dest>Ça n&apos;explique pas le crash du vaisseau.</Dest>
     </String>
     <String List="2">
+      <EDID>[02000A2D]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Nah. Nah, I&apos;ll be all right. Just, you know, wasn&apos;t trying to move around too much with all the pain killers and nausea meds running through me.</Source>
+      <Dest>Nan. Nan, ça ira. Faut juste que je bouge pas trop, avec tous les antidouleurs et les antivomitifs que j&apos;ai dans le sang.</Dest>
+    </String>
+    <String List="2">
       <EDID>[02000A27]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Considering the spaceship wreckage, you mean? Yeah, well, you missed the worst of it. Pretty sure we ripped through all the emergency meds that were salvageable...</Source>
       <Dest>Si l&apos;on considère le crash du vaisseau, vous voulez dire ? Ha, oui, vous avez manqué le pire. Je suis presque sûr qu&apos;on a pris tous les médocs d&apos;urgence qu&apos;on a pu trouver...</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A21]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Who are you?</Source>
+      <Dest>Qui êtes vous ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000A24]</EDID>
@@ -4547,12 +4578,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>Hold still. Let me patch you up.</Source>
       <Dest>Ne bougez pas, je vais vous remettre sur pied.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[02000A21]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Who are you?</Source>
-      <Dest>Qui êtes vous ?</Dest>
     </String>
     <String List="2">
       <EDID>[02000A16]</EDID>
@@ -4615,18 +4640,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Un coursier m&apos;a dit qu&apos;Argos fermait son opération. Pourquoi ne pas avoir mentionné l&apos;attaque ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000A05]</EDID>
-      <REC id="0" idMax="1">INFO:NAM1</REC>
-      <Source>Too risky to put that in the message. Too much liability. You know how it is.</Source>
-      <Dest>Un tel message aurait été trop risqué. Trop de responsabilités. Vous savez bien comment ça fonctionne.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[02000A05]</EDID>
-      <REC id="1" idMax="1">INFO:NAM1</REC>
-      <Source>Our clients need to know when operations start and stop. We handle the rest.</Source>
-      <Dest>Nos clients ont juste besoin de savoir quand commencent les opérations et quand elles prennent fin. On gère tout le reste.</Dest>
-    </String>
-    <String List="2">
       <EDID>[020009FF]</EDID>
       <REC id="0" idMax="2">INFO:NAM1</REC>
       <Source>Don&apos;t push it. I&apos;ve lost people. People I KNEW, all right?</Source>
@@ -4643,6 +4656,18 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC id="2" idMax="2">INFO:NAM1</REC>
       <Source>Even if we knew where they were... *sigh* I&apos;ve lost a lot people on this run. I just want to pack up.</Source>
       <Dest>J&apos;ai perdu beaucoup d&apos;hommes, vous savez. Je n&apos;ai plus qu&apos;une envie, c&apos;est de me barrer.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A05]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Too risky to put that in the message. Too much liability. You know how it is.</Source>
+      <Dest>Un tel message aurait été trop risqué. Trop de responsabilités. Vous savez bien comment ça fonctionne.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000A05]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>Our clients need to know when operations start and stop. We handle the rest.</Source>
+      <Dest>Nos clients ont juste besoin de savoir quand commencent les opérations et quand elles prennent fin. On gère tout le reste.</Dest>
     </String>
     <String List="2">
       <EDID>[020009F3]</EDID>
@@ -4837,12 +4862,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je n&apos;ai pu en chiner qu&apos;un pour le moment, mais je suis certaine qu&apos;il y en a d&apos;autres.</Dest>
     </String>
     <String List="2">
-      <EDID>[0200098B]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>I&apos;m fine. In this line of work, you make do. Even when the worst happens.</Source>
-      <Dest>Ça va, merci. Pour ce boulot-là, il faut bien assurer. Même dans la pire des situations.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000984]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Matsura the Grim? Honestly, a pretty nice guy as far as pirates go.</Source>
@@ -4853,6 +4872,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC id="1" idMax="1">INFO:NAM1</REC>
       <Source>Think I butted heads with his mentor once, years back. Had that same kind of &quot;surprisingly hospitable&quot; vibe. </Source>
       <Dest>Je crois avoir affronté son mentor une fois, il y a des années. Il était, lui aussi, du genre étonnamment cordial. </Dest>
+    </String>
+    <String List="2">
+      <EDID>[0200098B]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>I&apos;m fine. In this line of work, you make do. Even when the worst happens.</Source>
+      <Dest>Ça va, merci. Pour ce boulot-là, il faut bien assurer. Même dans la pire des situations.</Dest>
     </String>
     <String List="2">
       <EDID>[02000988]</EDID>
@@ -5149,16 +5174,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>À plus, Matsura. Enfin... disons, le plus tard possible.</Dest>
     </String>
     <String List="2">
-      <EDID>[020008CB]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Do what you can. A suggestion to the right ears can work wonders.</Source>
-      <Dest>Faites comme vous pouvez. Une suggestion glissée dans la bonne oreille peut faire des miracles.</Dest>
-    </String>
-    <String List="2">
       <EDID>[020008D4]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Hmm... Very well. Goodbye to you all. I have enjoyed this little exchange.</Source>
       <Dest>Hmm... Très bien. Au revoir à tous. J&apos;ai beaucoup apprécié cette discussion.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[020008CB]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Do what you can. A suggestion to the right ears can work wonders.</Source>
+      <Dest>Faites comme vous pouvez. Une suggestion glissée dans la bonne oreille peut faire des miracles.</Dest>
     </String>
     <String List="2">
       <EDID>[020008C2]</EDID>
@@ -5281,12 +5306,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Je... euh... très bien. Dans ce cas, mieux vaudrait redonner sa liberté à Barrett.</Dest>
     </String>
     <String List="2">
-      <EDID>[0200087C]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>This won&apos;t be the last time Barrett escapes the Crimson Fleet. He always gets away. You know that.</Source>
-      <Dest>Ce ne serait pas la première fois que Barrett échappe à la Flotte écarlate. Il s&apos;en tire toujours. Vous le savez bien.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000879]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Is Constellation willing to pay ransom in exchange for this man&apos;s freedom?</Source>
@@ -5305,6 +5324,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Voilà, c&apos;est ce que je disais. La relativité. Nous ne sommes que des créatures de l&apos;univers essayant de fuir ce qui nous poursuit.</Dest>
     </String>
     <String List="2">
+      <EDID>[0200087C]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>This won&apos;t be the last time Barrett escapes the Crimson Fleet. He always gets away. You know that.</Source>
+      <Dest>Ce ne serait pas la première fois que Barrett échappe à la Flotte écarlate. Il s&apos;en tire toujours. Vous le savez bien.</Dest>
+    </String>
+    <String List="2">
       <EDID>[0200086D]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>See, that&apos;s what I like about you, Matsura. Real renaissance man.</Source>
@@ -5317,16 +5342,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Tu vois, c&apos;est de ça que je parle, Matsura. Tu es tellement prévenant.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000864]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>No sense letting people&apos;s last moments be unpleasant.</Source>
-      <Dest>Je ne vois aucun intérêt à rendre déplaisantes les dernières heures d&apos;un être humain.</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000867]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>No reason captivity should be unpleasant.</Source>
       <Dest>Pourquoi la captivité devrait-elle être difficile ?</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000864]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>No sense letting people&apos;s last moments be unpleasant.</Source>
+      <Dest>Je ne vois aucun intérêt à rendre déplaisantes les dernières heures d&apos;un être humain.</Dest>
     </String>
     <String List="2">
       <EDID>[0200086A]</EDID>
@@ -5365,12 +5390,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Pour tout vous dire, je n&apos;ai pas vu le temps passer. Matsura le Cruel est un hôte délicieux.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000848]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>Wait. The mythical mare with a magic horn thing? Come on. Was King Arthur riding on it too?</Source>
-      <Dest>Attends, la monture mythique avec la corne magique ? Arrête. Tu vas aussi me dire qu&apos;elle était chevauchée par le roi Arthur ?</Dest>
-    </String>
-    <String List="2">
       <EDID>[0200084B]</EDID>
       <REC id="0" idMax="1">INFO:NAM1</REC>
       <Source>Okay, it was more of an extremophile in the vague shape of a horse, but my point still stands. You need an open mind out there.</Source>
@@ -5387,6 +5406,12 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>I&apos;m here to take you home, Barrett.</Source>
       <Dest>Je viens vous ramener chez vous, Barrett.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000848]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>Wait. The mythical mare with a magic horn thing? Come on. Was King Arthur riding on it too?</Source>
+      <Dest>Attends, la monture mythique avec la corne magique ? Arrête. Tu vas aussi me dire qu&apos;elle était chevauchée par le roi Arthur ?</Dest>
     </String>
     <String List="2">
       <EDID>[0200084F]</EDID>
@@ -5407,16 +5432,16 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>Une licorne. Et je ne rigole pas.</Dest>
     </String>
     <String List="2">
-      <EDID>[02000842]</EDID>
-      <REC>INFO:NAM1</REC>
-      <Source>You&apos;re pulling my leg again, right? What&apos;s the weirdest thing you&apos;ve seen? No exaggerations this time.</Source>
-      <Dest>Tu te fiches encore de moi, c&apos;est ça ? Qu&apos;est-ce que t&apos;as vu de plus fou ? N&apos;exagère pas, cette fois.</Dest>
-    </String>
-    <String List="2">
       <EDID>[0200083F]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>Oh yeah. There&apos;s no certainty to the universe at all. Once you really start getting out there, the laws of physics kind of turn into suggestions.</Source>
       <Dest>Ah oui. L&apos;univers ne renvoie aucune certitude. Une fois qu&apos;on s&apos;y trouve, les lois de la physique deviennent plutôt des suggestions.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000842]</EDID>
+      <REC>INFO:NAM1</REC>
+      <Source>You&apos;re pulling my leg again, right? What&apos;s the weirdest thing you&apos;ve seen? No exaggerations this time.</Source>
+      <Dest>Tu te fiches encore de moi, c&apos;est ça ? Qu&apos;est-ce que t&apos;as vu de plus fou ? N&apos;exagère pas, cette fois.</Dest>
     </String>
     <String List="2">
       <EDID>[02000839]</EDID>
@@ -5653,18 +5678,6 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <Dest>[&lt;Global=RAS_BrokenShipQuest_ShiptechRepairCost&gt; Credits] J&apos;ai laissé un vaisseau sévèrement endommagé sur &lt;Alias=PlanetAlias&gt;. Pouvez-vous envoyer quelqu&apos;un le réparer et le récupérer ?</Dest>
     </String>
     <String List="2">
-      <EDID>[02000833]</EDID>
-      <REC id="0" idMax="1">INFO:NAM1</REC>
-      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
-      <Dest>Oh ! J&apos;ai déjà vu ça auparavant. Cette signature gravitationnnelle étrange, c&apos;est vraiment unique... Je ne sais pas exactement ce que c&apos;est, mais je connais quelqu&apos;un qui pourrait certainement vous aider.</Dest>
-    </String>
-    <String List="2">
-      <EDID>[02000833]</EDID>
-      <REC id="1" idMax="1">INFO:NAM1</REC>
-      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
-      <Dest>Il s&apos;appelle Barrett. Il est membre d&apos;un groupe d&apos;explorateur nommé &quot;Constellation&quot;. Vous le trouverez dans un maison luxueuse dans le quartier du TAMS de New Atlantis. Je le préviendrai de votre arrivée. Dites-lui que ce sera plus cher la prochaine fois !</Dest>
-    </String>
-    <String List="2">
       <EDID>[02000827]</EDID>
       <REC>INFO:NAM1</REC>
       <Source>I found a strange artifact while exploring, any clues what it is ?</Source>
@@ -5681,6 +5694,18 @@ Une fois que vous aurez quitté la planète (à l&apos;aide de la balise ou non)
       <REC>INFO:NAM1</REC>
       <Source>There is a museum on New Homestead. Its owner is probably the most informed on that kind of stuff in all the Settled Systems.</Source>
       <Dest>Il y a un musée à Nouveau-Départ. Son propriétaire est probablement le mieux informé sur ce genre de chose dans tous les Systèmes Occupés.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000833]</EDID>
+      <REC id="0" idMax="1">INFO:NAM1</REC>
+      <Source>Oh! I&apos;ve seen this before. These anomalous gravitational signatures, it&apos;s very unique... I don&apos;t know much on what it is though, but I know someone that could surely help you.</Source>
+      <Dest>Oh ! J&apos;ai déjà vu ça auparavant. Cette signature gravitationnnelle étrange, c&apos;est vraiment unique... Je ne sais pas exactement ce que c&apos;est, mais je connais quelqu&apos;un qui pourrait certainement vous aider.</Dest>
+    </String>
+    <String List="2">
+      <EDID>[02000833]</EDID>
+      <REC id="1" idMax="1">INFO:NAM1</REC>
+      <Source>The name&apos;s Barrett. He&apos;s member of an exploration group named &quot;Constellation&quot;. You will find them in a luxurious house in the MAST District of New Atlantis. I will warn them you&apos;re coming in. Tell Barrett it will be more expensive next time !</Source>
+      <Dest>Il s&apos;appelle Barrett. Il est membre d&apos;un groupe d&apos;explorateur nommé &quot;Constellation&quot;. Vous le trouverez dans un maison luxueuse dans le quartier du TAMS de New Atlantis. Je le préviendrai de votre arrivée. Dites-lui que ce sera plus cher la prochaine fois !</Dest>
     </String>
   </Content>
 </SSTXMLRessources>
