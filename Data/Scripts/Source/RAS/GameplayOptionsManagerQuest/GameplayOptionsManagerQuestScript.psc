@@ -14,6 +14,7 @@ GameplayOption Property RAS_LodgeDoorDebugOption Mandatory Const Auto
 ObjectReference Property NewAtlantisToLodgeDoorREF Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 Message Property RAS_LodgeDoorDebugMessage Mandatory Const Auto
+GameplayOption Property RAS_MQCompleteVanillaQuestOption Mandatory Const Auto
 
 Event OnQuestInit()
     RegisterForGameplayOptionChangedEvent()
@@ -83,5 +84,14 @@ Event OnGameplayOptionChanged(GameplayOption[] aChangedOptions)
         NewAtlantisToLodgeDoorREF.BlockActivation(False)
         NewAtlantisToLodgeDoorREF.Unlock()
         RAS_LodgeDoorDebugMessage.ShowAsHelpMessage("", 5.0, 0.0, 1)
+    EndIf
+
+    optionIndex = aChangedOptions.Find(RAS_MQCompleteVanillaQuestOption)
+    If(optionIndex != -1)
+        RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
+        If(!managerQuest.MQ101.IsRunning())
+            managerQuest.PreventMQ101FirstStage()
+            managerQuest.HookMQ()
+        EndIf
     EndIf
 EndEvent
