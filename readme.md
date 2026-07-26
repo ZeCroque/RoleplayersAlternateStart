@@ -240,7 +240,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 
 ## 8. MY OTHER MODS
 
-- [Astra Economy - Legendary Trading and Rerolling](https://www.nexusmods.com/starfield/mods/11256) : Simple mod to exchange legendary equipments for Astras or reroll your existing legendary gear by talking with Stache from the Trackers Alliance's HQ
+- [Astra Economy - Legendary Trading and Rerolling](https://www.nexusmods.com/starfield/mods/11256) : Turns Stache at the Trackers Alliance HQ into a proper vendor, allowing you to sell legendary equipment and buy X-Tech using Astras as the currency.
 
 ## 9. RECOMMENDED MODS
 
@@ -271,14 +271,14 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - Starfield Plugin Bridge
 - Visual Studio Code
 - WWise
-- WWise Audio Unpacker
+- WWise Audio Unpacker & FooBar2000
 - Audacity
 - xVaSynth
 - xTranslator
 - FOMOD Creation Tool & FCK
 - Bethesda Archive Extractor
 - Champollion
-- Gimp
+- Gimp & Photopea
 - ChatGPT as a help for naming things, writing quests logs, this mod page, etc...
 
 ## 12. LICENSING/LEGAL 
