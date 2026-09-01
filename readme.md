@@ -78,7 +78,7 @@ Choose from a variety of starting scenarios:
 
 ### Starting Home
 
-Start with any vanilla home already unlocked (except quest-tied ones, like the Mercury Tower Penthouse) as well as a selection of supported mod-added homes. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (see *COMPATIBILITY* section for a detailed list).
+Start with any vanilla home already unlocked (except quest-tied ones, like the Mercury Tower Penthouse) as well as a selection of supported mod-added homes. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (see `7. COMPATIBILITY` section for a detailed list).
 
 ### Starting Ship & Vehicle Options
 
@@ -132,12 +132,12 @@ The mod is available in the following languages:
 - English
 - French
 - German (thanks to PearlCanopus)
-- Brazilian Portuguese (incomplete)(thanks to Fabeco00) 
+- Brazilian Portuguese (with the help of AI) (thanks to Fabeco00) 
 - Simplified Chinese (incomplete)(thanks to Peter4Master)
 
 ## 3. FREQUENTLY ASKED QUESTIONS
 
-#### In which POI can the artifact added by the mod spawn?
+### In which POI can the artifact added by the mod spawn?
 Here's a list:
 - [Abandoned Mineral Refinery](https://starfieldwiki.net/wiki/Starfield:Abandoned_Mineral_Refinery)
 - [NeuraDyne Botany Laboratory](https://starfieldwiki.net/wiki/Starfield:NeuraDyne_Botany_Laboratory)
@@ -155,16 +155,16 @@ Here's a list:
 - [Mineral Caverns](https://starfieldwiki.net/wiki/Starfield:Mineral_Caverns)
 - [Cave](https://starfieldwiki.net/wiki/Starfield:Cave) (only in the "OEAF008" layout)
 
-#### Does it support vanilla traits ?
+### Does it support vanilla traits ?
 Yes, indeed. There's a few things to note however :
 - While I made it so you can visit your parents from game start, they will only have dialogs after you join Constellation
 - The adoring fan will only show up after you complete the "Echoes From Vectera" quest, otherwise his dialogs wouldn't have made any sense (thanks to  TwoArmedMan15 for suggesting that)
 - The dream home quest will trigger at the start of the game (you need to complete "One Small Step" in vanilla)
 
-#### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
-Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the *Feedback* section if you find that dialog already listed before requesting.
+### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
+Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the `13. FEEDBACK` section if you find that dialog already listed before requesting.
 
-#### What counts as a compatible mod-added location?
+### What counts as a compatible mod-added location?
 - All locations using the "LocTypeSettlement" keyword are automatically added to the "Settlements" or "Starstations" submenus. 
 - All location using the vanilla "LocTypeXXX" keywords for dungeons and civilian/scientific/mining outposts will be added to the random poll of corresponding options.
 - The mod will move the player (and, if appropriate, their ship) to a marker selected under the following logic:
@@ -173,7 +173,7 @@ Yes, that's in my plans. Currently the mod only covers the first steps of MQ. Al
     - If there's no ship marker, the map marker will be selected
     - If there's several map markers, all of the above will be superseded and a terminal would appear to select a map marker (or the player ship, moving it first to an available ship marker, if appropriate)
 
-#### Why doesn't my mod-added weapon appear in the gear terminal?
+### Why doesn't my mod-added weapon appear in the gear terminal?
 Only items distributed through leveled lists are automatically included.
 
 ## 4. KNOWN ISSUES
@@ -205,7 +205,7 @@ And two optionals :
 - Use the Mod Manager Download button. Install and enable the file(s) in your favorite mod manager (ModOrganizer2 is my personal preference).
 
 **Manual**
-- Extract the required files (cf. `2. MOD CONTENT`) from the archive to your Data folder and activate them in the in-game Creations menu. Delete the *RoleplayersAlternateStart - Voice_en_NO_AI.ba2* file, or replace the regular file by removing *NO_AI* from the filename, depending on whether or not you want the spliced/AI-generated voices.
+- Extract the required files from the archive to your Data folder and activate them in the in-game Creations menu. Delete the *RoleplayersAlternateStart - Voice_en_NO_AI.ba2* file, or replace the regular file by removing *NO_AI* from the filename, depending on whether or not you want the spliced/AI-generated voices.
 
 **Note:**
 On existing saves, the mod will de-activate itself until NG+ and shouldn't cause any issues.
@@ -247,7 +247,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - [Not Yet Shattered Space by paulbrock](https://www.nexusmods.com/starfield/mods/14112)
 - [The Trackers Alliance Delayed Start by strangeWindmill](https://www.nexusmods.com/starfield/mods/11533)
 - [Nova Transit System by LySoftDev (Creations)](https://creations.bethesda.net/fr/starfield/details/78c9469f-7b64-42e6-a62c-d0a33cad067c/Nova_Transit_System) — Especially useful for pedestrian starts
-- DownfallNemesis' house mods
+- [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods)
 
 ## 10. CREDITS
 
@@ -257,7 +257,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - Thanks to wskeever for the mod [Summoning of Ship - Ship Remote Control](https://www.nexusmods.com/starfield/mods/6216) and especially the ship landing navmesh logic that I use for the rescue beacon
 - Thanks to Wynterhawk for the Creation [Roll Your Own Start](https://creations.bethesda.net/en/starfield/details/c27a121a-c565-4ae0-9394-c58952c98f86/Wynter__39_s_Roll_Your_Own_Start) which learnt me a proper way to edit the new game logic that have been crucial for the 1.1.0 update.
 - Thanks to xtcrefugee for answering my questions about mid/small masters on the Starfield Modding Discord
-- Thanks to Redzy7 for his post on Starfield's design style for the thumbnail (https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/)
+- Thanks to Redzy7 for his [post](https://www.reddit.com/r/Starfield/comments/15row6b/im_in_love_the_starfield_design_style_so_here_are/) on Starfield's design style for the thumbnail 
 - Thanks to the Starfield's fonts authors
 - Thanks to Fabeco00 for the brazilian portuguese translation
 - Thanks to Peter4Master for the chinese translations
@@ -285,7 +285,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 
 If you want to modify and/or redistribute this mod, I would like to be contacted first please. Note that it is under GPL3 licensing, thus you have the obligation to make any modification done to the original source code available somewhere publicly.
 
-You can find the source code here : https://github.com/ZeCroque/RoleplayersAlternateStart
+You can find the source code [here](https://github.com/ZeCroque/RoleplayersAlternateStart).
 
 ## 13. FEEDBACK
 
@@ -306,7 +306,6 @@ You can find the source code here : https://github.com/ZeCroque/RoleplayersAlter
     - Reference to Argos during Barrett's quest "Breach of Contract"
     - Constellation dialog option during "The Audition" quest for the Ebbside Strikers
     - Lin & Heller appear during on of the "Revelations" flashbacks
-    - Let me now !
 - AI-generated voices for Maurice Lyon and the ship technicians
 - Voice acting for Orora Sabine and "The Guide"
 - Faction starts
