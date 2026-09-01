@@ -29,7 +29,7 @@ Inspired by classic mods like [Start Me Up (Fallout 4)](https://www.nexusmods.co
 - **Immersive introduction**: Begin your journey in a custom area inspired by the Unity, seamlessly integrated into the game's lore and narrative.
 - **Made with compatibility in mind**: The mod relies primarily on hooks and replacers, keeping vanilla quest edits to an absolute minimum to ensure compatibility with most mods.
 - **Dynamic integration**: Automatically detects and integrates mod-added locations, ships, and items into the starting options. No patches required.
-- **Modder-friendly**: Built from the ground up to be easily extended by other mod authors. Documentation is planned for a future release. Also fully open-source — see *LICENSING/LEGAL* for more info.
+- **Modder-friendly**: Built from the ground up to be easily extended by other mod authors. Documentation is planned for a future release. Also fully open-source@ — see `12. LICENSING/LEGAL` for more info@.
 
 ## 2. DETAILS
 
@@ -61,7 +61,7 @@ Speak with "The Guide", a unique Starborn NPC who appears at the Viewport in New
 
 - Once acquired, you may choose what to do with the artifact. Whatever you choose, Constellation will eventually learn of its existence and reach out to you.
 - Barrett will leave to assist the Vectera Mining Operation before your arrival at the Lodge. During his recovery of Constellation's second artifact, Barrett attracted pirate attention, prompting the Argos miners to call for help after discovering evidence of hostile activity in the area.
-- After entering the Lodge, you will proceed through the standard Constellation intro with new dialogue that does not reference Argos or Vectera (with optional spliced and AI-generated voices).
+- After entering the Lodge, you will proceed through the standard Constellation intro with new dialogue that does not reference Argos or Vectera@ (with optional spliced and AI-generated voices)@.
 - After Sarah's first quest, you will be tasked with rescuing Barrett on Vectera, again with no prior miner references.
 - Completing Barrett's rescue grants access to the Frontier via a brief follow-up quest.
 - The vanilla "One Small Step" quest is skipped entirely. As a result, events depending on it will not occur (e.g. the SSNN interview about the Vectera events). For compatibility with certain mods, you may still wish to mark the quest as completed. This can be done through the "Narrative Adjustments" terminal, but will disable the "Argos Recruit" entry point into the main quest.
@@ -78,7 +78,7 @@ Choose from a variety of starting scenarios:
 
 ### Starting Home
 
-Start with any vanilla home already unlocked (except quest-tied ones, like the Mercury Tower Penthouse) as well as a selection of supported mod-added homes. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (see `7. COMPATIBILITY` section for a detailed list).
+Start with any vanilla home already unlocked (except quest-tied ones, like the Mercury Tower Penthouse) as well as a selection of supported mod-added homes. Currently most of [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods) are supported (@see the `7. COMPATIBILITY` section@|go to my Discord server| for a detailed list).
 
 ### Starting Ship & Vehicle Options
 
@@ -162,8 +162,9 @@ Yes, indeed. There's a few things to note however :
 - The dream home quest will trigger at the start of the game (you need to complete "One Small Step" in vanilla)
 
 ### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
-Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the `13. FEEDBACK` section if you find that dialog already listed before requesting.
+Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the @`13. FEEDBACK` section@|**Planned Features** topic on my Discord server| if you find that dialog already listed before requesting.
 
+@
 ### What counts as a compatible mod-added location?
 - All locations using the "LocTypeSettlement" keyword are automatically added to the "Settlements" or "Starstations" submenus. 
 - All location using the vanilla "LocTypeXXX" keywords for dungeons and civilian/scientific/mining outposts will be added to the random poll of corresponding options.
@@ -175,6 +176,7 @@ Yes, that's in my plans. Currently the mod only covers the first steps of MQ. Al
 
 ### Why doesn't my mod-added weapon appear in the gear terminal?
 Only items distributed through leveled lists are automatically included.
+@|## Find more questions on my Discord server.|
 
 ## 4. KNOWN ISSUES
 

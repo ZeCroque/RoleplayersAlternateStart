@@ -24,6 +24,17 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Package",
+            "type": "process",
+            "command": "py",
+            "args": ["-3", "./build.py"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
