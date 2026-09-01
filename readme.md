@@ -132,7 +132,7 @@ The mod is available in the following languages:
 - English
 - French
 - German (thanks to PearlCanopus)
-- Brazilian Portuguese (with the help of AI) (thanks to Fabeco00) 
+- Brazilian Portuguese @(with the help of AI)@ (thanks to Fabeco00) 
 - Simplified Chinese (incomplete)(thanks to Peter4Master)
 
 ## 3. FREQUENTLY ASKED QUESTIONS
@@ -153,7 +153,7 @@ Here's a list:
 - [Thermal Rise](https://starfieldwiki.net/wiki/Starfield:Thermal_Rise)
 - [Hillside Cave](https://starfieldwiki.net/wiki/Starfield:Hillside_Cave)
 - [Mineral Caverns](https://starfieldwiki.net/wiki/Starfield:Mineral_Caverns)
-- [Cave](https://starfieldwiki.net/wiki/Starfield:Cave) (only in the "OEAF008" layout)
+- [Cave](https://starfieldwiki.net/wiki/Starfield:Cave) (in the "OEAF008" layout)
 
 ### Does it support vanilla traits ?
 Yes, indeed. There's a few things to note however :
