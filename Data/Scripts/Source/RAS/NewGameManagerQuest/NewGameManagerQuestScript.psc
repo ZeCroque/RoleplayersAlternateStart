@@ -286,6 +286,8 @@ Function CustomStartSetup()
   ; If the player has the Starter Home trait, queue up the quest
   If (Game.GetPlayer().HasPerk(PERK_StarterHome))
     TraitStarterHome.SetStageNoWait(100)
+    RefCollectionAlias dreamHomeDoors = TraitStarterHome.GetAlias(6) as RefCollectionAlias
+    (dreamHomeDoors as TraitStarterHomeDoorsScript).OnLoad(dreamHomeDoors.GetAt(0))
   Else
     TraitStarterHome.Stop()
   EndIf
