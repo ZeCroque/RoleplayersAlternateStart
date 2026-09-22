@@ -13,7 +13,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_01
 Function Fragment_TerminalMenu_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMinLevel.SetValue(10)
+RAS_LocationMinLevel.SetValue(5)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMinLevel)
 ;END CODE
 EndFunction
@@ -22,7 +22,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_02
 Function Fragment_TerminalMenu_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMinLevel.SetValue(25)
+RAS_LocationMinLevel.SetValue(10)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMinLevel)
 ;END CODE
 EndFunction
@@ -31,7 +31,7 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_TerminalMenu_03
 Function Fragment_TerminalMenu_03(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RAS_LocationMinLevel.SetValue(50)
+RAS_LocationMinLevel.SetValue(25)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMinLevel)
 ;END CODE
 EndFunction
@@ -39,6 +39,15 @@ EndFunction
 
 ;BEGIN FRAGMENT Fragment_TerminalMenu_04
 Function Fragment_TerminalMenu_04(ObjectReference akTerminalRef)
+;BEGIN CODE
+RAS_LocationMinLevel.SetValue(50)
+RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMinLevel)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_TerminalMenu_05
+Function Fragment_TerminalMenu_05(ObjectReference akTerminalRef)
 ;BEGIN CODE
 RAS_LocationMinLevel.SetValue(70)
 RAS_LocationSpawnPointFinderQuest.UpdateCurrentInstanceGlobal(RAS_LocationMinLevel)
