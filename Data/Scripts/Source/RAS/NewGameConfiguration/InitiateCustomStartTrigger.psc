@@ -9,6 +9,8 @@ GlobalVariable Property RAS_DynamicTerminalIndex_Start_Starstation Mandatory Con
 Message Property RAS_StarstationStartWarning Mandatory Const Auto
 Quest Property RAS_BrokenShipQuest Mandatory Const Auto
 Message Property RAS_BrokenShipWarning Mandatory Const Auto
+GlobalVariable Property RAS_DynamicTerminalIndex_Start_AtDreamHome Mandatory Const Auto
+Message Property RAS_DreamHomeWarning Mandatory Const Auto
 
 Bool TimerRunning
 
@@ -23,6 +25,10 @@ Event OnTriggerEnter(ObjectReference akActionRef)
             If((RAS_ShipServicesActorREF as RAS:NewGameConfiguration:ShipVendorScript).NoShipSelected)
                 If(RAS_PlayerSelectedRandomStart.IsTrue())
                     If(!RAS_RandomStartWarning.Show())
+                        Return
+                    EndIf
+                ElseIf(startingLocationTerminal.SelectedEntryIndex == RAS_DynamicTerminalIndex_Start_AtDreamHome.GetValueInt())
+                    If(!RAS_DreamHomeWarning.Show())
                         Return
                     EndIf
                 ElseIf(startingLocationTerminal.SelectedEntryIndex == RAS_DynamicTerminalIndex_Start_Starstation.GetValueInt())
