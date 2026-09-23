@@ -54,6 +54,9 @@ Event OnActivate(ObjectReference akActionRef)
                         Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
                         Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
                     EndIf
+                    If((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).rbtGearEnabled)
+                        (Game.GetFormFromFile(0xF0D, "rbt_gear.esm") as GEAR:Main).UseItem()
+                    EndIf
 
                     KeepGearMode = False
                     GearYetBought = False

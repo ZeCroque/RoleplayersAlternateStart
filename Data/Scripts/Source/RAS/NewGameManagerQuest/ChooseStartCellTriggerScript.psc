@@ -26,6 +26,14 @@ Event OnCellLoad()
     Game.GetPlayer().RemoveItem(Spacesuit_Constellation_Helmet_01, abSilent = True)
     Game.GetPlayer().RemoveItem(Clothes_Miner_UtilitySuit, abSilent = True)
 
+    Form belongings = Game.GetFormFromFile(0x6, "rbt_gear.esm")
+    If(belongings)
+        If(Game.GetPlayer().GetItemCount(belongings))
+            Game.GetPlayer().RemoveItem(belongings)
+            managerQuest.rbtGearEnabled = True
+        EndIf
+    EndIf
+
     Bool hasExtraGear = False
     If(Game.GetPlayer().GetItemCount() > 0)
         Game.GetPlayer().RemoveAllItems(managerQuest.RAS_StartingStuffContainer)
@@ -42,7 +50,10 @@ Event OnCellLoad()
     EndIf
     Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
     Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
-    
+    If(managerQuest.rbtGearEnabled)
+        (Game.GetFormFromFile(0xF0D, "rbt_gear.esm") as GEAR:Main).UseItem()
+    EndIf
+
     managerQuest.StayBlack.Remove()
     managerQuest.InputLayer.Delete()    
     RAS_CustomStartTutorialMessage.Show()

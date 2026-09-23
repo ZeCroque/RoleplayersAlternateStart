@@ -111,6 +111,8 @@ Bool Property StarbornStart Auto Conditional
 Bool Property StarbornVanillaStart Auto Conditional
 Bool Property ImmediateStarbornStart Auto Conditional
 
+Bool Property rbtGearEnabled Auto Hidden
+
 CustomEvent ConfigurationChanged
 
 Int UnityCount = 0
