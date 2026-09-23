@@ -29,7 +29,7 @@ Inspired by classic mods like [Start Me Up (Fallout 4)](https://www.nexusmods.co
 - **Immersive introduction**: Begin your journey in a custom area inspired by the Unity, seamlessly integrated into the game's lore and narrative.
 - **Made with compatibility in mind**: The mod relies primarily on hooks and replacers, keeping vanilla quest edits to an absolute minimum to ensure compatibility with most mods.
 - **Dynamic integration**: Automatically detects and integrates mod-added locations, ships, and items into the starting options. No patches required.
-- **Modder-friendly**: Built from the ground up to be easily extended by other mod authors. Documentation is planned for a future release. Also fully open-source@ — see `12. LICENSING/LEGAL` for more info@.
+- **Modder-friendly**: Built from the ground up to be easily extended by other mod authors.@ Documentation is planned for a future release.@ Also fully open-source@ — see `12. LICENSING/LEGAL` for more info@.
 
 ## 2. DETAILS
 
@@ -53,7 +53,7 @@ Discovering the artifact launches an alternate introduction that bypasses the Ve
 
 #### 3. The Guide
 
-Speak with "The Guide", a unique Starborn NPC who appears at the Viewport in New Atlantis after your first encounter with the Hunter.
+Speak with "The Guide", an unique (unvoiced) Starborn NPC who appears at the Viewport in New Atlantis after your first encounter with the Hunter.
 
 "The Guide" will direct you toward Artifact Eta and initiate the same alternate introduction as the "Organic Discovery" path.
 
@@ -137,6 +137,9 @@ The mod is available in the following languages:
 
 ## 3. FREQUENTLY ASKED QUESTIONS
 
+### |NPCs at the lodge, |The Guide and/or Orora Sabine have no dialogs, can you fix it?
+There's@ currently@ no voice over for the dialogs added by the mod, but there is dialogs you can access if you activate the subtitles in the "Accessibility" menu.
+
 ### In which POI can the artifact added by the mod spawn?
 Here's a list:
 - [Abandoned Mineral Refinery](https://starfieldwiki.net/wiki/Starfield:Abandoned_Mineral_Refinery)
@@ -161,10 +164,10 @@ Yes, indeed. There's a few things to note however :
 - The adoring fan will only show up after you complete the "Echoes From Vectera" quest, otherwise his dialogs wouldn't have made any sense (thanks to  TwoArmedMan15 for suggesting that)
 - The dream home quest will trigger at the start of the game (you need to complete "One Small Step" in vanilla)
 
-### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
-Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the @`13. FEEDBACK` section@|**Planned Features** topic on my Discord server| if you find that dialog already listed before requesting.
-
 @
+### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
+Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the `13. FEEDBACK` section if you find that dialog already listed before requesting.
+
 ### What counts as a compatible mod-added location?
 - All locations using the "LocTypeSettlement" keyword are automatically added to the "Settlements" or "Starstations" submenus. 
 - All location using the vanilla "LocTypeXXX" keywords for dungeons and civilian/scientific/mining outposts will be added to the random poll of corresponding options.
@@ -181,7 +184,7 @@ Only items distributed through leveled lists are automatically included.
 ## 4. KNOWN ISSUES
 
 - The ship called by the rescue beacon may clip into rocks or float slightly after landing. This is a current engine limitation; I will update if a solution is found.
-- No voice lines for the dialogs added to Maurice Lyon, Orora Sabine and the ship technicians.
+- No voice lines for the dialogs added to| the Lodge NPCs,| Maurice Lyon, Orora Sabine and the ship technicians.
 - No voice lines for "The Guide"
 
 Please let me know if you find something else.
@@ -227,6 +230,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
     - [Paradiso Cabin](https://www.nexusmods.com/starfield/mods/9881)
     - [Small Akila Player Home](https://www.nexusmods.com/starfield/mods/11444)
     - [Trait Starter Homes](https://www.nexusmods.com/starfield/mods/13929)
+- [Starter - Background Gear](https://www.nexusmods.com/starfield/mods/17723) : support embedded in the main file. The gear gets added automatically to your inventory upon entering the custom Unity and is also added back to you if you reset your loadout at the gear vendor terminal.
 - [Take Items Through Unity - No Console Commands by Wartortle](https://www.nexusmods.com/starfield/mods/7309) : compatibility patch included. Re-install my mod if you're adding this one part way.
 - [POI Variations - No More Duplicates by PlatinumPoster](https://www.nexusmods.com/starfield/mods/10825) : compatible, but will limit the possible locations for artifact spawn. Find a list [here](https://www.nexusmods.com/starfield/articles/1066).
 - [Nova Transit System by LySoftDev (Creations)](https://creations.bethesda.net/fr/starfield/details/78c9469f-7b64-42e6-a62c-d0a33cad067c/Nova_Transit_System): compatible, but make sure my mod is loaded after this one
@@ -250,6 +254,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - [The Trackers Alliance Delayed Start by strangeWindmill](https://www.nexusmods.com/starfield/mods/11533)
 - [Nova Transit System by LySoftDev (Creations)](https://creations.bethesda.net/fr/starfield/details/78c9469f-7b64-42e6-a62c-d0a33cad067c/Nova_Transit_System) — Especially useful for pedestrian starts
 - [DownfallNemesis' house mods](https://next.nexusmods.com/profile/DownfallNemesis/mods)
+- [Starter - Background Gear](https://www.nexusmods.com/starfield/mods/17723)
 
 ## 10. CREDITS
 
