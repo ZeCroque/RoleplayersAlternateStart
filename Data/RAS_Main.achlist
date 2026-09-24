@@ -95,6 +95,7 @@
 	"Data\\Scripts\\RAS\\MQReplacer\\MQReplacerIntroQuestScript.pex",
 	"Data\\Scripts\\RAS\\Utility\\ModInfo.pex",
 	"Data\\Scripts\\RAS\\Fragments\\TopicInfos\\TIF_RAS_BrokenShipQuest_RepairShip.pex",
+	"Data\\Scripts\\RAS\\EmbeddedModSupport\\rbtGear\\UnpackEffectScript.pex",
 	"Data\\Textures\\Interface\\WorkshopIcons\\RoleplayersAlternateStart.esm\\0000181ACL.dds",
 	"Data\\Strings\\RoleplayersAlternateStart_de.DLSTRINGS",
 	"Data\\Strings\\RoleplayersAlternateStart_de.ILSTRINGS",
