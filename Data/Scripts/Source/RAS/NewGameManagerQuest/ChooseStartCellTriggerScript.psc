@@ -12,6 +12,7 @@ Armor Property Clothes_Miner_UtilitySuit Mandatory Const Auto
 Outfit Property Outfit_Starborn Auto Const Mandatory
 Message Property RAS_StartingStuffWarning Mandatory Const Auto
 Message Property RAS_MissingSoundWarning Mandatory Const Auto
+Spell Property RAS_rbtGear_UnpackSpell Auto Const Mandatory
 
 Event OnCellLoad()
     RAS:NewGameManagerQuest:NewGameManagerQuestScript managerQuest = RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript
@@ -51,7 +52,7 @@ Event OnCellLoad()
     Game.GetPlayer().AddItem(Clothes_GenWare_01, 1, True)
     Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
     If(managerQuest.rbtGearEnabled)
-        (Game.GetFormFromFile(0xF0D, "rbt_gear.esm") as GEAR:Main).UseItem()
+        RAS_rbtGear_UnpackSpell.Cast(Game.GetPlayer())
     EndIf
 
     managerQuest.StayBlack.Remove()

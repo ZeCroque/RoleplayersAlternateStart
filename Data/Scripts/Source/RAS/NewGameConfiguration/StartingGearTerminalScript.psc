@@ -16,6 +16,7 @@ Armor Property Clothes_GenWare_01 Mandatory Const Auto
 Quest Property RAS_NewGameManagerQuest Mandatory Const Auto
 ObjectReference Property RAS_AnomalyActivatorREF01 Mandatory Const Auto
 Outfit Property Outfit_Starborn Auto Const Mandatory
+Spell Property RAS_rbtGear_UnpackSpell Auto Const Mandatory
 
 Bool Property KeepGearMode Auto Conditional
 
@@ -55,7 +56,8 @@ Event OnActivate(ObjectReference akActionRef)
                         Game.GetPlayer().EquipItem(Clothes_GenWare_01, false, true)
                     EndIf
                     If((RAS_NewGameManagerQuest as RAS:NewGameManagerQuest:NewGameManagerQuestScript).rbtGearEnabled)
-                        (Game.GetFormFromFile(0xF0D, "rbt_gear.esm") as GEAR:Main).UseItem()
+                        RAS_rbtGear_UnpackSpell.Cast(Game.GetPlayer())
+                        Utility.Wait(0.1)
                     EndIf
 
                     KeepGearMode = False
