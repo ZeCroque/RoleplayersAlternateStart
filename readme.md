@@ -288,7 +288,7 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - Gimp & Photopea
 - ChatGPT as a help for naming things, writing quests logs, this mod page, etc...
 
-## 12. LICENSING/LEGAL 
+## 12. LICENSING/LEGAL
 
 If you want to modify and/or redistribute this mod, I would like to be contacted first please. Note that it is under GPL3 licensing, thus you have the obligation to make any modification done to the original source code available somewhere publicly.
 
