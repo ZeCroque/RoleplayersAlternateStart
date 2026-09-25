@@ -164,8 +164,7 @@ Yes, indeed. There's a few things to note however :
 - The adoring fan will only show up after you complete the "Echoes From Vectera" quest, otherwise his dialogs wouldn't have made any sense (thanks to  TwoArmedMan15 for suggesting that)
 - The dream home quest will trigger at the start of the game (you need to complete "One Small Step" in vanilla)
 
-@
-### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
+@### I found a mention to Constellation/Vectera in the dialogs with that NPC, can you fix it?
 Yes, that's in my plans. Currently the mod only covers the first steps of MQ. All other quests/dialogs are left untouched, I'll add them later in an optional file (to ensure maximum compatibility with the base mod). Please check in the `13. FEEDBACK` section if you find that dialog already listed before requesting.
 
 ### What counts as a compatible mod-added location?
@@ -178,8 +177,7 @@ Yes, that's in my plans. Currently the mod only covers the first steps of MQ. Al
     - If there's several map markers, all of the above will be superseded and a terminal would appear to select a map marker (or the player ship, moving it first to an available ship marker, if appropriate)
 
 ### Why doesn't my mod-added weapon appear in the gear terminal?
-Only items distributed through leveled lists are automatically included.
-@|## Find more questions on my Discord server.|
+Only items distributed through leveled lists are automatically included.@|### Find more questions on my Discord server.|
 
 ## 4. KNOWN ISSUES
 
@@ -242,7 +240,6 @@ On existing saves, the mod will de-activate itself until NG+ and shouldn't cause
 - [Take Your Time - Quests Don't Autostart by Gothos25](https://www.nexusmods.com/starfield/mods/10419): compatible
 - [Customizable Expansion Delay by Samantha Says](https://www.nexusmods.com/starfield/mods/16660): compatible
 - Globally, any mod that changes DLC starting conditions should work, except those affecting Terran Armada, for which I embedded in the main mod as many patches as I can. If you have issues or find a missing compatibility for Terran Armada, feel free to report :)
-
 
 ## 8. MY OTHER MODS
 
