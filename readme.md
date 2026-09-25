@@ -15,7 +15,7 @@
 11. Tools used
 12. Licensing/Legal 
 13. Feedback
-
+<**This is the achievement friendly version of the mod. It includes all the features of the free version, except for the "Level-up" feature, and adds achievement support.**>
 ## 1. OVERVIEW
 
 *Tired of always starting your journey as a miner on Vectera? NG+ doesn't suit you? Roleplayers' Alternate Start is what you've been waiting for!*
