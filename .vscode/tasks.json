@@ -35,6 +35,17 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Format readme",
+            "type": "process",
+            "command": "py",
+            "args": ["-3", "./CIScripts/readme_formatter.py"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
