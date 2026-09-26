@@ -1,8 +1,11 @@
 *.ignore.*
 *.pex
 *.wem
+*.seq
 *.esm
+*_AF.esp
 *.ba2
+*.bsa
 *.dat
 *.ilstrings
 *.dlstrings
