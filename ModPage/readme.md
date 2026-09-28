@@ -318,3 +318,12 @@ You can find the source code [here](https://github.com/ZeCroque/RoleplayersAlter
 - More criterias for random planet selection
 - Terminal/Message box customization
 - You tell me!
+CREATIONS_FOOTER
+. FEEDBACK & MORE
+
+Found a bug or have an idea for new features? Needs more info? Go to my Discord server!
+Discord: https://discord.gg/K9Jk4y2tjJ
+
+Want to know more about me and my other projects? Check my links!
+LinkTree: https://linktr.ee/zecroque
+CREATIONS_FOOTER_END
